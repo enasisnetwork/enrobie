@@ -60,7 +60,7 @@ class DSCClient(RobieClient):
         return 'discord'
 
 
-    def operate(
+    def operate(  # noqa: CFQ001
         self,
         thread: 'RobieThread',
     ) -> None:
@@ -141,7 +141,18 @@ class DSCClient(RobieClient):
         def _routine() -> None:
 
             while _continue():
+
+                robie.logger.log_i(
+                    base=self,
+                    name=self,
+                    status='connect')
+
                 _operate()
+
+                robie.logger.log_i(
+                    base=self,
+                    name=self,
+                    status='severed')
 
 
         daerht = Thread(

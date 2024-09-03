@@ -110,8 +110,6 @@ def test_StatusPlugin_cover(
     :param client_dscsock: Object to mock client connection.
     """
 
-    service.robie.logger.start()
-
     service.start()
 
 
