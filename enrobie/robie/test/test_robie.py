@@ -89,10 +89,11 @@ def test_Robie_printer(
     childs = robie.childs
     clients = childs.clients
 
+    client = clients['ircbot']
+
     model = RobieMessage
 
-    item = model(
-        clients['ircbot'])
+    item = model(client)
 
     robie.printer(item)
 
