@@ -1,0 +1,59 @@
+{
+  "enconfig": {
+    "paths": [
+      "_/encommon_sample/PROJECT/_/examples",
+      "_/encommon_sample/TMPPATH/_/robie"
+    ]
+  },
+  "enlogger": {
+    "stdo_level": "debug",
+    "file_level": null,
+    "file_path": null
+  },
+  "encrypts": null,
+  "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
+  "printer": {
+    "message": true,
+    "command": true
+  },
+  "service": {
+    "respite": {
+      "health": 3
+    }
+  },
+  "clients": {
+    "ircbot": {
+      "enable": true,
+      "client": {
+        "server": "irc.enasis.net",
+        "port": 6697,
+        "timeout": 30,
+        "nickname": "ircbot",
+        "username": "ircbot",
+        "realname": "ircbot",
+        "ssl_enable": true,
+        "ssl_verify": true,
+        "queue_size": 10000
+      }
+    },
+    "dscbot": {
+      "enable": true,
+      "client": {
+        "token": "XxxXXxXXXXxxxXxXXXxxXXxxXxxXXxXXXXxx",
+        "timeout": 30,
+        "ssl_verify": true,
+        "ssl_capem": null,
+        "queue_size": 10000
+      }
+    }
+  },
+  "plugins": {
+    "status": {
+      "enable": true,
+      "command": {
+        "irc": "!status",
+        "discord": "!status"
+      }
+    }
+  }
+}
