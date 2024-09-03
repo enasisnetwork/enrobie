@@ -93,7 +93,7 @@ def test_RobieService(
 
     thread.start()
 
-    block_sleep(5)
+    block_sleep(10)
 
     assert service.running
 

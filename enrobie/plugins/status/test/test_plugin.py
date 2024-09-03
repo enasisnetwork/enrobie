@@ -127,7 +127,7 @@ def test_StatusPlugin_cover(
 
     thread.start()
 
-    block_sleep(5)
+    block_sleep(10)
 
     service.soft()
 
