@@ -31,6 +31,12 @@ IRCEVENTS = [
     'PING :123456789',
     (':n!u@h PRIVMSG '
      '#chan :!status'),
+    'PING :123456789',
+    (':n!u@h PRIVMSG '
+     '#chan :!status'),
+    'PING :123456789',
+    (':n!u@h PRIVMSG '
+     '#chan :!status'),
     'PING :123456789']
 
 DSCEVENTS = [
