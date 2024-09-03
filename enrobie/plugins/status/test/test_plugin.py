@@ -8,6 +8,7 @@ is permitted, for more information consult the project license file.
 
 
 from threading import Thread
+from time import sleep as block_sleep
 from typing import TYPE_CHECKING
 
 from encommon.types import inrepr
@@ -126,8 +127,7 @@ def test_StatusPlugin_cover(
 
     thread.start()
 
-    for _ in range(100):
-        thread.join(0.1)
+    block_sleep(5)
 
     service.soft()
 
