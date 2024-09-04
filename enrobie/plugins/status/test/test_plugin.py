@@ -8,6 +8,7 @@ is permitted, for more information consult the project license file.
 
 
 from threading import Thread
+from time import sleep as block_sleep
 from typing import TYPE_CHECKING
 
 from encommon.types import inrepr
@@ -16,8 +17,6 @@ from encommon.types import lattrs
 
 from enconnect.fixtures import DSCClientSocket
 from enconnect.fixtures import IRCClientSocket
-from enconnect.fixtures import client_dscsock  # noqa: F401
-from enconnect.fixtures import client_ircsock  # noqa: F401
 
 from ..plugin import StatusPlugin
 
@@ -99,8 +98,8 @@ def test_StatusPlugin(
 
 def test_StatusPlugin_cover(
     service: 'RobieService',
-    client_ircsock: IRCClientSocket,  # noqa: F811
-    client_dscsock: DSCClientSocket,  # noqa: F811
+    client_ircsock: IRCClientSocket,
+    client_dscsock: DSCClientSocket,
 ) -> None:
     """
     Perform various tests associated with relevant routines.
@@ -110,37 +109,27 @@ def test_StatusPlugin_cover(
     :param client_dscsock: Object to mock client connection.
     """
 
-    service.robie.logger.start()
+    client_ircsock(IRCEVENTS)
+    client_dscsock(DSCEVENTS)
 
     service.start()
 
 
-    def _operate() -> None:
-
-        client_ircsock(IRCEVENTS)
-        client_dscsock(DSCEVENTS)
-
-        service.operate()
-
-
     thread = Thread(
-        target=_operate)
+        target=service.operate)
 
     thread.start()
 
-    for _ in range(100):
-        thread.join(0.1)
+
+    block_sleep(10)
 
     service.soft()
 
-    while service.enqueue:
-        thread.join(0.1)  # NOCVR
-
     while service.running:
-        thread.join(0.1)  # NOCVR
+        block_sleep(1)
 
     service.stop()
 
     thread.join()
 
-    assert not service.enqueue
+    assert not service.congest

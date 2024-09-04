@@ -12,6 +12,9 @@ from pathlib import Path
 from encommon.types import DictStrAny
 from encommon.utils import save_text
 
+from enconnect.fixtures import client_dscsock
+from enconnect.fixtures import client_ircsock
+
 from pytest import fixture
 
 from . import EXAMPLES
@@ -25,6 +28,12 @@ from .plugins import StatusPluginParams
 from .robie import Robie
 from .robie import RobieConfig
 from .robie import RobieService
+
+
+
+__all__ = [
+    'client_dscsock',
+    'client_ircsock']
 
 
 

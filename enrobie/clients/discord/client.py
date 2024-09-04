@@ -60,7 +60,7 @@ class DSCClient(RobieClient):
         return 'discord'
 
 
-    def operate(
+    def operate(  # noqa: CFQ001
         self,
         thread: 'RobieThread',
     ) -> None:
@@ -123,7 +123,6 @@ class DSCClient(RobieClient):
                 client.operate()
 
             except ConnectionError:
-                block_sleep(1)
                 return None
 
             except Exception as reason:
@@ -134,14 +133,26 @@ class DSCClient(RobieClient):
                     status='exception',
                     exc_info=reason)
 
-                block_sleep(1)
                 return None
 
 
         def _routine() -> None:
 
             while _continue():
+
+                robie.logger.log_i(
+                    base=self,
+                    name=self,
+                    status='connect')
+
                 _operate()
+
+                robie.logger.log_i(
+                    base=self,
+                    name=self,
+                    status='severed')
+
+                block_sleep(1)
 
 
         daerht = Thread(
@@ -162,7 +173,9 @@ class DSCClient(RobieClient):
 
 
         client.stop()
-        daerht.join()
+
+        while daerht.is_alive():
+            daerht.join(1)
 
         while not source.empty():
             _put_mqueue()  # NOCVR
