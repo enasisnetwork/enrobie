@@ -58,7 +58,7 @@ class IRCClient(RobieClient):
         return 'irc'
 
 
-    def operate(  # noqa: CFQ001
+    def operate(  # noqa: CFQ001,CFQ004
         self,
         thread: 'RobieThread',
     ) -> None:
@@ -89,6 +89,9 @@ class IRCClient(RobieClient):
 
         def _get_cqueue() -> None:
 
+            if not client.connected:
+                return None
+
             citem = cqueue.get()
 
             assert isinstance(
@@ -117,7 +120,6 @@ class IRCClient(RobieClient):
                 client.operate()
 
             except ConnectionError:
-                block_sleep(1)
                 return None
 
             except Exception as reason:
@@ -128,7 +130,6 @@ class IRCClient(RobieClient):
                     status='exception',
                     exc_info=reason)
 
-                block_sleep(1)
                 return None
 
 
@@ -147,6 +148,8 @@ class IRCClient(RobieClient):
                     base=self,
                     name=self,
                     status='severed')
+
+                block_sleep(1)
 
 
         daerht = Thread(
@@ -167,7 +170,9 @@ class IRCClient(RobieClient):
 
 
         client.stop()
-        daerht.join()
+
+        while daerht.is_alive():
+            daerht.join(1)
 
         while not source.empty():
             _put_mqueue()  # NOCVR

@@ -17,8 +17,6 @@ from encommon.types import lattrs
 
 from enconnect.fixtures import DSCClientSocket
 from enconnect.fixtures import IRCClientSocket
-from enconnect.fixtures import client_dscsock  # noqa: F401
-from enconnect.fixtures import client_ircsock  # noqa: F401
 
 from ..models import RobieMessage
 
@@ -29,8 +27,8 @@ if TYPE_CHECKING:
 
 def test_RobieService(
     service: 'RobieService',
-    client_ircsock: IRCClientSocket,  # noqa: F811
-    client_dscsock: DSCClientSocket,  # noqa: F811
+    client_ircsock: IRCClientSocket,
+    client_dscsock: DSCClientSocket,
 ) -> None:
     """
     Perform various tests associated with relevant routines.
@@ -77,21 +75,17 @@ def test_RobieService(
     assert len(service.zombies) == 3
 
 
+    client_ircsock()
+    client_dscsock()
+
     service.start()
 
 
-    def _operate() -> None:
-
-        client_ircsock()
-        client_dscsock()
-
-        service.operate()
-
-
     thread = Thread(
-        target=_operate)
+        target=service.operate)
 
     thread.start()
+
 
     block_sleep(10)
 
@@ -103,11 +97,8 @@ def test_RobieService(
 
     service.soft()
 
-    while service.enqueue:
-        thread.join(0.1)  # NOCVR
-
     while service.running:
-        thread.join(0.1)  # NOCVR
+        block_sleep(1)
 
     service.stop()
 

@@ -123,7 +123,6 @@ class DSCClient(RobieClient):
                 client.operate()
 
             except ConnectionError:
-                block_sleep(1)
                 return None
 
             except Exception as reason:
@@ -134,7 +133,6 @@ class DSCClient(RobieClient):
                     status='exception',
                     exc_info=reason)
 
-                block_sleep(1)
                 return None
 
 
@@ -153,6 +151,8 @@ class DSCClient(RobieClient):
                     base=self,
                     name=self,
                     status='severed')
+
+                block_sleep(1)
 
 
         daerht = Thread(
@@ -173,7 +173,9 @@ class DSCClient(RobieClient):
 
 
         client.stop()
-        daerht.join()
+
+        while daerht.is_alive():
+            daerht.join(1)
 
         while not source.empty():
             _put_mqueue()  # NOCVR
