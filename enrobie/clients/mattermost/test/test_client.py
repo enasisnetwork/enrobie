@@ -13,10 +13,10 @@ from encommon.types import inrepr
 from encommon.types import instr
 from encommon.types import lattrs
 
-from enconnect.irc import ClientEvent
+from enconnect.mattermost import ClientEvent
 
-from ..client import IRCClient
-from ..command import IRCCommand
+from ..client import MTMClient
+from ..command import MTMCommand
 from ....robie.addons import RobieQueue
 
 if TYPE_CHECKING:
@@ -26,7 +26,7 @@ if TYPE_CHECKING:
 
 
 
-def test_IRCClient(
+def test_MTMClient(
     robie: 'Robie',
 ) -> None:
     """
@@ -39,10 +39,10 @@ def test_IRCClient(
     clients = childs.clients
 
 
-    client = clients['ircbot']
+    client = clients['mtmbot']
 
     assert isinstance(
-        client, IRCClient)
+        client, MTMClient)
 
 
     attrs = lattrs(client)
@@ -54,13 +54,13 @@ def test_IRCClient(
 
 
     assert inrepr(
-        'client.IRCClient',
+        'client.MTMClient',
         client)
 
     assert hash(client) > 0
 
     assert instr(
-        'client.IRCClient',
+        'client.MTMClient',
         client)
 
 
@@ -68,9 +68,9 @@ def test_IRCClient(
 
     assert client.robie
 
-    assert client.name == 'ircbot'
+    assert client.name == 'mtmbot'
 
-    assert client.family == 'irc'
+    assert client.family == 'mattermost'
 
     assert client.kind == 'client'
 
@@ -80,7 +80,7 @@ def test_IRCClient(
 
 
 
-def test_IRCClient_message(
+def test_MTMClient_message(
     robie: 'Robie',
 ) -> None:
     """
@@ -92,10 +92,10 @@ def test_IRCClient_message(
     childs = robie.childs
     clients = childs.clients
 
-    client = clients['ircbot']
+    client = clients['mtmbot']
 
     assert isinstance(
-        client, IRCClient)
+        client, MTMClient)
 
 
     _queue = RobieQueue[
@@ -105,15 +105,16 @@ def test_IRCClient_message(
         RobieQueue(robie))
 
 
-    event = ClientEvent(
-        'PING :123456789')
+    event = ClientEvent({
+        'status': 'OK',
+        'seq_reply': 1})
 
     client.put_message(
         queue, event)
 
 
 
-def test_IRCClient_command(
+def test_MTMClient_command(
     robie: 'Robie',
 ) -> None:
     """
@@ -125,10 +126,10 @@ def test_IRCClient_command(
     childs = robie.childs
     clients = childs.clients
 
-    client = clients['ircbot']
+    client = clients['mtmbot']
 
     assert isinstance(
-        client, IRCClient)
+        client, MTMClient)
 
 
     _queue = RobieQueue[
@@ -139,12 +140,12 @@ def test_IRCClient_command(
 
 
     client.put_command(
-        queue,
-        'PRIVMSG # :Hello')
+        queue, 'delete',
+        'posts/mocked')
 
 
 
-def test_IRCClient_compose(
+def test_MTMClient_compose(
     robie: 'Robie',
 ) -> None:
     """
@@ -156,19 +157,26 @@ def test_IRCClient_compose(
     childs = robie.childs
     clients = childs.clients
 
-    client = clients['ircbot']
+    client = clients['mtmbot']
 
     assert isinstance(
-        client, IRCClient)
+        client, MTMClient)
 
 
     citem = (
         client.compose(
-            '#chan', 'message'))
+            'chan', 'message'))
 
     assert isinstance(
-        citem, IRCCommand)
+        citem, MTMCommand)
 
 
-    assert citem.event == (
-        'PRIVMSG #chan :message')
+    assert citem.method == 'post'
+
+    assert citem.path == 'posts'
+
+    assert not citem.params
+
+    assert citem.json == {
+        'channel_id': 'chan',
+        'message': 'message'}

@@ -14,14 +14,14 @@ from typing import Literal
 from typing import Optional
 from typing import TYPE_CHECKING
 
-from enconnect.discord import Client
-from enconnect.discord import ClientEvent
+from enconnect.mattermost import Client
+from enconnect.mattermost import ClientEvent
 from enconnect.utils.http import _METHODS
 from enconnect.utils.http import _PAYLOAD
 
-from .command import DSCCommand
-from .message import DSCMessage
-from .params import DSCClientParams
+from .command import MTMCommand
+from .message import MTMMessage
+from .params import MTMClientParams
 from ...robie.addons import RobieQueue
 from ...robie.childs import RobieClient
 
@@ -32,7 +32,7 @@ if TYPE_CHECKING:
 
 
 
-class DSCClient(RobieClient):
+class MTMClient(RobieClient):
     """
     Establish and maintain connection with the chat service.
 
@@ -51,14 +51,14 @@ class DSCClient(RobieClient):
     @property
     def family(
         self,
-    ) -> Literal['discord']:
+    ) -> Literal['mattermost']:
         """
         Return the value for the attribute from class instance.
 
         :returns: Value for the attribute from class instance.
         """
 
-        return 'discord'
+        return 'mattermost'
 
 
     def operate(  # noqa: CFQ001
@@ -79,7 +79,7 @@ class DSCClient(RobieClient):
         params = self.params
 
         assert isinstance(
-            params, DSCClientParams)
+            params, MTMClientParams)
 
 
         def _put_mqueue() -> None:
@@ -95,7 +95,7 @@ class DSCClient(RobieClient):
             citem = cqueue.get()
 
             assert isinstance(
-                citem, DSCCommand)
+                citem, MTMCommand)
 
             client.request(
                 method=citem.method,
@@ -201,7 +201,7 @@ class DSCClient(RobieClient):
     def get_message(
         self,
         event: Optional[ClientEvent] = None,
-    ) -> DSCMessage:
+    ) -> MTMMessage:
         """
         Return the new item containing information for operation.
 
@@ -216,7 +216,7 @@ class DSCClient(RobieClient):
 
         assert event is not None
 
-        return DSCMessage(self, event)
+        return MTMMessage(self, event)
 
 
     def put_message(
@@ -247,7 +247,7 @@ class DSCClient(RobieClient):
         path: Optional[str] = None,
         params: Optional[_PAYLOAD] = None,
         json: Optional[_PAYLOAD] = None,
-    ) -> DSCCommand:
+    ) -> MTMCommand:
         """
         Return the new item containing information for operation.
 
@@ -266,7 +266,7 @@ class DSCClient(RobieClient):
         assert method is not None
         assert path is not None
 
-        return DSCCommand(
+        return MTMCommand(
             self,
             method, path,
             params, json)
@@ -322,14 +322,11 @@ class DSCClient(RobieClient):
 
         assert target is not None
 
-        path = (
-            f'channels/{target}'
-            '/messages')
-
         payload = {
-            'content': content}
+            'channel_id': target,
+            'message': content}
 
         return (
             self.get_command(
-                'post', path,
+                'post', 'posts',
                 json=payload))

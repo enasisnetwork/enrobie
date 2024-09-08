@@ -88,7 +88,7 @@ def test_DSCMessage(
 
     assert item.family == 'discord'
 
-    assert item.kind == 'event'
+    assert item.kind == 'privmsg'
 
     assert item.event == event
 

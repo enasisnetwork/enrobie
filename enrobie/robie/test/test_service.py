@@ -17,6 +17,7 @@ from encommon.types import lattrs
 
 from enconnect.fixtures import DSCClientSocket
 from enconnect.fixtures import IRCClientSocket
+from enconnect.fixtures import MTMClientSocket
 
 from ..models import RobieMessage
 
@@ -27,8 +28,9 @@ if TYPE_CHECKING:
 
 def test_RobieService(
     service: 'RobieService',
-    client_ircsock: IRCClientSocket,
     client_dscsock: DSCClientSocket,
+    client_ircsock: IRCClientSocket,
+    client_mtmsock: MTMClientSocket,
 ) -> None:
     """
     Perform various tests associated with relevant routines.
@@ -36,6 +38,7 @@ def test_RobieService(
     :param service: Ancilary Chatting Robie class instance.
     :param client_ircsock: Object to mock client connection.
     :param client_dscsock: Object to mock client connection.
+    :param client_mtmsock: Object to mock client connection.
     """
 
 
@@ -72,11 +75,12 @@ def test_RobieService(
 
     assert len(service.running) == 0
 
-    assert len(service.zombies) == 3
+    assert len(service.zombies) == 4
 
 
-    client_ircsock()
     client_dscsock()
+    client_ircsock()
+    client_mtmsock()
 
     service.start()
 

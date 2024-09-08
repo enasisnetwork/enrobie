@@ -27,6 +27,11 @@ Robie Clients
    :show-inheritance:
    :noindex:
 
+.. autopydantic_model:: enrobie.clients.irc.params.MTMClientParams
+   :members:
+   :show-inheritance:
+   :noindex:
+
 Robie Plugins
 =============
 

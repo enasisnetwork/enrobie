@@ -105,8 +105,8 @@ def test_DSCClient_message(
         RobieQueue(robie))
 
 
-    event = ClientEvent(
-        {'op': 7, 'd': None})
+    event = ClientEvent({
+        'op': 7, 'd': None})
 
     client.put_message(
         queue, event)
@@ -165,7 +165,7 @@ def test_DSCClient_compose(
 
     citem = (
         client.compose(
-            'user', 'message'))
+            'chan', 'message'))
 
     assert isinstance(
         citem, DSCCommand)
@@ -174,7 +174,7 @@ def test_DSCClient_compose(
     assert citem.method == 'post'
 
     assert citem.path == (
-        'channels/user/messages')
+        'channels/chan/messages')
 
     assert not citem.params
 

@@ -9,10 +9,9 @@ is permitted, for more information consult the project license file.
 
 from dataclasses import dataclass
 from typing import Literal
-from typing import Optional
 from typing import TYPE_CHECKING
 
-from enconnect.irc import ClientEvent
+from enconnect.mattermost import ClientEvent
 
 from ...robie.models import RobieMessage
 
@@ -25,7 +24,7 @@ if TYPE_CHECKING:
 
 
 @dataclass
-class IRCMessage(RobieMessage):
+class MTMMessage(RobieMessage):
     """
     Contain information for sharing using the Python queue.
     """
@@ -50,14 +49,14 @@ class IRCMessage(RobieMessage):
     @property
     def family(
         self,
-    ) -> Literal['irc']:
+    ) -> Literal['mattermost']:
         """
         Return the value for the attribute from class instance.
 
         :returns: Value for the attribute from class instance.
         """
 
-        return 'irc'
+        return 'mattermost'
 
 
     @property
@@ -92,16 +91,9 @@ class IRCMessage(RobieMessage):
             self.client]
 
         event = self.event
-        kind = event.kind
 
 
-        target: Optional[str] = None
-
-        if kind == 'chanmsg':
-            target = event.recipient
-
-        if kind == 'privmsg':
-            target = event.author
+        target = event.recipient
 
         assert target is not None
 

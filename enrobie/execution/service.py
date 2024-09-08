@@ -21,6 +21,8 @@ from ..clients import DSCClient
 from ..clients import DSCClientParams
 from ..clients import IRCClient
 from ..clients import IRCClientParams
+from ..clients import MTMClient
+from ..clients import MTMClientParams
 from ..plugins import StatusPlugin
 from ..plugins import StatusPluginParams
 from ..robie import Robie
@@ -137,6 +139,10 @@ def register_params(
         client=DSCClientParams)
 
     config.register(
+        name='mtmbot',
+        client=MTMClientParams)
+
+    config.register(
         name='status',
         plugin=StatusPluginParams)
 
@@ -159,6 +165,10 @@ def register_plugins(
     robie.register(
         name='dscbot',
         client=DSCClient)
+
+    robie.register(
+        name='mtmbot',
+        client=MTMClient)
 
     robie.register(
         name='status',

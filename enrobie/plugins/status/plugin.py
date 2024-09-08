@@ -76,7 +76,10 @@ class StatusPlugin(RobiePlugin):
                 match = command.irc
 
             if family == 'discord':
-                match = command.discord
+                match = command.dsc
+
+            if family == 'mattermost':
+                match = command.mtm
 
             if match is None:
                 continue  # NOCVR
