@@ -22,13 +22,27 @@
     }
   },
   "clients": {
+    "dscbot": {
+      "name": "dscbot",
+      "kind": "client",
+      "params": {
+        "enable": true,
+        "client": {
+          "token": "mocked",
+          "timeout": 30,
+          "ssl_verify": true,
+          "ssl_capem": null,
+          "queue_size": 10000
+        }
+      }
+    },
     "ircbot": {
       "name": "ircbot",
       "kind": "client",
       "params": {
         "enable": true,
         "client": {
-          "server": "irc.enasis.net",
+          "server": "mocked",
           "port": 6697,
           "timeout": 30,
           "nickname": "ircbot",
@@ -40,13 +54,16 @@
         }
       }
     },
-    "dscbot": {
-      "name": "dscbot",
+    "mtmbot": {
+      "name": "mtmbot",
       "kind": "client",
       "params": {
         "enable": true,
         "client": {
-          "token": "XxxXXxXXXXxxxXxXXXxxXXxxXxxXXxXXXXxx",
+          "server": "mocked",
+          "port": 443,
+          "token": "mocked",
+          "teamid": "mocked",
           "timeout": 30,
           "ssl_verify": true,
           "ssl_capem": null,
@@ -63,7 +80,8 @@
         "enable": true,
         "command": {
           "irc": "!status",
-          "discord": "!status"
+          "dsc": "!status",
+          "mtm": "!status"
         }
       }
     }

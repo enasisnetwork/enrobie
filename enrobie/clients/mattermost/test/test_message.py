@@ -13,25 +13,34 @@ from encommon.types import inrepr
 from encommon.types import instr
 from encommon.types import lattrs
 
-from enconnect.irc import ClientEvent
+from enconnect.mattermost import ClientEvent
 
 from pytest import raises
 
-from ..command import IRCCommand
-from ..message import IRCMessage
+from ..command import MTMCommand
+from ..message import MTMMessage
 
 if TYPE_CHECKING:
     from ....robie import Robie
 
 
 
-EVENT = (
-    ':n!u@h PRIVMSG #chan'
-    ' :Hello channel')
+EVENT = {
+    'event': 'posted',
+    'seq': 5,
+    'broadcast': {
+        'channel_id': 'nwyxekd4k7'},
+    'data': {
+        'channel_type': 'P',
+        'post': (
+            '{"user_id":"ietyrmdt5b",'
+            '"channel_id":"nwyxekd4k7",'
+            '"message":"Hello"}'),
+        'sender_name': '@robert'}}
 
 
 
-def test_IRCMessage(
+def test_MTMMessage(
     robie: 'Robie',
 ) -> None:
     """
@@ -43,11 +52,11 @@ def test_IRCMessage(
     childs = robie.childs
     clients = childs.clients
 
-    model = IRCMessage
+    model = MTMMessage
 
     event = ClientEvent(EVENT)
 
-    client = clients['ircbot']
+    client = clients['mtmbot']
 
 
     item = model(
@@ -63,14 +72,14 @@ def test_IRCMessage(
 
 
     assert inrepr(
-        'IRCMessage',
+        'MTMMessage',
         item)
 
     with raises(TypeError):
         assert hash(item) > 0
 
     assert instr(
-        'IRCMessage',
+        'MTMMessage',
         item)
 
 
@@ -78,28 +87,32 @@ def test_IRCMessage(
 
     assert item.client == client.name
 
-    assert item.family == 'irc'
+    assert item.family == 'mattermost'
 
     assert item.kind == 'chanmsg'
 
     assert item.event == event
 
 
-    assert event.prefix == 'n!u@h'
-    assert event.command == 'PRIVMSG'
-    assert event.params
-    assert len(event.params) == 20
-    assert len(event.original) == 35
+    assert event.type == 'posted'
+    assert event.data
+    assert len(event.data) == 3
+    assert event.broadcast
+    assert len(event.broadcast) == 1
+    assert event.seqno == 5
+    assert not event.status
+    assert not event.error
+    assert not event.seqre
 
     assert event.kind == 'chanmsg'
-    assert event.author == 'n'
-    assert event.recipient == '#chan'
-    assert event.message == (
-        'Hello channel')
+    assert event.author == (
+        'ietyrmdt5b', '@robert')
+    assert event.recipient == 'nwyxekd4k7'
+    assert event.message == 'Hello'
 
 
 
-def test_IRCMessage_reply(
+def test_MTMMessage_reply(
     robie: 'Robie',
 ) -> None:
     """
@@ -111,33 +124,29 @@ def test_IRCMessage_reply(
     childs = robie.childs
     clients = childs.clients
 
-    model = IRCMessage
+    model = MTMMessage
 
 
     item = model(
-        clients['ircbot'],
+        clients['mtmbot'],
         ClientEvent(EVENT))
 
     reply = item.reply(
         robie, 'Hello')
 
 
-    event = ClientEvent(
-        EVENT.replace(
-            '#chan', 'ircbot'))
-
-    client = clients['ircbot']
-
-    item = model(
-        client, event)
-
-    reply = item.reply(
-        robie, 'Hello')
-
-
     assert isinstance(
-        reply, IRCCommand)
+        reply, MTMCommand)
 
 
-    assert reply.event == (
-        'PRIVMSG n :Hello')
+    assert reply.family == 'mattermost'
+
+    assert reply.method == 'post'
+
+    assert reply.path == 'posts'
+
+    assert not reply.params
+
+    assert reply.json == {
+        'channel_id': 'nwyxekd4k7',
+        'message': 'Hello'}

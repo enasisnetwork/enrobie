@@ -25,7 +25,7 @@
     "ircbot": {
       "enable": true,
       "client": {
-        "server": "irc.enasis.net",
+        "server": "mocked",
         "port": 6697,
         "timeout": 30,
         "nickname": "ircbot",
@@ -39,7 +39,20 @@
     "dscbot": {
       "enable": true,
       "client": {
-        "token": "XxxXXxXXXXxxxXxXXXxxXXxxXxxXXxXXXXxx",
+        "token": "mocked",
+        "timeout": 30,
+        "ssl_verify": true,
+        "ssl_capem": null,
+        "queue_size": 10000
+      }
+    },
+    "mtmbot": {
+      "enable": true,
+      "client": {
+        "server": "mocked",
+        "port": 443,
+        "token": "mocked",
+        "teamid": "mocked",
         "timeout": 30,
         "ssl_verify": true,
         "ssl_capem": null,
@@ -52,7 +65,8 @@
       "enable": true,
       "command": {
         "irc": "!status",
-        "discord": "!status"
+        "dsc": "!status",
+        "mtm": "!status"
       }
     }
   }

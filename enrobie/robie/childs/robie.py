@@ -141,7 +141,7 @@ class RobieChilds:
         return deepcopy(dumped)
 
 
-    def register(
+    def register(  # noqa: CFQ004
         self,
         name: str,
         *,
@@ -169,6 +169,9 @@ class RobieChilds:
 
             assert _clients is not None
 
+            if name not in _clients:
+                return NCNone
+
             params = _clients[name]
 
             assert callable(client)
@@ -191,6 +194,9 @@ class RobieChilds:
             target = self.__plugins
 
             assert _plugins is not None
+
+            if name not in _plugins:
+                return NCNone
 
             params = _plugins[name]
 

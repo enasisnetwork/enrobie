@@ -11,6 +11,8 @@ from .discord import DSCClient
 from .discord import DSCClientParams
 from .irc import IRCClient
 from .irc import IRCClientParams
+from .mattermost import MTMClient
+from .mattermost import MTMClientParams
 
 
 
@@ -18,4 +20,6 @@ __all__ = [
     'IRCClient',
     'IRCClientParams',
     'DSCClient',
-    'DSCClientParams']
+    'DSCClientParams',
+    'MTMClient',
+    'MTMClientParams']

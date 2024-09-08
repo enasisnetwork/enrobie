@@ -14,6 +14,7 @@ from encommon.utils import save_text
 
 from enconnect.fixtures import client_dscsock
 from enconnect.fixtures import client_ircsock
+from enconnect.fixtures import client_mtmsock
 
 from pytest import fixture
 
@@ -23,6 +24,8 @@ from .clients import DSCClient
 from .clients import DSCClientParams
 from .clients import IRCClient
 from .clients import IRCClientParams
+from .clients import MTMClient
+from .clients import MTMClientParams
 from .plugins import StatusPlugin
 from .plugins import StatusPluginParams
 from .robie import Robie
@@ -33,7 +36,8 @@ from .robie import RobieService
 
 __all__ = [
     'client_dscsock',
-    'client_ircsock']
+    'client_ircsock',
+    'client_mtmsock']
 
 
 
@@ -94,12 +98,16 @@ def config(
     config = config_factory(tmp_path)
 
     config.register(
+        name='dscbot',
+        client=DSCClientParams)
+
+    config.register(
         name='ircbot',
         client=IRCClientParams)
 
     config.register(
-        name='dscbot',
-        client=DSCClientParams)
+        name='mtmbot',
+        client=MTMClientParams)
 
     config.register(
         name='status',
@@ -139,12 +147,16 @@ def robie_factory(
     robie = Robie(config)
 
     robie.register(
+        name='dscbot',
+        client=DSCClient)
+
+    robie.register(
         name='ircbot',
         client=IRCClient)
 
     robie.register(
-        name='dscbot',
-        client=DSCClient)
+        name='mtmbot',
+        client=MTMClient)
 
     robie.register(
         name='status',

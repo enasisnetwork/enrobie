@@ -69,7 +69,7 @@ class DSCMessage(RobieMessage):
         :returns: Value for the attribute from class instance.
         """
 
-        return 'event'
+        return self.event.kind
 
 
     def reply(

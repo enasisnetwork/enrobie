@@ -27,7 +27,12 @@ class StatusPluginCommandParams(BaseModel, extra='forbid'):
         Field('!status',
               description='Command name for chat platform')]
 
-    discord: Annotated[
+    dsc: Annotated[
+        str,
+        Field('!status',
+              description='Command name for chat platform')]
+
+    mtm: Annotated[
         str,
         Field('!status',
               description='Command name for chat platform')]

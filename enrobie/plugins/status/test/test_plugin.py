@@ -17,6 +17,7 @@ from encommon.types import lattrs
 
 from enconnect.fixtures import DSCClientSocket
 from enconnect.fixtures import IRCClientSocket
+from enconnect.fixtures import MTMClientSocket
 
 from ..plugin import StatusPlugin
 
@@ -25,10 +26,6 @@ if TYPE_CHECKING:
     from ....robie import RobieService
 
 
-
-IRCEVENTS = [
-    (':n!u@h PRIVMSG '
-     '#chan :!status')]
 
 DSCEVENTS = [
     {'t': 'MESSAGE_CREATE',
@@ -41,6 +38,23 @@ DSCEVENTS = [
              'id': '44444444',
              'username': 'Author'},
          'content': '!status'}}]
+
+IRCEVENTS = [
+    (':n!u@h PRIVMSG '
+     '#chan :!status')]
+
+MTMEVENTS = [
+    {'event': 'posted',
+     'seq': 5,
+     'broadcast': {
+         'channel_id': 'nwyxekd4k7'},
+     'data': {
+         'channel_type': 'P',
+         'post': (
+             '{"user_id":"ietyrmdt5b",'
+             '"channel_id":"nwyxekd4k7",'
+             '"message":"!status"}'),
+         'sender_name': '@robert'}}]
 
 
 
@@ -98,19 +112,22 @@ def test_StatusPlugin(
 
 def test_StatusPlugin_cover(
     service: 'RobieService',
-    client_ircsock: IRCClientSocket,
     client_dscsock: DSCClientSocket,
+    client_ircsock: IRCClientSocket,
+    client_mtmsock: MTMClientSocket,
 ) -> None:
     """
     Perform various tests associated with relevant routines.
 
     :param service: Ancilary Chatting Robie class instance.
-    :param client_ircsock: Object to mock client connection.
     :param client_dscsock: Object to mock client connection.
+    :param client_ircsock: Object to mock client connection.
+    :param client_mtmsock: Object to mock client connection.
     """
 
-    client_ircsock(IRCEVENTS)
     client_dscsock(DSCEVENTS)
+    client_ircsock(IRCEVENTS)
+    client_mtmsock(MTMEVENTS)
 
     service.start()
 

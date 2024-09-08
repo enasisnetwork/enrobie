@@ -9,6 +9,7 @@ is permitted, for more information consult the project license file.
 
 from threading import Thread
 from time import sleep as block_sleep
+from typing import Any
 from typing import Literal
 from typing import Optional
 from typing import TYPE_CHECKING
@@ -108,8 +109,24 @@ class IRCClient(RobieClient):
                 and daerht.is_alive())
 
 
+        def _debug_logger(
+            **kwargs: Any,
+        ) -> None:
+
+            assert not any([
+                kwargs.get('level'),
+                kwargs.get('base'),
+                kwargs.get('name')])
+
+            robie.logger.log_d(
+                base=self,
+                name=self,
+                **kwargs)
+
+
         client = Client(
-            params.client)
+            params.client,
+            _debug_logger)
 
         source = client.mqueue
 
