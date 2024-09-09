@@ -18,6 +18,7 @@ from enconnect.discord.test import EVENTS
 
 from pytest import raises
 
+from ..client import DSCClient
 from ..command import DSCCommand
 from ..message import DSCMessage
 
@@ -40,9 +41,14 @@ def test_DSCMessage(
 
     model = DSCMessage
 
-    event = ClientEvent(EVENTS[0])
-
     client = clients['dscbot']
+
+    assert isinstance(
+        client, DSCClient)
+
+    event = ClientEvent(
+        client.client,
+        EVENTS[0])
 
 
     item = model(
@@ -79,7 +85,7 @@ def test_DSCMessage(
 
     assert item.event == event
 
-    assert not item.isme(robie)
+    assert not item.isme
 
 
     assert event.type == (
@@ -114,12 +120,19 @@ def test_DSCMessage_reply(
 
     model = DSCMessage
 
+    client = clients['dscbot']
+
+    assert isinstance(
+        client, DSCClient)
+
 
     item = model(
-        clients['dscbot'],
-        ClientEvent(EVENTS[0]))
+        client,
+        ClientEvent(
+            client.client,
+            EVENTS[0]))
 
-    assert not item.isme(robie)
+    assert not item.isme
 
 
     reply = item.reply(

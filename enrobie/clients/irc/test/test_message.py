@@ -18,6 +18,7 @@ from enconnect.irc.test import EVENTS
 
 from pytest import raises
 
+from ..client import IRCClient
 from ..command import IRCCommand
 from ..message import IRCMessage
 
@@ -40,9 +41,14 @@ def test_IRCMessage(
 
     model = IRCMessage
 
-    event = ClientEvent(EVENTS[1])
-
     client = clients['ircbot']
+
+    assert isinstance(
+        client, IRCClient)
+
+    event = ClientEvent(
+        client.client,
+        EVENTS[1])
 
 
     item = model(
@@ -79,7 +85,7 @@ def test_IRCMessage(
 
     assert item.event == event
 
-    assert not item.isme(robie)
+    assert not item.isme
 
 
     assert event.prefix == (
@@ -111,12 +117,19 @@ def test_IRCMessage_reply(
 
     model = IRCMessage
 
+    client = clients['ircbot']
+
+    assert isinstance(
+        client, IRCClient)
+
 
     item = model(
-        clients['ircbot'],
-        ClientEvent(EVENTS[1]))
+        client,
+        ClientEvent(
+            client.client,
+            EVENTS[1]))
 
-    assert not item.isme(robie)
+    assert not item.isme
 
 
     reply = item.reply(
@@ -124,10 +137,9 @@ def test_IRCMessage_reply(
 
 
     event = ClientEvent(
+        client.client,
         EVENTS[1].replace(
             '#chan', 'ircbot'))
-
-    client = clients['ircbot']
 
     item = model(
         client, event)

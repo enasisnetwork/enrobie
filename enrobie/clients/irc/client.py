@@ -39,7 +39,7 @@ class IRCClient(RobieClient):
     :param robie: Primary class instance for Chatting Robie.
     """
 
-    __client: Optional[Client]
+    __client: Client
 
 
     def __post__(
@@ -49,7 +49,16 @@ class IRCClient(RobieClient):
         Initialize instance for class using provided parameters.
         """
 
-        self.__client = None
+        params = self.params
+
+        assert isinstance(
+            params, IRCClientParams)
+
+        client = Client(
+            params.client,
+            self.__debugger)
+
+        self.__client = client
 
 
     def validate(
@@ -76,7 +85,7 @@ class IRCClient(RobieClient):
     @property
     def client(
         self,
-    ) -> Optional[Client]:
+    ) -> Client:
         """
         Return the value for the attribute from class instance.
 
@@ -136,28 +145,8 @@ class IRCClient(RobieClient):
                 and daerht.is_alive())
 
 
-        def _debug_logger(
-            **kwargs: Any,
-        ) -> None:
-
-            assert not any([
-                kwargs.get('level'),
-                kwargs.get('base'),
-                kwargs.get('name')])
-
-            robie.logger.log_d(
-                base=self,
-                name=self,
-                **kwargs)
-
-
-        client = Client(
-            params.client,
-            _debug_logger)
-
+        client = self.__client
         source = client.mqueue
-
-        self.__client = client
 
 
         def _operate() -> None:
@@ -216,8 +205,6 @@ class IRCClient(RobieClient):
 
 
         client.stop()
-
-        self.__client = None
 
         while daerht.is_alive():
             daerht.join(1)
@@ -335,3 +322,26 @@ class IRCClient(RobieClient):
             self.get_command(
                 f'PRIVMSG {target}'
                 f' :{content}'))
+
+
+    def __debugger(
+        self,
+        **kwargs: Any,
+    ) -> None:
+        """
+        Pass the provided keyword arguments into logger object.
+
+        :param kwargs: Keyword arguments for populating message.
+        """
+
+        robie = self.robie
+
+        assert not any([
+            kwargs.get('level'),
+            kwargs.get('base'),
+            kwargs.get('name')])
+
+        robie.logger.log_d(
+            base=self,
+            name=self,
+            **kwargs)

@@ -66,7 +66,7 @@ class StatusPlugin(RobiePlugin):
 
             mitem = mqueue.get()
 
-            if mitem.isme(robie):
+            if mitem.isme:
                 continue
 
             kind = mitem.kind

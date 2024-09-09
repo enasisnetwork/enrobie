@@ -18,6 +18,7 @@ from enconnect.mattermost.test import EVENTS
 
 from pytest import raises
 
+from ..client import MTMClient
 from ..command import MTMCommand
 from ..message import MTMMessage
 
@@ -40,9 +41,14 @@ def test_MTMMessage(
 
     model = MTMMessage
 
-    event = ClientEvent(EVENTS[0])
-
     client = clients['mtmbot']
+
+    assert isinstance(
+        client, MTMClient)
+
+    event = ClientEvent(
+        client.client,
+        EVENTS[0])
 
 
     item = model(
@@ -79,7 +85,7 @@ def test_MTMMessage(
 
     assert item.event == event
 
-    assert not item.isme(robie)
+    assert not item.isme
 
 
     assert event.type == 'posted'
@@ -115,12 +121,19 @@ def test_MTMMessage_reply(
 
     model = MTMMessage
 
+    client = clients['mtmbot']
+
+    assert isinstance(
+        client, MTMClient)
+
 
     item = model(
-        clients['mtmbot'],
-        ClientEvent(EVENTS[0]))
+        client,
+        ClientEvent(
+            client.client,
+            EVENTS[0]))
 
-    assert not item.isme(robie)
+    assert not item.isme
 
 
     reply = item.reply(

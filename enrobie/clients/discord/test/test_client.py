@@ -42,7 +42,8 @@ def test_DSCClient(
     client = clients['dscbot']
 
     assert isinstance(
-        client, DSCClient)
+        client,
+        DSCClient)
 
 
     attrs = lattrs(client)
@@ -106,8 +107,10 @@ def test_DSCClient_message(
         RobieQueue(robie))
 
 
-    event = ClientEvent({
-        'op': 7, 'd': None})
+    _event = {'op': 7}
+
+    event = ClientEvent(
+        client.client, _event)
 
     client.put_message(
         queue, event)
