@@ -48,7 +48,6 @@ def arguments(
 
     parser.add_argument(
         '--config',
-        required=True,
         help=(
             'complete or relative '
             'path to config file'))

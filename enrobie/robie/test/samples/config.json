@@ -1,26 +1,4 @@
 {
-  "enconfig": {
-    "paths": [
-      "_/encommon_sample/PROJECT/_/examples",
-      "_/encommon_sample/TMPPATH/_/robie"
-    ]
-  },
-  "enlogger": {
-    "stdo_level": "debug",
-    "file_level": null,
-    "file_path": null
-  },
-  "encrypts": null,
-  "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
-  "printer": {
-    "message": true,
-    "command": true
-  },
-  "service": {
-    "respite": {
-      "health": 3
-    }
-  },
   "clients": {
     "ircbot": {
       "enable": true,
@@ -60,6 +38,19 @@
       }
     }
   },
+  "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
+  "enconfig": {
+    "paths": [
+      "_/encommon_sample/PROJECT/_/examples",
+      "_/encommon_sample/TMPPATH/_/robie"
+    ]
+  },
+  "encrypts": null,
+  "enlogger": {
+    "stdo_level": "debug",
+    "file_level": null,
+    "file_path": null
+  },
   "plugins": {
     "status": {
       "enable": true,
@@ -68,6 +59,15 @@
         "dsc": "!status",
         "mtm": "!status"
       }
+    }
+  },
+  "printer": {
+    "message": true,
+    "command": true
+  },
+  "service": {
+    "respite": {
+      "health": 3
     }
   }
 }

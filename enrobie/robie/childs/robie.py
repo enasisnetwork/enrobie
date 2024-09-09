@@ -167,7 +167,8 @@ class RobieChilds:
 
             target = self.__clients
 
-            assert _clients is not None
+            if _clients is None:
+                return NCNone
 
             if name not in _clients:
                 return NCNone
@@ -193,7 +194,8 @@ class RobieChilds:
 
             target = self.__plugins
 
-            assert _plugins is not None
+            if _plugins is None:
+                return NCNone
 
             if name not in _plugins:
                 return NCNone

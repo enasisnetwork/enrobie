@@ -8,17 +8,30 @@ is permitted, for more information consult the project license file.
 
 
 from contextlib import suppress
+from copy import deepcopy
+from typing import Literal
 from typing import Optional
 from typing import Type
 
 from encommon.config import Config
 from encommon.config import Params
 from encommon.types import DictStrAny
+from encommon.types import merge_dicts
+from encommon.types import setate
+from encommon.types import sort_dict
 from encommon.utils.common import PATHABLE
 
 from .params import RobieClientParams
 from .params import RobieParams
 from .params import RobiePluginParams
+
+
+
+_INSERT = Literal[
+    'clients', 'plugins']
+
+_INSERTS = dict[
+    _INSERT, DictStrAny]
 
 
 
@@ -34,6 +47,8 @@ class RobieConfig(Config):
 
     __clients: dict[str, Type[RobieClientParams]]
     __plugins: dict[str, Type[RobiePluginParams]]
+
+    __inserts: _INSERTS
 
 
     def __init__(
@@ -51,6 +66,8 @@ class RobieConfig(Config):
 
         self.__clients = {}
         self.__plugins = {}
+
+        self.__inserts = {}
 
 
         _console = (
@@ -95,7 +112,20 @@ class RobieConfig(Config):
 
 
     @property
-    def params(
+    def inserts(
+        self,
+    ) -> _INSERTS:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return deepcopy(self.__inserts)
+
+
+    @property
+    def params(  # noqa: CFQ001
         self,
     ) -> RobieParams:
         """
@@ -119,12 +149,21 @@ class RobieConfig(Config):
             return params
 
 
+        fclients: DictStrAny = {}
+        fplugins: DictStrAny = {}
+
+
         basic = self.basic
         update = False
 
         with suppress(AttributeError):
             basic = self.merge
             update = True
+
+        merge_dicts(
+            dict1=basic,
+            dict2=self.inserts,
+            force=True)
 
 
         _clients = basic.get('clients')
@@ -134,39 +173,60 @@ class RobieConfig(Config):
         def _put_clients() -> None:
 
             models = self.__clients
-            target = basic['clients']
 
-            items = target.items()
+            items = (
+                basic['clients']
+                .items())
 
             for name, params in items:
+
+                if name not in models:
+                    continue  # NOCVR
 
                 model = models[name]
                 object = model(**params)
 
-                target[name] = object
+                fclients[name] = object
 
 
         if _clients is not None:
+
             _put_clients()
+
+            del basic['clients']
 
 
         def _put_plugins() -> None:
 
             models = self.__plugins
-            target = basic['plugins']
 
-            items = target.items()
+            items = (
+                basic['plugins']
+                .items())
 
             for name, params in items:
+
+                if name not in models:
+                    continue  # NOCVR
 
                 model = models[name]
                 object = model(**params)
 
-                target[name] = object
+                fplugins[name] = object
 
 
         if _plugins is not None:
+
             _put_plugins()
+
+            del basic['plugins']
+
+
+        if len(fclients) >= 1:
+            basic['clients'] = fclients
+
+        if len(fplugins) >= 1:
+            basic['plugins'] = fplugins
 
 
         params = (
@@ -239,6 +299,7 @@ class RobieConfig(Config):
             items = _clients.items()
 
             for name, client in items:
+
                 target[name] = (
                     client.endumped)
 
@@ -256,6 +317,7 @@ class RobieConfig(Config):
             items = _plugins.items()
 
             for name, plugin in items:
+
                 target[name] = (
                     plugin.endumped)
 
@@ -264,7 +326,7 @@ class RobieConfig(Config):
             _get_plugins()
 
 
-        return config
+        return sort_dict(config)
 
 
     def register(
@@ -273,6 +335,7 @@ class RobieConfig(Config):
         *,
         client: Optional[Type[RobieClientParams]] = None,
         plugin: Optional[Type[RobiePluginParams]] = None,
+        source: Optional[DictStrAny] = None,
     ) -> None:
         """
         Register the plugin parameters for parameter processing.
@@ -280,13 +343,36 @@ class RobieConfig(Config):
         :param name: Name of the object within the Robie config.
         :param client: Class definition for the instantiation.
         :param plugin: Class definition for the instantiation.
+        :param source: Source for the parameters instantiation.
         """
 
         clients = self.__clients
         plugins = self.__plugins
+        inserts = self.__inserts
+
+
+        def _insert(
+            target: _INSERT,
+        ) -> None:
+
+            if source is None:
+                return None
+
+            setate(  # NOCVR
+                inserts,  # type: ignore
+                f'{target}/{name}',
+                source)
+
 
         if client is not None:
+
             clients[name] = client
 
+            _insert('clients')
+
+
         if plugin is not None:
+
             plugins[name] = plugin
+
+            _insert('plugins')
