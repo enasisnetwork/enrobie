@@ -42,7 +42,8 @@ def test_IRCClient(
     client = clients['ircbot']
 
     assert isinstance(
-        client, IRCClient)
+        client,
+        IRCClient)
 
 
     attrs = lattrs(client)
@@ -106,8 +107,10 @@ def test_IRCClient_message(
         RobieQueue(robie))
 
 
+    _event = 'PING :123456789'
+
     event = ClientEvent(
-        'PING :123456789')
+        client.client, _event)
 
     client.put_message(
         queue, event)

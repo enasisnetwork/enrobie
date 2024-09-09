@@ -14,29 +14,16 @@ from encommon.types import instr
 from encommon.types import lattrs
 
 from enconnect.mattermost import ClientEvent
+from enconnect.mattermost.test import EVENTS
 
 from pytest import raises
 
+from ..client import MTMClient
 from ..command import MTMCommand
 from ..message import MTMMessage
 
 if TYPE_CHECKING:
     from ....robie import Robie
-
-
-
-EVENT = {
-    'event': 'posted',
-    'seq': 5,
-    'broadcast': {
-        'channel_id': 'nwyxekd4k7'},
-    'data': {
-        'channel_type': 'P',
-        'post': (
-            '{"user_id":"ietyrmdt5b",'
-            '"channel_id":"nwyxekd4k7",'
-            '"message":"Hello"}'),
-        'sender_name': '@robert'}}
 
 
 
@@ -54,9 +41,14 @@ def test_MTMMessage(
 
     model = MTMMessage
 
-    event = ClientEvent(EVENT)
-
     client = clients['mtmbot']
+
+    assert isinstance(
+        client, MTMClient)
+
+    event = ClientEvent(
+        client.client,
+        EVENTS[0])
 
 
     item = model(
@@ -89,11 +81,11 @@ def test_MTMMessage(
 
     assert item.family == 'mattermost'
 
-    assert item.kind == 'chanmsg'
+    assert item.kind == 'privmsg'
 
     assert item.event == event
 
-    assert not item.isme(robie)
+    assert not item.isme
 
 
     assert event.type == 'posted'
@@ -101,16 +93,17 @@ def test_MTMMessage(
     assert len(event.data) == 3
     assert event.broadcast
     assert len(event.broadcast) == 1
-    assert event.seqno == 5
+    assert event.seqno == 4
     assert not event.status
     assert not event.error
     assert not event.seqre
 
-    assert event.kind == 'chanmsg'
+    assert event.kind == 'privmsg'
     assert event.author == (
-        '@robert', 'ietyrmdt5b')
-    assert event.recipient == 'nwyxekd4k7'
-    assert event.message == 'Hello'
+        '@user', 'userid')
+    assert event.recipient == 'privid'
+    assert event.message == (
+        'Hello mtmbot')
 
 
 
@@ -128,12 +121,19 @@ def test_MTMMessage_reply(
 
     model = MTMMessage
 
+    client = clients['mtmbot']
+
+    assert isinstance(
+        client, MTMClient)
+
 
     item = model(
-        clients['mtmbot'],
-        ClientEvent(EVENT))
+        client,
+        ClientEvent(
+            client.client,
+            EVENTS[0]))
 
-    assert not item.isme(robie)
+    assert not item.isme
 
 
     reply = item.reply(
@@ -153,5 +153,5 @@ def test_MTMMessage_reply(
     assert not reply.params
 
     assert reply.json == {
-        'channel_id': 'nwyxekd4k7',
+        'channel_id': 'privid',
         'message': 'Hello'}

@@ -42,7 +42,8 @@ def test_MTMClient(
     client = clients['mtmbot']
 
     assert isinstance(
-        client, MTMClient)
+        client,
+        MTMClient)
 
 
     attrs = lattrs(client)
@@ -106,9 +107,12 @@ def test_MTMClient_message(
         RobieQueue(robie))
 
 
-    event = ClientEvent({
+    _event = {
         'status': 'OK',
-        'seq_reply': 1})
+        'seq_reply': 1}
+
+    event = ClientEvent(
+        client.client, _event)
 
     client.put_message(
         queue, event)

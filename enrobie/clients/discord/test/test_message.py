@@ -14,28 +14,16 @@ from encommon.types import instr
 from encommon.types import lattrs
 
 from enconnect.discord import ClientEvent
+from enconnect.discord.test import EVENTS
 
 from pytest import raises
 
+from ..client import DSCClient
 from ..command import DSCCommand
 from ..message import DSCMessage
 
 if TYPE_CHECKING:
     from ....robie import Robie
-
-
-
-EVENT = {
-    't': 'MESSAGE_CREATE',
-    's': 3,
-    'op': 0,
-    'd': {
-        'id': '33330001',
-        'channel_id': '22220001',
-        'author': {
-            'id': '44444444',
-            'username': 'Author'},
-        'content': 'Hello person'}}
 
 
 
@@ -53,9 +41,14 @@ def test_DSCMessage(
 
     model = DSCMessage
 
-    event = ClientEvent(EVENT)
-
     client = clients['dscbot']
+
+    assert isinstance(
+        client, DSCClient)
+
+    event = ClientEvent(
+        client.client,
+        EVENTS[0])
 
 
     item = model(
@@ -92,24 +85,24 @@ def test_DSCMessage(
 
     assert item.event == event
 
-    assert not item.isme(robie)
+    assert not item.isme
 
 
     assert event.type == (
         'MESSAGE_CREATE')
     assert event.opcode == 0
     assert event.data
-    assert len(event.data) == 4
+    assert len(event.data) == 3
     assert event.seqno == 3
     assert len(event.original) == 4
 
     assert event.kind == 'privmsg'
     assert event.author == (
-        'Author', '44444444')
+        'user', 'userid')
     assert event.recipient == (
-        None, '22220001')
+        None, 'privid')
     assert event.message == (
-        'Hello person')
+        'Hello dscbot')
 
 
 
@@ -127,12 +120,19 @@ def test_DSCMessage_reply(
 
     model = DSCMessage
 
+    client = clients['dscbot']
+
+    assert isinstance(
+        client, DSCClient)
+
 
     item = model(
-        clients['dscbot'],
-        ClientEvent(EVENT))
+        client,
+        ClientEvent(
+            client.client,
+            EVENTS[0]))
 
-    assert not item.isme(robie)
+    assert not item.isme
 
 
     reply = item.reply(

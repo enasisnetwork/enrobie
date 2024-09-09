@@ -75,6 +75,19 @@ class RobieMessage(RobieQueueItem):
         raise NotImplementedError
 
 
+    @property
+    def isme(
+        self,
+    ) -> bool:
+        """
+        Return the boolean indicating message origin from client.
+
+        :returns: Boolean indicating message origin from client.
+        """
+
+        raise NotImplementedError
+
+
     def reply(
         self,
         robie: 'Robie',
@@ -85,20 +98,6 @@ class RobieMessage(RobieQueueItem):
 
         :param robie: Primary class instance for Chatting Robie.
         :param content: Content that will be source of message.
-        """
-
-        raise NotImplementedError
-
-
-    def isme(
-        self,
-        robie: 'Robie',
-    ) -> bool:
-        """
-        Return the boolean indicating message origin from client.
-
-        :param robie: Primary class instance for Chatting Robie.
-        :returns: Boolean indicating message origin from client.
         """
 
         raise NotImplementedError

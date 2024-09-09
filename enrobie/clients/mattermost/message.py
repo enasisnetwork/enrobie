@@ -72,6 +72,19 @@ class MTMMessage(RobieMessage):
         return self.event.kind
 
 
+    @property
+    def isme(
+        self,
+    ) -> bool:
+        """
+        Return the boolean indicating message origin from client.
+
+        :returns: Boolean indicating message origin from client.
+        """
+
+        return self.event.isme
+
+
     def reply(
         self,
         robie: 'Robie',
@@ -100,39 +113,3 @@ class MTMMessage(RobieMessage):
 
         return client.compose(
             target, content)
-
-
-    def isme(
-        self,
-        robie: 'Robie',
-    ) -> bool:
-        """
-        Return the boolean indicating message origin from client.
-
-        .. note::
-           Completely redundant with the other chatting clients.
-           Currently the event attribute is not in parent class.
-
-        :param robie: Primary class instance for Chatting Robie.
-        :returns: Boolean indicating message origin from client.
-        """
-
-        from .client import MTMClient
-
-        childs = robie.childs
-        clients = childs.clients
-
-        event = self.event
-
-        _client = clients[
-            self.client]
-
-        assert isinstance(
-            _client, MTMClient)
-
-        client = _client.client
-
-        if client is None:
-            return False
-
-        return event.isme(client)
