@@ -55,7 +55,7 @@ def test_DSCMessage(
 
     event = ClientEvent(EVENT)
 
-    client = clients['ircbot']
+    client = clients['dscbot']
 
 
     item = model(
