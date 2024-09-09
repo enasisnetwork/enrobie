@@ -66,14 +66,19 @@ class StatusPlugin(RobiePlugin):
 
             mitem = mqueue.get()
 
-            if mitem.isme:
-                continue
-
+            time = mitem.time
             kind = mitem.kind
+            isme = mitem.isme
             family = mitem.family
 
             if kind not in kinds:
                 continue
+
+            if isme is True:
+                continue
+
+            if time.since > 15:
+                continue  # NOCVR
 
             event = getattr(
                 mitem, 'event')
