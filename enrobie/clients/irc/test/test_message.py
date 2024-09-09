@@ -84,6 +84,8 @@ def test_IRCMessage(
 
     assert item.event == event
 
+    assert not item.isme(robie)
+
 
     assert event.prefix == 'n!u@h'
     assert event.command == 'PRIVMSG'
@@ -117,6 +119,9 @@ def test_IRCMessage_reply(
     item = model(
         clients['ircbot'],
         ClientEvent(EVENT))
+
+    assert not item.isme(robie)
+
 
     reply = item.reply(
         robie, 'Hello')

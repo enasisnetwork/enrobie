@@ -39,6 +39,18 @@ class DSCClient(RobieClient):
     :param robie: Primary class instance for Chatting Robie.
     """
 
+    __client: Optional[Client]
+
+
+    def __post__(
+        self,
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
+
+        self.__client = None
+
 
     def validate(
         self,
@@ -59,6 +71,19 @@ class DSCClient(RobieClient):
         """
 
         return 'discord'
+
+
+    @property
+    def client(
+        self,
+    ) -> Optional[Client]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__client
 
 
     def operate(  # noqa: CFQ001
@@ -133,6 +158,8 @@ class DSCClient(RobieClient):
 
         source = client.mqueue
 
+        self.__client = client
+
 
         def _operate() -> None:
 
@@ -190,6 +217,8 @@ class DSCClient(RobieClient):
 
 
         client.stop()
+
+        self.__client = None
 
         while daerht.is_alive():
             daerht.join(1)

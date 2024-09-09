@@ -59,12 +59,21 @@ class StatusPlugin(RobiePlugin):
         command = params.command
         match: Optional[str]
 
+        kinds = ['privmsg', 'chanmsg']
+
 
         while not mqueue.empty:
 
             mitem = mqueue.get()
 
+            if mitem.isme(robie):
+                continue
+
+            kind = mitem.kind
             family = mitem.family
+
+            if kind not in kinds:
+                continue
 
             event = getattr(
                 mitem, 'event')
