@@ -20,13 +20,11 @@ from enrobie import VERSION  # noqa: E402
 project = 'enrobie'
 copyright = '2024, Enasis Network'
 author = 'Enasis Network'
-master_doc = 'index'
 nitpicky = True
 version = VERSION
 
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx_autodoc_typehints',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.viewcode',
@@ -37,8 +35,23 @@ html_theme = 'sphinx_rtd_theme'
 always_document_param_types = True
 
 intersphinx_mapping = {
-    'encommon': ('https://encommon.readthedocs.io/en/stable', None),
-    'enconnect': ('https://enconnect.readthedocs.io/en/stable', None),
-    'pathlib': ('https://docs.python.org/3', None),
+    'encommon': ('https://encommon.readthedocs.io/en/latest', None),
+    'enconnect': ('https://enconnect.readthedocs.io/en/latest', None),
+    'pydantic': ('https://docs.pydantic.dev/latest', None),
     'pytest': ('https://docs.pytest.org/latest', None),
     'python': ('https://docs.python.org/3', None)}
+
+nitpick_ignore = [
+
+    # Seems to be an issue using Pydantic
+    ('py:class', 'Annotated'),
+    ('py:class', 'Field'),
+    ('py:class', 'FieldInfo'),
+    ('py:class', 'Ge'),
+    ('py:class', 'Le'),
+    ('py:class', 'MinLen'),
+    ('py:class', 'NoneType'),
+
+    # Not sure what causes these warnings
+    ('py:class', 'pytest_mock.plugin.MockerFixture'),
+    ('py:class', 'respx.router.MockRouter')]
