@@ -41,8 +41,8 @@ def test_DSCCommand(
 
     item = model(
         client, 'delete',
-        '/channels/22220001'
-        '/messages/33330001')
+        '/channels/privid'
+        '/messages/msgunq')
 
 
     attrs = lattrs(item)
@@ -76,7 +76,7 @@ def test_DSCCommand(
 
     assert item.method == 'delete'
 
-    assert item.path[-4:] == '0001'
+    assert item.path[-6:] == 'msgunq'
 
     assert not item.params
 

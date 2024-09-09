@@ -141,8 +141,8 @@ def test_DSCClient_command(
 
     client.put_command(
         queue, 'delete',
-        'channels/22220001/'
-        'messages/33330001')
+        'channels/privid/'
+        'messages/msgunq')
 
 
 

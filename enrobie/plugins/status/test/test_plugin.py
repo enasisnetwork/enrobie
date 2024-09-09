@@ -7,17 +7,23 @@ is permitted, for more information consult the project license file.
 
 
 
+from copy import deepcopy
 from threading import Thread
 from time import sleep as block_sleep
 from typing import TYPE_CHECKING
 
+from encommon.types import getate
 from encommon.types import inrepr
 from encommon.types import instr
 from encommon.types import lattrs
+from encommon.types import setate
 
+from enconnect.discord.test import EVENTS as DSCEVENTS
 from enconnect.fixtures import DSCClientSocket
 from enconnect.fixtures import IRCClientSocket
 from enconnect.fixtures import MTMClientSocket
+from enconnect.irc.test import EVENTS as IRCEVENTS
+from enconnect.mattermost.test import EVENTS as MTMEVENTS
 
 from ..plugin import StatusPlugin
 
@@ -27,62 +33,57 @@ if TYPE_CHECKING:
 
 
 
-DSCEVENTS = [
+DSCEVENTS = deepcopy(DSCEVENTS)
+IRCEVENTS = deepcopy(IRCEVENTS)
+MTMEVENTS = deepcopy(MTMEVENTS)
 
-    {'t': 'MESSAGE_CREATE',
-     's': 3,
-     'op': 0,
-     'd': {
-         'id': '33330001',
-         'channel_id': '22220001',
-         'author': {
-             'id': '44444444',
-             'username': 'Author'},
-         'content': '!status'}},
 
-    {'t': 'MESSAGE_CREATE',
-     's': 4,
-     'op': 0,
-     'd': {
-         'id': '33330001',
-         'channel_id': '22220001',
-         'author': {
-             'id': '10101010',
-             'username': 'dscbot'},
-         'content': 'All good'}}]
 
-IRCEVENTS = [
-    (':n!u@h PRIVMSG '
-     '#chan :!status'),
+setate(
+    DSCEVENTS[0],
+    'd/content',
+    '!status')
 
-    (':ircbot!u@h PRIVMSG '
-     '#chan :All good')]
+setate(
+    DSCEVENTS[1],
+    'd/content',
+    '!status')
 
-MTMEVENTS = [
 
-    {'event': 'posted',
-     'seq': 5,
-     'broadcast': {
-         'channel_id': 'nwyxekd4k7'},
-     'data': {
-         'channel_type': 'P',
-         'post': (
-             '{"user_id":"ietyrmdt5b",'
-             '"channel_id":"nwyxekd4k7",'
-             '"message":"!status"}'),
-         'sender_name': '@robert'}},
 
-    {'event': 'posted',
-     'seq': 5,
-     'broadcast': {
-         'channel_id': 'nwyxekd4k7'},
-     'data': {
-         'channel_type': 'P',
-         'post': (
-             '{"user_id":"f4nf1ok9bj",'
-             '"channel_id":"nwyxekd4k7",'
-             '"message":"All good"}'),
-         'sender_name': '@mtmbot'}}]
+IRCEVENTS[1] = (
+    IRCEVENTS[1]
+    .replace(
+        'Hello ircbot',
+        '!status'))
+
+IRCEVENTS[3] = (
+    IRCEVENTS[3]
+    .replace(
+        'Hello world',
+        '!status'))
+
+
+
+setate(
+    MTMEVENTS[0],
+    'data/post',
+    (getate(
+        MTMEVENTS[0],
+        'data/post')
+     .replace(
+         'Hello mtmbot',
+         '!status')))
+
+setate(
+    MTMEVENTS[1],
+    'data/post',
+    (getate(
+        MTMEVENTS[1],
+        'data/post')
+     .replace(
+         'Hello world',
+         '!status')))
 
 
 

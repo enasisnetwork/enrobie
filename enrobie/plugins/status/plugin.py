@@ -81,11 +81,11 @@ class StatusPlugin(RobiePlugin):
 
             match = None
 
-            if family == 'irc':
-                match = command.irc
-
             if family == 'discord':
                 match = command.dsc
+
+            if family == 'irc':
+                match = command.irc
 
             if family == 'mattermost':
                 match = command.mtm

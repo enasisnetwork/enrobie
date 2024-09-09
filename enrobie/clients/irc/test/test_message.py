@@ -14,6 +14,7 @@ from encommon.types import instr
 from encommon.types import lattrs
 
 from enconnect.irc import ClientEvent
+from enconnect.irc.test import EVENTS
 
 from pytest import raises
 
@@ -22,12 +23,6 @@ from ..message import IRCMessage
 
 if TYPE_CHECKING:
     from ....robie import Robie
-
-
-
-EVENT = (
-    ':n!u@h PRIVMSG #chan'
-    ' :Hello channel')
 
 
 
@@ -45,7 +40,7 @@ def test_IRCMessage(
 
     model = IRCMessage
 
-    event = ClientEvent(EVENT)
+    event = ClientEvent(EVENTS[1])
 
     client = clients['ircbot']
 
@@ -80,24 +75,25 @@ def test_IRCMessage(
 
     assert item.family == 'irc'
 
-    assert item.kind == 'chanmsg'
+    assert item.kind == 'privmsg'
 
     assert item.event == event
 
     assert not item.isme(robie)
 
 
-    assert event.prefix == 'n!u@h'
+    assert event.prefix == (
+        'nick!user@host')
     assert event.command == 'PRIVMSG'
     assert event.params
     assert len(event.params) == 20
-    assert len(event.original) == 35
+    assert len(event.original) == 44
 
-    assert event.kind == 'chanmsg'
-    assert event.author == 'n'
-    assert event.recipient == '#chan'
+    assert event.kind == 'privmsg'
+    assert event.author == 'nick'
+    assert event.recipient == 'ircbot'
     assert event.message == (
-        'Hello channel')
+        'Hello ircbot')
 
 
 
@@ -118,7 +114,7 @@ def test_IRCMessage_reply(
 
     item = model(
         clients['ircbot'],
-        ClientEvent(EVENT))
+        ClientEvent(EVENTS[1]))
 
     assert not item.isme(robie)
 
@@ -128,7 +124,7 @@ def test_IRCMessage_reply(
 
 
     event = ClientEvent(
-        EVENT.replace(
+        EVENTS[1].replace(
             '#chan', 'ircbot'))
 
     client = clients['ircbot']
@@ -145,4 +141,4 @@ def test_IRCMessage_reply(
 
 
     assert reply.event == (
-        'PRIVMSG n :Hello')
+        'PRIVMSG nick :Hello')
