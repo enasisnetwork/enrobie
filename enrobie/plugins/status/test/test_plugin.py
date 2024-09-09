@@ -157,8 +157,6 @@ def test_StatusPlugin_cover(
     client_ircsock(IRCEVENTS)
     client_mtmsock(MTMEVENTS)
 
-    service.robie.logger.start()
-
     service.start()
 
 
