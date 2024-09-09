@@ -14,6 +14,8 @@ from typing import Literal
 from typing import Optional
 from typing import TYPE_CHECKING
 
+from encommon.types import NCNone
+
 from enconnect.irc import Client
 from enconnect.irc import ClientEvent
 
@@ -37,6 +39,18 @@ class IRCClient(RobieClient):
     :param robie: Primary class instance for Chatting Robie.
     """
 
+    __client: Optional[Client]
+
+
+    def __post__(
+        self,
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
+
+        self.__client = None
+
 
     def validate(
         self,
@@ -57,6 +71,19 @@ class IRCClient(RobieClient):
         """
 
         return 'irc'
+
+
+    @property
+    def client(
+        self,
+    ) -> Optional[Client]:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__client
 
 
     def operate(  # noqa: CFQ001,CFQ004
@@ -91,7 +118,7 @@ class IRCClient(RobieClient):
         def _get_cqueue() -> None:
 
             if not client.connected:
-                return None
+                return NCNone
 
             citem = cqueue.get()
 
@@ -129,6 +156,8 @@ class IRCClient(RobieClient):
             _debug_logger)
 
         source = client.mqueue
+
+        self.__client = client
 
 
         def _operate() -> None:
@@ -187,6 +216,8 @@ class IRCClient(RobieClient):
 
 
         client.stop()
+
+        self.__client = None
 
         while daerht.is_alive():
             daerht.join(1)

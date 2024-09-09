@@ -28,6 +28,7 @@ if TYPE_CHECKING:
 
 
 DSCEVENTS = [
+
     {'t': 'MESSAGE_CREATE',
      's': 3,
      'op': 0,
@@ -37,13 +38,28 @@ DSCEVENTS = [
          'author': {
              'id': '44444444',
              'username': 'Author'},
-         'content': '!status'}}]
+         'content': '!status'}},
+
+    {'t': 'MESSAGE_CREATE',
+     's': 4,
+     'op': 0,
+     'd': {
+         'id': '33330001',
+         'channel_id': '22220001',
+         'author': {
+             'id': '10101010',
+             'username': 'dscbot'},
+         'content': 'All good'}}]
 
 IRCEVENTS = [
     (':n!u@h PRIVMSG '
-     '#chan :!status')]
+     '#chan :!status'),
+
+    (':ircbot!u@h PRIVMSG '
+     '#chan :All good')]
 
 MTMEVENTS = [
+
     {'event': 'posted',
      'seq': 5,
      'broadcast': {
@@ -54,7 +70,19 @@ MTMEVENTS = [
              '{"user_id":"ietyrmdt5b",'
              '"channel_id":"nwyxekd4k7",'
              '"message":"!status"}'),
-         'sender_name': '@robert'}}]
+         'sender_name': '@robert'}},
+
+    {'event': 'posted',
+     'seq': 5,
+     'broadcast': {
+         'channel_id': 'nwyxekd4k7'},
+     'data': {
+         'channel_type': 'P',
+         'post': (
+             '{"user_id":"f4nf1ok9bj",'
+             '"channel_id":"nwyxekd4k7",'
+             '"message":"All good"}'),
+         'sender_name': '@mtmbot'}}]
 
 
 

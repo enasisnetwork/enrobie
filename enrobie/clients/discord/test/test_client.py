@@ -50,7 +50,8 @@ def test_DSCClient(
     assert attrs == [
         '_RobieChild__robie',
         '_RobieChild__name',
-        '_RobieChild__params']
+        '_RobieChild__params',
+        '_DSCClient__client']
 
 
     assert inrepr(

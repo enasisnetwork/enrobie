@@ -93,6 +93,8 @@ def test_MTMMessage(
 
     assert item.event == event
 
+    assert not item.isme(robie)
+
 
     assert event.type == 'posted'
     assert event.data
@@ -106,7 +108,7 @@ def test_MTMMessage(
 
     assert event.kind == 'chanmsg'
     assert event.author == (
-        'ietyrmdt5b', '@robert')
+        '@robert', 'ietyrmdt5b')
     assert event.recipient == 'nwyxekd4k7'
     assert event.message == 'Hello'
 
@@ -130,6 +132,9 @@ def test_MTMMessage_reply(
     item = model(
         clients['mtmbot'],
         ClientEvent(EVENT))
+
+    assert not item.isme(robie)
+
 
     reply = item.reply(
         robie, 'Hello')

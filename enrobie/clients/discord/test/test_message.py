@@ -55,7 +55,7 @@ def test_DSCMessage(
 
     event = ClientEvent(EVENT)
 
-    client = clients['ircbot']
+    client = clients['dscbot']
 
 
     item = model(
@@ -92,6 +92,8 @@ def test_DSCMessage(
 
     assert item.event == event
 
+    assert not item.isme(robie)
+
 
     assert event.type == (
         'MESSAGE_CREATE')
@@ -103,7 +105,7 @@ def test_DSCMessage(
 
     assert event.kind == 'privmsg'
     assert event.author == (
-        '44444444', 'Author')
+        'Author', '44444444')
     assert event.recipient == (
         None, '22220001')
     assert event.message == (
@@ -129,6 +131,9 @@ def test_DSCMessage_reply(
     item = model(
         clients['dscbot'],
         ClientEvent(EVENT))
+
+    assert not item.isme(robie)
+
 
     reply = item.reply(
         robie, 'Hello')

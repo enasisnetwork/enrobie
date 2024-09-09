@@ -88,3 +88,17 @@ class RobieMessage(RobieQueueItem):
         """
 
         raise NotImplementedError
+
+
+    def isme(
+        self,
+        robie: 'Robie',
+    ) -> bool:
+        """
+        Return the boolean indicating message origin from client.
+
+        :param robie: Primary class instance for Chatting Robie.
+        :returns: Boolean indicating message origin from client.
+        """
+
+        raise NotImplementedError
