@@ -70,6 +70,8 @@ def test_MTMClient(
 
     assert client.robie
 
+    assert client.enable
+
     assert client.name == 'mtmbot'
 
     assert client.family == 'mattermost'

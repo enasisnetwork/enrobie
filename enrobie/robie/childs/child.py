@@ -113,6 +113,19 @@ class RobieChild:
 
 
     @property
+    def enable(
+        self,
+    ) -> bool:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.params.enable
+
+
+    @property
     def name(
         self,
     ) -> str:

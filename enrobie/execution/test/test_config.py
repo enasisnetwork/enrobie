@@ -7,7 +7,7 @@ is permitted, for more information consult the project license file.
 
 
 
-from ..service import arguments
+from ..config import arguments
 
 
 
@@ -22,6 +22,4 @@ def test_arguments() -> None:
     assert sargs == {
         'config': 'path',
         'console': False,
-        'debug': False,
-        'pmessage': False,
-        'pcommand': False}
+        'debug': False}

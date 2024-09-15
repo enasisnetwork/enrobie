@@ -9,17 +9,15 @@
 
 PYTHON ?= ../../Execution/python311/bin/python
 
-VENV_PACKAGE ?= .venv-package
-VENV_DEVELOP ?= .venv-develop
+VENVP ?= .venv-package
+VENVD ?= .venv-develop
 
 
-
-MAKE_PYTHON ?= /usr/bin/env python3
 
 MAKE_COLOR ?= 6
 
 MAKE_PRINT = @COLOR=$(MAKE_COLOR) \
-	$(MAKE_PYTHON) -Bc 'if 1: \
+	$(PYTHON) -Bc 'if 1: \
 		from makefile import makeout; \
 		makeout("$(1)", "$(2)");'
 
@@ -30,7 +28,7 @@ MAKE_PR3NT = $(call MAKE_PRINT,$(1),more)
 
 
 PROJECT := $(shell \
-	$(MAKE_PYTHON) -Bc 'if 1: \
+	$(PYTHON) -Bc 'if 1: \
 		from makefile import PROJECT; \
 		print(PROJECT.name);')
 
@@ -41,7 +39,7 @@ help:
 	@## Construct this helpful menu of recipes
 	$(call MAKE_PRINT)
 	@COLOR=$(MAKE_COLOR) \
-		$(MAKE_PYTHON) -B makefile.py
+		$(PYTHON) -B makefile.py
 	$(call MAKE_PRINT)
 
 
@@ -230,40 +228,40 @@ venv-create: \
 	$(call MAKE_PR3NT,\
 		<c37>Building <c90>develop<c37> \
 		virtual environment..<c0>)
-	@$(PYTHON) -m venv $(VENV_DEVELOP)
+	@$(PYTHON) -m venv $(VENVD)
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Upgrading <c90>develop<c37> \
 		virtual environment..<c0>)
-	@$(VENV_DEVELOP)/bin/pip install \
+	@$(VENVD)/bin/pip install \
 		--upgrade pip 1>/dev/null
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Preparing <c90>develop<c37> \
 		virtual environment..<c0>)
-	@$(VENV_DEVELOP)/bin/pip install \
+	@$(VENVD)/bin/pip install \
 		-r reqs-develop.txt 1>/dev/null
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Building <c90>package<c37> \
 		virtual environment..<c0>)
-	@$(PYTHON) -m venv $(VENV_PACKAGE)
+	@$(PYTHON) -m venv $(VENVP)
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Upgrading <c90>package<c37> \
 		virtual environment..<c0>)
-	@$(VENV_PACKAGE)/bin/pip install \
+	@$(VENVP)/bin/pip install \
 		--upgrade pip 1>/dev/null
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Preparing <c90>package<c37> \
 		virtual environment..<c0>)
-	@$(VENV_PACKAGE)/bin/pip install \
+	@$(VENVP)/bin/pip install \
 		-r reqs-package.txt 1>/dev/null
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
@@ -281,13 +279,13 @@ venv-remove:
 	$(call MAKE_PR3NT,\
 		<c37>Removing <c90>develop<c37> \
 		virtual environment..<c0>)
-	@rm -rf $(VENV_DEVELOP)
+	@rm -rf $(VENVD)
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Removing <c90>package<c37> \
 		virtual environment..<c0>)
-	@rm -rf $(VENV_PACKAGE)
+	@rm -rf $(VENVP)
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
@@ -308,7 +306,7 @@ pytest: \
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>pytest<c37> \
 		in <c90>$(PROJECT)<c37>..<c0>)
-	@$(VENV_PACKAGE)/bin/pytest -v \
+	@$(VENVP)/bin/pytest -v \
 		$(PROJECT)/$(subpackage) \
 		--numprocesses=4 \
 		--cov=$(PROJECT)/$(subpackage) \
@@ -320,13 +318,13 @@ pytest: \
 	$(call MAKE_PR3NT,\
 		<c37>Write <c90>coveragepy<c37> \
 		output to <c90>htmlcov<c37>..<c0>)
-	@$(VENV_DEVELOP)/bin/coverage html 1>/dev/null
+	@$(VENVD)/bin/coverage html 1>/dev/null
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Write <c90>coveragepy<c37> \
 		output to <c90>coverage.xml<c37>..<c0>)
-	@$(VENV_DEVELOP)/bin/coverage xml 1>/dev/null
+	@$(VENVD)/bin/coverage xml 1>/dev/null
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
@@ -345,7 +343,7 @@ mypy: \
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>mypy<c37> \
 		in <c90>$(PROJECT)<c37>..<c0>)
-	@$(VENV_DEVELOP)/bin/mypy \
+	@$(VENVD)/bin/mypy \
 		--no-error-summary \
 		$(mypy_args) $(PROJECT)
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
@@ -353,7 +351,7 @@ mypy: \
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>mypy<c37> \
 		in <c90>docs<c37>..<c0>)
-	@$(VENV_DEVELOP)/bin/mypy \
+	@$(VENVD)/bin/mypy \
 		--no-error-summary \
 		$(mypy_args) docs
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
@@ -361,7 +359,7 @@ mypy: \
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>mypy<c37> \
 		on <c90>makefile.py<c37>..<c0>)
-	@$(VENV_DEVELOP)/bin/mypy \
+	@$(VENVD)/bin/mypy \
 		--no-error-summary \
 		$(mypy_args) makefile.py
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
@@ -381,20 +379,20 @@ flake8: \
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>flake8<c37> \
 		in <c90>$(PROJECT)<c37>..<c0>)
-	@$(VENV_DEVELOP)/bin/flake8 \
+	@$(VENVD)/bin/flake8 \
 		$(PROJECT) --allow-star-arg-any
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>flake8<c37> \
 		in <c90>docs<c37>..<c0>)
-	@$(VENV_DEVELOP)/bin/flake8 docs
+	@$(VENVD)/bin/flake8 docs
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>flake8<c37> \
 		on <c90>makefile.py<c37>..<c0>)
-	@$(VENV_DEVELOP)/bin/flake8 ./makefile.py
+	@$(VENVD)/bin/flake8 ./makefile.py
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
@@ -412,7 +410,7 @@ pylint: \
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>pylint<c37> \
 		in <c90>$(PROJECT)<c37>..<c0>)
-	@$(VENV_DEVELOP)/bin/pylint \
+	@$(VENVD)/bin/pylint \
 		-E $(PROJECT) \
 		--persistent=n \
 		-d duplicate-code
@@ -421,7 +419,7 @@ pylint: \
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>pylint<c37> \
 		in <c90>docs<c37>..<c0>)
-	@$(VENV_DEVELOP)/bin/pylint \
+	@$(VENVD)/bin/pylint \
 		-E docs/*.py \
 		--persistent=n \
 		-d duplicate-code
@@ -430,7 +428,7 @@ pylint: \
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>pylint<c37> \
 		on <c90>makefile.py<c37>..<c0>)
-	@$(VENV_DEVELOP)/bin/pylint \
+	@$(VENVD)/bin/pylint \
 		-E makefile.py \
 		--persistent=n \
 		-d duplicate-code
@@ -449,21 +447,21 @@ yamllint: \
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>yamllint<c37> \
 		in <c90>$(PROJECT)<c37>..<c0>)
-	@$(VENV_DEVELOP)/bin/yamllint \
+	@$(VENVD)/bin/yamllint \
 		-s $(PROJECT)
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>yamllint<c37> \
 		on <c90>.yamllint<c37>..<c0>)
-	@$(VENV_DEVELOP)/bin/yamllint \
+	@$(VENVD)/bin/yamllint \
 		-s .yamllint
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>yamllint<c37> \
 		in <c90>.github<c37>..<c0>)
-	@$(VENV_DEVELOP)/bin/yamllint \
+	@$(VENVD)/bin/yamllint \
 		-s .github
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
@@ -484,9 +482,9 @@ sphinx: \
 	$(call MAKE_PR3NT,\
 		<c37>Building <c90>Sphinx<c37>\
 		documentation..<c0>)
-	@$(VENV_DEVELOP)/bin/sphinx-apidoc \
+	@$(VENVD)/bin/sphinx-apidoc \
 		-o docs $(PROJECT)
-	@$(VENV_DEVELOP)/bin/sphinx-build \
+	@$(VENVD)/bin/sphinx-build \
 		-b html docs/ docs/html
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
@@ -505,10 +503,12 @@ outdated: \
 	$(call MAKE_PR3NT,\
 		<c37>Process <c90>outdated<c37> \
 		installed <c90>packages<c37>..<c0>)
-	@$(VENV_PACKAGE)/bin/pip list \
-		--outdated | egrep -v '^(pip|setuptools) '
-	@$(VENV_PACKAGE)/bin/pip freeze \
-		-r reqs-package.txt > .reqs-package.txt
+	@$(VENVP)/bin/pip list \
+		--outdated \
+		| egrep -v '^(pip|setuptools) '
+	@$(VENVP)/bin/pip freeze \
+		-r reqs-package.txt \
+		> .reqs-package.txt
 	@diff -B -I '^#' \
 		--color reqs-install.txt \
 		.reqs-package.txt || true
@@ -546,11 +546,11 @@ pypackage: \
 	$(call MAKE_PR3NT,\
 		<c37>Create <c90>package<c37> \
 		build directory..<c0>)
-	$(VENV_DEVELOP)/bin/python \
+	$(VENVD)/bin/python \
 		-m build \
 		--sdist --wheel \
 		--outdir $(PROJECT).dist
-	$(VENV_DEVELOP)/bin/python \
+	$(VENVD)/bin/python \
 		-m twine check \
 		$(PROJECT).dist/*
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
@@ -571,7 +571,7 @@ pypi-upload-test: \
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>pypi-upload-test<c0>)
 	@#
-	@$(MAKE_PYTHON) -Bc 'if 1:\
+	@$(VENVD)/bin/python -Bc 'if 1:\
 		confirm = input(\
 			"Are you sure? [y/N] ");\
 		assert confirm == "y";'
@@ -579,7 +579,7 @@ pypi-upload-test: \
 	$(call MAKE_PR3NT,\
 		<c37>Upload to <c90>package<c37> \
 		to <c90>test<c37> servers..<c0>)
-	$(VENV_DEVELOP)/bin/python \
+	$(VENVD)/bin/python \
 		-m twine upload \
 		--verbose \
 		--repository testpypi \
@@ -596,12 +596,12 @@ pypi-upload-prod: \
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>pypi-upload-prod<c0>)
 	@#
-	@$(MAKE_PYTHON) -Bc 'if 1:\
+	@$(VENVD)/bin/python -Bc 'if 1:\
 		confirm = input(\
 			"Are you sure? [y/N] ");\
 		assert confirm == "y";'
 	@#
-	@$(MAKE_PYTHON) -Bc 'if 1:\
+	@$(VENVD)/bin/python -Bc 'if 1:\
 		confirm = input(\
 			"Do you understand this "\
 			"is production? [y/N] ");\
@@ -610,7 +610,7 @@ pypi-upload-prod: \
 	$(call MAKE_PR3NT,\
 		<c37>Upload to <c90>package<c37> \
 		to <c90>prod<c37> servers..<c0>)
-	$(VENV_DEVELOP)/bin/python \
+	$(VENVD)/bin/python \
 		-m twine upload \
 		--verbose \
 		$(PROJECT).dist/*
@@ -624,11 +624,11 @@ ifndef PYTHON
 endif
 
 .check-venv-develop:
-ifeq (,$(wildcard $(VENV_DEVELOP)))
+ifeq (,$(wildcard $(VENVD)))
 	$(error Develop environment does not exist)
 endif
 
 .check-venv-package:
-ifeq (,$(wildcard $(VENV_PACKAGE)))
+ifeq (,$(wildcard $(VENVP)))
 	$(error Package environment does not exist)
 endif

@@ -35,6 +35,8 @@ class RobieChilds:
     :param robie: Primary class instance for Chatting Robie.
     """
 
+    __robie: 'Robie'
+
     __clients: RobieClients
     __plugins: RobiePlugins
 
