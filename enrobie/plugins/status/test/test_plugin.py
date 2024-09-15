@@ -129,6 +129,8 @@ def test_StatusPlugin(
 
     assert plugin.robie
 
+    assert plugin.enable
+
     assert plugin.name == 'status'
 
     assert plugin.kind == 'plugin'

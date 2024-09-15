@@ -23,4 +23,4 @@ class RobieChildParams(BaseModel, extra='forbid'):
     enable: Annotated[
         bool,
         Field(False,
-              description='Determine whether plugin enabled')]
+              description='Determine whether child enabled')]

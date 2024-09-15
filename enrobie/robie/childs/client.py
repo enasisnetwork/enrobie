@@ -10,6 +10,8 @@ is permitted, for more information consult the project license file.
 from typing import Literal
 from typing import TYPE_CHECKING
 
+from encommon.types import DictStrAny
+
 from .child import RobieChild
 from ..addons import RobieQueue
 
@@ -49,6 +51,24 @@ class RobieClient(RobieChild):
         """
 
         return 'client'
+
+
+    @property
+    def dumped(
+        self,
+    ) -> DictStrAny:
+        """
+        Return the facts about the attributes from the instance.
+
+        :returns: Facts about the attributes from the instance.
+        """
+
+        dumped = super().dumped
+
+        family = self.family
+
+        return dumped | {
+            'family': family}
 
 
     def get_message(

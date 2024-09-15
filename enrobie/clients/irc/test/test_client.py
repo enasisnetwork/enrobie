@@ -70,6 +70,8 @@ def test_IRCClient(
 
     assert client.robie
 
+    assert client.enable
+
     assert client.name == 'ircbot'
 
     assert client.family == 'irc'

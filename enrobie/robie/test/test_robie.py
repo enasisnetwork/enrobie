@@ -57,6 +57,8 @@ def test_Robie(
 
     assert robie.logger
 
+    assert robie.childs
+
     assert robie.params
 
 

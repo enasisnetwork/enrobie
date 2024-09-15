@@ -124,6 +124,30 @@ class Robie:
         return self.config.params
 
 
+    @property
+    def dumped(
+        self,
+    ) -> DictStrAny:
+        """
+        Return the facts about the attributes from the instance.
+
+        :returns: Facts about the attributes from the instance.
+        """
+
+        params = deepcopy(
+            self.params.endumped)
+
+        childs = deepcopy(
+            self.childs.dumped)
+
+        items = childs.items()
+
+        for key, value in items:
+            params[key] = value
+
+        return params
+
+
     def printer(
         self,
         source: 'RobiePrint',
@@ -179,30 +203,6 @@ class Robie:
         print_ansi(
             f'\n<c9{color}>┕'
             f'{"━" * 63}<c0>\n')
-
-
-    @property
-    def dumped(
-        self,
-    ) -> DictStrAny:
-        """
-        Return the facts about the attributes from the instance.
-
-        :returns: Facts about the attributes from the instance.
-        """
-
-        params = deepcopy(
-            self.params.endumped)
-
-        childs = deepcopy(
-            self.childs.dumped)
-
-        items = childs.items()
-
-        for key, value in items:
-            params[key] = value
-
-        return params
 
 
     def register(

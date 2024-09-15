@@ -70,6 +70,8 @@ def test_DSCClient(
 
     assert client.robie
 
+    assert client.enable
+
     assert client.name == 'dscbot'
 
     assert client.family == 'discord'
