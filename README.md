@@ -1,6 +1,6 @@
 # Enasis Network Chatting Robie
 
-> :children_crossing: This project has not released its first major version.
+> :warning: This project has not released its first major version.
 
 Barebones service for connecting to multiple upstream chat networks.
 

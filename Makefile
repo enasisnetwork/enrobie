@@ -35,7 +35,7 @@ PROJECT := $(shell \
 
 
 .PHONY: help
-help:
+help: .check-python
 	@## Construct this helpful menu of recipes
 	$(call MAKE_PRINT)
 	@COLOR=$(MAKE_COLOR) \
