@@ -15,6 +15,7 @@ from typing import Type
 
 from encommon.config import Config
 from encommon.config import Params
+from encommon.parse import Jinja2
 from encommon.types import DictStrAny
 from encommon.types import merge_dicts
 from encommon.types import setate
@@ -27,11 +28,11 @@ from .params import RobiePluginParams
 
 
 
-_INSERT = Literal[
+RobieConfigInsert = Literal[
     'clients', 'plugins']
 
-_INSERTS = dict[
-    _INSERT, DictStrAny]
+RobieConfigInserts = dict[
+    RobieConfigInsert, DictStrAny]
 
 
 
@@ -48,7 +49,7 @@ class RobieConfig(Config):
     __clients: dict[str, Type[RobieClientParams]]
     __plugins: dict[str, Type[RobiePluginParams]]
 
-    __inserts: _INSERTS
+    __inserts: RobieConfigInserts
 
 
     def __init__(
@@ -114,7 +115,7 @@ class RobieConfig(Config):
     @property
     def inserts(
         self,
-    ) -> _INSERTS:
+    ) -> RobieConfigInserts:
         """
         Return the value for the attribute from class instance.
 
@@ -229,8 +230,14 @@ class RobieConfig(Config):
             basic['plugins'] = fplugins
 
 
-        params = (
-            self.model(**basic))
+        jinja2 = Jinja2({
+            'source': basic,
+            'config': self})
+
+        parse = jinja2.parse
+
+        params = self.model(
+            parse, **basic)
 
         assert isinstance(
             params, RobieParams)
@@ -352,7 +359,7 @@ class RobieConfig(Config):
 
 
         def _insert(
-            target: _INSERT,
+            target: RobieConfigInsert,
         ) -> None:
 
             if source is None:

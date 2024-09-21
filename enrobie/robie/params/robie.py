@@ -8,6 +8,8 @@ is permitted, for more information consult the project license file.
 
 
 from typing import Annotated
+from typing import Any
+from typing import Callable
 from typing import Optional
 
 from encommon.config import Params
@@ -70,3 +72,58 @@ class RobieParams(Params, extra='forbid'):
         Field(None,
               description='Parameters for Robie plugins',
               min_length=1)]
+
+
+    def __init__(
+        # NOCVR
+        self,
+        /,
+        _parse: Optional[Callable[..., Any]] = None,
+        **data: Any,
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
+
+
+        if _parse is not None:
+
+            parsable = [
+                'clients',
+                'plugins']
+
+            for key in parsable:
+
+                if not data.get(key):
+                    continue
+
+                values = (
+                    data[key]
+                    .values())
+
+                for item in values:
+
+                    if hasattr(item, 'enable'):
+                        continue
+
+                    item['_parse'] = _parse
+
+
+            parsable = [
+                'database',
+                'printer',
+                'service']
+
+            for key in parsable:
+
+                value = data.get(key)
+
+                if value is None:
+                    continue
+
+                value = _parse(value)
+
+                data[key] = value
+
+
+        super().__init__(**data)

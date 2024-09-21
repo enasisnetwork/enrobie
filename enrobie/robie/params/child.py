@@ -8,6 +8,9 @@ is permitted, for more information consult the project license file.
 
 
 from typing import Annotated
+from typing import Any
+from typing import Callable
+from typing import Optional
 
 from encommon.types import BaseModel
 
@@ -24,3 +27,34 @@ class RobieChildParams(BaseModel, extra='forbid'):
         bool,
         Field(False,
               description='Determine whether child enabled')]
+
+
+    def __init__(
+        # NOCVR
+        self,
+        /,
+        _parse: Optional[Callable[..., Any]] = None,
+        **data: Any,
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
+
+
+        if _parse is not None:
+
+            parsable = ['enable']
+
+            for key in parsable:
+
+                value = data.get(key)
+
+                if value is None:
+                    continue
+
+                value = _parse(value)
+
+                data[key] = value
+
+
+        super().__init__(**data)
