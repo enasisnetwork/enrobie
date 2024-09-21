@@ -89,27 +89,6 @@ class RobieParams(Params, extra='forbid'):
         if _parse is not None:
 
             parsable = [
-                'clients',
-                'plugins']
-
-            for key in parsable:
-
-                if not data.get(key):
-                    continue
-
-                values = (
-                    data[key]
-                    .values())
-
-                for item in values:
-
-                    if hasattr(item, 'enable'):
-                        continue
-
-                    item['_parse'] = _parse
-
-
-            parsable = [
                 'database',
                 'printer',
                 'service']

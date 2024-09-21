@@ -7,7 +7,6 @@ is permitted, for more information consult the project license file.
 
 
 
-from contextlib import suppress
 from copy import deepcopy
 from typing import Literal
 from typing import Optional
@@ -111,6 +110,8 @@ class RobieConfig(Config):
             sargs=sargs,
             model=RobieParams)
 
+        self.merge_params()
+
 
     @property
     def inserts(
@@ -126,7 +127,7 @@ class RobieConfig(Config):
 
 
     @property
-    def params(  # noqa: CFQ001
+    def params(
         self,
     ) -> RobieParams:
         """
@@ -150,25 +151,62 @@ class RobieConfig(Config):
             return params
 
 
+        basic = self.basic
+
+        enconfig = (
+            basic.get('enconfig'))
+
+        enlogger = (
+            basic.get('enlogger'))
+
+        encrypts = (
+            basic.get('encrypts'))
+
+        basic = {
+            'enconfig': enconfig,
+            'enlogger': enlogger,
+            'encrypts': encrypts}
+
+        params = (
+            self.model(**basic))
+
+        assert isinstance(
+            params, RobieParams)
+
+
+        self.__params = params
+
+        return self.__params
+
+
+    def merge_params(
+        self,
+    ) -> None:
+        """
+        Update the Pydantic model containing the configuration.
+        """
+
         fclients: DictStrAny = {}
         fplugins: DictStrAny = {}
 
 
-        basic = self.basic
-        update = False
-
-        with suppress(AttributeError):
-            basic = self.merge
-            update = True
+        merge = self.merge
 
         merge_dicts(
-            dict1=basic,
+            dict1=merge,
             dict2=self.inserts,
             force=True)
 
 
-        _clients = basic.get('clients')
-        _plugins = basic.get('plugins')
+        _clients = merge.get('clients')
+        _plugins = merge.get('plugins')
+
+
+        jinja2 = Jinja2({
+            'source': merge,
+            'config': self})
+
+        parse = jinja2.parse
 
 
         def _put_clients() -> None:
@@ -176,7 +214,7 @@ class RobieConfig(Config):
             models = self.__clients
 
             items = (
-                basic['clients']
+                merge['clients']
                 .items())
 
             for name, params in items:
@@ -185,7 +223,9 @@ class RobieConfig(Config):
                     continue  # NOCVR
 
                 model = models[name]
-                object = model(**params)
+
+                object = model(
+                    parse, **params)
 
                 fclients[name] = object
 
@@ -194,7 +234,7 @@ class RobieConfig(Config):
 
             _put_clients()
 
-            del basic['clients']
+            del merge['clients']
 
 
         def _put_plugins() -> None:
@@ -202,7 +242,7 @@ class RobieConfig(Config):
             models = self.__plugins
 
             items = (
-                basic['plugins']
+                merge['plugins']
                 .items())
 
             for name, params in items:
@@ -211,7 +251,9 @@ class RobieConfig(Config):
                     continue  # NOCVR
 
                 model = models[name]
-                object = model(**params)
+
+                object = model(
+                    parse, **params)
 
                 fplugins[name] = object
 
@@ -220,33 +262,24 @@ class RobieConfig(Config):
 
             _put_plugins()
 
-            del basic['plugins']
+            del merge['plugins']
 
 
         if len(fclients) >= 1:
-            basic['clients'] = fclients
+            merge['clients'] = fclients
 
         if len(fplugins) >= 1:
-            basic['plugins'] = fplugins
+            merge['plugins'] = fplugins
 
-
-        jinja2 = Jinja2({
-            'source': basic,
-            'config': self})
-
-        parse = jinja2.parse
 
         params = self.model(
-            parse, **basic)
+            parse, **merge)
 
         assert isinstance(
             params, RobieParams)
 
 
-        if update is True:
-            self.__params = params
-
-        return params
+        self.__params = params
 
 
     @property
@@ -343,6 +376,7 @@ class RobieConfig(Config):
         client: Optional[Type[RobieClientParams]] = None,
         plugin: Optional[Type[RobiePluginParams]] = None,
         source: Optional[DictStrAny] = None,
+        merge: bool = True,
     ) -> None:
         """
         Register the plugin parameters for parameter processing.
@@ -351,6 +385,7 @@ class RobieConfig(Config):
         :param client: Class definition for the instantiation.
         :param plugin: Class definition for the instantiation.
         :param source: Source for the parameters instantiation.
+        :param merge: Reprocess all parameters including added.
         """
 
         clients = self.__clients
@@ -383,3 +418,7 @@ class RobieConfig(Config):
             plugins[name] = plugin
 
             _insert('plugins')
+
+
+        if merge is True:
+            self.merge_params()
