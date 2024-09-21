@@ -8,6 +8,9 @@ is permitted, for more information consult the project license file.
 
 
 from typing import Annotated
+from typing import Any
+from typing import Callable
+from typing import Optional
 
 from encommon.types import BaseModel
 
@@ -48,3 +51,34 @@ class StatusPluginParams(RobiePluginParams, extra='forbid'):
         StatusPluginCommandParams,
         Field(default_factory=StatusPluginCommandParams,
               description='Command name per chat platform')]
+
+
+    def __init__(
+        # NOCVR
+        self,
+        /,
+        _parse: Optional[Callable[..., Any]] = None,
+        **data: Any,
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
+
+
+        if _parse is not None:
+
+            parsable = ['command']
+
+            for key in parsable:
+
+                value = data.get(key)
+
+                if value is None:
+                    continue
+
+                value = _parse(value)
+
+                data[key] = value
+
+
+        super().__init__(**data)
