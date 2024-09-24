@@ -7,7 +7,7 @@
 
 
 
-PYTHON ?= ../../Execution/python311/bin/python
+PYTHON ?= ../../Execution/python312/bin/python
 
 VENVP ?= .venv-package
 VENVD ?= .venv-develop

@@ -8,7 +8,12 @@ name: Validate
 
 # yamllint disable-line rule:truthy
 on:
+
+  schedule:
+    - cron: '0 2 * * *'
+
   pull_request:
+
   push:
     branches:
       - main
@@ -16,25 +21,6 @@ on:
 
 
 jobs:
-
-
-  validate310:
-    name: Python 3.10
-    runs-on: ubuntu-latest
-    env:
-      PYTHON: python3
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Makefile
-        run: |
-          make -s venv-create
-          make -s check
 
 
   validate311:
@@ -49,6 +35,25 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+
+      - name: Makefile
+        run: |
+          make -s venv-create
+          make -s check
+
+
+  validate312:
+    name: Python 3.12
+    runs-on: ubuntu-latest
+    env:
+      PYTHON: python3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
 
       - name: Makefile
         run: |
