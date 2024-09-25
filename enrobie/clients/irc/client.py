@@ -114,6 +114,8 @@ class IRCClient(RobieClient):
         vacate = member.vacate
         params = self.params
 
+        delay = params.delay
+
         assert isinstance(
             params, IRCClientParams)
 
@@ -169,8 +171,6 @@ class IRCClient(RobieClient):
 
                 return None
 
-            block_sleep(1)
-
 
         def _routine() -> None:
 
@@ -188,7 +188,7 @@ class IRCClient(RobieClient):
                     name=self,
                     status='severed')
 
-                block_sleep(1)
+                block_sleep(delay)
 
 
         daerht = Thread(

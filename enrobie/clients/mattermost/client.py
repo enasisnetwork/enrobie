@@ -114,6 +114,8 @@ class MTMClient(RobieClient):
         vacate = member.vacate
         params = self.params
 
+        delay = params.delay
+
         assert isinstance(
             params, MTMClientParams)
 
@@ -170,8 +172,6 @@ class MTMClient(RobieClient):
 
                 return None
 
-            block_sleep(1)
-
 
         def _routine() -> None:
 
@@ -189,7 +189,7 @@ class MTMClient(RobieClient):
                     name=self,
                     status='severed')
 
-                block_sleep(1)
+                block_sleep(delay)
 
 
         daerht = Thread(
