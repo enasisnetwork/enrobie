@@ -170,6 +170,8 @@ class MTMClient(RobieClient):
 
                 return None
 
+            block_sleep(1)
+
 
         def _routine() -> None:
 
