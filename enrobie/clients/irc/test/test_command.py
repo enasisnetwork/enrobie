@@ -57,7 +57,7 @@ def test_IRCCommand(
         item)
 
     with raises(TypeError):
-        assert hash(item) > 0
+        hash(item)
 
     assert instr(
         'IRCCommand',

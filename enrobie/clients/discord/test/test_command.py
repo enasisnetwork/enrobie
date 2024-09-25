@@ -61,7 +61,7 @@ def test_DSCCommand(
         item)
 
     with raises(TypeError):
-        assert hash(item) > 0
+        hash(item)
 
     assert instr(
         'DSCCommand',

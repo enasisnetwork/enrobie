@@ -57,7 +57,8 @@ def test_InvalidParam(
         'InvalidParam',
         raises)
 
-    assert hash(raises) > 0
+    assert isinstance(
+        hash(raises), int)
 
     assert instr(
         'Error (invalid)',

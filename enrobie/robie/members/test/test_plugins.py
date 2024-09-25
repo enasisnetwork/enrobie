@@ -45,7 +45,8 @@ def test_RobiePlugins(
         'plugins.RobiePlugins',
         member)
 
-    assert hash(member) > 0
+    assert isinstance(
+        hash(member), int)
 
     assert instr(
         'plugins.RobiePlugins',

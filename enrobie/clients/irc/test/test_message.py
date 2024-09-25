@@ -68,7 +68,7 @@ def test_IRCMessage(
         item)
 
     with raises(TypeError):
-        assert hash(item) > 0
+        hash(item)
 
     assert instr(
         'IRCMessage',

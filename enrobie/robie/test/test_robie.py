@@ -46,7 +46,8 @@ def test_Robie(
         'robie.Robie',
         robie)
 
-    assert hash(robie) > 0
+    assert isinstance(
+        hash(robie), int)
 
     assert instr(
         'robie.Robie',

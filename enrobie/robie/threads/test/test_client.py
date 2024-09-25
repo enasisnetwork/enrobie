@@ -63,7 +63,8 @@ def test_RobieClientThread(
             'Thread(RobieClient',
             thread)
 
-        assert hash(thread) > 0
+        assert isinstance(
+            hash(thread), int)
 
         assert instr(
             'Thread(RobieClient',

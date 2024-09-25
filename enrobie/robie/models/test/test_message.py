@@ -53,7 +53,7 @@ def test_RobieMessage(
         item)
 
     with raises(TypeError):
-        assert hash(item) > 0
+        hash(item)
 
     assert instr(
         'RobieMessage',
