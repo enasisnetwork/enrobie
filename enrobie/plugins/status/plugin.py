@@ -36,6 +36,8 @@ class StatusPlugin(RobiePlugin):
         Perform advanced validation on the parameters provided.
         """
 
+        # Nothing to do for plugin
+
 
     def operate(
         self,

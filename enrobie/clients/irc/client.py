@@ -68,6 +68,8 @@ class IRCClient(RobieClient):
         Perform advanced validation on the parameters provided.
         """
 
+        # Nothing to do for client
+
 
     @property
     def family(
