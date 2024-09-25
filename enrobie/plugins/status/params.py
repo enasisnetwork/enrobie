@@ -12,15 +12,15 @@ from typing import Any
 from typing import Callable
 from typing import Optional
 
-from encommon.types import BaseModel
-
 from pydantic import Field
 
+
 from ...robie.params import RobiePluginParams
+from ...robie.params.common import RobieParamsModel
 
 
 
-class StatusPluginCommandParams(BaseModel, extra='forbid'):
+class StatusPluginCommandParams(RobieParamsModel, extra='forbid'):
     """
     Process and validate the Robie configuration parameters.
     """

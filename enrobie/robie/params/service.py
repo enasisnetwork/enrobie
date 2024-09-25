@@ -9,13 +9,13 @@ is permitted, for more information consult the project license file.
 
 from typing import Annotated
 
-from encommon.types import BaseModel
-
 from pydantic import Field
 
+from .common import RobieParamsModel
 
 
-class RobieServiceRespiteParams(BaseModel, extra='forbid'):
+
+class RobieServiceRespiteParams(RobieParamsModel, extra='forbid'):
     """
     Process and validate the Robie configuration parameters.
     """
@@ -28,7 +28,7 @@ class RobieServiceRespiteParams(BaseModel, extra='forbid'):
 
 
 
-class RobieServiceParams(BaseModel, extra='forbid'):
+class RobieServiceParams(RobieParamsModel, extra='forbid'):
     """
     Process and validate the Robie configuration parameters.
     """
