@@ -41,7 +41,8 @@ def test_InvalidChild() -> None:
         'InvalidChild',
         raises)
 
-    assert hash(raises) > 0
+    assert isinstance(
+        hash(raises), int)
 
     assert instr(
         'Child (invalid)',

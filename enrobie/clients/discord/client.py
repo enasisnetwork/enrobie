@@ -68,6 +68,8 @@ class DSCClient(RobieClient):
         Perform advanced validation on the parameters provided.
         """
 
+        # Nothing to do for client
+
 
     @property
     def family(
@@ -114,6 +116,8 @@ class DSCClient(RobieClient):
 
         assert isinstance(
             params, DSCClientParams)
+
+        delay = params.delay
 
 
         def _put_mqueue() -> None:
@@ -185,7 +189,7 @@ class DSCClient(RobieClient):
                     name=self,
                     status='severed')
 
-                block_sleep(1)
+                block_sleep(delay)
 
 
         daerht = Thread(

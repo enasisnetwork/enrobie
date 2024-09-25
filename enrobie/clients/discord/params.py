@@ -30,6 +30,11 @@ class DSCClientParams(RobieClientParams, extra='forbid'):
         Field(...,
               description='Parameters for the base client')]
 
+    delay: Annotated[
+        int,
+        Field(2,
+              description='Period to wait for reconnect')]
+
 
     def __init__(
         # NOCVR

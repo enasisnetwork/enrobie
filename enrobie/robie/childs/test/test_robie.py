@@ -42,7 +42,8 @@ def test_RobieChilds(
         'robie.RobieChilds',
         childs)
 
-    assert hash(childs) > 0
+    assert isinstance(
+        hash(childs), int)
 
     assert instr(
         'robie.RobieChilds',

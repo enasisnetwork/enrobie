@@ -59,7 +59,8 @@ def test_MTMClient(
         'client.MTMClient',
         client)
 
-    assert hash(client) > 0
+    assert isinstance(
+        hash(client), int)
 
     assert instr(
         'client.MTMClient',

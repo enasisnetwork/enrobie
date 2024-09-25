@@ -59,7 +59,8 @@ def test_DSCClient(
         'client.DSCClient',
         client)
 
-    assert hash(client) > 0
+    assert isinstance(
+        hash(client), int)
 
     assert instr(
         'client.DSCClient',

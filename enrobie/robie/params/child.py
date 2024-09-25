@@ -12,13 +12,13 @@ from typing import Any
 from typing import Callable
 from typing import Optional
 
-from encommon.types import BaseModel
-
 from pydantic import Field
 
+from .common import RobieParamsModel
 
 
-class RobieChildParams(BaseModel, extra='forbid'):
+
+class RobieChildParams(RobieParamsModel, extra='forbid'):
     """
     Process and validate the Robie configuration parameters.
     """

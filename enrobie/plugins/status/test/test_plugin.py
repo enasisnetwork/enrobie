@@ -118,7 +118,8 @@ def test_StatusPlugin(
         'plugin.StatusPlugin',
         plugin)
 
-    assert hash(plugin) > 0
+    assert isinstance(
+        hash(plugin), int)
 
     assert instr(
         'plugin.StatusPlugin',

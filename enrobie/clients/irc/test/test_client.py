@@ -59,7 +59,8 @@ def test_IRCClient(
         'client.IRCClient',
         client)
 
-    assert hash(client) > 0
+    assert isinstance(
+        hash(client), int)
 
     assert instr(
         'client.IRCClient',

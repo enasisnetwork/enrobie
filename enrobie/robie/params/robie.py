@@ -13,17 +13,17 @@ from typing import Callable
 from typing import Optional
 
 from encommon.config import Params
-from encommon.types import BaseModel
 
 from pydantic import Field
 
 from .client import RobieClientParams
+from .common import RobieParamsModel
 from .plugin import RobiePluginParams
 from .service import RobieServiceParams
 
 
 
-class RobiePrinterParams(BaseModel, extra='forbid'):
+class RobiePrinterParams(RobieParamsModel, extra='forbid'):
     """
     Process and validate the Robie configuration parameters.
     """
