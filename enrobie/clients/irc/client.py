@@ -114,10 +114,10 @@ class IRCClient(RobieClient):
         vacate = member.vacate
         params = self.params
 
-        delay = params.delay
-
         assert isinstance(
             params, IRCClientParams)
+
+        delay = params.delay
 
 
         def _put_mqueue() -> None:

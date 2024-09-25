@@ -114,10 +114,10 @@ class DSCClient(RobieClient):
         vacate = member.vacate
         params = self.params
 
-        delay = params.delay
-
         assert isinstance(
             params, DSCClientParams)
+
+        delay = params.delay
 
 
         def _put_mqueue() -> None:
