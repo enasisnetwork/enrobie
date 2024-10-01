@@ -27,6 +27,39 @@ jobs:
 
 
   #################
+  ## Python 3.11 ##
+  #################
+  validate311:
+    name: Python 3.11
+    runs-on: ubuntu-latest
+    env:
+      PYTHON: python3
+    steps:
+
+
+      # Standard project construction
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with: {python-version: '3.11'}
+
+
+      # Standard project construction
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+
+
+      # Standard project construction
+      - name: Build environment
+        run: make -s venv-create
+
+
+      # Validate the Python project
+      - name: Run all validators
+        run: make -s check
+
+
+
+  #################
   ## Python 3.12 ##
   #################
   validate312:
