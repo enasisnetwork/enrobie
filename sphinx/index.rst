@@ -1,5 +1,8 @@
+Enasis Network Chatting Robie
+=============================
+
 Configuration Container
-=======================
+-----------------------
 
 .. autoclass:: enrobie.robie.RobieConfig
    :members:
@@ -7,7 +10,7 @@ Configuration Container
    :noindex:
 
 Parameters Container
-====================
+--------------------
 
 .. autopydantic_model:: enrobie.robie.params.RobieParams
    :members:
@@ -15,7 +18,7 @@ Parameters Container
    :noindex:
 
 Robie Clients
-=============
+-------------
 
 .. autopydantic_model:: enrobie.clients.discord.params.DSCClientParams
    :members:
@@ -33,7 +36,7 @@ Robie Clients
    :noindex:
 
 Robie Plugins
-=============
+-------------
 
 .. autopydantic_model:: enrobie.plugins.status.params.StatusPluginParams
    :members:

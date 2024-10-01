@@ -24,13 +24,12 @@ nitpicky = True
 version = VERSION
 
 extensions = [
-    'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.viewcode',
     'sphinxcontrib.autodoc_pydantic']
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinxawesome_theme'
 
 always_document_param_types = True
 
