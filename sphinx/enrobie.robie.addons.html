@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>enrobie.robie.addons package &mdash; enrobie  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/autodoc_pydantic.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            enrobie
+          </a>
+              <div class="version">
+                0.8.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">enrobie.robie.addons package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-enrobie.robie.addons.logger">enrobie.robie.addons.logger module</a><ul>
+<li><a class="reference internal" href="#enrobie.robie.addons.logger.RobieLogger"><code class="docutils literal notranslate"><span class="pre">RobieLogger</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.addons.logger.RobieLogger.log"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.logger.RobieLogger.log_c"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_c()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.logger.RobieLogger.log_d"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_d()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.logger.RobieLogger.log_e"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_e()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.logger.RobieLogger.log_i"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_i()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.logger.RobieLogger.log_w"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_w()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.logger.RobieLogger.start"><code class="docutils literal notranslate"><span class="pre">RobieLogger.start()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.logger.RobieLogger.stop"><code class="docutils literal notranslate"><span class="pre">RobieLogger.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-enrobie.robie.addons.queue">enrobie.robie.addons.queue module</a><ul>
+<li><a class="reference internal" href="#enrobie.robie.addons.queue.RobieQueue"><code class="docutils literal notranslate"><span class="pre">RobieQueue</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.addons.queue.RobieQueue.empty"><code class="docutils literal notranslate"><span class="pre">RobieQueue.empty</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.queue.RobieQueue.get"><code class="docutils literal notranslate"><span class="pre">RobieQueue.get()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.queue.RobieQueue.put"><code class="docutils literal notranslate"><span class="pre">RobieQueue.put()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.queue.RobieQueue.qsize"><code class="docutils literal notranslate"><span class="pre">RobieQueue.qsize</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enrobie.robie.addons.queue.RobieQueueItem"><code class="docutils literal notranslate"><span class="pre">RobieQueueItem</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.addons.queue.RobieQueueItem.time"><code class="docutils literal notranslate"><span class="pre">RobieQueueItem.time</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-enrobie.robie.addons">Module contents</a><ul>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieLogger"><code class="docutils literal notranslate"><span class="pre">RobieLogger</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieLogger.log"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieLogger.log_c"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_c()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieLogger.log_d"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_d()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieLogger.log_e"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_e()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieLogger.log_i"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_i()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieLogger.log_w"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_w()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieLogger.start"><code class="docutils literal notranslate"><span class="pre">RobieLogger.start()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieLogger.stop"><code class="docutils literal notranslate"><span class="pre">RobieLogger.stop()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieQueue"><code class="docutils literal notranslate"><span class="pre">RobieQueue</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieQueue.empty"><code class="docutils literal notranslate"><span class="pre">RobieQueue.empty</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieQueue.get"><code class="docutils literal notranslate"><span class="pre">RobieQueue.get()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieQueue.put"><code class="docutils literal notranslate"><span class="pre">RobieQueue.put()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieQueue.qsize"><code class="docutils literal notranslate"><span class="pre">RobieQueue.qsize</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieQueueItem"><code class="docutils literal notranslate"><span class="pre">RobieQueueItem</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.addons.RobieQueueItem.time"><code class="docutils literal notranslate"><span class="pre">RobieQueueItem.time</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">enrobie</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">enrobie.robie.addons package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/enrobie.robie.addons.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="enrobie-robie-addons-package">
+<h1>enrobie.robie.addons package<a class="headerlink" href="#enrobie-robie-addons-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.robie.addons.test.html">enrobie.robie.addons.test package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.addons.test.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.addons.test.html#module-enrobie.robie.addons.test.test_logger">enrobie.robie.addons.test.test_logger module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.test.html#enrobie.robie.addons.test.test_logger.test_RobieLogger"><code class="docutils literal notranslate"><span class="pre">test_RobieLogger()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.test.html#enrobie.robie.addons.test.test_logger.test_RobieLogger_cover"><code class="docutils literal notranslate"><span class="pre">test_RobieLogger_cover()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.test.html#enrobie.robie.addons.test.test_logger.test_RobieLogger_message"><code class="docutils literal notranslate"><span class="pre">test_RobieLogger_message()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.addons.test.html#module-enrobie.robie.addons.test.test_queue">enrobie.robie.addons.test.test_queue module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.test.html#enrobie.robie.addons.test.test_queue.test_RobieQueue"><code class="docutils literal notranslate"><span class="pre">test_RobieQueue()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.test.html#enrobie.robie.addons.test.test_queue.test_RobieQueueItem"><code class="docutils literal notranslate"><span class="pre">test_RobieQueueItem()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.addons.test.html#module-enrobie.robie.addons.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-enrobie.robie.addons.logger">
+<span id="enrobie-robie-addons-logger-module"></span><h2>enrobie.robie.addons.logger module<a class="headerlink" href="#module-enrobie.robie.addons.logger" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.addons.logger.RobieLogger">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.addons.logger.</span></span><span class="sig-name descname"><span class="pre">RobieLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.logger.RobieLogger" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Methods for extending use of underlying logging library.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.logger.RobieLogger.log">
+<span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.log"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.logger.RobieLogger.log" title="Link to this definition"></a></dt>
+<dd><p>Pass the provided keyword arguments into logger object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Uses method <a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.config.html#encommon.config.Logger.log" title="(in encommon v0.19.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encommon.config.Logger.log()</span></code></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Keyword arguments for populating message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.logger.RobieLogger.log_c">
+<span class="sig-name descname"><span class="pre">log_c</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.log_c"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.logger.RobieLogger.log_c" title="Link to this definition"></a></dt>
+<dd><p>Pass the provided keyword arguments into logger object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Uses method <a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.config.html#encommon.config.Logger.log_c" title="(in encommon v0.19.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encommon.config.Logger.log_c()</span></code></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Keyword arguments for populating message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.logger.RobieLogger.log_d">
+<span class="sig-name descname"><span class="pre">log_d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.log_d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.logger.RobieLogger.log_d" title="Link to this definition"></a></dt>
+<dd><p>Pass the provided keyword arguments into logger object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Uses method <a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.config.html#encommon.config.Logger.log_d" title="(in encommon v0.19.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encommon.config.Logger.log_d()</span></code></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Keyword arguments for populating message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.logger.RobieLogger.log_e">
+<span class="sig-name descname"><span class="pre">log_e</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.log_e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.logger.RobieLogger.log_e" title="Link to this definition"></a></dt>
+<dd><p>Pass the provided keyword arguments into logger object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Uses method <a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.config.html#encommon.config.Logger.log_e" title="(in encommon v0.19.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encommon.config.Logger.log_e()</span></code></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Keyword arguments for populating message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.logger.RobieLogger.log_i">
+<span class="sig-name descname"><span class="pre">log_i</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.log_i"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.logger.RobieLogger.log_i" title="Link to this definition"></a></dt>
+<dd><p>Pass the provided keyword arguments into logger object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Uses method <a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.config.html#encommon.config.Logger.log_i" title="(in encommon v0.19.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encommon.config.Logger.log_i()</span></code></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Keyword arguments for populating message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.logger.RobieLogger.log_w">
+<span class="sig-name descname"><span class="pre">log_w</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.log_w"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.logger.RobieLogger.log_w" title="Link to this definition"></a></dt>
+<dd><p>Pass the provided keyword arguments into logger object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Uses method <a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.config.html#encommon.config.Logger.log_w" title="(in encommon v0.19.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encommon.config.Logger.log_w()</span></code></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Keyword arguments for populating message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.logger.RobieLogger.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.logger.RobieLogger.start" title="Link to this definition"></a></dt>
+<dd><p>Initialize the Python logging library using parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.logger.RobieLogger.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.logger.RobieLogger.stop" title="Link to this definition"></a></dt>
+<dd><p>Deinitialize the Python logging library using parameters.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-enrobie.robie.addons.queue">
+<span id="enrobie-robie-addons-queue-module"></span><h2>enrobie.robie.addons.queue module<a class="headerlink" href="#module-enrobie.robie.addons.queue" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.addons.queue.RobieQueue">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.addons.queue.</span></span><span class="sig-name descname"><span class="pre">RobieQueue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/addons/queue.html#RobieQueue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.queue.RobieQueue" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generic" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">RobieQueueItemType</span></code>]</p>
+<p>Queue object that will allow to handle full conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robie</strong> – Primary class instance for Chatting Robie.</p></li>
+<li><p><strong>size</strong> – Maximum size for the created queue object.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.addons.queue.RobieQueue.empty">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">empty</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#enrobie.robie.addons.queue.RobieQueue.empty" title="Link to this definition"></a></dt>
+<dd><p>Return the boolean indicating whether the queue is full.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Boolean indicating whether the queue is full.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.queue.RobieQueue.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RobieQueueItemType</span></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/queue.html#RobieQueue.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.queue.RobieQueue.get" title="Link to this definition"></a></dt>
+<dd><p>Return the next item within the queue in blocking mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Next item within the queue in blocking mode.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.queue.RobieQueue.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RobieQueueItemType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/queue.html#RobieQueue.put"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.queue.RobieQueue.put" title="Link to this definition"></a></dt>
+<dd><p>Store the provided item within the queue class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>item</strong> – Item containing information for operation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.addons.queue.RobieQueue.qsize">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">qsize</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></em><a class="headerlink" href="#enrobie.robie.addons.queue.RobieQueue.qsize" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.addons.queue.RobieQueueItem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.addons.queue.</span></span><span class="sig-name descname"><span class="pre">RobieQueueItem</span></span><a class="reference internal" href="_modules/enrobie/robie/addons/queue.html#RobieQueueItem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.queue.RobieQueueItem" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Contain information for sharing using the Python queue.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="enrobie.robie.addons.queue.RobieQueueItem.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.times.html#encommon.times.time.Time" title="(in encommon v0.19.2)"><span class="pre">Time</span></a></em><a class="headerlink" href="#enrobie.robie.addons.queue.RobieQueueItem.time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-enrobie.robie.addons">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-enrobie.robie.addons" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieLogger">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.addons.</span></span><span class="sig-name descname"><span class="pre">RobieLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.RobieLogger" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Methods for extending use of underlying logging library.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieLogger.log">
+<span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.log"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.RobieLogger.log" title="Link to this definition"></a></dt>
+<dd><p>Pass the provided keyword arguments into logger object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Uses method <a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.config.html#encommon.config.Logger.log" title="(in encommon v0.19.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encommon.config.Logger.log()</span></code></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Keyword arguments for populating message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieLogger.log_c">
+<span class="sig-name descname"><span class="pre">log_c</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.log_c"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.RobieLogger.log_c" title="Link to this definition"></a></dt>
+<dd><p>Pass the provided keyword arguments into logger object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Uses method <a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.config.html#encommon.config.Logger.log_c" title="(in encommon v0.19.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encommon.config.Logger.log_c()</span></code></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Keyword arguments for populating message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieLogger.log_d">
+<span class="sig-name descname"><span class="pre">log_d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.log_d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.RobieLogger.log_d" title="Link to this definition"></a></dt>
+<dd><p>Pass the provided keyword arguments into logger object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Uses method <a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.config.html#encommon.config.Logger.log_d" title="(in encommon v0.19.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encommon.config.Logger.log_d()</span></code></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Keyword arguments for populating message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieLogger.log_e">
+<span class="sig-name descname"><span class="pre">log_e</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.log_e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.RobieLogger.log_e" title="Link to this definition"></a></dt>
+<dd><p>Pass the provided keyword arguments into logger object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Uses method <a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.config.html#encommon.config.Logger.log_e" title="(in encommon v0.19.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encommon.config.Logger.log_e()</span></code></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Keyword arguments for populating message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieLogger.log_i">
+<span class="sig-name descname"><span class="pre">log_i</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.log_i"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.RobieLogger.log_i" title="Link to this definition"></a></dt>
+<dd><p>Pass the provided keyword arguments into logger object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Uses method <a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.config.html#encommon.config.Logger.log_i" title="(in encommon v0.19.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encommon.config.Logger.log_i()</span></code></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Keyword arguments for populating message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieLogger.log_w">
+<span class="sig-name descname"><span class="pre">log_w</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.log_w"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.RobieLogger.log_w" title="Link to this definition"></a></dt>
+<dd><p>Pass the provided keyword arguments into logger object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Uses method <a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.config.html#encommon.config.Logger.log_w" title="(in encommon v0.19.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encommon.config.Logger.log_w()</span></code></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> – Keyword arguments for populating message.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieLogger.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.RobieLogger.start" title="Link to this definition"></a></dt>
+<dd><p>Initialize the Python logging library using parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieLogger.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/logger.html#RobieLogger.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.RobieLogger.stop" title="Link to this definition"></a></dt>
+<dd><p>Deinitialize the Python logging library using parameters.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieQueue">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.addons.</span></span><span class="sig-name descname"><span class="pre">RobieQueue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/addons/queue.html#RobieQueue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.RobieQueue" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generic" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">RobieQueueItemType</span></code>]</p>
+<p>Queue object that will allow to handle full conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robie</strong> – Primary class instance for Chatting Robie.</p></li>
+<li><p><strong>size</strong> – Maximum size for the created queue object.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieQueue.empty">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">empty</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#enrobie.robie.addons.RobieQueue.empty" title="Link to this definition"></a></dt>
+<dd><p>Return the boolean indicating whether the queue is full.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Boolean indicating whether the queue is full.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieQueue.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">RobieQueueItemType</span></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/queue.html#RobieQueue.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.RobieQueue.get" title="Link to this definition"></a></dt>
+<dd><p>Return the next item within the queue in blocking mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Next item within the queue in blocking mode.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieQueue.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RobieQueueItemType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/addons/queue.html#RobieQueue.put"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.RobieQueue.put" title="Link to this definition"></a></dt>
+<dd><p>Store the provided item within the queue class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>item</strong> – Item containing information for operation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieQueue.qsize">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">qsize</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></em><a class="headerlink" href="#enrobie.robie.addons.RobieQueue.qsize" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieQueueItem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.addons.</span></span><span class="sig-name descname"><span class="pre">RobieQueueItem</span></span><a class="reference internal" href="_modules/enrobie/robie/addons/queue.html#RobieQueueItem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.addons.RobieQueueItem" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Contain information for sharing using the Python queue.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="enrobie.robie.addons.RobieQueueItem.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.times.html#encommon.times.time.Time" title="(in encommon v0.19.2)"><span class="pre">Time</span></a></em><a class="headerlink" href="#enrobie.robie.addons.RobieQueueItem.time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Enasis Network.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

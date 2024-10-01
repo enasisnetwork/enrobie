@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>enrobie package &mdash; enrobie  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/autodoc_pydantic.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            enrobie
+          </a>
+              <div class="version">
+                0.8.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">enrobie package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-enrobie.conftest">enrobie.conftest module</a><ul>
+<li><a class="reference internal" href="#enrobie.conftest.client_dscsock"><code class="docutils literal notranslate"><span class="pre">client_dscsock()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.conftest.client_ircsock"><code class="docutils literal notranslate"><span class="pre">client_ircsock()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.conftest.client_mtmsock"><code class="docutils literal notranslate"><span class="pre">client_mtmsock()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-enrobie">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">enrobie</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">enrobie package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/enrobie.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="enrobie-package">
+<h1>enrobie package<a class="headerlink" href="#enrobie-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.clients.html">enrobie.clients package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.discord.html">enrobie.clients.discord package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#module-enrobie.clients.discord.client">enrobie.clients.discord.client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#module-enrobie.clients.discord.command">enrobie.clients.discord.command module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#module-enrobie.clients.discord.message">enrobie.clients.discord.message module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#module-enrobie.clients.discord.params">enrobie.clients.discord.params module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#module-enrobie.clients.discord">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.irc.html">enrobie.clients.irc package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc.client">enrobie.clients.irc.client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc.command">enrobie.clients.irc.command module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc.message">enrobie.clients.irc.message module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc.params">enrobie.clients.irc.params module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.mattermost.html">enrobie.clients.mattermost package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost.client">enrobie.clients.mattermost.client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost.command">enrobie.clients.mattermost.command module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost.message">enrobie.clients.mattermost.message module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost.params">enrobie.clients.mattermost.params module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.html#module-enrobie.clients">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient"><code class="docutils literal notranslate"><span class="pre">DSCClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient.client"><code class="docutils literal notranslate"><span class="pre">DSCClient.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient.compose"><code class="docutils literal notranslate"><span class="pre">DSCClient.compose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient.family"><code class="docutils literal notranslate"><span class="pre">DSCClient.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient.get_command"><code class="docutils literal notranslate"><span class="pre">DSCClient.get_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient.get_message"><code class="docutils literal notranslate"><span class="pre">DSCClient.get_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient.operate"><code class="docutils literal notranslate"><span class="pre">DSCClient.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient.put_command"><code class="docutils literal notranslate"><span class="pre">DSCClient.put_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient.put_message"><code class="docutils literal notranslate"><span class="pre">DSCClient.put_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient.validate"><code class="docutils literal notranslate"><span class="pre">DSCClient.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClientParams"><code class="docutils literal notranslate"><span class="pre">DSCClientParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClientParams.client"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClientParams.delay"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.delay</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient"><code class="docutils literal notranslate"><span class="pre">IRCClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient.client"><code class="docutils literal notranslate"><span class="pre">IRCClient.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient.compose"><code class="docutils literal notranslate"><span class="pre">IRCClient.compose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient.family"><code class="docutils literal notranslate"><span class="pre">IRCClient.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient.get_command"><code class="docutils literal notranslate"><span class="pre">IRCClient.get_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient.get_message"><code class="docutils literal notranslate"><span class="pre">IRCClient.get_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient.operate"><code class="docutils literal notranslate"><span class="pre">IRCClient.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient.put_command"><code class="docutils literal notranslate"><span class="pre">IRCClient.put_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient.put_message"><code class="docutils literal notranslate"><span class="pre">IRCClient.put_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient.validate"><code class="docutils literal notranslate"><span class="pre">IRCClient.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClientParams"><code class="docutils literal notranslate"><span class="pre">IRCClientParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClientParams.client"><code class="docutils literal notranslate"><span class="pre">IRCClientParams.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClientParams.delay"><code class="docutils literal notranslate"><span class="pre">IRCClientParams.delay</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient"><code class="docutils literal notranslate"><span class="pre">MTMClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient.client"><code class="docutils literal notranslate"><span class="pre">MTMClient.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient.compose"><code class="docutils literal notranslate"><span class="pre">MTMClient.compose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient.family"><code class="docutils literal notranslate"><span class="pre">MTMClient.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient.get_command"><code class="docutils literal notranslate"><span class="pre">MTMClient.get_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient.get_message"><code class="docutils literal notranslate"><span class="pre">MTMClient.get_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient.operate"><code class="docutils literal notranslate"><span class="pre">MTMClient.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient.put_command"><code class="docutils literal notranslate"><span class="pre">MTMClient.put_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient.put_message"><code class="docutils literal notranslate"><span class="pre">MTMClient.put_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient.validate"><code class="docutils literal notranslate"><span class="pre">MTMClient.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClientParams"><code class="docutils literal notranslate"><span class="pre">MTMClientParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClientParams.client"><code class="docutils literal notranslate"><span class="pre">MTMClientParams.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClientParams.delay"><code class="docutils literal notranslate"><span class="pre">MTMClientParams.delay</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.execution.html">enrobie.execution package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.execution.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.execution.test.html">enrobie.execution.test package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.execution.test.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.execution.test.html#module-enrobie.execution.test.test_config">enrobie.execution.test.test_config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.execution.test.html#module-enrobie.execution.test.test_crypts">enrobie.execution.test.test_crypts module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.execution.test.html#module-enrobie.execution.test.test_service">enrobie.execution.test.test_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.execution.test.html#module-enrobie.execution.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.execution.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.execution.html#module-enrobie.execution.config">enrobie.execution.config module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.execution.html#enrobie.execution.config.arguments"><code class="docutils literal notranslate"><span class="pre">arguments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.execution.html#enrobie.execution.config.execution"><code class="docutils literal notranslate"><span class="pre">execution()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.execution.html#enrobie.execution.config.operation"><code class="docutils literal notranslate"><span class="pre">operation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.execution.html#module-enrobie.execution.crypts">enrobie.execution.crypts module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.execution.html#enrobie.execution.crypts.arguments"><code class="docutils literal notranslate"><span class="pre">arguments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.execution.html#enrobie.execution.crypts.execution"><code class="docutils literal notranslate"><span class="pre">execution()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.execution.html#enrobie.execution.crypts.operation"><code class="docutils literal notranslate"><span class="pre">operation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.execution.html#module-enrobie.execution.service">enrobie.execution.service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.execution.html#enrobie.execution.service.arguments"><code class="docutils literal notranslate"><span class="pre">arguments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.execution.html#enrobie.execution.service.execution"><code class="docutils literal notranslate"><span class="pre">execution()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.execution.html#enrobie.execution.service.operation"><code class="docutils literal notranslate"><span class="pre">operation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.execution.html#enrobie.execution.service.register_params"><code class="docutils literal notranslate"><span class="pre">register_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.execution.html#enrobie.execution.service.register_plugins"><code class="docutils literal notranslate"><span class="pre">register_plugins()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.execution.html#module-enrobie.execution">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.plugins.html">enrobie.plugins package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.plugins.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.status.html">enrobie.plugins.status package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.status.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.status.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.status.html#module-enrobie.plugins.status.params">enrobie.plugins.status.params module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.status.html#module-enrobie.plugins.status.plugin">enrobie.plugins.status.plugin module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.status.html#module-enrobie.plugins.status">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.plugins.html#module-enrobie.plugins">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPlugin"><code class="docutils literal notranslate"><span class="pre">StatusPlugin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPlugin.operate"><code class="docutils literal notranslate"><span class="pre">StatusPlugin.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPlugin.validate"><code class="docutils literal notranslate"><span class="pre">StatusPlugin.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginParams"><code class="docutils literal notranslate"><span class="pre">StatusPluginParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginParams.command"><code class="docutils literal notranslate"><span class="pre">StatusPluginParams.command</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.robie.html">enrobie.robie package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.html">enrobie.robie.addons package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#module-enrobie.robie.addons.logger">enrobie.robie.addons.logger module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#module-enrobie.robie.addons.queue">enrobie.robie.addons.queue module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#module-enrobie.robie.addons">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.childs.html">enrobie.robie.childs package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#module-enrobie.robie.childs.child">enrobie.robie.childs.child module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#module-enrobie.robie.childs.client">enrobie.robie.childs.client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#module-enrobie.robie.childs.plugin">enrobie.robie.childs.plugin module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#module-enrobie.robie.childs.robie">enrobie.robie.childs.robie module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#module-enrobie.robie.childs">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.members.html">enrobie.robie.members package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#module-enrobie.robie.members.clients">enrobie.robie.members.clients module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#module-enrobie.robie.members.member">enrobie.robie.members.member module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#module-enrobie.robie.members.plugins">enrobie.robie.members.plugins module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#module-enrobie.robie.members">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.models.html">enrobie.robie.models package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#module-enrobie.robie.models.command">enrobie.robie.models.command module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#module-enrobie.robie.models.message">enrobie.robie.models.message module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#module-enrobie.robie.models.robie">enrobie.robie.models.robie module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#module-enrobie.robie.models">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html">enrobie.robie.params package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#module-enrobie.robie.params.child">enrobie.robie.params.child module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#module-enrobie.robie.params.client">enrobie.robie.params.client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#module-enrobie.robie.params.common">enrobie.robie.params.common module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#module-enrobie.robie.params.plugin">enrobie.robie.params.plugin module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#module-enrobie.robie.params.robie">enrobie.robie.params.robie module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#module-enrobie.robie.params.service">enrobie.robie.params.service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#module-enrobie.robie.params">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.test.html">enrobie.robie.test package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.test.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.test.html#module-enrobie.robie.test.test_config">enrobie.robie.test.test_config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.test.html#module-enrobie.robie.test.test_robie">enrobie.robie.test.test_robie module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.test.html#module-enrobie.robie.test.test_service">enrobie.robie.test.test_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.test.html#module-enrobie.robie.test">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.threads.html">enrobie.robie.threads package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#module-enrobie.robie.threads.client">enrobie.robie.threads.client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#module-enrobie.robie.threads.plugin">enrobie.robie.threads.plugin module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#module-enrobie.robie.threads.thread">enrobie.robie.threads.thread module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#module-enrobie.robie.threads">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.html#module-enrobie.robie.common">enrobie.robie.common module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.html#module-enrobie.robie.config">enrobie.robie.config module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.config.RobieConfig"><code class="docutils literal notranslate"><span class="pre">RobieConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.config.RobieConfig.config"><code class="docutils literal notranslate"><span class="pre">RobieConfig.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.config.RobieConfig.inserts"><code class="docutils literal notranslate"><span class="pre">RobieConfig.inserts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.config.RobieConfig.merge_params"><code class="docutils literal notranslate"><span class="pre">RobieConfig.merge_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.config.RobieConfig.params"><code class="docutils literal notranslate"><span class="pre">RobieConfig.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.config.RobieConfig.register"><code class="docutils literal notranslate"><span class="pre">RobieConfig.register()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.html#module-enrobie.robie.robie">enrobie.robie.robie module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie"><code class="docutils literal notranslate"><span class="pre">Robie</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie.childs"><code class="docutils literal notranslate"><span class="pre">Robie.childs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie.config"><code class="docutils literal notranslate"><span class="pre">Robie.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie.dumped"><code class="docutils literal notranslate"><span class="pre">Robie.dumped</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie.logger"><code class="docutils literal notranslate"><span class="pre">Robie.logger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie.params"><code class="docutils literal notranslate"><span class="pre">Robie.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie.printer"><code class="docutils literal notranslate"><span class="pre">Robie.printer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie.register"><code class="docutils literal notranslate"><span class="pre">Robie.register()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.html#module-enrobie.robie.service">enrobie.robie.service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService"><code class="docutils literal notranslate"><span class="pre">RobieService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.check_congest"><code class="docutils literal notranslate"><span class="pre">RobieService.check_congest()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.check_zombies"><code class="docutils literal notranslate"><span class="pre">RobieService.check_zombies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.clients"><code class="docutils literal notranslate"><span class="pre">RobieService.clients</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.congest"><code class="docutils literal notranslate"><span class="pre">RobieService.congest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.enqueue"><code class="docutils literal notranslate"><span class="pre">RobieService.enqueue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.operate"><code class="docutils literal notranslate"><span class="pre">RobieService.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.operate_clients"><code class="docutils literal notranslate"><span class="pre">RobieService.operate_clients()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.operate_healths"><code class="docutils literal notranslate"><span class="pre">RobieService.operate_healths()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.operate_plugins"><code class="docutils literal notranslate"><span class="pre">RobieService.operate_plugins()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.params"><code class="docutils literal notranslate"><span class="pre">RobieService.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.plugins"><code class="docutils literal notranslate"><span class="pre">RobieService.plugins</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.robie"><code class="docutils literal notranslate"><span class="pre">RobieService.robie</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.running"><code class="docutils literal notranslate"><span class="pre">RobieService.running</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.soft"><code class="docutils literal notranslate"><span class="pre">RobieService.soft()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.start"><code class="docutils literal notranslate"><span class="pre">RobieService.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.stop"><code class="docutils literal notranslate"><span class="pre">RobieService.stop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.service.RobieService.zombies"><code class="docutils literal notranslate"><span class="pre">RobieService.zombies</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.html#module-enrobie.robie">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.Robie"><code class="docutils literal notranslate"><span class="pre">Robie</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.Robie.childs"><code class="docutils literal notranslate"><span class="pre">Robie.childs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.Robie.config"><code class="docutils literal notranslate"><span class="pre">Robie.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.Robie.dumped"><code class="docutils literal notranslate"><span class="pre">Robie.dumped</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.Robie.logger"><code class="docutils literal notranslate"><span class="pre">Robie.logger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.Robie.params"><code class="docutils literal notranslate"><span class="pre">Robie.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.Robie.printer"><code class="docutils literal notranslate"><span class="pre">Robie.printer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.Robie.register"><code class="docutils literal notranslate"><span class="pre">Robie.register()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieConfig"><code class="docutils literal notranslate"><span class="pre">RobieConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieConfig.config"><code class="docutils literal notranslate"><span class="pre">RobieConfig.config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieConfig.inserts"><code class="docutils literal notranslate"><span class="pre">RobieConfig.inserts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieConfig.merge_params"><code class="docutils literal notranslate"><span class="pre">RobieConfig.merge_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieConfig.params"><code class="docutils literal notranslate"><span class="pre">RobieConfig.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieConfig.register"><code class="docutils literal notranslate"><span class="pre">RobieConfig.register()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService"><code class="docutils literal notranslate"><span class="pre">RobieService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.check_congest"><code class="docutils literal notranslate"><span class="pre">RobieService.check_congest()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.check_zombies"><code class="docutils literal notranslate"><span class="pre">RobieService.check_zombies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.clients"><code class="docutils literal notranslate"><span class="pre">RobieService.clients</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.congest"><code class="docutils literal notranslate"><span class="pre">RobieService.congest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.enqueue"><code class="docutils literal notranslate"><span class="pre">RobieService.enqueue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.operate"><code class="docutils literal notranslate"><span class="pre">RobieService.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.operate_clients"><code class="docutils literal notranslate"><span class="pre">RobieService.operate_clients()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.operate_healths"><code class="docutils literal notranslate"><span class="pre">RobieService.operate_healths()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.operate_plugins"><code class="docutils literal notranslate"><span class="pre">RobieService.operate_plugins()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.params"><code class="docutils literal notranslate"><span class="pre">RobieService.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.plugins"><code class="docutils literal notranslate"><span class="pre">RobieService.plugins</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.robie"><code class="docutils literal notranslate"><span class="pre">RobieService.robie</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.running"><code class="docutils literal notranslate"><span class="pre">RobieService.running</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.soft"><code class="docutils literal notranslate"><span class="pre">RobieService.soft()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.start"><code class="docutils literal notranslate"><span class="pre">RobieService.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.stop"><code class="docutils literal notranslate"><span class="pre">RobieService.stop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.RobieService.zombies"><code class="docutils literal notranslate"><span class="pre">RobieService.zombies</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.utils.html">enrobie.utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.utils.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.test.html">enrobie.utils.test package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.test.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test.test_child">enrobie.utils.test.test_child module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test.test_param">enrobie.utils.test.test_param module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.utils.html#module-enrobie.utils.child">enrobie.utils.child module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.child.InvalidChild"><code class="docutils literal notranslate"><span class="pre">InvalidChild</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.child.InvalidChild.about"><code class="docutils literal notranslate"><span class="pre">InvalidChild.about</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.child.InvalidChild.child"><code class="docutils literal notranslate"><span class="pre">InvalidChild.child</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.child.InvalidChild.phase"><code class="docutils literal notranslate"><span class="pre">InvalidChild.phase</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.utils.html#module-enrobie.utils.param">enrobie.utils.param module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.param.InvalidParam"><code class="docutils literal notranslate"><span class="pre">InvalidParam</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.param.InvalidParam.about"><code class="docutils literal notranslate"><span class="pre">InvalidParam.about</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.param.InvalidParam.child"><code class="docutils literal notranslate"><span class="pre">InvalidParam.child</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.param.InvalidParam.error"><code class="docutils literal notranslate"><span class="pre">InvalidParam.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.param.InvalidParam.param"><code class="docutils literal notranslate"><span class="pre">InvalidParam.param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.param.InvalidParam.value"><code class="docutils literal notranslate"><span class="pre">InvalidParam.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.utils.html#module-enrobie.utils">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.InvalidChild"><code class="docutils literal notranslate"><span class="pre">InvalidChild</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.InvalidChild.about"><code class="docutils literal notranslate"><span class="pre">InvalidChild.about</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.InvalidChild.child"><code class="docutils literal notranslate"><span class="pre">InvalidChild.child</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.InvalidChild.phase"><code class="docutils literal notranslate"><span class="pre">InvalidChild.phase</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.InvalidParam"><code class="docutils literal notranslate"><span class="pre">InvalidParam</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.InvalidParam.about"><code class="docutils literal notranslate"><span class="pre">InvalidParam.about</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.InvalidParam.child"><code class="docutils literal notranslate"><span class="pre">InvalidParam.child</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.InvalidParam.error"><code class="docutils literal notranslate"><span class="pre">InvalidParam.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.InvalidParam.param"><code class="docutils literal notranslate"><span class="pre">InvalidParam.param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.InvalidParam.value"><code class="docutils literal notranslate"><span class="pre">InvalidParam.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-enrobie.conftest">
+<span id="enrobie-conftest-module"></span><h2>enrobie.conftest module<a class="headerlink" href="#module-enrobie.conftest" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="enrobie.conftest.client_dscsock">
+<span class="sig-prename descclassname"><span class="pre">enrobie.conftest.</span></span><span class="sig-name descname"><span class="pre">client_dscsock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mocker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockerFixture</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">respx_mock</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockRouter</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.discord.test.html#enconnect.discord.test.helpers.DSCClientSocket" title="(in enconnect v0.16.3)"><span class="pre">DSCClientSocket</span></a></span></span><a class="reference internal" href="_modules/enconnect/discord/test/helpers.html#client_dscsock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.conftest.client_dscsock" title="Link to this definition"></a></dt>
+<dd><p>Construct the instance for use in the downstream tests.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mocker</strong> – Object for mocking the Python routines.</p></li>
+<li><p><strong>respx_mock</strong> – Object for mocking request operation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Newly constructed instance of related class.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="enrobie.conftest.client_ircsock">
+<span class="sig-prename descclassname"><span class="pre">enrobie.conftest.</span></span><span class="sig-name descname"><span class="pre">client_ircsock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mocker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockerFixture</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.irc.test.html#enconnect.irc.test.helpers.IRCClientSocket" title="(in enconnect v0.16.3)"><span class="pre">IRCClientSocket</span></a></span></span><a class="reference internal" href="_modules/enconnect/irc/test/helpers.html#client_ircsock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.conftest.client_ircsock" title="Link to this definition"></a></dt>
+<dd><p>Construct the instance for use in the downstream tests.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mocker</strong> – Object for mocking the Python routines.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Newly constructed instance of related class.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="enrobie.conftest.client_mtmsock">
+<span class="sig-prename descclassname"><span class="pre">enrobie.conftest.</span></span><span class="sig-name descname"><span class="pre">client_mtmsock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mocker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockerFixture</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">respx_mock</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockRouter</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.mattermost.test.html#enconnect.mattermost.test.helpers.MTMClientSocket" title="(in enconnect v0.16.3)"><span class="pre">MTMClientSocket</span></a></span></span><a class="reference internal" href="_modules/enconnect/mattermost/test/helpers.html#client_mtmsock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.conftest.client_mtmsock" title="Link to this definition"></a></dt>
+<dd><p>Construct the instance for use in the downstream tests.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mocker</strong> – Object for mocking the Python routines.</p></li>
+<li><p><strong>respx_mock</strong> – Object for mocking request operation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Newly constructed instance of related class.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-enrobie">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-enrobie" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Enasis Network.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

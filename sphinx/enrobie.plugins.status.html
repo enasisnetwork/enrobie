@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>enrobie.plugins.status package &mdash; enrobie  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/autodoc_pydantic.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            enrobie
+          </a>
+              <div class="version">
+                0.8.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">enrobie.plugins.status package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-enrobie.plugins.status.params">enrobie.plugins.status.params module</a><ul>
+<li><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginCommandParams"><code class="docutils literal notranslate"><span class="pre">StatusPluginCommandParams</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginCommandParams.dsc"><code class="docutils literal notranslate"><span class="pre">StatusPluginCommandParams.dsc</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginCommandParams.irc"><code class="docutils literal notranslate"><span class="pre">StatusPluginCommandParams.irc</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginCommandParams.mtm"><code class="docutils literal notranslate"><span class="pre">StatusPluginCommandParams.mtm</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginParams"><code class="docutils literal notranslate"><span class="pre">StatusPluginParams</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginParams.command"><code class="docutils literal notranslate"><span class="pre">StatusPluginParams.command</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginParams.enable"><code class="docutils literal notranslate"><span class="pre">StatusPluginParams.enable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-enrobie.plugins.status.plugin">enrobie.plugins.status.plugin module</a><ul>
+<li><a class="reference internal" href="#enrobie.plugins.status.plugin.StatusPlugin"><code class="docutils literal notranslate"><span class="pre">StatusPlugin</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.plugins.status.plugin.StatusPlugin.operate"><code class="docutils literal notranslate"><span class="pre">StatusPlugin.operate()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.plugins.status.plugin.StatusPlugin.validate"><code class="docutils literal notranslate"><span class="pre">StatusPlugin.validate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-enrobie.plugins.status">Module contents</a><ul>
+<li><a class="reference internal" href="#enrobie.plugins.status.StatusPlugin"><code class="docutils literal notranslate"><span class="pre">StatusPlugin</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.plugins.status.StatusPlugin.operate"><code class="docutils literal notranslate"><span class="pre">StatusPlugin.operate()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.plugins.status.StatusPlugin.validate"><code class="docutils literal notranslate"><span class="pre">StatusPlugin.validate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enrobie.plugins.status.StatusPluginParams"><code class="docutils literal notranslate"><span class="pre">StatusPluginParams</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.plugins.status.StatusPluginParams.command"><code class="docutils literal notranslate"><span class="pre">StatusPluginParams.command</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.plugins.status.StatusPluginParams.enable"><code class="docutils literal notranslate"><span class="pre">StatusPluginParams.enable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">enrobie</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">enrobie.plugins.status package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/enrobie.plugins.status.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="enrobie-plugins-status-package">
+<h1>enrobie.plugins.status package<a class="headerlink" href="#enrobie-plugins-status-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.plugins.status.test.html">enrobie.plugins.status.test package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.plugins.status.test.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.plugins.status.test.html#module-enrobie.plugins.status.test.test_plugin">enrobie.plugins.status.test.test_plugin module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.status.test.html#enrobie.plugins.status.test.test_plugin.test_StatusPlugin"><code class="docutils literal notranslate"><span class="pre">test_StatusPlugin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.status.test.html#enrobie.plugins.status.test.test_plugin.test_StatusPlugin_cover"><code class="docutils literal notranslate"><span class="pre">test_StatusPlugin_cover()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.plugins.status.test.html#module-enrobie.plugins.status.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-enrobie.plugins.status.params">
+<span id="enrobie-plugins-status-params-module"></span><h2>enrobie.plugins.status.params module<a class="headerlink" href="#module-enrobie.plugins.status.params" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="enrobie.plugins.status.params.StatusPluginCommandParams">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.status.params.</span></span><span class="sig-name descname"><span class="pre">StatusPluginCommandParams</span></span><a class="reference internal" href="_modules/enrobie/plugins/status/params.html#StatusPluginCommandParams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.status.params.StatusPluginCommandParams" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.common.RobieParamsModel" title="enrobie.robie.params.common.RobieParamsModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobieParamsModel</span></code></a></p>
+<p>Process and validate the Robie configuration parameters.</p>
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StatusPluginCommandParams&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Process and validate the Robie configuration parameters.&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;irc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;!status&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Command name for chat platform&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irc&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;dsc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;!status&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Command name for chat platform&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dsc&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;mtm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;!status&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Command name for chat platform&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mtm&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginCommandParams.dsc" title="enrobie.plugins.status.params.StatusPluginCommandParams.dsc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dsc</span> <span class="pre">(str)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginCommandParams.irc" title="enrobie.plugins.status.params.StatusPluginCommandParams.irc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">irc</span> <span class="pre">(str)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginCommandParams.mtm" title="enrobie.plugins.status.params.StatusPluginCommandParams.mtm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mtm</span> <span class="pre">(str)</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.status.params.StatusPluginCommandParams.dsc">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dsc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.12)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'!status'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Command</span> <span class="pre">name</span> <span class="pre">for</span> <span class="pre">chat</span> <span class="pre">platform'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'!status'</span></em><a class="headerlink" href="#enrobie.plugins.status.params.StatusPluginCommandParams.dsc" title="Link to this definition"></a></dt>
+<dd><p>Command name for chat platform</p>
+</dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.status.params.StatusPluginCommandParams.irc">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">irc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.12)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'!status'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Command</span> <span class="pre">name</span> <span class="pre">for</span> <span class="pre">chat</span> <span class="pre">platform'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'!status'</span></em><a class="headerlink" href="#enrobie.plugins.status.params.StatusPluginCommandParams.irc" title="Link to this definition"></a></dt>
+<dd><p>Command name for chat platform</p>
+</dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.status.params.StatusPluginCommandParams.mtm">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mtm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.12)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'!status'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Command</span> <span class="pre">name</span> <span class="pre">for</span> <span class="pre">chat</span> <span class="pre">platform'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'!status'</span></em><a class="headerlink" href="#enrobie.plugins.status.params.StatusPluginCommandParams.mtm" title="Link to this definition"></a></dt>
+<dd><p>Command name for chat platform</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="enrobie.plugins.status.params.StatusPluginParams">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.status.params.</span></span><span class="sig-name descname"><span class="pre">StatusPluginParams</span></span><a class="reference internal" href="_modules/enrobie/plugins/status/params.html#StatusPluginParams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.status.params.StatusPluginParams" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.plugin.RobiePluginParams" title="enrobie.robie.params.plugin.RobiePluginParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobiePluginParams</span></code></a></p>
+<p>Process and validate the Robie configuration parameters.</p>
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StatusPluginParams&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Process and validate the Robie configuration parameters.&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;enable&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Determine whether child enabled&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enable&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/StatusPluginCommandParams&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Command name per chat platform&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;StatusPluginCommandParams&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Process and validate the Robie configuration parameters.&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;irc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;!status&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Command name for chat platform&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irc&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;dsc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;!status&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Command name for chat platform&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dsc&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;mtm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;!status&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Command name for chat platform&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mtm&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StatusPluginCommandParams&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginParams.command" title="enrobie.plugins.status.params.StatusPluginParams.command"><code class="xref py py-obj docutils literal notranslate"><span class="pre">command</span> <span class="pre">(Annotated[enrobie.plugins.status.params.StatusPluginCommandParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=StatusPluginCommandParams,</span> <span class="pre">description='Command</span> <span class="pre">name</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform')])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginParams.enable" title="enrobie.plugins.status.params.StatusPluginParams.enable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable</span> <span class="pre">(Annotated[bool,</span> <span class="pre">Field(False,</span> <span class="pre">description='Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled')])</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.status.params.StatusPluginParams.command">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">command</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.12)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginCommandParams" title="enrobie.plugins.status.params.StatusPluginCommandParams"><span class="pre">StatusPluginCommandParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default_factory</span></span><span class="o"><span class="pre">=</span></span><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginCommandParams" title="enrobie.plugins.status.params.StatusPluginCommandParams"><span class="pre">StatusPluginCommandParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Command</span> <span class="pre">name</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Optional]</span></em><a class="headerlink" href="#enrobie.plugins.status.params.StatusPluginParams.command" title="Link to this definition"></a></dt>
+<dd><p>Command name per chat platform</p>
+</dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.status.params.StatusPluginParams.enable">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enable</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Field</span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#enrobie.plugins.status.params.StatusPluginParams.enable" title="Link to this definition"></a></dt>
+<dd><p>Determine whether child enabled</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-enrobie.plugins.status.plugin">
+<span id="enrobie-plugins-status-plugin-module"></span><h2>enrobie.plugins.status.plugin module<a class="headerlink" href="#module-enrobie.plugins.status.plugin" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.plugins.status.plugin.StatusPlugin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.status.plugin.</span></span><span class="sig-name descname"><span class="pre">StatusPlugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/plugins/status/plugin.html#StatusPlugin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.status.plugin.StatusPlugin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin" title="enrobie.robie.childs.plugin.RobiePlugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobiePlugin</span></code></a></p>
+<p>Integrate with the Robie routine and perform operations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This plugin responds to inquiries about Robie status.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>robie</strong> – Primary class instance for Chatting Robie.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.status.plugin.StatusPlugin.operate">
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/status/plugin.html#StatusPlugin.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.status.plugin.StatusPlugin.operate" title="Link to this definition"></a></dt>
+<dd><p>Perform the operation related to Homie service threads.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.status.plugin.StatusPlugin.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/status/plugin.html#StatusPlugin.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.status.plugin.StatusPlugin.validate" title="Link to this definition"></a></dt>
+<dd><p>Perform advanced validation on the parameters provided.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-enrobie.plugins.status">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-enrobie.plugins.status" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.plugins.status.StatusPlugin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.status.</span></span><span class="sig-name descname"><span class="pre">StatusPlugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/plugins/status/plugin.html#StatusPlugin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.status.StatusPlugin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin" title="enrobie.robie.childs.plugin.RobiePlugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobiePlugin</span></code></a></p>
+<p>Integrate with the Robie routine and perform operations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This plugin responds to inquiries about Robie status.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>robie</strong> – Primary class instance for Chatting Robie.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.status.StatusPlugin.operate">
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/status/plugin.html#StatusPlugin.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.status.StatusPlugin.operate" title="Link to this definition"></a></dt>
+<dd><p>Perform the operation related to Homie service threads.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.status.StatusPlugin.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/status/plugin.html#StatusPlugin.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.status.StatusPlugin.validate" title="Link to this definition"></a></dt>
+<dd><p>Perform advanced validation on the parameters provided.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="enrobie.plugins.status.StatusPluginParams">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.status.</span></span><span class="sig-name descname"><span class="pre">StatusPluginParams</span></span><a class="reference internal" href="_modules/enrobie/plugins/status/params.html#StatusPluginParams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.status.StatusPluginParams" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.plugin.RobiePluginParams" title="enrobie.robie.params.plugin.RobiePluginParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobiePluginParams</span></code></a></p>
+<p>Process and validate the Robie configuration parameters.</p>
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StatusPluginParams&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Process and validate the Robie configuration parameters.&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;enable&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Determine whether child enabled&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enable&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/StatusPluginCommandParams&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Command name per chat platform&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;StatusPluginCommandParams&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Process and validate the Robie configuration parameters.&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;irc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;!status&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Command name for chat platform&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Irc&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;dsc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;!status&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Command name for chat platform&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dsc&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;mtm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;!status&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Command name for chat platform&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mtm&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StatusPluginCommandParams&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginParams.command" title="enrobie.plugins.status.params.StatusPluginParams.command"><code class="xref py py-obj docutils literal notranslate"><span class="pre">command</span> <span class="pre">(Annotated[enrobie.plugins.status.params.StatusPluginCommandParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=StatusPluginCommandParams,</span> <span class="pre">description='Command</span> <span class="pre">name</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform')])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginParams.enable" title="enrobie.plugins.status.params.StatusPluginParams.enable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable</span> <span class="pre">(Annotated[bool,</span> <span class="pre">Field(False,</span> <span class="pre">description='Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled')])</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.status.StatusPluginParams.command">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">command</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.12)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginCommandParams" title="enrobie.plugins.status.params.StatusPluginCommandParams"><span class="pre">StatusPluginCommandParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default_factory</span></span><span class="o"><span class="pre">=</span></span><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginCommandParams" title="enrobie.plugins.status.params.StatusPluginCommandParams"><span class="pre">StatusPluginCommandParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Command</span> <span class="pre">name</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Optional]</span></em><a class="headerlink" href="#enrobie.plugins.status.StatusPluginParams.command" title="Link to this definition"></a></dt>
+<dd><p>Command name per chat platform</p>
+</dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.status.StatusPluginParams.enable">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enable</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Field</span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#enrobie.plugins.status.StatusPluginParams.enable" title="Link to this definition"></a></dt>
+<dd><p>Determine whether child enabled</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Enasis Network.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

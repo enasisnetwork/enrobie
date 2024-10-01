@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>enrobie.clients package &mdash; enrobie  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/autodoc_pydantic.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            enrobie
+          </a>
+              <div class="version">
+                0.8.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">enrobie.clients package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#module-enrobie.clients">Module contents</a><ul>
+<li><a class="reference internal" href="#enrobie.clients.DSCClient"><code class="docutils literal notranslate"><span class="pre">DSCClient</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.clients.DSCClient.client"><code class="docutils literal notranslate"><span class="pre">DSCClient.client</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.DSCClient.compose"><code class="docutils literal notranslate"><span class="pre">DSCClient.compose()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.DSCClient.family"><code class="docutils literal notranslate"><span class="pre">DSCClient.family</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.DSCClient.get_command"><code class="docutils literal notranslate"><span class="pre">DSCClient.get_command()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.DSCClient.get_message"><code class="docutils literal notranslate"><span class="pre">DSCClient.get_message()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.DSCClient.operate"><code class="docutils literal notranslate"><span class="pre">DSCClient.operate()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.DSCClient.put_command"><code class="docutils literal notranslate"><span class="pre">DSCClient.put_command()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.DSCClient.put_message"><code class="docutils literal notranslate"><span class="pre">DSCClient.put_message()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.DSCClient.validate"><code class="docutils literal notranslate"><span class="pre">DSCClient.validate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enrobie.clients.DSCClientParams"><code class="docutils literal notranslate"><span class="pre">DSCClientParams</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.clients.DSCClientParams.client"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.client</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.DSCClientParams.delay"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.delay</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enrobie.clients.IRCClient"><code class="docutils literal notranslate"><span class="pre">IRCClient</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.clients.IRCClient.client"><code class="docutils literal notranslate"><span class="pre">IRCClient.client</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.IRCClient.compose"><code class="docutils literal notranslate"><span class="pre">IRCClient.compose()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.IRCClient.family"><code class="docutils literal notranslate"><span class="pre">IRCClient.family</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.IRCClient.get_command"><code class="docutils literal notranslate"><span class="pre">IRCClient.get_command()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.IRCClient.get_message"><code class="docutils literal notranslate"><span class="pre">IRCClient.get_message()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.IRCClient.operate"><code class="docutils literal notranslate"><span class="pre">IRCClient.operate()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.IRCClient.put_command"><code class="docutils literal notranslate"><span class="pre">IRCClient.put_command()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.IRCClient.put_message"><code class="docutils literal notranslate"><span class="pre">IRCClient.put_message()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.IRCClient.validate"><code class="docutils literal notranslate"><span class="pre">IRCClient.validate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enrobie.clients.IRCClientParams"><code class="docutils literal notranslate"><span class="pre">IRCClientParams</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.clients.IRCClientParams.client"><code class="docutils literal notranslate"><span class="pre">IRCClientParams.client</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.IRCClientParams.delay"><code class="docutils literal notranslate"><span class="pre">IRCClientParams.delay</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enrobie.clients.MTMClient"><code class="docutils literal notranslate"><span class="pre">MTMClient</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.clients.MTMClient.client"><code class="docutils literal notranslate"><span class="pre">MTMClient.client</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.MTMClient.compose"><code class="docutils literal notranslate"><span class="pre">MTMClient.compose()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.MTMClient.family"><code class="docutils literal notranslate"><span class="pre">MTMClient.family</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.MTMClient.get_command"><code class="docutils literal notranslate"><span class="pre">MTMClient.get_command()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.MTMClient.get_message"><code class="docutils literal notranslate"><span class="pre">MTMClient.get_message()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.MTMClient.operate"><code class="docutils literal notranslate"><span class="pre">MTMClient.operate()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.MTMClient.put_command"><code class="docutils literal notranslate"><span class="pre">MTMClient.put_command()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.MTMClient.put_message"><code class="docutils literal notranslate"><span class="pre">MTMClient.put_message()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.MTMClient.validate"><code class="docutils literal notranslate"><span class="pre">MTMClient.validate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enrobie.clients.MTMClientParams"><code class="docutils literal notranslate"><span class="pre">MTMClientParams</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.clients.MTMClientParams.client"><code class="docutils literal notranslate"><span class="pre">MTMClientParams.client</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.clients.MTMClientParams.delay"><code class="docutils literal notranslate"><span class="pre">MTMClientParams.delay</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">enrobie</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">enrobie.clients package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/enrobie.clients.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="enrobie-clients-package">
+<h1>enrobie.clients package<a class="headerlink" href="#enrobie-clients-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.clients.discord.html">enrobie.clients.discord package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.discord.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.discord.test.html">enrobie.clients.discord.test package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.test.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.test.html#module-enrobie.clients.discord.test.test_client">enrobie.clients.discord.test.test_client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.test.html#module-enrobie.clients.discord.test.test_command">enrobie.clients.discord.test.test_command module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.test.html#module-enrobie.clients.discord.test.test_message">enrobie.clients.discord.test.test_message module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.test.html#module-enrobie.clients.discord.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.discord.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.discord.html#module-enrobie.clients.discord.client">enrobie.clients.discord.client module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient"><code class="docutils literal notranslate"><span class="pre">DSCClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.client"><code class="docutils literal notranslate"><span class="pre">DSCClient.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.compose"><code class="docutils literal notranslate"><span class="pre">DSCClient.compose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.family"><code class="docutils literal notranslate"><span class="pre">DSCClient.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.get_command"><code class="docutils literal notranslate"><span class="pre">DSCClient.get_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.get_message"><code class="docutils literal notranslate"><span class="pre">DSCClient.get_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.operate"><code class="docutils literal notranslate"><span class="pre">DSCClient.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.put_command"><code class="docutils literal notranslate"><span class="pre">DSCClient.put_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.put_message"><code class="docutils literal notranslate"><span class="pre">DSCClient.put_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.validate"><code class="docutils literal notranslate"><span class="pre">DSCClient.validate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.discord.html#module-enrobie.clients.discord.command">enrobie.clients.discord.command module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.command.DSCCommand"><code class="docutils literal notranslate"><span class="pre">DSCCommand</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.command.DSCCommand.family"><code class="docutils literal notranslate"><span class="pre">DSCCommand.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.command.DSCCommand.json"><code class="docutils literal notranslate"><span class="pre">DSCCommand.json</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.command.DSCCommand.method"><code class="docutils literal notranslate"><span class="pre">DSCCommand.method</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.command.DSCCommand.params"><code class="docutils literal notranslate"><span class="pre">DSCCommand.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.command.DSCCommand.path"><code class="docutils literal notranslate"><span class="pre">DSCCommand.path</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.discord.html#module-enrobie.clients.discord.message">enrobie.clients.discord.message module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage"><code class="docutils literal notranslate"><span class="pre">DSCMessage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.event"><code class="docutils literal notranslate"><span class="pre">DSCMessage.event</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.family"><code class="docutils literal notranslate"><span class="pre">DSCMessage.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.isme"><code class="docutils literal notranslate"><span class="pre">DSCMessage.isme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.kind"><code class="docutils literal notranslate"><span class="pre">DSCMessage.kind</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.reply"><code class="docutils literal notranslate"><span class="pre">DSCMessage.reply()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.discord.html#module-enrobie.clients.discord.params">enrobie.clients.discord.params module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.params.DSCClientParams"><code class="docutils literal notranslate"><span class="pre">DSCClientParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.params.DSCClientParams.client"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.params.DSCClientParams.delay"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.delay</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.params.DSCClientParams.enable"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.enable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.discord.html#module-enrobie.clients.discord">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient"><code class="docutils literal notranslate"><span class="pre">DSCClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.client"><code class="docutils literal notranslate"><span class="pre">DSCClient.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.compose"><code class="docutils literal notranslate"><span class="pre">DSCClient.compose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.family"><code class="docutils literal notranslate"><span class="pre">DSCClient.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.get_command"><code class="docutils literal notranslate"><span class="pre">DSCClient.get_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.get_message"><code class="docutils literal notranslate"><span class="pre">DSCClient.get_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.operate"><code class="docutils literal notranslate"><span class="pre">DSCClient.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.put_command"><code class="docutils literal notranslate"><span class="pre">DSCClient.put_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.put_message"><code class="docutils literal notranslate"><span class="pre">DSCClient.put_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.validate"><code class="docutils literal notranslate"><span class="pre">DSCClient.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClientParams"><code class="docutils literal notranslate"><span class="pre">DSCClientParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClientParams.client"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClientParams.delay"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.delay</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClientParams.enable"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.enable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.clients.irc.html">enrobie.clients.irc package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.irc.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.irc.test.html">enrobie.clients.irc.test package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.test.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.test.html#module-enrobie.clients.irc.test.test_client">enrobie.clients.irc.test.test_client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.test.html#module-enrobie.clients.irc.test.test_command">enrobie.clients.irc.test.test_command module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.test.html#module-enrobie.clients.irc.test.test_message">enrobie.clients.irc.test.test_message module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.test.html#module-enrobie.clients.irc.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.irc.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc.client">enrobie.clients.irc.client module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.client.IRCClient"><code class="docutils literal notranslate"><span class="pre">IRCClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.client.IRCClient.client"><code class="docutils literal notranslate"><span class="pre">IRCClient.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.client.IRCClient.compose"><code class="docutils literal notranslate"><span class="pre">IRCClient.compose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.client.IRCClient.family"><code class="docutils literal notranslate"><span class="pre">IRCClient.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.client.IRCClient.get_command"><code class="docutils literal notranslate"><span class="pre">IRCClient.get_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.client.IRCClient.get_message"><code class="docutils literal notranslate"><span class="pre">IRCClient.get_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.client.IRCClient.operate"><code class="docutils literal notranslate"><span class="pre">IRCClient.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.client.IRCClient.put_command"><code class="docutils literal notranslate"><span class="pre">IRCClient.put_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.client.IRCClient.put_message"><code class="docutils literal notranslate"><span class="pre">IRCClient.put_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.client.IRCClient.validate"><code class="docutils literal notranslate"><span class="pre">IRCClient.validate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc.command">enrobie.clients.irc.command module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.command.IRCCommand"><code class="docutils literal notranslate"><span class="pre">IRCCommand</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.command.IRCCommand.event"><code class="docutils literal notranslate"><span class="pre">IRCCommand.event</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.command.IRCCommand.family"><code class="docutils literal notranslate"><span class="pre">IRCCommand.family</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc.message">enrobie.clients.irc.message module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage"><code class="docutils literal notranslate"><span class="pre">IRCMessage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage.event"><code class="docutils literal notranslate"><span class="pre">IRCMessage.event</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage.family"><code class="docutils literal notranslate"><span class="pre">IRCMessage.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage.isme"><code class="docutils literal notranslate"><span class="pre">IRCMessage.isme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage.kind"><code class="docutils literal notranslate"><span class="pre">IRCMessage.kind</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage.reply"><code class="docutils literal notranslate"><span class="pre">IRCMessage.reply()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc.params">enrobie.clients.irc.params module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.params.IRCClientParams"><code class="docutils literal notranslate"><span class="pre">IRCClientParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.params.IRCClientParams.client"><code class="docutils literal notranslate"><span class="pre">IRCClientParams.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.params.IRCClientParams.delay"><code class="docutils literal notranslate"><span class="pre">IRCClientParams.delay</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.params.IRCClientParams.enable"><code class="docutils literal notranslate"><span class="pre">IRCClientParams.enable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClient"><code class="docutils literal notranslate"><span class="pre">IRCClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClient.client"><code class="docutils literal notranslate"><span class="pre">IRCClient.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClient.compose"><code class="docutils literal notranslate"><span class="pre">IRCClient.compose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClient.family"><code class="docutils literal notranslate"><span class="pre">IRCClient.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClient.get_command"><code class="docutils literal notranslate"><span class="pre">IRCClient.get_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClient.get_message"><code class="docutils literal notranslate"><span class="pre">IRCClient.get_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClient.operate"><code class="docutils literal notranslate"><span class="pre">IRCClient.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClient.put_command"><code class="docutils literal notranslate"><span class="pre">IRCClient.put_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClient.put_message"><code class="docutils literal notranslate"><span class="pre">IRCClient.put_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClient.validate"><code class="docutils literal notranslate"><span class="pre">IRCClient.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClientParams"><code class="docutils literal notranslate"><span class="pre">IRCClientParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClientParams.client"><code class="docutils literal notranslate"><span class="pre">IRCClientParams.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClientParams.delay"><code class="docutils literal notranslate"><span class="pre">IRCClientParams.delay</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClientParams.enable"><code class="docutils literal notranslate"><span class="pre">IRCClientParams.enable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.clients.mattermost.html">enrobie.clients.mattermost package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.mattermost.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.mattermost.test.html">enrobie.clients.mattermost.test package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.test.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.test.html#module-enrobie.clients.mattermost.test.test_client">enrobie.clients.mattermost.test.test_client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.test.html#module-enrobie.clients.mattermost.test.test_command">enrobie.clients.mattermost.test.test_command module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.test.html#module-enrobie.clients.mattermost.test.test_message">enrobie.clients.mattermost.test.test_message module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.test.html#module-enrobie.clients.mattermost.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.mattermost.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost.client">enrobie.clients.mattermost.client module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.client.MTMClient"><code class="docutils literal notranslate"><span class="pre">MTMClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.client.MTMClient.client"><code class="docutils literal notranslate"><span class="pre">MTMClient.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.client.MTMClient.compose"><code class="docutils literal notranslate"><span class="pre">MTMClient.compose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.client.MTMClient.family"><code class="docutils literal notranslate"><span class="pre">MTMClient.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.client.MTMClient.get_command"><code class="docutils literal notranslate"><span class="pre">MTMClient.get_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.client.MTMClient.get_message"><code class="docutils literal notranslate"><span class="pre">MTMClient.get_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.client.MTMClient.operate"><code class="docutils literal notranslate"><span class="pre">MTMClient.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.client.MTMClient.put_command"><code class="docutils literal notranslate"><span class="pre">MTMClient.put_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.client.MTMClient.put_message"><code class="docutils literal notranslate"><span class="pre">MTMClient.put_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.client.MTMClient.validate"><code class="docutils literal notranslate"><span class="pre">MTMClient.validate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost.command">enrobie.clients.mattermost.command module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.command.MTMCommand"><code class="docutils literal notranslate"><span class="pre">MTMCommand</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.command.MTMCommand.family"><code class="docutils literal notranslate"><span class="pre">MTMCommand.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.command.MTMCommand.json"><code class="docutils literal notranslate"><span class="pre">MTMCommand.json</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.command.MTMCommand.method"><code class="docutils literal notranslate"><span class="pre">MTMCommand.method</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.command.MTMCommand.params"><code class="docutils literal notranslate"><span class="pre">MTMCommand.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.command.MTMCommand.path"><code class="docutils literal notranslate"><span class="pre">MTMCommand.path</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost.message">enrobie.clients.mattermost.message module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage"><code class="docutils literal notranslate"><span class="pre">MTMMessage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage.event"><code class="docutils literal notranslate"><span class="pre">MTMMessage.event</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage.family"><code class="docutils literal notranslate"><span class="pre">MTMMessage.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage.isme"><code class="docutils literal notranslate"><span class="pre">MTMMessage.isme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage.kind"><code class="docutils literal notranslate"><span class="pre">MTMMessage.kind</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage.reply"><code class="docutils literal notranslate"><span class="pre">MTMMessage.reply()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost.params">enrobie.clients.mattermost.params module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.params.MTMClientParams"><code class="docutils literal notranslate"><span class="pre">MTMClientParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.params.MTMClientParams.client"><code class="docutils literal notranslate"><span class="pre">MTMClientParams.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.params.MTMClientParams.delay"><code class="docutils literal notranslate"><span class="pre">MTMClientParams.delay</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.params.MTMClientParams.enable"><code class="docutils literal notranslate"><span class="pre">MTMClientParams.enable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClient"><code class="docutils literal notranslate"><span class="pre">MTMClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClient.client"><code class="docutils literal notranslate"><span class="pre">MTMClient.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClient.compose"><code class="docutils literal notranslate"><span class="pre">MTMClient.compose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClient.family"><code class="docutils literal notranslate"><span class="pre">MTMClient.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClient.get_command"><code class="docutils literal notranslate"><span class="pre">MTMClient.get_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClient.get_message"><code class="docutils literal notranslate"><span class="pre">MTMClient.get_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClient.operate"><code class="docutils literal notranslate"><span class="pre">MTMClient.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClient.put_command"><code class="docutils literal notranslate"><span class="pre">MTMClient.put_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClient.put_message"><code class="docutils literal notranslate"><span class="pre">MTMClient.put_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClient.validate"><code class="docutils literal notranslate"><span class="pre">MTMClient.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClientParams"><code class="docutils literal notranslate"><span class="pre">MTMClientParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClientParams.client"><code class="docutils literal notranslate"><span class="pre">MTMClientParams.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClientParams.delay"><code class="docutils literal notranslate"><span class="pre">MTMClientParams.delay</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClientParams.enable"><code class="docutils literal notranslate"><span class="pre">MTMClientParams.enable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="module-enrobie.clients">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-enrobie.clients" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.clients.DSCClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.clients.</span></span><span class="sig-name descname"><span class="pre">DSCClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/clients/discord/client.html#DSCClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.DSCClient" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient" title="enrobie.robie.childs.client.RobieClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobieClient</span></code></a></p>
+<p>Establish and maintain connection with the chat service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>robie</strong> – Primary class instance for Chatting Robie.</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.clients.DSCClient.client">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">client</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.discord.html#enconnect.discord.client.Client" title="(in enconnect v0.16.3)"><span class="pre">Client</span></a></em><a class="headerlink" href="#enrobie.clients.DSCClient.client" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.DSCClient.compose">
+<span class="sig-name descname"><span class="pre">compose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.command.RobieCommand" title="enrobie.robie.models.command.RobieCommand"><span class="pre">RobieCommand</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/discord/client.html#DSCClient.compose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.DSCClient.compose" title="Link to this definition"></a></dt>
+<dd><p>Compose the message and transmit using the chat client.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> – Where the composed message will be sent.</p></li>
+<li><p><strong>content</strong> – Content that will be source of message.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.clients.DSCClient.family">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">family</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'discord'</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.clients.DSCClient.family" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.DSCClient.get_command">
+<span class="sig-name descname"><span class="pre">get_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'delete'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'get'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'post'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'patch'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'put'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.command.DSCCommand" title="enrobie.clients.discord.command.DSCCommand"><span class="pre">DSCCommand</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/discord/client.html#DSCClient.get_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.DSCClient.get_command" title="Link to this definition"></a></dt>
+<dd><p>Return the new item containing information for operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>New item containing information for operation.</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>method</strong> – Method for operation with the API server.</p></li>
+<li><p><strong>path</strong> – Path for the location to upstream endpoint.</p></li>
+<li><p><strong>params</strong> – Optional parameters included in request.</p></li>
+<li><p><strong>json</strong> – Optional JSON payload included in request.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.DSCClient.get_message">
+<span class="sig-name descname"><span class="pre">get_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.discord.html#enconnect.discord.models.ClientEvent" title="(in enconnect v0.16.3)"><span class="pre">ClientEvent</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage" title="enrobie.clients.discord.message.DSCMessage"><span class="pre">DSCMessage</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/discord/client.html#DSCClient.get_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.DSCClient.get_message" title="Link to this definition"></a></dt>
+<dd><p>Return the new item containing information for operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – Raw event received from the network peer.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New item containing information for operation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.DSCClient.operate">
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/discord/client.html#DSCClient.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.DSCClient.operate" title="Link to this definition"></a></dt>
+<dd><p>Perform the operation related to Homie service threads.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.DSCClient.put_command">
+<span class="sig-name descname"><span class="pre">put_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cqueue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue" title="enrobie.robie.addons.queue.RobieQueue"><span class="pre">RobieQueue</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.command.RobieCommand" title="enrobie.robie.models.command.RobieCommand"><span class="pre">RobieCommand</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'delete'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'get'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'post'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'patch'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'put'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/discord/client.html#DSCClient.put_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.DSCClient.put_command" title="Link to this definition"></a></dt>
+<dd><p>Insert the new item containing information for operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cqueue</strong> – Queue instance where the item is received.</p></li>
+<li><p><strong>method</strong> – Method for operation with the API server.</p></li>
+<li><p><strong>path</strong> – Path for the location to upstream endpoint.</p></li>
+<li><p><strong>params</strong> – Optional parameters included in request.</p></li>
+<li><p><strong>json</strong> – Optional JSON payload included in request.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.DSCClient.put_message">
+<span class="sig-name descname"><span class="pre">put_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mqueue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue" title="enrobie.robie.addons.queue.RobieQueue"><span class="pre">RobieQueue</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage" title="enrobie.robie.models.message.RobieMessage"><span class="pre">RobieMessage</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.discord.html#enconnect.discord.models.ClientEvent" title="(in enconnect v0.16.3)"><span class="pre">ClientEvent</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/discord/client.html#DSCClient.put_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.DSCClient.put_message" title="Link to this definition"></a></dt>
+<dd><p>Insert the new item containing information for operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mqueue</strong> – Queue instance where the item is received.</p></li>
+<li><p><strong>event</strong> – Raw event received from the network peer.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.DSCClient.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/discord/client.html#DSCClient.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.DSCClient.validate" title="Link to this definition"></a></dt>
+<dd><p>Perform advanced validation on the parameters provided.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="enrobie.clients.DSCClientParams">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.clients.</span></span><span class="sig-name descname"><span class="pre">DSCClientParams</span></span><a class="reference internal" href="_modules/enrobie/clients/discord/params.html#DSCClientParams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.DSCClientParams" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.client.RobieClientParams" title="enrobie.robie.params.client.RobieClientParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobieClientParams</span></code></a></p>
+<p>Process and validate the Robie configuration parameters.</p>
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DSCClientParams&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Process and validate the Robie configuration parameters.&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;enable&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Determine whether child enabled&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enable&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;client&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/ClientParams&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameters for the base client&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;delay&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Period to wait for reconnect&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delay&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;ClientParams&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Process and validate the class configuration parameters.&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameter for the integration&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Token&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Timeout connecting to server&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Timeout&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;ssl_verify&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Verify the ceritifcate valid&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ssl Verify&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;ssl_capem&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;minLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">                  </span><span class="p">},</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">               </span><span class="p">],</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Verify the ceritifcate valid&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ssl Capem&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;queue_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Maximum size for queued events&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;maximum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minimum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Queue Size&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;token&quot;</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ClientParams&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;client&quot;</span>
+<span class="w">   </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.params.DSCClientParams.client" title="enrobie.clients.discord.params.DSCClientParams.client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client</span> <span class="pre">(enconnect.discord.params.ClientParams)</span></code></a></p></li>
+<li><p><a class="reference internal" href="enrobie.clients.discord.html#enrobie.clients.discord.params.DSCClientParams.delay" title="enrobie.clients.discord.params.DSCClientParams.delay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delay</span> <span class="pre">(int)</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.clients.DSCClientParams.client">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">client</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.12)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.discord.html#enconnect.discord.params.ClientParams" title="(in enconnect v0.16.3)"><span class="pre">ClientParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Parameters</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">base</span> <span class="pre">client'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.clients.DSCClientParams.client" title="Link to this definition"></a></dt>
+<dd><p>Parameters for the base client</p>
+</dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.clients.DSCClientParams.delay">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delay</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.12)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Period</span> <span class="pre">to</span> <span class="pre">wait</span> <span class="pre">for</span> <span class="pre">reconnect'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#enrobie.clients.DSCClientParams.delay" title="Link to this definition"></a></dt>
+<dd><p>Period to wait for reconnect</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.clients.IRCClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.clients.</span></span><span class="sig-name descname"><span class="pre">IRCClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/clients/irc/client.html#IRCClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.IRCClient" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient" title="enrobie.robie.childs.client.RobieClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobieClient</span></code></a></p>
+<p>Establish and maintain connection with the chat service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>robie</strong> – Primary class instance for Chatting Robie.</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.clients.IRCClient.client">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">client</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.irc.html#enconnect.irc.client.Client" title="(in enconnect v0.16.3)"><span class="pre">Client</span></a></em><a class="headerlink" href="#enrobie.clients.IRCClient.client" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.IRCClient.compose">
+<span class="sig-name descname"><span class="pre">compose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.command.RobieCommand" title="enrobie.robie.models.command.RobieCommand"><span class="pre">RobieCommand</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/irc/client.html#IRCClient.compose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.IRCClient.compose" title="Link to this definition"></a></dt>
+<dd><p>Compose the message and transmit using the chat client.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> – Where the composed message will be sent.</p></li>
+<li><p><strong>content</strong> – Content that will be source of message.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.clients.IRCClient.family">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">family</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'irc'</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.clients.IRCClient.family" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.IRCClient.get_command">
+<span class="sig-name descname"><span class="pre">get_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.command.IRCCommand" title="enrobie.clients.irc.command.IRCCommand"><span class="pre">IRCCommand</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/irc/client.html#IRCClient.get_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.IRCClient.get_command" title="Link to this definition"></a></dt>
+<dd><p>Return the new item containing information for operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – Raw event to be sent to the network peer.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New item containing information for operation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.IRCClient.get_message">
+<span class="sig-name descname"><span class="pre">get_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.irc.html#enconnect.irc.models.ClientEvent" title="(in enconnect v0.16.3)"><span class="pre">ClientEvent</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage" title="enrobie.clients.irc.message.IRCMessage"><span class="pre">IRCMessage</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/irc/client.html#IRCClient.get_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.IRCClient.get_message" title="Link to this definition"></a></dt>
+<dd><p>Return the new item containing information for operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – Raw event received from the network peer.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New item containing information for operation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.IRCClient.operate">
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/irc/client.html#IRCClient.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.IRCClient.operate" title="Link to this definition"></a></dt>
+<dd><p>Perform the operation related to Homie service threads.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.IRCClient.put_command">
+<span class="sig-name descname"><span class="pre">put_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cqueue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue" title="enrobie.robie.addons.queue.RobieQueue"><span class="pre">RobieQueue</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.command.RobieCommand" title="enrobie.robie.models.command.RobieCommand"><span class="pre">RobieCommand</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/irc/client.html#IRCClient.put_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.IRCClient.put_command" title="Link to this definition"></a></dt>
+<dd><p>Insert the new item containing information for operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cqueue</strong> – Queue instance where the item is received.</p></li>
+<li><p><strong>event</strong> – Raw event to be sent to the network peer.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.IRCClient.put_message">
+<span class="sig-name descname"><span class="pre">put_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mqueue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue" title="enrobie.robie.addons.queue.RobieQueue"><span class="pre">RobieQueue</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage" title="enrobie.robie.models.message.RobieMessage"><span class="pre">RobieMessage</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.irc.html#enconnect.irc.models.ClientEvent" title="(in enconnect v0.16.3)"><span class="pre">ClientEvent</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/irc/client.html#IRCClient.put_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.IRCClient.put_message" title="Link to this definition"></a></dt>
+<dd><p>Insert the new item containing information for operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mqueue</strong> – Queue instance where the item is received.</p></li>
+<li><p><strong>event</strong> – Raw event received from the network peer.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.IRCClient.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/irc/client.html#IRCClient.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.IRCClient.validate" title="Link to this definition"></a></dt>
+<dd><p>Perform advanced validation on the parameters provided.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="enrobie.clients.IRCClientParams">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.clients.</span></span><span class="sig-name descname"><span class="pre">IRCClientParams</span></span><a class="reference internal" href="_modules/enrobie/clients/irc/params.html#IRCClientParams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.IRCClientParams" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.client.RobieClientParams" title="enrobie.robie.params.client.RobieClientParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobieClientParams</span></code></a></p>
+<p>Process and validate the Robie configuration parameters.</p>
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IRCClientParams&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Process and validate the Robie configuration parameters.&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;enable&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Determine whether child enabled&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enable&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;client&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/ClientParams&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameters for the base client&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;delay&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Period to wait for reconnect&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delay&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;ClientParams&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Process and validate the class configuration parameters.&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;server&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server address for connection&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6697</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server address for connection&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;maximum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">65535</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minimum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Port&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Timeout connecting to server&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Timeout&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;operate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;normal&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Method for server connection&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;enum&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="s2">&quot;normal&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;service&quot;</span>
+<span class="w">               </span><span class="p">],</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Operate&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;nickname&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ircbot&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameter for the integration&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nickname&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ircbot&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameter for the integration&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Username&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;realname&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Chatting Robie&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameter for the integration&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Realname&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;minLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">                  </span><span class="p">},</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">               </span><span class="p">],</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameter for the integration&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Password&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;servername&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;services.invalid&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameter for the integration&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Servername&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;serverid&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;42X&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unique identifier for services&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Serverid&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;ssl_enable&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enable connection encryption&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ssl Enable&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;ssl_verify&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Verify the ceritifcate valid&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ssl Verify&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;queue_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Maximum size for queued events&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;maximum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minimum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Queue Size&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;server&quot;</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ClientParams&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;client&quot;</span>
+<span class="w">   </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.params.IRCClientParams.client" title="enrobie.clients.irc.params.IRCClientParams.client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client</span> <span class="pre">(enconnect.irc.params.ClientParams)</span></code></a></p></li>
+<li><p><a class="reference internal" href="enrobie.clients.irc.html#enrobie.clients.irc.params.IRCClientParams.delay" title="enrobie.clients.irc.params.IRCClientParams.delay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delay</span> <span class="pre">(int)</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.clients.IRCClientParams.client">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">client</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.12)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.irc.html#enconnect.irc.params.ClientParams" title="(in enconnect v0.16.3)"><span class="pre">ClientParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Parameters</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">base</span> <span class="pre">client'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.clients.IRCClientParams.client" title="Link to this definition"></a></dt>
+<dd><p>Parameters for the base client</p>
+</dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.clients.IRCClientParams.delay">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delay</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.12)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Period</span> <span class="pre">to</span> <span class="pre">wait</span> <span class="pre">for</span> <span class="pre">reconnect'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#enrobie.clients.IRCClientParams.delay" title="Link to this definition"></a></dt>
+<dd><p>Period to wait for reconnect</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.clients.MTMClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.clients.</span></span><span class="sig-name descname"><span class="pre">MTMClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/clients/mattermost/client.html#MTMClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.MTMClient" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient" title="enrobie.robie.childs.client.RobieClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobieClient</span></code></a></p>
+<p>Establish and maintain connection with the chat service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>robie</strong> – Primary class instance for Chatting Robie.</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.clients.MTMClient.client">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">client</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.mattermost.html#enconnect.mattermost.client.Client" title="(in enconnect v0.16.3)"><span class="pre">Client</span></a></em><a class="headerlink" href="#enrobie.clients.MTMClient.client" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.MTMClient.compose">
+<span class="sig-name descname"><span class="pre">compose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.command.RobieCommand" title="enrobie.robie.models.command.RobieCommand"><span class="pre">RobieCommand</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/mattermost/client.html#MTMClient.compose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.MTMClient.compose" title="Link to this definition"></a></dt>
+<dd><p>Compose the message and transmit using the chat client.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> – Where the composed message will be sent.</p></li>
+<li><p><strong>content</strong> – Content that will be source of message.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.clients.MTMClient.family">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">family</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'mattermost'</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.clients.MTMClient.family" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.MTMClient.get_command">
+<span class="sig-name descname"><span class="pre">get_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'delete'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'get'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'post'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'patch'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'put'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.command.MTMCommand" title="enrobie.clients.mattermost.command.MTMCommand"><span class="pre">MTMCommand</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/mattermost/client.html#MTMClient.get_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.MTMClient.get_command" title="Link to this definition"></a></dt>
+<dd><p>Return the new item containing information for operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>New item containing information for operation.</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>method</strong> – Method for operation with the API server.</p></li>
+<li><p><strong>path</strong> – Path for the location to upstream endpoint.</p></li>
+<li><p><strong>params</strong> – Optional parameters included in request.</p></li>
+<li><p><strong>json</strong> – Optional JSON payload included in request.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.MTMClient.get_message">
+<span class="sig-name descname"><span class="pre">get_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.mattermost.html#enconnect.mattermost.models.ClientEvent" title="(in enconnect v0.16.3)"><span class="pre">ClientEvent</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage" title="enrobie.clients.mattermost.message.MTMMessage"><span class="pre">MTMMessage</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/mattermost/client.html#MTMClient.get_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.MTMClient.get_message" title="Link to this definition"></a></dt>
+<dd><p>Return the new item containing information for operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – Raw event received from the network peer.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New item containing information for operation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.MTMClient.operate">
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/mattermost/client.html#MTMClient.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.MTMClient.operate" title="Link to this definition"></a></dt>
+<dd><p>Perform the operation related to Homie service threads.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.MTMClient.put_command">
+<span class="sig-name descname"><span class="pre">put_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cqueue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue" title="enrobie.robie.addons.queue.RobieQueue"><span class="pre">RobieQueue</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.command.RobieCommand" title="enrobie.robie.models.command.RobieCommand"><span class="pre">RobieCommand</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'delete'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'get'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'post'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'patch'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'put'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/mattermost/client.html#MTMClient.put_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.MTMClient.put_command" title="Link to this definition"></a></dt>
+<dd><p>Insert the new item containing information for operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cqueue</strong> – Queue instance where the item is received.</p></li>
+<li><p><strong>method</strong> – Method for operation with the API server.</p></li>
+<li><p><strong>path</strong> – Path for the location to upstream endpoint.</p></li>
+<li><p><strong>params</strong> – Optional parameters included in request.</p></li>
+<li><p><strong>json</strong> – Optional JSON payload included in request.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.MTMClient.put_message">
+<span class="sig-name descname"><span class="pre">put_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mqueue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue" title="enrobie.robie.addons.queue.RobieQueue"><span class="pre">RobieQueue</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage" title="enrobie.robie.models.message.RobieMessage"><span class="pre">RobieMessage</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.mattermost.html#enconnect.mattermost.models.ClientEvent" title="(in enconnect v0.16.3)"><span class="pre">ClientEvent</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/mattermost/client.html#MTMClient.put_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.MTMClient.put_message" title="Link to this definition"></a></dt>
+<dd><p>Insert the new item containing information for operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though parameters are marked optional, that is not
+necessarily the case; for typing purposes one cannot
+introduce required parameters outside of the parent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mqueue</strong> – Queue instance where the item is received.</p></li>
+<li><p><strong>event</strong> – Raw event received from the network peer.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.clients.MTMClient.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/mattermost/client.html#MTMClient.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.MTMClient.validate" title="Link to this definition"></a></dt>
+<dd><p>Perform advanced validation on the parameters provided.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="enrobie.clients.MTMClientParams">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.clients.</span></span><span class="sig-name descname"><span class="pre">MTMClientParams</span></span><a class="reference internal" href="_modules/enrobie/clients/mattermost/params.html#MTMClientParams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.MTMClientParams" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.client.RobieClientParams" title="enrobie.robie.params.client.RobieClientParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobieClientParams</span></code></a></p>
+<p>Process and validate the Robie configuration parameters.</p>
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MTMClientParams&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Process and validate the Robie configuration parameters.&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;enable&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Determine whether child enabled&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enable&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;client&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/ClientParams&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameters for the base client&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;delay&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Period to wait for reconnect&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Delay&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;ClientParams&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Process and validate the class configuration parameters.&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;server&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server address for connection&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">443</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server address for connection&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;maximum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">65535</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minimum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Port&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameter for the integration&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Token&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;teamid&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameter for the integration&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teamid&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Timeout connecting to server&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Timeout&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;ssl_verify&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Verify the ceritifcate valid&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ssl Verify&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;ssl_capem&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;minLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">                  </span><span class="p">},</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">               </span><span class="p">],</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Verify the ceritifcate valid&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ssl Capem&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;queue_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Maximum size for queued events&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;maximum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;minimum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Queue Size&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;server&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;token&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;teamid&quot;</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ClientParams&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;client&quot;</span>
+<span class="w">   </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.params.MTMClientParams.client" title="enrobie.clients.mattermost.params.MTMClientParams.client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client</span> <span class="pre">(enconnect.mattermost.params.ClientParams)</span></code></a></p></li>
+<li><p><a class="reference internal" href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.params.MTMClientParams.delay" title="enrobie.clients.mattermost.params.MTMClientParams.delay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delay</span> <span class="pre">(int)</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.clients.MTMClientParams.client">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">client</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.12)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://enconnect.readthedocs.io/en/latest/enconnect.mattermost.html#enconnect.mattermost.params.ClientParams" title="(in enconnect v0.16.3)"><span class="pre">ClientParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Parameters</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">base</span> <span class="pre">client'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.clients.MTMClientParams.client" title="Link to this definition"></a></dt>
+<dd><p>Parameters for the base client</p>
+</dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.clients.MTMClientParams.delay">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delay</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.12)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Period</span> <span class="pre">to</span> <span class="pre">wait</span> <span class="pre">for</span> <span class="pre">reconnect'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#enrobie.clients.MTMClientParams.delay" title="Link to this definition"></a></dt>
+<dd><p>Period to wait for reconnect</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Enasis Network.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

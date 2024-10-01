@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>enrobie.robie.service &mdash; enrobie  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/autodoc_pydantic.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            enrobie
+          </a>
+              <div class="version">
+                0.8.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">enrobie</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">enrobie.robie.service</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for enrobie.robie.service</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
+
+<span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
+<span class="sd">is permitted, for more information consult the project license file.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Event</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span> <span class="k">as</span> <span class="n">block_sleep</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+
+<span class="kn">from</span> <span class="nn">encommon.times</span> <span class="kn">import</span> <span class="n">Timer</span>
+
+<span class="kn">from</span> <span class="nn">.members</span> <span class="kn">import</span> <span class="n">RobieClients</span>
+<span class="kn">from</span> <span class="nn">.members</span> <span class="kn">import</span> <span class="n">RobiePlugins</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.robie</span> <span class="kn">import</span> <span class="n">Robie</span>
+    <span class="kn">from</span> <span class="nn">.params</span> <span class="kn">import</span> <span class="n">RobieServiceParams</span>
+
+
+
+<span class="n">_CONGEST</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span>
+
+
+
+<div class="viewcode-block" id="RobieService">
+<a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService">[docs]</a>
+<span class="k">class</span> <span class="nc">RobieService</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Multi-threaded service for processing the desired state.</span>
+
+<span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">__robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span>
+
+    <span class="n">__clients</span><span class="p">:</span> <span class="n">RobieClients</span>
+    <span class="n">__plugins</span><span class="p">:</span> <span class="n">RobiePlugins</span>
+
+    <span class="n">__timer</span><span class="p">:</span> <span class="n">Timer</span>
+    <span class="n">__vacate</span><span class="p">:</span> <span class="n">Event</span>
+    <span class="n">__cancel</span><span class="p">:</span> <span class="n">Event</span>
+    <span class="n">__started</span><span class="p">:</span> <span class="nb">bool</span>
+
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize instance for class using provided parameters.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_d</span><span class="p">(</span>
+            <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;initial&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span> <span class="o">=</span> <span class="n">robie</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__build_objects</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__started</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
+            <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;created&#39;</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">__build_objects</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Construct instances using the configuration parameters.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+
+        <span class="n">respite</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">respite</span>
+
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">RobieClients</span><span class="p">(</span><span class="n">robie</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">RobiePlugins</span><span class="p">(</span><span class="n">robie</span><span class="p">))</span>
+
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__timer</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span>
+            <span class="n">respite</span><span class="o">.</span><span class="n">health</span><span class="p">,</span>
+            <span class="n">start</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__vacate</span> <span class="o">=</span> <span class="n">Event</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__cancel</span> <span class="o">=</span> <span class="n">Event</span><span class="p">()</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">robie</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Robie&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the Robie instance to which this instance belongs.</span>
+
+<span class="sd">        :returns: Robie instance to which this instance belongs.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">params</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieServiceParams&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the Pydantic model containing the configuration.</span>
+
+<span class="sd">        :returns: Pydantic model containing the configuration.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">params</span>
+
+        <span class="k">return</span> <span class="n">params</span><span class="o">.</span><span class="n">service</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">clients</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieClients</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the value for the attribute from class instance.</span>
+
+<span class="sd">        :returns: Value for the attribute from class instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">plugins</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobiePlugins</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the value for the attribute from class instance.</span>
+
+<span class="sd">        :returns: Value for the attribute from class instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">running</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the list of threads which are determined running.</span>
+
+<span class="sd">        :returns: List of threads which are determined running.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">running</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">clients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+        <span class="n">plugins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
+
+        <span class="n">running</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+            <span class="n">clients</span><span class="o">.</span><span class="n">running</span><span class="p">)</span>
+
+        <span class="n">running</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+            <span class="n">plugins</span><span class="o">.</span><span class="n">running</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">running</span><span class="p">)</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">zombies</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the list of threads which are determined zombies.</span>
+
+<span class="sd">        :returns: List of threads which are determined zombies.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">zombies</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">clients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+        <span class="n">plugins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
+
+        <span class="n">zombies</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+            <span class="n">clients</span><span class="o">.</span><span class="n">zombies</span><span class="p">)</span>
+
+        <span class="n">zombies</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+            <span class="n">plugins</span><span class="o">.</span><span class="n">zombies</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">zombies</span><span class="p">)</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">congest</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_CONGEST</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the list of congested threads and members queues.</span>
+
+<span class="sd">        :returns: List of congested threads and members queues.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">congest</span><span class="p">:</span> <span class="n">_CONGEST</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">clients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+        <span class="n">plugins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
+
+        <span class="n">congest</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+            <span class="n">clients</span><span class="o">.</span><span class="n">congest</span><span class="p">)</span>
+
+        <span class="n">congest</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+            <span class="n">plugins</span><span class="o">.</span><span class="n">congest</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">congest</span><span class="p">)</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_CONGEST</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the list of congested threads and members queues.</span>
+
+<span class="sd">        :returns: List of congested threads and members queues.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">enqueue</span><span class="p">:</span> <span class="n">_CONGEST</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">clients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+        <span class="n">plugins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
+
+        <span class="n">enqueue</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+            <span class="n">clients</span><span class="o">.</span><span class="n">enqueue</span><span class="p">)</span>
+
+        <span class="n">enqueue</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+            <span class="n">plugins</span><span class="o">.</span><span class="n">enqueue</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">enqueue</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="RobieService.start">
+<a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.start">[docs]</a>
+    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Start the various threads within the Homie class object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+        <span class="n">started</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__started</span>
+
+        <span class="k">if</span> <span class="n">started</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__started</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
+            <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;starting&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+        <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
+            <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;started&#39;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="RobieService.operate">
+<a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.operate">[docs]</a>
+    <span class="k">def</span> <span class="nf">operate</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform the operation related to Homie service members.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+
+        <span class="n">clients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+        <span class="n">plugins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
+
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">operate_clients</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">operate_plugins</span><span class="p">()</span>
+
+            <span class="n">clients</span><span class="o">.</span><span class="n">operate</span><span class="p">()</span>
+            <span class="n">plugins</span><span class="o">.</span><span class="n">operate</span><span class="p">()</span>
+
+            <span class="n">block_sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">operate_healths</span><span class="p">()</span>
+
+        <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
+            <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;vacated&#39;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="RobieService.operate_clients">
+<a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.operate_clients">[docs]</a>
+    <span class="k">def</span> <span class="nf">operate_clients</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform the operation related to Homie service members.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+
+        <span class="n">vacate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__vacate</span>
+        <span class="n">clients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+        <span class="n">plugins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
+
+        <span class="n">source</span> <span class="o">=</span> <span class="n">plugins</span><span class="o">.</span><span class="n">cqueue</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="n">clients</span><span class="o">.</span><span class="n">cqueue</span>
+
+
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">source</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+
+            <span class="n">citem</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">vacate</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
+                <span class="k">continue</span>
+
+            <span class="n">target</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
+
+            <span class="n">robie</span><span class="o">.</span><span class="n">printer</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="RobieService.operate_plugins">
+<a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.operate_plugins">[docs]</a>
+    <span class="k">def</span> <span class="nf">operate_plugins</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform the operation related to Homie service members.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+
+        <span class="n">vacate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__vacate</span>
+        <span class="n">clients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+        <span class="n">plugins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
+
+        <span class="n">source</span> <span class="o">=</span> <span class="n">clients</span><span class="o">.</span><span class="n">mqueue</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="n">plugins</span><span class="o">.</span><span class="n">mqueue</span>
+
+
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">source</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+
+            <span class="n">mitem</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">vacate</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
+                <span class="k">continue</span>
+
+            <span class="n">target</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">mitem</span><span class="p">)</span>
+
+            <span class="n">robie</span><span class="o">.</span><span class="n">printer</span><span class="p">(</span><span class="n">mitem</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="RobieService.operate_healths">
+<a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.operate_healths">[docs]</a>
+    <span class="k">def</span> <span class="nf">operate_healths</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform the operation related to Homie service members.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">timer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__timer</span>
+
+        <span class="k">if</span> <span class="n">timer</span><span class="o">.</span><span class="n">pause</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">vacate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__vacate</span>
+        <span class="n">cancel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cancel</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_congest</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">vacate</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">cancel</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_zombies</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="RobieService.check_zombies">
+<a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.check_zombies">[docs]</a>
+    <span class="k">def</span> <span class="nf">check_zombies</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the boolean indicating while threads are zombies.</span>
+
+<span class="sd">        :returns: Boolean indicating while threads are zombies.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+        <span class="n">zombies</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">zombies</span>
+
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">zombies</span><span class="p">:</span>
+
+            <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_c</span><span class="p">(</span>
+                <span class="n">thread</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                <span class="n">status</span><span class="o">=</span><span class="s1">&#39;zombie&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">zombies</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span></div>
+
+
+
+<div class="viewcode-block" id="RobieService.check_congest">
+<a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.check_congest">[docs]</a>
+    <span class="k">def</span> <span class="nf">check_congest</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the boolean indicating when queues are congested.</span>
+
+<span class="sd">        :returns: Boolean indicating when queues are congested.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+        <span class="n">congest</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">congest</span>
+
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">congest</span><span class="p">:</span>
+
+            <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_e</span><span class="p">(</span>
+                <span class="n">queue</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                <span class="n">status</span><span class="o">=</span><span class="s1">&#39;congest&#39;</span><span class="p">,</span>
+                <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">congest</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span></div>
+
+
+
+<div class="viewcode-block" id="RobieService.soft">
+<a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.soft">[docs]</a>
+    <span class="k">def</span> <span class="nf">soft</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Stop the various threads within the Homie class object.</span>
+
+<span class="sd">        :param kwargs: Keyword arguments ignored by the method.</span>
+<span class="sd">        :param args: Positional arguments ignored by the method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+        <span class="n">started</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__started</span>
+        <span class="n">vacate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__vacate</span>
+
+        <span class="k">if</span> <span class="n">started</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">vacate</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+        <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
+            <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;vacating&#39;</span><span class="p">)</span>
+
+        <span class="n">vacate</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="RobieService.stop">
+<a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.stop">[docs]</a>
+    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Stop the various threads within the Homie class object.</span>
+
+<span class="sd">        :param kwargs: Keyword arguments ignored by the method.</span>
+<span class="sd">        :param args: Positional arguments ignored by the method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+        <span class="n">started</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__started</span>
+        <span class="n">vacate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__vacate</span>
+        <span class="n">cancel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cancel</span>
+
+        <span class="k">if</span> <span class="n">started</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">cancel</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">vacate</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+        <span class="n">cancel</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+
+        <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
+            <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;stopping&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+        <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
+            <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;stopped&#39;</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Enasis Network.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

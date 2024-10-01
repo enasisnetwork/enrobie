@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>enrobie.robie.models package &mdash; enrobie  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/autodoc_pydantic.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            enrobie
+          </a>
+              <div class="version">
+                0.8.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">enrobie.robie.models package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-enrobie.robie.models.command">enrobie.robie.models.command module</a><ul>
+<li><a class="reference internal" href="#enrobie.robie.models.command.RobieCommand"><code class="docutils literal notranslate"><span class="pre">RobieCommand</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.models.command.RobieCommand.client"><code class="docutils literal notranslate"><span class="pre">RobieCommand.client</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.command.RobieCommand.family"><code class="docutils literal notranslate"><span class="pre">RobieCommand.family</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-enrobie.robie.models.message">enrobie.robie.models.message module</a><ul>
+<li><a class="reference internal" href="#enrobie.robie.models.message.RobieMessage"><code class="docutils literal notranslate"><span class="pre">RobieMessage</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.models.message.RobieMessage.client"><code class="docutils literal notranslate"><span class="pre">RobieMessage.client</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.message.RobieMessage.family"><code class="docutils literal notranslate"><span class="pre">RobieMessage.family</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.message.RobieMessage.isme"><code class="docutils literal notranslate"><span class="pre">RobieMessage.isme</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.message.RobieMessage.kind"><code class="docutils literal notranslate"><span class="pre">RobieMessage.kind</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.message.RobieMessage.reply"><code class="docutils literal notranslate"><span class="pre">RobieMessage.reply()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-enrobie.robie.models.robie">enrobie.robie.models.robie module</a><ul>
+<li><a class="reference internal" href="#enrobie.robie.models.robie.RobieModels"><code class="docutils literal notranslate"><span class="pre">RobieModels</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.models.robie.RobieModels.child"><code class="docutils literal notranslate"><span class="pre">RobieModels.child()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.robie.RobieModels.client"><code class="docutils literal notranslate"><span class="pre">RobieModels.client()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.robie.RobieModels.command"><code class="docutils literal notranslate"><span class="pre">RobieModels.command()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.robie.RobieModels.message"><code class="docutils literal notranslate"><span class="pre">RobieModels.message()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.robie.RobieModels.plugin"><code class="docutils literal notranslate"><span class="pre">RobieModels.plugin()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.robie.RobieModels.printer"><code class="docutils literal notranslate"><span class="pre">RobieModels.printer()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.robie.RobieModels.queue"><code class="docutils literal notranslate"><span class="pre">RobieModels.queue()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.robie.RobieModels.robie"><code class="docutils literal notranslate"><span class="pre">RobieModels.robie()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.robie.RobieModels.service"><code class="docutils literal notranslate"><span class="pre">RobieModels.service()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-enrobie.robie.models">Module contents</a><ul>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieCommand"><code class="docutils literal notranslate"><span class="pre">RobieCommand</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieCommand.client"><code class="docutils literal notranslate"><span class="pre">RobieCommand.client</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieCommand.family"><code class="docutils literal notranslate"><span class="pre">RobieCommand.family</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieCommand.time"><code class="docutils literal notranslate"><span class="pre">RobieCommand.time</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieMessage"><code class="docutils literal notranslate"><span class="pre">RobieMessage</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieMessage.client"><code class="docutils literal notranslate"><span class="pre">RobieMessage.client</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieMessage.family"><code class="docutils literal notranslate"><span class="pre">RobieMessage.family</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieMessage.isme"><code class="docutils literal notranslate"><span class="pre">RobieMessage.isme</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieMessage.kind"><code class="docutils literal notranslate"><span class="pre">RobieMessage.kind</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieMessage.reply"><code class="docutils literal notranslate"><span class="pre">RobieMessage.reply()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieMessage.time"><code class="docutils literal notranslate"><span class="pre">RobieMessage.time</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieModels"><code class="docutils literal notranslate"><span class="pre">RobieModels</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieModels.child"><code class="docutils literal notranslate"><span class="pre">RobieModels.child()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieModels.client"><code class="docutils literal notranslate"><span class="pre">RobieModels.client()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieModels.command"><code class="docutils literal notranslate"><span class="pre">RobieModels.command()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieModels.message"><code class="docutils literal notranslate"><span class="pre">RobieModels.message()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieModels.plugin"><code class="docutils literal notranslate"><span class="pre">RobieModels.plugin()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieModels.printer"><code class="docutils literal notranslate"><span class="pre">RobieModels.printer()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieModels.queue"><code class="docutils literal notranslate"><span class="pre">RobieModels.queue()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieModels.robie"><code class="docutils literal notranslate"><span class="pre">RobieModels.robie()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.models.RobieModels.service"><code class="docutils literal notranslate"><span class="pre">RobieModels.service()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">enrobie</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">enrobie.robie.models package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/enrobie.robie.models.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="enrobie-robie-models-package">
+<h1>enrobie.robie.models package<a class="headerlink" href="#enrobie-robie-models-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.robie.models.test.html">enrobie.robie.models.test package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.models.test.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.models.test.html#module-enrobie.robie.models.test.test_command">enrobie.robie.models.test.test_command module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.models.test.html#enrobie.robie.models.test.test_command.test_RobieCommand"><code class="docutils literal notranslate"><span class="pre">test_RobieCommand()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.models.test.html#module-enrobie.robie.models.test.test_message">enrobie.robie.models.test.test_message module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.models.test.html#enrobie.robie.models.test.test_message.test_RobieMessage"><code class="docutils literal notranslate"><span class="pre">test_RobieMessage()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.models.test.html#module-enrobie.robie.models.test.test_models">enrobie.robie.models.test.test_models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.models.test.html#enrobie.robie.models.test.test_models.test_RobieModels_cover"><code class="docutils literal notranslate"><span class="pre">test_RobieModels_cover()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.models.test.html#module-enrobie.robie.models.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-enrobie.robie.models.command">
+<span id="enrobie-robie-models-command-module"></span><h2>enrobie.robie.models.command module<a class="headerlink" href="#module-enrobie.robie.models.command" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.models.command.RobieCommand">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.models.command.</span></span><span class="sig-name descname"><span class="pre">RobieCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient" title="enrobie.robie.childs.client.RobieClient"><span class="pre">RobieClient</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/models/command.html#RobieCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.command.RobieCommand" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueueItem" title="enrobie.robie.addons.queue.RobieQueueItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobieQueueItem</span></code></a></p>
+<p>Contain information for sharing using the Python queue.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="enrobie.robie.models.command.RobieCommand.client">
+<span class="sig-name descname"><span class="pre">client</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#enrobie.robie.models.command.RobieCommand.client" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.models.command.RobieCommand.family">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">family</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#enrobie.robie.models.command.RobieCommand.family" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-enrobie.robie.models.message">
+<span id="enrobie-robie-models-message-module"></span><h2>enrobie.robie.models.message module<a class="headerlink" href="#module-enrobie.robie.models.message" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.models.message.RobieMessage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.models.message.</span></span><span class="sig-name descname"><span class="pre">RobieMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient" title="enrobie.robie.childs.client.RobieClient"><span class="pre">RobieClient</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/models/message.html#RobieMessage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.message.RobieMessage" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueueItem" title="enrobie.robie.addons.queue.RobieQueueItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobieQueueItem</span></code></a></p>
+<p>Contain information for sharing using the Python queue.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="enrobie.robie.models.message.RobieMessage.client">
+<span class="sig-name descname"><span class="pre">client</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#enrobie.robie.models.message.RobieMessage.client" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.models.message.RobieMessage.family">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">family</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#enrobie.robie.models.message.RobieMessage.family" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.models.message.RobieMessage.isme">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isme</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#enrobie.robie.models.message.RobieMessage.isme" title="Link to this definition"></a></dt>
+<dd><p>Return the boolean indicating message origin from client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Boolean indicating message origin from client.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.models.message.RobieMessage.kind">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kind</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'event'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'chanmsg'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'privmsg'</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.models.message.RobieMessage.kind" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.message.RobieMessage.reply">
+<span class="sig-name descname"><span class="pre">reply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#enrobie.robie.models.command.RobieCommand" title="enrobie.robie.models.command.RobieCommand"><span class="pre">RobieCommand</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/models/message.html#RobieMessage.reply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.message.RobieMessage.reply" title="Link to this definition"></a></dt>
+<dd><p>Compose the message and transmit using the chat client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robie</strong> – Primary class instance for Chatting Robie.</p></li>
+<li><p><strong>content</strong> – Content that will be source of message.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-enrobie.robie.models.robie">
+<span id="enrobie-robie-models-robie-module"></span><h2>enrobie.robie.models.robie module<a class="headerlink" href="#module-enrobie.robie.models.robie" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.models.robie.RobieModels">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.models.robie.</span></span><span class="sig-name descname"><span class="pre">RobieModels</span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.robie.RobieModels" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Return the class object that was imported within method.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.robie.RobieModels.child">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">child</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.child"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.robie.RobieModels.child" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.robie.RobieModels.client">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">client</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.client.RobieClientParams" title="enrobie.robie.params.client.RobieClientParams"><span class="pre">RobieClientParams</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.robie.RobieModels.client" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.robie.RobieModels.command">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">command</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enrobie.robie.models.command.RobieCommand" title="enrobie.robie.models.command.RobieCommand"><span class="pre">RobieCommand</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.robie.RobieModels.command" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.robie.RobieModels.message">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enrobie.robie.models.message.RobieMessage" title="enrobie.robie.models.message.RobieMessage"><span class="pre">RobieMessage</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.robie.RobieModels.message" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.robie.RobieModels.plugin">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plugin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.plugin.RobiePluginParams" title="enrobie.robie.params.plugin.RobiePluginParams"><span class="pre">RobiePluginParams</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.plugin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.robie.RobieModels.plugin" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.robie.RobieModels.printer">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">printer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobiePrinterParams" title="enrobie.robie.params.robie.RobiePrinterParams"><span class="pre">RobiePrinterParams</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.printer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.robie.RobieModels.printer" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.robie.RobieModels.queue">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">queue</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueueItem" title="enrobie.robie.addons.queue.RobieQueueItem"><span class="pre">RobieQueueItem</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.queue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.robie.RobieModels.queue" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.robie.RobieModels.robie">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">robie</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobieParams" title="enrobie.robie.params.robie.RobieParams"><span class="pre">RobieParams</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.robie"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.robie.RobieModels.robie" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.robie.RobieModels.service">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">service</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.service.RobieServiceParams" title="enrobie.robie.params.service.RobieServiceParams"><span class="pre">RobieServiceParams</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.service"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.robie.RobieModels.service" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-enrobie.robie.models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-enrobie.robie.models" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieCommand">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.models.</span></span><span class="sig-name descname"><span class="pre">RobieCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient" title="enrobie.robie.childs.client.RobieClient"><span class="pre">RobieClient</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/models/command.html#RobieCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.RobieCommand" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueueItem" title="enrobie.robie.addons.queue.RobieQueueItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobieQueueItem</span></code></a></p>
+<p>Contain information for sharing using the Python queue.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieCommand.client">
+<span class="sig-name descname"><span class="pre">client</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#enrobie.robie.models.RobieCommand.client" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieCommand.family">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">family</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#enrobie.robie.models.RobieCommand.family" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieCommand.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Time</span></em><a class="headerlink" href="#enrobie.robie.models.RobieCommand.time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieMessage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.models.</span></span><span class="sig-name descname"><span class="pre">RobieMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient" title="enrobie.robie.childs.client.RobieClient"><span class="pre">RobieClient</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/models/message.html#RobieMessage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.RobieMessage" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueueItem" title="enrobie.robie.addons.queue.RobieQueueItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobieQueueItem</span></code></a></p>
+<p>Contain information for sharing using the Python queue.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieMessage.client">
+<span class="sig-name descname"><span class="pre">client</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#enrobie.robie.models.RobieMessage.client" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieMessage.family">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">family</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><a class="headerlink" href="#enrobie.robie.models.RobieMessage.family" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieMessage.isme">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isme</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#enrobie.robie.models.RobieMessage.isme" title="Link to this definition"></a></dt>
+<dd><p>Return the boolean indicating message origin from client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Boolean indicating message origin from client.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieMessage.kind">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kind</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'event'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'chanmsg'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'privmsg'</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.models.RobieMessage.kind" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieMessage.reply">
+<span class="sig-name descname"><span class="pre">reply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#enrobie.robie.models.RobieCommand" title="enrobie.robie.models.RobieCommand"><span class="pre">RobieCommand</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/models/message.html#RobieMessage.reply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.RobieMessage.reply" title="Link to this definition"></a></dt>
+<dd><p>Compose the message and transmit using the chat client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>robie</strong> – Primary class instance for Chatting Robie.</p></li>
+<li><p><strong>content</strong> – Content that will be source of message.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieMessage.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Time</span></em><a class="headerlink" href="#enrobie.robie.models.RobieMessage.time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieModels">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.models.</span></span><span class="sig-name descname"><span class="pre">RobieModels</span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.RobieModels" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Return the class object that was imported within method.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieModels.child">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">child</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.child"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.RobieModels.child" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieModels.client">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">client</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.client.RobieClientParams" title="enrobie.robie.params.client.RobieClientParams"><span class="pre">RobieClientParams</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.RobieModels.client" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieModels.command">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">command</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enrobie.robie.models.RobieCommand" title="enrobie.robie.models.RobieCommand"><span class="pre">RobieCommand</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.RobieModels.command" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieModels.message">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enrobie.robie.models.RobieMessage" title="enrobie.robie.models.RobieMessage"><span class="pre">RobieMessage</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.RobieModels.message" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieModels.plugin">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plugin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.plugin.RobiePluginParams" title="enrobie.robie.params.plugin.RobiePluginParams"><span class="pre">RobiePluginParams</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.plugin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.RobieModels.plugin" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieModels.printer">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">printer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobiePrinterParams" title="enrobie.robie.params.robie.RobiePrinterParams"><span class="pre">RobiePrinterParams</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.printer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.RobieModels.printer" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieModels.queue">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">queue</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueueItem" title="enrobie.robie.addons.queue.RobieQueueItem"><span class="pre">RobieQueueItem</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.queue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.RobieModels.queue" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieModels.robie">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">robie</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobieParams" title="enrobie.robie.params.robie.RobieParams"><span class="pre">RobieParams</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.robie"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.RobieModels.robie" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.models.RobieModels.service">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">service</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.service.RobieServiceParams" title="enrobie.robie.params.service.RobieServiceParams"><span class="pre">RobieServiceParams</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/robie/models/robie.html#RobieModels.service"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.models.RobieModels.service" title="Link to this definition"></a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Class object that was imported within method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Enasis Network.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

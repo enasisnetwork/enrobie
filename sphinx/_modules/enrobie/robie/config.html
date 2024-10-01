@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>enrobie.robie.config &mdash; enrobie  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/autodoc_pydantic.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            enrobie
+          </a>
+              <div class="version">
+                0.8.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">enrobie</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">enrobie.robie.config</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for enrobie.robie.config</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
+
+<span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
+<span class="sd">is permitted, for more information consult the project license file.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Literal</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Type</span>
+
+<span class="kn">from</span> <span class="nn">encommon.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">encommon.config</span> <span class="kn">import</span> <span class="n">Params</span>
+<span class="kn">from</span> <span class="nn">encommon.parse</span> <span class="kn">import</span> <span class="n">Jinja2</span>
+<span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">DictStrAny</span>
+<span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">merge_dicts</span>
+<span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">setate</span>
+<span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">sort_dict</span>
+<span class="kn">from</span> <span class="nn">encommon.utils.common</span> <span class="kn">import</span> <span class="n">PATHABLE</span>
+
+<span class="kn">from</span> <span class="nn">.params</span> <span class="kn">import</span> <span class="n">RobieClientParams</span>
+<span class="kn">from</span> <span class="nn">.params</span> <span class="kn">import</span> <span class="n">RobieParams</span>
+<span class="kn">from</span> <span class="nn">.params</span> <span class="kn">import</span> <span class="n">RobiePluginParams</span>
+
+
+
+<span class="n">RobieConfigInsert</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span>
+    <span class="s1">&#39;clients&#39;</span><span class="p">,</span> <span class="s1">&#39;plugins&#39;</span><span class="p">]</span>
+
+<span class="n">RobieConfigInserts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span>
+    <span class="n">RobieConfigInsert</span><span class="p">,</span> <span class="n">DictStrAny</span><span class="p">]</span>
+
+
+
+<div class="viewcode-block" id="RobieConfig">
+<a class="viewcode-back" href="../../../index.html#enrobie.robie.config.RobieConfig">[docs]</a>
+<span class="k">class</span> <span class="nc">RobieConfig</span><span class="p">(</span><span class="n">Config</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Contain the configurations from the arguments and files.</span>
+
+<span class="sd">    :param sargs: Additional arguments on the command line.</span>
+<span class="sd">    :param files: Complete or relative path to config files.</span>
+<span class="sd">    :param cargs: Configuration arguments in dictionary form,</span>
+<span class="sd">        which will override contents from the config files.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">__clients</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="n">RobieClientParams</span><span class="p">]]</span>
+    <span class="n">__plugins</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="n">RobiePluginParams</span><span class="p">]]</span>
+
+    <span class="n">__inserts</span><span class="p">:</span> <span class="n">RobieConfigInserts</span>
+
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">sargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DictStrAny</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">files</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PATHABLE</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">cargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DictStrAny</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize instance for class using provided parameters.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">sargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sargs</span> <span class="ow">or</span> <span class="p">{})</span>
+        <span class="n">cargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cargs</span> <span class="ow">or</span> <span class="p">{})</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__inserts</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+        <span class="n">_console</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">sargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;console&#39;</span><span class="p">))</span>
+
+        <span class="n">_debug</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">sargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;debug&#39;</span><span class="p">))</span>
+
+        <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;enlogger/stdo_level&#39;</span>
+
+        <span class="k">if</span> <span class="n">_console</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">cargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;info&#39;</span>
+
+        <span class="k">if</span> <span class="n">_debug</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">cargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;debug&#39;</span>
+
+
+        <span class="k">if</span> <span class="s1">&#39;config&#39;</span> <span class="ow">in</span> <span class="n">sargs</span><span class="p">:</span>
+            <span class="n">files</span> <span class="o">=</span> <span class="n">sargs</span><span class="p">[</span><span class="s1">&#39;config&#39;</span><span class="p">]</span>
+
+
+        <span class="n">_pmessage</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">sargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pmessage&#39;</span><span class="p">))</span>
+
+        <span class="n">_pcommand</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">sargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pcommand&#39;</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">_pmessage</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;printer/message&#39;</span>
+            <span class="n">cargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">_pmessage</span>
+
+        <span class="k">if</span> <span class="n">_pcommand</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;printer/command&#39;</span>
+            <span class="n">cargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">_pcommand</span>
+
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">,</span>
+            <span class="n">cargs</span><span class="o">=</span><span class="n">cargs</span><span class="p">,</span>
+            <span class="n">sargs</span><span class="o">=</span><span class="n">sargs</span><span class="p">,</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">RobieParams</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">merge_params</span><span class="p">()</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">inserts</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieConfigInserts</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the value for the attribute from class instance.</span>
+
+<span class="sd">        :returns: Value for the attribute from class instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__inserts</span><span class="p">)</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">params</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieParams</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the Pydantic model containing the configuration.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">           This method completely overrides the parent but is</span>
+<span class="sd">           based on that code, would be unfortunate if upstream</span>
+<span class="sd">           changes meant this breaks or breaks something else.</span>
+
+<span class="sd">        :returns: Pydantic model containing the configuration.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__params</span>
+
+        <span class="k">if</span> <span class="n">params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+                <span class="n">params</span><span class="p">,</span> <span class="n">RobieParams</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">params</span>
+
+
+        <span class="n">basic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">basic</span>
+
+        <span class="n">enconfig</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">basic</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;enconfig&#39;</span><span class="p">))</span>
+
+        <span class="n">enlogger</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">basic</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;enlogger&#39;</span><span class="p">))</span>
+
+        <span class="n">encrypts</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">basic</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;encrypts&#39;</span><span class="p">))</span>
+
+        <span class="n">basic</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;enconfig&#39;</span><span class="p">:</span> <span class="n">enconfig</span><span class="p">,</span>
+            <span class="s1">&#39;enlogger&#39;</span><span class="p">:</span> <span class="n">enlogger</span><span class="p">,</span>
+            <span class="s1">&#39;encrypts&#39;</span><span class="p">:</span> <span class="n">encrypts</span><span class="p">}</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="o">**</span><span class="n">basic</span><span class="p">))</span>
+
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="n">params</span><span class="p">,</span> <span class="n">RobieParams</span><span class="p">)</span>
+
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__params</span> <span class="o">=</span> <span class="n">params</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__params</span>
+
+
+<div class="viewcode-block" id="RobieConfig.merge_params">
+<a class="viewcode-back" href="../../../index.html#enrobie.robie.config.RobieConfig.merge_params">[docs]</a>
+    <span class="k">def</span> <span class="nf">merge_params</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the Pydantic model containing the configuration.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">fclients</span><span class="p">:</span> <span class="n">DictStrAny</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">fplugins</span><span class="p">:</span> <span class="n">DictStrAny</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+        <span class="n">merge</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">merge</span>
+
+        <span class="n">merge_dicts</span><span class="p">(</span>
+            <span class="n">dict1</span><span class="o">=</span><span class="n">merge</span><span class="p">,</span>
+            <span class="n">dict2</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">inserts</span><span class="p">,</span>
+            <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+        <span class="n">_clients</span> <span class="o">=</span> <span class="n">merge</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;clients&#39;</span><span class="p">)</span>
+        <span class="n">_plugins</span> <span class="o">=</span> <span class="n">merge</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;plugins&#39;</span><span class="p">)</span>
+
+
+        <span class="n">jinja2</span> <span class="o">=</span> <span class="n">Jinja2</span><span class="p">({</span>
+            <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">merge</span><span class="p">,</span>
+            <span class="s1">&#39;config&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">})</span>
+
+        <span class="n">parse</span> <span class="o">=</span> <span class="n">jinja2</span><span class="o">.</span><span class="n">parse</span>
+
+
+        <span class="k">def</span> <span class="nf">_put_clients</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">models</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+
+            <span class="n">items</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">merge</span><span class="p">[</span><span class="s1">&#39;clients&#39;</span><span class="p">]</span>
+                <span class="o">.</span><span class="n">items</span><span class="p">())</span>
+
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
+                    <span class="k">continue</span>  <span class="c1"># NOCVR</span>
+
+                <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+
+                <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
+                    <span class="n">parse</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+                <span class="n">fclients</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">object</span>
+
+
+        <span class="k">if</span> <span class="n">_clients</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">_put_clients</span><span class="p">()</span>
+
+            <span class="k">del</span> <span class="n">merge</span><span class="p">[</span><span class="s1">&#39;clients&#39;</span><span class="p">]</span>
+
+
+        <span class="k">def</span> <span class="nf">_put_plugins</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">models</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
+
+            <span class="n">items</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">merge</span><span class="p">[</span><span class="s1">&#39;plugins&#39;</span><span class="p">]</span>
+                <span class="o">.</span><span class="n">items</span><span class="p">())</span>
+
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
+                    <span class="k">continue</span>  <span class="c1"># NOCVR</span>
+
+                <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+
+                <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
+                    <span class="n">parse</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+
+                <span class="n">fplugins</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">object</span>
+
+
+        <span class="k">if</span> <span class="n">_plugins</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">_put_plugins</span><span class="p">()</span>
+
+            <span class="k">del</span> <span class="n">merge</span><span class="p">[</span><span class="s1">&#39;plugins&#39;</span><span class="p">]</span>
+
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">fclients</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">merge</span><span class="p">[</span><span class="s1">&#39;clients&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fclients</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">fplugins</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">merge</span><span class="p">[</span><span class="s1">&#39;plugins&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fplugins</span>
+
+
+        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span>
+            <span class="n">parse</span><span class="p">,</span> <span class="o">**</span><span class="n">merge</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="n">params</span><span class="p">,</span> <span class="n">RobieParams</span><span class="p">)</span>
+
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__params</span> <span class="o">=</span> <span class="n">params</span></div>
+
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">__params</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Params</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the Pydantic model containing the configuration.</span>
+
+<span class="sd">        :returns: Pydantic model containing the configuration.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_Config__params</span>
+
+
+    <span class="nd">@__params</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">__params</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">value</span><span class="p">:</span> <span class="n">Params</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the value for the attribute from class instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_Config__params</span> <span class="o">=</span> <span class="n">value</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">config</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the configuration dumped from the Pydantic model.</span>
+
+<span class="sd">        .. warning::</span>
+<span class="sd">           This method completely overrides the parent but is</span>
+<span class="sd">           based on that code, would be unfortunate if upstream</span>
+<span class="sd">           changes meant this breaks or breaks something else.</span>
+
+<span class="sd">        :returns: Configuration dumped from the Pydantic model.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+
+        <span class="n">_clients</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">clients</span>
+        <span class="n">_plugins</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">plugins</span>
+
+        <span class="n">config</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">endumped</span>
+
+
+        <span class="k">def</span> <span class="nf">_get_clients</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">target</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;clients&#39;</span><span class="p">]</span>
+
+            <span class="k">assert</span> <span class="n">_clients</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+            <span class="n">items</span> <span class="o">=</span> <span class="n">_clients</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">client</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+
+                <span class="n">target</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">client</span><span class="o">.</span><span class="n">endumped</span><span class="p">)</span>
+
+
+        <span class="k">if</span> <span class="n">_clients</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_get_clients</span><span class="p">()</span>
+
+
+        <span class="k">def</span> <span class="nf">_get_plugins</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">target</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;plugins&#39;</span><span class="p">]</span>
+
+            <span class="k">assert</span> <span class="n">_plugins</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+            <span class="n">items</span> <span class="o">=</span> <span class="n">_plugins</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">plugin</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+
+                <span class="n">target</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">plugin</span><span class="o">.</span><span class="n">endumped</span><span class="p">)</span>
+
+
+        <span class="k">if</span> <span class="n">_plugins</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_get_plugins</span><span class="p">()</span>
+
+
+        <span class="k">return</span> <span class="n">sort_dict</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="RobieConfig.register">
+<a class="viewcode-back" href="../../../index.html#enrobie.robie.config.RobieConfig.register">[docs]</a>
+    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">client</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">RobieClientParams</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">plugin</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">RobiePluginParams</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">source</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DictStrAny</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">merge</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Register the plugin parameters for parameter processing.</span>
+
+<span class="sd">        :param name: Name of the object within the Robie config.</span>
+<span class="sd">        :param client: Class definition for the instantiation.</span>
+<span class="sd">        :param plugin: Class definition for the instantiation.</span>
+<span class="sd">        :param source: Source for the parameters instantiation.</span>
+<span class="sd">        :param merge: Reprocess all parameters including added.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">clients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+        <span class="n">plugins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
+        <span class="n">inserts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__inserts</span>
+
+
+        <span class="k">def</span> <span class="nf">_insert</span><span class="p">(</span>
+            <span class="n">target</span><span class="p">:</span> <span class="n">RobieConfigInsert</span><span class="p">,</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="n">source</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+
+            <span class="n">setate</span><span class="p">(</span>  <span class="c1"># NOCVR</span>
+                <span class="n">inserts</span><span class="p">,</span>  <span class="c1"># type: ignore</span>
+                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+                <span class="n">source</span><span class="p">)</span>
+
+
+        <span class="k">if</span> <span class="n">client</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">clients</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">client</span>
+
+            <span class="n">_insert</span><span class="p">(</span><span class="s1">&#39;clients&#39;</span><span class="p">)</span>
+
+
+        <span class="k">if</span> <span class="n">plugin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">plugins</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">plugin</span>
+
+            <span class="n">_insert</span><span class="p">(</span><span class="s1">&#39;plugins&#39;</span><span class="p">)</span>
+
+
+        <span class="k">if</span> <span class="n">merge</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">merge_params</span><span class="p">()</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Enasis Network.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>enrobie.robie package &mdash; enrobie  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/autodoc_pydantic.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            enrobie
+          </a>
+              <div class="version">
+                0.8.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">enrobie.robie package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-enrobie.robie.common">enrobie.robie.common module</a></li>
+<li><a class="reference internal" href="#module-enrobie.robie.config">enrobie.robie.config module</a><ul>
+<li><a class="reference internal" href="#enrobie.robie.config.RobieConfig"><code class="docutils literal notranslate"><span class="pre">RobieConfig</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.config.RobieConfig.config"><code class="docutils literal notranslate"><span class="pre">RobieConfig.config</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.config.RobieConfig.inserts"><code class="docutils literal notranslate"><span class="pre">RobieConfig.inserts</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.config.RobieConfig.merge_params"><code class="docutils literal notranslate"><span class="pre">RobieConfig.merge_params()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.config.RobieConfig.params"><code class="docutils literal notranslate"><span class="pre">RobieConfig.params</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.config.RobieConfig.register"><code class="docutils literal notranslate"><span class="pre">RobieConfig.register()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-enrobie.robie.robie">enrobie.robie.robie module</a><ul>
+<li><a class="reference internal" href="#enrobie.robie.robie.Robie"><code class="docutils literal notranslate"><span class="pre">Robie</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.robie.Robie.childs"><code class="docutils literal notranslate"><span class="pre">Robie.childs</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.robie.Robie.config"><code class="docutils literal notranslate"><span class="pre">Robie.config</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.robie.Robie.dumped"><code class="docutils literal notranslate"><span class="pre">Robie.dumped</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.robie.Robie.logger"><code class="docutils literal notranslate"><span class="pre">Robie.logger</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.robie.Robie.params"><code class="docutils literal notranslate"><span class="pre">Robie.params</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.robie.Robie.printer"><code class="docutils literal notranslate"><span class="pre">Robie.printer()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.robie.Robie.register"><code class="docutils literal notranslate"><span class="pre">Robie.register()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-enrobie.robie.service">enrobie.robie.service module</a><ul>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService"><code class="docutils literal notranslate"><span class="pre">RobieService</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.check_congest"><code class="docutils literal notranslate"><span class="pre">RobieService.check_congest()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.check_zombies"><code class="docutils literal notranslate"><span class="pre">RobieService.check_zombies()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.clients"><code class="docutils literal notranslate"><span class="pre">RobieService.clients</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.congest"><code class="docutils literal notranslate"><span class="pre">RobieService.congest</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.enqueue"><code class="docutils literal notranslate"><span class="pre">RobieService.enqueue</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.operate"><code class="docutils literal notranslate"><span class="pre">RobieService.operate()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.operate_clients"><code class="docutils literal notranslate"><span class="pre">RobieService.operate_clients()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.operate_healths"><code class="docutils literal notranslate"><span class="pre">RobieService.operate_healths()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.operate_plugins"><code class="docutils literal notranslate"><span class="pre">RobieService.operate_plugins()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.params"><code class="docutils literal notranslate"><span class="pre">RobieService.params</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.plugins"><code class="docutils literal notranslate"><span class="pre">RobieService.plugins</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.robie"><code class="docutils literal notranslate"><span class="pre">RobieService.robie</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.running"><code class="docutils literal notranslate"><span class="pre">RobieService.running</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.soft"><code class="docutils literal notranslate"><span class="pre">RobieService.soft()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.start"><code class="docutils literal notranslate"><span class="pre">RobieService.start()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.stop"><code class="docutils literal notranslate"><span class="pre">RobieService.stop()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.service.RobieService.zombies"><code class="docutils literal notranslate"><span class="pre">RobieService.zombies</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-enrobie.robie">Module contents</a><ul>
+<li><a class="reference internal" href="#enrobie.robie.Robie"><code class="docutils literal notranslate"><span class="pre">Robie</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.Robie.childs"><code class="docutils literal notranslate"><span class="pre">Robie.childs</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.Robie.config"><code class="docutils literal notranslate"><span class="pre">Robie.config</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.Robie.dumped"><code class="docutils literal notranslate"><span class="pre">Robie.dumped</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.Robie.logger"><code class="docutils literal notranslate"><span class="pre">Robie.logger</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.Robie.params"><code class="docutils literal notranslate"><span class="pre">Robie.params</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.Robie.printer"><code class="docutils literal notranslate"><span class="pre">Robie.printer()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.Robie.register"><code class="docutils literal notranslate"><span class="pre">Robie.register()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enrobie.robie.RobieConfig"><code class="docutils literal notranslate"><span class="pre">RobieConfig</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.RobieConfig.config"><code class="docutils literal notranslate"><span class="pre">RobieConfig.config</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieConfig.inserts"><code class="docutils literal notranslate"><span class="pre">RobieConfig.inserts</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieConfig.merge_params"><code class="docutils literal notranslate"><span class="pre">RobieConfig.merge_params()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieConfig.params"><code class="docutils literal notranslate"><span class="pre">RobieConfig.params</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieConfig.register"><code class="docutils literal notranslate"><span class="pre">RobieConfig.register()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService"><code class="docutils literal notranslate"><span class="pre">RobieService</span></code></a><ul>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.check_congest"><code class="docutils literal notranslate"><span class="pre">RobieService.check_congest()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.check_zombies"><code class="docutils literal notranslate"><span class="pre">RobieService.check_zombies()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.clients"><code class="docutils literal notranslate"><span class="pre">RobieService.clients</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.congest"><code class="docutils literal notranslate"><span class="pre">RobieService.congest</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.enqueue"><code class="docutils literal notranslate"><span class="pre">RobieService.enqueue</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.operate"><code class="docutils literal notranslate"><span class="pre">RobieService.operate()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.operate_clients"><code class="docutils literal notranslate"><span class="pre">RobieService.operate_clients()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.operate_healths"><code class="docutils literal notranslate"><span class="pre">RobieService.operate_healths()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.operate_plugins"><code class="docutils literal notranslate"><span class="pre">RobieService.operate_plugins()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.params"><code class="docutils literal notranslate"><span class="pre">RobieService.params</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.plugins"><code class="docutils literal notranslate"><span class="pre">RobieService.plugins</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.robie"><code class="docutils literal notranslate"><span class="pre">RobieService.robie</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.running"><code class="docutils literal notranslate"><span class="pre">RobieService.running</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.soft"><code class="docutils literal notranslate"><span class="pre">RobieService.soft()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.start"><code class="docutils literal notranslate"><span class="pre">RobieService.start()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.stop"><code class="docutils literal notranslate"><span class="pre">RobieService.stop()</span></code></a></li>
+<li><a class="reference internal" href="#enrobie.robie.RobieService.zombies"><code class="docutils literal notranslate"><span class="pre">RobieService.zombies</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">enrobie</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">enrobie.robie package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/enrobie.robie.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="enrobie-robie-package">
+<h1>enrobie.robie package<a class="headerlink" href="#enrobie-robie-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.robie.addons.html">enrobie.robie.addons package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.addons.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.test.html">enrobie.robie.addons.test package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.test.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.test.html#module-enrobie.robie.addons.test.test_logger">enrobie.robie.addons.test.test_logger module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.test.html#module-enrobie.robie.addons.test.test_queue">enrobie.robie.addons.test.test_queue module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.test.html#module-enrobie.robie.addons.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.addons.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.addons.html#module-enrobie.robie.addons.logger">enrobie.robie.addons.logger module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger"><code class="docutils literal notranslate"><span class="pre">RobieLogger</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_c"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_c()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_d"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_e"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_e()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_i"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_i()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_w"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_w()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.start"><code class="docutils literal notranslate"><span class="pre">RobieLogger.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.stop"><code class="docutils literal notranslate"><span class="pre">RobieLogger.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.addons.html#module-enrobie.robie.addons.queue">enrobie.robie.addons.queue module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue"><code class="docutils literal notranslate"><span class="pre">RobieQueue</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue.empty"><code class="docutils literal notranslate"><span class="pre">RobieQueue.empty</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue.get"><code class="docutils literal notranslate"><span class="pre">RobieQueue.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue.put"><code class="docutils literal notranslate"><span class="pre">RobieQueue.put()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue.qsize"><code class="docutils literal notranslate"><span class="pre">RobieQueue.qsize</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueueItem"><code class="docutils literal notranslate"><span class="pre">RobieQueueItem</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueueItem.time"><code class="docutils literal notranslate"><span class="pre">RobieQueueItem.time</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.addons.html#module-enrobie.robie.addons">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger"><code class="docutils literal notranslate"><span class="pre">RobieLogger</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.log"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.log_c"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_c()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.log_d"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.log_e"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_e()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.log_i"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_i()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.log_w"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_w()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.start"><code class="docutils literal notranslate"><span class="pre">RobieLogger.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.stop"><code class="docutils literal notranslate"><span class="pre">RobieLogger.stop()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieQueue"><code class="docutils literal notranslate"><span class="pre">RobieQueue</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieQueue.empty"><code class="docutils literal notranslate"><span class="pre">RobieQueue.empty</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieQueue.get"><code class="docutils literal notranslate"><span class="pre">RobieQueue.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieQueue.put"><code class="docutils literal notranslate"><span class="pre">RobieQueue.put()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieQueue.qsize"><code class="docutils literal notranslate"><span class="pre">RobieQueue.qsize</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieQueueItem"><code class="docutils literal notranslate"><span class="pre">RobieQueueItem</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieQueueItem.time"><code class="docutils literal notranslate"><span class="pre">RobieQueueItem.time</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.robie.childs.html">enrobie.robie.childs package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.childs.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.childs.test.html">enrobie.robie.childs.test package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.test.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.test.html#module-enrobie.robie.childs.test.test_child">enrobie.robie.childs.test.test_child module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.test.html#module-enrobie.robie.childs.test.test_client">enrobie.robie.childs.test.test_client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.test.html#module-enrobie.robie.childs.test.test_plugin">enrobie.robie.childs.test.test_plugin module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.test.html#module-enrobie.robie.childs.test.test_robie">enrobie.robie.childs.test.test_robie module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.test.html#module-enrobie.robie.childs.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.childs.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.childs.html#module-enrobie.robie.childs.child">enrobie.robie.childs.child module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.child.RobieChild"><code class="docutils literal notranslate"><span class="pre">RobieChild</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.child.RobieChild.dumped"><code class="docutils literal notranslate"><span class="pre">RobieChild.dumped</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.child.RobieChild.enable"><code class="docutils literal notranslate"><span class="pre">RobieChild.enable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.child.RobieChild.kind"><code class="docutils literal notranslate"><span class="pre">RobieChild.kind</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.child.RobieChild.name"><code class="docutils literal notranslate"><span class="pre">RobieChild.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.child.RobieChild.operate"><code class="docutils literal notranslate"><span class="pre">RobieChild.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.child.RobieChild.params"><code class="docutils literal notranslate"><span class="pre">RobieChild.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.child.RobieChild.robie"><code class="docutils literal notranslate"><span class="pre">RobieChild.robie</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.child.RobieChild.validate"><code class="docutils literal notranslate"><span class="pre">RobieChild.validate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.childs.html#module-enrobie.robie.childs.client">enrobie.robie.childs.client module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient"><code class="docutils literal notranslate"><span class="pre">RobieClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.compose"><code class="docutils literal notranslate"><span class="pre">RobieClient.compose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.dumped"><code class="docutils literal notranslate"><span class="pre">RobieClient.dumped</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.family"><code class="docutils literal notranslate"><span class="pre">RobieClient.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.get_command"><code class="docutils literal notranslate"><span class="pre">RobieClient.get_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.get_message"><code class="docutils literal notranslate"><span class="pre">RobieClient.get_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.kind"><code class="docutils literal notranslate"><span class="pre">RobieClient.kind</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.put_command"><code class="docutils literal notranslate"><span class="pre">RobieClient.put_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.put_message"><code class="docutils literal notranslate"><span class="pre">RobieClient.put_message()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.childs.html#module-enrobie.robie.childs.plugin">enrobie.robie.childs.plugin module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin"><code class="docutils literal notranslate"><span class="pre">RobiePlugin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin.kind"><code class="docutils literal notranslate"><span class="pre">RobiePlugin.kind</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.childs.html#module-enrobie.robie.childs.robie">enrobie.robie.childs.robie module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds"><code class="docutils literal notranslate"><span class="pre">RobieChilds</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.clients"><code class="docutils literal notranslate"><span class="pre">RobieChilds.clients</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.dumped"><code class="docutils literal notranslate"><span class="pre">RobieChilds.dumped</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.plugins"><code class="docutils literal notranslate"><span class="pre">RobieChilds.plugins</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.register"><code class="docutils literal notranslate"><span class="pre">RobieChilds.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.validate"><code class="docutils literal notranslate"><span class="pre">RobieChilds.validate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.childs.html#module-enrobie.robie.childs">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChild"><code class="docutils literal notranslate"><span class="pre">RobieChild</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChild.dumped"><code class="docutils literal notranslate"><span class="pre">RobieChild.dumped</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChild.enable"><code class="docutils literal notranslate"><span class="pre">RobieChild.enable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChild.kind"><code class="docutils literal notranslate"><span class="pre">RobieChild.kind</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChild.name"><code class="docutils literal notranslate"><span class="pre">RobieChild.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChild.operate"><code class="docutils literal notranslate"><span class="pre">RobieChild.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChild.params"><code class="docutils literal notranslate"><span class="pre">RobieChild.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChild.robie"><code class="docutils literal notranslate"><span class="pre">RobieChild.robie</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChild.validate"><code class="docutils literal notranslate"><span class="pre">RobieChild.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChilds"><code class="docutils literal notranslate"><span class="pre">RobieChilds</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChilds.clients"><code class="docutils literal notranslate"><span class="pre">RobieChilds.clients</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChilds.dumped"><code class="docutils literal notranslate"><span class="pre">RobieChilds.dumped</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChilds.plugins"><code class="docutils literal notranslate"><span class="pre">RobieChilds.plugins</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChilds.register"><code class="docutils literal notranslate"><span class="pre">RobieChilds.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChilds.validate"><code class="docutils literal notranslate"><span class="pre">RobieChilds.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieClient"><code class="docutils literal notranslate"><span class="pre">RobieClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieClient.compose"><code class="docutils literal notranslate"><span class="pre">RobieClient.compose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieClient.dumped"><code class="docutils literal notranslate"><span class="pre">RobieClient.dumped</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieClient.family"><code class="docutils literal notranslate"><span class="pre">RobieClient.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieClient.get_command"><code class="docutils literal notranslate"><span class="pre">RobieClient.get_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieClient.get_message"><code class="docutils literal notranslate"><span class="pre">RobieClient.get_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieClient.kind"><code class="docutils literal notranslate"><span class="pre">RobieClient.kind</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieClient.put_command"><code class="docutils literal notranslate"><span class="pre">RobieClient.put_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobieClient.put_message"><code class="docutils literal notranslate"><span class="pre">RobieClient.put_message()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobiePlugin"><code class="docutils literal notranslate"><span class="pre">RobiePlugin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.RobiePlugin.kind"><code class="docutils literal notranslate"><span class="pre">RobiePlugin.kind</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.robie.members.html">enrobie.robie.members package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.members.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.members.test.html">enrobie.robie.members.test package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.test.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.test.html#module-enrobie.robie.members.test.test_clients">enrobie.robie.members.test.test_clients module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.test.html#module-enrobie.robie.members.test.test_member">enrobie.robie.members.test.test_member module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.test.html#module-enrobie.robie.members.test.test_plugins">enrobie.robie.members.test.test_plugins module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.test.html#module-enrobie.robie.members.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.members.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.members.html#module-enrobie.robie.members.clients">enrobie.robie.members.clients module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.clients.RobieClients"><code class="docutils literal notranslate"><span class="pre">RobieClients</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.clients.RobieClients.build_threads"><code class="docutils literal notranslate"><span class="pre">RobieClients.build_threads()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.clients.RobieClients.operate"><code class="docutils literal notranslate"><span class="pre">RobieClients.operate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.members.html#module-enrobie.robie.members.member">enrobie.robie.members.member module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember"><code class="docutils literal notranslate"><span class="pre">RobieMember</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.build_threads"><code class="docutils literal notranslate"><span class="pre">RobieMember.build_threads()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.cancel"><code class="docutils literal notranslate"><span class="pre">RobieMember.cancel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.congest"><code class="docutils literal notranslate"><span class="pre">RobieMember.congest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.cqueue"><code class="docutils literal notranslate"><span class="pre">RobieMember.cqueue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.enqueue"><code class="docutils literal notranslate"><span class="pre">RobieMember.enqueue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.mqueue"><code class="docutils literal notranslate"><span class="pre">RobieMember.mqueue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.operate"><code class="docutils literal notranslate"><span class="pre">RobieMember.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.robie"><code class="docutils literal notranslate"><span class="pre">RobieMember.robie</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.running"><code class="docutils literal notranslate"><span class="pre">RobieMember.running</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.soft"><code class="docutils literal notranslate"><span class="pre">RobieMember.soft()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.start"><code class="docutils literal notranslate"><span class="pre">RobieMember.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.stop"><code class="docutils literal notranslate"><span class="pre">RobieMember.stop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.threads"><code class="docutils literal notranslate"><span class="pre">RobieMember.threads</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.vacate"><code class="docutils literal notranslate"><span class="pre">RobieMember.vacate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.zombies"><code class="docutils literal notranslate"><span class="pre">RobieMember.zombies</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.members.html#module-enrobie.robie.members.plugins">enrobie.robie.members.plugins module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.plugins.RobiePlugins"><code class="docutils literal notranslate"><span class="pre">RobiePlugins</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.plugins.RobiePlugins.build_threads"><code class="docutils literal notranslate"><span class="pre">RobiePlugins.build_threads()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.plugins.RobiePlugins.operate"><code class="docutils literal notranslate"><span class="pre">RobiePlugins.operate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.members.html#module-enrobie.robie.members">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieClients"><code class="docutils literal notranslate"><span class="pre">RobieClients</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieClients.build_threads"><code class="docutils literal notranslate"><span class="pre">RobieClients.build_threads()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieClients.operate"><code class="docutils literal notranslate"><span class="pre">RobieClients.operate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember"><code class="docutils literal notranslate"><span class="pre">RobieMember</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.build_threads"><code class="docutils literal notranslate"><span class="pre">RobieMember.build_threads()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.cancel"><code class="docutils literal notranslate"><span class="pre">RobieMember.cancel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.congest"><code class="docutils literal notranslate"><span class="pre">RobieMember.congest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.cqueue"><code class="docutils literal notranslate"><span class="pre">RobieMember.cqueue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.enqueue"><code class="docutils literal notranslate"><span class="pre">RobieMember.enqueue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.mqueue"><code class="docutils literal notranslate"><span class="pre">RobieMember.mqueue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.operate"><code class="docutils literal notranslate"><span class="pre">RobieMember.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.robie"><code class="docutils literal notranslate"><span class="pre">RobieMember.robie</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.running"><code class="docutils literal notranslate"><span class="pre">RobieMember.running</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.soft"><code class="docutils literal notranslate"><span class="pre">RobieMember.soft()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.start"><code class="docutils literal notranslate"><span class="pre">RobieMember.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.stop"><code class="docutils literal notranslate"><span class="pre">RobieMember.stop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.threads"><code class="docutils literal notranslate"><span class="pre">RobieMember.threads</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.vacate"><code class="docutils literal notranslate"><span class="pre">RobieMember.vacate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.zombies"><code class="docutils literal notranslate"><span class="pre">RobieMember.zombies</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobiePlugins"><code class="docutils literal notranslate"><span class="pre">RobiePlugins</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobiePlugins.build_threads"><code class="docutils literal notranslate"><span class="pre">RobiePlugins.build_threads()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.RobiePlugins.operate"><code class="docutils literal notranslate"><span class="pre">RobiePlugins.operate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.robie.models.html">enrobie.robie.models package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.models.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.models.test.html">enrobie.robie.models.test package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.test.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.test.html#module-enrobie.robie.models.test.test_command">enrobie.robie.models.test.test_command module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.test.html#module-enrobie.robie.models.test.test_message">enrobie.robie.models.test.test_message module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.test.html#module-enrobie.robie.models.test.test_models">enrobie.robie.models.test.test_models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.test.html#module-enrobie.robie.models.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.models.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.models.html#module-enrobie.robie.models.command">enrobie.robie.models.command module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.command.RobieCommand"><code class="docutils literal notranslate"><span class="pre">RobieCommand</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.command.RobieCommand.client"><code class="docutils literal notranslate"><span class="pre">RobieCommand.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.command.RobieCommand.family"><code class="docutils literal notranslate"><span class="pre">RobieCommand.family</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.models.html#module-enrobie.robie.models.message">enrobie.robie.models.message module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage"><code class="docutils literal notranslate"><span class="pre">RobieMessage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage.client"><code class="docutils literal notranslate"><span class="pre">RobieMessage.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage.family"><code class="docutils literal notranslate"><span class="pre">RobieMessage.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage.isme"><code class="docutils literal notranslate"><span class="pre">RobieMessage.isme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage.kind"><code class="docutils literal notranslate"><span class="pre">RobieMessage.kind</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage.reply"><code class="docutils literal notranslate"><span class="pre">RobieMessage.reply()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.models.html#module-enrobie.robie.models.robie">enrobie.robie.models.robie module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels"><code class="docutils literal notranslate"><span class="pre">RobieModels</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.child"><code class="docutils literal notranslate"><span class="pre">RobieModels.child()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.client"><code class="docutils literal notranslate"><span class="pre">RobieModels.client()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.command"><code class="docutils literal notranslate"><span class="pre">RobieModels.command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.message"><code class="docutils literal notranslate"><span class="pre">RobieModels.message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.plugin"><code class="docutils literal notranslate"><span class="pre">RobieModels.plugin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.printer"><code class="docutils literal notranslate"><span class="pre">RobieModels.printer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.queue"><code class="docutils literal notranslate"><span class="pre">RobieModels.queue()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.robie"><code class="docutils literal notranslate"><span class="pre">RobieModels.robie()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.service"><code class="docutils literal notranslate"><span class="pre">RobieModels.service()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.models.html#module-enrobie.robie.models">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieCommand"><code class="docutils literal notranslate"><span class="pre">RobieCommand</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieCommand.client"><code class="docutils literal notranslate"><span class="pre">RobieCommand.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieCommand.family"><code class="docutils literal notranslate"><span class="pre">RobieCommand.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieCommand.time"><code class="docutils literal notranslate"><span class="pre">RobieCommand.time</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieMessage"><code class="docutils literal notranslate"><span class="pre">RobieMessage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieMessage.client"><code class="docutils literal notranslate"><span class="pre">RobieMessage.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieMessage.family"><code class="docutils literal notranslate"><span class="pre">RobieMessage.family</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieMessage.isme"><code class="docutils literal notranslate"><span class="pre">RobieMessage.isme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieMessage.kind"><code class="docutils literal notranslate"><span class="pre">RobieMessage.kind</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieMessage.reply"><code class="docutils literal notranslate"><span class="pre">RobieMessage.reply()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieMessage.time"><code class="docutils literal notranslate"><span class="pre">RobieMessage.time</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieModels"><code class="docutils literal notranslate"><span class="pre">RobieModels</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.child"><code class="docutils literal notranslate"><span class="pre">RobieModels.child()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.client"><code class="docutils literal notranslate"><span class="pre">RobieModels.client()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.command"><code class="docutils literal notranslate"><span class="pre">RobieModels.command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.message"><code class="docutils literal notranslate"><span class="pre">RobieModels.message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.plugin"><code class="docutils literal notranslate"><span class="pre">RobieModels.plugin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.printer"><code class="docutils literal notranslate"><span class="pre">RobieModels.printer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.queue"><code class="docutils literal notranslate"><span class="pre">RobieModels.queue()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.robie"><code class="docutils literal notranslate"><span class="pre">RobieModels.robie()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.service"><code class="docutils literal notranslate"><span class="pre">RobieModels.service()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.robie.params.html">enrobie.robie.params package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.params.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.params.html#module-enrobie.robie.params.child">enrobie.robie.params.child module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams"><code class="docutils literal notranslate"><span class="pre">RobieChildParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams.enable"><code class="docutils literal notranslate"><span class="pre">RobieChildParams.enable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.params.html#module-enrobie.robie.params.client">enrobie.robie.params.client module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.client.RobieClientParams"><code class="docutils literal notranslate"><span class="pre">RobieClientParams</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.params.html#module-enrobie.robie.params.common">enrobie.robie.params.common module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.common.RobieParamsModel"><code class="docutils literal notranslate"><span class="pre">RobieParamsModel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.params.html#module-enrobie.robie.params.plugin">enrobie.robie.params.plugin module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.plugin.RobiePluginParams"><code class="docutils literal notranslate"><span class="pre">RobiePluginParams</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.params.html#module-enrobie.robie.params.robie">enrobie.robie.params.robie module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobieParams"><code class="docutils literal notranslate"><span class="pre">RobieParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobieParams.clients"><code class="docutils literal notranslate"><span class="pre">RobieParams.clients</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobieParams.database"><code class="docutils literal notranslate"><span class="pre">RobieParams.database</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobieParams.plugins"><code class="docutils literal notranslate"><span class="pre">RobieParams.plugins</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobieParams.printer"><code class="docutils literal notranslate"><span class="pre">RobieParams.printer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobieParams.service"><code class="docutils literal notranslate"><span class="pre">RobieParams.service</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobiePrinterParams"><code class="docutils literal notranslate"><span class="pre">RobiePrinterParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobiePrinterParams.command"><code class="docutils literal notranslate"><span class="pre">RobiePrinterParams.command</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobiePrinterParams.message"><code class="docutils literal notranslate"><span class="pre">RobiePrinterParams.message</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.params.html#module-enrobie.robie.params.service">enrobie.robie.params.service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.service.RobieServiceParams"><code class="docutils literal notranslate"><span class="pre">RobieServiceParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.service.RobieServiceParams.respite"><code class="docutils literal notranslate"><span class="pre">RobieServiceParams.respite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.service.RobieServiceRespiteParams"><code class="docutils literal notranslate"><span class="pre">RobieServiceRespiteParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.service.RobieServiceRespiteParams.health"><code class="docutils literal notranslate"><span class="pre">RobieServiceRespiteParams.health</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.params.html#module-enrobie.robie.params">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieChildParams"><code class="docutils literal notranslate"><span class="pre">RobieChildParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieChildParams.enable"><code class="docutils literal notranslate"><span class="pre">RobieChildParams.enable</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieClientParams"><code class="docutils literal notranslate"><span class="pre">RobieClientParams</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieParams"><code class="docutils literal notranslate"><span class="pre">RobieParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieParams.clients"><code class="docutils literal notranslate"><span class="pre">RobieParams.clients</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieParams.database"><code class="docutils literal notranslate"><span class="pre">RobieParams.database</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieParams.enconfig"><code class="docutils literal notranslate"><span class="pre">RobieParams.enconfig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieParams.encrypts"><code class="docutils literal notranslate"><span class="pre">RobieParams.encrypts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieParams.enlogger"><code class="docutils literal notranslate"><span class="pre">RobieParams.enlogger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieParams.plugins"><code class="docutils literal notranslate"><span class="pre">RobieParams.plugins</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieParams.printer"><code class="docutils literal notranslate"><span class="pre">RobieParams.printer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieParams.service"><code class="docutils literal notranslate"><span class="pre">RobieParams.service</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieParamsModel"><code class="docutils literal notranslate"><span class="pre">RobieParamsModel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobiePluginParams"><code class="docutils literal notranslate"><span class="pre">RobiePluginParams</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobiePrinterParams"><code class="docutils literal notranslate"><span class="pre">RobiePrinterParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobiePrinterParams.command"><code class="docutils literal notranslate"><span class="pre">RobiePrinterParams.command</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobiePrinterParams.message"><code class="docutils literal notranslate"><span class="pre">RobiePrinterParams.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieServiceParams"><code class="docutils literal notranslate"><span class="pre">RobieServiceParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.RobieServiceParams.respite"><code class="docutils literal notranslate"><span class="pre">RobieServiceParams.respite</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.robie.test.html">enrobie.robie.test package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.test.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.test.html#module-enrobie.robie.test.test_config">enrobie.robie.test.test_config module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.test.html#enrobie.robie.test.test_config.test_RobieConfig"><code class="docutils literal notranslate"><span class="pre">test_RobieConfig()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.test.html#module-enrobie.robie.test.test_robie">enrobie.robie.test.test_robie module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.test.html#enrobie.robie.test.test_robie.test_Robie"><code class="docutils literal notranslate"><span class="pre">test_Robie()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.test.html#enrobie.robie.test.test_robie.test_Robie_cover"><code class="docutils literal notranslate"><span class="pre">test_Robie_cover()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.test.html#enrobie.robie.test.test_robie.test_Robie_printer"><code class="docutils literal notranslate"><span class="pre">test_Robie_printer()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.test.html#module-enrobie.robie.test.test_service">enrobie.robie.test.test_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.test.html#enrobie.robie.test.test_service.test_RobieService"><code class="docutils literal notranslate"><span class="pre">test_RobieService()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.test.html#enrobie.robie.test.test_service.test_RobieService_cover"><code class="docutils literal notranslate"><span class="pre">test_RobieService_cover()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.test.html#enrobie.robie.test.test_service.test_RobieService_healths"><code class="docutils literal notranslate"><span class="pre">test_RobieService_healths()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.test.html#module-enrobie.robie.test">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enrobie.robie.threads.html">enrobie.robie.threads package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.threads.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.threads.test.html">enrobie.robie.threads.test package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.test.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.test.html#module-enrobie.robie.threads.test.test_client">enrobie.robie.threads.test.test_client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.test.html#module-enrobie.robie.threads.test.test_plugin">enrobie.robie.threads.test.test_plugin module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.test.html#module-enrobie.robie.threads.test.test_thread">enrobie.robie.threads.test.test_thread module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.test.html#module-enrobie.robie.threads.test">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.threads.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.threads.html#module-enrobie.robie.threads.client">enrobie.robie.threads.client module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.client.RobieClientThread"><code class="docutils literal notranslate"><span class="pre">RobieClientThread</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.threads.html#module-enrobie.robie.threads.plugin">enrobie.robie.threads.plugin module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.plugin.RobiePluginThread"><code class="docutils literal notranslate"><span class="pre">RobiePluginThread</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.threads.html#module-enrobie.robie.threads.thread">enrobie.robie.threads.thread module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread"><code class="docutils literal notranslate"><span class="pre">RobieThread</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread.child"><code class="docutils literal notranslate"><span class="pre">RobieThread.child</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread.congest"><code class="docutils literal notranslate"><span class="pre">RobieThread.congest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread.cqueue"><code class="docutils literal notranslate"><span class="pre">RobieThread.cqueue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread.enqueue"><code class="docutils literal notranslate"><span class="pre">RobieThread.enqueue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread.expired"><code class="docutils literal notranslate"><span class="pre">RobieThread.expired()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread.member"><code class="docutils literal notranslate"><span class="pre">RobieThread.member</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread.mqueue"><code class="docutils literal notranslate"><span class="pre">RobieThread.mqueue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread.operate"><code class="docutils literal notranslate"><span class="pre">RobieThread.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread.robie"><code class="docutils literal notranslate"><span class="pre">RobieThread.robie</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread.run"><code class="docutils literal notranslate"><span class="pre">RobieThread.run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread.stop"><code class="docutils literal notranslate"><span class="pre">RobieThread.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.threads.html#module-enrobie.robie.threads">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.RobieClientThread"><code class="docutils literal notranslate"><span class="pre">RobieClientThread</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.RobiePluginThread"><code class="docutils literal notranslate"><span class="pre">RobiePluginThread</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread"><code class="docutils literal notranslate"><span class="pre">RobieThread</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.child"><code class="docutils literal notranslate"><span class="pre">RobieThread.child</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.congest"><code class="docutils literal notranslate"><span class="pre">RobieThread.congest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.cqueue"><code class="docutils literal notranslate"><span class="pre">RobieThread.cqueue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.enqueue"><code class="docutils literal notranslate"><span class="pre">RobieThread.enqueue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.expired"><code class="docutils literal notranslate"><span class="pre">RobieThread.expired()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.member"><code class="docutils literal notranslate"><span class="pre">RobieThread.member</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.mqueue"><code class="docutils literal notranslate"><span class="pre">RobieThread.mqueue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.operate"><code class="docutils literal notranslate"><span class="pre">RobieThread.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.robie"><code class="docutils literal notranslate"><span class="pre">RobieThread.robie</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.run"><code class="docutils literal notranslate"><span class="pre">RobieThread.run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.stop"><code class="docutils literal notranslate"><span class="pre">RobieThread.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-enrobie.robie.common">
+<span id="enrobie-robie-common-module"></span><h2>enrobie.robie.common module<a class="headerlink" href="#module-enrobie.robie.common" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+</section>
+<section id="module-enrobie.robie.config">
+<span id="enrobie-robie-config-module"></span><h2>enrobie.robie.config module<a class="headerlink" href="#module-enrobie.robie.config" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.config.RobieConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.config.</span></span><span class="sig-name descname"><span class="pre">RobieConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.12)"><span class="pre">Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.12)"><span class="pre">Path</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.12)"><span class="pre">Path</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.12)"><span class="pre">set</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/config.html#RobieConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.config.RobieConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.config.html#encommon.config.config.Config" title="(in encommon v0.19.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Config</span></code></a></p>
+<p>Contain the configurations from the arguments and files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sargs</strong> – Additional arguments on the command line.</p></li>
+<li><p><strong>files</strong> – Complete or relative path to config files.</p></li>
+<li><p><strong>cargs</strong> – Configuration arguments in dictionary form,
+which will override contents from the config files.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.config.RobieConfig.config">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.config.RobieConfig.config" title="Link to this definition"></a></dt>
+<dd><p>Return the configuration dumped from the Pydantic model.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method completely overrides the parent but is
+based on that code, would be unfortunate if upstream
+changes meant this breaks or breaks something else.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Configuration dumped from the Pydantic model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.config.RobieConfig.inserts">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inserts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'clients'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'plugins'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.config.RobieConfig.inserts" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.config.RobieConfig.merge_params">
+<span class="sig-name descname"><span class="pre">merge_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/config.html#RobieConfig.merge_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.config.RobieConfig.merge_params" title="Link to this definition"></a></dt>
+<dd><p>Update the Pydantic model containing the configuration.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.config.RobieConfig.params">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobieParams" title="enrobie.robie.params.robie.RobieParams"><span class="pre">RobieParams</span></a></em><a class="headerlink" href="#enrobie.robie.config.RobieConfig.params" title="Link to this definition"></a></dt>
+<dd><p>Return the Pydantic model containing the configuration.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method completely overrides the parent but is
+based on that code, would be unfortunate if upstream
+changes meant this breaks or breaks something else.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pydantic model containing the configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.config.RobieConfig.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.client.RobieClientParams" title="enrobie.robie.params.client.RobieClientParams"><span class="pre">RobieClientParams</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plugin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.plugin.RobiePluginParams" title="enrobie.robie.params.plugin.RobiePluginParams"><span class="pre">RobiePluginParams</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/config.html#RobieConfig.register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.config.RobieConfig.register" title="Link to this definition"></a></dt>
+<dd><p>Register the plugin parameters for parameter processing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Name of the object within the Robie config.</p></li>
+<li><p><strong>client</strong> – Class definition for the instantiation.</p></li>
+<li><p><strong>plugin</strong> – Class definition for the instantiation.</p></li>
+<li><p><strong>source</strong> – Source for the parameters instantiation.</p></li>
+<li><p><strong>merge</strong> – Reprocess all parameters including added.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-enrobie.robie.robie">
+<span id="enrobie-robie-robie-module"></span><h2>enrobie.robie.robie module<a class="headerlink" href="#module-enrobie.robie.robie" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.robie.Robie">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.robie.</span></span><span class="sig-name descname"><span class="pre">Robie</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#enrobie.robie.config.RobieConfig" title="enrobie.robie.config.RobieConfig"><span class="pre">RobieConfig</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/robie.html#Robie"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.robie.Robie" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Interact with chat networks and integrate using plugins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>config</strong> – Primary class instance for configuration.</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.robie.Robie.childs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">childs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds" title="enrobie.robie.childs.robie.RobieChilds"><span class="pre">RobieChilds</span></a></em><a class="headerlink" href="#enrobie.robie.robie.Robie.childs" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.robie.Robie.config">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.robie.config.RobieConfig" title="enrobie.robie.config.RobieConfig"><span class="pre">RobieConfig</span></a></em><a class="headerlink" href="#enrobie.robie.robie.Robie.config" title="Link to this definition"></a></dt>
+<dd><p>Return the Config instance containing the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Config instance containing the configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.robie.Robie.dumped">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dumped</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.robie.Robie.dumped" title="Link to this definition"></a></dt>
+<dd><p>Return the facts about the attributes from the instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Facts about the attributes from the instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.robie.Robie.logger">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">logger</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger" title="enrobie.robie.addons.logger.RobieLogger"><span class="pre">RobieLogger</span></a></em><a class="headerlink" href="#enrobie.robie.robie.Robie.logger" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.robie.Robie.params">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobieParams" title="enrobie.robie.params.robie.RobieParams"><span class="pre">RobieParams</span></a></em><a class="headerlink" href="#enrobie.robie.robie.Robie.params" title="Link to this definition"></a></dt>
+<dd><p>Return the Pydantic model containing the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pydantic model containing the configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.robie.Robie.printer">
+<span class="sig-name descname"><span class="pre">printer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RobiePrint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">6</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/robie.html#Robie.printer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.robie.Robie.printer" title="Link to this definition"></a></dt>
+<dd><p>Print the contents for the object within Robie instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – Content which will be shown after header.</p></li>
+<li><p><strong>color</strong> – Override the color used for box character.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.robie.Robie.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient" title="enrobie.robie.childs.client.RobieClient"><span class="pre">RobieClient</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plugin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin" title="enrobie.robie.childs.plugin.RobiePlugin"><span class="pre">RobiePlugin</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/robie.html#Robie.register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.robie.Robie.register" title="Link to this definition"></a></dt>
+<dd><p>Register the plugin with the internal operation routine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Name of the object within the Robie config.</p></li>
+<li><p><strong>client</strong> – Class definition for the instantiation.</p></li>
+<li><p><strong>plugin</strong> – Class definition for the instantiation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-enrobie.robie.service">
+<span id="enrobie-robie-service-module"></span><h2>enrobie.robie.service module<a class="headerlink" href="#module-enrobie.robie.service" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.service.</span></span><span class="sig-name descname"><span class="pre">RobieService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.service.RobieService" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Multi-threaded service for processing the desired state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>robie</strong> – Primary class instance for Chatting Robie.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.check_congest">
+<span class="sig-name descname"><span class="pre">check_congest</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.check_congest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.service.RobieService.check_congest" title="Link to this definition"></a></dt>
+<dd><p>Return the boolean indicating when queues are congested.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Boolean indicating when queues are congested.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.check_zombies">
+<span class="sig-name descname"><span class="pre">check_zombies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.check_zombies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.service.RobieService.check_zombies" title="Link to this definition"></a></dt>
+<dd><p>Return the boolean indicating while threads are zombies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Boolean indicating while threads are zombies.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.clients">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clients</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.clients.RobieClients" title="enrobie.robie.members.clients.RobieClients"><span class="pre">RobieClients</span></a></em><a class="headerlink" href="#enrobie.robie.service.RobieService.clients" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.congest">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">congest</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.service.RobieService.congest" title="Link to this definition"></a></dt>
+<dd><p>Return the list of congested threads and members queues.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of congested threads and members queues.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.enqueue">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enqueue</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.service.RobieService.enqueue" title="Link to this definition"></a></dt>
+<dd><p>Return the list of congested threads and members queues.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of congested threads and members queues.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.operate">
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.service.RobieService.operate" title="Link to this definition"></a></dt>
+<dd><p>Perform the operation related to Homie service members.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.operate_clients">
+<span class="sig-name descname"><span class="pre">operate_clients</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.operate_clients"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.service.RobieService.operate_clients" title="Link to this definition"></a></dt>
+<dd><p>Perform the operation related to Homie service members.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.operate_healths">
+<span class="sig-name descname"><span class="pre">operate_healths</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.operate_healths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.service.RobieService.operate_healths" title="Link to this definition"></a></dt>
+<dd><p>Perform the operation related to Homie service members.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.operate_plugins">
+<span class="sig-name descname"><span class="pre">operate_plugins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.operate_plugins"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.service.RobieService.operate_plugins" title="Link to this definition"></a></dt>
+<dd><p>Perform the operation related to Homie service members.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.params">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.service.RobieServiceParams" title="enrobie.robie.params.service.RobieServiceParams"><span class="pre">RobieServiceParams</span></a></em><a class="headerlink" href="#enrobie.robie.service.RobieService.params" title="Link to this definition"></a></dt>
+<dd><p>Return the Pydantic model containing the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pydantic model containing the configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.plugins">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plugins</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.plugins.RobiePlugins" title="enrobie.robie.members.plugins.RobiePlugins"><span class="pre">RobiePlugins</span></a></em><a class="headerlink" href="#enrobie.robie.service.RobieService.plugins" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.robie">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">robie</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></em><a class="headerlink" href="#enrobie.robie.service.RobieService.robie" title="Link to this definition"></a></dt>
+<dd><p>Return the Robie instance to which this instance belongs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Robie instance to which this instance belongs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.running">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">running</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.service.RobieService.running" title="Link to this definition"></a></dt>
+<dd><p>Return the list of threads which are determined running.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of threads which are determined running.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.soft">
+<span class="sig-name descname"><span class="pre">soft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.soft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.service.RobieService.soft" title="Link to this definition"></a></dt>
+<dd><p>Stop the various threads within the Homie class object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kwargs</strong> – Keyword arguments ignored by the method.</p></li>
+<li><p><strong>args</strong> – Positional arguments ignored by the method.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.service.RobieService.start" title="Link to this definition"></a></dt>
+<dd><p>Start the various threads within the Homie class object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.service.RobieService.stop" title="Link to this definition"></a></dt>
+<dd><p>Stop the various threads within the Homie class object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kwargs</strong> – Keyword arguments ignored by the method.</p></li>
+<li><p><strong>args</strong> – Positional arguments ignored by the method.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.service.RobieService.zombies">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">zombies</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.service.RobieService.zombies" title="Link to this definition"></a></dt>
+<dd><p>Return the list of threads which are determined zombies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of threads which are determined zombies.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-enrobie.robie">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-enrobie.robie" title="Link to this heading"></a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.Robie">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.</span></span><span class="sig-name descname"><span class="pre">Robie</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#enrobie.robie.RobieConfig" title="enrobie.robie.RobieConfig"><span class="pre">RobieConfig</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/robie.html#Robie"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.Robie" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Interact with chat networks and integrate using plugins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>config</strong> – Primary class instance for configuration.</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.Robie.childs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">childs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds" title="enrobie.robie.childs.robie.RobieChilds"><span class="pre">RobieChilds</span></a></em><a class="headerlink" href="#enrobie.robie.Robie.childs" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.Robie.config">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.robie.RobieConfig" title="enrobie.robie.RobieConfig"><span class="pre">RobieConfig</span></a></em><a class="headerlink" href="#enrobie.robie.Robie.config" title="Link to this definition"></a></dt>
+<dd><p>Return the Config instance containing the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Config instance containing the configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.Robie.dumped">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dumped</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.Robie.dumped" title="Link to this definition"></a></dt>
+<dd><p>Return the facts about the attributes from the instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Facts about the attributes from the instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.Robie.logger">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">logger</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger" title="enrobie.robie.addons.logger.RobieLogger"><span class="pre">RobieLogger</span></a></em><a class="headerlink" href="#enrobie.robie.Robie.logger" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.Robie.params">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobieParams" title="enrobie.robie.params.robie.RobieParams"><span class="pre">RobieParams</span></a></em><a class="headerlink" href="#enrobie.robie.Robie.params" title="Link to this definition"></a></dt>
+<dd><p>Return the Pydantic model containing the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pydantic model containing the configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.Robie.printer">
+<span class="sig-name descname"><span class="pre">printer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RobiePrint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">6</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/robie.html#Robie.printer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.Robie.printer" title="Link to this definition"></a></dt>
+<dd><p>Print the contents for the object within Robie instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – Content which will be shown after header.</p></li>
+<li><p><strong>color</strong> – Override the color used for box character.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.Robie.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient" title="enrobie.robie.childs.client.RobieClient"><span class="pre">RobieClient</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plugin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin" title="enrobie.robie.childs.plugin.RobiePlugin"><span class="pre">RobiePlugin</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/robie.html#Robie.register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.Robie.register" title="Link to this definition"></a></dt>
+<dd><p>Register the plugin with the internal operation routine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Name of the object within the Robie config.</p></li>
+<li><p><strong>client</strong> – Class definition for the instantiation.</p></li>
+<li><p><strong>plugin</strong> – Class definition for the instantiation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.RobieConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.</span></span><span class="sig-name descname"><span class="pre">RobieConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.12)"><span class="pre">Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.12)"><span class="pre">Path</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.12)"><span class="pre">Path</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.12)"><span class="pre">set</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/config.html#RobieConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.RobieConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://encommon.readthedocs.io/en/latest/encommon.config.html#encommon.config.config.Config" title="(in encommon v0.19.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Config</span></code></a></p>
+<p>Contain the configurations from the arguments and files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sargs</strong> – Additional arguments on the command line.</p></li>
+<li><p><strong>files</strong> – Complete or relative path to config files.</p></li>
+<li><p><strong>cargs</strong> – Configuration arguments in dictionary form,
+which will override contents from the config files.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.RobieConfig.config">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.RobieConfig.config" title="Link to this definition"></a></dt>
+<dd><p>Return the configuration dumped from the Pydantic model.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method completely overrides the parent but is
+based on that code, would be unfortunate if upstream
+changes meant this breaks or breaks something else.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Configuration dumped from the Pydantic model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.RobieConfig.inserts">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inserts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'clients'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'plugins'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.RobieConfig.inserts" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.RobieConfig.merge_params">
+<span class="sig-name descname"><span class="pre">merge_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/config.html#RobieConfig.merge_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.RobieConfig.merge_params" title="Link to this definition"></a></dt>
+<dd><p>Update the Pydantic model containing the configuration.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.RobieConfig.params">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.robie.RobieParams" title="enrobie.robie.params.robie.RobieParams"><span class="pre">RobieParams</span></a></em><a class="headerlink" href="#enrobie.robie.RobieConfig.params" title="Link to this definition"></a></dt>
+<dd><p>Return the Pydantic model containing the configuration.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method completely overrides the parent but is
+based on that code, would be unfortunate if upstream
+changes meant this breaks or breaks something else.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pydantic model containing the configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.RobieConfig.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.client.RobieClientParams" title="enrobie.robie.params.client.RobieClientParams"><span class="pre">RobieClientParams</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plugin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.plugin.RobiePluginParams" title="enrobie.robie.params.plugin.RobiePluginParams"><span class="pre">RobiePluginParams</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/config.html#RobieConfig.register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.RobieConfig.register" title="Link to this definition"></a></dt>
+<dd><p>Register the plugin parameters for parameter processing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Name of the object within the Robie config.</p></li>
+<li><p><strong>client</strong> – Class definition for the instantiation.</p></li>
+<li><p><strong>plugin</strong> – Class definition for the instantiation.</p></li>
+<li><p><strong>source</strong> – Source for the parameters instantiation.</p></li>
+<li><p><strong>merge</strong> – Reprocess all parameters including added.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.</span></span><span class="sig-name descname"><span class="pre">RobieService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#enrobie.robie.Robie" title="enrobie.robie.Robie"><span class="pre">Robie</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.RobieService" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Multi-threaded service for processing the desired state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>robie</strong> – Primary class instance for Chatting Robie.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.check_congest">
+<span class="sig-name descname"><span class="pre">check_congest</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.check_congest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.RobieService.check_congest" title="Link to this definition"></a></dt>
+<dd><p>Return the boolean indicating when queues are congested.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Boolean indicating when queues are congested.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.check_zombies">
+<span class="sig-name descname"><span class="pre">check_zombies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.check_zombies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.RobieService.check_zombies" title="Link to this definition"></a></dt>
+<dd><p>Return the boolean indicating while threads are zombies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Boolean indicating while threads are zombies.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.clients">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clients</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.clients.RobieClients" title="enrobie.robie.members.clients.RobieClients"><span class="pre">RobieClients</span></a></em><a class="headerlink" href="#enrobie.robie.RobieService.clients" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.congest">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">congest</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.RobieService.congest" title="Link to this definition"></a></dt>
+<dd><p>Return the list of congested threads and members queues.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of congested threads and members queues.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.enqueue">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enqueue</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.RobieService.enqueue" title="Link to this definition"></a></dt>
+<dd><p>Return the list of congested threads and members queues.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of congested threads and members queues.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.operate">
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.RobieService.operate" title="Link to this definition"></a></dt>
+<dd><p>Perform the operation related to Homie service members.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.operate_clients">
+<span class="sig-name descname"><span class="pre">operate_clients</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.operate_clients"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.RobieService.operate_clients" title="Link to this definition"></a></dt>
+<dd><p>Perform the operation related to Homie service members.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.operate_healths">
+<span class="sig-name descname"><span class="pre">operate_healths</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.operate_healths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.RobieService.operate_healths" title="Link to this definition"></a></dt>
+<dd><p>Perform the operation related to Homie service members.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.operate_plugins">
+<span class="sig-name descname"><span class="pre">operate_plugins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.operate_plugins"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.RobieService.operate_plugins" title="Link to this definition"></a></dt>
+<dd><p>Perform the operation related to Homie service members.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.params">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.service.RobieServiceParams" title="enrobie.robie.params.service.RobieServiceParams"><span class="pre">RobieServiceParams</span></a></em><a class="headerlink" href="#enrobie.robie.RobieService.params" title="Link to this definition"></a></dt>
+<dd><p>Return the Pydantic model containing the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pydantic model containing the configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.plugins">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plugins</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.members.html#enrobie.robie.members.plugins.RobiePlugins" title="enrobie.robie.members.plugins.RobiePlugins"><span class="pre">RobiePlugins</span></a></em><a class="headerlink" href="#enrobie.robie.RobieService.plugins" title="Link to this definition"></a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.robie">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">robie</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.robie.Robie" title="enrobie.robie.Robie"><span class="pre">Robie</span></a></em><a class="headerlink" href="#enrobie.robie.RobieService.robie" title="Link to this definition"></a></dt>
+<dd><p>Return the Robie instance to which this instance belongs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Robie instance to which this instance belongs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.running">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">running</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.RobieService.running" title="Link to this definition"></a></dt>
+<dd><p>Return the list of threads which are determined running.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of threads which are determined running.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.soft">
+<span class="sig-name descname"><span class="pre">soft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.soft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.RobieService.soft" title="Link to this definition"></a></dt>
+<dd><p>Stop the various threads within the Homie class object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kwargs</strong> – Keyword arguments ignored by the method.</p></li>
+<li><p><strong>args</strong> – Positional arguments ignored by the method.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.RobieService.start" title="Link to this definition"></a></dt>
+<dd><p>Start the various threads within the Homie class object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/service.html#RobieService.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.RobieService.stop" title="Link to this definition"></a></dt>
+<dd><p>Stop the various threads within the Homie class object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kwargs</strong> – Keyword arguments ignored by the method.</p></li>
+<li><p><strong>args</strong> – Positional arguments ignored by the method.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.RobieService.zombies">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">zombies</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.RobieService.zombies" title="Link to this definition"></a></dt>
+<dd><p>Return the list of threads which are determined zombies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of threads which are determined zombies.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Enasis Network.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
