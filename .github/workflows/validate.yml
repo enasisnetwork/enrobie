@@ -1,0 +1,282 @@
+---
+
+
+
+#####################
+## GitHub Workflow ##
+#####################
+
+name: Validation
+
+permissions:
+  contents: write
+
+on:  # yamllint disable-line rule:truthy
+
+  schedule:
+    - cron: '0 2 * * *'
+
+  pull_request:
+
+  push:
+    branches:
+      - main
+
+jobs:
+
+
+
+  #################
+  ## Python 3.12 ##
+  #################
+  validate312:
+    name: Python 3.12
+    runs-on: ubuntu-latest
+    env:
+      PYTHON: python3
+    steps:
+
+
+      # Standard project construction
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with: {python-version: '3.12'}
+
+
+      # Standard project construction
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+
+      # Standard project construction
+      - name: Checkout static branch
+        uses: actions/checkout@v4
+        with:
+          ref: static
+          path: static
+
+
+      # Standard project construction
+      - name: Build environment
+        working-directory: main
+        run: |
+          make -s venv-create
+          pip install ansi2txt
+
+      # Standard project construction
+      - name: Build environment
+        working-directory: static
+        run: mkdir -p validate
+
+
+      # Validate the Python project
+      - name: Lint using Flake8
+        id: flake8
+        working-directory: main
+        run: |
+          make -s flake8 \
+            | tee ../static/validate/flake8.txt
+        continue-on-error: true
+
+      # Validate the Python project
+      - name: Lint using Pylint
+        id: pylint
+        working-directory: main
+        run: |
+          make -s pylint \
+            | tee ../static/validate/pylint.txt
+        continue-on-error: true
+
+      # Validate the Python project
+      - name: Lint using Mypy
+        id: mypy
+        working-directory: main
+        run: |
+          make -s mypy \
+            | tee ../static/validate/mypy.txt
+        continue-on-error: true
+
+      # Validate the Python project
+      - name: Lint using YAMLlint
+        id: yamllint
+        working-directory: main
+        run: |
+          make -s yamllint \
+            | tee ../static/validate/yamllint.txt
+        continue-on-error: true
+
+      # Validate the Python project
+      - name: Test with Pytest
+        id: pytest
+        working-directory: main
+        run: |
+          make -s pytest \
+            | tee ../static/validate/pytest.txt
+        continue-on-error: true
+
+      # Construct additional content
+      - name: Docs with Sphinx
+        id: sphinx
+        working-directory: main
+        run: |
+          make -s sphinx \
+            | tee ../static/validate/sphinx.txt
+        continue-on-error: true
+
+
+      # Construct additional content
+      - name: Collect previous steps
+        working-directory: main
+        run: |
+
+          ansi2txt \
+            < ../static/validate/flake8.txt \
+            > ../static/validate/flake8.tmp
+
+          mv ../static/validate/flake8.tmp \
+            ../static/validate/flake8.txt
+
+          ansi2txt \
+            < ../static/validate/pylint.txt \
+            > ../static/validate/pylint.tmp
+
+          mv ../static/validate/pylint.tmp \
+            ../static/validate/pylint.txt
+
+          ansi2txt \
+            < ../static/validate/mypy.txt \
+            > ../static/validate/mypy.tmp
+
+          mv ../static/validate/mypy.tmp \
+            ../static/validate/mypy.txt
+
+          ansi2txt \
+            < ../static/validate/yamllint.txt \
+            > ../static/validate/yamllint.tmp
+
+          mv ../static/validate/yamllint.tmp \
+            ../static/validate/yamllint.txt
+
+          ansi2txt \
+            < ../static/validate/pytest.txt \
+            > ../static/validate/pytest.tmp
+
+          mv ../static/validate/pytest.tmp \
+            ../static/validate/pytest.txt
+
+          .venv-package/bin/coverage report \
+            > ../static/validate/coverage.txt
+
+          ansi2txt \
+            < ../static/validate/sphinx.txt \
+            > ../static/validate/sphinx.tmp
+
+          mv ../static/validate/sphinx.tmp \
+            ../static/validate/sphinx.txt
+
+
+      # Construct additional content
+      - name: Generate validation JSON
+        if: github.ref_name == 'main'
+        run: |
+
+          FLAKE8="unknown"
+          PYLINT="unknown"
+          MYPY="unknown"
+          YAMLLINT="unknown"
+          PYTEST="unknown"
+          COVERAGE="unknown"
+          SPHINX="unknown"
+
+          OUTCOME="${{ steps.flake8.outcome }}"
+          if [[ "$OUTCOME" == "success" ]]; then
+            FLAKE8="passing"
+          elif [[ "$OUTCOME" == "failure" ]]; then
+            FLAKE8="failing"
+          fi
+
+          OUTCOME="${{ steps.pylint.outcome }}"
+          if [[ "$OUTCOME" == "success" ]]; then
+            PYLINT="passing"
+          elif [[ "$OUTCOME" == "failure" ]]; then
+            PYLINT="failing"
+          fi
+
+          OUTCOME="${{ steps.mypy.outcome }}"
+          if [[ "$OUTCOME" == "success" ]]; then
+            MYPY="passing"
+          elif [[ "$OUTCOME" == "failure" ]]; then
+            MYPY="failing"
+          fi
+
+          OUTCOME="${{ steps.yamllint.outcome }}"
+          if [[ "$OUTCOME" == "success" ]]; then
+            YAMLLINT="passing"
+          elif [[ "$OUTCOME" == "failure" ]]; then
+            YAMLLINT="failing"
+          fi
+
+          OUTCOME="${{ steps.pytest.outcome }}"
+          if [[ "$OUTCOME" == "success" ]]; then
+            PYTEST="passing"
+            COVERAGE=$(jq \
+              '.totals.percent_covered' \
+              < main/coverage.json)
+          elif [[ "$OUTCOME" == "failure" ]]; then
+            PYTEST="failing"
+          fi
+
+          OUTCOME="${{ steps.sphinx.outcome }}"
+          if [[ "$OUTCOME" == "success" ]]; then
+            SPHINX="passing"
+          elif [[ "$OUTCOME" == "failure" ]]; then
+            SPHINX="failing"
+          fi
+
+          # Create the JSON dictionary
+          OUTPUT=$(cat <<EOF
+          {
+            "flake8": "$FLAKE8",
+            "pylint": "$PYLINT",
+            "mypy": "$MYPY",
+            "yamllint": "$YAMLLINT",
+            "pytest": "$PYTEST",
+            "coverage": "$COVERAGE",
+            "sphinx": "$SPHINX"
+          }
+          EOF
+          )
+
+          echo "$OUTPUT" > static/validate/index.json
+
+
+      # Save content in static branch
+      - name: Store static content
+        if: github.ref_name == 'main'
+        run: |
+
+          git config --global \
+            user.email "github@workflow"
+
+          git config --global \
+            user.name "GitHub Workflows"
+
+          cd static
+          git add validate
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m 'Update from workflow'
+            git push origin static
+          fi
+
+
+      # Final check for any failure
+      - name: Check for failures
+        if: ${{ failure() }}
+        run: |
+          echo "One or more steps failed."
+          exit 1

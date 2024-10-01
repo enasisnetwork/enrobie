@@ -4,16 +4,20 @@
 
 Barebones service for connecting to multiple upstream chat networks.
 
-[![](https://img.shields.io/github/actions/workflow/status/enasisnetwork/enrobie/build.yml?style=flat-square&label=GitHub%20actions)](https://github.com/enasisnetwork/enrobie/actions)<br>
-[![codecov](https://img.shields.io/codecov/c/github/enasisnetwork/enrobie?token=7PGOXKJU0E&style=flat-square&logoColor=FFFFFF&label=Coverage)](https://codecov.io/gh/enasisnetwork/enrobie)<br>
-[![](https://img.shields.io/readthedocs/enrobie?style=flat-square&label=Read%20the%20Docs)](https://enrobie.readthedocs.io)<br>
-[![](https://img.shields.io/pypi/v/enrobie.svg?style=flat-square&label=PyPi%20version)](https://pypi.org/project/enrobie)<br>
-[![](https://img.shields.io/pypi/dm/enrobie?style=flat-square&label=PyPi%20downloads)](https://pypi.org/project/enrobie)
+<a href="https://enasisnetwork.github.io/enrobie/validate/flake8.txt"><img src="https://enasisnetwork.github.io/enrobie/badges/flake8.png"></a><br>
+<a href="https://enasisnetwork.github.io/enrobie/validate/pylint.txt"><img src="https://enasisnetwork.github.io/enrobie/badges/pylint.png"></a><br>
+<a href="https://enasisnetwork.github.io/enrobie/validate/mypy.txt"><img src="https://enasisnetwork.github.io/enrobie/badges/mypy.png"></a><br>
+<a href="https://enasisnetwork.github.io/enrobie/validate/yamllint.txt"><img src="https://enasisnetwork.github.io/enrobie/badges/yamllint.png"></a><br>
+<a href="https://enasisnetwork.github.io/enrobie/validate/pytest.txt"><img src="https://enasisnetwork.github.io/enrobie/badges/pytest.png"></a><br>
+<a href="https://enasisnetwork.github.io/enrobie/validate/coverage.txt"><img src="https://enasisnetwork.github.io/enrobie/badges/coverage.png"></a><br>
+<a href="https://enasisnetwork.github.io/enrobie/validate/sphinx.txt"><img src="https://enasisnetwork.github.io/enrobie/badges/sphinx.png"></a><br>
+<a href="https://pypi.org/project/enrobie"><img src="https://enasisnetwork.github.io/enrobie/badges/pypi.png"></a><br>
 
 ## Documentation
-Documentation is on [Read the Docs](https://enrobie.readthedocs.io).
+Read [project documentation](https://enasisnetwork.github.io/enrobie/sphinx)
+built using the [Sphinx](https://www.sphinx-doc.org/) project.
 Should you venture into the sections below you will be able to use the
-`sphinx` recipe to build documention in the `docs/html` directory.
+`sphinx` recipe to build documention in the `sphinx/html` directory.
 
 ## Installing the package
 Installing stable from the PyPi repository
@@ -108,7 +112,3 @@ make -s \
    ```
    make -s pypi-upload-prod
    ```
-
-1. Update [Read the Docs](https://enrobie.readthedocs.io) documentation.
-
-1. Consider running builds on dependent projects.

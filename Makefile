@@ -167,7 +167,7 @@ cleanup-coveragepy:
 		-exec rm -rf '{}' \; \
 		2>/dev/null || true
 	@find . \
-		-name 'coverage.xml' \
+		-name 'coverage.json' \
 		-maxdepth 1 \
 		-exec rm -rf '{}' \; \
 		2>/dev/null || true
@@ -204,12 +204,12 @@ cleanup-sphinx:
 	$(call MAKE_PR3NT,\
 		<c37>Removing <c90>Sphinx<c37> \
 		cache files..<c0>)
-	@find ./docs/ -type f \
+	@find ./sphinx/ -type f \
 		! -name conf.py \
 		! -name index.rst \
 		-delete 2>/dev/null || true
-	@mkdir ./docs/makefiletmp
-	@find ./docs/*/ -type d \
+	@mkdir ./sphinx/makefiletmp
+	@find ./sphinx/*/ -type d \
 		-exec rm -r {} + 2>/dev/null || true
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
@@ -242,7 +242,7 @@ venv-create: \
 		<c37>Preparing <c90>develop<c37> \
 		virtual environment..<c0>)
 	@$(VENVD)/bin/pip install \
-		-r reqs-develop.txt 1>/dev/null
+		-r require/develop.txt 1>/dev/null
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
@@ -262,7 +262,7 @@ venv-create: \
 		<c37>Preparing <c90>package<c37> \
 		virtual environment..<c0>)
 	@$(VENVP)/bin/pip install \
-		-r reqs-package.txt 1>/dev/null
+		-r require/package.txt 1>/dev/null
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
@@ -323,8 +323,8 @@ pytest: \
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Write <c90>coveragepy<c37> \
-		output to <c90>coverage.xml<c37>..<c0>)
-	@$(VENVD)/bin/coverage xml 1>/dev/null
+		output to <c90>coverage.json<c37>..<c0>)
+	@$(VENVD)/bin/coverage json 1>/dev/null
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
@@ -350,10 +350,10 @@ mypy: \
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>mypy<c37> \
-		in <c90>docs<c37>..<c0>)
+		in <c90>sphinx<c37>..<c0>)
 	@$(VENVD)/bin/mypy \
 		--no-error-summary \
-		$(mypy_args) docs
+		$(mypy_args) sphinx
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
@@ -362,6 +362,14 @@ mypy: \
 	@$(VENVD)/bin/mypy \
 		--no-error-summary \
 		$(mypy_args) makefile.py
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Executing <c90>mypy<c37> \
+		on <c90>makebadge.py<c37>..<c0>)
+	@$(VENVD)/bin/mypy \
+		--no-error-summary \
+		$(mypy_args) makebadge.py
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
@@ -385,14 +393,20 @@ flake8: \
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>flake8<c37> \
-		in <c90>docs<c37>..<c0>)
-	@$(VENVD)/bin/flake8 docs
+		in <c90>sphinx<c37>..<c0>)
+	@$(VENVD)/bin/flake8 sphinx
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>flake8<c37> \
 		on <c90>makefile.py<c37>..<c0>)
 	@$(VENVD)/bin/flake8 ./makefile.py
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Executing <c90>flake8<c37> \
+		on <c90>makebadge.py<c37>..<c0>)
+	@$(VENVD)/bin/flake8 ./makebadge.py
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
@@ -418,9 +432,9 @@ pylint: \
 	@#
 	$(call MAKE_PR3NT,\
 		<c37>Executing <c90>pylint<c37> \
-		in <c90>docs<c37>..<c0>)
+		in <c90>sphinx<c37>..<c0>)
 	@$(VENVD)/bin/pylint \
-		-E docs/*.py \
+		-E sphinx/*.py \
 		--persistent=n \
 		-d duplicate-code
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
@@ -430,6 +444,15 @@ pylint: \
 		on <c90>makefile.py<c37>..<c0>)
 	@$(VENVD)/bin/pylint \
 		-E makefile.py \
+		--persistent=n \
+		-d duplicate-code
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Executing <c90>pylint<c37> \
+		on <c90>makebadge.py<c37>..<c0>)
+	@$(VENVD)/bin/pylint \
+		-E makebadge.py \
 		--persistent=n \
 		-d duplicate-code
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
@@ -483,9 +506,9 @@ sphinx: \
 		<c37>Building <c90>Sphinx<c37>\
 		documentation..<c0>)
 	@$(VENVD)/bin/sphinx-apidoc \
-		-o docs $(PROJECT)
+		-o sphinx $(PROJECT)
 	@$(VENVD)/bin/sphinx-build \
-		-b html docs/ docs/html
+		-b html sphinx/ sphinx/html
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
@@ -507,11 +530,11 @@ outdated: \
 		--outdated \
 		| egrep -v '^(pip|setuptools) '
 	@$(VENVP)/bin/pip freeze \
-		-r reqs-package.txt \
-		> .reqs-package.txt
+		-r require/package.txt \
+		> require/.package.txt
 	@diff -B -I '^#' \
-		--color reqs-install.txt \
-		.reqs-package.txt || true
+		--color require/install.txt \
+		require/.package.txt || true
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
@@ -614,6 +637,37 @@ pypi-upload-prod: \
 		-m twine upload \
 		--verbose \
 		$(PROJECT).dist/*
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+
+
+
+.PHONY: badge
+badge: \
+	.check-venv-develop
+	@## Create the image for README badge
+	@#
+ifndef name
+	$(error name not defined)
+endif
+ifndef label
+	$(error label not defined)
+endif
+ifndef color
+	$(error color not defined)
+endif
+ifndef value
+	$(error value not defined)
+endif
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>badge<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Generate <c90>badge<c37> \
+		file <c90>$(name)<c37>..<c0>)
+	$(VENVD)/bin/python -B makebadge.py \
+		"$(name)" "$(label)" \
+		$(color) "$(value)"
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
