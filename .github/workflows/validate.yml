@@ -47,7 +47,6 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v4
         with:
-          ref: main
           path: main
 
       # Standard project construction
@@ -76,8 +75,10 @@ jobs:
         id: flake8
         working-directory: main
         run: |
-          make -s flake8 \
-            | tee ../static/validate/flake8.txt
+          output=$(make -s flake8)
+          exit_code=$?
+          echo "$output" > ../static/validate/flake8.txt
+          exit $exit_code
         continue-on-error: true
 
       # Validate the Python project
@@ -85,8 +86,10 @@ jobs:
         id: pylint
         working-directory: main
         run: |
-          make -s pylint \
-            | tee ../static/validate/pylint.txt
+          output=$(make -s pylint)
+          exit_code=$?
+          echo "$output" > ../static/validate/pylint.txt
+          exit $exit_code
         continue-on-error: true
 
       # Validate the Python project
@@ -94,8 +97,10 @@ jobs:
         id: mypy
         working-directory: main
         run: |
-          make -s mypy \
-            | tee ../static/validate/mypy.txt
+          output=$(make -s mypy)
+          exit_code=$?
+          echo "$output" > ../static/validate/mypy.txt
+          exit $exit_code
         continue-on-error: true
 
       # Validate the Python project
@@ -103,8 +108,10 @@ jobs:
         id: yamllint
         working-directory: main
         run: |
-          make -s yamllint \
-            | tee ../static/validate/yamllint.txt
+          output=$(make -s yamllint)
+          exit_code=$?
+          echo "$output" > ../static/validate/yamllint.txt
+          exit $exit_code
         continue-on-error: true
 
       # Validate the Python project
@@ -112,8 +119,10 @@ jobs:
         id: pytest
         working-directory: main
         run: |
-          make -s pytest \
-            | tee ../static/validate/pytest.txt
+          output=$(make -s pytest)
+          exit_code=$?
+          echo "$output" > ../static/validate/pytest.txt
+          exit $exit_code
         continue-on-error: true
 
       # Construct additional content
@@ -121,13 +130,15 @@ jobs:
         id: sphinx
         working-directory: main
         run: |
-          make -s sphinx \
-            | tee ../static/validate/sphinx.txt
+          output=$(make -s sphinx)
+          exit_code=$?
+          echo "$output" > ../static/validate/sphinx.txt
+          exit $exit_code
         continue-on-error: true
 
 
       # Construct additional content
-      - name: Collect previous steps
+      - name: Process previous steps
         working-directory: main
         run: |
 
@@ -276,7 +287,34 @@ jobs:
 
       # Final check for any failure
       - name: Check for failures
-        if: ${{ failure() }}
         run: |
-          echo "One or more steps failed."
-          exit 1
+
+          OUTCOME="${{ steps.flake8.outcome }}"
+          if [[ "$OUTCOME" == "failure" ]]; then
+            exit 1
+          fi
+
+          OUTCOME="${{ steps.pylint.outcome }}"
+          if [[ "$OUTCOME" == "failure" ]]; then
+            exit 1
+          fi
+
+          OUTCOME="${{ steps.mypy.outcome }}"
+          if [[ "$OUTCOME" == "failure" ]]; then
+            exit 1
+          fi
+
+          OUTCOME="${{ steps.yamllint.outcome }}"
+          if [[ "$OUTCOME" == "failure" ]]; then
+            exit 1
+          fi
+
+          OUTCOME="${{ steps.pytest.outcome }}"
+          if [[ "$OUTCOME" == "failure" ]]; then
+            exit 1
+          fi
+
+          OUTCOME="${{ steps.sphinx.outcome }}"
+          if [[ "$OUTCOME" == "failure" ]]; then
+            exit 1
+          fi

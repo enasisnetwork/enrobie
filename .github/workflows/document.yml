@@ -74,7 +74,6 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v4
         with:
-          ref: main
           path: main
 
       # Standard project construction
@@ -282,7 +281,9 @@ jobs:
         run: |
 
           PACKAGE="${GITHUB_REPOSITORY##*/}"
-          VERSION=$(curl -s https://pypi.org/pypi/$PACKAGE/json | jq -r '.info.version // "unknown"')
+          VERSION=$( \
+            curl -s https://pypi.org/pypi/$PACKAGE/json \
+            | jq -r '.info.version // "unknown"')
 
           make -s badge \
             name=../static/badges/pypi.png \
