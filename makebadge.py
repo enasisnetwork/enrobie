@@ -72,7 +72,7 @@ STYLES = (
     table>tbody>tr>td {
       border-width: 0.1px 0.1px 0.1px 0.1px;
       border-style: solid;
-      padding: 1px 2px 1px 2px;
+      padding: 0.5px 2px 1px 2px;
       vertical-align: middle; }
 
 
@@ -80,7 +80,7 @@ STYLES = (
       border-right-width: 0px;
       border-color: rgba(var(--color-gray), 1);
       background-color: rgba(var(--color-gray), 0.5);
-      font-size: 3.5px; }
+      padding-right: 2.5px; }
 
     table>tbody>tr>td:nth-child(2) {
       font-family: 'monospace'; }
@@ -89,8 +89,8 @@ STYLES = (
       border-left-width: 0px;
       border-color: rgba(var(--color-gray), 1);
       background-color: rgba(var(--color-gray), 0.25);
-      font-family: 'monospace';
-      font-size: 3.5px; }
+      color: rgba(var(--foreground), 0.60);
+      padding-left: 2.5px; }
 
 
     table.gray>tbody>tr>td:nth-child(2) {
