@@ -84,12 +84,18 @@ jobs:
           path: static
 
 
-      # Standard project construction
+      # Build the test environment
       - name: Build environment
         working-directory: main
-        run: make -s venv-create
+        run: |
 
-      # Standard project construction
+          make -s venv-create
+
+          pip install \
+            encommon \
+            weasyprint wand
+
+      # Build the test environment
       - name: Build environment
         working-directory: static
         run: mkdir -p badges
@@ -147,11 +153,9 @@ jobs:
             COLOR="red"
           fi
 
-          make -s badge \
-            name=../static/badges/flake8.png \
-            label="Flake8" \
-            color=$COLOR \
-            value=$STATUS
+          python makebadge.py \
+            "../static/badges/flake8.png" \
+            "Flake8" "$COLOR" "$STATUS"
 
       # Construct additional content
       - name: Build badge for Pylint
@@ -167,11 +171,9 @@ jobs:
             COLOR="red"
           fi
 
-          make -s badge \
-            name=../static/badges/pylint.png \
-            label="Pylint" \
-            color=$COLOR \
-            value=$STATUS
+          python makebadge.py \
+            "../static/badges/pylint.png" \
+            "Pylint" "$COLOR" "$STATUS"
 
       # Construct additional content
       - name: Build badge for Mypy
@@ -187,11 +189,9 @@ jobs:
             COLOR="red"
           fi
 
-          make -s badge \
-            name=../static/badges/mypy.png \
-            label="Mypy" \
-            color=$COLOR \
-            value=$STATUS
+          python makebadge.py \
+            "../static/badges/mypy.png" \
+            "Mypy" "$COLOR" "$STATUS"
 
       # Construct additional content
       - name: Build badge for YAMLlint
@@ -207,11 +207,9 @@ jobs:
             COLOR="red"
           fi
 
-          make -s badge \
-            name=../static/badges/yamllint.png \
-            label="YAMLlint" \
-            color=$COLOR \
-            value=$STATUS
+          python makebadge.py \
+            "../static/badges/yamllint.png" \
+            "YAMLlint" "$COLOR" "$STATUS"
 
       # Construct additional content
       - name: Build badge for Pytest
@@ -227,11 +225,9 @@ jobs:
             COLOR="red"
           fi
 
-          make -s badge \
-            name=../static/badges/pytest.png \
-            label="Pytest" \
-            color=$COLOR \
-            value=$STATUS
+          python makebadge.py \
+            "../static/badges/pytest.png" \
+            "Pytest" "$COLOR" "$STATUS"
 
       # Construct additional content
       - name: Build badge for Coverage.py
@@ -249,11 +245,9 @@ jobs:
             COLOR="red"
           fi
 
-          make -s badge \
-            name=../static/badges/coverage.png \
-            label="Coverage.py" \
-            color=$COLOR \
-            value="${STATUS}%"
+          python makebadge.py \
+            "../static/badges/coverage.png" \
+            "Coverage.py" "$COLOR" "$STATUS"
 
       # Construct additional content
       - name: Build badge for Sphinx
@@ -269,27 +263,31 @@ jobs:
             COLOR="red"
           fi
 
-          make -s badge \
-            name=../static/badges/sphinx.png \
-            label="Sphinx" \
-            color=$COLOR \
-            value=$STATUS
+          python makebadge.py \
+            "../static/badges/sphinx.png" \
+            "Sphinx" "$COLOR" "$STATUS"
 
       # Construct additional content
-      - name: Build PyPi badge
+      - name: Build badge for PyPi
         working-directory: main
         run: |
 
           PACKAGE="${GITHUB_REPOSITORY##*/}"
+          INFO=$(curl -s https://pypi.org/pypi/$PACKAGE/json)
+
           VERSION=$( \
-            curl -s https://pypi.org/pypi/$PACKAGE/json \
+            echo "$INFO" \
             | jq -r '.info.version // "unknown"')
 
-          make -s badge \
-            name=../static/badges/pypi.png \
-            label="PyPi" \
-            color="teal" \
-            value=$VERSION
+          RELEASE=$( \
+            echo "$INFO" \
+            | jq -r --arg VERSION "$VERSION" \
+            '.releases[$VERSION][0].upload_time // "unknown"')
+
+          python makebadge.py \
+            "../static/badges/pypi.png" \
+            "PyPi" "teal" \
+            "$VERSION" "$RELEASE"
 
 
       # Save content in static branch
