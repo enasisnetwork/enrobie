@@ -641,37 +641,6 @@ pypi-upload-prod: \
 
 
 
-.PHONY: badge
-badge: \
-	.check-venv-develop
-	@## Create the image for README badge
-	@#
-ifndef name
-	$(error name not defined)
-endif
-ifndef label
-	$(error label not defined)
-endif
-ifndef color
-	$(error color not defined)
-endif
-ifndef value
-	$(error value not defined)
-endif
-	@#
-	$(call MAKE_PR2NT,\
-		<cD>make <cL>badge<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Generate <c90>badge<c37> \
-		file <c90>$(name)<c37>..<c0>)
-	$(VENVD)/bin/python -B makebadge.py \
-		"$(name)" "$(label)" \
-		$(color) "$(value)"
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-
-
-
 .check-python:
 ifndef PYTHON
 	$(error PYTHON variable is not defined)

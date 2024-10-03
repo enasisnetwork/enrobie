@@ -124,7 +124,12 @@ STYLES = (
 
 
 
-CURRENT = Time().stamp('%Y-%m-%d')
+CURRENT = (
+    (Time(argv[5])
+     if len(argv) > 5
+     else Time())
+    .stamp('%Y-%m-%d'))
+
 
 BADGE = (
     f"""
