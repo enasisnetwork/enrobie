@@ -7,6 +7,7 @@ Barebones service for connecting to multiple upstream chat networks.
 <a href="https://pypi.org/project/enrobie"><img src="https://enasisnetwork.github.io/enrobie/badges/pypi.png"></a><br>
 <a href="https://enasisnetwork.github.io/enrobie/validate/flake8.txt"><img src="https://enasisnetwork.github.io/enrobie/badges/flake8.png"></a><br>
 <a href="https://enasisnetwork.github.io/enrobie/validate/pylint.txt"><img src="https://enasisnetwork.github.io/enrobie/badges/pylint.png"></a><br>
+<a href="https://enasisnetwork.github.io/enrobie/validate/ruff.txt"><img src="https://enasisnetwork.github.io/enrobie/badges/ruff.png"></a><br>
 <a href="https://enasisnetwork.github.io/enrobie/validate/mypy.txt"><img src="https://enasisnetwork.github.io/enrobie/badges/mypy.png"></a><br>
 <a href="https://enasisnetwork.github.io/enrobie/validate/yamllint.txt"><img src="https://enasisnetwork.github.io/enrobie/badges/yamllint.png"></a><br>
 <a href="https://enasisnetwork.github.io/enrobie/validate/pytest.txt"><img src="https://enasisnetwork.github.io/enrobie/badges/pytest.png"></a><br>

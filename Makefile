@@ -50,6 +50,7 @@ cleanup:
 	@$(MAKE) cleanup-pycache
 	@$(MAKE) cleanup-pytest
 	@$(MAKE) cleanup-coveragepy
+	@$(MAKE) cleanup-ruff
 	@$(MAKE) cleanup-mypy
 	@$(MAKE) cleanup-sphinx
 
@@ -60,6 +61,7 @@ linters:
 	@## Executes all various linters and tests
 	@$(MAKE) flake8
 	@$(MAKE) pylint
+	@$(MAKE) ruff
 	@$(MAKE) mypy
 	@$(MAKE) yamllint
 
@@ -70,6 +72,7 @@ linters-pass:
 	@## Executes all various linters and tests
 	@$(MAKE) flake8 || true
 	@$(MAKE) pylint || true
+	@$(MAKE) ruff || true
 	@$(MAKE) mypy || true
 	@$(MAKE) yamllint || true
 
@@ -168,6 +171,25 @@ cleanup-coveragepy:
 		2>/dev/null || true
 	@find . \
 		-name 'coverage.json' \
+		-maxdepth 1 \
+		-exec rm -rf '{}' \; \
+		2>/dev/null || true
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+
+
+
+.PHONY: cleanup-ruff
+cleanup-ruff:
+	@## Remove temporal generated cache files
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>cleanup-ruff<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Removing <c90>mypy<c37> \
+		cache files..<c0>)
+	@find . \
+		-name '.ruff_cache' \
 		-maxdepth 1 \
 		-exec rm -rf '{}' \; \
 		2>/dev/null || true
@@ -455,6 +477,46 @@ pylint: \
 		-E makebadge.py \
 		--persistent=n \
 		-d duplicate-code
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+
+
+
+.PHONY: ruff
+ruff: \
+	.check-venv-develop
+	@## Execute the relevant linters and tests
+	@#
+	@$(MAKE) cleanup-pycache
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>ruff<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Executing <c90>ruff<c37> \
+		in <c90>$(PROJECT)<c37>..<c0>)
+	@$(VENVD)/bin/ruff \
+		check -q $(PROJECT)
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Executing <c90>ruff<c37> \
+		in <c90>sphinx<c37>..<c0>)
+	@$(VENVD)/bin/ruff \
+		check -q sphinx/*.py
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Executing <c90>ruff<c37> \
+		on <c90>makefile.py<c37>..<c0>)
+	@$(VENVD)/bin/ruff \
+		check -q makefile.py
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Executing <c90>ruff<c37> \
+		on <c90>makebadge.py<c37>..<c0>)
+	@$(VENVD)/bin/ruff \
+		check -q makebadge.py
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
