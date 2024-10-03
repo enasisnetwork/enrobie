@@ -260,7 +260,7 @@ jobs:
           if [[ "$OUTCOME" == "success" ]]; then
             PYTEST="passing"
             COVERAGE=$(jq \
-              '.totals.percent_covered' \
+              '.totals.percent_covered_display' \
               < main/coverage.json)
           elif [[ "$OUTCOME" == "failure" ]]; then
             PYTEST="failing"
