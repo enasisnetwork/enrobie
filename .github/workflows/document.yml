@@ -268,7 +268,7 @@ jobs:
             "Sphinx" "$COLOR" "$STATUS"
 
       # Construct additional content
-      - name: Build PyPi badge
+      - name: Build badge for PyPi
         working-directory: main
         run: |
 
@@ -281,7 +281,8 @@ jobs:
 
           RELEASE=$( \
             echo "$INFO" \
-            | jq -r '.releases[$VERSION][0].upload_time // "unknown"')
+            | jq -r --arg VERSION "$VERSION" \
+            '.releases[$VERSION][0].upload_time // "unknown"')
 
           python makebadge.py \
             "../static/badges/pypi.png" \
