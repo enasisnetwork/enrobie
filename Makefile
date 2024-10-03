@@ -50,6 +50,7 @@ cleanup:
 	@$(MAKE) cleanup-pycache
 	@$(MAKE) cleanup-pytest
 	@$(MAKE) cleanup-coveragepy
+	@$(MAKE) cleanup-ruff
 	@$(MAKE) cleanup-mypy
 	@$(MAKE) cleanup-sphinx
 
@@ -170,6 +171,25 @@ cleanup-coveragepy:
 		2>/dev/null || true
 	@find . \
 		-name 'coverage.json' \
+		-maxdepth 1 \
+		-exec rm -rf '{}' \; \
+		2>/dev/null || true
+	$(call MAKE_PR1NT,<cD>DONE<c0>)
+
+
+
+.PHONY: cleanup-ruff
+cleanup-ruff:
+	@## Remove temporal generated cache files
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>cleanup-ruff<c0>)
+	@#
+	$(call MAKE_PR3NT,\
+		<c37>Removing <c90>mypy<c37> \
+		cache files..<c0>)
+	@find . \
+		-name '.ruff_cache' \
 		-maxdepth 1 \
 		-exec rm -rf '{}' \; \
 		2>/dev/null || true
