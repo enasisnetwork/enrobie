@@ -247,7 +247,7 @@ jobs:
 
           python makebadge.py \
             "../static/badges/coverage.png" \
-            "Coverage.py" "$COLOR" "$STATUS"
+            "Coverage.py" "$COLOR" "${STATUS}%"
 
       # Construct additional content
       - name: Build badge for Sphinx
