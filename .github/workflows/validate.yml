@@ -124,6 +124,16 @@ jobs:
         continue-on-error: true
 
       # Validate the Python project
+      - name: Lint using Ruff
+        id: ruff
+        working-directory: main
+        run: |
+          set -oe pipefail
+          make -s ruff \
+            | tee ../static/validate/ruff.txt
+        continue-on-error: true
+
+      # Validate the Python project
       - name: Lint using Mypy
         id: mypy
         working-directory: main
@@ -184,6 +194,13 @@ jobs:
             ../static/validate/pylint.txt
 
           ansi2txt \
+            < ../static/validate/ruff.txt \
+            > ../static/validate/ruff.tmp
+
+          mv ../static/validate/ruff.tmp \
+            ../static/validate/ruff.txt
+
+          ansi2txt \
             < ../static/validate/mypy.txt \
             > ../static/validate/mypy.tmp
 
@@ -222,6 +239,7 @@ jobs:
 
           FLAKE8="unknown"
           PYLINT="unknown"
+          RUFF="unknown"
           MYPY="unknown"
           YAMLLINT="unknown"
           PYTEST="unknown"
@@ -240,6 +258,13 @@ jobs:
             PYLINT="passing"
           elif [[ "$OUTCOME" == "failure" ]]; then
             PYLINT="failing"
+          fi
+
+          OUTCOME="${{ steps.ruff.outcome }}"
+          if [[ "$OUTCOME" == "success" ]]; then
+            RUFF="passing"
+          elif [[ "$OUTCOME" == "failure" ]]; then
+            RUFF="failing"
           fi
 
           OUTCOME="${{ steps.mypy.outcome }}"
@@ -278,6 +303,7 @@ jobs:
           {
             "flake8": "$FLAKE8",
             "pylint": "$PYLINT",
+            "ruff": "$RUFF",
             "mypy": "$MYPY",
             "yamllint": "$YAMLLINT",
             "pytest": "$PYTEST",
@@ -322,6 +348,11 @@ jobs:
           fi
 
           OUTCOME="${{ steps.pylint.outcome }}"
+          if [[ "$OUTCOME" == "failure" ]]; then
+            exit 1
+          fi
+
+          OUTCOME="${{ steps.ruff.outcome }}"
           if [[ "$OUTCOME" == "failure" ]]; then
             exit 1
           fi

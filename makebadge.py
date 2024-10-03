@@ -9,15 +9,26 @@ This file is present within multiple projects, simplifying dependency.
 
 
 
+from argparse import ArgumentParser
 from io import BytesIO
-from sys import argv
+from sys import argv as sys_argv
+from typing import Optional
 
 from encommon.times import Time
+from encommon.types import DictStrAny
+from encommon.types import strplwr
 
 from wand.color import Color  # type: ignore
 from wand.image import Image  # type: ignore
 
 from weasyprint import HTML  # type: ignore
+
+
+
+STAMP = '%m/%d/%Y'
+
+SUCCESS = ['success', 'passing']
+FAILURE = ['failure', 'failing']
 
 
 
@@ -30,11 +41,11 @@ STYLES = (
 
       --color-gray: 136, 136, 136;       /* 888888 */
       --color-red: 255, 102, 102;        /* ff6666 */
+      --color-yellow: 255, 255, 102;     /* ffff66 */
+      --color-green: 102, 255, 102;      /* 66ff66 */
       --color-pink: 255, 0, 204;         /* ff00cc */
       --color-teal: 102, 255, 255;       /* 66ffff */
-      --color-blue: 8, 155, 216;         /* 089bd8 */
-      --color-green: 102, 255, 102;      /* 66ff66 */
-      --color-yellow: 255, 255, 102;  }  /* ffff66 */
+      --color-blue: 8, 155, 216; }       /* 089bd8 */
 
 
     * {
@@ -76,100 +87,236 @@ STYLES = (
       vertical-align: middle; }
 
 
-    table>tbody>tr>td:nth-child(1) {
+    table>tbody>tr>td.label {
+      background-color: rgba(var(--color-gray), 0.5);
       border-right-width: 0px;
       border-color: rgba(var(--color-gray), 1);
-      background-color: rgba(var(--color-gray), 0.5);
       padding-right: 2.5px; }
 
-    table>tbody>tr>td:nth-child(2) {
+    table>tbody>tr>td.value {
       font-family: 'monospace'; }
 
-    table>tbody>tr>td:nth-child(3) {
+    table>tbody>tr>td.count {
+      background-color: rgba(var(--color-gray), 0.25);
+      border-color: rgba(var(--color-gray), 1);
+      border-left-width: 0px;
+      color: rgba(var(--foreground), 0.60);
+      font-family: 'monospace'; }
+
+    table>tbody>tr>td.count:empty {
+      display: none; }
+
+    table>tbody>tr>td.stamp {
+      background-color: rgba(var(--color-gray), 0.25);
       border-left-width: 0px;
       border-color: rgba(var(--color-gray), 1);
-      background-color: rgba(var(--color-gray), 0.25);
       color: rgba(var(--foreground), 0.60);
-      padding-left: 2.5px; }
+      font-family: 'monospace'; }
 
 
-    table.gray>tbody>tr>td:nth-child(2) {
+    table.gray>tbody>tr>td.value {
       border-color: rgba(var(--foreground), 1);
       background-color: rgba(var(--foreground), 0.4); }
 
-    table.red>tbody>tr>td:nth-child(2) {
+    table.red>tbody>tr>td.value {
       border-color: rgba(var(--color-red), 1);
       background-color: rgba(var(--color-red), 0.4); }
 
-    table.yellow>tbody>tr>td:nth-child(2) {
+    table.yellow>tbody>tr>td.value {
       border-color: rgba(var(--color-yellow), 1);
       background-color: rgba(var(--color-yellow), 0.4); }
 
-    table.green>tbody>tr>td:nth-child(2) {
+    table.green>tbody>tr>td.value {
       border-color: rgba(var(--color-green), 1);
       background-color: rgba(var(--color-green), 0.4); }
 
-    table.blue>tbody>tr>td:nth-child(2) {
-      border-color: rgba(var(--color-blue), 1);
-      background-color: rgba(var(--color-blue), 0.4); }
-
-    table.pink>tbody>tr>td:nth-child(2) {
+    table.pink>tbody>tr>td.value {
       border-color: rgba(var(--color-pink), 1);
       background-color: rgba(var(--color-pink), 0.4); }
 
-    table.teal>tbody>tr>td:nth-child(2) {
+    table.teal>tbody>tr>td.value {
       border-color: rgba(var(--color-teal), 1);
       background-color: rgba(var(--color-teal), 0.4); }
-    """)  # noqa: LIT003
 
-
-
-CURRENT = (
-    (Time(argv[5])
-     if len(argv) > 5
-     else Time())
-    .stamp('%Y-%m-%d'))
-
-
-BADGE = (
-    f"""
-    <style>
-    {STYLES}
-    </style>
-    <table class="{argv[3]}">
-      <tbody>
-        <tr>
-          <td>{argv[2]}</td>
-          <td>{argv[4]}</td>
-          <td>{CURRENT}</td>
-        </tr>
-      </tbody>
-    </table>
+    table.blue>tbody>tr>td.value {
+      border-color: rgba(var(--color-blue), 1);
+      background-color: rgba(var(--color-blue), 0.4); }
     """)
 
 
 
-if __name__ == '__main__':
+def arguments(
+    args: Optional[list[str]] = None,
+) -> DictStrAny:
+    """
+    Construct arguments which are associated with the file.
+
+    :param args: Override the source for the main arguments.
+    :returns: Construct arguments from command line options.
+    """
+
+    parser = ArgumentParser()
+
+    args = args or sys_argv[1:]
 
 
-    SOURCE = BytesIO()
+    parser.add_argument(
+        '--file',
+        required=True,
+        help=(
+            'complete or relative '
+            'path to output file'))
 
-    (HTML(string=BADGE)
-     .write_pdf(SOURCE))
+    parser.add_argument(
+        '--label',
+        required=True,
+        help=(
+            'friendly name for '
+            'first badge cell'))
 
-    SOURCE.seek(0)
+    parser.add_argument(
+        '--value',
+        required=True,
+        help=(
+            'actual value for '
+            'second badge cell'))
+
+    parser.add_argument(
+        '--count',
+        help=(
+            'optional count for '
+            'third badge cell'))
+
+    parser.add_argument(
+        '--color',
+        choices=[
+            'gray',
+            'red',
+            'yellow',
+            'green',
+            'pink',
+            'teal',
+            'blue'],
+        help=(
+            'color for the value '
+            'else automatic'))
+
+    parser.add_argument(
+        '--date',
+        help=(
+            'date for the value '
+            'else automatic'))
 
 
-    ORIGIN = Image(
-        file=SOURCE,
+    return vars(
+        parser
+        .parse_args(args))
+
+
+
+def execution(
+    # NOCVR
+    args: Optional[list[str]] = None,
+) -> None:
+    """
+    Perform whatever operation is associated with the file.
+
+    :param args: Override the source for the main arguments.
+    """
+
+    pargs = arguments(args)
+
+    file = pargs['file']
+    label = pargs['label']
+    value = pargs['value']
+    count = pargs['count']
+    color = pargs['color']
+    count = pargs['count']
+
+
+    _value = strplwr(value)
+
+
+    _count = (
+        ''
+        if count is None
+        else count)
+
+
+    _color = (
+        'gray'
+        if color is None
+        else color)
+
+    if color is None:
+
+        if _value[-1] == '%':
+
+            eulav = int(
+                float(_value[:-1]))
+
+            if eulav == 100:
+                _color = 'green'
+
+            elif eulav >= 80:
+                _color = 'yellow'
+
+            elif eulav >= 0:
+                _color = 'red'
+
+            _value = f'{eulav}%'
+
+        if _value in SUCCESS:
+            _color = 'green'
+
+        if _value in FAILURE:
+            _color = 'red'
+
+
+    stamp = (
+        Time(pargs['date'])
+        .stamp(STAMP))
+
+
+    badge = (
+        f"""
+        <style>
+        {STYLES}
+        </style>
+        <table class="{_color}">
+          <tbody>
+            <tr>
+              <td class="label">{label}</td>
+              <td class="value">{_value}</td>
+              <td class="count">{_count}</td>
+              <td class="stamp">{stamp}</td>
+            </tr>
+          </tbody>
+        </table>
+        """)
+
+
+    source = BytesIO()
+
+    (HTML(string=badge)
+     .write_pdf(source))
+
+    source.seek(0)
+
+    origin = Image(
+        file=source,
         resolution=300)
 
-    with ORIGIN as IMAGE:
+    with origin as image:
 
-        IMAGE.trim(
+        image.trim(
             Color('transparent'))
 
-        IMAGE.format = 'png'
+        image.format = 'png'
 
-        IMAGE.save(
-            filename=argv[1])
+        image.save(filename=file)
+
+
+
+if __name__ == '__main__':
+    execution()
