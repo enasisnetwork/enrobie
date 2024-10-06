@@ -12,11 +12,64 @@ from typing import Any
 from typing import Callable
 from typing import Optional
 
-from pydantic import Field
+from encommon.types import BaseModel
 
+from pydantic import Field
 
 from ...robie.params import RobiePluginParams
 from ...robie.params.common import RobieParamsModel
+
+
+
+class StatusPluginIconParams(BaseModel, extra='forbid'):
+    """
+    Contain information for constructing the chat messages.
+    """
+
+    irc: Annotated[
+        Optional[str],
+        Field(None,
+              description='Icon used for the chat platform',
+              max_length=1)]
+
+    dsc: Annotated[
+        Optional[str],
+        Field(None,
+              description='Icon used for the chat platform',
+              max_length=1)]
+
+    mtm: Annotated[
+        Optional[str],
+        Field(None,
+              description='Icon used for the chat platform',
+              max_length=1)]
+
+
+
+class StatusPluginIconsParams(BaseModel, extra='forbid'):
+    """
+    Contain information for constructing the chat messages.
+    """
+
+    pending: Annotated[
+        StatusPluginIconParams,
+        Field(default_factory=StatusPluginIconParams,
+              description='Icon used per the chat platform')]
+
+    normal: Annotated[
+        StatusPluginIconParams,
+        Field(default_factory=StatusPluginIconParams,
+              description='Icon used per the chat platform')]
+
+    failure: Annotated[
+        StatusPluginIconParams,
+        Field(default_factory=StatusPluginIconParams,
+              description='Icon used per the chat platform')]
+
+    unknown: Annotated[
+        StatusPluginIconParams,
+        Field(default_factory=StatusPluginIconParams,
+              description='Icon used per the chat platform')]
 
 
 
@@ -51,6 +104,11 @@ class StatusPluginParams(RobiePluginParams, extra='forbid'):
         StatusPluginCommandParams,
         Field(default_factory=StatusPluginCommandParams,
               description='Command name per chat platform')]
+
+    icons: Annotated[
+        StatusPluginIconsParams,
+        Field(default_factory=StatusPluginIconsParams,
+              description='Icon used per the chat platform')]
 
 
     def __init__(

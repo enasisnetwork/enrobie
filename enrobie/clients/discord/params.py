@@ -16,6 +16,7 @@ from enconnect.discord import ClientParams
 
 from pydantic import Field
 
+from ...plugins import StatusPluginIconParams
 from ...robie.params import RobieClientParams
 
 
@@ -35,6 +36,11 @@ class DSCClientParams(RobieClientParams, extra='forbid'):
         Field(2,
               description='Period to wait for reconnect')]
 
+    status: Annotated[
+        StatusPluginIconParams,
+        Field(default_factory=StatusPluginIconParams,
+              description='Icon used per the chat platform')]
+
 
     def __init__(
         # NOCVR
@@ -50,7 +56,10 @@ class DSCClientParams(RobieClientParams, extra='forbid'):
 
         if _parse is not None:
 
-            parsable = ['client']
+            parsable = [
+                'client',
+                'delay',
+                'status']
 
             for key in parsable:
 

@@ -7,6 +7,9 @@ is permitted, for more information consult the project license file.
 
 
 
+from .common import StatusPluginItem
+from .common import StatusPluginStates
+from .params import StatusPluginIconParams
 from .params import StatusPluginParams
 from .plugin import StatusPlugin
 
@@ -14,4 +17,7 @@ from .plugin import StatusPlugin
 
 __all__ = [
     'StatusPlugin',
-    'StatusPluginParams']
+    'StatusPluginParams',
+    'StatusPluginIconParams',
+    'StatusPluginStates',
+    'StatusPluginItem']

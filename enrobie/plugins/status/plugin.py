@@ -10,6 +10,14 @@ is permitted, for more information consult the project license file.
 from typing import Optional
 from typing import TYPE_CHECKING
 
+from encommon.times import Time
+
+from .common import StatusPluginItem
+from .common import StatusPluginStates
+from .helpers import composedsc
+from .helpers import composeirc
+from .helpers import composemtm
+from .params import StatusPluginIconParams
 from .params import StatusPluginParams
 from ...robie.childs import RobiePlugin
 
@@ -24,9 +32,19 @@ class StatusPlugin(RobiePlugin):
 
     .. note::
        This plugin responds to inquiries about Robie status.
-
-    :param robie: Primary class instance for Chatting Robie.
     """
+
+    __status: dict[str, StatusPluginItem]
+
+
+    def __post__(
+        self,
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
+
+        self.__status = {}
 
 
     def validate(
@@ -54,6 +72,7 @@ class StatusPlugin(RobiePlugin):
         member = thread.member
         cqueue = member.cqueue
         params = self.params
+        status = self.__status
 
         assert isinstance(
             params, StatusPluginParams)
@@ -107,8 +126,56 @@ class StatusPlugin(RobiePlugin):
                 continue  # NOCVR
 
 
-            citem = mitem.reply(
-                robie,
-                'All good here')
+            if family == 'discord':
+                composedsc(
+                    robie, cqueue,
+                    mitem, status)
 
-            cqueue.put(citem)
+            if family == 'irc':
+                composeirc(
+                    robie, cqueue,
+                    mitem, status)
+
+            if family == 'mattermost':
+                composemtm(
+                    robie, cqueue,
+                    mitem, status)
+
+
+    def update(
+        self,
+        unique: str,
+        group: str,
+        title: str,
+        icon: StatusPluginIconParams,
+        state: StatusPluginStates,
+    ) -> None:
+        """
+        Update or insert the status of the Robie child instance.
+
+        :param unique: Unique identifier to use for the status.
+        :param group: Name for the group the status is membered.
+        :param title: Friendly name of the related unique entry.
+        :param icon: Optional icon object if supported platform.
+        :param state: One of several possible value for status.
+        """
+
+        robie = self.robie
+        status = self.__status
+
+        robie.logger.log_i(
+            base=self,
+            name=self,
+            item='status',
+            unique=unique,
+            state=state)
+
+        object = StatusPluginItem(
+            unique=unique,
+            time=Time(),
+            group=group,
+            title=title,
+            icon=icon,
+            state=state)
+
+        status[unique] = object

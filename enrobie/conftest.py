@@ -63,7 +63,7 @@ def config_factory(
           stdo_level: info
 
         database: >-
-            sqlite:///{tmp_path}/db
+          sqlite:///{tmp_path}/db
 
         """)
 

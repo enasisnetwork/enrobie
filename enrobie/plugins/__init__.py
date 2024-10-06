@@ -8,10 +8,16 @@ is permitted, for more information consult the project license file.
 
 
 from .status import StatusPlugin
+from .status import StatusPluginIconParams
+from .status import StatusPluginItem
 from .status import StatusPluginParams
+from .status import StatusPluginStates
 
 
 
 __all__ = [
     'StatusPlugin',
-    'StatusPluginParams']
+    'StatusPluginParams',
+    'StatusPluginIconParams',
+    'StatusPluginItem',
+    'StatusPluginStates']

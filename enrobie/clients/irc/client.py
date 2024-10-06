@@ -22,6 +22,8 @@ from enconnect.irc import ClientEvent
 from .command import IRCCommand
 from .message import IRCMessage
 from .params import IRCClientParams
+from ...plugins import StatusPlugin
+from ...plugins import StatusPluginStates
 from ...robie.addons import RobieQueue
 from ...robie.childs import RobieClient
 
@@ -35,8 +37,6 @@ if TYPE_CHECKING:
 class IRCClient(RobieClient):
     """
     Establish and maintain connection with the chat service.
-
-    :param robie: Primary class instance for Chatting Robie.
     """
 
     __client: Client
@@ -59,6 +59,8 @@ class IRCClient(RobieClient):
             self.__debugger)
 
         self.__client = client
+
+        self.__status('pending')
 
 
     def validate(
@@ -97,7 +99,7 @@ class IRCClient(RobieClient):
         return self.__client
 
 
-    def operate(  # noqa: CFQ001,CFQ004
+    def operate(  # noqa: CFQ001
         self,
         thread: 'RobieThread',
     ) -> None:
@@ -159,7 +161,7 @@ class IRCClient(RobieClient):
                 client.operate()
 
             except ConnectionError:
-                return None
+                self.__status('pending')
 
             except Exception as reason:
 
@@ -169,7 +171,7 @@ class IRCClient(RobieClient):
                     status='exception',
                     exc_info=reason)
 
-                return None
+                self.__status('failure')
 
 
         def _routine() -> None:
@@ -180,6 +182,8 @@ class IRCClient(RobieClient):
                     base=self,
                     name=self,
                     status='connect')
+
+                self.__status('normal')
 
                 _operate()
 
@@ -349,3 +353,37 @@ class IRCClient(RobieClient):
             base=self,
             name=self,
             **kwargs)
+
+
+    def __status(
+        self,
+        status: StatusPluginStates,
+    ) -> None:
+        """
+        Update or insert the status of the Robie child instance.
+
+        :param status: One of several possible value for status.
+        """
+
+        robie = self.robie
+        childs = robie.childs
+        plugins = childs.plugins
+        params = self.params
+
+        assert isinstance(
+            params, IRCClientParams)
+
+        if 'status' not in plugins:
+            return None
+
+        plugin = plugins['status']
+
+        assert isinstance(
+            plugin, StatusPlugin)
+
+        (plugin.update(
+            unique=self.name,
+            group='Connections',
+            title='IRC',
+            icon=params.status,
+            state=status))

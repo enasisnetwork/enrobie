@@ -22,6 +22,8 @@ from enconnect.utils.http import _PAYLOAD
 from .command import MTMCommand
 from .message import MTMMessage
 from .params import MTMClientParams
+from ...plugins import StatusPlugin
+from ...plugins import StatusPluginStates
 from ...robie.addons import RobieQueue
 from ...robie.childs import RobieClient
 
@@ -35,8 +37,6 @@ if TYPE_CHECKING:
 class MTMClient(RobieClient):
     """
     Establish and maintain connection with the chat service.
-
-    :param robie: Primary class instance for Chatting Robie.
     """
 
     __client: Client
@@ -59,6 +59,8 @@ class MTMClient(RobieClient):
             self.__debugger)
 
         self.__client = client
+
+        self.__status('pending')
 
 
     def validate(
@@ -160,7 +162,7 @@ class MTMClient(RobieClient):
                 client.operate()
 
             except ConnectionError:
-                return None
+                self.__status('pending')
 
             except Exception as reason:
 
@@ -170,7 +172,7 @@ class MTMClient(RobieClient):
                     status='exception',
                     exc_info=reason)
 
-                return None
+                self.__status('failure')
 
 
         def _routine() -> None:
@@ -181,6 +183,8 @@ class MTMClient(RobieClient):
                     base=self,
                     name=self,
                     status='connect')
+
+                self.__status('normal')
 
                 _operate()
 
@@ -373,3 +377,37 @@ class MTMClient(RobieClient):
             base=self,
             name=self,
             **kwargs)
+
+
+    def __status(
+        self,
+        status: StatusPluginStates,
+    ) -> None:
+        """
+        Update or insert the status of the Robie child instance.
+
+        :param status: One of several possible value for status.
+        """
+
+        robie = self.robie
+        childs = robie.childs
+        plugins = childs.plugins
+        params = self.params
+
+        assert isinstance(
+            params, MTMClientParams)
+
+        if 'status' not in plugins:
+            return None
+
+        plugin = plugins['status']
+
+        assert isinstance(
+            plugin, StatusPlugin)
+
+        (plugin.update(
+            unique=self.name,
+            group='Connections',
+            title='Mattermost',
+            icon=params.status,
+            state=status))

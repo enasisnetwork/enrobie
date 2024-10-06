@@ -54,7 +54,7 @@ class RobieParams(Params, extra='forbid'):
     printer: Annotated[
         RobiePrinterParams,
         Field(default_factory=RobiePrinterParams,
-              description='Print the stream to console')]
+              description='Print messages to console')]
 
     service: Annotated[
         RobieServiceParams,
