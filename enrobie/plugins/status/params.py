@@ -16,8 +16,74 @@ from encommon.types import BaseModel
 
 from pydantic import Field
 
+from .common import StatusPluginStates
 from ...robie.params import RobiePluginParams
 from ...robie.params.common import RobieParamsModel
+
+
+
+class StatusPluginReportParams(BaseModel, extra='forbid'):
+    """
+    Contain information for constructing the chat messages.
+    """
+
+    client: Annotated[
+        str,
+        Field(...,
+              description='Client where channel exists',
+              min_length=1)]
+
+    target: Annotated[
+        str,
+        Field(...,
+              description='Where message will be sent',
+              min_length=1)]
+
+    states: Annotated[
+        Optional[list[StatusPluginStates]],
+        Field(None,
+              description='Where message will be sent',
+              min_length=1)]
+
+
+    def __init__(
+        # NOCVR
+        self,
+        /,
+        **data: Any,
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
+
+        states = data.get('states')
+
+        if isinstance(states, str):
+            data['states'] = [states]
+
+        super().__init__(**data)
+
+
+
+class StatusPluginCommandParams(RobieParamsModel, extra='forbid'):
+    """
+    Process and validate the Robie configuration parameters.
+    """
+
+    irc: Annotated[
+        str,
+        Field('!status',
+              description='Command name for chat platform')]
+
+    dsc: Annotated[
+        str,
+        Field('!status',
+              description='Command name for chat platform')]
+
+    mtm: Annotated[
+        str,
+        Field('!status',
+              description='Command name for chat platform')]
 
 
 
@@ -73,32 +139,16 @@ class StatusPluginIconsParams(BaseModel, extra='forbid'):
 
 
 
-class StatusPluginCommandParams(RobieParamsModel, extra='forbid'):
-    """
-    Process and validate the Robie configuration parameters.
-    """
-
-    irc: Annotated[
-        str,
-        Field('!status',
-              description='Command name for chat platform')]
-
-    dsc: Annotated[
-        str,
-        Field('!status',
-              description='Command name for chat platform')]
-
-    mtm: Annotated[
-        str,
-        Field('!status',
-              description='Command name for chat platform')]
-
-
-
 class StatusPluginParams(RobiePluginParams, extra='forbid'):
     """
     Process and validate the Robie configuration parameters.
     """
+
+    reports: Annotated[
+        Optional[list[StatusPluginReportParams]],
+        Field(None,
+              description='Where to send status updates',
+              min_length=1)]
 
     command: Annotated[
         StatusPluginCommandParams,
@@ -125,7 +175,10 @@ class StatusPluginParams(RobiePluginParams, extra='forbid'):
 
         if _parse is not None:
 
-            parsable = ['command']
+            parsable = [
+                'report',
+                'command',
+                'icons']
 
             for key in parsable:
 

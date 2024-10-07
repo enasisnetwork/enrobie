@@ -15,20 +15,23 @@ from encommon.types import sort_dict
 from encommon.types.strings import NEWLINE
 from encommon.types.strings import SEMPTY
 
-from .common import StatusPluginItem
 from .params import StatusPluginParams
-from ...robie.addons import RobieQueue
-from ...robie.models import RobieCommand
-from ...robie.models import RobieMessage
 
 if TYPE_CHECKING:
+    from ...robie.addons import RobieQueue
+    from ...robie.childs import RobieClient
+    from ...robie.childs import RobiePlugin
+    from ...robie.models import RobieCommand
+    from ...robie.models import RobieMessage
+    from .common import StatusPluginItem
+    from .params import StatusPluginReportParams
     from .plugin import StatusPlugin
 
 
 
 def grouped(
-    status: dict[str, StatusPluginItem],
-) -> dict[str, list[StatusPluginItem]]:
+    status: dict[str, 'StatusPluginItem'],
+) -> dict[str, list['StatusPluginItem']]:
     """
     Return the dictionary with status value stored by group.
 
@@ -55,14 +58,14 @@ def grouped(
 
 def composedsc(
     plugin: 'StatusPlugin',
-    cqueue: RobieQueue[RobieCommand],
-    mitem: RobieMessage,
-    status: dict[str, StatusPluginItem],
+    cqueue: 'RobieQueue[RobieCommand]',
+    mitem: 'RobieMessage',
+    status: dict[str, 'StatusPluginItem'],
 ) -> None:
     """
     Construct and format message for related chat platform.
 
-    :param robie: Primary class instance for Chatting Robie.
+    :param plugin: Plugin class instance for Chatting Robie.
     :param cqueue: Queue instance where the item is received.
     :param mitem: Item containing information for operation.
     :param status: Object containing the status information.
@@ -99,6 +102,11 @@ def composedsc(
              .dsc)
             or SEMPTY)
 
+        sicon = (
+            f'{sicon} '
+            if len(sicon) >= 1
+            else sicon)
+
         vicon = (
             value.icon.dsc
             or SEMPTY)
@@ -108,7 +116,7 @@ def composedsc(
              f'{value.title}/'
              f'`{value.unique}`:'
              f' {sicon or ""}'
-             f' `{value.state}` '
+             f'`{value.state}` '
              f'<t:{epoch}:R>')
             .strip())
 
@@ -133,16 +141,81 @@ def composedsc(
 
 
 
-def composeirc(
-    plugin: 'StatusPlugin',
-    cqueue: RobieQueue[RobieCommand],
-    mitem: RobieMessage,
-    status: dict[str, StatusPluginItem],
+def reportdsc(
+    plugin: 'RobiePlugin',
+    client: 'RobieClient',
+    cqueue: 'RobieQueue[RobieCommand]',
+    status: 'StatusPluginItem',
+    report: 'StatusPluginReportParams',
 ) -> None:
     """
     Construct and format message for related chat platform.
 
-    :param robie: Primary class instance for Chatting Robie.
+    :param plugin: Plugin class instance for Chatting Robie.
+    :param client: Client class instance for Chatting Robie.
+    :param cqueue: Queue instance where the item is received.
+    :param status: Object containing the status information.
+    :param report: Object containing the report information.
+    """
+
+    params = plugin.params
+
+    assert isinstance(
+        params,
+        StatusPluginParams)
+
+
+    def _compose(
+        message: str,
+    ) -> None:
+
+        citem = (
+            client.compose(
+                report.target,
+                message))
+
+        cqueue.put(citem)
+
+
+    epoch = int(status.time)
+
+    sicon = (
+        (getattr(
+            params.icons,
+            status.state)
+         .dsc)
+        or SEMPTY)
+
+    sicon = (
+        f'{sicon} '
+        if len(sicon) >= 1
+        else sicon)
+
+    vicon = (
+        status.icon.dsc
+        or SEMPTY)
+
+    _compose(
+        (f'{vicon or ""} '
+         f'{status.title}/'
+         f'`{status.unique}`:'
+         f' {sicon or ""}'
+         f'`{status.state}` '
+         f'<t:{epoch}:R>')
+        .strip())
+
+
+
+def composeirc(
+    plugin: 'StatusPlugin',
+    cqueue: 'RobieQueue[RobieCommand]',
+    mitem: 'RobieMessage',
+    status: dict[str, 'StatusPluginItem'],
+) -> None:
+    """
+    Construct and format message for related chat platform.
+
+    :param plugin: Plugin class instance for Chatting Robie.
     :param cqueue: Queue instance where the item is received.
     :param mitem: Item containing information for operation.
     :param status: Object containing the status information.
@@ -178,6 +251,11 @@ def composeirc(
              .irc)
             or SEMPTY)
 
+        sicon = (
+            f'{sicon} '
+            if len(sicon) >= 1
+            else sicon)
+
         vicon = (
             value.icon.irc
             or SEMPTY)
@@ -187,7 +265,7 @@ def composeirc(
              f'{value.title}/'
              f'{value.unique}:'
              f' {sicon or ""}'
-             f' {value.state} '
+             f'{value.state} '
              f'for {durate}')
             .strip())
 
@@ -207,16 +285,82 @@ def composeirc(
 
 
 
-def composemtm(
-    plugin: 'StatusPlugin',
-    cqueue: RobieQueue[RobieCommand],
-    mitem: RobieMessage,
-    status: dict[str, StatusPluginItem],
+def reportirc(
+    plugin: 'RobiePlugin',
+    client: 'RobieClient',
+    cqueue: 'RobieQueue[RobieCommand]',
+    status: 'StatusPluginItem',
+    report: 'StatusPluginReportParams',
 ) -> None:
     """
     Construct and format message for related chat platform.
 
-    :param robie: Primary class instance for Chatting Robie.
+    :param plugin: Plugin class instance for Chatting Robie.
+    :param client: Client class instance for Chatting Robie.
+    :param cqueue: Queue instance where the item is received.
+    :param status: Object containing the status information.
+    :param report: Object containing the report information.
+    """
+
+    params = plugin.params
+
+    assert isinstance(
+        params,
+        StatusPluginParams)
+
+
+    def _compose(
+        message: str,
+    ) -> None:
+
+        citem = (
+            client.compose(
+                report.target,
+                message))
+
+        cqueue.put(citem)
+
+
+    durate = Duration(
+        status.time.since)
+
+    sicon = (
+        (getattr(
+            params.icons,
+            status.state)
+         .irc)
+        or SEMPTY)
+
+    sicon = (
+        f'{sicon} '
+        if len(sicon) >= 1
+        else sicon)
+
+    vicon = (
+        status.icon.irc
+        or SEMPTY)
+
+    _compose(
+        (f'{vicon or ""} '
+         f'{status.title}/'
+         f'{status.unique}:'
+         f' {sicon or ""}'
+         f'{status.state} '
+         f'for {durate}')
+        .strip())
+
+
+
+def composemtm(
+    plugin: 'StatusPlugin',
+    cqueue: 'RobieQueue[RobieCommand]',
+    mitem: 'RobieMessage',
+    status: dict[str, 'StatusPluginItem'],
+) -> None:
+    """
+    Construct and format message for related chat platform.
+
+    :param plugin: Plugin class instance for Chatting Robie.
     :param cqueue: Queue instance where the item is received.
     :param mitem: Item containing information for operation.
     :param status: Object containing the status information.
@@ -254,6 +398,11 @@ def composemtm(
              .mtm)
             or SEMPTY)
 
+        sicon = (
+            f'{sicon} '
+            if len(sicon) >= 1
+            else sicon)
+
         vicon = (
             value.icon.mtm
             or SEMPTY)
@@ -263,7 +412,7 @@ def composemtm(
              f'{value.title}/'
              f'`{value.unique}`:'
              f' {sicon or ""}'
-             f' `{value.state}` '
+             f'`{value.state}` '
              f'for `{durate}`')
             .strip())
 
@@ -285,3 +434,69 @@ def composemtm(
     _compose(
         NEWLINE
         .join(compose))
+
+
+
+def reportmtm(
+    plugin: 'RobiePlugin',
+    client: 'RobieClient',
+    cqueue: 'RobieQueue[RobieCommand]',
+    status: 'StatusPluginItem',
+    report: 'StatusPluginReportParams',
+) -> None:
+    """
+    Construct and format message for related chat platform.
+
+    :param plugin: Plugin class instance for Chatting Robie.
+    :param client: Client class instance for Chatting Robie.
+    :param cqueue: Queue instance where the item is received.
+    :param status: Object containing the status information.
+    :param report: Object containing the report information.
+    """
+
+    params = plugin.params
+
+    assert isinstance(
+        params,
+        StatusPluginParams)
+
+
+    def _compose(
+        message: str,
+    ) -> None:
+
+        citem = (
+            client.compose(
+                report.target,
+                message))
+
+        cqueue.put(citem)
+
+
+    durate = Duration(
+        status.time.since)
+
+    sicon = (
+        (getattr(
+            params.icons,
+            status.state)
+         .mtm)
+        or SEMPTY)
+
+    sicon = (
+        f'{sicon} '
+        if len(sicon) >= 1
+        else sicon)
+
+    vicon = (
+        status.icon.mtm
+        or SEMPTY)
+
+    _compose(
+        (f'{vicon or ""} '
+         f'{status.title}/'
+         f'`{status.unique}`:'
+         f' {sicon or ""}'
+         f'`{status.state}` '
+         f'for `{durate}`')
+        .strip())

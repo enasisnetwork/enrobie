@@ -6,10 +6,27 @@ clients:
 
 
   #############
+  ## DSC Bot ##
+  #############
+  dscbot:
+    enable: true
+    status:
+      dsc: <:discord:mocked>
+      irc: 💬
+      mtm: ':discord:'
+    client:
+      token: mocked
+
+
+  #############
   ## IRC Bot ##
   #############
   ircbot:
     enable: true
+    status:
+      dsc: <:irc:mocked>
+      irc: 💬
+      mtm: ':irc:'
     client:
       server: mocked
       nickname: ircbot
@@ -18,19 +35,14 @@ clients:
 
 
   #############
-  ## DSC Bot ##
-  #############
-  dscbot:
-    enable: true
-    client:
-      token: mocked
-
-
-  #############
   ## MTM Bot ##
   #############
   mtmbot:
     enable: true
+    status:
+      dsc: <:mattermost:mocked>
+      irc: 💬
+      mtm: ':mattermost:'
     client:
       server: mocked
       token: mocked

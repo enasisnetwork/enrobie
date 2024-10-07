@@ -1,5 +1,21 @@
 {
   "clients": {
+    "dscbot": {
+      "enable": true,
+      "client": {
+        "token": "mocked",
+        "timeout": 30,
+        "ssl_verify": true,
+        "ssl_capem": null,
+        "queue_size": 10000
+      },
+      "delay": 2,
+      "status": {
+        "irc": "\ud83d\udcac",
+        "dsc": "<:discord:mocked>",
+        "mtm": ":discord:"
+      }
+    },
     "ircbot": {
       "enable": true,
       "client": {
@@ -19,25 +35,9 @@
       },
       "delay": 2,
       "status": {
-        "irc": null,
-        "dsc": null,
-        "mtm": null
-      }
-    },
-    "dscbot": {
-      "enable": true,
-      "client": {
-        "token": "mocked",
-        "timeout": 30,
-        "ssl_verify": true,
-        "ssl_capem": null,
-        "queue_size": 10000
-      },
-      "delay": 2,
-      "status": {
-        "irc": null,
-        "dsc": null,
-        "mtm": null
+        "irc": "\ud83d\udcac",
+        "dsc": "<:irc:mocked>",
+        "mtm": ":irc:"
       }
     },
     "mtmbot": {
@@ -54,9 +54,9 @@
       },
       "delay": 2,
       "status": {
-        "irc": null,
-        "dsc": null,
-        "mtm": null
+        "irc": "\ud83d\udcac",
+        "dsc": "<:mattermost:mocked>",
+        "mtm": ":mattermost:"
       }
     }
   },
@@ -76,6 +76,27 @@
   "plugins": {
     "status": {
       "enable": true,
+      "reports": [
+        {
+          "client": "dscbot",
+          "target": "mocked",
+          "states": [
+            "failure"
+          ]
+        },
+        {
+          "client": "ircbot",
+          "target": "mocked",
+          "states": null
+        },
+        {
+          "client": "mtmbot",
+          "target": "mocked",
+          "states": [
+            "failure"
+          ]
+        }
+      ],
       "command": {
         "irc": "!status",
         "dsc": "!status",
@@ -83,24 +104,24 @@
       },
       "icons": {
         "pending": {
-          "irc": null,
-          "dsc": null,
-          "mtm": null
+          "irc": "\u23f3",
+          "dsc": "<:initial:mocked>",
+          "mtm": ":initial:"
         },
         "normal": {
-          "irc": null,
-          "dsc": null,
-          "mtm": null
+          "irc": "\ud83d\udfe2",
+          "dsc": "<:success:mocked>",
+          "mtm": ":success:"
         },
         "failure": {
-          "irc": null,
-          "dsc": null,
-          "mtm": null
+          "irc": "\ud83d\udd34",
+          "dsc": "<:failure:mocked>",
+          "mtm": ":failure:"
         },
         "unknown": {
-          "irc": null,
-          "dsc": null,
-          "mtm": null
+          "irc": "\u26aa",
+          "dsc": "<:unknown:mocked>",
+          "mtm": ":unknown:"
         }
       }
     }

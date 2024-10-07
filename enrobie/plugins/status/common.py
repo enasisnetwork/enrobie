@@ -9,10 +9,12 @@ is permitted, for more information consult the project license file.
 
 from dataclasses import dataclass
 from typing import Literal
+from typing import TYPE_CHECKING
 
 from encommon.times import Time
 
-from .params import StatusPluginIconParams
+if TYPE_CHECKING:
+    from .params import StatusPluginIconParams
 
 
 
@@ -34,7 +36,7 @@ class StatusPluginItem:
     unique: str
     group: str
     title: str
-    icon: StatusPluginIconParams
+    icon: 'StatusPluginIconParams'
     state: StatusPluginStates
 
 

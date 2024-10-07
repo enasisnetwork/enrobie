@@ -112,7 +112,8 @@ def test_StatusPlugin(
         '_RobieChild__robie',
         '_RobieChild__name',
         '_RobieChild__params',
-        '_StatusPlugin__status']
+        '_StatusPlugin__status',
+        '_StatusPlugin__report']
 
 
     assert inrepr(
@@ -182,4 +183,6 @@ def test_StatusPlugin_cover(
 
     thread.join()
 
-    assert not service.congest
+    assert service.congest
+
+    assert service.enqueue

@@ -207,10 +207,12 @@ class MTMClient(RobieClient):
             if not cqueue.empty:
                 _get_cqueue()
 
+            block_sleep(0.025)
+
             while not source.empty():
                 _put_mqueue()
 
-            block_sleep(0.05)
+            block_sleep(0.025)
 
 
         client.stop()

@@ -14,8 +14,24 @@
     "command": true
   },
   "clients": {
+    "dscbot": {
+      "enable": true,
+      "status": {
+        "dsc": "<:discord:mocked>",
+        "irc": "\ud83d\udcac",
+        "mtm": ":discord:"
+      },
+      "client": {
+        "token": "mocked"
+      }
+    },
     "ircbot": {
       "enable": true,
+      "status": {
+        "dsc": "<:irc:mocked>",
+        "irc": "\ud83d\udcac",
+        "mtm": ":irc:"
+      },
       "client": {
         "server": "mocked",
         "nickname": "ircbot",
@@ -23,14 +39,13 @@
         "realname": "ircbot"
       }
     },
-    "dscbot": {
-      "enable": true,
-      "client": {
-        "token": "mocked"
-      }
-    },
     "mtmbot": {
       "enable": true,
+      "status": {
+        "dsc": "<:mattermost:mocked>",
+        "irc": "\ud83d\udcac",
+        "mtm": ":mattermost:"
+      },
       "client": {
         "server": "mocked",
         "token": "mocked",
@@ -40,7 +55,45 @@
   },
   "plugins": {
     "status": {
-      "enable": true
+      "enable": true,
+      "icons": {
+        "pending": {
+          "dsc": "<:initial:mocked>",
+          "irc": "\u23f3",
+          "mtm": ":initial:"
+        },
+        "normal": {
+          "dsc": "<:success:mocked>",
+          "irc": "\ud83d\udfe2",
+          "mtm": ":success:"
+        },
+        "failure": {
+          "dsc": "<:failure:mocked>",
+          "irc": "\ud83d\udd34",
+          "mtm": ":failure:"
+        },
+        "unknown": {
+          "dsc": "<:unknown:mocked>",
+          "irc": "\u26aa",
+          "mtm": ":unknown:"
+        }
+      },
+      "reports": [
+        {
+          "client": "dscbot",
+          "target": "mocked",
+          "states": "failure"
+        },
+        {
+          "client": "ircbot",
+          "target": "mocked"
+        },
+        {
+          "client": "mtmbot",
+          "target": "mocked",
+          "states": "failure"
+        }
+      ]
     }
   }
 }

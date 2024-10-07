@@ -10,3 +10,38 @@ plugins:
   ############
   status:
     enable: true
+
+    icons:
+
+      pending:
+        dsc: <:initial:mocked>
+        irc: ⏳
+        mtm: ':initial:'
+
+      normal:
+        dsc: <:success:mocked>
+        irc: 🟢
+        mtm: ':success:'
+
+      failure:
+        dsc: <:failure:mocked>
+        irc: 🔴
+        mtm: ':failure:'
+
+      unknown:
+        dsc: <:unknown:mocked>
+        irc: ⚪
+        mtm: ':unknown:'
+
+    reports:
+
+      - client: dscbot
+        target: mocked
+        states: failure
+
+      - client: ircbot
+        target: mocked
+
+      - client: mtmbot
+        target: mocked
+        states: failure
