@@ -36,3 +36,23 @@ class StatusPluginItem:
     title: str
     icon: StatusPluginIconParams
     state: StatusPluginStates
+
+
+    def __lt__(
+        self,
+        other: 'StatusPluginItem',
+    ) -> bool:
+        """
+        Built-in method for comparing this instance with another.
+
+        .. note::
+           Useful with sorting to influence consistent output.
+
+        :param other: Other value being compared with instance.
+        :returns: Boolean indicating outcome from the operation.
+        """
+
+        unique = self.unique
+        _unique = other.unique
+
+        return unique < _unique

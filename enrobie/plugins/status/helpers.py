@@ -7,14 +7,22 @@ is permitted, for more information consult the project license file.
 
 
 
+from typing import TYPE_CHECKING
+
+from encommon.times import Duration
 from encommon.types import DictStrAny
 from encommon.types import sort_dict
+from encommon.types.strings import NEWLINE
+from encommon.types.strings import SEMPTY
 
 from .common import StatusPluginItem
-from ...robie import Robie
+from .params import StatusPluginParams
 from ...robie.addons import RobieQueue
 from ...robie.models import RobieCommand
 from ...robie.models import RobieMessage
+
+if TYPE_CHECKING:
+    from .plugin import StatusPlugin
 
 
 
@@ -46,7 +54,7 @@ def grouped(
 
 
 def composedsc(
-    robie: Robie,
+    plugin: 'StatusPlugin',
     cqueue: RobieQueue[RobieCommand],
     mitem: RobieMessage,
     status: dict[str, StatusPluginItem],
@@ -60,15 +68,73 @@ def composedsc(
     :param status: Object containing the status information.
     """
 
-    citem = mitem.reply(
-        robie, 'DSC good')
+    robie = plugin.robie
+    params = plugin.params
 
-    cqueue.put(citem)
+    compose: list[str] = []
+
+
+    def _compose(
+        message: str,
+    ) -> None:
+
+        citem = mitem.reply(
+            robie, message)
+
+        cqueue.put(citem)
+
+
+    def _format() -> None:
+
+        assert isinstance(
+            params,
+            StatusPluginParams)
+
+        epoch = int(value.time)
+
+        sicon = (
+            (getattr(
+                params.icons,
+                value.state)
+             .dsc)
+            or SEMPTY)
+
+        vicon = (
+            value.icon.dsc
+            or SEMPTY)
+
+        compose.append(
+            (f'{vicon or ""} '
+             f'{value.title}/'
+             f'`{value.unique}`:'
+             f' {sicon or ""}'
+             f' `{value.state}` '
+             f'<t:{epoch}:R>')
+            .strip())
+
+
+    items = sorted(
+        grouped(status)
+        .items())
+
+    for name, values in items:
+
+        compose.append(
+            f'**{name}**')
+
+        _values = sorted(values)
+
+        for value in _values:
+            _format()
+
+    _compose(
+        NEWLINE
+        .join(compose))
 
 
 
 def composeirc(
-    robie: Robie,
+    plugin: 'StatusPlugin',
     cqueue: RobieQueue[RobieCommand],
     mitem: RobieMessage,
     status: dict[str, StatusPluginItem],
@@ -82,15 +148,67 @@ def composeirc(
     :param status: Object containing the status information.
     """
 
-    citem = mitem.reply(
-        robie, 'IRC good')
+    robie = plugin.robie
+    params = plugin.params
 
-    cqueue.put(citem)
+
+    def _compose(
+        message: str,
+    ) -> None:
+
+        citem = mitem.reply(
+            robie, message)
+
+        cqueue.put(citem)
+
+
+    def _format() -> None:
+
+        assert isinstance(
+            params,
+            StatusPluginParams)
+
+        durate = Duration(
+            value.time.since)
+
+        sicon = (
+            (getattr(
+                params.icons,
+                value.state)
+             .irc)
+            or SEMPTY)
+
+        vicon = (
+            value.icon.irc
+            or SEMPTY)
+
+        _compose(
+            (f'{vicon or ""} '
+             f'{value.title}/'
+             f'{value.unique}:'
+             f' {sicon or ""}'
+             f' {value.state} '
+             f'for {durate}')
+            .strip())
+
+
+    items = sorted(
+        grouped(status)
+        .items())
+
+    for name, values in items:
+
+        _compose(name)
+
+        _values = sorted(values)
+
+        for value in _values:
+            _format()
 
 
 
 def composemtm(
-    robie: Robie,
+    plugin: 'StatusPlugin',
     cqueue: RobieQueue[RobieCommand],
     mitem: RobieMessage,
     status: dict[str, StatusPluginItem],
@@ -104,7 +222,66 @@ def composemtm(
     :param status: Object containing the status information.
     """
 
-    citem = mitem.reply(
-        robie, 'MTM good')
+    robie = plugin.robie
+    params = plugin.params
 
-    cqueue.put(citem)
+    compose: list[str] = []
+
+
+    def _compose(
+        message: str,
+    ) -> None:
+
+        citem = mitem.reply(
+            robie, message)
+
+        cqueue.put(citem)
+
+
+    def _format() -> None:
+
+        assert isinstance(
+            params,
+            StatusPluginParams)
+
+        durate = Duration(
+            value.time.since)
+
+        sicon = (
+            (getattr(
+                params.icons,
+                value.state)
+             .mtm)
+            or SEMPTY)
+
+        vicon = (
+            value.icon.mtm
+            or SEMPTY)
+
+        compose.append(
+            (f'{vicon or ""} '
+             f'{value.title}/'
+             f'`{value.unique}`:'
+             f' {sicon or ""}'
+             f' `{value.state}` '
+             f'for `{durate}`')
+            .strip())
+
+
+    items = sorted(
+        grouped(status)
+        .items())
+
+    for name, values in items:
+
+        compose.append(
+            f'**{name}**')
+
+        _values = sorted(values)
+
+        for value in _values:
+            _format()
+
+    _compose(
+        NEWLINE
+        .join(compose))

@@ -30,19 +30,19 @@ class StatusPluginIconParams(BaseModel, extra='forbid'):
         Optional[str],
         Field(None,
               description='Icon used for the chat platform',
-              max_length=1)]
+              min_length=1)]
 
     dsc: Annotated[
         Optional[str],
         Field(None,
               description='Icon used for the chat platform',
-              max_length=1)]
+              min_length=1)]
 
     mtm: Annotated[
         Optional[str],
         Field(None,
               description='Icon used for the chat platform',
-              max_length=1)]
+              min_length=1)]
 
 
 

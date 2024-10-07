@@ -67,7 +67,6 @@ class StatusPlugin(RobiePlugin):
         :param thread: Child class instance for Chatting Robie.
         """
 
-        robie = thread.robie
         mqueue = thread.mqueue
         member = thread.member
         cqueue = member.cqueue
@@ -128,17 +127,17 @@ class StatusPlugin(RobiePlugin):
 
             if family == 'discord':
                 composedsc(
-                    robie, cqueue,
+                    self, cqueue,
                     mitem, status)
 
             if family == 'irc':
                 composeirc(
-                    robie, cqueue,
+                    self, cqueue,
                     mitem, status)
 
             if family == 'mattermost':
                 composemtm(
-                    robie, cqueue,
+                    self, cqueue,
                     mitem, status)
 
 
