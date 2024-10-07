@@ -1,5 +1,21 @@
 {
   "clients": {
+    "dscbot": {
+      "enable": true,
+      "client": {
+        "token": "mocked",
+        "timeout": 30,
+        "ssl_verify": true,
+        "ssl_capem": null,
+        "queue_size": 10000
+      },
+      "delay": 2,
+      "status": {
+        "irc": "\ud83d\udcac",
+        "dsc": "<:discord:mocked>",
+        "mtm": ":discord:"
+      }
+    },
     "ircbot": {
       "enable": true,
       "client": {
@@ -17,18 +33,12 @@
         "ssl_verify": true,
         "queue_size": 10000
       },
-      "delay": 2
-    },
-    "dscbot": {
-      "enable": true,
-      "client": {
-        "token": "mocked",
-        "timeout": 30,
-        "ssl_verify": true,
-        "ssl_capem": null,
-        "queue_size": 10000
-      },
-      "delay": 2
+      "delay": 2,
+      "status": {
+        "irc": "\ud83d\udcac",
+        "dsc": "<:irc:mocked>",
+        "mtm": ":irc:"
+      }
     },
     "mtmbot": {
       "enable": true,
@@ -42,7 +52,12 @@
         "ssl_capem": null,
         "queue_size": 10000
       },
-      "delay": 2
+      "delay": 2,
+      "status": {
+        "irc": "\ud83d\udcac",
+        "dsc": "<:mattermost:mocked>",
+        "mtm": ":mattermost:"
+      }
     }
   },
   "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
@@ -61,10 +76,53 @@
   "plugins": {
     "status": {
       "enable": true,
+      "reports": [
+        {
+          "client": "dscbot",
+          "target": "mocked",
+          "states": [
+            "failure"
+          ]
+        },
+        {
+          "client": "ircbot",
+          "target": "mocked",
+          "states": null
+        },
+        {
+          "client": "mtmbot",
+          "target": "mocked",
+          "states": [
+            "failure"
+          ]
+        }
+      ],
       "command": {
         "irc": "!status",
         "dsc": "!status",
         "mtm": "!status"
+      },
+      "icons": {
+        "pending": {
+          "irc": "\u23f3",
+          "dsc": "<:initial:mocked>",
+          "mtm": ":initial:"
+        },
+        "normal": {
+          "irc": "\ud83d\udfe2",
+          "dsc": "<:success:mocked>",
+          "mtm": ":success:"
+        },
+        "failure": {
+          "irc": "\ud83d\udd34",
+          "dsc": "<:failure:mocked>",
+          "mtm": ":failure:"
+        },
+        "unknown": {
+          "irc": "\u26aa",
+          "dsc": "<:unknown:mocked>",
+          "mtm": ":unknown:"
+        }
       }
     }
   },
