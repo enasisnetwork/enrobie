@@ -12,9 +12,9 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
   
-    <title>enrobie.robie.params.robie | enrobie  documentation</title>
-    <meta property="og:title" content="enrobie.robie.params.robie | enrobie  documentation" />
-    <meta name="twitter:title" content="enrobie.robie.params.robie | enrobie  documentation" />
+    <title>enrobie.plugins.status.common | enrobie  documentation</title>
+    <meta property="og:title" content="enrobie.plugins.status.common | enrobie  documentation" />
+    <meta name="twitter:title" content="enrobie.plugins.status.common | enrobie  documentation" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8d216cef" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=edd7d3d2" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
@@ -136,11 +136,11 @@
        href="../../../index.html">Module code</a>
     
 <div class="mr-1">/</div><span aria-current="page"
-        class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">enrobie.robie.params.robie</span>
+        class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">enrobie.plugins.status.common</span>
 </nav>
 
     <div id="content" role="main">
-      <h1>Source code for enrobie.robie.params.robie</h1><div class="highlight"><pre>
+      <h1>Source code for enrobie.plugins.status.common</h1><div class="highlight"><pre>
 <span></span><code><span id="line-1"><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-2"><span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 </span><span id="line-3">
@@ -150,110 +150,59 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Annotated</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
-</span><span id="line-14">
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">encommon.config</span> <span class="kn">import</span> <span class="n">Params</span>
-</span><span id="line-16">
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span>
+</span><span id="line-10"><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Literal</span>
+</span><span id="line-12"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-13">
+</span><span id="line-14"><span class="kn">from</span> <span class="nn">encommon.times</span> <span class="kn">import</span> <span class="n">Time</span>
+</span><span id="line-15">
+</span><span id="line-16"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+</span><span id="line-17">    <span class="kn">from</span> <span class="nn">.params</span> <span class="kn">import</span> <span class="n">StatusPluginIconParams</span>
 </span><span id="line-18">
-</span><span id="line-19"><span class="kn">from</span> <span class="nn">.client</span> <span class="kn">import</span> <span class="n">RobieClientParams</span>
-</span><span id="line-20"><span class="kn">from</span> <span class="nn">.common</span> <span class="kn">import</span> <span class="n">RobieParamsModel</span>
-</span><span id="line-21"><span class="kn">from</span> <span class="nn">.plugin</span> <span class="kn">import</span> <span class="n">RobiePluginParams</span>
-</span><span id="line-22"><span class="kn">from</span> <span class="nn">.service</span> <span class="kn">import</span> <span class="n">RobieServiceParams</span>
-</span><span id="line-23">
-</span><span id="line-24">
-</span><span id="line-25">
-<div class="viewcode-block" id="RobiePrinterParams">
-<a class="viewcode-back" href="../../../../enrobie.robie.params.html#enrobie.robie.params.robie.RobiePrinterParams">[docs]</a>
-</span><span id="line-26"><span class="k">class</span> <span class="nc">RobiePrinterParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-</span><span id="line-27"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-28"><span class="sd">    Process and validate the Robie configuration parameters.</span>
-</span><span id="line-29"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-30">
-</span><span id="line-31">    <span class="n">message</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-32">        <span class="nb">bool</span><span class="p">,</span>
-</span><span id="line-33">        <span class="n">Field</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span>
-</span><span id="line-34">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Print the messages to console&#39;</span><span class="p">)]</span>
-</span><span id="line-35">
-</span><span id="line-36">    <span class="n">command</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-37">        <span class="nb">bool</span><span class="p">,</span>
-</span><span id="line-38">        <span class="n">Field</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span>
-</span><span id="line-39">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Print the commands to console&#39;</span><span class="p">)]</span></div>
-
-</span><span id="line-40">
+</span><span id="line-19">
+</span><span id="line-20">
+</span><span id="line-21"><span class="n">StatusPluginStates</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span>
+</span><span id="line-22">    <span class="s1">&#39;pending&#39;</span><span class="p">,</span>
+</span><span id="line-23">    <span class="s1">&#39;normal&#39;</span><span class="p">,</span>
+</span><span id="line-24">    <span class="s1">&#39;failure&#39;</span><span class="p">,</span>
+</span><span id="line-25">    <span class="s1">&#39;unknown&#39;</span><span class="p">]</span>
+</span><span id="line-26">
+</span><span id="line-27">
+</span><span id="line-28">
+<div class="viewcode-block" id="StatusPluginItem">
+<a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.StatusPluginItem">[docs]</a>
+</span><span id="line-29"><span class="nd">@dataclass</span>
+</span><span id="line-30"><span class="k">class</span> <span class="nc">StatusPluginItem</span><span class="p">:</span>
+</span><span id="line-31"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-32"><span class="sd">    Contain the relevant status information for the entry.</span>
+</span><span id="line-33"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-34">
+</span><span id="line-35">    <span class="n">time</span><span class="p">:</span> <span class="n">Time</span>
+</span><span id="line-36">    <span class="n">unique</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="line-37">    <span class="n">group</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="line-38">    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="line-39">    <span class="n">icon</span><span class="p">:</span> <span class="s1">&#39;StatusPluginIconParams&#39;</span>
+</span><span id="line-40">    <span class="n">state</span><span class="p">:</span> <span class="n">StatusPluginStates</span>
 </span><span id="line-41">
 </span><span id="line-42">
-<div class="viewcode-block" id="RobieParams">
-<a class="viewcode-back" href="../../../../index.html#enrobie.robie.params.robie.RobieParams">[docs]</a>
-</span><span id="line-43"><span class="k">class</span> <span class="nc">RobieParams</span><span class="p">(</span><span class="n">Params</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-</span><span id="line-44"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-45"><span class="sd">    Process and validate the core configuration parameters.</span>
-</span><span id="line-46"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-47">
-</span><span id="line-48">    <span class="n">database</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-49">        <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-50">        <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;sqlite:///:memory:&#39;</span><span class="p">,</span>
-</span><span id="line-51">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Database connection string&#39;</span><span class="p">,</span>
-</span><span id="line-52">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
-</span><span id="line-53">
-</span><span id="line-54">    <span class="n">printer</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-55">        <span class="n">RobiePrinterParams</span><span class="p">,</span>
-</span><span id="line-56">        <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">RobiePrinterParams</span><span class="p">,</span>
-</span><span id="line-57">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Print messages to console&#39;</span><span class="p">)]</span>
-</span><span id="line-58">
-</span><span id="line-59">    <span class="n">service</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-60">        <span class="n">RobieServiceParams</span><span class="p">,</span>
-</span><span id="line-61">        <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">RobieServiceParams</span><span class="p">,</span>
-</span><span id="line-62">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Parameters for Robie Service&#39;</span><span class="p">)]</span>
-</span><span id="line-63">
-</span><span id="line-64">    <span class="n">clients</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-65">        <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">RobieClientParams</span><span class="p">]],</span>
-</span><span id="line-66">        <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-</span><span id="line-67">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Parameters for Robie clients&#39;</span><span class="p">,</span>
-</span><span id="line-68">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
-</span><span id="line-69">
-</span><span id="line-70">    <span class="n">plugins</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-71">        <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">RobiePluginParams</span><span class="p">]],</span>
-</span><span id="line-72">        <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-</span><span id="line-73">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Parameters for Robie plugins&#39;</span><span class="p">,</span>
-</span><span id="line-74">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
-</span><span id="line-75">
-</span><span id="line-76">
-</span><span id="line-77">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-</span><span id="line-78">        <span class="c1"># NOCVR</span>
-</span><span id="line-79">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-80">        <span class="o">/</span><span class="p">,</span>
-</span><span id="line-81">        <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-82">        <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-</span><span id="line-83">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-84"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-85"><span class="sd">        Initialize instance for class using provided parameters.</span>
-</span><span id="line-86"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-87">
-</span><span id="line-88">
-</span><span id="line-89">        <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-90">
-</span><span id="line-91">            <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="line-92">                <span class="s1">&#39;database&#39;</span><span class="p">,</span>
-</span><span id="line-93">                <span class="s1">&#39;printer&#39;</span><span class="p">,</span>
-</span><span id="line-94">                <span class="s1">&#39;service&#39;</span><span class="p">]</span>
-</span><span id="line-95">
-</span><span id="line-96">            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
-</span><span id="line-97">
-</span><span id="line-98">                <span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-</span><span id="line-99">
-</span><span id="line-100">                <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-101">                    <span class="k">continue</span>
-</span><span id="line-102">
-</span><span id="line-103">                <span class="n">value</span> <span class="o">=</span> <span class="n">_parse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-</span><span id="line-104">
-</span><span id="line-105">                <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
-</span><span id="line-106">
-</span><span id="line-107">
-</span><span id="line-108">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span></div>
+</span><span id="line-43">    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span>
+</span><span id="line-44">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-45">        <span class="n">other</span><span class="p">:</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">,</span>
+</span><span id="line-46">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="line-47"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-48"><span class="sd">        Built-in method for comparing this instance with another.</span>
+</span><span id="line-49">
+</span><span id="line-50"><span class="sd">        .. note::</span>
+</span><span id="line-51"><span class="sd">           Useful with sorting to influence consistent output.</span>
+</span><span id="line-52">
+</span><span id="line-53"><span class="sd">        :param other: Other value being compared with instance.</span>
+</span><span id="line-54"><span class="sd">        :returns: Boolean indicating outcome from the operation.</span>
+</span><span id="line-55"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-56">
+</span><span id="line-57">        <span class="n">unique</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">unique</span>
+</span><span id="line-58">        <span class="n">_unique</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">unique</span>
+</span><span id="line-59">
+</span><span id="line-60">        <span class="k">return</span> <span class="n">unique</span> <span class="o">&lt;</span> <span class="n">_unique</span></div>
 
 </span></code></pre></div>
     </div></div>

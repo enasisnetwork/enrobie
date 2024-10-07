@@ -144,6 +144,7 @@
 <li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClientParams"><code class="docutils literal notranslate"><span class="pre">DSCClientParams</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClientParams.client"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.client</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClientParams.delay"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.delay</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClientParams.status"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.status</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient"><code class="docutils literal notranslate"><span class="pre">IRCClient</span></code></a><ul>
@@ -161,6 +162,7 @@
 <li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClientParams"><code class="docutils literal notranslate"><span class="pre">IRCClientParams</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClientParams.client"><code class="docutils literal notranslate"><span class="pre">IRCClientParams.client</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClientParams.delay"><code class="docutils literal notranslate"><span class="pre">IRCClientParams.delay</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClientParams.status"><code class="docutils literal notranslate"><span class="pre">IRCClientParams.status</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient"><code class="docutils literal notranslate"><span class="pre">MTMClient</span></code></a><ul>
@@ -178,6 +180,7 @@
 <li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClientParams"><code class="docutils literal notranslate"><span class="pre">MTMClientParams</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClientParams.client"><code class="docutils literal notranslate"><span class="pre">MTMClientParams.client</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClientParams.delay"><code class="docutils literal notranslate"><span class="pre">MTMClientParams.delay</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClientParams.status"><code class="docutils literal notranslate"><span class="pre">MTMClientParams.status</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -225,6 +228,8 @@
 <li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.status.html">enrobie.plugins.status package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.status.html#subpackages">Subpackages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.status.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.status.html#module-enrobie.plugins.status.common">enrobie.plugins.status.common module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.status.html#module-enrobie.plugins.status.helpers">enrobie.plugins.status.helpers module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.status.html#module-enrobie.plugins.status.params">enrobie.plugins.status.params module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.status.html#module-enrobie.plugins.status.plugin">enrobie.plugins.status.plugin module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.status.html#module-enrobie.plugins.status">Module contents</a></li>
@@ -235,11 +240,30 @@
 <li class="toctree-l2"><a class="reference internal" href="enrobie.plugins.html#module-enrobie.plugins">Module contents</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPlugin"><code class="docutils literal notranslate"><span class="pre">StatusPlugin</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPlugin.operate"><code class="docutils literal notranslate"><span class="pre">StatusPlugin.operate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPlugin.report"><code class="docutils literal notranslate"><span class="pre">StatusPlugin.report()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPlugin.update"><code class="docutils literal notranslate"><span class="pre">StatusPlugin.update()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPlugin.validate"><code class="docutils literal notranslate"><span class="pre">StatusPlugin.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginIconParams"><code class="docutils literal notranslate"><span class="pre">StatusPluginIconParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginIconParams.dsc"><code class="docutils literal notranslate"><span class="pre">StatusPluginIconParams.dsc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginIconParams.irc"><code class="docutils literal notranslate"><span class="pre">StatusPluginIconParams.irc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginIconParams.mtm"><code class="docutils literal notranslate"><span class="pre">StatusPluginIconParams.mtm</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginItem"><code class="docutils literal notranslate"><span class="pre">StatusPluginItem</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginItem.group"><code class="docutils literal notranslate"><span class="pre">StatusPluginItem.group</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginItem.icon"><code class="docutils literal notranslate"><span class="pre">StatusPluginItem.icon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginItem.state"><code class="docutils literal notranslate"><span class="pre">StatusPluginItem.state</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginItem.time"><code class="docutils literal notranslate"><span class="pre">StatusPluginItem.time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginItem.title"><code class="docutils literal notranslate"><span class="pre">StatusPluginItem.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginItem.unique"><code class="docutils literal notranslate"><span class="pre">StatusPluginItem.unique</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginParams"><code class="docutils literal notranslate"><span class="pre">StatusPluginParams</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginParams.command"><code class="docutils literal notranslate"><span class="pre">StatusPluginParams.command</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginParams.icons"><code class="docutils literal notranslate"><span class="pre">StatusPluginParams.icons</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginParams.reports"><code class="docutils literal notranslate"><span class="pre">StatusPluginParams.reports</span></code></a></li>
 </ul>
 </li>
 </ul>
