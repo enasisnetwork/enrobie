@@ -36,13 +36,13 @@ class StatusPluginReportParams(BaseModel, extra='forbid'):
     target: Annotated[
         str,
         Field(...,
-              description='Where message will be sent',
+              description='Where the message will be sent',
               min_length=1)]
 
     states: Annotated[
         Optional[list[StatusPluginStates]],
         Field(None,
-              description='Where message will be sent',
+              description='Which status value are related',
               min_length=1)]
 
 

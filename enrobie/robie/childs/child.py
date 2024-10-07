@@ -104,9 +104,9 @@ class RobieChild:
         self,
     ) -> 'Robie':
         """
-        Return the Robie instance to which this instance belongs.
+        Return the Robie instance to which the instance belongs.
 
-        :returns: Robie instance to which this instance belongs.
+        :returns: Robie instance to which the instance belongs.
         """
 
         return self.__robie
