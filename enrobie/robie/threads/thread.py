@@ -15,6 +15,7 @@ from typing import Union
 from encommon.types import clsname
 
 from ..addons import RobieQueue
+from ...utils import DuplicateThread
 
 if TYPE_CHECKING:
     from ..childs import RobieChild
@@ -325,11 +326,24 @@ class RobieThread(Thread):
         """
 
         member = self.__member
-        robie = member.robie
         child = self.__child
+        robie = member.robie
+        vacate = member.vacate
 
         try:
             child.operate(self)
+
+        except DuplicateThread as reason:
+
+            vacate.set()
+
+            robie.logger.log_e(
+                base=self,
+                name=child,
+                status='exception',
+                exc_info=reason)
+
+            block_sleep(15)
 
         except Exception as reason:
 
