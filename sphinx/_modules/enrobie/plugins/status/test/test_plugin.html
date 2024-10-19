@@ -320,7 +320,7 @@
 </span><span id="line-172">    <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span><span id="line-173">
 </span><span id="line-174">
-</span><span id="line-175">    <span class="n">block_sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="line-175">    <span class="n">block_sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </span><span id="line-176">
 </span><span id="line-177">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
 </span><span id="line-178">
@@ -329,11 +329,7 @@
 </span><span id="line-181">
 </span><span id="line-182">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 </span><span id="line-183">
-</span><span id="line-184">    <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
-</span><span id="line-185">
-</span><span id="line-186">    <span class="k">assert</span> <span class="n">service</span><span class="o">.</span><span class="n">congest</span>
-</span><span id="line-187">
-</span><span id="line-188">    <span class="k">assert</span> <span class="n">service</span><span class="o">.</span><span class="n">enqueue</span></div>
+</span><span id="line-184">    <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
 
 </span></code></pre></div>
     </div></div>

@@ -105,6 +105,11 @@
 <li class="toctree-l3"><a class="reference internal" href="enrobie.utils.test.html#enrobie.utils.test.test_param.test_InvalidParam"><code class="docutils literal notranslate"><span class="pre">test_InvalidParam()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test.test_thread">enrobie.utils.test.test_thread module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.test.html#enrobie.utils.test.test_thread.test_DupliThread"><code class="docutils literal notranslate"><span class="pre">test_DupliThread()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.test.html#enrobie.utils.test.test_thread.test_DupliThread_cover"><code class="docutils literal notranslate"><span class="pre">test_DupliThread_cover()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test">Module contents</a></li>
 </ul>
 </li>
@@ -198,11 +203,61 @@ is permitted, for more information consult the project license file.</p>
 <dd></dd></dl>
 </dd></dl>
 </section>
+<section id="module-enrobie.utils.thread">
+<span id="enrobie-utils-thread-module"></span><h2>enrobie.utils.thread module<a class="headerlink" href="#module-enrobie.utils.thread" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.utils.thread'">¶</a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="enrobie.utils.thread.DupliThread">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.utils.thread.</span></span><span class="sig-name descname"><span class="pre">DupliThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/threading.html#threading.Thread" title="(in Python v3.13)"><span class="pre">Thread</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">about</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/utils/thread.html#DupliThread"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.thread.DupliThread" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.thread.DupliThread'">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>Exception for when the client thread is already running.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>thread</strong> – Name or thread that would be duplicative.</p></li>
+<li><p><strong>about</strong> – Additional information for the exception.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="enrobie.utils.thread.DupliThread.about">
+<span class="sig-name descname"><span class="pre">about</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.utils.thread.DupliThread.about" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.thread.DupliThread.about'">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="enrobie.utils.thread.DupliThread.thread">
+<span class="sig-name descname"><span class="pre">thread</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#enrobie.utils.thread.DupliThread.thread" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.thread.DupliThread.thread'">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+</section>
 <section id="module-enrobie.utils">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-enrobie.utils" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.utils'">¶</a></h2>
 <p>Functions and routines associated with Enasis Network Chatting Robie.</p>
 <p>This file is part of Enasis Network software eco-system. Distribution
 is permitted, for more information consult the project license file.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="enrobie.utils.DupliThread">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.utils.</span></span><span class="sig-name descname"><span class="pre">DupliThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/threading.html#threading.Thread" title="(in Python v3.13)"><span class="pre">Thread</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">about</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/utils/thread.html#DupliThread"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.DupliThread" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.DupliThread'">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>Exception for when the client thread is already running.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>thread</strong> – Name or thread that would be duplicative.</p></li>
+<li><p><strong>about</strong> – Additional information for the exception.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="enrobie.utils.DupliThread.about">
+<span class="sig-name descname"><span class="pre">about</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.utils.DupliThread.about" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.DupliThread.about'">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="enrobie.utils.DupliThread.thread">
+<span class="sig-name descname"><span class="pre">thread</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#enrobie.utils.DupliThread.thread" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.DupliThread.thread'">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
 <dl class="py exception">
 <dt class="sig sig-object py" id="enrobie.utils.InvalidChild">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.utils.</span></span><span class="sig-name descname"><span class="pre">InvalidChild</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">child</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.child.RobieChild" title="enrobie.robie.childs.child.RobieChild"><span class="pre">RobieChild</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.13)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'initial'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'runtime'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">about</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/utils/child.html#InvalidChild"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.InvalidChild" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.InvalidChild'">¶</a></dt>
@@ -302,7 +357,20 @@ is permitted, for more information consult the project license file.</p>
 </li>
 </ul>
 </li>
+<li><a :data-current="activeSection === '#module-enrobie.utils.thread'" class="reference internal" href="#module-enrobie.utils.thread">enrobie.utils.thread module</a><ul>
+<li><a :data-current="activeSection === '#enrobie.utils.thread.DupliThread'" class="reference internal" href="#enrobie.utils.thread.DupliThread"><code class="docutils literal notranslate"><span class="pre">DupliThread</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.utils.thread.DupliThread.about'" class="reference internal" href="#enrobie.utils.thread.DupliThread.about"><code class="docutils literal notranslate"><span class="pre">DupliThread.about</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.thread.DupliThread.thread'" class="reference internal" href="#enrobie.utils.thread.DupliThread.thread"><code class="docutils literal notranslate"><span class="pre">DupliThread.thread</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a :data-current="activeSection === '#module-enrobie.utils'" class="reference internal" href="#module-enrobie.utils">Module contents</a><ul>
+<li><a :data-current="activeSection === '#enrobie.utils.DupliThread'" class="reference internal" href="#enrobie.utils.DupliThread"><code class="docutils literal notranslate"><span class="pre">DupliThread</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.utils.DupliThread.about'" class="reference internal" href="#enrobie.utils.DupliThread.about"><code class="docutils literal notranslate"><span class="pre">DupliThread.about</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.DupliThread.thread'" class="reference internal" href="#enrobie.utils.DupliThread.thread"><code class="docutils literal notranslate"><span class="pre">DupliThread.thread</span></code></a></li>
+</ul>
+</li>
 <li><a :data-current="activeSection === '#enrobie.utils.InvalidChild'" class="reference internal" href="#enrobie.utils.InvalidChild"><code class="docutils literal notranslate"><span class="pre">InvalidChild</span></code></a><ul>
 <li><a :data-current="activeSection === '#enrobie.utils.InvalidChild.about'" class="reference internal" href="#enrobie.utils.InvalidChild.about"><code class="docutils literal notranslate"><span class="pre">InvalidChild.about</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.utils.InvalidChild.child'" class="reference internal" href="#enrobie.utils.InvalidChild.child"><code class="docutils literal notranslate"><span class="pre">InvalidChild.child</span></code></a></li>
