@@ -98,6 +98,39 @@
     }
   },
   "plugins": {
+    "autojoin": {
+      "name": "autojoin",
+      "kind": "plugin",
+      "params": {
+        "enable": true,
+        "channels": [
+          {
+            "client": "ircbot",
+            "channel": "mocked"
+          }
+        ],
+        "status": {
+          "irc": "\u2699",
+          "dsc": "<:unknown:mocked>",
+          "mtm": ":unknown:"
+        }
+      }
+    },
+    "autonick": {
+      "name": "autonick",
+      "kind": "plugin",
+      "params": {
+        "enable": true,
+        "clients": [
+          "ircbot"
+        ],
+        "status": {
+          "irc": "\u2699",
+          "dsc": "<:unknown:mocked>",
+          "mtm": ":unknown:"
+        }
+      }
+    },
     "status": {
       "name": "status",
       "kind": "plugin",

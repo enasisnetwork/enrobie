@@ -223,6 +223,10 @@ class IRCClient(RobieClient):
 
         daerht.start()
 
+        self.put_command(
+            cqueue,
+            'NICK :fart')
+
 
         while _continue():
 

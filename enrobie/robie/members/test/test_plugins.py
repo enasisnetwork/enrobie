@@ -55,7 +55,7 @@ def test_RobiePlugins(
 
     assert member.robie
 
-    assert len(member.threads) == 1
+    assert len(member.threads) == 3
 
     assert member.mqueue
 

@@ -89,9 +89,10 @@ class StatusPlugin(RobiePlugin):
         kinds = ['privmsg', 'chanmsg']
 
 
-        while not mqueue.empty:
+        self.report(thread)
 
-            self.report(thread)
+
+        while not mqueue.empty:
 
             mitem = mqueue.get()
 
@@ -249,19 +250,27 @@ class StatusPlugin(RobiePlugin):
         robie = self.robie
         status = self.__status
 
-        robie.logger.log_i(
-            base=self,
-            name=self,
-            item='status',
-            unique=unique,
-            state=state)
-
         object = StatusPluginItem(
             unique=unique,
             time=Time(),
             group=group,
             title=title,
             icon=icon,
+            state=state)
+
+        if unique in status:
+
+            _object = status[unique]
+            _state = _object.state
+
+            if state == _state:
+                return None
+
+        robie.logger.log_i(
+            base=self,
+            name=self,
+            item='status',
+            unique=unique,
             state=state)
 
         status[unique] = object

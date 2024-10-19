@@ -26,6 +26,10 @@ from .clients import IRCClient
 from .clients import IRCClientParams
 from .clients import MTMClient
 from .clients import MTMClientParams
+from .plugins import AutoJoinPlugin
+from .plugins import AutoJoinPluginParams
+from .plugins import AutoNickPlugin
+from .plugins import AutoNickPluginParams
 from .plugins import StatusPlugin
 from .plugins import StatusPluginParams
 from .robie import Robie
@@ -110,6 +114,14 @@ def config(
         client=MTMClientParams)
 
     config.register(
+        name='autojoin',
+        plugin=AutoJoinPluginParams)
+
+    config.register(
+        name='autonick',
+        plugin=AutoNickPluginParams)
+
+    config.register(
         name='status',
         plugin=StatusPluginParams)
 
@@ -157,6 +169,14 @@ def robie_factory(
     robie.register(
         name='mtmbot',
         client=MTMClient)
+
+    robie.register(
+        name='autojoin',
+        plugin=AutoJoinPlugin)
+
+    robie.register(
+        name='autonick',
+        plugin=AutoNickPlugin)
 
     robie.register(
         name='status',

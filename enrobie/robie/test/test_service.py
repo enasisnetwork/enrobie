@@ -76,7 +76,7 @@ def test_RobieService(
 
     assert len(service.running) == 0
 
-    assert len(service.zombies) == 4
+    assert len(service.zombies) == 6
 
 
     client_dscsock()
