@@ -9,9 +9,11 @@ is permitted, for more information consult the project license file.
 
 from .child import InvalidChild
 from .param import InvalidParam
+from .thread import DupliThread
 
 
 
 __all__ = [
     'InvalidChild',
-    'InvalidParam']
+    'InvalidParam',
+    'DupliThread']

@@ -8,6 +8,7 @@ is permitted, for more information consult the project license file.
 
 
 from threading import Thread
+from threading import enumerate as thread_enumerate
 from time import sleep as block_sleep
 from typing import Any
 from typing import Literal
@@ -26,6 +27,7 @@ from ...plugins import StatusPlugin
 from ...plugins import StatusPluginStates
 from ...robie.addons import RobieQueue
 from ...robie.childs import RobieClient
+from ...utils import DupliThread
 
 if TYPE_CHECKING:
     from ...robie.models import RobieCommand
@@ -140,8 +142,17 @@ class IRCClient(RobieClient):
             assert isinstance(
                 citem, IRCCommand)
 
-            client.socket_send(
-                citem.event)
+            try:
+                client.socket_send(
+                    citem.event)
+
+            except Exception as reason:
+
+                robie.logger.log_e(
+                    base=self,
+                    name=self,
+                    status='exception',
+                    exc_info=reason)
 
 
         def _continue() -> bool:
@@ -195,7 +206,19 @@ class IRCClient(RobieClient):
                 block_sleep(delay)
 
 
+        name = (
+            f'{self.name}'
+            '_thread_client')
+
+        threads = (
+            x.name for x in
+            thread_enumerate())
+
+        if name in threads:
+            raise DupliThread(name)
+
         daerht = Thread(
+            name=name,
             target=_routine)
 
         daerht.start()
@@ -218,6 +241,8 @@ class IRCClient(RobieClient):
 
         while daerht.is_alive():
             daerht.join(1)
+
+        daerht.join()
 
         while not source.empty():
             _put_mqueue()  # NOCVR

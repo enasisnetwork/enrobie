@@ -200,7 +200,7 @@ class StatusPlugin(RobiePlugin):
 
                 if (states is not None
                         and state not in states):
-                    continue
+                    continue  # NOCVR
 
                 if name not in clients:
                     continue  # NOCVR
