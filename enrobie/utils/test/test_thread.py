@@ -14,19 +14,19 @@ from encommon.types import inrepr
 from encommon.types import instr
 from encommon.types import lattrs
 
-from ..thread import DuplicateThread
+from ..thread import DupliThread
 
 if TYPE_CHECKING:
     from ...robie import Robie
 
 
 
-def test_DuplicateThread() -> None:
+def test_DupliThread() -> None:
     """
     Perform various tests associated with relevant routines.
     """
 
-    raises = DuplicateThread(
+    raises = DupliThread(
         thread='invalid')
 
 
@@ -38,7 +38,7 @@ def test_DuplicateThread() -> None:
 
 
     assert inrepr(
-        'DuplicateThread',
+        'DupliThread',
         raises)
 
     assert isinstance(
@@ -55,7 +55,7 @@ def test_DuplicateThread() -> None:
 
 
 
-def test_DuplicateThread_cover(
+def test_DupliThread_cover(
     robie: 'Robie',
 ) -> None:
     """
@@ -68,7 +68,7 @@ def test_DuplicateThread_cover(
         name='client')
 
 
-    raises = DuplicateThread(
+    raises = DupliThread(
         thread=thread,
         about='about')
 

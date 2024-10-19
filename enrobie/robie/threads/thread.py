@@ -15,7 +15,7 @@ from typing import Union
 from encommon.types import clsname
 
 from ..addons import RobieQueue
-from ...utils import DuplicateThread
+from ...utils import DupliThread
 
 if TYPE_CHECKING:
     from ..childs import RobieChild
@@ -333,7 +333,7 @@ class RobieThread(Thread):
         try:
             child.operate(self)
 
-        except DuplicateThread as reason:
+        except DupliThread as reason:
 
             vacate.set()
 

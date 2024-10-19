@@ -27,7 +27,7 @@ from ...plugins import StatusPlugin
 from ...plugins import StatusPluginStates
 from ...robie.addons import RobieQueue
 from ...robie.childs import RobieClient
-from ...utils import DuplicateThread
+from ...utils import DupliThread
 
 if TYPE_CHECKING:
     from ...robie.models import RobieCommand
@@ -216,7 +216,7 @@ class DSCClient(RobieClient):
             thread_enumerate())
 
         if name in threads:
-            raise DuplicateThread(name)
+            raise DupliThread(name)
 
         daerht = Thread(
             name=name,

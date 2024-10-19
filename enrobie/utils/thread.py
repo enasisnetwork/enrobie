@@ -12,7 +12,7 @@ from typing import Optional
 
 
 
-class DuplicateThread(Exception):
+class DupliThread(Exception):
     """
     Exception for when the client thread is already running.
 
