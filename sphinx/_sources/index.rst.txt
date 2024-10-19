@@ -38,6 +38,16 @@ Robie Clients
 Robie Plugins
 -------------
 
+.. autopydantic_model:: enrobie.plugins.autojoin.params.AutoJoinPluginParams
+   :members:
+   :show-inheritance:
+   :noindex:
+
+.. autopydantic_model:: enrobie.plugins.autonick.params.AutoNickPluginParams
+   :members:
+   :show-inheritance:
+   :noindex:
+
 .. autopydantic_model:: enrobie.plugins.status.params.StatusPluginParams
    :members:
    :show-inheritance:

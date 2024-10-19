@@ -439,102 +439,104 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-58"><span class="w">            </span><span class="nt">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="line-59"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
 </span><span id="line-60"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout connecting to server"</span><span class="p">,</span>
-</span><span id="line-61"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout"</span><span class="p">,</span>
-</span><span id="line-62"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-63"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-64"><span class="w">            </span><span class="nt">"ssl_verify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-65"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="line-66"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
-</span><span id="line-67"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Verify"</span><span class="p">,</span>
-</span><span id="line-68"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-69"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-70"><span class="w">            </span><span class="nt">"ssl_capem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-71"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-72"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-73"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-74"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-75"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-76"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-77"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-78"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-79"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-80"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-81"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
-</span><span id="line-82"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Capem"</span>
-</span><span id="line-83"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-84"><span class="w">            </span><span class="nt">"queue_size"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-85"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
-</span><span id="line-86"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maximum size for queued events"</span><span class="p">,</span>
-</span><span id="line-87"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span>
-</span><span id="line-88"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
-</span><span id="line-89"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Queue Size"</span><span class="p">,</span>
-</span><span id="line-90"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-91"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-92"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-93"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-94"><span class="w">            </span><span class="s2">"server"</span><span class="p">,</span>
-</span><span id="line-95"><span class="w">            </span><span class="s2">"token"</span><span class="p">,</span>
-</span><span id="line-96"><span class="w">            </span><span class="s2">"teamid"</span>
-</span><span id="line-97"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-98"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ClientParams"</span><span class="p">,</span>
-</span><span id="line-99"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-100"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-101"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-102"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-103"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
-</span><span id="line-104"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-105"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-106"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-107"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-108"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-109"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-110"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-111"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-112"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-113"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-114"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-115"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-116"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-117"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
-</span><span id="line-118"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-119"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-120"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-121"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-122"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-123"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-124"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-125"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-126"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-127"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-128"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-129"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-130"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-131"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
-</span><span id="line-132"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-133"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-134"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-135"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-136"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-137"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-138"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-139"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-140"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-141"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-142"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-143"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-144"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-145"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
-</span><span id="line-146"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-147"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-148"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-149"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-150"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-151"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-152"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-153"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-154"><span class="w">      </span><span class="s2">"client"</span>
-</span><span id="line-155"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-156"><span class="p">}</span>
+</span><span id="line-61"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+</span><span id="line-62"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-63"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout"</span><span class="p">,</span>
+</span><span id="line-64"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-65"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-66"><span class="w">            </span><span class="nt">"ssl_verify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-67"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="line-68"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
+</span><span id="line-69"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Verify"</span><span class="p">,</span>
+</span><span id="line-70"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-71"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-72"><span class="w">            </span><span class="nt">"ssl_capem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-73"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-74"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-75"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-76"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-77"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-78"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-79"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-80"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-81"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-82"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-83"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
+</span><span id="line-84"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Capem"</span>
+</span><span id="line-85"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-86"><span class="w">            </span><span class="nt">"queue_size"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-87"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+</span><span id="line-88"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maximum size for queued events"</span><span class="p">,</span>
+</span><span id="line-89"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span>
+</span><span id="line-90"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+</span><span id="line-91"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Queue Size"</span><span class="p">,</span>
+</span><span id="line-92"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-93"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-94"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-95"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-96"><span class="w">            </span><span class="s2">"server"</span><span class="p">,</span>
+</span><span id="line-97"><span class="w">            </span><span class="s2">"token"</span><span class="p">,</span>
+</span><span id="line-98"><span class="w">            </span><span class="s2">"teamid"</span>
+</span><span id="line-99"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-100"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ClientParams"</span><span class="p">,</span>
+</span><span id="line-101"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-102"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-103"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-104"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-105"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
+</span><span id="line-106"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-107"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-108"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-109"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-110"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-111"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-112"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-113"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-114"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-115"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-116"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-117"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-118"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-119"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
+</span><span id="line-120"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-121"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-122"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-123"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-124"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-125"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-126"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-127"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-128"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-129"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-130"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-131"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-132"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-133"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-134"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-135"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-136"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-137"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-138"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-139"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-140"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-141"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-142"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-143"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-144"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-145"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-146"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-147"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
+</span><span id="line-148"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-149"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-150"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-151"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-152"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-153"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-154"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-155"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-156"><span class="w">      </span><span class="s2">"client"</span>
+</span><span id="line-157"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-158"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -789,102 +791,104 @@ introduce required parameters outside of the parent.</p>
 </span><span id="line-58"><span class="w">            </span><span class="nt">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="line-59"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
 </span><span id="line-60"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout connecting to server"</span><span class="p">,</span>
-</span><span id="line-61"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout"</span><span class="p">,</span>
-</span><span id="line-62"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-63"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-64"><span class="w">            </span><span class="nt">"ssl_verify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-65"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="line-66"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
-</span><span id="line-67"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Verify"</span><span class="p">,</span>
-</span><span id="line-68"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-69"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-70"><span class="w">            </span><span class="nt">"ssl_capem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-71"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-72"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-73"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-74"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-75"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-76"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-77"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-78"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-79"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-80"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-81"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
-</span><span id="line-82"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Capem"</span>
-</span><span id="line-83"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-84"><span class="w">            </span><span class="nt">"queue_size"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-85"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
-</span><span id="line-86"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maximum size for queued events"</span><span class="p">,</span>
-</span><span id="line-87"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span>
-</span><span id="line-88"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
-</span><span id="line-89"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Queue Size"</span><span class="p">,</span>
-</span><span id="line-90"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-91"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-92"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-93"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-94"><span class="w">            </span><span class="s2">"server"</span><span class="p">,</span>
-</span><span id="line-95"><span class="w">            </span><span class="s2">"token"</span><span class="p">,</span>
-</span><span id="line-96"><span class="w">            </span><span class="s2">"teamid"</span>
-</span><span id="line-97"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-98"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ClientParams"</span><span class="p">,</span>
-</span><span id="line-99"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-100"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-101"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-102"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-103"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
-</span><span id="line-104"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-105"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-106"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-107"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-108"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-109"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-110"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-111"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-112"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-113"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-114"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-115"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-116"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-117"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
-</span><span id="line-118"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-119"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-120"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-121"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-122"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-123"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-124"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-125"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-126"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-127"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-128"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-129"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-130"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-131"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
-</span><span id="line-132"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-133"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-134"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-135"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-136"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-137"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-138"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-139"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-140"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-141"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-142"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-143"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-144"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-145"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
-</span><span id="line-146"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-147"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-148"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-149"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-150"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-151"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-152"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-153"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-154"><span class="w">      </span><span class="s2">"client"</span>
-</span><span id="line-155"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-156"><span class="p">}</span>
+</span><span id="line-61"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+</span><span id="line-62"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-63"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout"</span><span class="p">,</span>
+</span><span id="line-64"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-65"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-66"><span class="w">            </span><span class="nt">"ssl_verify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-67"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="line-68"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
+</span><span id="line-69"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Verify"</span><span class="p">,</span>
+</span><span id="line-70"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-71"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-72"><span class="w">            </span><span class="nt">"ssl_capem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-73"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-74"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-75"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-76"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-77"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-78"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-79"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-80"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-81"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-82"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-83"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
+</span><span id="line-84"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Capem"</span>
+</span><span id="line-85"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-86"><span class="w">            </span><span class="nt">"queue_size"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-87"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+</span><span id="line-88"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maximum size for queued events"</span><span class="p">,</span>
+</span><span id="line-89"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span>
+</span><span id="line-90"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+</span><span id="line-91"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Queue Size"</span><span class="p">,</span>
+</span><span id="line-92"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-93"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-94"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-95"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-96"><span class="w">            </span><span class="s2">"server"</span><span class="p">,</span>
+</span><span id="line-97"><span class="w">            </span><span class="s2">"token"</span><span class="p">,</span>
+</span><span id="line-98"><span class="w">            </span><span class="s2">"teamid"</span>
+</span><span id="line-99"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-100"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ClientParams"</span><span class="p">,</span>
+</span><span id="line-101"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-102"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-103"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-104"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-105"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
+</span><span id="line-106"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-107"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-108"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-109"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-110"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-111"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-112"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-113"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-114"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-115"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-116"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-117"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-118"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-119"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
+</span><span id="line-120"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-121"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-122"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-123"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-124"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-125"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-126"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-127"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-128"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-129"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-130"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-131"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-132"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-133"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-134"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-135"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-136"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-137"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-138"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-139"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-140"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-141"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-142"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-143"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-144"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-145"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-146"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-147"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
+</span><span id="line-148"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-149"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-150"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-151"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-152"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-153"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-154"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-155"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-156"><span class="w">      </span><span class="s2">"client"</span>
+</span><span id="line-157"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-158"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
