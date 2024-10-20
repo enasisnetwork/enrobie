@@ -103,31 +103,22 @@ class AutoNickPlugin(RobiePlugin):
 
         names = params.clients
 
-        failure = False
+        failure: set[bool] = set()
 
 
-        for client in clients:
-
-            family = client.family
-
-            if family != 'irc':
-                continue
+        def _autonick() -> None:
 
             assert isinstance(
                 client, IRCClient)
 
-            name = client.name
-
-            if name not in names:
-                continue  # NOCVR
-
-            _params = client.params
+            params = client.params
 
             assert isinstance(
-                _params, IRCClientParams)
+                params,
+                IRCClientParams)
 
             should = (
-                _params.client
+                params.client
                 .nickname)
 
             current = (
@@ -135,18 +126,31 @@ class AutoNickPlugin(RobiePlugin):
                 .nickname)
 
             if current == should:
-                continue
+                return None
 
-            failure = True
+            failure.add(True)
+
+            rawcmd = f'NICK :{should}'
 
             client.put_command(
-                cqueue,
-                f'NICK :{should}')
+                cqueue, rawcmd)
+
+
+        for client in clients:
+
+            name = client.name
+            family = client.family
+
+            if family != 'irc':
+                continue
+
+            if name in names:
+                _autonick()
 
 
         self.__status(
             'failure'
-            if failure is True
+            if any(failure)
             else 'normal')
 
 

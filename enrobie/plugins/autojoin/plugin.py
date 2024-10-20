@@ -136,9 +136,10 @@ class AutoJoinPlugin(RobiePlugin):
                 if join in _joined:
                     continue  # NOCVR
 
+                rawcmd = f'JOIN :{join}'
+
                 client.put_command(
-                    cqueue,
-                    f'JOIN :{join}')
+                    cqueue, rawcmd)
 
 
         while not mqueue.empty:
@@ -189,7 +190,7 @@ class AutoJoinPlugin(RobiePlugin):
         member = thread.member
         cqueue = member.cqueue
 
-        failure = False
+        failure: set[bool] = set()
 
         self.__status(
             'failure'
@@ -197,30 +198,36 @@ class AutoJoinPlugin(RobiePlugin):
             else 'normal')
 
 
-        for name in should:
+        def _autojoin() -> None:
 
-            _should = should[name]
-            _joined = joined[name]
             client = clients[name]
 
             assert isinstance(
                 client, IRCClient)
+
+            _should = should[name]
+            _joined = joined[name]
 
             for join in _should:
 
                 if join in _joined:
                     continue  # NOCVR
 
-                failure = True
+                failure.add(True)
+
+                rawcmd = f'JOIN :{join}'
 
                 client.put_command(
-                    cqueue,
-                    f'JOIN :{join}')
+                    cqueue, rawcmd)
+
+
+        for name in should:
+            _autojoin()
 
 
         self.__status(
             'failure'
-            if failure is True
+            if any(failure)
             else 'normal')
 
 

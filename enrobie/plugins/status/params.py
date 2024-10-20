@@ -12,8 +12,6 @@ from typing import Any
 from typing import Callable
 from typing import Optional
 
-from encommon.types import BaseModel
-
 from pydantic import Field
 
 from .common import StatusPluginStates
@@ -22,7 +20,7 @@ from ...robie.params.common import RobieParamsModel
 
 
 
-class StatusPluginReportParams(BaseModel, extra='forbid'):
+class StatusPluginReportParams(RobieParamsModel, extra='forbid'):
     """
     Contain information for constructing the chat messages.
     """
@@ -87,7 +85,7 @@ class StatusPluginCommandParams(RobieParamsModel, extra='forbid'):
 
 
 
-class StatusPluginIconParams(BaseModel, extra='forbid'):
+class StatusPluginIconParams(RobieParamsModel, extra='forbid'):
     """
     Contain information for constructing the chat messages.
     """
@@ -112,7 +110,7 @@ class StatusPluginIconParams(BaseModel, extra='forbid'):
 
 
 
-class StatusPluginIconsParams(BaseModel, extra='forbid'):
+class StatusPluginIconsParams(RobieParamsModel, extra='forbid'):
     """
     Contain information for constructing the chat messages.
     """
