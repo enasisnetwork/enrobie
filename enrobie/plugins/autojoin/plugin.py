@@ -243,8 +243,13 @@ class AutoJoinPlugin(RobiePlugin):
         :param event: Raw event received from the network peer.
         """
 
-        joined = self.__joined[
-            client.name]
+        joined = self.__joined
+        name = client.name
+
+        if name not in joined:
+            return NCNone
+
+        _joined = joined[name]
 
 
         isme = event.isme
@@ -266,7 +271,7 @@ class AutoJoinPlugin(RobiePlugin):
 
             channel = split[0][1:]
 
-            joined.add(channel)
+            _joined.add(channel)
 
 
         if command == 'KICK':
@@ -275,7 +280,7 @@ class AutoJoinPlugin(RobiePlugin):
             target = split[1]
 
             if target == current:
-                joined.remove(channel)
+                _joined.remove(channel)
 
 
         if (command == 'PART'
@@ -283,7 +288,7 @@ class AutoJoinPlugin(RobiePlugin):
 
             channel = split[0]
 
-            joined.remove(channel)
+            _joined.remove(channel)
 
 
     def __status(
