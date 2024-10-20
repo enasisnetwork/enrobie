@@ -394,82 +394,87 @@
 </span><span id="line-243"><span class="sd">        :param event: Raw event received from the network peer.</span>
 </span><span id="line-244"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-245">
-</span><span id="line-246">        <span class="n">joined</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__joined</span><span class="p">[</span>
-</span><span id="line-247">            <span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+</span><span id="line-246">        <span class="n">joined</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__joined</span>
+</span><span id="line-247">        <span class="n">name</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">name</span>
 </span><span id="line-248">
-</span><span id="line-249">
-</span><span id="line-250">        <span class="n">isme</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">isme</span>
-</span><span id="line-251">        <span class="n">command</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">command</span>
-</span><span id="line-252">        <span class="n">params</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-249">        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">joined</span><span class="p">:</span>
+</span><span id="line-250">            <span class="k">return</span> <span class="n">NCNone</span>
+</span><span id="line-251">
+</span><span id="line-252">        <span class="n">_joined</span> <span class="o">=</span> <span class="n">joined</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
 </span><span id="line-253">
-</span><span id="line-254">        <span class="k">if</span> <span class="n">params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-255">            <span class="k">return</span> <span class="n">NCNone</span>
-</span><span id="line-256">
-</span><span id="line-257">        <span class="n">split</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span><span id="line-254">
+</span><span id="line-255">        <span class="n">isme</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">isme</span>
+</span><span id="line-256">        <span class="n">command</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">command</span>
+</span><span id="line-257">        <span class="n">params</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">params</span>
 </span><span id="line-258">
-</span><span id="line-259">        <span class="n">current</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-260">            <span class="n">client</span><span class="o">.</span><span class="n">client</span>
-</span><span id="line-261">            <span class="o">.</span><span class="n">nickname</span><span class="p">)</span>
-</span><span id="line-262">
+</span><span id="line-259">        <span class="k">if</span> <span class="n">params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-260">            <span class="k">return</span> <span class="n">NCNone</span>
+</span><span id="line-261">
+</span><span id="line-262">        <span class="n">split</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 </span><span id="line-263">
-</span><span id="line-264">        <span class="k">if</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;JOIN&#39;</span>
-</span><span id="line-265">                <span class="ow">and</span> <span class="n">isme</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">):</span>
-</span><span id="line-266">
-</span><span id="line-267">            <span class="n">channel</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+</span><span id="line-264">        <span class="n">current</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-265">            <span class="n">client</span><span class="o">.</span><span class="n">client</span>
+</span><span id="line-266">            <span class="o">.</span><span class="n">nickname</span><span class="p">)</span>
+</span><span id="line-267">
 </span><span id="line-268">
-</span><span id="line-269">            <span class="n">joined</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
-</span><span id="line-270">
+</span><span id="line-269">        <span class="k">if</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;JOIN&#39;</span>
+</span><span id="line-270">                <span class="ow">and</span> <span class="n">isme</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">):</span>
 </span><span id="line-271">
-</span><span id="line-272">        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;KICK&#39;</span><span class="p">:</span>
+</span><span id="line-272">            <span class="n">channel</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
 </span><span id="line-273">
-</span><span id="line-274">            <span class="n">channel</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="line-275">            <span class="n">target</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="line-274">            <span class="n">_joined</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
+</span><span id="line-275">
 </span><span id="line-276">
-</span><span id="line-277">            <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="n">current</span><span class="p">:</span>
-</span><span id="line-278">                <span class="n">joined</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
-</span><span id="line-279">
-</span><span id="line-280">
-</span><span id="line-281">        <span class="k">if</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;PART&#39;</span>
-</span><span id="line-282">                <span class="ow">and</span> <span class="n">isme</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">):</span>
-</span><span id="line-283">
-</span><span id="line-284">            <span class="n">channel</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="line-277">        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;KICK&#39;</span><span class="p">:</span>
+</span><span id="line-278">
+</span><span id="line-279">            <span class="n">channel</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="line-280">            <span class="n">target</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="line-281">
+</span><span id="line-282">            <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="n">current</span><span class="p">:</span>
+</span><span id="line-283">                <span class="n">_joined</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
+</span><span id="line-284">
 </span><span id="line-285">
-</span><span id="line-286">            <span class="n">joined</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
-</span><span id="line-287">
+</span><span id="line-286">        <span class="k">if</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;PART&#39;</span>
+</span><span id="line-287">                <span class="ow">and</span> <span class="n">isme</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">):</span>
 </span><span id="line-288">
-</span><span id="line-289">    <span class="k">def</span> <span class="nf">__status</span><span class="p">(</span>
-</span><span id="line-290">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-291">        <span class="n">status</span><span class="p">:</span> <span class="n">StatusPluginStates</span><span class="p">,</span>
-</span><span id="line-292">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-293"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-294"><span class="sd">        Update or insert the status of the Robie child instance.</span>
-</span><span id="line-295">
-</span><span id="line-296"><span class="sd">        :param status: One of several possible value for status.</span>
-</span><span id="line-297"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-298">
-</span><span id="line-299">        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-300">        <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
-</span><span id="line-301">        <span class="n">plugins</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">plugins</span>
-</span><span id="line-302">        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-289">            <span class="n">channel</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="line-290">
+</span><span id="line-291">            <span class="n">_joined</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
+</span><span id="line-292">
+</span><span id="line-293">
+</span><span id="line-294">    <span class="k">def</span> <span class="nf">__status</span><span class="p">(</span>
+</span><span id="line-295">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-296">        <span class="n">status</span><span class="p">:</span> <span class="n">StatusPluginStates</span><span class="p">,</span>
+</span><span id="line-297">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-298"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-299"><span class="sd">        Update or insert the status of the Robie child instance.</span>
+</span><span id="line-300">
+</span><span id="line-301"><span class="sd">        :param status: One of several possible value for status.</span>
+</span><span id="line-302"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-303">
-</span><span id="line-304">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-305">            <span class="n">params</span><span class="p">,</span>
-</span><span id="line-306">            <span class="n">AutoJoinPluginParams</span><span class="p">)</span>
-</span><span id="line-307">
-</span><span id="line-308">        <span class="k">if</span> <span class="s1">&#39;status&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
-</span><span id="line-309">            <span class="k">return</span> <span class="kc">None</span>
-</span><span id="line-310">
-</span><span id="line-311">        <span class="n">plugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span>
+</span><span id="line-304">        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-305">        <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
+</span><span id="line-306">        <span class="n">plugins</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">plugins</span>
+</span><span id="line-307">        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-308">
+</span><span id="line-309">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-310">            <span class="n">params</span><span class="p">,</span>
+</span><span id="line-311">            <span class="n">AutoJoinPluginParams</span><span class="p">)</span>
 </span><span id="line-312">
-</span><span id="line-313">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-314">            <span class="n">plugin</span><span class="p">,</span> <span class="n">StatusPlugin</span><span class="p">)</span>
+</span><span id="line-313">        <span class="k">if</span> <span class="s1">&#39;status&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
+</span><span id="line-314">            <span class="k">return</span> <span class="kc">None</span>
 </span><span id="line-315">
-</span><span id="line-316">        <span class="p">(</span><span class="n">plugin</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
-</span><span id="line-317">            <span class="n">unique</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-</span><span id="line-318">            <span class="n">group</span><span class="o">=</span><span class="s1">&#39;Management&#39;</span><span class="p">,</span>
-</span><span id="line-319">            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;IRC&#39;</span><span class="p">,</span>
-</span><span id="line-320">            <span class="n">icon</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
-</span><span id="line-321">            <span class="n">state</span><span class="o">=</span><span class="n">status</span><span class="p">))</span></div>
+</span><span id="line-316">        <span class="n">plugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span>
+</span><span id="line-317">
+</span><span id="line-318">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-319">            <span class="n">plugin</span><span class="p">,</span> <span class="n">StatusPlugin</span><span class="p">)</span>
+</span><span id="line-320">
+</span><span id="line-321">        <span class="p">(</span><span class="n">plugin</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+</span><span id="line-322">            <span class="n">unique</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+</span><span id="line-323">            <span class="n">group</span><span class="o">=</span><span class="s1">&#39;Management&#39;</span><span class="p">,</span>
+</span><span id="line-324">            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;IRC&#39;</span><span class="p">,</span>
+</span><span id="line-325">            <span class="n">icon</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
+</span><span id="line-326">            <span class="n">state</span><span class="o">=</span><span class="n">status</span><span class="p">))</span></div>
 
 </span></code></pre></div>
     </div></div>
