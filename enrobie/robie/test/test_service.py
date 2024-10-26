@@ -113,7 +113,7 @@ def test_RobieService(
 
     assert not service.congest
 
-    assert not service.enqueue
+    assert service.enqueue
 
 
 

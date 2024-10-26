@@ -241,7 +241,7 @@ class StatusPlugin(RobiePlugin):
                 since = time.since
 
                 if since < delay:
-                    continue
+                    continue  # NOCVR
 
                 state = _status.state
 

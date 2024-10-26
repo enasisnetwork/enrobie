@@ -136,26 +136,26 @@
       "kind": "plugin",
       "params": {
         "enable": true,
-        "reports": {
-          "dscbot": {
+        "reports": [
+          {
             "client": "dscbot",
             "target": "mocked",
             "states": null,
-            "delay": 15
+            "delay": 0
           },
-          "ircbot": {
+          {
             "client": "ircbot",
             "target": "mocked",
             "states": null,
-            "delay": 15
+            "delay": 0
           },
-          "mtmbot": {
+          {
             "client": "mtmbot",
             "target": "mocked",
             "states": null,
-            "delay": 15
+            "delay": 0
           }
-        },
+        ],
         "command": {
           "irc": "!status",
           "dsc": "!status",
