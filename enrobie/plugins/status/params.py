@@ -149,7 +149,7 @@ class StatusPluginParams(RobiePluginParams, extra='forbid'):
     """
 
     reports: Annotated[
-        Optional[dict[str, StatusPluginReportParams]],
+        Optional[list[StatusPluginReportParams]],
         Field(None,
               description='Where to send status updates',
               min_length=1)]

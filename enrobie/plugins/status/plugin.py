@@ -205,18 +205,20 @@ class StatusPlugin(RobiePlugin):
                     _status, report)
 
 
-        reports = (
-            params.reports
-            .items())
+        reports = params.reports
 
 
-        for unique, report in reports:
+        for report in reports:
 
             name = report.client
+            target = report.target
             delay = report.delay
             states = (
                 report.states
                 or _STATES)
+
+            unique = (
+                f'{name}/{target}')
 
             if name not in clients:
                 continue  # NOCVR
