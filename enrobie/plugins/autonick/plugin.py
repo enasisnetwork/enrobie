@@ -111,6 +111,14 @@ class AutoNickPlugin(RobiePlugin):
             assert isinstance(
                 client, IRCClient)
 
+            connected = (
+                client.client
+                .connected)
+
+            if connected is False:
+                failure.add(True)
+                return None
+
             params = client.params
 
             assert isinstance(

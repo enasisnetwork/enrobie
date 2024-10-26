@@ -125,6 +125,8 @@ class AutoJoinPlugin(RobiePlugin):
 
         def _autojoin() -> None:
 
+            joined[name] = set()
+
             assert isinstance(
                 client, IRCClient)
 
@@ -204,6 +206,14 @@ class AutoJoinPlugin(RobiePlugin):
 
             assert isinstance(
                 client, IRCClient)
+
+            connected = (
+                client.client
+                .connected)
+
+            if connected is False:
+                failure.add(True)
+                return None
 
             _should = should[name]
             _joined = joined[name]

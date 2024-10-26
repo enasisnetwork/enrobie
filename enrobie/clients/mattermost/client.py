@@ -7,6 +7,7 @@ is permitted, for more information consult the project license file.
 
 
 
+from threading import Event
 from threading import Thread
 from threading import enumerate as thread_enumerate
 from time import sleep as block_sleep
@@ -14,6 +15,8 @@ from typing import Any
 from typing import Literal
 from typing import Optional
 from typing import TYPE_CHECKING
+
+from encommon.types import NCNone
 
 from enconnect.mattermost import Client
 from enconnect.mattermost import ClientEvent
@@ -61,8 +64,6 @@ class MTMClient(RobieClient):
             self.__debugger)
 
         self.__client = client
-
-        self.__status('pending')
 
 
     def validate(
@@ -123,6 +124,8 @@ class MTMClient(RobieClient):
 
         delay = params.delay
 
+        self.__status('pending')
+
 
         def _put_mqueue() -> None:
 
@@ -170,9 +173,9 @@ class MTMClient(RobieClient):
         def _operate() -> None:
 
             try:
+
                 client.operate()
 
-            except ConnectionError:
                 self.__status('pending')
 
             except Exception as reason:
@@ -185,6 +188,9 @@ class MTMClient(RobieClient):
 
                 self.__status('failure')
 
+            finally:
+                pending.set()
+
 
         def _routine() -> None:
 
@@ -195,7 +201,7 @@ class MTMClient(RobieClient):
                     name=self,
                     status='connect')
 
-                self.__status('normal')
+                pending.set()
 
                 _operate()
 
@@ -205,6 +211,9 @@ class MTMClient(RobieClient):
                     status='severed')
 
                 block_sleep(delay)
+
+
+        pending = Event()
 
 
         name = (
@@ -225,7 +234,21 @@ class MTMClient(RobieClient):
         daerht.start()
 
 
+        def _connected() -> bool:
+
+            return all([
+                client.connected,
+                client.nickname])
+
+
         while _continue():
+
+            if (pending.is_set()
+                    and _connected()):
+
+                self.__status('normal')
+
+                pending.clear()
 
             if not cqueue.empty:
                 _get_cqueue()
@@ -425,7 +448,7 @@ class MTMClient(RobieClient):
             params, MTMClientParams)
 
         if 'status' not in plugins:
-            return None
+            return NCNone
 
         plugin = plugins['status']
 

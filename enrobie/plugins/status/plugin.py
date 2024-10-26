@@ -9,6 +9,7 @@ is permitted, for more information consult the project license file.
 
 from typing import Optional
 from typing import TYPE_CHECKING
+from typing import get_args
 
 from encommon.times import Time
 from encommon.types import NCNone
@@ -30,6 +31,11 @@ if TYPE_CHECKING:
 
 
 
+_STATES = list(
+    get_args(StatusPluginStates))
+
+
+
 class StatusPlugin(RobiePlugin):
     """
     Integrate with the Robie routine and perform operations.
@@ -39,7 +45,7 @@ class StatusPlugin(RobiePlugin):
     """
 
     __status: dict[str, StatusPluginItem]
-    __report: dict[str, StatusPluginItem]
+    __stated: dict[str, dict[str, str]]
 
 
     def __post__(
@@ -50,7 +56,7 @@ class StatusPlugin(RobiePlugin):
         """
 
         self.__status = {}
-        self.__report = {}
+        self.__stated = {}
 
 
     def validate(
@@ -161,72 +167,97 @@ class StatusPlugin(RobiePlugin):
         :param thread: Child class instance for Chatting Robie.
         """
 
+        status = self.__status
+        stated = self.__stated
         robie = self.robie
+        params = self.params
         childs = robie.childs
         clients = childs.clients
         member = thread.member
         cqueue = member.cqueue
-        params = self.params
-        status = self.__status
-        report = self.__report
 
         assert isinstance(
             params,
             StatusPluginParams)
 
-        reports = params.reports
-
-        if reports is None:
+        if not params.reports:
             return NCNone
 
 
-        items = status.items()
+        def _send_report() -> None:
 
-        for unique, _status in items:
+            if family == 'discord':
+                reportdsc(
+                    self, client,
+                    cqueue,
+                    _status, report)
 
-            _report = (
-                report.get(unique))
+            if family == 'irc':
+                reportirc(
+                    self, client,
+                    cqueue,
+                    _status, report)
 
-            if _report == _status:
-                continue
+            if family == 'mattermost':
+                reportmtm(
+                    self, client,
+                    cqueue,
+                    _status, report)
 
-            report[unique] = _status
 
-            state = _status.state
+        reports = params.reports
 
-            for item in reports:
 
-                name = item.client
-                states = item.states
+        for report in reports:
 
-                if (states is not None
-                        and state not in states):
+            name = report.client
+            target = report.target
+            delay = report.delay
+            states = (
+                report.states
+                or _STATES)
+
+            unique = (
+                f'{name}/{target}')
+
+            if name not in clients:
+                continue  # NOCVR
+
+            client = clients[name]
+
+            family = client.family
+
+            if unique not in stated:
+                stated[unique] = {}
+
+            _stated = stated[unique]
+
+
+            items = status.items()
+
+            for _unique, _status in items:
+
+                time = _status.time
+                since = time.since
+
+                if since < delay:
                     continue  # NOCVR
 
-                if name not in clients:
+                state = _status.state
+
+                _state = (
+                    _stated.get(_unique))
+
+                if state == _state:
+                    continue
+
+                _stated[_unique] = state
+
+
+                if state not in states:
                     continue  # NOCVR
 
-                client = clients[name]
-
-                family = client.family
-
-                if family == 'discord':
-                    reportdsc(
-                        self, client,
-                        cqueue,
-                        _status, item)
-
-                if family == 'irc':
-                    reportirc(
-                        self, client,
-                        cqueue,
-                        _status, item)
-
-                if family == 'mattermost':
-                    reportmtm(
-                        self, client,
-                        cqueue,
-                        _status, item)
+                _send_report()
 
 
     def update(

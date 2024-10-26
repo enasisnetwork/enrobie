@@ -33,13 +33,14 @@ class DSCClientParams(RobieClientParams, extra='forbid'):
 
     delay: Annotated[
         int,
-        Field(2,
-              description='Period to wait for reconnect')]
+        Field(15,
+              description='Period to wait for reconnect',
+              ge=1, le=300)]
 
     status: Annotated[
         StatusPluginIconParams,
         Field(default_factory=StatusPluginIconParams,
-              description='Icon used per the chat platform')]
+              description='Icon used per chat platform')]
 
 
     def __init__(

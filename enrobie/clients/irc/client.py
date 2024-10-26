@@ -7,6 +7,7 @@ is permitted, for more information consult the project license file.
 
 
 
+from threading import Event
 from threading import Thread
 from threading import enumerate as thread_enumerate
 from time import sleep as block_sleep
@@ -61,8 +62,6 @@ class IRCClient(RobieClient):
             self.__debugger)
 
         self.__client = client
-
-        self.__status('pending')
 
 
     def validate(
@@ -123,6 +122,8 @@ class IRCClient(RobieClient):
 
         delay = params.delay
 
+        self.__status('pending')
+
 
         def _put_mqueue() -> None:
 
@@ -169,10 +170,13 @@ class IRCClient(RobieClient):
         def _operate() -> None:
 
             try:
+
                 client.operate()
 
-            except ConnectionError:
                 self.__status('pending')
+
+            except ConnectionError:
+                self.__status('failure')
 
             except Exception as reason:
 
@@ -184,6 +188,9 @@ class IRCClient(RobieClient):
 
                 self.__status('failure')
 
+            finally:
+                pending.set()
+
 
         def _routine() -> None:
 
@@ -194,7 +201,7 @@ class IRCClient(RobieClient):
                     name=self,
                     status='connect')
 
-                self.__status('normal')
+                pending.set()
 
                 _operate()
 
@@ -204,6 +211,9 @@ class IRCClient(RobieClient):
                     status='severed')
 
                 block_sleep(delay)
+
+
+        pending = Event()
 
 
         name = (
@@ -224,7 +234,21 @@ class IRCClient(RobieClient):
         daerht.start()
 
 
+        def _connected() -> bool:
+
+            return all([
+                client.connected,
+                client.nickname])
+
+
         while _continue():
+
+            if (pending.is_set()
+                    and _connected()):
+
+                self.__status('normal')
+
+                pending.clear()
 
             if not cqueue.empty:
                 _get_cqueue()
@@ -401,7 +425,7 @@ class IRCClient(RobieClient):
             params, IRCClientParams)
 
         if 'status' not in plugins:
-            return None
+            return NCNone
 
         plugin = plugins['status']
 
