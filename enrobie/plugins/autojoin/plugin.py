@@ -194,11 +194,6 @@ class AutoJoinPlugin(RobiePlugin):
 
         failure: set[bool] = set()
 
-        self.__status(
-            'failure'
-            if joined != should
-            else 'normal')
-
 
         def _autojoin() -> None:
 
