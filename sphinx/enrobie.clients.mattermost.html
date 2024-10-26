@@ -395,148 +395,150 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-14"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters for the base client"</span>
 </span><span id="line-15"><span class="w">      </span><span class="p">},</span>
 </span><span id="line-16"><span class="w">      </span><span class="nt">"delay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-17"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="line-17"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
 </span><span id="line-18"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Period to wait for reconnect"</span><span class="p">,</span>
-</span><span id="line-19"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delay"</span><span class="p">,</span>
-</span><span id="line-20"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-21"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-22"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-23"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-24"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per the chat platform"</span>
-</span><span id="line-25"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-26"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-27"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-28"><span class="w">      </span><span class="nt">"ClientParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-29"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-30"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the class configuration parameters."</span><span class="p">,</span>
-</span><span id="line-31"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-32"><span class="w">            </span><span class="nt">"server"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-33"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server address for connection"</span><span class="p">,</span>
-</span><span id="line-34"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-35"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server"</span><span class="p">,</span>
-</span><span id="line-36"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-37"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-38"><span class="w">            </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-39"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">443</span><span class="p">,</span>
-</span><span id="line-40"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server address for connection"</span><span class="p">,</span>
-</span><span id="line-41"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">65535</span><span class="p">,</span>
-</span><span id="line-42"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-43"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Port"</span><span class="p">,</span>
-</span><span id="line-44"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-45"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-46"><span class="w">            </span><span class="nt">"token"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-47"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameter for the integration"</span><span class="p">,</span>
-</span><span id="line-48"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-49"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token"</span><span class="p">,</span>
-</span><span id="line-50"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-51"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-52"><span class="w">            </span><span class="nt">"teamid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-53"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameter for the integration"</span><span class="p">,</span>
-</span><span id="line-54"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-55"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Teamid"</span><span class="p">,</span>
-</span><span id="line-56"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-57"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-58"><span class="w">            </span><span class="nt">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-59"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
-</span><span id="line-60"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout connecting to server"</span><span class="p">,</span>
-</span><span id="line-61"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
-</span><span id="line-62"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-63"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout"</span><span class="p">,</span>
-</span><span id="line-64"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-65"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-66"><span class="w">            </span><span class="nt">"ssl_verify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-67"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="line-68"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
-</span><span id="line-69"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Verify"</span><span class="p">,</span>
-</span><span id="line-70"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-71"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-72"><span class="w">            </span><span class="nt">"ssl_capem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-73"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-74"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-75"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-76"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-77"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-78"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-79"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-80"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-81"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-82"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-83"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
-</span><span id="line-84"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Capem"</span>
-</span><span id="line-85"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-86"><span class="w">            </span><span class="nt">"queue_size"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-87"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
-</span><span id="line-88"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maximum size for queued events"</span><span class="p">,</span>
-</span><span id="line-89"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span>
-</span><span id="line-90"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
-</span><span id="line-91"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Queue Size"</span><span class="p">,</span>
-</span><span id="line-92"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-93"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-94"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-95"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-96"><span class="w">            </span><span class="s2">"server"</span><span class="p">,</span>
-</span><span id="line-97"><span class="w">            </span><span class="s2">"token"</span><span class="p">,</span>
-</span><span id="line-98"><span class="w">            </span><span class="s2">"teamid"</span>
-</span><span id="line-99"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-100"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ClientParams"</span><span class="p">,</span>
-</span><span id="line-101"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-102"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-103"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-104"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-105"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
-</span><span id="line-106"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-107"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-108"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-109"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-110"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-111"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-112"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-113"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-114"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-115"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-116"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-117"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-118"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-119"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
-</span><span id="line-120"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-121"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-122"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-123"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-124"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-125"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-126"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-127"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-128"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-129"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-130"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-131"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-132"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-133"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
-</span><span id="line-134"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-135"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-136"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-137"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-138"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-139"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-140"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-141"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-142"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-143"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-144"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-145"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-146"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-147"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
-</span><span id="line-148"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-149"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-150"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-151"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-152"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-153"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-154"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-155"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-156"><span class="w">      </span><span class="s2">"client"</span>
-</span><span id="line-157"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-158"><span class="p">}</span>
+</span><span id="line-19"><span class="w">         </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+</span><span id="line-20"><span class="w">         </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-21"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delay"</span><span class="p">,</span>
+</span><span id="line-22"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-23"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-24"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-25"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-26"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
+</span><span id="line-27"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-28"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-29"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-30"><span class="w">      </span><span class="nt">"ClientParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-31"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-32"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the class configuration parameters."</span><span class="p">,</span>
+</span><span id="line-33"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-34"><span class="w">            </span><span class="nt">"server"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-35"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server address for connection"</span><span class="p">,</span>
+</span><span id="line-36"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-37"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server"</span><span class="p">,</span>
+</span><span id="line-38"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-39"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-40"><span class="w">            </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-41"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">443</span><span class="p">,</span>
+</span><span id="line-42"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server address for connection"</span><span class="p">,</span>
+</span><span id="line-43"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">65535</span><span class="p">,</span>
+</span><span id="line-44"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-45"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Port"</span><span class="p">,</span>
+</span><span id="line-46"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-47"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-48"><span class="w">            </span><span class="nt">"token"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-49"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameter for the integration"</span><span class="p">,</span>
+</span><span id="line-50"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-51"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token"</span><span class="p">,</span>
+</span><span id="line-52"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-53"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-54"><span class="w">            </span><span class="nt">"teamid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-55"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameter for the integration"</span><span class="p">,</span>
+</span><span id="line-56"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-57"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Teamid"</span><span class="p">,</span>
+</span><span id="line-58"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-59"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-60"><span class="w">            </span><span class="nt">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-61"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+</span><span id="line-62"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout connecting to server"</span><span class="p">,</span>
+</span><span id="line-63"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+</span><span id="line-64"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-65"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout"</span><span class="p">,</span>
+</span><span id="line-66"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-67"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-68"><span class="w">            </span><span class="nt">"ssl_verify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-69"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="line-70"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
+</span><span id="line-71"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Verify"</span><span class="p">,</span>
+</span><span id="line-72"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-73"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-74"><span class="w">            </span><span class="nt">"ssl_capem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-75"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-76"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-77"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-78"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-79"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-80"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-81"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-82"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-83"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-84"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-85"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
+</span><span id="line-86"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Capem"</span>
+</span><span id="line-87"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-88"><span class="w">            </span><span class="nt">"queue_size"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-89"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+</span><span id="line-90"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maximum size for queued events"</span><span class="p">,</span>
+</span><span id="line-91"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span>
+</span><span id="line-92"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+</span><span id="line-93"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Queue Size"</span><span class="p">,</span>
+</span><span id="line-94"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-95"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-96"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-97"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-98"><span class="w">            </span><span class="s2">"server"</span><span class="p">,</span>
+</span><span id="line-99"><span class="w">            </span><span class="s2">"token"</span><span class="p">,</span>
+</span><span id="line-100"><span class="w">            </span><span class="s2">"teamid"</span>
+</span><span id="line-101"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-102"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ClientParams"</span><span class="p">,</span>
+</span><span id="line-103"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-104"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-105"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-106"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-107"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
+</span><span id="line-108"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-109"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-110"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-111"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-112"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-113"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-114"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-115"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-116"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-117"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-118"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-119"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-120"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-121"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
+</span><span id="line-122"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-123"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-124"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-125"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-126"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-127"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-128"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-129"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-130"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-131"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-132"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-133"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-134"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-135"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-136"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-137"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-138"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-139"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-140"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-141"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-142"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-143"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-144"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-145"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-146"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-147"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-148"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-149"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
+</span><span id="line-150"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-151"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-152"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-153"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-154"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-155"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-156"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-157"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-158"><span class="w">      </span><span class="s2">"client"</span>
+</span><span id="line-159"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-160"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -548,9 +550,9 @@ is permitted, for more information consult the project license file.</p>
 <dt class="field-even">Fields<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><a class="reference internal" href="#enrobie.clients.mattermost.params.MTMClientParams.client" title="enrobie.clients.mattermost.params.MTMClientParams.client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client</span> <span class="pre">(Annotated[enconnect.mattermost.params.ClientParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=True,</span> <span class="pre">description='Parameters</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">base</span> <span class="pre">client')])</span></code></a></p></li>
-<li><p><a class="reference internal" href="#enrobie.clients.mattermost.params.MTMClientParams.delay" title="enrobie.clients.mattermost.params.MTMClientParams.delay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delay</span> <span class="pre">(Annotated[int,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=2,</span> <span class="pre">description='Period</span> <span class="pre">to</span> <span class="pre">wait</span> <span class="pre">for</span> <span class="pre">reconnect')])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.clients.mattermost.params.MTMClientParams.delay" title="enrobie.clients.mattermost.params.MTMClientParams.delay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delay</span> <span class="pre">(Annotated[int,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=15,</span> <span class="pre">description='Period</span> <span class="pre">to</span> <span class="pre">wait</span> <span class="pre">for</span> <span class="pre">reconnect',</span> <span class="pre">metadata=[Ge(ge=1),</span> <span class="pre">Le(le=300)])])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.clients.mattermost.params.MTMClientParams.enable" title="enrobie.clients.mattermost.params.MTMClientParams.enable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable</span> <span class="pre">(Annotated[bool,</span> <span class="pre">Field(False,</span> <span class="pre">description='Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled')])</span></code></a></p></li>
-<li><p><a class="reference internal" href="#enrobie.clients.mattermost.params.MTMClientParams.status" title="enrobie.clients.mattermost.params.MTMClientParams.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span> <span class="pre">(Annotated[enrobie.plugins.status.params.StatusPluginIconParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=StatusPluginIconParams,</span> <span class="pre">description='Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">the</span> <span class="pre">chat</span> <span class="pre">platform')])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.clients.mattermost.params.MTMClientParams.status" title="enrobie.clients.mattermost.params.MTMClientParams.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span> <span class="pre">(Annotated[enrobie.plugins.status.params.StatusPluginIconParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=StatusPluginIconParams,</span> <span class="pre">description='Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform')])</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -561,8 +563,16 @@ is permitted, for more information consult the project license file.</p>
 </dd></dl>
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.clients.mattermost.params.MTMClientParams.delay">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delay</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Period</span> <span class="pre">to</span> <span class="pre">wait</span> <span class="pre">for</span> <span class="pre">reconnect'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#enrobie.clients.mattermost.params.MTMClientParams.delay" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.clients.mattermost.params.MTMClientParams.delay'">¶</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delay</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">15</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Period</span> <span class="pre">to</span> <span class="pre">wait</span> <span class="pre">for</span> <span class="pre">reconnect'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Ge</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">ge</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Le</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">le</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">300</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#enrobie.clients.mattermost.params.MTMClientParams.delay" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.clients.mattermost.params.MTMClientParams.delay'">¶</a></dt>
 <dd><p>Period to wait for reconnect</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ge</strong> = 1</p></li>
+<li><p><strong>le</strong> = 300</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.clients.mattermost.params.MTMClientParams.enable">
@@ -571,8 +581,8 @@ is permitted, for more information consult the project license file.</p>
 </dd></dl>
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.clients.mattermost.params.MTMClientParams.status">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.plugins.status.html#enrobie.plugins.status.params.StatusPluginIconParams" title="enrobie.plugins.status.params.StatusPluginIconParams"><span class="pre">StatusPluginIconParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default_factory</span></span><span class="o"><span class="pre">=</span></span><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginIconParams" title="enrobie.plugins.StatusPluginIconParams"><span class="pre">StatusPluginIconParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">the</span> <span class="pre">chat</span> <span class="pre">platform'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Optional]</span></em><a class="headerlink" href="#enrobie.clients.mattermost.params.MTMClientParams.status" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.clients.mattermost.params.MTMClientParams.status'">¶</a></dt>
-<dd><p>Icon used per the chat platform</p>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.plugins.status.html#enrobie.plugins.status.params.StatusPluginIconParams" title="enrobie.plugins.status.params.StatusPluginIconParams"><span class="pre">StatusPluginIconParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default_factory</span></span><span class="o"><span class="pre">=</span></span><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginIconParams" title="enrobie.plugins.StatusPluginIconParams"><span class="pre">StatusPluginIconParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Optional]</span></em><a class="headerlink" href="#enrobie.clients.mattermost.params.MTMClientParams.status" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.clients.mattermost.params.MTMClientParams.status'">¶</a></dt>
+<dd><p>Icon used per chat platform</p>
 </dd></dl>
 </dd></dl>
 </section>
@@ -747,148 +757,150 @@ introduce required parameters outside of the parent.</p>
 </span><span id="line-14"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters for the base client"</span>
 </span><span id="line-15"><span class="w">      </span><span class="p">},</span>
 </span><span id="line-16"><span class="w">      </span><span class="nt">"delay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-17"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="line-17"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
 </span><span id="line-18"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Period to wait for reconnect"</span><span class="p">,</span>
-</span><span id="line-19"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delay"</span><span class="p">,</span>
-</span><span id="line-20"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-21"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-22"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-23"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-24"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per the chat platform"</span>
-</span><span id="line-25"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-26"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-27"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-28"><span class="w">      </span><span class="nt">"ClientParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-29"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-30"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the class configuration parameters."</span><span class="p">,</span>
-</span><span id="line-31"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-32"><span class="w">            </span><span class="nt">"server"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-33"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server address for connection"</span><span class="p">,</span>
-</span><span id="line-34"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-35"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server"</span><span class="p">,</span>
-</span><span id="line-36"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-37"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-38"><span class="w">            </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-39"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">443</span><span class="p">,</span>
-</span><span id="line-40"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server address for connection"</span><span class="p">,</span>
-</span><span id="line-41"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">65535</span><span class="p">,</span>
-</span><span id="line-42"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-43"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Port"</span><span class="p">,</span>
-</span><span id="line-44"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-45"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-46"><span class="w">            </span><span class="nt">"token"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-47"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameter for the integration"</span><span class="p">,</span>
-</span><span id="line-48"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-49"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token"</span><span class="p">,</span>
-</span><span id="line-50"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-51"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-52"><span class="w">            </span><span class="nt">"teamid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-53"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameter for the integration"</span><span class="p">,</span>
-</span><span id="line-54"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-55"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Teamid"</span><span class="p">,</span>
-</span><span id="line-56"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-57"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-58"><span class="w">            </span><span class="nt">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-59"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
-</span><span id="line-60"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout connecting to server"</span><span class="p">,</span>
-</span><span id="line-61"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
-</span><span id="line-62"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-63"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout"</span><span class="p">,</span>
-</span><span id="line-64"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-65"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-66"><span class="w">            </span><span class="nt">"ssl_verify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-67"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="line-68"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
-</span><span id="line-69"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Verify"</span><span class="p">,</span>
-</span><span id="line-70"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-71"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-72"><span class="w">            </span><span class="nt">"ssl_capem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-73"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-74"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-75"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-76"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-77"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-78"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-79"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-80"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-81"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-82"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-83"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
-</span><span id="line-84"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Capem"</span>
-</span><span id="line-85"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-86"><span class="w">            </span><span class="nt">"queue_size"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-87"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
-</span><span id="line-88"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maximum size for queued events"</span><span class="p">,</span>
-</span><span id="line-89"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span>
-</span><span id="line-90"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
-</span><span id="line-91"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Queue Size"</span><span class="p">,</span>
-</span><span id="line-92"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-93"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-94"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-95"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-96"><span class="w">            </span><span class="s2">"server"</span><span class="p">,</span>
-</span><span id="line-97"><span class="w">            </span><span class="s2">"token"</span><span class="p">,</span>
-</span><span id="line-98"><span class="w">            </span><span class="s2">"teamid"</span>
-</span><span id="line-99"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-100"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ClientParams"</span><span class="p">,</span>
-</span><span id="line-101"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-102"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-103"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-104"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-105"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
-</span><span id="line-106"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-107"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-108"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-109"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-110"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-111"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-112"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-113"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-114"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-115"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-116"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-117"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-118"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-119"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
-</span><span id="line-120"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-121"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-122"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-123"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-124"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-125"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-126"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-127"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-128"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-129"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-130"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-131"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-132"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-133"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
-</span><span id="line-134"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-135"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-136"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-137"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-138"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-139"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-140"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-141"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-142"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-143"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-144"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-145"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-146"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-147"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
-</span><span id="line-148"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-149"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-150"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-151"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-152"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-153"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-154"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-155"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-156"><span class="w">      </span><span class="s2">"client"</span>
-</span><span id="line-157"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-158"><span class="p">}</span>
+</span><span id="line-19"><span class="w">         </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+</span><span id="line-20"><span class="w">         </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-21"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delay"</span><span class="p">,</span>
+</span><span id="line-22"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-23"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-24"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-25"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-26"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
+</span><span id="line-27"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-28"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-29"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-30"><span class="w">      </span><span class="nt">"ClientParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-31"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-32"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the class configuration parameters."</span><span class="p">,</span>
+</span><span id="line-33"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-34"><span class="w">            </span><span class="nt">"server"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-35"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server address for connection"</span><span class="p">,</span>
+</span><span id="line-36"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-37"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server"</span><span class="p">,</span>
+</span><span id="line-38"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-39"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-40"><span class="w">            </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-41"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">443</span><span class="p">,</span>
+</span><span id="line-42"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server address for connection"</span><span class="p">,</span>
+</span><span id="line-43"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">65535</span><span class="p">,</span>
+</span><span id="line-44"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-45"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Port"</span><span class="p">,</span>
+</span><span id="line-46"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-47"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-48"><span class="w">            </span><span class="nt">"token"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-49"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameter for the integration"</span><span class="p">,</span>
+</span><span id="line-50"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-51"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token"</span><span class="p">,</span>
+</span><span id="line-52"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-53"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-54"><span class="w">            </span><span class="nt">"teamid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-55"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameter for the integration"</span><span class="p">,</span>
+</span><span id="line-56"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-57"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Teamid"</span><span class="p">,</span>
+</span><span id="line-58"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-59"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-60"><span class="w">            </span><span class="nt">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-61"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+</span><span id="line-62"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout connecting to server"</span><span class="p">,</span>
+</span><span id="line-63"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+</span><span id="line-64"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-65"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout"</span><span class="p">,</span>
+</span><span id="line-66"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-67"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-68"><span class="w">            </span><span class="nt">"ssl_verify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-69"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="line-70"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
+</span><span id="line-71"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Verify"</span><span class="p">,</span>
+</span><span id="line-72"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-73"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-74"><span class="w">            </span><span class="nt">"ssl_capem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-75"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-76"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-77"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-78"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-79"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-80"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-81"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-82"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-83"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-84"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-85"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify the ceritifcate valid"</span><span class="p">,</span>
+</span><span id="line-86"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ssl Capem"</span>
+</span><span id="line-87"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-88"><span class="w">            </span><span class="nt">"queue_size"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-89"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+</span><span id="line-90"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maximum size for queued events"</span><span class="p">,</span>
+</span><span id="line-91"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span>
+</span><span id="line-92"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+</span><span id="line-93"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Queue Size"</span><span class="p">,</span>
+</span><span id="line-94"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-95"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-96"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-97"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-98"><span class="w">            </span><span class="s2">"server"</span><span class="p">,</span>
+</span><span id="line-99"><span class="w">            </span><span class="s2">"token"</span><span class="p">,</span>
+</span><span id="line-100"><span class="w">            </span><span class="s2">"teamid"</span>
+</span><span id="line-101"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-102"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ClientParams"</span><span class="p">,</span>
+</span><span id="line-103"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-104"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-105"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-106"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-107"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
+</span><span id="line-108"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-109"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-110"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-111"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-112"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-113"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-114"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-115"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-116"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-117"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-118"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-119"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-120"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-121"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
+</span><span id="line-122"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-123"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-124"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-125"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-126"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-127"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-128"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-129"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-130"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-131"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-132"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-133"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-134"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-135"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-136"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-137"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-138"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-139"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-140"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-141"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-142"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-143"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-144"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-145"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-146"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-147"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-148"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-149"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
+</span><span id="line-150"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-151"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-152"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-153"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-154"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-155"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-156"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-157"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-158"><span class="w">      </span><span class="s2">"client"</span>
+</span><span id="line-159"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-160"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -900,9 +912,9 @@ introduce required parameters outside of the parent.</p>
 <dt class="field-even">Fields<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><a class="reference internal" href="#enrobie.clients.mattermost.params.MTMClientParams.client" title="enrobie.clients.mattermost.params.MTMClientParams.client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client</span> <span class="pre">(Annotated[enconnect.mattermost.params.ClientParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=True,</span> <span class="pre">description='Parameters</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">base</span> <span class="pre">client')])</span></code></a></p></li>
-<li><p><a class="reference internal" href="#enrobie.clients.mattermost.params.MTMClientParams.delay" title="enrobie.clients.mattermost.params.MTMClientParams.delay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delay</span> <span class="pre">(Annotated[int,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=2,</span> <span class="pre">description='Period</span> <span class="pre">to</span> <span class="pre">wait</span> <span class="pre">for</span> <span class="pre">reconnect')])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.clients.mattermost.params.MTMClientParams.delay" title="enrobie.clients.mattermost.params.MTMClientParams.delay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delay</span> <span class="pre">(Annotated[int,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=15,</span> <span class="pre">description='Period</span> <span class="pre">to</span> <span class="pre">wait</span> <span class="pre">for</span> <span class="pre">reconnect',</span> <span class="pre">metadata=[Ge(ge=1),</span> <span class="pre">Le(le=300)])])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.clients.mattermost.params.MTMClientParams.enable" title="enrobie.clients.mattermost.params.MTMClientParams.enable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable</span> <span class="pre">(Annotated[bool,</span> <span class="pre">Field(False,</span> <span class="pre">description='Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled')])</span></code></a></p></li>
-<li><p><a class="reference internal" href="#enrobie.clients.mattermost.params.MTMClientParams.status" title="enrobie.clients.mattermost.params.MTMClientParams.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span> <span class="pre">(Annotated[enrobie.plugins.status.params.StatusPluginIconParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=StatusPluginIconParams,</span> <span class="pre">description='Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">the</span> <span class="pre">chat</span> <span class="pre">platform')])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.clients.mattermost.params.MTMClientParams.status" title="enrobie.clients.mattermost.params.MTMClientParams.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span> <span class="pre">(Annotated[enrobie.plugins.status.params.StatusPluginIconParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=StatusPluginIconParams,</span> <span class="pre">description='Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform')])</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -913,8 +925,16 @@ introduce required parameters outside of the parent.</p>
 </dd></dl>
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.clients.mattermost.MTMClientParams.delay">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delay</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Period</span> <span class="pre">to</span> <span class="pre">wait</span> <span class="pre">for</span> <span class="pre">reconnect'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#enrobie.clients.mattermost.MTMClientParams.delay" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.clients.mattermost.MTMClientParams.delay'">¶</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delay</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">15</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Period</span> <span class="pre">to</span> <span class="pre">wait</span> <span class="pre">for</span> <span class="pre">reconnect'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Ge</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">ge</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Le</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">le</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">300</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#enrobie.clients.mattermost.MTMClientParams.delay" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.clients.mattermost.MTMClientParams.delay'">¶</a></dt>
 <dd><p>Period to wait for reconnect</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ge</strong> = 1</p></li>
+<li><p><strong>le</strong> = 300</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.clients.mattermost.MTMClientParams.enable">
@@ -923,8 +943,8 @@ introduce required parameters outside of the parent.</p>
 </dd></dl>
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.clients.mattermost.MTMClientParams.status">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.plugins.status.html#enrobie.plugins.status.params.StatusPluginIconParams" title="enrobie.plugins.status.params.StatusPluginIconParams"><span class="pre">StatusPluginIconParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default_factory</span></span><span class="o"><span class="pre">=</span></span><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginIconParams" title="enrobie.plugins.StatusPluginIconParams"><span class="pre">StatusPluginIconParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">the</span> <span class="pre">chat</span> <span class="pre">platform'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Optional]</span></em><a class="headerlink" href="#enrobie.clients.mattermost.MTMClientParams.status" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.clients.mattermost.MTMClientParams.status'">¶</a></dt>
-<dd><p>Icon used per the chat platform</p>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.plugins.status.html#enrobie.plugins.status.params.StatusPluginIconParams" title="enrobie.plugins.status.params.StatusPluginIconParams"><span class="pre">StatusPluginIconParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default_factory</span></span><span class="o"><span class="pre">=</span></span><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginIconParams" title="enrobie.plugins.StatusPluginIconParams"><span class="pre">StatusPluginIconParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Optional]</span></em><a class="headerlink" href="#enrobie.clients.mattermost.MTMClientParams.status" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.clients.mattermost.MTMClientParams.status'">¶</a></dt>
+<dd><p>Icon used per chat platform</p>
 </dd></dl>
 </dd></dl>
 </section>

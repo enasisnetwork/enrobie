@@ -738,18 +738,26 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-174"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 </span><span id="line-175"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Which status value are related"</span><span class="p">,</span>
 </span><span id="line-176"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"States"</span>
-</span><span id="line-177"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-178"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-179"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-180"><span class="w">            </span><span class="s2">"client"</span><span class="p">,</span>
-</span><span id="line-181"><span class="w">            </span><span class="s2">"target"</span>
-</span><span id="line-182"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-183"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginReportParams"</span><span class="p">,</span>
-</span><span id="line-184"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-185"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-186"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-187"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-</span><span id="line-188"><span class="p">}</span>
+</span><span id="line-177"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-178"><span class="w">            </span><span class="nt">"delay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-179"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+</span><span id="line-180"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Period between status reports"</span><span class="p">,</span>
+</span><span id="line-181"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">864000</span><span class="p">,</span>
+</span><span id="line-182"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="line-183"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delay"</span><span class="p">,</span>
+</span><span id="line-184"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-185"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-186"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-187"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-188"><span class="w">            </span><span class="s2">"client"</span><span class="p">,</span>
+</span><span id="line-189"><span class="w">            </span><span class="s2">"target"</span>
+</span><span id="line-190"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-191"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginReportParams"</span><span class="p">,</span>
+</span><span id="line-192"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-193"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-194"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-195"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="line-196"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -840,14 +848,22 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-37"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 </span><span id="line-38"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Which status value are related"</span><span class="p">,</span>
 </span><span id="line-39"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"States"</span>
-</span><span id="line-40"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-41"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-42"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-43"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-44"><span class="w">      </span><span class="s2">"client"</span><span class="p">,</span>
-</span><span id="line-45"><span class="w">      </span><span class="s2">"target"</span>
-</span><span id="line-46"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-47"><span class="p">}</span>
+</span><span id="line-40"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-41"><span class="w">      </span><span class="nt">"delay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-42"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+</span><span id="line-43"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Period between status reports"</span><span class="p">,</span>
+</span><span id="line-44"><span class="w">         </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">864000</span><span class="p">,</span>
+</span><span id="line-45"><span class="w">         </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="line-46"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delay"</span><span class="p">,</span>
+</span><span id="line-47"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-48"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-49"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-50"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-51"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-52"><span class="w">      </span><span class="s2">"client"</span><span class="p">,</span>
+</span><span id="line-53"><span class="w">      </span><span class="s2">"target"</span>
+</span><span id="line-54"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-55"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -859,6 +875,7 @@ is permitted, for more information consult the project license file.</p>
 <dt class="field-even">Fields<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginReportParams.client" title="enrobie.plugins.status.params.StatusPluginReportParams.client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client</span> <span class="pre">(str)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginReportParams.delay" title="enrobie.plugins.status.params.StatusPluginReportParams.delay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delay</span> <span class="pre">(int)</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginReportParams.states" title="enrobie.plugins.status.params.StatusPluginReportParams.states"><code class="xref py py-obj docutils literal notranslate"><span class="pre">states</span> <span class="pre">(list[Literal['pending',</span> <span class="pre">'normal',</span> <span class="pre">'failure',</span> <span class="pre">'unknown']]</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.status.params.StatusPluginReportParams.target" title="enrobie.plugins.status.params.StatusPluginReportParams.target"><code class="xref py py-obj docutils literal notranslate"><span class="pre">target</span> <span class="pre">(str)</span></code></a></p></li>
 </ul>
@@ -872,6 +889,19 @@ is permitted, for more information consult the project license file.</p>
 <dt class="field-odd">Constraints<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.status.params.StatusPluginReportParams.delay">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delay</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">15</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Period</span> <span class="pre">between</span> <span class="pre">status</span> <span class="pre">reports'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Ge</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">ge</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Le</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">le</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">864000</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#enrobie.plugins.status.params.StatusPluginReportParams.delay" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.status.params.StatusPluginReportParams.delay'">¶</a></dt>
+<dd><p>Period between status reports</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ge</strong> = 0</p></li>
+<li><p><strong>le</strong> = 864000</p></li>
 </ul>
 </dd>
 </dl>
@@ -1336,18 +1366,26 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-174"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 </span><span id="line-175"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Which status value are related"</span><span class="p">,</span>
 </span><span id="line-176"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"States"</span>
-</span><span id="line-177"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-178"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-179"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-180"><span class="w">            </span><span class="s2">"client"</span><span class="p">,</span>
-</span><span id="line-181"><span class="w">            </span><span class="s2">"target"</span>
-</span><span id="line-182"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-183"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginReportParams"</span><span class="p">,</span>
-</span><span id="line-184"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-185"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-186"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-187"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-</span><span id="line-188"><span class="p">}</span>
+</span><span id="line-177"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-178"><span class="w">            </span><span class="nt">"delay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-179"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+</span><span id="line-180"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Period between status reports"</span><span class="p">,</span>
+</span><span id="line-181"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">864000</span><span class="p">,</span>
+</span><span id="line-182"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="line-183"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delay"</span><span class="p">,</span>
+</span><span id="line-184"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-185"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-186"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-187"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-188"><span class="w">            </span><span class="s2">"client"</span><span class="p">,</span>
+</span><span id="line-189"><span class="w">            </span><span class="s2">"target"</span>
+</span><span id="line-190"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-191"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginReportParams"</span><span class="p">,</span>
+</span><span id="line-192"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-193"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-194"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-195"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="line-196"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -1451,6 +1489,7 @@ is permitted, for more information consult the project license file.</p>
 </li>
 <li><a :data-current="activeSection === '#enrobie.plugins.status.params.StatusPluginReportParams'" class="reference internal" href="#enrobie.plugins.status.params.StatusPluginReportParams"><code class="docutils literal notranslate"><span class="pre">StatusPluginReportParams</span></code></a><ul>
 <li><a :data-current="activeSection === '#enrobie.plugins.status.params.StatusPluginReportParams.client'" class="reference internal" href="#enrobie.plugins.status.params.StatusPluginReportParams.client"><code class="docutils literal notranslate"><span class="pre">StatusPluginReportParams.client</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.status.params.StatusPluginReportParams.delay'" class="reference internal" href="#enrobie.plugins.status.params.StatusPluginReportParams.delay"><code class="docutils literal notranslate"><span class="pre">StatusPluginReportParams.delay</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.status.params.StatusPluginReportParams.states'" class="reference internal" href="#enrobie.plugins.status.params.StatusPluginReportParams.states"><code class="docutils literal notranslate"><span class="pre">StatusPluginReportParams.states</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.status.params.StatusPluginReportParams.target'" class="reference internal" href="#enrobie.plugins.status.params.StatusPluginReportParams.target"><code class="docutils literal notranslate"><span class="pre">StatusPluginReportParams.target</span></code></a></li>
 </ul>
