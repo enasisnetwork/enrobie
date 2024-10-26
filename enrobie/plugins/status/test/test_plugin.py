@@ -113,7 +113,7 @@ def test_StatusPlugin(
         '_RobieChild__name',
         '_RobieChild__params',
         '_StatusPlugin__status',
-        '_StatusPlugin__report']
+        '_StatusPlugin__stated']
 
 
     assert inrepr(

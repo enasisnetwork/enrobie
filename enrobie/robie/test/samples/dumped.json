@@ -34,7 +34,7 @@
           "ssl_capem": null,
           "queue_size": 10000
         },
-        "delay": 2,
+        "delay": 15,
         "status": {
           "irc": "\ud83d\udcac",
           "dsc": "<:discord:mocked>",
@@ -63,7 +63,7 @@
           "ssl_verify": true,
           "queue_size": 10000
         },
-        "delay": 2,
+        "delay": 15,
         "status": {
           "irc": "\ud83d\udcac",
           "dsc": "<:irc:mocked>",
@@ -87,7 +87,7 @@
           "ssl_capem": null,
           "queue_size": 10000
         },
-        "delay": 2,
+        "delay": 15,
         "status": {
           "irc": "\ud83d\udcac",
           "dsc": "<:mattermost:mocked>",
@@ -136,23 +136,26 @@
       "kind": "plugin",
       "params": {
         "enable": true,
-        "reports": [
-          {
+        "reports": {
+          "dscbot": {
             "client": "dscbot",
             "target": "mocked",
-            "states": null
+            "states": null,
+            "delay": 15
           },
-          {
+          "ircbot": {
             "client": "ircbot",
             "target": "mocked",
-            "states": null
+            "states": null,
+            "delay": 15
           },
-          {
+          "mtmbot": {
             "client": "mtmbot",
             "target": "mocked",
-            "states": null
+            "states": null,
+            "delay": 15
           }
-        ],
+        },
         "command": {
           "irc": "!status",
           "dsc": "!status",

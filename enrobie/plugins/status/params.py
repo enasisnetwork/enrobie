@@ -43,6 +43,12 @@ class StatusPluginReportParams(RobieParamsModel, extra='forbid'):
               description='Which status value are related',
               min_length=1)]
 
+    delay: Annotated[
+        int,
+        Field(15,
+              description='Period between status reports',
+              ge=0, le=86400 * 10)]
+
 
     def __init__(
         # NOCVR
@@ -143,7 +149,7 @@ class StatusPluginParams(RobiePluginParams, extra='forbid'):
     """
 
     reports: Annotated[
-        Optional[list[StatusPluginReportParams]],
+        Optional[dict[str, StatusPluginReportParams]],
         Field(None,
               description='Where to send status updates',
               min_length=1)]
