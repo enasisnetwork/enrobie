@@ -96,8 +96,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="enrobie.plugins.autonick.test.html">enrobie.plugins.autonick.test package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="enrobie.plugins.autonick.test.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="enrobie.plugins.autonick.test.html#enrobie-plugins-autonick-test-test-plugin-module">enrobie.plugins.autonick.test.test_plugin module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="enrobie.plugins.autonick.test.html#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.plugins.autonick.test.html#module-enrobie.plugins.autonick.test.test_plugin">enrobie.plugins.autonick.test.test_plugin module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.autonick.test.html#enrobie.plugins.autonick.test.test_plugin.test_AutoNickPlugin"><code class="docutils literal notranslate"><span class="pre">test_AutoNickPlugin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.autonick.test.html#enrobie.plugins.autonick.test.test_plugin.test_AutoNickPlugin_cover"><code class="docutils literal notranslate"><span class="pre">test_AutoNickPlugin_cover()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.plugins.autonick.test.html#module-enrobie.plugins.autonick.test">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -106,14 +110,327 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#submodules'">¶</a></h2>
 </section>
-<section id="enrobie-plugins-autonick-params-module">
-<h2>enrobie.plugins.autonick.params module<a class="headerlink" href="#enrobie-plugins-autonick-params-module" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie-plugins-autonick-params-module'">¶</a></h2>
+<section id="module-enrobie.plugins.autonick.params">
+<span id="enrobie-plugins-autonick-params-module"></span><h2>enrobie.plugins.autonick.params module<a class="headerlink" href="#module-enrobie.plugins.autonick.params" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.plugins.autonick.params'">¶</a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="enrobie.plugins.autonick.params.AutoNickPluginParams">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.autonick.params.</span></span><span class="sig-name descname"><span class="pre">AutoNickPluginParams</span></span><a class="reference internal" href="_modules/enrobie/plugins/autonick/params.html#AutoNickPluginParams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.autonick.params.AutoNickPluginParams" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autonick.params.AutoNickPluginParams'">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.plugin.RobiePluginParams" title="enrobie.robie.params.plugin.RobiePluginParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobiePluginParams</span></code></a></p>
+<p>Process and validate the Robie configuration parameters.</p>
+<p><details class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="p">{</span>
+</span><span id="line-2"><span class="w">   </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AutoNickPluginParams"</span><span class="p">,</span>
+</span><span id="line-3"><span class="w">   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-4"><span class="w">   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span>
+</span><span id="line-5"><span class="w">   </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-6"><span class="w">      </span><span class="nt">"enable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-7"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-8"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Determine whether child enabled"</span><span class="p">,</span>
+</span><span id="line-9"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enable"</span><span class="p">,</span>
+</span><span id="line-10"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-11"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-12"><span class="w">      </span><span class="nt">"clients"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-13"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of clients to enable plugin"</span><span class="p">,</span>
+</span><span id="line-14"><span class="w">         </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-15"><span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-16"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-17"><span class="w">         </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-18"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clients"</span><span class="p">,</span>
+</span><span id="line-19"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
+</span><span id="line-20"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-21"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-22"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-23"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
+</span><span id="line-24"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-25"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-26"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-27"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-28"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-29"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
+</span><span id="line-30"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-31"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-32"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-33"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-34"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-35"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-36"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-37"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-38"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-39"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-40"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-41"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-42"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-43"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
+</span><span id="line-44"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-45"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-46"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-47"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-48"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-49"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-50"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-51"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-52"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-53"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-54"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-55"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-56"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-57"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-58"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-59"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-60"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-61"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-62"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-63"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-64"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-65"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-66"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-67"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-68"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-69"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-70"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-71"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
+</span><span id="line-72"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-73"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-74"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-75"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-76"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-77"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-78"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-79"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-80"><span class="w">      </span><span class="s2">"clients"</span>
+</span><span id="line-81"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-82"><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#enrobie.plugins.autonick.params.AutoNickPluginParams.clients" title="enrobie.plugins.autonick.params.AutoNickPluginParams.clients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clients</span> <span class="pre">(Annotated[list[str],</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=True,</span> <span class="pre">description='List</span> <span class="pre">of</span> <span class="pre">clients</span> <span class="pre">to</span> <span class="pre">enable</span> <span class="pre">plugin',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.autonick.params.AutoNickPluginParams.enable" title="enrobie.plugins.autonick.params.AutoNickPluginParams.enable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable</span> <span class="pre">(Annotated[bool,</span> <span class="pre">Field(False,</span> <span class="pre">description='Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled')])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.autonick.params.AutoNickPluginParams.status" title="enrobie.plugins.autonick.params.AutoNickPluginParams.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span> <span class="pre">(Annotated[enrobie.plugins.status.params.StatusPluginIconParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=StatusPluginIconParams,</span> <span class="pre">description='Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform')])</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.autonick.params.AutoNickPluginParams.clients">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clients</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'List</span> <span class="pre">of</span> <span class="pre">clients</span> <span class="pre">to</span> <span class="pre">enable</span> <span class="pre">plugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.plugins.autonick.params.AutoNickPluginParams.clients" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autonick.params.AutoNickPluginParams.clients'">¶</a></dt>
+<dd><p>List of clients to enable plugin</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.autonick.params.AutoNickPluginParams.enable">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enable</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Field</span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#enrobie.plugins.autonick.params.AutoNickPluginParams.enable" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autonick.params.AutoNickPluginParams.enable'">¶</a></dt>
+<dd><p>Determine whether child enabled</p>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.autonick.params.AutoNickPluginParams.status">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.plugins.status.html#enrobie.plugins.status.params.StatusPluginIconParams" title="enrobie.plugins.status.params.StatusPluginIconParams"><span class="pre">StatusPluginIconParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default_factory</span></span><span class="o"><span class="pre">=</span></span><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginIconParams" title="enrobie.plugins.StatusPluginIconParams"><span class="pre">StatusPluginIconParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Optional]</span></em><a class="headerlink" href="#enrobie.plugins.autonick.params.AutoNickPluginParams.status" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autonick.params.AutoNickPluginParams.status'">¶</a></dt>
+<dd><p>Icon used per chat platform</p>
+</dd></dl>
+</dd></dl>
 </section>
-<section id="enrobie-plugins-autonick-plugin-module">
-<h2>enrobie.plugins.autonick.plugin module<a class="headerlink" href="#enrobie-plugins-autonick-plugin-module" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie-plugins-autonick-plugin-module'">¶</a></h2>
+<section id="module-enrobie.plugins.autonick.plugin">
+<span id="enrobie-plugins-autonick-plugin-module"></span><h2>enrobie.plugins.autonick.plugin module<a class="headerlink" href="#module-enrobie.plugins.autonick.plugin" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.plugins.autonick.plugin'">¶</a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.plugins.autonick.plugin.AutoNickPlugin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.autonick.plugin.</span></span><span class="sig-name descname"><span class="pre">AutoNickPlugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/plugins/autonick/plugin.html#AutoNickPlugin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.autonick.plugin.AutoNickPlugin" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autonick.plugin.AutoNickPlugin'">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin" title="enrobie.robie.childs.plugin.RobiePlugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobiePlugin</span></code></a></p>
+<p>Integrate with the Robie routine and perform operations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This plugin maintains configured nickname on server.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.autonick.plugin.AutoNickPlugin.operate">
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/autonick/plugin.html#AutoNickPlugin.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.autonick.plugin.AutoNickPlugin.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autonick.plugin.AutoNickPlugin.operate'">¶</a></dt>
+<dd><p>Perform the operation related to Homie service threads.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.autonick.plugin.AutoNickPlugin.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/autonick/plugin.html#AutoNickPlugin.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.autonick.plugin.AutoNickPlugin.validate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autonick.plugin.AutoNickPlugin.validate'">¶</a></dt>
+<dd><p>Perform advanced validation on the parameters provided.</p>
+</dd></dl>
+</dd></dl>
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-contents'">¶</a></h2>
+<section id="module-enrobie.plugins.autonick">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-enrobie.plugins.autonick" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.plugins.autonick'">¶</a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.plugins.autonick.AutoNickPlugin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.autonick.</span></span><span class="sig-name descname"><span class="pre">AutoNickPlugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/plugins/autonick/plugin.html#AutoNickPlugin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.autonick.AutoNickPlugin" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autonick.AutoNickPlugin'">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin" title="enrobie.robie.childs.plugin.RobiePlugin"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobiePlugin</span></code></a></p>
+<p>Integrate with the Robie routine and perform operations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This plugin maintains configured nickname on server.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.autonick.AutoNickPlugin.operate">
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/autonick/plugin.html#AutoNickPlugin.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.autonick.AutoNickPlugin.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autonick.AutoNickPlugin.operate'">¶</a></dt>
+<dd><p>Perform the operation related to Homie service threads.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.autonick.AutoNickPlugin.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/autonick/plugin.html#AutoNickPlugin.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.autonick.AutoNickPlugin.validate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autonick.AutoNickPlugin.validate'">¶</a></dt>
+<dd><p>Perform advanced validation on the parameters provided.</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="enrobie.plugins.autonick.AutoNickPluginParams">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.autonick.</span></span><span class="sig-name descname"><span class="pre">AutoNickPluginParams</span></span><a class="reference internal" href="_modules/enrobie/plugins/autonick/params.html#AutoNickPluginParams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.autonick.AutoNickPluginParams" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autonick.AutoNickPluginParams'">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.plugin.RobiePluginParams" title="enrobie.robie.params.plugin.RobiePluginParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobiePluginParams</span></code></a></p>
+<p>Process and validate the Robie configuration parameters.</p>
+<p><details class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="p">{</span>
+</span><span id="line-2"><span class="w">   </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AutoNickPluginParams"</span><span class="p">,</span>
+</span><span id="line-3"><span class="w">   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-4"><span class="w">   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span>
+</span><span id="line-5"><span class="w">   </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-6"><span class="w">      </span><span class="nt">"enable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-7"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-8"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Determine whether child enabled"</span><span class="p">,</span>
+</span><span id="line-9"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enable"</span><span class="p">,</span>
+</span><span id="line-10"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-11"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-12"><span class="w">      </span><span class="nt">"clients"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-13"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of clients to enable plugin"</span><span class="p">,</span>
+</span><span id="line-14"><span class="w">         </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-15"><span class="w">            </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-16"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-17"><span class="w">         </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-18"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clients"</span><span class="p">,</span>
+</span><span id="line-19"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
+</span><span id="line-20"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-21"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-22"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-23"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
+</span><span id="line-24"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-25"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-26"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-27"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-28"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-29"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
+</span><span id="line-30"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-31"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-32"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-33"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-34"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-35"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-36"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-37"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-38"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-39"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-40"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-41"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-42"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-43"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
+</span><span id="line-44"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-45"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-46"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-47"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-48"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-49"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-50"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-51"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-52"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-53"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-54"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-55"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-56"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-57"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-58"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-59"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-60"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-61"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-62"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-63"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-64"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-65"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-66"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-67"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-68"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-69"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-70"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-71"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
+</span><span id="line-72"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-73"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-74"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-75"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-76"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-77"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-78"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-79"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-80"><span class="w">      </span><span class="s2">"clients"</span>
+</span><span id="line-81"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-82"><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#enrobie.plugins.autonick.params.AutoNickPluginParams.clients" title="enrobie.plugins.autonick.params.AutoNickPluginParams.clients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clients</span> <span class="pre">(Annotated[list[str],</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=True,</span> <span class="pre">description='List</span> <span class="pre">of</span> <span class="pre">clients</span> <span class="pre">to</span> <span class="pre">enable</span> <span class="pre">plugin',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.autonick.params.AutoNickPluginParams.enable" title="enrobie.plugins.autonick.params.AutoNickPluginParams.enable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable</span> <span class="pre">(Annotated[bool,</span> <span class="pre">Field(False,</span> <span class="pre">description='Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled')])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.autonick.params.AutoNickPluginParams.status" title="enrobie.plugins.autonick.params.AutoNickPluginParams.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span> <span class="pre">(Annotated[enrobie.plugins.status.params.StatusPluginIconParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=StatusPluginIconParams,</span> <span class="pre">description='Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform')])</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.autonick.AutoNickPluginParams.clients">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clients</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'List</span> <span class="pre">of</span> <span class="pre">clients</span> <span class="pre">to</span> <span class="pre">enable</span> <span class="pre">plugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.plugins.autonick.AutoNickPluginParams.clients" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autonick.AutoNickPluginParams.clients'">¶</a></dt>
+<dd><p>List of clients to enable plugin</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.autonick.AutoNickPluginParams.enable">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enable</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Field</span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#enrobie.plugins.autonick.AutoNickPluginParams.enable" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autonick.AutoNickPluginParams.enable'">¶</a></dt>
+<dd><p>Determine whether child enabled</p>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.autonick.AutoNickPluginParams.status">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.plugins.status.html#enrobie.plugins.status.params.StatusPluginIconParams" title="enrobie.plugins.status.params.StatusPluginIconParams"><span class="pre">StatusPluginIconParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default_factory</span></span><span class="o"><span class="pre">=</span></span><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginIconParams" title="enrobie.plugins.StatusPluginIconParams"><span class="pre">StatusPluginIconParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Optional]</span></em><a class="headerlink" href="#enrobie.plugins.autonick.AutoNickPluginParams.status" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autonick.AutoNickPluginParams.status'">¶</a></dt>
+<dd><p>Icon used per chat platform</p>
+</dd></dl>
+</dd></dl>
 </section>
 </section>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
@@ -121,9 +438,37 @@
 <ul>
 <li><a :data-current="activeSection === '#subpackages'" class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a :data-current="activeSection === '#submodules'" class="reference internal" href="#submodules">Submodules</a></li>
-<li><a :data-current="activeSection === '#enrobie-plugins-autonick-params-module'" class="reference internal" href="#enrobie-plugins-autonick-params-module">enrobie.plugins.autonick.params module</a></li>
-<li><a :data-current="activeSection === '#enrobie-plugins-autonick-plugin-module'" class="reference internal" href="#enrobie-plugins-autonick-plugin-module">enrobie.plugins.autonick.plugin module</a></li>
-<li><a :data-current="activeSection === '#module-contents'" class="reference internal" href="#module-contents">Module contents</a></li>
+<li><a :data-current="activeSection === '#module-enrobie.plugins.autonick.params'" class="reference internal" href="#module-enrobie.plugins.autonick.params">enrobie.plugins.autonick.params module</a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.autonick.params.AutoNickPluginParams'" class="reference internal" href="#enrobie.plugins.autonick.params.AutoNickPluginParams"><code class="docutils literal notranslate"><span class="pre">AutoNickPluginParams</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.autonick.params.AutoNickPluginParams.clients'" class="reference internal" href="#enrobie.plugins.autonick.params.AutoNickPluginParams.clients"><code class="docutils literal notranslate"><span class="pre">AutoNickPluginParams.clients</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.autonick.params.AutoNickPluginParams.enable'" class="reference internal" href="#enrobie.plugins.autonick.params.AutoNickPluginParams.enable"><code class="docutils literal notranslate"><span class="pre">AutoNickPluginParams.enable</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.autonick.params.AutoNickPluginParams.status'" class="reference internal" href="#enrobie.plugins.autonick.params.AutoNickPluginParams.status"><code class="docutils literal notranslate"><span class="pre">AutoNickPluginParams.status</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#module-enrobie.plugins.autonick.plugin'" class="reference internal" href="#module-enrobie.plugins.autonick.plugin">enrobie.plugins.autonick.plugin module</a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.autonick.plugin.AutoNickPlugin'" class="reference internal" href="#enrobie.plugins.autonick.plugin.AutoNickPlugin"><code class="docutils literal notranslate"><span class="pre">AutoNickPlugin</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.autonick.plugin.AutoNickPlugin.operate'" class="reference internal" href="#enrobie.plugins.autonick.plugin.AutoNickPlugin.operate"><code class="docutils literal notranslate"><span class="pre">AutoNickPlugin.operate()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.autonick.plugin.AutoNickPlugin.validate'" class="reference internal" href="#enrobie.plugins.autonick.plugin.AutoNickPlugin.validate"><code class="docutils literal notranslate"><span class="pre">AutoNickPlugin.validate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#module-enrobie.plugins.autonick'" class="reference internal" href="#module-enrobie.plugins.autonick">Module contents</a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.autonick.AutoNickPlugin'" class="reference internal" href="#enrobie.plugins.autonick.AutoNickPlugin"><code class="docutils literal notranslate"><span class="pre">AutoNickPlugin</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.autonick.AutoNickPlugin.operate'" class="reference internal" href="#enrobie.plugins.autonick.AutoNickPlugin.operate"><code class="docutils literal notranslate"><span class="pre">AutoNickPlugin.operate()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.autonick.AutoNickPlugin.validate'" class="reference internal" href="#enrobie.plugins.autonick.AutoNickPlugin.validate"><code class="docutils literal notranslate"><span class="pre">AutoNickPlugin.validate()</span></code></a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#enrobie.plugins.autonick.AutoNickPluginParams'" class="reference internal" href="#enrobie.plugins.autonick.AutoNickPluginParams"><code class="docutils literal notranslate"><span class="pre">AutoNickPluginParams</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.autonick.AutoNickPluginParams.clients'" class="reference internal" href="#enrobie.plugins.autonick.AutoNickPluginParams.clients"><code class="docutils literal notranslate"><span class="pre">AutoNickPluginParams.clients</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.autonick.AutoNickPluginParams.enable'" class="reference internal" href="#enrobie.plugins.autonick.AutoNickPluginParams.enable"><code class="docutils literal notranslate"><span class="pre">AutoNickPluginParams.enable</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.autonick.AutoNickPluginParams.status'" class="reference internal" href="#enrobie.plugins.autonick.AutoNickPluginParams.status"><code class="docutils literal notranslate"><span class="pre">AutoNickPluginParams.status</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </aside>
