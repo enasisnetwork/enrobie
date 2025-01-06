@@ -15,7 +15,7 @@
     <title>enrobie.plugins.status.helpers | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.plugins.status.helpers | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.plugins.status.helpers | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../search.html" />
@@ -150,31 +150,31 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 </span><span id="line-11">
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">encommon.times</span> <span class="kn">import</span> <span class="n">Duration</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">DictStrAny</span>
-</span><span id="line-14"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">sort_dict</span>
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">encommon.types.strings</span> <span class="kn">import</span> <span class="n">NEWLINE</span>
-</span><span id="line-16"><span class="kn">from</span> <span class="nn">encommon.types.strings</span> <span class="kn">import</span> <span class="n">SEMPTY</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.times</span><span class="w"> </span><span class="kn">import</span> <span class="n">Duration</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
+</span><span id="line-14"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">sort_dict</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types.strings</span><span class="w"> </span><span class="kn">import</span> <span class="n">NEWLINE</span>
+</span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types.strings</span><span class="w"> </span><span class="kn">import</span> <span class="n">SEMPTY</span>
 </span><span id="line-17">
-</span><span id="line-18"><span class="kn">from</span> <span class="nn">.params</span> <span class="kn">import</span> <span class="n">StatusPluginParams</span>
+</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginParams</span>
 </span><span id="line-19">
 </span><span id="line-20"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-21">    <span class="kn">from</span> <span class="nn">...robie.addons</span> <span class="kn">import</span> <span class="n">RobieQueue</span>
-</span><span id="line-22">    <span class="kn">from</span> <span class="nn">...robie.childs</span> <span class="kn">import</span> <span class="n">RobieClient</span>
-</span><span id="line-23">    <span class="kn">from</span> <span class="nn">...robie.childs</span> <span class="kn">import</span> <span class="n">RobiePlugin</span>
-</span><span id="line-24">    <span class="kn">from</span> <span class="nn">...robie.models</span> <span class="kn">import</span> <span class="n">RobieCommand</span>
-</span><span id="line-25">    <span class="kn">from</span> <span class="nn">...robie.models</span> <span class="kn">import</span> <span class="n">RobieMessage</span>
-</span><span id="line-26">    <span class="kn">from</span> <span class="nn">.common</span> <span class="kn">import</span> <span class="n">StatusPluginItem</span>
-</span><span id="line-27">    <span class="kn">from</span> <span class="nn">.params</span> <span class="kn">import</span> <span class="n">StatusPluginReportParams</span>
-</span><span id="line-28">    <span class="kn">from</span> <span class="nn">.plugin</span> <span class="kn">import</span> <span class="n">StatusPlugin</span>
+</span><span id="line-21">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.addons</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieQueue</span>
+</span><span id="line-22">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieClient</span>
+</span><span id="line-23">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobiePlugin</span>
+</span><span id="line-24">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieCommand</span>
+</span><span id="line-25">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieMessage</span>
+</span><span id="line-26">    <span class="kn">from</span><span class="w"> </span><span class="nn">.common</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginItem</span>
+</span><span id="line-27">    <span class="kn">from</span><span class="w"> </span><span class="nn">.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginReportParams</span>
+</span><span id="line-28">    <span class="kn">from</span><span class="w"> </span><span class="nn">.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPlugin</span>
 </span><span id="line-29">
 </span><span id="line-30">
 </span><span id="line-31">
 <div class="viewcode-block" id="grouped">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.status.helpers.grouped">[docs]</a>
-</span><span id="line-32"><span class="k">def</span> <span class="nf">grouped</span><span class="p">(</span>
+</span><span id="line-32"><span class="k">def</span><span class="w"> </span><span class="nf">grouped</span><span class="p">(</span>
 </span><span id="line-33">    <span class="n">status</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">],</span>
 </span><span id="line-34"><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">]]:</span>
 </span><span id="line-35"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -204,7 +204,7 @@
 </span><span id="line-58">
 <div class="viewcode-block" id="composedsc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.status.helpers.composedsc">[docs]</a>
-</span><span id="line-59"><span class="k">def</span> <span class="nf">composedsc</span><span class="p">(</span>
+</span><span id="line-59"><span class="k">def</span><span class="w"> </span><span class="nf">composedsc</span><span class="p">(</span>
 </span><span id="line-60">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;StatusPlugin&#39;</span><span class="p">,</span>
 </span><span id="line-61">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
 </span><span id="line-62">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
@@ -225,7 +225,7 @@
 </span><span id="line-77">    <span class="n">compose</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="line-78">
 </span><span id="line-79">
-</span><span id="line-80">    <span class="k">def</span> <span class="nf">_compose</span><span class="p">(</span>
+</span><span id="line-80">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
 </span><span id="line-81">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="line-82">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-83">
@@ -235,7 +235,7 @@
 </span><span id="line-87">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
 </span><span id="line-88">
 </span><span id="line-89">
-</span><span id="line-90">    <span class="k">def</span> <span class="nf">_format</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-90">    <span class="k">def</span><span class="w"> </span><span class="nf">_format</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-91">
 </span><span id="line-92">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
 </span><span id="line-93">            <span class="n">params</span><span class="p">,</span>
@@ -292,7 +292,7 @@
 </span><span id="line-143">
 <div class="viewcode-block" id="reportdsc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.status.helpers.reportdsc">[docs]</a>
-</span><span id="line-144"><span class="k">def</span> <span class="nf">reportdsc</span><span class="p">(</span>
+</span><span id="line-144"><span class="k">def</span><span class="w"> </span><span class="nf">reportdsc</span><span class="p">(</span>
 </span><span id="line-145">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;RobiePlugin&#39;</span><span class="p">,</span>
 </span><span id="line-146">    <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;RobieClient&#39;</span><span class="p">,</span>
 </span><span id="line-147">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
@@ -316,7 +316,7 @@
 </span><span id="line-165">        <span class="n">StatusPluginParams</span><span class="p">)</span>
 </span><span id="line-166">
 </span><span id="line-167">
-</span><span id="line-168">    <span class="k">def</span> <span class="nf">_compose</span><span class="p">(</span>
+</span><span id="line-168">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
 </span><span id="line-169">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="line-170">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-171">
@@ -360,7 +360,7 @@
 </span><span id="line-208">
 <div class="viewcode-block" id="composeirc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.status.helpers.composeirc">[docs]</a>
-</span><span id="line-209"><span class="k">def</span> <span class="nf">composeirc</span><span class="p">(</span>
+</span><span id="line-209"><span class="k">def</span><span class="w"> </span><span class="nf">composeirc</span><span class="p">(</span>
 </span><span id="line-210">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;StatusPlugin&#39;</span><span class="p">,</span>
 </span><span id="line-211">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
 </span><span id="line-212">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
@@ -379,7 +379,7 @@
 </span><span id="line-225">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
 </span><span id="line-226">
 </span><span id="line-227">
-</span><span id="line-228">    <span class="k">def</span> <span class="nf">_compose</span><span class="p">(</span>
+</span><span id="line-228">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
 </span><span id="line-229">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="line-230">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-231">
@@ -389,7 +389,7 @@
 </span><span id="line-235">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
 </span><span id="line-236">
 </span><span id="line-237">
-</span><span id="line-238">    <span class="k">def</span> <span class="nf">_format</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-238">    <span class="k">def</span><span class="w"> </span><span class="nf">_format</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-239">
 </span><span id="line-240">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
 </span><span id="line-241">            <span class="n">params</span><span class="p">,</span>
@@ -442,7 +442,7 @@
 </span><span id="line-287">
 <div class="viewcode-block" id="reportirc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.status.helpers.reportirc">[docs]</a>
-</span><span id="line-288"><span class="k">def</span> <span class="nf">reportirc</span><span class="p">(</span>
+</span><span id="line-288"><span class="k">def</span><span class="w"> </span><span class="nf">reportirc</span><span class="p">(</span>
 </span><span id="line-289">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;RobiePlugin&#39;</span><span class="p">,</span>
 </span><span id="line-290">    <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;RobieClient&#39;</span><span class="p">,</span>
 </span><span id="line-291">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
@@ -466,7 +466,7 @@
 </span><span id="line-309">        <span class="n">StatusPluginParams</span><span class="p">)</span>
 </span><span id="line-310">
 </span><span id="line-311">
-</span><span id="line-312">    <span class="k">def</span> <span class="nf">_compose</span><span class="p">(</span>
+</span><span id="line-312">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
 </span><span id="line-313">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="line-314">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-315">
@@ -511,7 +511,7 @@
 </span><span id="line-353">
 <div class="viewcode-block" id="composemtm">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.status.helpers.composemtm">[docs]</a>
-</span><span id="line-354"><span class="k">def</span> <span class="nf">composemtm</span><span class="p">(</span>
+</span><span id="line-354"><span class="k">def</span><span class="w"> </span><span class="nf">composemtm</span><span class="p">(</span>
 </span><span id="line-355">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;StatusPlugin&#39;</span><span class="p">,</span>
 </span><span id="line-356">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
 </span><span id="line-357">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
@@ -532,7 +532,7 @@
 </span><span id="line-372">    <span class="n">compose</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="line-373">
 </span><span id="line-374">
-</span><span id="line-375">    <span class="k">def</span> <span class="nf">_compose</span><span class="p">(</span>
+</span><span id="line-375">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
 </span><span id="line-376">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="line-377">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-378">
@@ -542,7 +542,7 @@
 </span><span id="line-382">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
 </span><span id="line-383">
 </span><span id="line-384">
-</span><span id="line-385">    <span class="k">def</span> <span class="nf">_format</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-385">    <span class="k">def</span><span class="w"> </span><span class="nf">_format</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-386">
 </span><span id="line-387">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
 </span><span id="line-388">            <span class="n">params</span><span class="p">,</span>
@@ -600,7 +600,7 @@
 </span><span id="line-439">
 <div class="viewcode-block" id="reportmtm">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.status.helpers.reportmtm">[docs]</a>
-</span><span id="line-440"><span class="k">def</span> <span class="nf">reportmtm</span><span class="p">(</span>
+</span><span id="line-440"><span class="k">def</span><span class="w"> </span><span class="nf">reportmtm</span><span class="p">(</span>
 </span><span id="line-441">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;RobiePlugin&#39;</span><span class="p">,</span>
 </span><span id="line-442">    <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;RobieClient&#39;</span><span class="p">,</span>
 </span><span id="line-443">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
@@ -624,7 +624,7 @@
 </span><span id="line-461">        <span class="n">StatusPluginParams</span><span class="p">)</span>
 </span><span id="line-462">
 </span><span id="line-463">
-</span><span id="line-464">    <span class="k">def</span> <span class="nf">_compose</span><span class="p">(</span>
+</span><span id="line-464">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
 </span><span id="line-465">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="line-466">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-467">

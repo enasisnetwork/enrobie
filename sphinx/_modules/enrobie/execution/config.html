@@ -15,7 +15,7 @@
     <title>enrobie.execution.config | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.execution.config | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.execution.config | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../search.html" />
@@ -150,21 +150,21 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParser</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span> <span class="k">as</span> <span class="n">sys_argv</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">argparse</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArgumentParser</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">sys</span><span class="w"> </span><span class="kn">import</span> <span class="n">argv</span> <span class="k">as</span> <span class="n">sys_argv</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
 </span><span id="line-13">
-</span><span id="line-14"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">DictStrAny</span>
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">encommon.utils</span> <span class="kn">import</span> <span class="n">array_ansi</span>
-</span><span id="line-16"><span class="kn">from</span> <span class="nn">encommon.utils</span> <span class="kn">import</span> <span class="n">print_ansi</span>
+</span><span id="line-14"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">array_ansi</span>
+</span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_ansi</span>
 </span><span id="line-17">
-</span><span id="line-18"><span class="kn">from</span> <span class="nn">..robie</span> <span class="kn">import</span> <span class="n">RobieConfig</span>
+</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieConfig</span>
 </span><span id="line-19">
 </span><span id="line-20">
 </span><span id="line-21">
 <div class="viewcode-block" id="arguments">
 <a class="viewcode-back" href="../../../enrobie.execution.html#enrobie.execution.config.arguments">[docs]</a>
-</span><span id="line-22"><span class="k">def</span> <span class="nf">arguments</span><span class="p">(</span>
+</span><span id="line-22"><span class="k">def</span><span class="w"> </span><span class="nf">arguments</span><span class="p">(</span>
 </span><span id="line-23">    <span class="n">args</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-24"><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
 </span><span id="line-25"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -214,7 +214,7 @@
 </span><span id="line-68">
 <div class="viewcode-block" id="operation">
 <a class="viewcode-back" href="../../../enrobie.execution.html#enrobie.execution.config.operation">[docs]</a>
-</span><span id="line-69"><span class="k">def</span> <span class="nf">operation</span><span class="p">(</span>
+</span><span id="line-69"><span class="k">def</span><span class="w"> </span><span class="nf">operation</span><span class="p">(</span>
 </span><span id="line-70">    <span class="c1"># NOCVR</span>
 </span><span id="line-71">    <span class="n">config</span><span class="p">:</span> <span class="n">RobieConfig</span><span class="p">,</span>
 </span><span id="line-72"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -234,7 +234,7 @@
 </span><span id="line-85">
 <div class="viewcode-block" id="execution">
 <a class="viewcode-back" href="../../../enrobie.execution.html#enrobie.execution.config.execution">[docs]</a>
-</span><span id="line-86"><span class="k">def</span> <span class="nf">execution</span><span class="p">(</span>
+</span><span id="line-86"><span class="k">def</span><span class="w"> </span><span class="nf">execution</span><span class="p">(</span>
 </span><span id="line-87">    <span class="c1"># NOCVR</span>
 </span><span id="line-88">    <span class="n">args</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-89"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>

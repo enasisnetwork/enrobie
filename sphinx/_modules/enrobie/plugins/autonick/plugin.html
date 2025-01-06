@@ -15,7 +15,7 @@
     <title>enrobie.plugins.autonick.plugin | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.plugins.autonick.plugin | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.plugins.autonick.plugin | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../search.html" />
@@ -150,23 +150,23 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 </span><span id="line-11">
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">encommon.times</span> <span class="kn">import</span> <span class="n">Timer</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.times</span><span class="w"> </span><span class="kn">import</span> <span class="n">Timer</span>
 </span><span id="line-13">
-</span><span id="line-14"><span class="kn">from</span> <span class="nn">.params</span> <span class="kn">import</span> <span class="n">AutoNickPluginParams</span>
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">..status</span> <span class="kn">import</span> <span class="n">StatusPlugin</span>
-</span><span id="line-16"><span class="kn">from</span> <span class="nn">..status</span> <span class="kn">import</span> <span class="n">StatusPluginStates</span>
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">...robie.childs</span> <span class="kn">import</span> <span class="n">RobiePlugin</span>
+</span><span id="line-14"><span class="kn">from</span><span class="w"> </span><span class="nn">.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoNickPluginParams</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">..status</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPlugin</span>
+</span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">..status</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginStates</span>
+</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">...robie.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobiePlugin</span>
 </span><span id="line-18">
 </span><span id="line-19"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-20">    <span class="kn">from</span> <span class="nn">...robie.threads</span> <span class="kn">import</span> <span class="n">RobieThread</span>
+</span><span id="line-20">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.threads</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieThread</span>
 </span><span id="line-21">
 </span><span id="line-22">
 </span><span id="line-23">
 <div class="viewcode-block" id="AutoNickPlugin">
 <a class="viewcode-back" href="../../../../enrobie.plugins.autonick.html#enrobie.plugins.AutoNickPlugin">[docs]</a>
-</span><span id="line-24"><span class="k">class</span> <span class="nc">AutoNickPlugin</span><span class="p">(</span><span class="n">RobiePlugin</span><span class="p">):</span>
+</span><span id="line-24"><span class="k">class</span><span class="w"> </span><span class="nc">AutoNickPlugin</span><span class="p">(</span><span class="n">RobiePlugin</span><span class="p">):</span>
 </span><span id="line-25"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-26"><span class="sd">    Integrate with the Robie routine and perform operations.</span>
 </span><span id="line-27">
@@ -177,7 +177,7 @@
 </span><span id="line-32">    <span class="n">__timer</span><span class="p">:</span> <span class="n">Timer</span>
 </span><span id="line-33">
 </span><span id="line-34">
-</span><span id="line-35">    <span class="k">def</span> <span class="nf">__post__</span><span class="p">(</span>
+</span><span id="line-35">    <span class="k">def</span><span class="w"> </span><span class="nf">__post__</span><span class="p">(</span>
 </span><span id="line-36">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-37">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-38"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -191,7 +191,7 @@
 </span><span id="line-46">
 <div class="viewcode-block" id="AutoNickPlugin.validate">
 <a class="viewcode-back" href="../../../../enrobie.plugins.autonick.html#enrobie.plugins.AutoNickPlugin.validate">[docs]</a>
-</span><span id="line-47">    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span>
+</span><span id="line-47">    <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span>
 </span><span id="line-48">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-49">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-50"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -202,7 +202,7 @@
 </span><span id="line-54">
 <div class="viewcode-block" id="AutoNickPlugin.operate">
 <a class="viewcode-back" href="../../../../enrobie.plugins.autonick.html#enrobie.plugins.AutoNickPlugin.operate">[docs]</a>
-</span><span id="line-55">    <span class="k">def</span> <span class="nf">operate</span><span class="p">(</span>
+</span><span id="line-55">    <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>
 </span><span id="line-56">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-57">        <span class="n">thread</span><span class="p">:</span> <span class="s1">&#39;RobieThread&#39;</span><span class="p">,</span>
 </span><span id="line-58">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -225,7 +225,7 @@
 
 </span><span id="line-75">
 </span><span id="line-76">
-</span><span id="line-77">    <span class="k">def</span> <span class="nf">__operate</span><span class="p">(</span>
+</span><span id="line-77">    <span class="k">def</span><span class="w"> </span><span class="nf">__operate</span><span class="p">(</span>
 </span><span id="line-78">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-79">        <span class="n">thread</span><span class="p">:</span> <span class="s1">&#39;RobieThread&#39;</span><span class="p">,</span>
 </span><span id="line-80">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -235,8 +235,8 @@
 </span><span id="line-84"><span class="sd">        :param thread: Child class instance for Chatting Robie.</span>
 </span><span id="line-85"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-86">
-</span><span id="line-87">        <span class="kn">from</span> <span class="nn">...clients</span> <span class="kn">import</span> <span class="n">IRCClient</span>
-</span><span id="line-88">        <span class="kn">from</span> <span class="nn">...clients</span> <span class="kn">import</span> <span class="n">IRCClientParams</span>
+</span><span id="line-87">        <span class="kn">from</span><span class="w"> </span><span class="nn">...clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClient</span>
+</span><span id="line-88">        <span class="kn">from</span><span class="w"> </span><span class="nn">...clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClientParams</span>
 </span><span id="line-89">
 </span><span id="line-90">        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robie</span>
 </span><span id="line-91">        <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
@@ -257,7 +257,7 @@
 </span><span id="line-106">        <span class="n">failure</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 </span><span id="line-107">
 </span><span id="line-108">
-</span><span id="line-109">        <span class="k">def</span> <span class="nf">_autonick</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-109">        <span class="k">def</span><span class="w"> </span><span class="nf">_autonick</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-110">
 </span><span id="line-111">            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
 </span><span id="line-112">                <span class="n">client</span><span class="p">,</span> <span class="n">IRCClient</span><span class="p">)</span>
@@ -314,7 +314,7 @@
 </span><span id="line-163">
 </span><span id="line-164">
 </span><span id="line-165">
-</span><span id="line-166">    <span class="k">def</span> <span class="nf">__status</span><span class="p">(</span>
+</span><span id="line-166">    <span class="k">def</span><span class="w"> </span><span class="nf">__status</span><span class="p">(</span>
 </span><span id="line-167">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-168">        <span class="n">status</span><span class="p">:</span> <span class="n">StatusPluginStates</span><span class="p">,</span>
 </span><span id="line-169">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>

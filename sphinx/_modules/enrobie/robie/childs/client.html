@@ -15,7 +15,7 @@
     <title>enrobie.robie.childs.client | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.robie.childs.client | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.robie.childs.client | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../search.html" />
@@ -150,30 +150,30 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Literal</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 </span><span id="line-12">
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">DictStrAny</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
 </span><span id="line-14">
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">.child</span> <span class="kn">import</span> <span class="n">RobieChild</span>
-</span><span id="line-16"><span class="kn">from</span> <span class="nn">..addons</span> <span class="kn">import</span> <span class="n">RobieQueue</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">.child</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieChild</span>
+</span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">..addons</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieQueue</span>
 </span><span id="line-17">
 </span><span id="line-18"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-19">    <span class="kn">from</span> <span class="nn">..models</span> <span class="kn">import</span> <span class="n">RobieCommand</span>
-</span><span id="line-20">    <span class="kn">from</span> <span class="nn">..models</span> <span class="kn">import</span> <span class="n">RobieMessage</span>
+</span><span id="line-19">    <span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieCommand</span>
+</span><span id="line-20">    <span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieMessage</span>
 </span><span id="line-21">
 </span><span id="line-22">
 </span><span id="line-23">
 <div class="viewcode-block" id="RobieClient">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient">[docs]</a>
-</span><span id="line-24"><span class="k">class</span> <span class="nc">RobieClient</span><span class="p">(</span><span class="n">RobieChild</span><span class="p">):</span>
+</span><span id="line-24"><span class="k">class</span><span class="w"> </span><span class="nc">RobieClient</span><span class="p">(</span><span class="n">RobieChild</span><span class="p">):</span>
 </span><span id="line-25"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-26"><span class="sd">    Establish and maintain connection with the chat service.</span>
 </span><span id="line-27"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="line-28">
 </span><span id="line-29">
 </span><span id="line-30">    <span class="nd">@property</span>
-</span><span id="line-31">    <span class="k">def</span> <span class="nf">family</span><span class="p">(</span>
+</span><span id="line-31">    <span class="k">def</span><span class="w"> </span><span class="nf">family</span><span class="p">(</span>
 </span><span id="line-32">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-33">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 </span><span id="line-34"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -186,7 +186,7 @@
 </span><span id="line-41">
 </span><span id="line-42">
 </span><span id="line-43">    <span class="nd">@property</span>
-</span><span id="line-44">    <span class="k">def</span> <span class="nf">kind</span><span class="p">(</span>
+</span><span id="line-44">    <span class="k">def</span><span class="w"> </span><span class="nf">kind</span><span class="p">(</span>
 </span><span id="line-45">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-46">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;client&#39;</span><span class="p">]:</span>
 </span><span id="line-47"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -199,7 +199,7 @@
 </span><span id="line-54">
 </span><span id="line-55">
 </span><span id="line-56">    <span class="nd">@property</span>
-</span><span id="line-57">    <span class="k">def</span> <span class="nf">dumped</span><span class="p">(</span>
+</span><span id="line-57">    <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
 </span><span id="line-58">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-59">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
 </span><span id="line-60"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -218,7 +218,7 @@
 </span><span id="line-73">
 <div class="viewcode-block" id="RobieClient.get_message">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.get_message">[docs]</a>
-</span><span id="line-74">    <span class="k">def</span> <span class="nf">get_message</span><span class="p">(</span>
+</span><span id="line-74">    <span class="k">def</span><span class="w"> </span><span class="nf">get_message</span><span class="p">(</span>
 </span><span id="line-75">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-76">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">:</span>
 </span><span id="line-77"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -233,7 +233,7 @@
 </span><span id="line-85">
 <div class="viewcode-block" id="RobieClient.put_message">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.put_message">[docs]</a>
-</span><span id="line-86">    <span class="k">def</span> <span class="nf">put_message</span><span class="p">(</span>
+</span><span id="line-86">    <span class="k">def</span><span class="w"> </span><span class="nf">put_message</span><span class="p">(</span>
 </span><span id="line-87">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-88">        <span class="n">mqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieMessage&#39;</span><span class="p">],</span>
 </span><span id="line-89">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -249,7 +249,7 @@
 </span><span id="line-98">
 <div class="viewcode-block" id="RobieClient.get_command">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.get_command">[docs]</a>
-</span><span id="line-99">    <span class="k">def</span> <span class="nf">get_command</span><span class="p">(</span>
+</span><span id="line-99">    <span class="k">def</span><span class="w"> </span><span class="nf">get_command</span><span class="p">(</span>
 </span><span id="line-100">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-101">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieCommand&#39;</span><span class="p">:</span>
 </span><span id="line-102"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -264,7 +264,7 @@
 </span><span id="line-110">
 <div class="viewcode-block" id="RobieClient.put_command">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.put_command">[docs]</a>
-</span><span id="line-111">    <span class="k">def</span> <span class="nf">put_command</span><span class="p">(</span>
+</span><span id="line-111">    <span class="k">def</span><span class="w"> </span><span class="nf">put_command</span><span class="p">(</span>
 </span><span id="line-112">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-113">        <span class="n">cqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieCommand&#39;</span><span class="p">],</span>
 </span><span id="line-114">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -280,7 +280,7 @@
 </span><span id="line-123">
 <div class="viewcode-block" id="RobieClient.compose">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.compose">[docs]</a>
-</span><span id="line-124">    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span>
+</span><span id="line-124">    <span class="k">def</span><span class="w"> </span><span class="nf">compose</span><span class="p">(</span>
 </span><span id="line-125">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-126">        <span class="n">target</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="line-127">        <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>

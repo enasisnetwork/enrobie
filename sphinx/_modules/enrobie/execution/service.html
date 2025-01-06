@@ -15,7 +15,7 @@
     <title>enrobie.execution.service | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.execution.service | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.execution.service | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../search.html" />
@@ -150,37 +150,37 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParser</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">signal</span> <span class="kn">import</span> <span class="n">SIGHUP</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">signal</span> <span class="kn">import</span> <span class="n">SIGINT</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">signal</span> <span class="kn">import</span> <span class="n">SIGTERM</span>
-</span><span id="line-14"><span class="kn">from</span> <span class="nn">signal</span> <span class="kn">import</span> <span class="n">signal</span>
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span> <span class="k">as</span> <span class="n">sys_argv</span>
-</span><span id="line-16"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">argparse</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArgumentParser</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">SIGHUP</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">SIGINT</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">SIGTERM</span>
+</span><span id="line-14"><span class="kn">from</span><span class="w"> </span><span class="nn">signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">sys</span><span class="w"> </span><span class="kn">import</span> <span class="n">argv</span> <span class="k">as</span> <span class="n">sys_argv</span>
+</span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
 </span><span id="line-17">
-</span><span id="line-18"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">DictStrAny</span>
+</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
 </span><span id="line-19">
-</span><span id="line-20"><span class="kn">from</span> <span class="nn">..clients</span> <span class="kn">import</span> <span class="n">DSCClient</span>
-</span><span id="line-21"><span class="kn">from</span> <span class="nn">..clients</span> <span class="kn">import</span> <span class="n">DSCClientParams</span>
-</span><span id="line-22"><span class="kn">from</span> <span class="nn">..clients</span> <span class="kn">import</span> <span class="n">IRCClient</span>
-</span><span id="line-23"><span class="kn">from</span> <span class="nn">..clients</span> <span class="kn">import</span> <span class="n">IRCClientParams</span>
-</span><span id="line-24"><span class="kn">from</span> <span class="nn">..clients</span> <span class="kn">import</span> <span class="n">MTMClient</span>
-</span><span id="line-25"><span class="kn">from</span> <span class="nn">..clients</span> <span class="kn">import</span> <span class="n">MTMClientParams</span>
-</span><span id="line-26"><span class="kn">from</span> <span class="nn">..plugins</span> <span class="kn">import</span> <span class="n">AutoJoinPlugin</span>
-</span><span id="line-27"><span class="kn">from</span> <span class="nn">..plugins</span> <span class="kn">import</span> <span class="n">AutoJoinPluginParams</span>
-</span><span id="line-28"><span class="kn">from</span> <span class="nn">..plugins</span> <span class="kn">import</span> <span class="n">AutoNickPlugin</span>
-</span><span id="line-29"><span class="kn">from</span> <span class="nn">..plugins</span> <span class="kn">import</span> <span class="n">AutoNickPluginParams</span>
-</span><span id="line-30"><span class="kn">from</span> <span class="nn">..plugins</span> <span class="kn">import</span> <span class="n">StatusPlugin</span>
-</span><span id="line-31"><span class="kn">from</span> <span class="nn">..plugins</span> <span class="kn">import</span> <span class="n">StatusPluginParams</span>
-</span><span id="line-32"><span class="kn">from</span> <span class="nn">..robie</span> <span class="kn">import</span> <span class="n">Robie</span>
-</span><span id="line-33"><span class="kn">from</span> <span class="nn">..robie</span> <span class="kn">import</span> <span class="n">RobieConfig</span>
-</span><span id="line-34"><span class="kn">from</span> <span class="nn">..robie</span> <span class="kn">import</span> <span class="n">RobieService</span>
+</span><span id="line-20"><span class="kn">from</span><span class="w"> </span><span class="nn">..clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">DSCClient</span>
+</span><span id="line-21"><span class="kn">from</span><span class="w"> </span><span class="nn">..clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">DSCClientParams</span>
+</span><span id="line-22"><span class="kn">from</span><span class="w"> </span><span class="nn">..clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClient</span>
+</span><span id="line-23"><span class="kn">from</span><span class="w"> </span><span class="nn">..clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClientParams</span>
+</span><span id="line-24"><span class="kn">from</span><span class="w"> </span><span class="nn">..clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">MTMClient</span>
+</span><span id="line-25"><span class="kn">from</span><span class="w"> </span><span class="nn">..clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">MTMClientParams</span>
+</span><span id="line-26"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoJoinPlugin</span>
+</span><span id="line-27"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoJoinPluginParams</span>
+</span><span id="line-28"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoNickPlugin</span>
+</span><span id="line-29"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoNickPluginParams</span>
+</span><span id="line-30"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPlugin</span>
+</span><span id="line-31"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginParams</span>
+</span><span id="line-32"><span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robie</span>
+</span><span id="line-33"><span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieConfig</span>
+</span><span id="line-34"><span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieService</span>
 </span><span id="line-35">
 </span><span id="line-36">
 </span><span id="line-37">
 <div class="viewcode-block" id="arguments">
 <a class="viewcode-back" href="../../../enrobie.execution.html#enrobie.execution.service.arguments">[docs]</a>
-</span><span id="line-38"><span class="k">def</span> <span class="nf">arguments</span><span class="p">(</span>
+</span><span id="line-38"><span class="k">def</span><span class="w"> </span><span class="nf">arguments</span><span class="p">(</span>
 </span><span id="line-39">    <span class="n">args</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-40"><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
 </span><span id="line-41"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -249,7 +249,7 @@
 </span><span id="line-103">
 <div class="viewcode-block" id="operation">
 <a class="viewcode-back" href="../../../enrobie.execution.html#enrobie.execution.service.operation">[docs]</a>
-</span><span id="line-104"><span class="k">def</span> <span class="nf">operation</span><span class="p">(</span>
+</span><span id="line-104"><span class="k">def</span><span class="w"> </span><span class="nf">operation</span><span class="p">(</span>
 </span><span id="line-105">    <span class="c1"># NOCVR</span>
 </span><span id="line-106">    <span class="n">robie</span><span class="p">:</span> <span class="n">Robie</span><span class="p">,</span>
 </span><span id="line-107"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -274,7 +274,7 @@
 </span><span id="line-125">
 <div class="viewcode-block" id="register_params">
 <a class="viewcode-back" href="../../../enrobie.execution.html#enrobie.execution.service.register_params">[docs]</a>
-</span><span id="line-126"><span class="k">def</span> <span class="nf">register_params</span><span class="p">(</span>
+</span><span id="line-126"><span class="k">def</span><span class="w"> </span><span class="nf">register_params</span><span class="p">(</span>
 </span><span id="line-127">    <span class="c1"># NOCVR</span>
 </span><span id="line-128">    <span class="n">config</span><span class="p">:</span> <span class="n">RobieConfig</span><span class="p">,</span>
 </span><span id="line-129"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -313,7 +313,7 @@
 </span><span id="line-161">
 <div class="viewcode-block" id="register_plugins">
 <a class="viewcode-back" href="../../../enrobie.execution.html#enrobie.execution.service.register_plugins">[docs]</a>
-</span><span id="line-162"><span class="k">def</span> <span class="nf">register_plugins</span><span class="p">(</span>
+</span><span id="line-162"><span class="k">def</span><span class="w"> </span><span class="nf">register_plugins</span><span class="p">(</span>
 </span><span id="line-163">    <span class="c1"># NOCVR</span>
 </span><span id="line-164">    <span class="n">robie</span><span class="p">:</span> <span class="n">Robie</span><span class="p">,</span>
 </span><span id="line-165"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -352,7 +352,7 @@
 </span><span id="line-197">
 <div class="viewcode-block" id="execution">
 <a class="viewcode-back" href="../../../enrobie.execution.html#enrobie.execution.service.execution">[docs]</a>
-</span><span id="line-198"><span class="k">def</span> <span class="nf">execution</span><span class="p">(</span>
+</span><span id="line-198"><span class="k">def</span><span class="w"> </span><span class="nf">execution</span><span class="p">(</span>
 </span><span id="line-199">    <span class="c1"># NOCVR</span>
 </span><span id="line-200">    <span class="n">args</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-201"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>

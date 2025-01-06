@@ -15,7 +15,7 @@
     <title>enrobie.robie.service | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.robie.service | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.robie.service | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../search.html" />
@@ -150,19 +150,19 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Event</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span> <span class="k">as</span> <span class="n">block_sleep</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">threading</span><span class="w"> </span><span class="kn">import</span> <span class="n">Event</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span> <span class="k">as</span> <span class="n">block_sleep</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 </span><span id="line-14">
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">encommon.times</span> <span class="kn">import</span> <span class="n">Timer</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.times</span><span class="w"> </span><span class="kn">import</span> <span class="n">Timer</span>
 </span><span id="line-16">
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">.members</span> <span class="kn">import</span> <span class="n">RobieClients</span>
-</span><span id="line-18"><span class="kn">from</span> <span class="nn">.members</span> <span class="kn">import</span> <span class="n">RobiePlugins</span>
+</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">.members</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieClients</span>
+</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">.members</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobiePlugins</span>
 </span><span id="line-19">
 </span><span id="line-20"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-21">    <span class="kn">from</span> <span class="nn">.robie</span> <span class="kn">import</span> <span class="n">Robie</span>
-</span><span id="line-22">    <span class="kn">from</span> <span class="nn">.params</span> <span class="kn">import</span> <span class="n">RobieServiceParams</span>
+</span><span id="line-21">    <span class="kn">from</span><span class="w"> </span><span class="nn">.robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robie</span>
+</span><span id="line-22">    <span class="kn">from</span><span class="w"> </span><span class="nn">.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieServiceParams</span>
 </span><span id="line-23">
 </span><span id="line-24">
 </span><span id="line-25">
@@ -172,7 +172,7 @@
 </span><span id="line-29">
 <div class="viewcode-block" id="RobieService">
 <a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService">[docs]</a>
-</span><span id="line-30"><span class="k">class</span> <span class="nc">RobieService</span><span class="p">:</span>
+</span><span id="line-30"><span class="k">class</span><span class="w"> </span><span class="nc">RobieService</span><span class="p">:</span>
 </span><span id="line-31"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-32"><span class="sd">    Multi-threaded service for processing the desired state.</span>
 </span><span id="line-33">
@@ -190,7 +190,7 @@
 </span><span id="line-45">    <span class="n">__started</span><span class="p">:</span> <span class="nb">bool</span>
 </span><span id="line-46">
 </span><span id="line-47">
-</span><span id="line-48">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-48">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-49">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-50">        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
 </span><span id="line-51">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -213,7 +213,7 @@
 </span><span id="line-68">            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;created&#39;</span><span class="p">)</span>
 </span><span id="line-69">
 </span><span id="line-70">
-</span><span id="line-71">    <span class="k">def</span> <span class="nf">__build_objects</span><span class="p">(</span>
+</span><span id="line-71">    <span class="k">def</span><span class="w"> </span><span class="nf">__build_objects</span><span class="p">(</span>
 </span><span id="line-72">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-73">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-74"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -242,7 +242,7 @@
 </span><span id="line-97">
 </span><span id="line-98">
 </span><span id="line-99">    <span class="nd">@property</span>
-</span><span id="line-100">    <span class="k">def</span> <span class="nf">robie</span><span class="p">(</span>
+</span><span id="line-100">    <span class="k">def</span><span class="w"> </span><span class="nf">robie</span><span class="p">(</span>
 </span><span id="line-101">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-102">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Robie&#39;</span><span class="p">:</span>
 </span><span id="line-103"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -255,7 +255,7 @@
 </span><span id="line-110">
 </span><span id="line-111">
 </span><span id="line-112">    <span class="nd">@property</span>
-</span><span id="line-113">    <span class="k">def</span> <span class="nf">params</span><span class="p">(</span>
+</span><span id="line-113">    <span class="k">def</span><span class="w"> </span><span class="nf">params</span><span class="p">(</span>
 </span><span id="line-114">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-115">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieServiceParams&#39;</span><span class="p">:</span>
 </span><span id="line-116"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -271,7 +271,7 @@
 </span><span id="line-126">
 </span><span id="line-127">
 </span><span id="line-128">    <span class="nd">@property</span>
-</span><span id="line-129">    <span class="k">def</span> <span class="nf">clients</span><span class="p">(</span>
+</span><span id="line-129">    <span class="k">def</span><span class="w"> </span><span class="nf">clients</span><span class="p">(</span>
 </span><span id="line-130">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-131">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieClients</span><span class="p">:</span>
 </span><span id="line-132"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -284,7 +284,7 @@
 </span><span id="line-139">
 </span><span id="line-140">
 </span><span id="line-141">    <span class="nd">@property</span>
-</span><span id="line-142">    <span class="k">def</span> <span class="nf">plugins</span><span class="p">(</span>
+</span><span id="line-142">    <span class="k">def</span><span class="w"> </span><span class="nf">plugins</span><span class="p">(</span>
 </span><span id="line-143">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-144">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobiePlugins</span><span class="p">:</span>
 </span><span id="line-145"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -297,7 +297,7 @@
 </span><span id="line-152">
 </span><span id="line-153">
 </span><span id="line-154">    <span class="nd">@property</span>
-</span><span id="line-155">    <span class="k">def</span> <span class="nf">running</span><span class="p">(</span>
+</span><span id="line-155">    <span class="k">def</span><span class="w"> </span><span class="nf">running</span><span class="p">(</span>
 </span><span id="line-156">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-157">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 </span><span id="line-158"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -321,7 +321,7 @@
 </span><span id="line-176">
 </span><span id="line-177">
 </span><span id="line-178">    <span class="nd">@property</span>
-</span><span id="line-179">    <span class="k">def</span> <span class="nf">zombies</span><span class="p">(</span>
+</span><span id="line-179">    <span class="k">def</span><span class="w"> </span><span class="nf">zombies</span><span class="p">(</span>
 </span><span id="line-180">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-181">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 </span><span id="line-182"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -345,7 +345,7 @@
 </span><span id="line-200">
 </span><span id="line-201">
 </span><span id="line-202">    <span class="nd">@property</span>
-</span><span id="line-203">    <span class="k">def</span> <span class="nf">congest</span><span class="p">(</span>
+</span><span id="line-203">    <span class="k">def</span><span class="w"> </span><span class="nf">congest</span><span class="p">(</span>
 </span><span id="line-204">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-205">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_CONGEST</span><span class="p">:</span>
 </span><span id="line-206"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -369,7 +369,7 @@
 </span><span id="line-224">
 </span><span id="line-225">
 </span><span id="line-226">    <span class="nd">@property</span>
-</span><span id="line-227">    <span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span>
+</span><span id="line-227">    <span class="k">def</span><span class="w"> </span><span class="nf">enqueue</span><span class="p">(</span>
 </span><span id="line-228">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-229">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_CONGEST</span><span class="p">:</span>
 </span><span id="line-230"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -394,7 +394,7 @@
 </span><span id="line-249">
 <div class="viewcode-block" id="RobieService.start">
 <a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.start">[docs]</a>
-</span><span id="line-250">    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span>
+</span><span id="line-250">    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span>
 </span><span id="line-251">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-252">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-253"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -424,7 +424,7 @@
 </span><span id="line-276">
 <div class="viewcode-block" id="RobieService.operate">
 <a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.operate">[docs]</a>
-</span><span id="line-277">    <span class="k">def</span> <span class="nf">operate</span><span class="p">(</span>
+</span><span id="line-277">    <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>
 </span><span id="line-278">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-279">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-280"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -456,7 +456,7 @@
 </span><span id="line-305">
 <div class="viewcode-block" id="RobieService.operate_clients">
 <a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.operate_clients">[docs]</a>
-</span><span id="line-306">    <span class="k">def</span> <span class="nf">operate_clients</span><span class="p">(</span>
+</span><span id="line-306">    <span class="k">def</span><span class="w"> </span><span class="nf">operate_clients</span><span class="p">(</span>
 </span><span id="line-307">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-308">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-309"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -488,7 +488,7 @@
 </span><span id="line-334">
 <div class="viewcode-block" id="RobieService.operate_plugins">
 <a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.operate_plugins">[docs]</a>
-</span><span id="line-335">    <span class="k">def</span> <span class="nf">operate_plugins</span><span class="p">(</span>
+</span><span id="line-335">    <span class="k">def</span><span class="w"> </span><span class="nf">operate_plugins</span><span class="p">(</span>
 </span><span id="line-336">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-337">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-338"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -520,7 +520,7 @@
 </span><span id="line-363">
 <div class="viewcode-block" id="RobieService.operate_healths">
 <a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.operate_healths">[docs]</a>
-</span><span id="line-364">    <span class="k">def</span> <span class="nf">operate_healths</span><span class="p">(</span>
+</span><span id="line-364">    <span class="k">def</span><span class="w"> </span><span class="nf">operate_healths</span><span class="p">(</span>
 </span><span id="line-365">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-366">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-367"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -550,7 +550,7 @@
 </span><span id="line-390">
 <div class="viewcode-block" id="RobieService.check_zombies">
 <a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.check_zombies">[docs]</a>
-</span><span id="line-391">    <span class="k">def</span> <span class="nf">check_zombies</span><span class="p">(</span>
+</span><span id="line-391">    <span class="k">def</span><span class="w"> </span><span class="nf">check_zombies</span><span class="p">(</span>
 </span><span id="line-392">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-393">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 </span><span id="line-394"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -574,7 +574,7 @@
 </span><span id="line-411">
 <div class="viewcode-block" id="RobieService.check_congest">
 <a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.check_congest">[docs]</a>
-</span><span id="line-412">    <span class="k">def</span> <span class="nf">check_congest</span><span class="p">(</span>
+</span><span id="line-412">    <span class="k">def</span><span class="w"> </span><span class="nf">check_congest</span><span class="p">(</span>
 </span><span id="line-413">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-414">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 </span><span id="line-415"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -599,7 +599,7 @@
 </span><span id="line-433">
 <div class="viewcode-block" id="RobieService.soft">
 <a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.soft">[docs]</a>
-</span><span id="line-434">    <span class="k">def</span> <span class="nf">soft</span><span class="p">(</span>
+</span><span id="line-434">    <span class="k">def</span><span class="w"> </span><span class="nf">soft</span><span class="p">(</span>
 </span><span id="line-435">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-436">        <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-437">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
@@ -634,7 +634,7 @@
 </span><span id="line-465">
 <div class="viewcode-block" id="RobieService.stop">
 <a class="viewcode-back" href="../../../enrobie.robie.html#enrobie.robie.service.RobieService.stop">[docs]</a>
-</span><span id="line-466">    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span>
+</span><span id="line-466">    <span class="k">def</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span>
 </span><span id="line-467">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-468">        <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-469">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>

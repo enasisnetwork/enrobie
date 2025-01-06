@@ -15,7 +15,7 @@
     <title>enrobie.robie.members.member | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.robie.members.member | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.robie.members.member | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../search.html" />
@@ -150,18 +150,18 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Event</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">threading</span><span class="w"> </span><span class="kn">import</span> <span class="n">Event</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 </span><span id="line-12">
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">clsname</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">clsname</span>
 </span><span id="line-14">
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">..addons</span> <span class="kn">import</span> <span class="n">RobieQueue</span>
-</span><span id="line-16"><span class="kn">from</span> <span class="nn">..threads</span> <span class="kn">import</span> <span class="n">RobieThread</span>  <span class="c1"># noqa: F401</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">..addons</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieQueue</span>
+</span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">..threads</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieThread</span>  <span class="c1"># noqa: F401</span>
 </span><span id="line-17">
 </span><span id="line-18"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-19">    <span class="kn">from</span> <span class="nn">..models</span> <span class="kn">import</span> <span class="n">RobieCommand</span>
-</span><span id="line-20">    <span class="kn">from</span> <span class="nn">..models</span> <span class="kn">import</span> <span class="n">RobieMessage</span>
-</span><span id="line-21">    <span class="kn">from</span> <span class="nn">..robie</span> <span class="kn">import</span> <span class="n">Robie</span>
+</span><span id="line-19">    <span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieCommand</span>
+</span><span id="line-20">    <span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieMessage</span>
+</span><span id="line-21">    <span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robie</span>
 </span><span id="line-22">
 </span><span id="line-23">
 </span><span id="line-24">
@@ -173,7 +173,7 @@
 </span><span id="line-30">
 <div class="viewcode-block" id="RobieMember">
 <a class="viewcode-back" href="../../../../enrobie.robie.members.html#enrobie.robie.members.member.RobieMember">[docs]</a>
-</span><span id="line-31"><span class="k">class</span> <span class="nc">RobieMember</span><span class="p">:</span>
+</span><span id="line-31"><span class="k">class</span><span class="w"> </span><span class="nc">RobieMember</span><span class="p">:</span>
 </span><span id="line-32"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-33"><span class="sd">    Common methods and routines for Chatting Robie members.</span>
 </span><span id="line-34">
@@ -190,7 +190,7 @@
 </span><span id="line-45">    <span class="n">__cancel</span><span class="p">:</span> <span class="n">Event</span>
 </span><span id="line-46">
 </span><span id="line-47">
-</span><span id="line-48">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-48">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-49">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-50">        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
 </span><span id="line-51">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -213,7 +213,7 @@
 </span><span id="line-68">            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;created&#39;</span><span class="p">)</span>
 </span><span id="line-69">
 </span><span id="line-70">
-</span><span id="line-71">    <span class="k">def</span> <span class="nf">__build_objects</span><span class="p">(</span>
+</span><span id="line-71">    <span class="k">def</span><span class="w"> </span><span class="nf">__build_objects</span><span class="p">(</span>
 </span><span id="line-72">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-73">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-74"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -236,7 +236,7 @@
 </span><span id="line-91">
 <div class="viewcode-block" id="RobieMember.build_threads">
 <a class="viewcode-back" href="../../../../enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.build_threads">[docs]</a>
-</span><span id="line-92">    <span class="k">def</span> <span class="nf">build_threads</span><span class="p">(</span>
+</span><span id="line-92">    <span class="k">def</span><span class="w"> </span><span class="nf">build_threads</span><span class="p">(</span>
 </span><span id="line-93">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-94">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-95"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -253,7 +253,7 @@
 </span><span id="line-105">
 </span><span id="line-106">
 </span><span id="line-107">    <span class="nd">@property</span>
-</span><span id="line-108">    <span class="k">def</span> <span class="nf">robie</span><span class="p">(</span>
+</span><span id="line-108">    <span class="k">def</span><span class="w"> </span><span class="nf">robie</span><span class="p">(</span>
 </span><span id="line-109">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-110">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Robie&#39;</span><span class="p">:</span>
 </span><span id="line-111"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -266,7 +266,7 @@
 </span><span id="line-118">
 </span><span id="line-119">
 </span><span id="line-120">    <span class="nd">@property</span>
-</span><span id="line-121">    <span class="k">def</span> <span class="nf">threads</span><span class="p">(</span>
+</span><span id="line-121">    <span class="k">def</span><span class="w"> </span><span class="nf">threads</span><span class="p">(</span>
 </span><span id="line-122">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-123">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieThreads</span><span class="p">:</span>
 </span><span id="line-124"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -281,7 +281,7 @@
 </span><span id="line-133">
 </span><span id="line-134">
 </span><span id="line-135">    <span class="nd">@threads</span><span class="o">.</span><span class="n">setter</span>
-</span><span id="line-136">    <span class="k">def</span> <span class="nf">threads</span><span class="p">(</span>
+</span><span id="line-136">    <span class="k">def</span><span class="w"> </span><span class="nf">threads</span><span class="p">(</span>
 </span><span id="line-137">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-138">        <span class="n">value</span><span class="p">:</span> <span class="n">RobieThreads</span><span class="p">,</span>
 </span><span id="line-139">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -293,7 +293,7 @@
 </span><span id="line-145">
 </span><span id="line-146">
 </span><span id="line-147">    <span class="nd">@property</span>
-</span><span id="line-148">    <span class="k">def</span> <span class="nf">mqueue</span><span class="p">(</span>
+</span><span id="line-148">    <span class="k">def</span><span class="w"> </span><span class="nf">mqueue</span><span class="p">(</span>
 </span><span id="line-149">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-150">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieMessage&#39;</span><span class="p">]:</span>
 </span><span id="line-151"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -306,7 +306,7 @@
 </span><span id="line-158">
 </span><span id="line-159">
 </span><span id="line-160">    <span class="nd">@property</span>
-</span><span id="line-161">    <span class="k">def</span> <span class="nf">cqueue</span><span class="p">(</span>
+</span><span id="line-161">    <span class="k">def</span><span class="w"> </span><span class="nf">cqueue</span><span class="p">(</span>
 </span><span id="line-162">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-163">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieCommand&#39;</span><span class="p">]:</span>
 </span><span id="line-164"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -319,7 +319,7 @@
 </span><span id="line-171">
 </span><span id="line-172">
 </span><span id="line-173">    <span class="nd">@property</span>
-</span><span id="line-174">    <span class="k">def</span> <span class="nf">vacate</span><span class="p">(</span>
+</span><span id="line-174">    <span class="k">def</span><span class="w"> </span><span class="nf">vacate</span><span class="p">(</span>
 </span><span id="line-175">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-176">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Event</span><span class="p">:</span>
 </span><span id="line-177"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -332,7 +332,7 @@
 </span><span id="line-184">
 </span><span id="line-185">
 </span><span id="line-186">    <span class="nd">@property</span>
-</span><span id="line-187">    <span class="k">def</span> <span class="nf">cancel</span><span class="p">(</span>
+</span><span id="line-187">    <span class="k">def</span><span class="w"> </span><span class="nf">cancel</span><span class="p">(</span>
 </span><span id="line-188">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-189">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Event</span><span class="p">:</span>
 </span><span id="line-190"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -345,7 +345,7 @@
 </span><span id="line-197">
 </span><span id="line-198">
 </span><span id="line-199">    <span class="nd">@property</span>
-</span><span id="line-200">    <span class="k">def</span> <span class="nf">running</span><span class="p">(</span>
+</span><span id="line-200">    <span class="k">def</span><span class="w"> </span><span class="nf">running</span><span class="p">(</span>
 </span><span id="line-201">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-202">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 </span><span id="line-203"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -373,7 +373,7 @@
 </span><span id="line-225">
 </span><span id="line-226">
 </span><span id="line-227">    <span class="nd">@property</span>
-</span><span id="line-228">    <span class="k">def</span> <span class="nf">zombies</span><span class="p">(</span>
+</span><span id="line-228">    <span class="k">def</span><span class="w"> </span><span class="nf">zombies</span><span class="p">(</span>
 </span><span id="line-229">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-230">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 </span><span id="line-231"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -401,7 +401,7 @@
 </span><span id="line-253">
 </span><span id="line-254">
 </span><span id="line-255">    <span class="nd">@property</span>
-</span><span id="line-256">    <span class="k">def</span> <span class="nf">congest</span><span class="p">(</span>
+</span><span id="line-256">    <span class="k">def</span><span class="w"> </span><span class="nf">congest</span><span class="p">(</span>
 </span><span id="line-257">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-258">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_CONGEST</span><span class="p">:</span>
 </span><span id="line-259"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -449,7 +449,7 @@
 </span><span id="line-301">
 </span><span id="line-302">
 </span><span id="line-303">    <span class="nd">@property</span>
-</span><span id="line-304">    <span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span>
+</span><span id="line-304">    <span class="k">def</span><span class="w"> </span><span class="nf">enqueue</span><span class="p">(</span>
 </span><span id="line-305">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-306">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_CONGEST</span><span class="p">:</span>
 </span><span id="line-307"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -498,7 +498,7 @@
 </span><span id="line-350">
 <div class="viewcode-block" id="RobieMember.start">
 <a class="viewcode-back" href="../../../../enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.start">[docs]</a>
-</span><span id="line-351">    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span>
+</span><span id="line-351">    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span>
 </span><span id="line-352">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-353">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-354"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -516,7 +516,7 @@
 </span><span id="line-365">
 <div class="viewcode-block" id="RobieMember.operate">
 <a class="viewcode-back" href="../../../../enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.operate">[docs]</a>
-</span><span id="line-366">    <span class="k">def</span> <span class="nf">operate</span><span class="p">(</span>
+</span><span id="line-366">    <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>
 </span><span id="line-367">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-368">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-369"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -529,7 +529,7 @@
 </span><span id="line-375">
 <div class="viewcode-block" id="RobieMember.soft">
 <a class="viewcode-back" href="../../../../enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.soft">[docs]</a>
-</span><span id="line-376">    <span class="k">def</span> <span class="nf">soft</span><span class="p">(</span>
+</span><span id="line-376">    <span class="k">def</span><span class="w"> </span><span class="nf">soft</span><span class="p">(</span>
 </span><span id="line-377">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-378">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-379"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -542,7 +542,7 @@
 </span><span id="line-385">
 <div class="viewcode-block" id="RobieMember.stop">
 <a class="viewcode-back" href="../../../../enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.stop">[docs]</a>
-</span><span id="line-386">    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span>
+</span><span id="line-386">    <span class="k">def</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span>
 </span><span id="line-387">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-388">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-389"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>

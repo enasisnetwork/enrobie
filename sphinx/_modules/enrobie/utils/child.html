@@ -15,7 +15,7 @@
     <title>enrobie.utils.child | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.utils.child | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.utils.child | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../search.html" />
@@ -150,13 +150,13 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Literal</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Union</span>
 </span><span id="line-14">
 </span><span id="line-15"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-16">    <span class="kn">from</span> <span class="nn">..robie.childs</span> <span class="kn">import</span> <span class="n">RobieChild</span>
+</span><span id="line-16">    <span class="kn">from</span><span class="w"> </span><span class="nn">..robie.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieChild</span>
 </span><span id="line-17">
 </span><span id="line-18">
 </span><span id="line-19">
@@ -168,7 +168,7 @@
 </span><span id="line-25">
 <div class="viewcode-block" id="InvalidChild">
 <a class="viewcode-back" href="../../../enrobie.utils.html#enrobie.utils.child.InvalidChild">[docs]</a>
-</span><span id="line-26"><span class="k">class</span> <span class="nc">InvalidChild</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+</span><span id="line-26"><span class="k">class</span><span class="w"> </span><span class="nc">InvalidChild</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
 </span><span id="line-27"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-28"><span class="sd">    Exception for when the child could not be instantiated.</span>
 </span><span id="line-29">
@@ -185,7 +185,7 @@
 </span><span id="line-40">    <span class="n">about</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 </span><span id="line-41">
 </span><span id="line-42">
-</span><span id="line-43">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-43">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-44">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-45">        <span class="n">child</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;RobieChild&#39;</span><span class="p">],</span>
 </span><span id="line-46">        <span class="n">phase</span><span class="p">:</span> <span class="n">_PHASE</span><span class="p">,</span>

@@ -15,7 +15,7 @@
     <title>enrobie.robie.config | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.robie.config | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.robie.config | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../search.html" />
@@ -150,23 +150,23 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Literal</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Type</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">deepcopy</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Type</span>
 </span><span id="line-14">
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">encommon.config</span> <span class="kn">import</span> <span class="n">Config</span>
-</span><span id="line-16"><span class="kn">from</span> <span class="nn">encommon.config</span> <span class="kn">import</span> <span class="n">Params</span>
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">encommon.parse</span> <span class="kn">import</span> <span class="n">Jinja2</span>
-</span><span id="line-18"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">DictStrAny</span>
-</span><span id="line-19"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">merge_dicts</span>
-</span><span id="line-20"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">setate</span>
-</span><span id="line-21"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">sort_dict</span>
-</span><span id="line-22"><span class="kn">from</span> <span class="nn">encommon.utils.common</span> <span class="kn">import</span> <span class="n">PATHABLE</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">Config</span>
+</span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">Params</span>
+</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">Jinja2</span>
+</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
+</span><span id="line-19"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">merge_dicts</span>
+</span><span id="line-20"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">setate</span>
+</span><span id="line-21"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">sort_dict</span>
+</span><span id="line-22"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.utils.common</span><span class="w"> </span><span class="kn">import</span> <span class="n">PATHABLE</span>
 </span><span id="line-23">
-</span><span id="line-24"><span class="kn">from</span> <span class="nn">.params</span> <span class="kn">import</span> <span class="n">RobieClientParams</span>
-</span><span id="line-25"><span class="kn">from</span> <span class="nn">.params</span> <span class="kn">import</span> <span class="n">RobieParams</span>
-</span><span id="line-26"><span class="kn">from</span> <span class="nn">.params</span> <span class="kn">import</span> <span class="n">RobiePluginParams</span>
+</span><span id="line-24"><span class="kn">from</span><span class="w"> </span><span class="nn">.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieClientParams</span>
+</span><span id="line-25"><span class="kn">from</span><span class="w"> </span><span class="nn">.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieParams</span>
+</span><span id="line-26"><span class="kn">from</span><span class="w"> </span><span class="nn">.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobiePluginParams</span>
 </span><span id="line-27">
 </span><span id="line-28">
 </span><span id="line-29">
@@ -180,7 +180,7 @@
 </span><span id="line-37">
 <div class="viewcode-block" id="RobieConfig">
 <a class="viewcode-back" href="../../../index.html#enrobie.robie.config.RobieConfig">[docs]</a>
-</span><span id="line-38"><span class="k">class</span> <span class="nc">RobieConfig</span><span class="p">(</span><span class="n">Config</span><span class="p">):</span>
+</span><span id="line-38"><span class="k">class</span><span class="w"> </span><span class="nc">RobieConfig</span><span class="p">(</span><span class="n">Config</span><span class="p">):</span>
 </span><span id="line-39"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-40"><span class="sd">    Contain the configurations from the arguments and files.</span>
 </span><span id="line-41">
@@ -196,7 +196,7 @@
 </span><span id="line-51">    <span class="n">__inserts</span><span class="p">:</span> <span class="n">RobieConfigInserts</span>
 </span><span id="line-52">
 </span><span id="line-53">
-</span><span id="line-54">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-54">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-55">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-56">        <span class="n">sargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DictStrAny</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-57">        <span class="n">files</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PATHABLE</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -259,7 +259,7 @@
 </span><span id="line-114">
 </span><span id="line-115">
 </span><span id="line-116">    <span class="nd">@property</span>
-</span><span id="line-117">    <span class="k">def</span> <span class="nf">inserts</span><span class="p">(</span>
+</span><span id="line-117">    <span class="k">def</span><span class="w"> </span><span class="nf">inserts</span><span class="p">(</span>
 </span><span id="line-118">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-119">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieConfigInserts</span><span class="p">:</span>
 </span><span id="line-120"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -272,7 +272,7 @@
 </span><span id="line-127">
 </span><span id="line-128">
 </span><span id="line-129">    <span class="nd">@property</span>
-</span><span id="line-130">    <span class="k">def</span> <span class="nf">params</span><span class="p">(</span>
+</span><span id="line-130">    <span class="k">def</span><span class="w"> </span><span class="nf">params</span><span class="p">(</span>
 </span><span id="line-131">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-132">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieParams</span><span class="p">:</span>
 </span><span id="line-133"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -326,7 +326,7 @@
 </span><span id="line-181">
 <div class="viewcode-block" id="RobieConfig.merge_params">
 <a class="viewcode-back" href="../../../index.html#enrobie.robie.config.RobieConfig.merge_params">[docs]</a>
-</span><span id="line-182">    <span class="k">def</span> <span class="nf">merge_params</span><span class="p">(</span>
+</span><span id="line-182">    <span class="k">def</span><span class="w"> </span><span class="nf">merge_params</span><span class="p">(</span>
 </span><span id="line-183">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-184">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-185"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -356,7 +356,7 @@
 </span><span id="line-209">        <span class="n">parse</span> <span class="o">=</span> <span class="n">jinja2</span><span class="o">.</span><span class="n">parse</span>
 </span><span id="line-210">
 </span><span id="line-211">
-</span><span id="line-212">        <span class="k">def</span> <span class="nf">_put_clients</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-212">        <span class="k">def</span><span class="w"> </span><span class="nf">_put_clients</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-213">
 </span><span id="line-214">            <span class="n">models</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
 </span><span id="line-215">
@@ -384,7 +384,7 @@
 </span><span id="line-237">            <span class="k">del</span> <span class="n">merge</span><span class="p">[</span><span class="s1">&#39;clients&#39;</span><span class="p">]</span>
 </span><span id="line-238">
 </span><span id="line-239">
-</span><span id="line-240">        <span class="k">def</span> <span class="nf">_put_plugins</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-240">        <span class="k">def</span><span class="w"> </span><span class="nf">_put_plugins</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-241">
 </span><span id="line-242">            <span class="n">models</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
 </span><span id="line-243">
@@ -431,7 +431,7 @@
 </span><span id="line-283">
 </span><span id="line-284">
 </span><span id="line-285">    <span class="nd">@property</span>
-</span><span id="line-286">    <span class="k">def</span> <span class="nf">__params</span><span class="p">(</span>
+</span><span id="line-286">    <span class="k">def</span><span class="w"> </span><span class="nf">__params</span><span class="p">(</span>
 </span><span id="line-287">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-288">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Params</span><span class="p">]:</span>
 </span><span id="line-289"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -444,7 +444,7 @@
 </span><span id="line-296">
 </span><span id="line-297">
 </span><span id="line-298">    <span class="nd">@__params</span><span class="o">.</span><span class="n">setter</span>
-</span><span id="line-299">    <span class="k">def</span> <span class="nf">__params</span><span class="p">(</span>
+</span><span id="line-299">    <span class="k">def</span><span class="w"> </span><span class="nf">__params</span><span class="p">(</span>
 </span><span id="line-300">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-301">        <span class="n">value</span><span class="p">:</span> <span class="n">Params</span><span class="p">,</span>
 </span><span id="line-302">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -456,7 +456,7 @@
 </span><span id="line-308">
 </span><span id="line-309">
 </span><span id="line-310">    <span class="nd">@property</span>
-</span><span id="line-311">    <span class="k">def</span> <span class="nf">config</span><span class="p">(</span>
+</span><span id="line-311">    <span class="k">def</span><span class="w"> </span><span class="nf">config</span><span class="p">(</span>
 </span><span id="line-312">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-313">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
 </span><span id="line-314"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -478,7 +478,7 @@
 </span><span id="line-330">        <span class="n">config</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">endumped</span>
 </span><span id="line-331">
 </span><span id="line-332">
-</span><span id="line-333">        <span class="k">def</span> <span class="nf">_get_clients</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-333">        <span class="k">def</span><span class="w"> </span><span class="nf">_get_clients</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-334">
 </span><span id="line-335">            <span class="n">target</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;clients&#39;</span><span class="p">]</span>
 </span><span id="line-336">
@@ -496,7 +496,7 @@
 </span><span id="line-348">            <span class="n">_get_clients</span><span class="p">()</span>
 </span><span id="line-349">
 </span><span id="line-350">
-</span><span id="line-351">        <span class="k">def</span> <span class="nf">_get_plugins</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-351">        <span class="k">def</span><span class="w"> </span><span class="nf">_get_plugins</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-352">
 </span><span id="line-353">            <span class="n">target</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;plugins&#39;</span><span class="p">]</span>
 </span><span id="line-354">
@@ -519,7 +519,7 @@
 </span><span id="line-371">
 <div class="viewcode-block" id="RobieConfig.register">
 <a class="viewcode-back" href="../../../index.html#enrobie.robie.config.RobieConfig.register">[docs]</a>
-</span><span id="line-372">    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span>
+</span><span id="line-372">    <span class="k">def</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span>
 </span><span id="line-373">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-374">        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="line-375">        <span class="o">*</span><span class="p">,</span>
@@ -543,7 +543,7 @@
 </span><span id="line-393">        <span class="n">inserts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__inserts</span>
 </span><span id="line-394">
 </span><span id="line-395">
-</span><span id="line-396">        <span class="k">def</span> <span class="nf">_insert</span><span class="p">(</span>
+</span><span id="line-396">        <span class="k">def</span><span class="w"> </span><span class="nf">_insert</span><span class="p">(</span>
 </span><span id="line-397">            <span class="n">target</span><span class="p">:</span> <span class="n">RobieConfigInsert</span><span class="p">,</span>
 </span><span id="line-398">        <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-399">

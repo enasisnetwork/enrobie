@@ -15,7 +15,7 @@
     <title>enrobie.clients.mattermost.command | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.clients.mattermost.command | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.clients.mattermost.command | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../search.html" />
@@ -150,25 +150,25 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Literal</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 </span><span id="line-14">
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">enconnect.utils.http</span> <span class="kn">import</span> <span class="n">_METHODS</span>
-</span><span id="line-16"><span class="kn">from</span> <span class="nn">enconnect.utils.http</span> <span class="kn">import</span> <span class="n">_PAYLOAD</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">enconnect.utils.http</span><span class="w"> </span><span class="kn">import</span> <span class="n">_METHODS</span>
+</span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">enconnect.utils.http</span><span class="w"> </span><span class="kn">import</span> <span class="n">_PAYLOAD</span>
 </span><span id="line-17">
-</span><span id="line-18"><span class="kn">from</span> <span class="nn">...robie.models</span> <span class="kn">import</span> <span class="n">RobieCommand</span>
+</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">...robie.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieCommand</span>
 </span><span id="line-19">
 </span><span id="line-20"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-21">    <span class="kn">from</span> <span class="nn">...robie.childs</span> <span class="kn">import</span> <span class="n">RobieClient</span>
+</span><span id="line-21">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieClient</span>
 </span><span id="line-22">
 </span><span id="line-23">
 </span><span id="line-24">
 <div class="viewcode-block" id="MTMCommand">
 <a class="viewcode-back" href="../../../../enrobie.clients.mattermost.html#enrobie.clients.mattermost.command.MTMCommand">[docs]</a>
 </span><span id="line-25"><span class="nd">@dataclass</span>
-</span><span id="line-26"><span class="k">class</span> <span class="nc">MTMCommand</span><span class="p">(</span><span class="n">RobieCommand</span><span class="p">):</span>
+</span><span id="line-26"><span class="k">class</span><span class="w"> </span><span class="nc">MTMCommand</span><span class="p">(</span><span class="n">RobieCommand</span><span class="p">):</span>
 </span><span id="line-27"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-28"><span class="sd">    Contain information for sharing using the Python queue.</span>
 </span><span id="line-29"><span class="sd">    &quot;&quot;&quot;</span>
@@ -179,7 +179,7 @@
 </span><span id="line-34">    <span class="n">json</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_PAYLOAD</span><span class="p">]</span>
 </span><span id="line-35">
 </span><span id="line-36">
-</span><span id="line-37">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-37">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-38">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-39">        <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;RobieClient&#39;</span><span class="p">,</span>
 </span><span id="line-40">        <span class="n">method</span><span class="p">:</span> <span class="n">_METHODS</span><span class="p">,</span>
@@ -202,7 +202,7 @@
 </span><span id="line-57">
 </span><span id="line-58">
 </span><span id="line-59">    <span class="nd">@property</span>
-</span><span id="line-60">    <span class="k">def</span> <span class="nf">family</span><span class="p">(</span>
+</span><span id="line-60">    <span class="k">def</span><span class="w"> </span><span class="nf">family</span><span class="p">(</span>
 </span><span id="line-61">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-62">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;mattermost&#39;</span><span class="p">]:</span>
 </span><span id="line-63"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>

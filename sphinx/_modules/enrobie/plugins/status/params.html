@@ -15,7 +15,7 @@
     <title>enrobie.plugins.status.params | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.plugins.status.params | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.plugins.status.params | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../search.html" />
@@ -150,22 +150,22 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Annotated</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Annotated</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
 </span><span id="line-14">
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Field</span>
 </span><span id="line-16">
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">.common</span> <span class="kn">import</span> <span class="n">StatusPluginStates</span>
-</span><span id="line-18"><span class="kn">from</span> <span class="nn">...robie.params</span> <span class="kn">import</span> <span class="n">RobiePluginParams</span>
-</span><span id="line-19"><span class="kn">from</span> <span class="nn">...robie.params.common</span> <span class="kn">import</span> <span class="n">RobieParamsModel</span>
+</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">.common</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginStates</span>
+</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">...robie.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobiePluginParams</span>
+</span><span id="line-19"><span class="kn">from</span><span class="w"> </span><span class="nn">...robie.params.common</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieParamsModel</span>
 </span><span id="line-20">
 </span><span id="line-21">
 </span><span id="line-22">
 <div class="viewcode-block" id="StatusPluginReportParams">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.StatusPluginReportParams">[docs]</a>
-</span><span id="line-23"><span class="k">class</span> <span class="nc">StatusPluginReportParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
+</span><span id="line-23"><span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginReportParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
 </span><span id="line-24"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-25"><span class="sd">    Contain information for constructing the chat messages.</span>
 </span><span id="line-26"><span class="sd">    &quot;&quot;&quot;</span>
@@ -195,7 +195,7 @@
 </span><span id="line-50">              <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">le</span><span class="o">=</span><span class="mi">86400</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)]</span>
 </span><span id="line-51">
 </span><span id="line-52">
-</span><span id="line-53">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-53">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-54">        <span class="c1"># NOCVR</span>
 </span><span id="line-55">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-56">        <span class="o">/</span><span class="p">,</span>
@@ -217,7 +217,7 @@
 </span><span id="line-71">
 <div class="viewcode-block" id="StatusPluginCommandParams">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.StatusPluginCommandParams">[docs]</a>
-</span><span id="line-72"><span class="k">class</span> <span class="nc">StatusPluginCommandParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
+</span><span id="line-72"><span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginCommandParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
 </span><span id="line-73"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-74"><span class="sd">    Process and validate the Robie configuration parameters.</span>
 </span><span id="line-75"><span class="sd">    &quot;&quot;&quot;</span>
@@ -242,7 +242,7 @@
 </span><span id="line-93">
 <div class="viewcode-block" id="StatusPluginIconParams">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.StatusPluginIconParams">[docs]</a>
-</span><span id="line-94"><span class="k">class</span> <span class="nc">StatusPluginIconParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
+</span><span id="line-94"><span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginIconParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
 </span><span id="line-95"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-96"><span class="sd">    Contain information for constructing the chat messages.</span>
 </span><span id="line-97"><span class="sd">    &quot;&quot;&quot;</span>
@@ -270,7 +270,7 @@
 </span><span id="line-118">
 <div class="viewcode-block" id="StatusPluginIconsParams">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.StatusPluginIconsParams">[docs]</a>
-</span><span id="line-119"><span class="k">class</span> <span class="nc">StatusPluginIconsParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
+</span><span id="line-119"><span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginIconsParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
 </span><span id="line-120"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-121"><span class="sd">    Contain information for constructing the chat messages.</span>
 </span><span id="line-122"><span class="sd">    &quot;&quot;&quot;</span>
@@ -300,7 +300,7 @@
 </span><span id="line-145">
 <div class="viewcode-block" id="StatusPluginParams">
 <a class="viewcode-back" href="../../../../index.html#enrobie.plugins.StatusPluginParams">[docs]</a>
-</span><span id="line-146"><span class="k">class</span> <span class="nc">StatusPluginParams</span><span class="p">(</span><span class="n">RobiePluginParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
+</span><span id="line-146"><span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginParams</span><span class="p">(</span><span class="n">RobiePluginParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
 </span><span id="line-147"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-148"><span class="sd">    Process and validate the Robie configuration parameters.</span>
 </span><span id="line-149"><span class="sd">    &quot;&quot;&quot;</span>
@@ -322,7 +322,7 @@
 </span><span id="line-165">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per the chat platform&#39;</span><span class="p">)]</span>
 </span><span id="line-166">
 </span><span id="line-167">
-</span><span id="line-168">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-168">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-169">        <span class="c1"># NOCVR</span>
 </span><span id="line-170">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-171">        <span class="o">/</span><span class="p">,</span>

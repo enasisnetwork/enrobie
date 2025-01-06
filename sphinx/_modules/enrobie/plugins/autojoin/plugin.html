@@ -15,7 +15,7 @@
     <title>enrobie.plugins.autojoin.plugin | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.plugins.autojoin.plugin | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.plugins.autojoin.plugin | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../search.html" />
@@ -150,21 +150,21 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 </span><span id="line-11">
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">encommon.times</span> <span class="kn">import</span> <span class="n">Timer</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">NCNone</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.times</span><span class="w"> </span><span class="kn">import</span> <span class="n">Timer</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">NCNone</span>
 </span><span id="line-14">
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">enconnect.irc</span> <span class="kn">import</span> <span class="n">ClientEvent</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">enconnect.irc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClientEvent</span>
 </span><span id="line-16">
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">.params</span> <span class="kn">import</span> <span class="n">AutoJoinPluginParams</span>
-</span><span id="line-18"><span class="kn">from</span> <span class="nn">..status</span> <span class="kn">import</span> <span class="n">StatusPlugin</span>
-</span><span id="line-19"><span class="kn">from</span> <span class="nn">..status</span> <span class="kn">import</span> <span class="n">StatusPluginStates</span>
-</span><span id="line-20"><span class="kn">from</span> <span class="nn">...robie.childs</span> <span class="kn">import</span> <span class="n">RobiePlugin</span>
+</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoJoinPluginParams</span>
+</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">..status</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPlugin</span>
+</span><span id="line-19"><span class="kn">from</span><span class="w"> </span><span class="nn">..status</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginStates</span>
+</span><span id="line-20"><span class="kn">from</span><span class="w"> </span><span class="nn">...robie.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobiePlugin</span>
 </span><span id="line-21">
 </span><span id="line-22"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-23">    <span class="kn">from</span> <span class="nn">...clients</span> <span class="kn">import</span> <span class="n">IRCClient</span>
-</span><span id="line-24">    <span class="kn">from</span> <span class="nn">...robie.threads</span> <span class="kn">import</span> <span class="n">RobieThread</span>
+</span><span id="line-23">    <span class="kn">from</span><span class="w"> </span><span class="nn">...clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClient</span>
+</span><span id="line-24">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.threads</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieThread</span>
 </span><span id="line-25">
 </span><span id="line-26">
 </span><span id="line-27">
@@ -174,7 +174,7 @@
 </span><span id="line-31">
 <div class="viewcode-block" id="AutoJoinPlugin">
 <a class="viewcode-back" href="../../../../enrobie.plugins.autojoin.html#enrobie.plugins.AutoJoinPlugin">[docs]</a>
-</span><span id="line-32"><span class="k">class</span> <span class="nc">AutoJoinPlugin</span><span class="p">(</span><span class="n">RobiePlugin</span><span class="p">):</span>
+</span><span id="line-32"><span class="k">class</span><span class="w"> </span><span class="nc">AutoJoinPlugin</span><span class="p">(</span><span class="n">RobiePlugin</span><span class="p">):</span>
 </span><span id="line-33"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-34"><span class="sd">    Integrate with the Robie routine and perform operations.</span>
 </span><span id="line-35">
@@ -188,7 +188,7 @@
 </span><span id="line-43">    <span class="n">__timer</span><span class="p">:</span> <span class="n">Timer</span>
 </span><span id="line-44">
 </span><span id="line-45">
-</span><span id="line-46">    <span class="k">def</span> <span class="nf">__post__</span><span class="p">(</span>
+</span><span id="line-46">    <span class="k">def</span><span class="w"> </span><span class="nf">__post__</span><span class="p">(</span>
 </span><span id="line-47">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-48">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-49"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -235,7 +235,7 @@
 </span><span id="line-90">
 <div class="viewcode-block" id="AutoJoinPlugin.validate">
 <a class="viewcode-back" href="../../../../enrobie.plugins.autojoin.html#enrobie.plugins.AutoJoinPlugin.validate">[docs]</a>
-</span><span id="line-91">    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span>
+</span><span id="line-91">    <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span>
 </span><span id="line-92">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-93">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-94"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -246,7 +246,7 @@
 </span><span id="line-98">
 <div class="viewcode-block" id="AutoJoinPlugin.operate">
 <a class="viewcode-back" href="../../../../enrobie.plugins.autojoin.html#enrobie.plugins.AutoJoinPlugin.operate">[docs]</a>
-</span><span id="line-99">    <span class="k">def</span> <span class="nf">operate</span><span class="p">(</span>
+</span><span id="line-99">    <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>
 </span><span id="line-100">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-101">        <span class="n">thread</span><span class="p">:</span> <span class="s1">&#39;RobieThread&#39;</span><span class="p">,</span>
 </span><span id="line-102">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -256,7 +256,7 @@
 </span><span id="line-106"><span class="sd">        :param thread: Child class instance for Chatting Robie.</span>
 </span><span id="line-107"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-108">
-</span><span id="line-109">        <span class="kn">from</span> <span class="nn">...clients</span> <span class="kn">import</span> <span class="n">IRCClient</span>
+</span><span id="line-109">        <span class="kn">from</span><span class="w"> </span><span class="nn">...clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClient</span>
 </span><span id="line-110">
 </span><span id="line-111">        <span class="n">should</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__should</span>
 </span><span id="line-112">        <span class="n">joined</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__joined</span>
@@ -273,7 +273,7 @@
 </span><span id="line-123">            <span class="bp">self</span><span class="o">.</span><span class="n">__operate</span><span class="p">(</span><span class="n">thread</span><span class="p">)</span>
 </span><span id="line-124">
 </span><span id="line-125">
-</span><span id="line-126">        <span class="k">def</span> <span class="nf">_autojoin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-126">        <span class="k">def</span><span class="w"> </span><span class="nf">_autojoin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-127">
 </span><span id="line-128">            <span class="n">joined</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 </span><span id="line-129">
@@ -323,7 +323,7 @@
 
 </span><span id="line-173">
 </span><span id="line-174">
-</span><span id="line-175">    <span class="k">def</span> <span class="nf">__operate</span><span class="p">(</span>
+</span><span id="line-175">    <span class="k">def</span><span class="w"> </span><span class="nf">__operate</span><span class="p">(</span>
 </span><span id="line-176">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-177">        <span class="n">thread</span><span class="p">:</span> <span class="s1">&#39;RobieThread&#39;</span><span class="p">,</span>
 </span><span id="line-178">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -333,7 +333,7 @@
 </span><span id="line-182"><span class="sd">        :param thread: Child class instance for Chatting Robie.</span>
 </span><span id="line-183"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-184">
-</span><span id="line-185">        <span class="kn">from</span> <span class="nn">...clients</span> <span class="kn">import</span> <span class="n">IRCClient</span>
+</span><span id="line-185">        <span class="kn">from</span><span class="w"> </span><span class="nn">...clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClient</span>
 </span><span id="line-186">
 </span><span id="line-187">        <span class="n">should</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__should</span>
 </span><span id="line-188">        <span class="n">joined</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__joined</span>
@@ -346,7 +346,7 @@
 </span><span id="line-195">        <span class="n">failure</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 </span><span id="line-196">
 </span><span id="line-197">
-</span><span id="line-198">        <span class="k">def</span> <span class="nf">_autojoin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-198">        <span class="k">def</span><span class="w"> </span><span class="nf">_autojoin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-199">
 </span><span id="line-200">            <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
 </span><span id="line-201">
@@ -387,7 +387,7 @@
 </span><span id="line-236">            <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="p">)</span>
 </span><span id="line-237">
 </span><span id="line-238">
-</span><span id="line-239">    <span class="k">def</span> <span class="nf">__process</span><span class="p">(</span>
+</span><span id="line-239">    <span class="k">def</span><span class="w"> </span><span class="nf">__process</span><span class="p">(</span>
 </span><span id="line-240">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-241">        <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;IRCClient&#39;</span><span class="p">,</span>
 </span><span id="line-242">        <span class="n">event</span><span class="p">:</span> <span class="n">ClientEvent</span><span class="p">,</span>
@@ -447,7 +447,7 @@
 </span><span id="line-296">            <span class="n">_joined</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
 </span><span id="line-297">
 </span><span id="line-298">
-</span><span id="line-299">    <span class="k">def</span> <span class="nf">__status</span><span class="p">(</span>
+</span><span id="line-299">    <span class="k">def</span><span class="w"> </span><span class="nf">__status</span><span class="p">(</span>
 </span><span id="line-300">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-301">        <span class="n">status</span><span class="p">:</span> <span class="n">StatusPluginStates</span><span class="p">,</span>
 </span><span id="line-302">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>

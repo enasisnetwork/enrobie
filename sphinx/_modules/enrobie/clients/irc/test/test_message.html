@@ -15,7 +15,7 @@
     <title>enrobie.clients.irc.test.test_message | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.clients.irc.test.test_message | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.clients.irc.test.test_message | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../../search.html" />
@@ -150,29 +150,29 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 </span><span id="line-11">
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">inrepr</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">instr</span>
-</span><span id="line-14"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">lattrs</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">inrepr</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">instr</span>
+</span><span id="line-14"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">lattrs</span>
 </span><span id="line-15">
-</span><span id="line-16"><span class="kn">from</span> <span class="nn">enconnect.irc</span> <span class="kn">import</span> <span class="n">ClientEvent</span>
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">enconnect.irc.test</span> <span class="kn">import</span> <span class="n">EVENTS</span>
+</span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">enconnect.irc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClientEvent</span>
+</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">enconnect.irc.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">EVENTS</span>
 </span><span id="line-18">
-</span><span id="line-19"><span class="kn">from</span> <span class="nn">pytest</span> <span class="kn">import</span> <span class="n">raises</span>
+</span><span id="line-19"><span class="kn">from</span><span class="w"> </span><span class="nn">pytest</span><span class="w"> </span><span class="kn">import</span> <span class="n">raises</span>
 </span><span id="line-20">
-</span><span id="line-21"><span class="kn">from</span> <span class="nn">..client</span> <span class="kn">import</span> <span class="n">IRCClient</span>
-</span><span id="line-22"><span class="kn">from</span> <span class="nn">..command</span> <span class="kn">import</span> <span class="n">IRCCommand</span>
-</span><span id="line-23"><span class="kn">from</span> <span class="nn">..message</span> <span class="kn">import</span> <span class="n">IRCMessage</span>
+</span><span id="line-21"><span class="kn">from</span><span class="w"> </span><span class="nn">..client</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClient</span>
+</span><span id="line-22"><span class="kn">from</span><span class="w"> </span><span class="nn">..command</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCCommand</span>
+</span><span id="line-23"><span class="kn">from</span><span class="w"> </span><span class="nn">..message</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCMessage</span>
 </span><span id="line-24">
 </span><span id="line-25"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-26">    <span class="kn">from</span> <span class="nn">....robie</span> <span class="kn">import</span> <span class="n">Robie</span>
+</span><span id="line-26">    <span class="kn">from</span><span class="w"> </span><span class="nn">....robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robie</span>
 </span><span id="line-27">
 </span><span id="line-28">
 </span><span id="line-29">
 <div class="viewcode-block" id="test_IRCMessage">
 <a class="viewcode-back" href="../../../../../enrobie.clients.irc.test.html#enrobie.clients.irc.test.test_message.test_IRCMessage">[docs]</a>
-</span><span id="line-30"><span class="k">def</span> <span class="nf">test_IRCMessage</span><span class="p">(</span>
+</span><span id="line-30"><span class="k">def</span><span class="w"> </span><span class="nf">test_IRCMessage</span><span class="p">(</span>
 </span><span id="line-31">    <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
 </span><span id="line-32"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-33"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -251,7 +251,7 @@
 </span><span id="line-105">
 <div class="viewcode-block" id="test_IRCMessage_reply">
 <a class="viewcode-back" href="../../../../../enrobie.clients.irc.test.html#enrobie.clients.irc.test.test_message.test_IRCMessage_reply">[docs]</a>
-</span><span id="line-106"><span class="k">def</span> <span class="nf">test_IRCMessage_reply</span><span class="p">(</span>
+</span><span id="line-106"><span class="k">def</span><span class="w"> </span><span class="nf">test_IRCMessage_reply</span><span class="p">(</span>
 </span><span id="line-107">    <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
 </span><span id="line-108"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-109"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>

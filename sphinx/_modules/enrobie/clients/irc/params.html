@@ -15,7 +15,7 @@
     <title>enrobie.clients.irc.params | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.clients.irc.params | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.clients.irc.params | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../search.html" />
@@ -150,23 +150,23 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Annotated</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Annotated</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
 </span><span id="line-14">
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">enconnect.irc</span> <span class="kn">import</span> <span class="n">ClientParams</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">enconnect.irc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClientParams</span>
 </span><span id="line-16">
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span>
+</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Field</span>
 </span><span id="line-18">
-</span><span id="line-19"><span class="kn">from</span> <span class="nn">...plugins</span> <span class="kn">import</span> <span class="n">StatusPluginIconParams</span>
-</span><span id="line-20"><span class="kn">from</span> <span class="nn">...robie.params</span> <span class="kn">import</span> <span class="n">RobieClientParams</span>
+</span><span id="line-19"><span class="kn">from</span><span class="w"> </span><span class="nn">...plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginIconParams</span>
+</span><span id="line-20"><span class="kn">from</span><span class="w"> </span><span class="nn">...robie.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieClientParams</span>
 </span><span id="line-21">
 </span><span id="line-22">
 </span><span id="line-23">
 <div class="viewcode-block" id="IRCClientParams">
 <a class="viewcode-back" href="../../../../index.html#enrobie.clients.IRCClientParams">[docs]</a>
-</span><span id="line-24"><span class="k">class</span> <span class="nc">IRCClientParams</span><span class="p">(</span><span class="n">RobieClientParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
+</span><span id="line-24"><span class="k">class</span><span class="w"> </span><span class="nc">IRCClientParams</span><span class="p">(</span><span class="n">RobieClientParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
 </span><span id="line-25"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-26"><span class="sd">    Process and validate the Robie configuration parameters.</span>
 </span><span id="line-27"><span class="sd">    &quot;&quot;&quot;</span>
@@ -188,7 +188,7 @@
 </span><span id="line-43">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per chat platform&#39;</span><span class="p">)]</span>
 </span><span id="line-44">
 </span><span id="line-45">
-</span><span id="line-46">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-46">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-47">        <span class="c1"># NOCVR</span>
 </span><span id="line-48">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-49">        <span class="o">/</span><span class="p">,</span>

@@ -15,7 +15,7 @@
     <title>enrobie.robie.childs.robie | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.robie.childs.robie | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.robie.childs.robie | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../search.html" />
@@ -150,19 +150,19 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Type</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">deepcopy</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Type</span>
 </span><span id="line-14">
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">DictStrAny</span>
-</span><span id="line-16"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">NCNone</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
+</span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">NCNone</span>
 </span><span id="line-17">
-</span><span id="line-18"><span class="kn">from</span> <span class="nn">.client</span> <span class="kn">import</span> <span class="n">RobieClient</span>
-</span><span id="line-19"><span class="kn">from</span> <span class="nn">.plugin</span> <span class="kn">import</span> <span class="n">RobiePlugin</span>
+</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieClient</span>
+</span><span id="line-19"><span class="kn">from</span><span class="w"> </span><span class="nn">.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobiePlugin</span>
 </span><span id="line-20">
 </span><span id="line-21"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-22">    <span class="kn">from</span> <span class="nn">..robie</span> <span class="kn">import</span> <span class="n">Robie</span>
+</span><span id="line-22">    <span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robie</span>
 </span><span id="line-23">
 </span><span id="line-24">
 </span><span id="line-25">
@@ -173,7 +173,7 @@
 </span><span id="line-30">
 <div class="viewcode-block" id="RobieChilds">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds">[docs]</a>
-</span><span id="line-31"><span class="k">class</span> <span class="nc">RobieChilds</span><span class="p">:</span>
+</span><span id="line-31"><span class="k">class</span><span class="w"> </span><span class="nc">RobieChilds</span><span class="p">:</span>
 </span><span id="line-32"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-33"><span class="sd">    Contain the object instances for related Robie children.</span>
 </span><span id="line-34">
@@ -186,7 +186,7 @@
 </span><span id="line-41">    <span class="n">__plugins</span><span class="p">:</span> <span class="n">RobiePlugins</span>
 </span><span id="line-42">
 </span><span id="line-43">
-</span><span id="line-44">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-44">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-45">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-46">        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
 </span><span id="line-47">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -210,7 +210,7 @@
 </span><span id="line-65">
 <div class="viewcode-block" id="RobieChilds.validate">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.validate">[docs]</a>
-</span><span id="line-66">    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span>
+</span><span id="line-66">    <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span>
 </span><span id="line-67">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-68">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-69"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -236,7 +236,7 @@
 </span><span id="line-88">
 </span><span id="line-89">
 </span><span id="line-90">    <span class="nd">@property</span>
-</span><span id="line-91">    <span class="k">def</span> <span class="nf">clients</span><span class="p">(</span>
+</span><span id="line-91">    <span class="k">def</span><span class="w"> </span><span class="nf">clients</span><span class="p">(</span>
 </span><span id="line-92">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-93">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieClients</span><span class="p">:</span>
 </span><span id="line-94"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -251,7 +251,7 @@
 </span><span id="line-103">
 </span><span id="line-104">
 </span><span id="line-105">    <span class="nd">@property</span>
-</span><span id="line-106">    <span class="k">def</span> <span class="nf">plugins</span><span class="p">(</span>
+</span><span id="line-106">    <span class="k">def</span><span class="w"> </span><span class="nf">plugins</span><span class="p">(</span>
 </span><span id="line-107">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-108">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobiePlugins</span><span class="p">:</span>
 </span><span id="line-109"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -266,7 +266,7 @@
 </span><span id="line-118">
 </span><span id="line-119">
 </span><span id="line-120">    <span class="nd">@property</span>
-</span><span id="line-121">    <span class="k">def</span> <span class="nf">dumped</span><span class="p">(</span>
+</span><span id="line-121">    <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
 </span><span id="line-122">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-123">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
 </span><span id="line-124"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -293,7 +293,7 @@
 </span><span id="line-145">
 <div class="viewcode-block" id="RobieChilds.register">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.register">[docs]</a>
-</span><span id="line-146">    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span>  <span class="c1"># noqa: CFQ004</span>
+</span><span id="line-146">    <span class="k">def</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span>  <span class="c1"># noqa: CFQ004</span>
 </span><span id="line-147">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-148">        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="line-149">        <span class="o">*</span><span class="p">,</span>
@@ -315,7 +315,7 @@
 </span><span id="line-165">        <span class="n">_plugins</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">plugins</span>
 </span><span id="line-166">
 </span><span id="line-167">
-</span><span id="line-168">        <span class="k">def</span> <span class="nf">_put_client</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-168">        <span class="k">def</span><span class="w"> </span><span class="nf">_put_client</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-169">
 </span><span id="line-170">            <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
 </span><span id="line-171">
@@ -342,7 +342,7 @@
 </span><span id="line-192">            <span class="n">_put_client</span><span class="p">()</span>
 </span><span id="line-193">
 </span><span id="line-194">
-</span><span id="line-195">        <span class="k">def</span> <span class="nf">_put_plugin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-195">        <span class="k">def</span><span class="w"> </span><span class="nf">_put_plugin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-196">
 </span><span id="line-197">            <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
 </span><span id="line-198">

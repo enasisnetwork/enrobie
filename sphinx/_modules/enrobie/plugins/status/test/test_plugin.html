@@ -15,7 +15,7 @@
     <title>enrobie.plugins.status.test.test_plugin | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.plugins.status.test.test_plugin | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.plugins.status.test.test_plugin | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../../search.html" />
@@ -150,29 +150,29 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span> <span class="k">as</span> <span class="n">block_sleep</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">deepcopy</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">threading</span><span class="w"> </span><span class="kn">import</span> <span class="n">Thread</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span> <span class="k">as</span> <span class="n">block_sleep</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 </span><span id="line-14">
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">getate</span>
-</span><span id="line-16"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">inrepr</span>
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">instr</span>
-</span><span id="line-18"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">lattrs</span>
-</span><span id="line-19"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">setate</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">getate</span>
+</span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">inrepr</span>
+</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">instr</span>
+</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">lattrs</span>
+</span><span id="line-19"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">setate</span>
 </span><span id="line-20">
-</span><span id="line-21"><span class="kn">from</span> <span class="nn">enconnect.discord.test</span> <span class="kn">import</span> <span class="n">EVENTS</span> <span class="k">as</span> <span class="n">DSCEVENTS</span>
-</span><span id="line-22"><span class="kn">from</span> <span class="nn">enconnect.fixtures</span> <span class="kn">import</span> <span class="n">DSCClientSocket</span>
-</span><span id="line-23"><span class="kn">from</span> <span class="nn">enconnect.fixtures</span> <span class="kn">import</span> <span class="n">IRCClientSocket</span>
-</span><span id="line-24"><span class="kn">from</span> <span class="nn">enconnect.fixtures</span> <span class="kn">import</span> <span class="n">MTMClientSocket</span>
-</span><span id="line-25"><span class="kn">from</span> <span class="nn">enconnect.irc.test</span> <span class="kn">import</span> <span class="n">EVENTS</span> <span class="k">as</span> <span class="n">IRCEVENTS</span>
-</span><span id="line-26"><span class="kn">from</span> <span class="nn">enconnect.mattermost.test</span> <span class="kn">import</span> <span class="n">EVENTS</span> <span class="k">as</span> <span class="n">MTMEVENTS</span>
+</span><span id="line-21"><span class="kn">from</span><span class="w"> </span><span class="nn">enconnect.discord.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">EVENTS</span> <span class="k">as</span> <span class="n">DSCEVENTS</span>
+</span><span id="line-22"><span class="kn">from</span><span class="w"> </span><span class="nn">enconnect.fixtures</span><span class="w"> </span><span class="kn">import</span> <span class="n">DSCClientSocket</span>
+</span><span id="line-23"><span class="kn">from</span><span class="w"> </span><span class="nn">enconnect.fixtures</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClientSocket</span>
+</span><span id="line-24"><span class="kn">from</span><span class="w"> </span><span class="nn">enconnect.fixtures</span><span class="w"> </span><span class="kn">import</span> <span class="n">MTMClientSocket</span>
+</span><span id="line-25"><span class="kn">from</span><span class="w"> </span><span class="nn">enconnect.irc.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">EVENTS</span> <span class="k">as</span> <span class="n">IRCEVENTS</span>
+</span><span id="line-26"><span class="kn">from</span><span class="w"> </span><span class="nn">enconnect.mattermost.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">EVENTS</span> <span class="k">as</span> <span class="n">MTMEVENTS</span>
 </span><span id="line-27">
-</span><span id="line-28"><span class="kn">from</span> <span class="nn">..plugin</span> <span class="kn">import</span> <span class="n">StatusPlugin</span>
+</span><span id="line-28"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPlugin</span>
 </span><span id="line-29">
 </span><span id="line-30"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-31">    <span class="kn">from</span> <span class="nn">....robie</span> <span class="kn">import</span> <span class="n">Robie</span>
-</span><span id="line-32">    <span class="kn">from</span> <span class="nn">....robie</span> <span class="kn">import</span> <span class="n">RobieService</span>
+</span><span id="line-31">    <span class="kn">from</span><span class="w"> </span><span class="nn">....robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robie</span>
+</span><span id="line-32">    <span class="kn">from</span><span class="w"> </span><span class="nn">....robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieService</span>
 </span><span id="line-33">
 </span><span id="line-34">
 </span><span id="line-35">
@@ -232,7 +232,7 @@
 </span><span id="line-89">
 <div class="viewcode-block" id="test_StatusPlugin">
 <a class="viewcode-back" href="../../../../../enrobie.plugins.status.test.html#enrobie.plugins.status.test.test_plugin.test_StatusPlugin">[docs]</a>
-</span><span id="line-90"><span class="k">def</span> <span class="nf">test_StatusPlugin</span><span class="p">(</span>
+</span><span id="line-90"><span class="k">def</span><span class="w"> </span><span class="nf">test_StatusPlugin</span><span class="p">(</span>
 </span><span id="line-91">    <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
 </span><span id="line-92"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-93"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -292,7 +292,7 @@
 </span><span id="line-146">
 <div class="viewcode-block" id="test_StatusPlugin_cover">
 <a class="viewcode-back" href="../../../../../enrobie.plugins.status.test.html#enrobie.plugins.status.test.test_plugin.test_StatusPlugin_cover">[docs]</a>
-</span><span id="line-147"><span class="k">def</span> <span class="nf">test_StatusPlugin_cover</span><span class="p">(</span>
+</span><span id="line-147"><span class="k">def</span><span class="w"> </span><span class="nf">test_StatusPlugin_cover</span><span class="p">(</span>
 </span><span id="line-148">    <span class="n">service</span><span class="p">:</span> <span class="s1">&#39;RobieService&#39;</span><span class="p">,</span>
 </span><span id="line-149">    <span class="n">client_dscsock</span><span class="p">:</span> <span class="n">DSCClientSocket</span><span class="p">,</span>
 </span><span id="line-150">    <span class="n">client_ircsock</span><span class="p">:</span> <span class="n">IRCClientSocket</span><span class="p">,</span>

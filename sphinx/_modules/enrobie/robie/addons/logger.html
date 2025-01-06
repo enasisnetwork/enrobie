@@ -15,7 +15,7 @@
     <title>enrobie.robie.addons.logger | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.robie.addons.logger | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.robie.addons.logger | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../search.html" />
@@ -150,23 +150,23 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">threading</span><span class="w"> </span><span class="kn">import</span> <span class="n">Thread</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 </span><span id="line-13">
-</span><span id="line-14"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">DictStrAny</span>
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">clsname</span>
+</span><span id="line-14"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">clsname</span>
 </span><span id="line-16">
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">.queue</span> <span class="kn">import</span> <span class="n">RobieQueueItem</span>
+</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">.queue</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieQueueItem</span>
 </span><span id="line-18">
 </span><span id="line-19"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-20">    <span class="kn">from</span> <span class="nn">..robie</span> <span class="kn">import</span> <span class="n">Robie</span>
+</span><span id="line-20">    <span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robie</span>
 </span><span id="line-21">
 </span><span id="line-22">
 </span><span id="line-23">
 <div class="viewcode-block" id="RobieLogger">
 <a class="viewcode-back" href="../../../../enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger">[docs]</a>
-</span><span id="line-24"><span class="k">class</span> <span class="nc">RobieLogger</span><span class="p">:</span>
+</span><span id="line-24"><span class="k">class</span><span class="w"> </span><span class="nc">RobieLogger</span><span class="p">:</span>
 </span><span id="line-25"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-26"><span class="sd">    Methods for extending use of underlying logging library.</span>
 </span><span id="line-27"><span class="sd">    &quot;&quot;&quot;</span>
@@ -174,7 +174,7 @@
 </span><span id="line-29">    <span class="n">__robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span>
 </span><span id="line-30">
 </span><span id="line-31">
-</span><span id="line-32">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-32">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-33">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-34">        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
 </span><span id="line-35">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -187,7 +187,7 @@
 </span><span id="line-42">
 <div class="viewcode-block" id="RobieLogger.start">
 <a class="viewcode-back" href="../../../../enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.start">[docs]</a>
-</span><span id="line-43">    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span>
+</span><span id="line-43">    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span>
 </span><span id="line-44">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-45">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-46"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -204,7 +204,7 @@
 </span><span id="line-56">
 <div class="viewcode-block" id="RobieLogger.stop">
 <a class="viewcode-back" href="../../../../enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.stop">[docs]</a>
-</span><span id="line-57">    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span>
+</span><span id="line-57">    <span class="k">def</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span>
 </span><span id="line-58">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-59">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-60"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -219,7 +219,7 @@
 
 </span><span id="line-69">
 </span><span id="line-70">
-</span><span id="line-71">    <span class="k">def</span> <span class="nf">__process</span><span class="p">(</span>
+</span><span id="line-71">    <span class="k">def</span><span class="w"> </span><span class="nf">__process</span><span class="p">(</span>
 </span><span id="line-72">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-73">        <span class="n">kwargs</span><span class="p">:</span> <span class="n">DictStrAny</span><span class="p">,</span>
 </span><span id="line-74">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -265,7 +265,7 @@
 </span><span id="line-114">
 <div class="viewcode-block" id="RobieLogger.log">
 <a class="viewcode-back" href="../../../../enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log">[docs]</a>
-</span><span id="line-115">    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span>
+</span><span id="line-115">    <span class="k">def</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span>
 </span><span id="line-116">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-117">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-118">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -290,7 +290,7 @@
 </span><span id="line-136">
 <div class="viewcode-block" id="RobieLogger.log_c">
 <a class="viewcode-back" href="../../../../enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_c">[docs]</a>
-</span><span id="line-137">    <span class="k">def</span> <span class="nf">log_c</span><span class="p">(</span>
+</span><span id="line-137">    <span class="k">def</span><span class="w"> </span><span class="nf">log_c</span><span class="p">(</span>
 </span><span id="line-138">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-139">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-140">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -315,7 +315,7 @@
 </span><span id="line-158">
 <div class="viewcode-block" id="RobieLogger.log_d">
 <a class="viewcode-back" href="../../../../enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_d">[docs]</a>
-</span><span id="line-159">    <span class="k">def</span> <span class="nf">log_d</span><span class="p">(</span>
+</span><span id="line-159">    <span class="k">def</span><span class="w"> </span><span class="nf">log_d</span><span class="p">(</span>
 </span><span id="line-160">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-161">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-162">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -340,7 +340,7 @@
 </span><span id="line-180">
 <div class="viewcode-block" id="RobieLogger.log_e">
 <a class="viewcode-back" href="../../../../enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_e">[docs]</a>
-</span><span id="line-181">    <span class="k">def</span> <span class="nf">log_e</span><span class="p">(</span>
+</span><span id="line-181">    <span class="k">def</span><span class="w"> </span><span class="nf">log_e</span><span class="p">(</span>
 </span><span id="line-182">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-183">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-184">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -365,7 +365,7 @@
 </span><span id="line-202">
 <div class="viewcode-block" id="RobieLogger.log_i">
 <a class="viewcode-back" href="../../../../enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_i">[docs]</a>
-</span><span id="line-203">    <span class="k">def</span> <span class="nf">log_i</span><span class="p">(</span>
+</span><span id="line-203">    <span class="k">def</span><span class="w"> </span><span class="nf">log_i</span><span class="p">(</span>
 </span><span id="line-204">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-205">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-206">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -390,7 +390,7 @@
 </span><span id="line-224">
 <div class="viewcode-block" id="RobieLogger.log_w">
 <a class="viewcode-back" href="../../../../enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_w">[docs]</a>
-</span><span id="line-225">    <span class="k">def</span> <span class="nf">log_w</span><span class="p">(</span>
+</span><span id="line-225">    <span class="k">def</span><span class="w"> </span><span class="nf">log_w</span><span class="p">(</span>
 </span><span id="line-226">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-227">        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 </span><span id="line-228">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>

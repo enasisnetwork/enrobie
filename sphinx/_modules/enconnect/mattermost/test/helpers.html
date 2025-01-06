@@ -15,7 +15,7 @@
     <title>enconnect.mattermost.test.helpers | enrobie  documentation</title>
     <meta property="og:title" content="enconnect.mattermost.test.helpers | enrobie  documentation" />
     <meta name="twitter:title" content="enconnect.mattermost.test.helpers | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../../search.html" />
@@ -150,25 +150,25 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">json</span> <span class="kn">import</span> <span class="n">dumps</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">ssl</span> <span class="kn">import</span> <span class="n">SSLContext</span>
-</span><span id="line-12"><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span> <span class="k">as</span> <span class="n">block_sleep</span>
-</span><span id="line-13"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterator</span>
-</span><span id="line-14"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
-</span><span id="line-15"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Protocol</span>
-</span><span id="line-16"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">overload</span>
-</span><span id="line-17"><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">MagicMock</span>
-</span><span id="line-18"><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">Mock</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">json</span><span class="w"> </span><span class="kn">import</span> <span class="n">dumps</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">ssl</span><span class="w"> </span><span class="kn">import</span> <span class="n">SSLContext</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span> <span class="k">as</span> <span class="n">block_sleep</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterator</span>
+</span><span id="line-14"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Protocol</span>
+</span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">overload</span>
+</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">unittest.mock</span><span class="w"> </span><span class="kn">import</span> <span class="n">MagicMock</span>
+</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">unittest.mock</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mock</span>
 </span><span id="line-19">
-</span><span id="line-20"><span class="kn">from</span> <span class="nn">encommon.types</span> <span class="kn">import</span> <span class="n">DictStrAny</span>
+</span><span id="line-20"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
 </span><span id="line-21">
-</span><span id="line-22"><span class="kn">from</span> <span class="nn">httpx</span> <span class="kn">import</span> <span class="n">Response</span>
+</span><span id="line-22"><span class="kn">from</span><span class="w"> </span><span class="nn">httpx</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
 </span><span id="line-23">
-</span><span id="line-24"><span class="kn">from</span> <span class="nn">pytest</span> <span class="kn">import</span> <span class="n">fixture</span>
+</span><span id="line-24"><span class="kn">from</span><span class="w"> </span><span class="nn">pytest</span><span class="w"> </span><span class="kn">import</span> <span class="n">fixture</span>
 </span><span id="line-25">
-</span><span id="line-26"><span class="kn">from</span> <span class="nn">pytest_mock</span> <span class="kn">import</span> <span class="n">MockerFixture</span>
+</span><span id="line-26"><span class="kn">from</span><span class="w"> </span><span class="nn">pytest_mock</span><span class="w"> </span><span class="kn">import</span> <span class="n">MockerFixture</span>
 </span><span id="line-27">
-</span><span id="line-28"><span class="kn">from</span> <span class="nn">respx</span> <span class="kn">import</span> <span class="n">MockRouter</span>
+</span><span id="line-28"><span class="kn">from</span><span class="w"> </span><span class="nn">respx</span><span class="w"> </span><span class="kn">import</span> <span class="n">MockRouter</span>
 </span><span id="line-29">
 </span><span id="line-30">
 </span><span id="line-31">
@@ -250,25 +250,25 @@
 </span><span id="line-107">
 </span><span id="line-108">
 </span><span id="line-109">
-</span><span id="line-110"><span class="k">class</span> <span class="nc">MTMClientSocket</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+</span><span id="line-110"><span class="k">class</span><span class="w"> </span><span class="nc">MTMClientSocket</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
 </span><span id="line-111"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-112"><span class="sd">    Typing protocol which the developer does not understand.</span>
 </span><span id="line-113"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="line-114">
 </span><span id="line-115">    <span class="nd">@overload</span>
-</span><span id="line-116">    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span>
+</span><span id="line-116">    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span>
 </span><span id="line-117">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-118">        <span class="n">rvents</span><span class="p">:</span> <span class="n">_EVENTS</span><span class="p">,</span>
 </span><span id="line-119">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_SOCKET</span><span class="p">:</span>
 </span><span id="line-120">        <span class="o">...</span>  <span class="c1"># NOCVR</span>
 </span><span id="line-121">
 </span><span id="line-122">    <span class="nd">@overload</span>
-</span><span id="line-123">    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span>
+</span><span id="line-123">    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span>
 </span><span id="line-124">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-125">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_SOCKET</span><span class="p">:</span>
 </span><span id="line-126">        <span class="o">...</span>  <span class="c1"># NOCVR</span>
 </span><span id="line-127">
-</span><span id="line-128">    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span>
+</span><span id="line-128">    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span>
 </span><span id="line-129">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-130">        <span class="n">rvents</span><span class="p">:</span> <span class="n">_EVENTS</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-131">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_SOCKET</span><span class="p">:</span>
@@ -284,7 +284,7 @@
 <div class="viewcode-block" id="client_mtmsock">
 <a class="viewcode-back" href="../../../../enrobie.html#enrobie.conftest.client_mtmsock">[docs]</a>
 </span><span id="line-141"><span class="nd">@fixture</span>
-</span><span id="line-142"><span class="k">def</span> <span class="nf">client_mtmsock</span><span class="p">(</span>  <span class="c1"># noqa: CFQ004</span>
+</span><span id="line-142"><span class="k">def</span><span class="w"> </span><span class="nf">client_mtmsock</span><span class="p">(</span>  <span class="c1"># noqa: CFQ004</span>
 </span><span id="line-143">    <span class="n">mocker</span><span class="p">:</span> <span class="n">MockerFixture</span><span class="p">,</span>
 </span><span id="line-144">    <span class="n">respx_mock</span><span class="p">:</span> <span class="n">MockRouter</span><span class="p">,</span>
 </span><span id="line-145"><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MTMClientSocket</span><span class="p">:</span>
@@ -319,7 +319,7 @@
 </span><span id="line-174">        <span class="n">autospec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span><span id="line-175">
 </span><span id="line-176">
-</span><span id="line-177">    <span class="k">def</span> <span class="nf">_encode</span><span class="p">(</span>
+</span><span id="line-177">    <span class="k">def</span><span class="w"> </span><span class="nf">_encode</span><span class="p">(</span>
 </span><span id="line-178">        <span class="n">resps</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">DictStrAny</span><span class="p">],</span>
 </span><span id="line-179">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">bytes</span><span class="p">]:</span>
 </span><span id="line-180">
@@ -328,7 +328,7 @@
 </span><span id="line-183">            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">resps</span><span class="p">]</span>
 </span><span id="line-184">
 </span><span id="line-185">
-</span><span id="line-186">    <span class="k">def</span> <span class="nf">_delayed</span><span class="p">(</span>
+</span><span id="line-186">    <span class="k">def</span><span class="w"> </span><span class="nf">_delayed</span><span class="p">(</span>
 </span><span id="line-187">        <span class="n">events</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">bytes</span><span class="p">],</span>
 </span><span id="line-188">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">bytes</span><span class="p">]:</span>
 </span><span id="line-189">
@@ -355,7 +355,7 @@
 </span><span id="line-210">                <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
 </span><span id="line-211">
 </span><span id="line-212">
-</span><span id="line-213">    <span class="k">def</span> <span class="nf">_factory</span><span class="p">(</span>
+</span><span id="line-213">    <span class="k">def</span><span class="w"> </span><span class="nf">_factory</span><span class="p">(</span>
 </span><span id="line-214">        <span class="n">rvents</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">DictStrAny</span><span class="p">],</span>
 </span><span id="line-215">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MagicMock</span><span class="p">:</span>
 </span><span id="line-216">
@@ -374,7 +374,7 @@
 </span><span id="line-229">        <span class="k">return</span> <span class="n">socket</span>
 </span><span id="line-230">
 </span><span id="line-231">
-</span><span id="line-232">    <span class="k">def</span> <span class="nf">_fixture</span><span class="p">(</span>
+</span><span id="line-232">    <span class="k">def</span><span class="w"> </span><span class="nf">_fixture</span><span class="p">(</span>
 </span><span id="line-233">        <span class="n">rvents</span><span class="p">:</span> <span class="n">_EVENTS</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-234">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_SOCKET</span><span class="p">:</span>
 </span><span id="line-235">

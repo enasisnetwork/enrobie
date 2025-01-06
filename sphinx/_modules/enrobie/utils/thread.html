@@ -15,7 +15,7 @@
     <title>enrobie.utils.thread | enrobie  documentation</title>
     <meta property="og:title" content="enrobie.utils.thread | enrobie  documentation" />
     <meta name="twitter:title" content="enrobie.utils.thread | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8d216cef" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../_static/autodoc_pydantic.css" />
         <link rel="search" title="Search" href="../../../search.html" />
@@ -150,14 +150,14 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
-</span><span id="line-11"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">threading</span><span class="w"> </span><span class="kn">import</span> <span class="n">Thread</span>
+</span><span id="line-11"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
 </span><span id="line-12">
 </span><span id="line-13">
 </span><span id="line-14">
 <div class="viewcode-block" id="DupliThread">
 <a class="viewcode-back" href="../../../enrobie.utils.html#enrobie.utils.thread.DupliThread">[docs]</a>
-</span><span id="line-15"><span class="k">class</span> <span class="nc">DupliThread</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+</span><span id="line-15"><span class="k">class</span><span class="w"> </span><span class="nc">DupliThread</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
 </span><span id="line-16"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-17"><span class="sd">    Exception for when the client thread is already running.</span>
 </span><span id="line-18">
@@ -169,7 +169,7 @@
 </span><span id="line-24">    <span class="n">about</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 </span><span id="line-25">
 </span><span id="line-26">
-</span><span id="line-27">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-27">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-28">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-29">        <span class="n">thread</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Thread</span><span class="p">,</span>
 </span><span id="line-30">        <span class="n">about</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
