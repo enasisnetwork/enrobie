@@ -580,7 +580,7 @@ outdated: \
 	.check-venv-package
 	@## Check outdated packages in requirements
 	@#
-	@$(MAKE) cleanup-pycache
+	@$(MAKE) cleanup
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>outdated<c0>)
@@ -605,7 +605,7 @@ outdated: \
 cloc:
 	@## Breakdown lines of code within the project
 	@#
-	@$(MAKE) cleanup-pycache
+	@$(MAKE) cleanup
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>cloc<c0>)
