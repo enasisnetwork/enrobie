@@ -34,8 +34,8 @@ html_theme = 'sphinxawesome_theme'
 always_document_param_types = True
 
 intersphinx_mapping = {
-    'encommon': ('https://http://enasisnetwork.github.io/encommon/sphinx', None),
-    'enconnect': ('https://http://enasisnetwork.github.io/enconnect/sphinx', None),
+    'encommon': ('https://enasisnetwork.github.io/encommon/sphinx', None),
+    'enconnect': ('https://enasisnetwork.github.io/enconnect/sphinx', None),
     'jinja2': ('https://jinja.palletsprojects.com/en/latest', None),
     'netaddr': ('https://netaddr.readthedocs.io/en/latest', None),
     'pydantic': ('https://docs.pydantic.dev/latest', None),
