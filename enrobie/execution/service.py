@@ -23,6 +23,8 @@ from ..clients import IRCClient
 from ..clients import IRCClientParams
 from ..clients import MTMClient
 from ..clients import MTMClientParams
+from ..plugins import AinswerPlugin
+from ..plugins import AinswerPluginParams
 from ..plugins import AutoJoinPlugin
 from ..plugins import AutoJoinPluginParams
 from ..plugins import AutoNickPlugin
@@ -154,6 +156,10 @@ def register_params(
         plugin=AutoNickPluginParams)
 
     config.register(
+        name='ainswer',
+        plugin=AinswerPluginParams)
+
+    config.register(
         name='status',
         plugin=StatusPluginParams)
 
@@ -188,6 +194,10 @@ def register_plugins(
     robie.register(
         name='autonick',
         plugin=AutoNickPlugin)
+
+    robie.register(
+        name='ainswer',
+        plugin=AinswerPlugin)
 
     robie.register(
         name='status',
