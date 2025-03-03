@@ -82,14 +82,9 @@ def test_RobieService(
     plugins = service.plugins
     threads = plugins.threads
 
-    allowed = [
-        'autojoin',
-        'autonick',
-        'status']
-
     for name in list(threads):
 
-        if name in allowed:
+        if name == 'status':
             continue
 
         del threads[name]
@@ -97,7 +92,7 @@ def test_RobieService(
     plugins.threads = threads
 
 
-    assert len(service.zombies) == 6
+    assert len(service.zombies) == 4
 
 
     client_dscsock()

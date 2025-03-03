@@ -8,6 +8,7 @@ is permitted, for more information consult the project license file.
 
 
 from copy import deepcopy
+from typing import Any
 from typing import Optional
 from typing import TYPE_CHECKING
 from typing import Type
@@ -18,6 +19,7 @@ from encommon.types import clsname
 from encommon.utils import array_ansi
 from encommon.utils import print_ansi
 
+from .addons import RobieJinja2
 from .addons import RobieLogger
 from .childs import RobieChilds
 from .models import RobieModels
@@ -41,6 +43,7 @@ class Robie:
     __config: 'RobieConfig'
 
     __logger: RobieLogger
+    __jinja2: RobieJinja2
 
     __childs: RobieChilds
 
@@ -61,6 +64,9 @@ class Robie:
 
         self.__logger = (
             RobieLogger(self))
+
+        self.__jinja2 = (
+            RobieJinja2(self))
 
         self.__childs = (
             RobieChilds(self))
@@ -96,6 +102,19 @@ class Robie:
         """
 
         return self.__logger
+
+
+    @property
+    def jinja2(
+        self,
+    ) -> RobieJinja2:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__jinja2
 
 
     @property
@@ -226,3 +245,22 @@ class Robie:
             name=name,
             client=client,
             plugin=plugin)
+
+
+    def j2parse(
+        self,
+        value: Any,  # noqa: ANN401
+        statics: Optional[DictStrAny] = None,
+        literal: bool = True,
+    ) -> Any:  # noqa: ANN401
+        """
+        Return the provided input using the Jinja2 environment.
+
+        :param value: Input that will be processed and returned.
+        :param statics: Additional values available for parsing.
+        :param literal: Determine if Python objects are evaled.
+        :returns: Provided input using the Jinja2 environment.
+        """
+
+        return self.__jinja2.parse(
+            value, statics, literal)
