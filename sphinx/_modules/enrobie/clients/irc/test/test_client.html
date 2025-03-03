@@ -325,14 +325,16 @@
 </span><span id="line-171">
 </span><span id="line-172">    <span class="n">citem</span> <span class="o">=</span> <span class="p">(</span>
 </span><span id="line-173">        <span class="n">client</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span>
-</span><span id="line-174">            <span class="s1">&#39;#chan&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">))</span>
-</span><span id="line-175">
-</span><span id="line-176">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-177">        <span class="n">citem</span><span class="p">,</span> <span class="n">IRCCommand</span><span class="p">)</span>
-</span><span id="line-178">
+</span><span id="line-174">            <span class="s1">&#39;#channel&#39;</span><span class="p">,</span>
+</span><span id="line-175">            <span class="s1">&#39;message&#39;</span><span class="p">))</span>
+</span><span id="line-176">
+</span><span id="line-177">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-178">        <span class="n">citem</span><span class="p">,</span> <span class="n">IRCCommand</span><span class="p">)</span>
 </span><span id="line-179">
-</span><span id="line-180">    <span class="k">assert</span> <span class="n">citem</span><span class="o">.</span><span class="n">event</span> <span class="o">==</span> <span class="p">(</span>
-</span><span id="line-181">        <span class="s1">&#39;PRIVMSG #chan :message&#39;</span><span class="p">)</span></div>
+</span><span id="line-180">
+</span><span id="line-181">    <span class="k">assert</span> <span class="n">citem</span><span class="o">.</span><span class="n">event</span> <span class="o">==</span> <span class="p">(</span>
+</span><span id="line-182">        <span class="s1">&#39;PRIVMSG #channel&#39;</span>
+</span><span id="line-183">        <span class="s1">&#39; :message&#39;</span><span class="p">)</span></div>
 
 </span></code></pre></div>
     </div></div>
@@ -343,7 +345,7 @@
       <div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
         <p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2024, Enasis Network&nbsp;Built with <a class="font-medium underline underline-offset-4"
     href="https://www.sphinx-doc.org"
-    rel="noreferrer">Sphinx 8.2.1</a></p>
+    rel="noreferrer">Sphinx 8.2.3</a></p>
 </div>
 </div>
 </footer>

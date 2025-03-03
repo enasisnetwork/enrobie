@@ -287,21 +287,22 @@
 </span><span id="line-139">    <span class="n">event</span> <span class="o">=</span> <span class="n">ClientEvent</span><span class="p">(</span>
 </span><span id="line-140">        <span class="n">client</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
 </span><span id="line-141">        <span class="n">EVENTS</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
-</span><span id="line-142">            <span class="s1">&#39;#chan&#39;</span><span class="p">,</span> <span class="s1">&#39;ircbot&#39;</span><span class="p">))</span>
-</span><span id="line-143">
-</span><span id="line-144">    <span class="n">item</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
-</span><span id="line-145">        <span class="n">client</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span>
-</span><span id="line-146">
-</span><span id="line-147">    <span class="n">reply</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-148">        <span class="n">robie</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
-</span><span id="line-149">
+</span><span id="line-142">            <span class="s1">&#39;#channel&#39;</span><span class="p">,</span>
+</span><span id="line-143">            <span class="s1">&#39;ircbot&#39;</span><span class="p">))</span>
+</span><span id="line-144">
+</span><span id="line-145">    <span class="n">item</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
+</span><span id="line-146">        <span class="n">client</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span>
+</span><span id="line-147">
+</span><span id="line-148">    <span class="n">reply</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-149">        <span class="n">robie</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
 </span><span id="line-150">
-</span><span id="line-151">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-152">        <span class="n">reply</span><span class="p">,</span> <span class="n">IRCCommand</span><span class="p">)</span>
-</span><span id="line-153">
+</span><span id="line-151">
+</span><span id="line-152">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-153">        <span class="n">reply</span><span class="p">,</span> <span class="n">IRCCommand</span><span class="p">)</span>
 </span><span id="line-154">
-</span><span id="line-155">    <span class="k">assert</span> <span class="n">reply</span><span class="o">.</span><span class="n">event</span> <span class="o">==</span> <span class="p">(</span>
-</span><span id="line-156">        <span class="s1">&#39;PRIVMSG nick :Hello&#39;</span><span class="p">)</span></div>
+</span><span id="line-155">
+</span><span id="line-156">    <span class="k">assert</span> <span class="n">reply</span><span class="o">.</span><span class="n">event</span> <span class="o">==</span> <span class="p">(</span>
+</span><span id="line-157">        <span class="s1">&#39;PRIVMSG nick :Hello&#39;</span><span class="p">)</span></div>
 
 </span></code></pre></div>
     </div></div>
@@ -312,7 +313,7 @@
       <div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
         <p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2024, Enasis Network&nbsp;Built with <a class="font-medium underline underline-offset-4"
     href="https://www.sphinx-doc.org"
-    rel="noreferrer">Sphinx 8.2.1</a></p>
+    rel="noreferrer">Sphinx 8.2.3</a></p>
 </div>
 </div>
 </footer>
