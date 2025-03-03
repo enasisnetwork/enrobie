@@ -139,7 +139,8 @@ def test_IRCMessage_reply(
     event = ClientEvent(
         client.client,
         EVENTS[1].replace(
-            '#chan', 'ircbot'))
+            '#channel',
+            'ircbot'))
 
     item = model(
         client, event)

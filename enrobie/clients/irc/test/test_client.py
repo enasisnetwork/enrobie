@@ -171,11 +171,13 @@ def test_IRCClient_compose(
 
     citem = (
         client.compose(
-            '#chan', 'message'))
+            '#channel',
+            'message'))
 
     assert isinstance(
         citem, IRCCommand)
 
 
     assert citem.event == (
-        'PRIVMSG #chan :message')
+        'PRIVMSG #channel'
+        ' :message')

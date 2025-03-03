@@ -79,6 +79,27 @@ def test_RobieService(
     assert len(service.zombies) == 6
 
 
+    plugins = service.plugins
+    threads = plugins.threads
+
+    allowed = [
+        'autojoin',
+        'autonick',
+        'status']
+
+    for name in list(threads):
+
+        if name in allowed:
+            continue
+
+        del threads[name]
+
+    plugins.threads = threads
+
+
+    assert len(service.zombies) == 6
+
+
     client_dscsock()
     client_ircsock()
     client_mtmsock()
