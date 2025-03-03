@@ -39,6 +39,7 @@ def test_Robie(
     assert attrs == [
         '_Robie__config',
         '_Robie__logger',
+        '_Robie__jinja2',
         '_Robie__childs']
 
 
@@ -57,6 +58,8 @@ def test_Robie(
     assert robie.config
 
     assert robie.logger
+
+    assert robie.jinja2
 
     assert robie.childs
 
@@ -99,6 +102,23 @@ def test_Robie_printer(
     item = model(client)
 
     robie.printer(item)
+
+
+
+def test_Robie_jinja2(
+    robie: Robie,
+) -> None:
+    """
+    Perform various tests associated with relevant routines.
+
+    :param robie: Primary class instance for Chatting Robie.
+    """
+
+    parsed = robie.j2parse(
+        '{{ foo }}',
+        {'foo': 'bar'})
+
+    assert parsed == 'bar'
 
 
 

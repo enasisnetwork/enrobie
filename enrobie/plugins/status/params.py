@@ -77,17 +77,20 @@ class StatusPluginCommandParams(RobieParamsModel, extra='forbid'):
     irc: Annotated[
         str,
         Field('!status',
-              description='Command name for chat platform')]
+              description='Command name for chat platform',
+              min_length=2)]
 
     dsc: Annotated[
         str,
         Field('!status',
-              description='Command name for chat platform')]
+              description='Command name for chat platform',
+              min_length=2)]
 
     mtm: Annotated[
         str,
         Field('!status',
-              description='Command name for chat platform')]
+              description='Command name for chat platform',
+              min_length=2)]
 
 
 
