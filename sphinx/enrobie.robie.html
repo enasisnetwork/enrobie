@@ -106,6 +106,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="enrobie.robie.addons.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.addons.html#module-enrobie.robie.addons.jinja2">enrobie.robie.addons.jinja2 module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.jinja2.RobieJinja2"><code class="docutils literal notranslate"><span class="pre">RobieJinja2</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="enrobie.robie.addons.html#module-enrobie.robie.addons.logger">enrobie.robie.addons.logger module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger"><code class="docutils literal notranslate"><span class="pre">RobieLogger</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log()</span></code></a></li>
@@ -135,6 +139,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="enrobie.robie.addons.html#module-enrobie.robie.addons">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieJinja2"><code class="docutils literal notranslate"><span class="pre">RobieJinja2</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger"><code class="docutils literal notranslate"><span class="pre">RobieLogger</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.log"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.log_c"><code class="docutils literal notranslate"><span class="pre">RobieLogger.log_c()</span></code></a></li>
@@ -511,6 +516,7 @@
 <li class="toctree-l2"><a class="reference internal" href="enrobie.robie.test.html#module-enrobie.robie.test.test_robie">enrobie.robie.test.test_robie module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.robie.test.html#enrobie.robie.test.test_robie.test_Robie"><code class="docutils literal notranslate"><span class="pre">test_Robie()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.robie.test.html#enrobie.robie.test.test_robie.test_Robie_cover"><code class="docutils literal notranslate"><span class="pre">test_Robie_cover()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.test.html#enrobie.robie.test.test_robie.test_Robie_jinja2"><code class="docutils literal notranslate"><span class="pre">test_Robie_jinja2()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.robie.test.html#enrobie.robie.test.test_robie.test_Robie_printer"><code class="docutils literal notranslate"><span class="pre">test_Robie_printer()</span></code></a></li>
 </ul>
 </li>
@@ -721,6 +727,33 @@ is permitted, for more information consult the project license file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Facts about the attributes from the instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.robie.Robie.j2parse">
+<span class="sig-name descname"><span class="pre">j2parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">statics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">literal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/robie.html#Robie.j2parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.robie.Robie.j2parse" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.robie.Robie.j2parse'">¶</a></dt>
+<dd><p>Return the provided input using the Jinja2 environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – Input that will be processed and returned.</p></li>
+<li><p><strong>statics</strong> – Additional values available for parsing.</p></li>
+<li><p><strong>literal</strong> – Determine if Python objects are evaled.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Provided input using the Jinja2 environment.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.robie.Robie.jinja2">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">jinja2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.jinja2.RobieJinja2" title="enrobie.robie.addons.jinja2.RobieJinja2"><span class="pre">RobieJinja2</span></a></em><a class="headerlink" href="#enrobie.robie.robie.Robie.jinja2" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.robie.Robie.jinja2'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -983,6 +1016,33 @@ is permitted, for more information consult the project license file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Facts about the attributes from the instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.Robie.j2parse">
+<span class="sig-name descname"><span class="pre">j2parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">statics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">literal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/robie.html#Robie.j2parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.Robie.j2parse" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.Robie.j2parse'">¶</a></dt>
+<dd><p>Return the provided input using the Jinja2 environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – Input that will be processed and returned.</p></li>
+<li><p><strong>statics</strong> – Additional values available for parsing.</p></li>
+<li><p><strong>literal</strong> – Determine if Python objects are evaled.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Provided input using the Jinja2 environment.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.Robie.jinja2">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">jinja2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.jinja2.RobieJinja2" title="enrobie.robie.addons.jinja2.RobieJinja2"><span class="pre">RobieJinja2</span></a></em><a class="headerlink" href="#enrobie.robie.Robie.jinja2" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.Robie.jinja2'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1299,6 +1359,8 @@ changes meant this breaks or breaks something else.</p>
 <li><a :data-current="activeSection === '#enrobie.robie.robie.Robie.childs'" class="reference internal" href="#enrobie.robie.robie.Robie.childs"><code class="docutils literal notranslate"><span class="pre">Robie.childs</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.robie.Robie.config'" class="reference internal" href="#enrobie.robie.robie.Robie.config"><code class="docutils literal notranslate"><span class="pre">Robie.config</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.robie.Robie.dumped'" class="reference internal" href="#enrobie.robie.robie.Robie.dumped"><code class="docutils literal notranslate"><span class="pre">Robie.dumped</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.robie.Robie.j2parse'" class="reference internal" href="#enrobie.robie.robie.Robie.j2parse"><code class="docutils literal notranslate"><span class="pre">Robie.j2parse()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.robie.Robie.jinja2'" class="reference internal" href="#enrobie.robie.robie.Robie.jinja2"><code class="docutils literal notranslate"><span class="pre">Robie.jinja2</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.robie.Robie.logger'" class="reference internal" href="#enrobie.robie.robie.Robie.logger"><code class="docutils literal notranslate"><span class="pre">Robie.logger</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.robie.Robie.params'" class="reference internal" href="#enrobie.robie.robie.Robie.params"><code class="docutils literal notranslate"><span class="pre">Robie.params</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.robie.Robie.printer'" class="reference internal" href="#enrobie.robie.robie.Robie.printer"><code class="docutils literal notranslate"><span class="pre">Robie.printer()</span></code></a></li>
@@ -1335,6 +1397,8 @@ changes meant this breaks or breaks something else.</p>
 <li><a :data-current="activeSection === '#enrobie.robie.Robie.childs'" class="reference internal" href="#enrobie.robie.Robie.childs"><code class="docutils literal notranslate"><span class="pre">Robie.childs</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.Robie.config'" class="reference internal" href="#enrobie.robie.Robie.config"><code class="docutils literal notranslate"><span class="pre">Robie.config</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.Robie.dumped'" class="reference internal" href="#enrobie.robie.Robie.dumped"><code class="docutils literal notranslate"><span class="pre">Robie.dumped</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.Robie.j2parse'" class="reference internal" href="#enrobie.robie.Robie.j2parse"><code class="docutils literal notranslate"><span class="pre">Robie.j2parse()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.Robie.jinja2'" class="reference internal" href="#enrobie.robie.Robie.jinja2"><code class="docutils literal notranslate"><span class="pre">Robie.jinja2</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.Robie.logger'" class="reference internal" href="#enrobie.robie.Robie.logger"><code class="docutils literal notranslate"><span class="pre">Robie.logger</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.Robie.params'" class="reference internal" href="#enrobie.robie.Robie.params"><code class="docutils literal notranslate"><span class="pre">Robie.params</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.Robie.printer'" class="reference internal" href="#enrobie.robie.Robie.printer"><code class="docutils literal notranslate"><span class="pre">Robie.printer()</span></code></a></li>
