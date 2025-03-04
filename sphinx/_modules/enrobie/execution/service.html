@@ -166,230 +166,240 @@
 </span><span id="line-23"><span class="kn">from</span><span class="w"> </span><span class="nn">..clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClientParams</span>
 </span><span id="line-24"><span class="kn">from</span><span class="w"> </span><span class="nn">..clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">MTMClient</span>
 </span><span id="line-25"><span class="kn">from</span><span class="w"> </span><span class="nn">..clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">MTMClientParams</span>
-</span><span id="line-26"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoJoinPlugin</span>
-</span><span id="line-27"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoJoinPluginParams</span>
-</span><span id="line-28"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoNickPlugin</span>
-</span><span id="line-29"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoNickPluginParams</span>
-</span><span id="line-30"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPlugin</span>
-</span><span id="line-31"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginParams</span>
-</span><span id="line-32"><span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robie</span>
-</span><span id="line-33"><span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieConfig</span>
-</span><span id="line-34"><span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieService</span>
-</span><span id="line-35">
-</span><span id="line-36">
+</span><span id="line-26"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">AinswerPlugin</span>
+</span><span id="line-27"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">AinswerPluginParams</span>
+</span><span id="line-28"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoJoinPlugin</span>
+</span><span id="line-29"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoJoinPluginParams</span>
+</span><span id="line-30"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoNickPlugin</span>
+</span><span id="line-31"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoNickPluginParams</span>
+</span><span id="line-32"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPlugin</span>
+</span><span id="line-33"><span class="kn">from</span><span class="w"> </span><span class="nn">..plugins</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginParams</span>
+</span><span id="line-34"><span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robie</span>
+</span><span id="line-35"><span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieConfig</span>
+</span><span id="line-36"><span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieService</span>
 </span><span id="line-37">
+</span><span id="line-38">
+</span><span id="line-39">
 <div class="viewcode-block" id="arguments">
 <a class="viewcode-back" href="../../../enrobie.execution.html#enrobie.execution.service.arguments">[docs]</a>
-</span><span id="line-38"><span class="k">def</span><span class="w"> </span><span class="nf">arguments</span><span class="p">(</span>
-</span><span id="line-39">    <span class="n">args</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-40"><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
-</span><span id="line-41"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-42"><span class="sd">    Construct arguments which are associated with the file.</span>
-</span><span id="line-43">
-</span><span id="line-44"><span class="sd">    :param args: Override the source for the main arguments.</span>
-</span><span id="line-45"><span class="sd">    :returns: Construct arguments from command line options.</span>
-</span><span id="line-46"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-47">
-</span><span id="line-48">    <span class="n">parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">()</span>
+</span><span id="line-40"><span class="k">def</span><span class="w"> </span><span class="nf">arguments</span><span class="p">(</span>
+</span><span id="line-41">    <span class="n">args</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-42"><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
+</span><span id="line-43"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-44"><span class="sd">    Construct arguments which are associated with the file.</span>
+</span><span id="line-45">
+</span><span id="line-46"><span class="sd">    :param args: Override the source for the main arguments.</span>
+</span><span id="line-47"><span class="sd">    :returns: Construct arguments from command line options.</span>
+</span><span id="line-48"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="line-49">
-</span><span id="line-50">    <span class="n">args</span> <span class="o">=</span> <span class="n">args</span> <span class="ow">or</span> <span class="n">sys_argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</span><span id="line-50">    <span class="n">parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">()</span>
 </span><span id="line-51">
-</span><span id="line-52">
-</span><span id="line-53">    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-</span><span id="line-54">        <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
-</span><span id="line-55">        <span class="n">help</span><span class="o">=</span><span class="p">(</span>
-</span><span id="line-56">            <span class="s1">&#39;complete or relative &#39;</span>
-</span><span id="line-57">            <span class="s1">&#39;path to config file&#39;</span><span class="p">))</span>
-</span><span id="line-58">
-</span><span id="line-59">
-</span><span id="line-60">    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-</span><span id="line-61">        <span class="s1">&#39;--console&#39;</span><span class="p">,</span>
-</span><span id="line-62">        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
-</span><span id="line-63">        <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-</span><span id="line-64">        <span class="n">help</span><span class="o">=</span><span class="p">(</span>
-</span><span id="line-65">            <span class="s1">&#39;write log messages &#39;</span>
-</span><span id="line-66">            <span class="s1">&#39;to standard output&#39;</span><span class="p">))</span>
-</span><span id="line-67">
-</span><span id="line-68">
-</span><span id="line-69">    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-</span><span id="line-70">        <span class="s1">&#39;--debug&#39;</span><span class="p">,</span>
-</span><span id="line-71">        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
-</span><span id="line-72">        <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-</span><span id="line-73">        <span class="n">help</span><span class="o">=</span><span class="p">(</span>
-</span><span id="line-74">            <span class="s1">&#39;increase logging level &#39;</span>
-</span><span id="line-75">            <span class="s1">&#39;for standard output&#39;</span><span class="p">))</span>
-</span><span id="line-76">
-</span><span id="line-77">
-</span><span id="line-78">    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-</span><span id="line-79">        <span class="s1">&#39;--print_message&#39;</span><span class="p">,</span>
-</span><span id="line-80">        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
-</span><span id="line-81">        <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-</span><span id="line-82">        <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;pmessage&#39;</span><span class="p">,</span>
-</span><span id="line-83">        <span class="n">help</span><span class="o">=</span><span class="p">(</span>
-</span><span id="line-84">            <span class="s1">&#39;print the received &#39;</span>
-</span><span id="line-85">            <span class="s1">&#39;messages to console&#39;</span><span class="p">))</span>
-</span><span id="line-86">
-</span><span id="line-87">
-</span><span id="line-88">    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-</span><span id="line-89">        <span class="s1">&#39;--print_command&#39;</span><span class="p">,</span>
-</span><span id="line-90">        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
-</span><span id="line-91">        <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-</span><span id="line-92">        <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;pcommand&#39;</span><span class="p">,</span>
-</span><span id="line-93">        <span class="n">help</span><span class="o">=</span><span class="p">(</span>
-</span><span id="line-94">            <span class="s1">&#39;print the submited &#39;</span>
-</span><span id="line-95">            <span class="s1">&#39;commands to console&#39;</span><span class="p">))</span>
-</span><span id="line-96">
-</span><span id="line-97">
-</span><span id="line-98">    <span class="k">return</span> <span class="nb">vars</span><span class="p">(</span>
-</span><span id="line-99">        <span class="n">parser</span>
-</span><span id="line-100">        <span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">))</span></div>
+</span><span id="line-52">    <span class="n">args</span> <span class="o">=</span> <span class="n">args</span> <span class="ow">or</span> <span class="n">sys_argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</span><span id="line-53">
+</span><span id="line-54">
+</span><span id="line-55">    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+</span><span id="line-56">        <span class="s1">&#39;--config&#39;</span><span class="p">,</span>
+</span><span id="line-57">        <span class="n">help</span><span class="o">=</span><span class="p">(</span>
+</span><span id="line-58">            <span class="s1">&#39;complete or relative &#39;</span>
+</span><span id="line-59">            <span class="s1">&#39;path to config file&#39;</span><span class="p">))</span>
+</span><span id="line-60">
+</span><span id="line-61">
+</span><span id="line-62">    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+</span><span id="line-63">        <span class="s1">&#39;--console&#39;</span><span class="p">,</span>
+</span><span id="line-64">        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+</span><span id="line-65">        <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-66">        <span class="n">help</span><span class="o">=</span><span class="p">(</span>
+</span><span id="line-67">            <span class="s1">&#39;write log messages &#39;</span>
+</span><span id="line-68">            <span class="s1">&#39;to standard output&#39;</span><span class="p">))</span>
+</span><span id="line-69">
+</span><span id="line-70">
+</span><span id="line-71">    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+</span><span id="line-72">        <span class="s1">&#39;--debug&#39;</span><span class="p">,</span>
+</span><span id="line-73">        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+</span><span id="line-74">        <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-75">        <span class="n">help</span><span class="o">=</span><span class="p">(</span>
+</span><span id="line-76">            <span class="s1">&#39;increase logging level &#39;</span>
+</span><span id="line-77">            <span class="s1">&#39;for standard output&#39;</span><span class="p">))</span>
+</span><span id="line-78">
+</span><span id="line-79">
+</span><span id="line-80">    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+</span><span id="line-81">        <span class="s1">&#39;--print_message&#39;</span><span class="p">,</span>
+</span><span id="line-82">        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+</span><span id="line-83">        <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-84">        <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;pmessage&#39;</span><span class="p">,</span>
+</span><span id="line-85">        <span class="n">help</span><span class="o">=</span><span class="p">(</span>
+</span><span id="line-86">            <span class="s1">&#39;print the received &#39;</span>
+</span><span id="line-87">            <span class="s1">&#39;messages to console&#39;</span><span class="p">))</span>
+</span><span id="line-88">
+</span><span id="line-89">
+</span><span id="line-90">    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+</span><span id="line-91">        <span class="s1">&#39;--print_command&#39;</span><span class="p">,</span>
+</span><span id="line-92">        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+</span><span id="line-93">        <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-94">        <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;pcommand&#39;</span><span class="p">,</span>
+</span><span id="line-95">        <span class="n">help</span><span class="o">=</span><span class="p">(</span>
+</span><span id="line-96">            <span class="s1">&#39;print the submited &#39;</span>
+</span><span id="line-97">            <span class="s1">&#39;commands to console&#39;</span><span class="p">))</span>
+</span><span id="line-98">
+</span><span id="line-99">
+</span><span id="line-100">    <span class="k">return</span> <span class="nb">vars</span><span class="p">(</span>
+</span><span id="line-101">        <span class="n">parser</span>
+</span><span id="line-102">        <span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">))</span></div>
 
-</span><span id="line-101">
-</span><span id="line-102">
 </span><span id="line-103">
+</span><span id="line-104">
+</span><span id="line-105">
 <div class="viewcode-block" id="operation">
 <a class="viewcode-back" href="../../../enrobie.execution.html#enrobie.execution.service.operation">[docs]</a>
-</span><span id="line-104"><span class="k">def</span><span class="w"> </span><span class="nf">operation</span><span class="p">(</span>
-</span><span id="line-105">    <span class="c1"># NOCVR</span>
-</span><span id="line-106">    <span class="n">robie</span><span class="p">:</span> <span class="n">Robie</span><span class="p">,</span>
-</span><span id="line-107"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-108"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-109"><span class="sd">    Perform whatever operation is associated with the file.</span>
-</span><span id="line-110">
-</span><span id="line-111"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
-</span><span id="line-112"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-113">
-</span><span id="line-114">    <span class="n">service</span> <span class="o">=</span> <span class="n">RobieService</span><span class="p">(</span><span class="n">robie</span><span class="p">)</span>
+</span><span id="line-106"><span class="k">def</span><span class="w"> </span><span class="nf">operation</span><span class="p">(</span>
+</span><span id="line-107">    <span class="c1"># NOCVR</span>
+</span><span id="line-108">    <span class="n">robie</span><span class="p">:</span> <span class="n">Robie</span><span class="p">,</span>
+</span><span id="line-109"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-110"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-111"><span class="sd">    Perform whatever operation is associated with the file.</span>
+</span><span id="line-112">
+</span><span id="line-113"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
+</span><span id="line-114"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="line-115">
-</span><span id="line-116">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-116">    <span class="n">service</span> <span class="o">=</span> <span class="n">RobieService</span><span class="p">(</span><span class="n">robie</span><span class="p">)</span>
 </span><span id="line-117">
-</span><span id="line-118">    <span class="n">signal</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">)</span>
-</span><span id="line-119">    <span class="n">signal</span><span class="p">(</span><span class="n">SIGTERM</span><span class="p">,</span> <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">)</span>
-</span><span id="line-120">    <span class="n">signal</span><span class="p">(</span><span class="n">SIGHUP</span><span class="p">,</span> <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">)</span>
-</span><span id="line-121">
-</span><span id="line-122">    <span class="n">service</span><span class="o">.</span><span class="n">operate</span><span class="p">()</span></div>
-
+</span><span id="line-118">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-119">
+</span><span id="line-120">    <span class="n">signal</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">)</span>
+</span><span id="line-121">    <span class="n">signal</span><span class="p">(</span><span class="n">SIGTERM</span><span class="p">,</span> <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">)</span>
+</span><span id="line-122">    <span class="n">signal</span><span class="p">(</span><span class="n">SIGHUP</span><span class="p">,</span> <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">)</span>
 </span><span id="line-123">
-</span><span id="line-124">
+</span><span id="line-124">    <span class="n">service</span><span class="o">.</span><span class="n">operate</span><span class="p">()</span></div>
+
 </span><span id="line-125">
+</span><span id="line-126">
+</span><span id="line-127">
 <div class="viewcode-block" id="register_params">
 <a class="viewcode-back" href="../../../enrobie.execution.html#enrobie.execution.service.register_params">[docs]</a>
-</span><span id="line-126"><span class="k">def</span><span class="w"> </span><span class="nf">register_params</span><span class="p">(</span>
-</span><span id="line-127">    <span class="c1"># NOCVR</span>
-</span><span id="line-128">    <span class="n">config</span><span class="p">:</span> <span class="n">RobieConfig</span><span class="p">,</span>
-</span><span id="line-129"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-130"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-131"><span class="sd">    Register the plugin parameters for parameter processing.</span>
-</span><span id="line-132">
-</span><span id="line-133"><span class="sd">    :param config: Primary class instance for configuration.</span>
-</span><span id="line-134"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-135">
-</span><span id="line-136">    <span class="n">config</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
-</span><span id="line-137">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ircbot&#39;</span><span class="p">,</span>
-</span><span id="line-138">        <span class="n">client</span><span class="o">=</span><span class="n">IRCClientParams</span><span class="p">)</span>
-</span><span id="line-139">
-</span><span id="line-140">    <span class="n">config</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
-</span><span id="line-141">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dscbot&#39;</span><span class="p">,</span>
-</span><span id="line-142">        <span class="n">client</span><span class="o">=</span><span class="n">DSCClientParams</span><span class="p">)</span>
-</span><span id="line-143">
-</span><span id="line-144">    <span class="n">config</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
-</span><span id="line-145">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">,</span>
-</span><span id="line-146">        <span class="n">client</span><span class="o">=</span><span class="n">MTMClientParams</span><span class="p">)</span>
-</span><span id="line-147">
-</span><span id="line-148">    <span class="n">config</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
-</span><span id="line-149">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;autojoin&#39;</span><span class="p">,</span>
-</span><span id="line-150">        <span class="n">plugin</span><span class="o">=</span><span class="n">AutoJoinPluginParams</span><span class="p">)</span>
-</span><span id="line-151">
-</span><span id="line-152">    <span class="n">config</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
-</span><span id="line-153">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;autonick&#39;</span><span class="p">,</span>
-</span><span id="line-154">        <span class="n">plugin</span><span class="o">=</span><span class="n">AutoNickPluginParams</span><span class="p">)</span>
-</span><span id="line-155">
-</span><span id="line-156">    <span class="n">config</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
-</span><span id="line-157">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;status&#39;</span><span class="p">,</span>
-</span><span id="line-158">        <span class="n">plugin</span><span class="o">=</span><span class="n">StatusPluginParams</span><span class="p">)</span></div>
-
-</span><span id="line-159">
-</span><span id="line-160">
+</span><span id="line-128"><span class="k">def</span><span class="w"> </span><span class="nf">register_params</span><span class="p">(</span>
+</span><span id="line-129">    <span class="c1"># NOCVR</span>
+</span><span id="line-130">    <span class="n">config</span><span class="p">:</span> <span class="n">RobieConfig</span><span class="p">,</span>
+</span><span id="line-131"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-132"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-133"><span class="sd">    Register the plugin parameters for parameter processing.</span>
+</span><span id="line-134">
+</span><span id="line-135"><span class="sd">    :param config: Primary class instance for configuration.</span>
+</span><span id="line-136"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-137">
+</span><span id="line-138">    <span class="n">config</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+</span><span id="line-139">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ircbot&#39;</span><span class="p">,</span>
+</span><span id="line-140">        <span class="n">client</span><span class="o">=</span><span class="n">IRCClientParams</span><span class="p">)</span>
+</span><span id="line-141">
+</span><span id="line-142">    <span class="n">config</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+</span><span id="line-143">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dscbot&#39;</span><span class="p">,</span>
+</span><span id="line-144">        <span class="n">client</span><span class="o">=</span><span class="n">DSCClientParams</span><span class="p">)</span>
+</span><span id="line-145">
+</span><span id="line-146">    <span class="n">config</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+</span><span id="line-147">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">,</span>
+</span><span id="line-148">        <span class="n">client</span><span class="o">=</span><span class="n">MTMClientParams</span><span class="p">)</span>
+</span><span id="line-149">
+</span><span id="line-150">    <span class="n">config</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+</span><span id="line-151">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;autojoin&#39;</span><span class="p">,</span>
+</span><span id="line-152">        <span class="n">plugin</span><span class="o">=</span><span class="n">AutoJoinPluginParams</span><span class="p">)</span>
+</span><span id="line-153">
+</span><span id="line-154">    <span class="n">config</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+</span><span id="line-155">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;autonick&#39;</span><span class="p">,</span>
+</span><span id="line-156">        <span class="n">plugin</span><span class="o">=</span><span class="n">AutoNickPluginParams</span><span class="p">)</span>
+</span><span id="line-157">
+</span><span id="line-158">    <span class="n">config</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+</span><span id="line-159">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ainswer&#39;</span><span class="p">,</span>
+</span><span id="line-160">        <span class="n">plugin</span><span class="o">=</span><span class="n">AinswerPluginParams</span><span class="p">)</span>
 </span><span id="line-161">
+</span><span id="line-162">    <span class="n">config</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+</span><span id="line-163">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;status&#39;</span><span class="p">,</span>
+</span><span id="line-164">        <span class="n">plugin</span><span class="o">=</span><span class="n">StatusPluginParams</span><span class="p">)</span></div>
+
+</span><span id="line-165">
+</span><span id="line-166">
+</span><span id="line-167">
 <div class="viewcode-block" id="register_plugins">
 <a class="viewcode-back" href="../../../enrobie.execution.html#enrobie.execution.service.register_plugins">[docs]</a>
-</span><span id="line-162"><span class="k">def</span><span class="w"> </span><span class="nf">register_plugins</span><span class="p">(</span>
-</span><span id="line-163">    <span class="c1"># NOCVR</span>
-</span><span id="line-164">    <span class="n">robie</span><span class="p">:</span> <span class="n">Robie</span><span class="p">,</span>
-</span><span id="line-165"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-166"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-167"><span class="sd">    Register the plugin parameters for parameter processing.</span>
-</span><span id="line-168">
-</span><span id="line-169"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
-</span><span id="line-170"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-171">
-</span><span id="line-172">    <span class="n">robie</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
-</span><span id="line-173">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ircbot&#39;</span><span class="p">,</span>
-</span><span id="line-174">        <span class="n">client</span><span class="o">=</span><span class="n">IRCClient</span><span class="p">)</span>
-</span><span id="line-175">
-</span><span id="line-176">    <span class="n">robie</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
-</span><span id="line-177">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dscbot&#39;</span><span class="p">,</span>
-</span><span id="line-178">        <span class="n">client</span><span class="o">=</span><span class="n">DSCClient</span><span class="p">)</span>
-</span><span id="line-179">
-</span><span id="line-180">    <span class="n">robie</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
-</span><span id="line-181">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">,</span>
-</span><span id="line-182">        <span class="n">client</span><span class="o">=</span><span class="n">MTMClient</span><span class="p">)</span>
-</span><span id="line-183">
-</span><span id="line-184">    <span class="n">robie</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
-</span><span id="line-185">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;autojoin&#39;</span><span class="p">,</span>
-</span><span id="line-186">        <span class="n">plugin</span><span class="o">=</span><span class="n">AutoJoinPlugin</span><span class="p">)</span>
-</span><span id="line-187">
-</span><span id="line-188">    <span class="n">robie</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
-</span><span id="line-189">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;autonick&#39;</span><span class="p">,</span>
-</span><span id="line-190">        <span class="n">plugin</span><span class="o">=</span><span class="n">AutoNickPlugin</span><span class="p">)</span>
-</span><span id="line-191">
-</span><span id="line-192">    <span class="n">robie</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
-</span><span id="line-193">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;status&#39;</span><span class="p">,</span>
-</span><span id="line-194">        <span class="n">plugin</span><span class="o">=</span><span class="n">StatusPlugin</span><span class="p">)</span></div>
-
-</span><span id="line-195">
-</span><span id="line-196">
+</span><span id="line-168"><span class="k">def</span><span class="w"> </span><span class="nf">register_plugins</span><span class="p">(</span>
+</span><span id="line-169">    <span class="c1"># NOCVR</span>
+</span><span id="line-170">    <span class="n">robie</span><span class="p">:</span> <span class="n">Robie</span><span class="p">,</span>
+</span><span id="line-171"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-172"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-173"><span class="sd">    Register the plugin parameters for parameter processing.</span>
+</span><span id="line-174">
+</span><span id="line-175"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
+</span><span id="line-176"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-177">
+</span><span id="line-178">    <span class="n">robie</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+</span><span id="line-179">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ircbot&#39;</span><span class="p">,</span>
+</span><span id="line-180">        <span class="n">client</span><span class="o">=</span><span class="n">IRCClient</span><span class="p">)</span>
+</span><span id="line-181">
+</span><span id="line-182">    <span class="n">robie</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+</span><span id="line-183">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dscbot&#39;</span><span class="p">,</span>
+</span><span id="line-184">        <span class="n">client</span><span class="o">=</span><span class="n">DSCClient</span><span class="p">)</span>
+</span><span id="line-185">
+</span><span id="line-186">    <span class="n">robie</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+</span><span id="line-187">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">,</span>
+</span><span id="line-188">        <span class="n">client</span><span class="o">=</span><span class="n">MTMClient</span><span class="p">)</span>
+</span><span id="line-189">
+</span><span id="line-190">    <span class="n">robie</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+</span><span id="line-191">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;autojoin&#39;</span><span class="p">,</span>
+</span><span id="line-192">        <span class="n">plugin</span><span class="o">=</span><span class="n">AutoJoinPlugin</span><span class="p">)</span>
+</span><span id="line-193">
+</span><span id="line-194">    <span class="n">robie</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+</span><span id="line-195">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;autonick&#39;</span><span class="p">,</span>
+</span><span id="line-196">        <span class="n">plugin</span><span class="o">=</span><span class="n">AutoNickPlugin</span><span class="p">)</span>
 </span><span id="line-197">
+</span><span id="line-198">    <span class="n">robie</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+</span><span id="line-199">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ainswer&#39;</span><span class="p">,</span>
+</span><span id="line-200">        <span class="n">plugin</span><span class="o">=</span><span class="n">AinswerPlugin</span><span class="p">)</span>
+</span><span id="line-201">
+</span><span id="line-202">    <span class="n">robie</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+</span><span id="line-203">        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;status&#39;</span><span class="p">,</span>
+</span><span id="line-204">        <span class="n">plugin</span><span class="o">=</span><span class="n">StatusPlugin</span><span class="p">)</span></div>
+
+</span><span id="line-205">
+</span><span id="line-206">
+</span><span id="line-207">
 <div class="viewcode-block" id="execution">
 <a class="viewcode-back" href="../../../enrobie.execution.html#enrobie.execution.service.execution">[docs]</a>
-</span><span id="line-198"><span class="k">def</span><span class="w"> </span><span class="nf">execution</span><span class="p">(</span>
-</span><span id="line-199">    <span class="c1"># NOCVR</span>
-</span><span id="line-200">    <span class="n">args</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-201"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-202"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-203"><span class="sd">    Perform whatever operation is associated with the file.</span>
-</span><span id="line-204">
-</span><span id="line-205"><span class="sd">    :param args: Override the source for the main arguments.</span>
-</span><span id="line-206"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-207">
-</span><span id="line-208">    <span class="n">config</span> <span class="o">=</span> <span class="n">RobieConfig</span><span class="p">(</span>
-</span><span id="line-209">        <span class="n">arguments</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
-</span><span id="line-210">
-</span><span id="line-211">    <span class="n">register_params</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-</span><span id="line-212">
-</span><span id="line-213">    <span class="n">config</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-208"><span class="k">def</span><span class="w"> </span><span class="nf">execution</span><span class="p">(</span>
+</span><span id="line-209">    <span class="c1"># NOCVR</span>
+</span><span id="line-210">    <span class="n">args</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-211"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-212"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-213"><span class="sd">    Perform whatever operation is associated with the file.</span>
 </span><span id="line-214">
-</span><span id="line-215">    <span class="n">config</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
-</span><span id="line-216">        <span class="n">base</span><span class="o">=</span><span class="s1">&#39;execution/service&#39;</span><span class="p">,</span>
-</span><span id="line-217">        <span class="n">status</span><span class="o">=</span><span class="s1">&#39;started&#39;</span><span class="p">)</span>
-</span><span id="line-218">
-</span><span id="line-219">    <span class="n">robie</span> <span class="o">=</span> <span class="n">Robie</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</span><span id="line-215"><span class="sd">    :param args: Override the source for the main arguments.</span>
+</span><span id="line-216"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-217">
+</span><span id="line-218">    <span class="n">config</span> <span class="o">=</span> <span class="n">RobieConfig</span><span class="p">(</span>
+</span><span id="line-219">        <span class="n">arguments</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
 </span><span id="line-220">
-</span><span id="line-221">    <span class="n">register_plugins</span><span class="p">(</span><span class="n">robie</span><span class="p">)</span>
+</span><span id="line-221">    <span class="n">register_params</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 </span><span id="line-222">
-</span><span id="line-223">    <span class="n">operation</span><span class="p">(</span><span class="n">robie</span><span class="p">)</span>
+</span><span id="line-223">    <span class="n">config</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span><span id="line-224">
 </span><span id="line-225">    <span class="n">config</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
 </span><span id="line-226">        <span class="n">base</span><span class="o">=</span><span class="s1">&#39;execution/service&#39;</span><span class="p">,</span>
-</span><span id="line-227">        <span class="n">status</span><span class="o">=</span><span class="s1">&#39;stopped&#39;</span><span class="p">)</span>
+</span><span id="line-227">        <span class="n">status</span><span class="o">=</span><span class="s1">&#39;started&#39;</span><span class="p">)</span>
 </span><span id="line-228">
-</span><span id="line-229">    <span class="n">config</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
-
+</span><span id="line-229">    <span class="n">robie</span> <span class="o">=</span> <span class="n">Robie</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 </span><span id="line-230">
-</span><span id="line-231">
+</span><span id="line-231">    <span class="n">register_plugins</span><span class="p">(</span><span class="n">robie</span><span class="p">)</span>
 </span><span id="line-232">
-</span><span id="line-233"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-</span><span id="line-234">    <span class="n">execution</span><span class="p">()</span>  <span class="c1"># NOCVR</span>
+</span><span id="line-233">    <span class="n">operation</span><span class="p">(</span><span class="n">robie</span><span class="p">)</span>
+</span><span id="line-234">
+</span><span id="line-235">    <span class="n">config</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
+</span><span id="line-236">        <span class="n">base</span><span class="o">=</span><span class="s1">&#39;execution/service&#39;</span><span class="p">,</span>
+</span><span id="line-237">        <span class="n">status</span><span class="o">=</span><span class="s1">&#39;stopped&#39;</span><span class="p">)</span>
+</span><span id="line-238">
+</span><span id="line-239">    <span class="n">config</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
+
+</span><span id="line-240">
+</span><span id="line-241">
+</span><span id="line-242">
+</span><span id="line-243"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span id="line-244">    <span class="n">execution</span><span class="p">()</span>  <span class="c1"># NOCVR</span>
 </span></code></pre></div>
     </div></div>
         </main>
