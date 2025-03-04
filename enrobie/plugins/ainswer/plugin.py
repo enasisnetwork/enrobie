@@ -8,13 +8,20 @@ is permitted, for more information consult the project license file.
 
 
 from typing import TYPE_CHECKING
+from typing import Type
 
 from pydantic_ai import Agent
 from pydantic_ai.models import Model
 from pydantic_ai.models.anthropic import AnthropicModel
 from pydantic_ai.models.openai import OpenAIModel
 
+from .helpers import composedsc
+from .helpers import composeirc
+from .helpers import composemtm
+from .helpers import engagellm
+from .helpers import promptllm
 from .history import AinswerHistory
+from .models import AinswerResponse
 from .params import AinswerPluginParams
 from ..status import StatusPlugin
 from ..status import StatusPluginStates
@@ -22,6 +29,7 @@ from ...robie.childs import RobiePlugin
 
 if TYPE_CHECKING:
     from ...robie.threads import RobieThread
+    from ...robie.childs import RobieClient
 
 
 
@@ -152,12 +160,136 @@ class AinswerPlugin(RobiePlugin):
         """
 
         mqueue = thread.mqueue
+        member = thread.member
+        cqueue = member.cqueue
+
+        clients = (
+            self.params.clients)
+
 
         while not mqueue.empty:
-            mqueue.get()
 
-        # Put in ainswer method
-        self.__status('normal')
+            mitem = mqueue.get()
+
+            name = mitem.client
+            time = mitem.time
+            isme = mitem.isme
+            family = mitem.family
+
+            if name not in clients:
+                continue  # NOCVR
+
+            if isme is True:
+                continue
+
+            if time.since > 15:
+                continue  # NOCVR
+
+            if family == 'discord':
+                composedsc(
+                    self, cqueue, mitem)
+
+            if family == 'irc':
+                composeirc(
+                    self, cqueue, mitem)
+
+            if family == 'mattermost':
+                composemtm(
+                    self, cqueue, mitem)
+
+
+    def ainswer(  # noqa: CFQ002
+        self,
+        client: 'RobieClient',
+        prompt: str,
+        *,
+        whoami: str,
+        author: str,
+        anchor: str,
+        message: str,
+        respond: Type[AinswerResponse],
+    ) -> str:
+        """
+        Submit the question to the LLM and return the response.
+
+        :param client: Client class instance for Chatting Robie.
+        :param prompt: Additional prompt insert before question.
+        :param whoami: What is my current nickname on platform.
+        :param author: Name of the user that submitted question.
+        :param anchor: Channel name or other context or thread.
+        :param message: Question that will be asked of the LLM.
+        :param respond: Model to describe the expected response.
+        :returns: Response adhering to provided specifications.
+        """
+
+        robie = self.robie
+        history = self.history
+
+        robie.logger.log_i(
+            base=self,
+            name=self,
+            item='ainswer',
+            client=client.name,
+            author=author,
+            anchor=anchor,
+            message=message)
+
+
+        imsorry = (
+            f"I'm sorry {author}, I'm"
+            " afraid I can't do that.")
+
+
+        prompt = promptllm(
+            self, client,
+            prompt=prompt,
+            whoami=whoami,
+            author=author,
+            anchor=anchor,
+            message=message)
+
+
+        try:
+
+            response = engagellm(
+                self, prompt, respond)
+
+            ainswer = response.text
+
+            self.__status('normal')
+
+            robie.logger.log_i(
+                base=self,
+                name=self,
+                item='ainswer',
+                client=client.name,
+                author=author,
+                anchor=anchor,
+                ainswer=ainswer)
+
+            history.insert(
+                client,
+                author, anchor,
+                message, ainswer)
+
+            return ainswer
+
+
+        except Exception as reason:
+
+            self.__status('failure')
+
+            robie.logger.log_e(
+                base=self,
+                name=self,
+                item='ainswer',
+                client=client.name,
+                author=author,
+                anchor=anchor,
+                status='exception',
+                exc_info=reason)
+
+            return imsorry
 
 
     def __status(

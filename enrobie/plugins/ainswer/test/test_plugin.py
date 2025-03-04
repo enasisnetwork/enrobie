@@ -22,6 +22,8 @@ from enconnect.fixtures import MTMClientSocket
 from enconnect.irc.test import EVENTS as IRCEVENTS
 from enconnect.mattermost.test import EVENTS as MTMEVENTS
 
+from pydantic_ai.models.test import TestModel
+
 from ..plugin import AinswerPlugin
 
 if TYPE_CHECKING:
@@ -103,26 +105,47 @@ def test_AinswerPlugin_cover(
     :param client_mtmsock: Object to mock client connection.
     """
 
+    robie = service.robie
+    childs = robie.childs
+    plugins = childs.plugins
+
+    plugin = plugins['ainswer']
+
+    assert isinstance(
+        plugin, AinswerPlugin)
+
+
     client_dscsock(DSCEVENTS)
     client_ircsock(IRCEVENTS)
     client_mtmsock(MTMEVENTS)
 
-    service.start()
+
+    testing = TestModel()
+
+    override_agent = (
+        plugin.agent
+        .override(
+            model=testing))
+
+    with override_agent:
 
 
-    thread = Thread(
-        target=service.operate)
-
-    thread.start()
+        service.start()
 
 
-    block_sleep(5)
+        thread = Thread(
+            target=service.operate)
 
-    service.soft()
+        thread.start()
 
-    while service.running:
-        block_sleep(1)
 
-    service.stop()
+        block_sleep(5)
 
-    thread.join()
+        service.soft()
+
+        while service.running:
+            block_sleep(1)
+
+        service.stop()
+
+        thread.join()
