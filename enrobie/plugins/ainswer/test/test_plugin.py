@@ -54,7 +54,8 @@ def test_AinswerPlugin(
     assert attrs == [
         '_RobieChild__robie',
         '_RobieChild__name',
-        '_RobieChild__params']
+        '_RobieChild__params',
+        '_AinswerPlugin__history']
 
 
     assert inrepr(

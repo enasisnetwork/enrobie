@@ -9,6 +9,7 @@ is permitted, for more information consult the project license file.
 
 from typing import TYPE_CHECKING
 
+from .history import AinswerHistory
 from .params import AinswerPluginParams
 from ..status import StatusPlugin
 from ..status import StatusPluginStates
@@ -27,6 +28,8 @@ class AinswerPlugin(RobiePlugin):
        This plugin allows for interacting with an LLM model.
     """
 
+    __history: AinswerHistory
+
 
     def __post__(
         self,
@@ -34,6 +37,9 @@ class AinswerPlugin(RobiePlugin):
         """
         Initialize instance for class using provided parameters.
         """
+
+        self.__history = (
+            AinswerHistory(self))
 
         self.__status('normal')
 
@@ -65,6 +71,19 @@ class AinswerPlugin(RobiePlugin):
             AinswerPluginParams)
 
         return params
+
+
+    @property
+    def history(
+        self,
+    ) -> AinswerHistory:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__history
 
 
     def operate(
