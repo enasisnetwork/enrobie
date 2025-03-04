@@ -51,6 +51,8 @@ class AutoNickPlugin(RobiePlugin):
         Perform advanced validation on the parameters provided.
         """
 
+        # Review the parameters
+
 
     def operate(
         self,

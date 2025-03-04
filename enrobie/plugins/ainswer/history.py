@@ -82,7 +82,7 @@ class AinswerHistoryTable(SQLBase):
         primary_key=True,
         nullable=False)
 
-    __tablename__ = 'chatting'
+    __tablename__ = 'ainswer'
 
 
 

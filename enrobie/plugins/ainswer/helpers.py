@@ -143,9 +143,10 @@ def promptllm(  # noqa: CFQ002
     returned = (
         '**Instructions**'
         f'\n{prompt}\n\n'
-        "The user's nickname"
-        f' is {author}.\n\n'
         f'{_histories()}'
+        '**User Information**'
+        "\nThe user's nick"
+        f' is {author}.\n\n'
         '**User Question**'
         f'\n{message}')
 

@@ -98,11 +98,12 @@ def test_promptllm(
         'Your nickname is'
         ' Robie. Keep it short'
         ' and use colors.\n\n'
-        "The user's nickname"
-        ' is nickname1.\n\n'
         '**Conversations**\n')
 
     assert prompt.endswith(
+        '**User Information**'
+        "\nThe user's nick"
+        ' is nickname1.\n\n'
         '**User Question**\n'
         'This is the question')
 
