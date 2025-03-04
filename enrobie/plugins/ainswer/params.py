@@ -75,6 +75,17 @@ class AinswerPluginAinswerParams(RobieParamsModel, extra='forbid'):
               description='Model in platform that is used',
               min_length=1)]
 
+    timeout: Annotated[
+        int,
+        Field(30,
+              description='Time to wait during the request',
+              ge=1, le=300)]
+
+    sleep: Annotated[
+        tuple[int, int],
+        Field((15, 30),
+              description='Time to wait before the request')]
+
 
 
 class AinswerPluginPromptClientParams(RobieParamsModel, extra='forbid'):

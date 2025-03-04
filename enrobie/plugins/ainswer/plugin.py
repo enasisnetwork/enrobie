@@ -7,13 +7,17 @@ is permitted, for more information consult the project license file.
 
 
 
+from random import randint
+from time import sleep as block_sleep
 from typing import TYPE_CHECKING
 from typing import Type
+
 
 from pydantic_ai import Agent
 from pydantic_ai.models import Model
 from pydantic_ai.models.anthropic import AnthropicModel
 from pydantic_ai.models.openai import OpenAIModel
+from pydantic_ai.settings import ModelSettings
 
 from .helpers import composedsc
 from .helpers import composeirc
@@ -85,9 +89,12 @@ class AinswerPlugin(RobiePlugin):
         self.__model = model
 
 
+        settings = ModelSettings(
+            timeout=ainswer.timeout)
 
         self.__agent = Agent(
             self.__model,
+            model_settings=settings,
             system_prompt=system)
 
 
@@ -224,6 +231,7 @@ class AinswerPlugin(RobiePlugin):
 
         robie = self.robie
         history = self.history
+        params = self.params
 
         robie.logger.log_i(
             base=self,
@@ -238,6 +246,13 @@ class AinswerPlugin(RobiePlugin):
         imsorry = (
             f"I'm sorry {author}, I'm"
             " afraid I can't do that.")
+
+
+        sleep = params.ainswer.sleep
+
+        # Useful to prevent abuse but
+        # also reduce immediate reply
+        block_sleep(randint(*sleep))
 
 
         prompt = promptllm(
