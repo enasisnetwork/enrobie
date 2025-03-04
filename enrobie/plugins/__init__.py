@@ -7,6 +7,8 @@ is permitted, for more information consult the project license file.
 
 
 
+from .ainswer import AinswerPlugin
+from .ainswer import AinswerPluginParams
 from .autojoin import AutoJoinPlugin
 from .autojoin import AutoJoinPluginParams
 from .autonick import AutoNickPlugin
@@ -24,6 +26,8 @@ __all__ = [
     'AutoJoinPluginParams',
     'AutoNickPlugin',
     'AutoNickPluginParams',
+    'AinswerPlugin',
+    'AinswerPluginParams',
     'StatusPlugin',
     'StatusPluginParams',
     'StatusPluginIconParams',
