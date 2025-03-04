@@ -9,6 +9,11 @@ is permitted, for more information consult the project license file.
 
 from typing import TYPE_CHECKING
 
+from pydantic_ai import Agent
+from pydantic_ai.models import Model
+from pydantic_ai.models.anthropic import AnthropicModel
+from pydantic_ai.models.openai import OpenAIModel
+
 from .history import AinswerHistory
 from .params import AinswerPluginParams
 from ..status import StatusPlugin
@@ -29,6 +34,8 @@ class AinswerPlugin(RobiePlugin):
     """
 
     __history: AinswerHistory
+    __model: Model
+    __agent: Agent
 
 
     def __post__(
@@ -38,8 +45,43 @@ class AinswerPlugin(RobiePlugin):
         Initialize instance for class using provided parameters.
         """
 
+        params = self.params
+
+        prompt = params.prompt
+        ainswer = params.ainswer
+        secret = ainswer.secret
+        origin = ainswer.origin
+
+        system = prompt.system
+
+
         self.__history = (
             AinswerHistory(self))
+
+
+        model: Model | None = None
+
+        if origin == 'anthropic':
+            model = AnthropicModel(
+                ainswer.model,
+                api_key=secret)
+
+        elif origin == 'openai':
+            model = OpenAIModel(
+                ainswer.model,
+                api_key=secret)
+
+        assert model is not None, (
+            'Model not instantiated')
+
+        self.__model = model
+
+
+
+        self.__agent = Agent(
+            self.__model,
+            system_prompt=system)
+
 
         self.__status('normal')
 
@@ -84,6 +126,19 @@ class AinswerPlugin(RobiePlugin):
         """
 
         return self.__history
+
+
+    @property
+    def agent(
+        self,
+    ) -> Agent:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__agent
 
 
     def operate(

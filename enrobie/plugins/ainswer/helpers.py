@@ -9,14 +9,42 @@ is permitted, for more information consult the project license file.
 
 from json import dumps
 from typing import TYPE_CHECKING
+from typing import Type
 
 from encommon.times import Time
 from encommon.types import DictStrAny
 from encommon.types.strings import SEMPTY
 
+from .models import AinswerResponse
+
 if TYPE_CHECKING:
     from .plugin import AinswerPlugin
     from ...robie.childs import RobieClient
+
+
+
+def engagellm(
+    plugin: 'AinswerPlugin',
+    message: str,
+    respond: Type[AinswerResponse],
+) -> AinswerResponse:
+    """
+    Submit the question to the LLM and return the response.
+
+    :param plugin: Plugin class instance for Chatting Robie.
+    :param message: Question that will be asked of the LLM.
+    :param respond: Model to describe the expected response.
+    :returns: Response adhering to provided specifications.
+    """
+
+    agent = plugin.agent
+    request = agent.run_sync
+
+    runsync = request(
+        user_prompt=message,
+        result_type=respond)
+
+    return runsync.data
 
 
 

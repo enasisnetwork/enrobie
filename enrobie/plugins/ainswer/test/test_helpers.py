@@ -10,12 +10,51 @@ is permitted, for more information consult the project license file.
 from json import loads
 from typing import TYPE_CHECKING
 
+from pydantic_ai.models.test import TestModel
+
 from .test_history import _insert_history
+from ..helpers import engagellm
 from ..helpers import promptllm
+from ..models import AinswerResponse
 from ..plugin import AinswerPlugin
 
 if TYPE_CHECKING:
     from ....robie import Robie
+
+
+
+def test_engagellm(
+    robie: 'Robie',
+) -> None:
+    """
+    Perform various tests associated with relevant routines.
+
+    :param robie: Primary class instance for Chatting Robie.
+    """
+
+    childs = robie.childs
+    plugins = childs.plugins
+
+    plugin = plugins['ainswer']
+
+    assert isinstance(
+        plugin, AinswerPlugin)
+
+
+    testing = TestModel()
+
+    override_agent = (
+        plugin.agent
+        .override(
+            model=testing))
+
+    with override_agent:
+
+        response = engagellm(
+            plugin, 'Hello',
+            AinswerResponse)
+
+    assert response.text == 'a'
 
 
 

@@ -55,7 +55,9 @@ def test_AinswerPlugin(
         '_RobieChild__robie',
         '_RobieChild__name',
         '_RobieChild__params',
-        '_AinswerPlugin__history']
+        '_AinswerPlugin__history',
+        '_AinswerPlugin__model',
+        '_AinswerPlugin__agent']
 
 
     assert inrepr(
