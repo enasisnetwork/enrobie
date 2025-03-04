@@ -218,176 +218,187 @@
 </span><span id="line-73">        <span class="nb">str</span><span class="p">,</span>
 </span><span id="line-74">        <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
 </span><span id="line-75">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Model in platform that is used&#39;</span><span class="p">,</span>
-</span><span id="line-76">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span></div>
-
+</span><span id="line-76">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 </span><span id="line-77">
-</span><span id="line-78">
-</span><span id="line-79">
+</span><span id="line-78">    <span class="n">timeout</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-79">        <span class="nb">int</span><span class="p">,</span>
+</span><span id="line-80">        <span class="n">Field</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span>
+</span><span id="line-81">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Time to wait during the request&#39;</span><span class="p">,</span>
+</span><span id="line-82">              <span class="n">ge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">le</span><span class="o">=</span><span class="mi">300</span><span class="p">)]</span>
+</span><span id="line-83">
+</span><span id="line-84">    <span class="n">sleep</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-85">        <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+</span><span id="line-86">        <span class="n">Field</span><span class="p">((</span><span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+</span><span id="line-87">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Time to wait before the request&#39;</span><span class="p">)]</span></div>
+
+</span><span id="line-88">
+</span><span id="line-89">
+</span><span id="line-90">
 <div class="viewcode-block" id="AinswerPluginPromptClientParams">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.AinswerPluginPromptClientParams">[docs]</a>
-</span><span id="line-80"><span class="k">class</span><span class="w"> </span><span class="nc">AinswerPluginPromptClientParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-</span><span id="line-81"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-82"><span class="sd">    Process and validate the Robie configuration parameters.</span>
-</span><span id="line-83"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-84">
-</span><span id="line-85">    <span class="n">dsc</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-86">        <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-87">        <span class="n">Field</span><span class="p">(</span><span class="n">_DSC_PROMPT</span><span class="p">,</span>
-</span><span id="line-88">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Supplement the system prompt&#39;</span><span class="p">,</span>
-</span><span id="line-89">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
-</span><span id="line-90">
-</span><span id="line-91">    <span class="n">irc</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-92">        <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-93">        <span class="n">Field</span><span class="p">(</span><span class="n">_IRC_PROMPT</span><span class="p">,</span>
-</span><span id="line-94">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Supplement the system prompt&#39;</span><span class="p">,</span>
-</span><span id="line-95">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
-</span><span id="line-96">
-</span><span id="line-97">    <span class="n">mtm</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-98">        <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-99">        <span class="n">Field</span><span class="p">(</span><span class="n">_MTM_PROMPT</span><span class="p">,</span>
-</span><span id="line-100">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Supplement the system prompt&#39;</span><span class="p">,</span>
-</span><span id="line-101">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span></div>
+</span><span id="line-91"><span class="k">class</span><span class="w"> </span><span class="nc">AinswerPluginPromptClientParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
+</span><span id="line-92"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-93"><span class="sd">    Process and validate the Robie configuration parameters.</span>
+</span><span id="line-94"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-95">
+</span><span id="line-96">    <span class="n">dsc</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-97">        <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-98">        <span class="n">Field</span><span class="p">(</span><span class="n">_DSC_PROMPT</span><span class="p">,</span>
+</span><span id="line-99">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Supplement the system prompt&#39;</span><span class="p">,</span>
+</span><span id="line-100">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+</span><span id="line-101">
+</span><span id="line-102">    <span class="n">irc</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-103">        <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-104">        <span class="n">Field</span><span class="p">(</span><span class="n">_IRC_PROMPT</span><span class="p">,</span>
+</span><span id="line-105">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Supplement the system prompt&#39;</span><span class="p">,</span>
+</span><span id="line-106">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+</span><span id="line-107">
+</span><span id="line-108">    <span class="n">mtm</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-109">        <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-110">        <span class="n">Field</span><span class="p">(</span><span class="n">_MTM_PROMPT</span><span class="p">,</span>
+</span><span id="line-111">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Supplement the system prompt&#39;</span><span class="p">,</span>
+</span><span id="line-112">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span></div>
 
-</span><span id="line-102">
-</span><span id="line-103">
-</span><span id="line-104">
+</span><span id="line-113">
+</span><span id="line-114">
+</span><span id="line-115">
 <div class="viewcode-block" id="AinswerPluginPromptParams">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.AinswerPluginPromptParams">[docs]</a>
-</span><span id="line-105"><span class="k">class</span><span class="w"> </span><span class="nc">AinswerPluginPromptParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-</span><span id="line-106"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-107"><span class="sd">    Process and validate the Robie configuration parameters.</span>
-</span><span id="line-108"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-109">
-</span><span id="line-110">    <span class="n">system</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-111">        <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-112">        <span class="n">Field</span><span class="p">(</span><span class="n">_DEFAULT_PROMPT</span><span class="p">,</span>
-</span><span id="line-113">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Override the agent system prompt&#39;</span><span class="p">,</span>
-</span><span id="line-114">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
-</span><span id="line-115">
-</span><span id="line-116">    <span class="n">client</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-117">        <span class="n">AinswerPluginPromptClientParams</span><span class="p">,</span>
-</span><span id="line-118">        <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">AinswerPluginPromptClientParams</span><span class="p">,</span>
-</span><span id="line-119">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Additional chat platform prompt&#39;</span><span class="p">)]</span>
+</span><span id="line-116"><span class="k">class</span><span class="w"> </span><span class="nc">AinswerPluginPromptParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
+</span><span id="line-117"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-118"><span class="sd">    Process and validate the Robie configuration parameters.</span>
+</span><span id="line-119"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="line-120">
-</span><span id="line-121">
-</span><span id="line-122">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
-</span><span id="line-123">        <span class="c1"># NOCVR</span>
-</span><span id="line-124">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-125">        <span class="o">/</span><span class="p">,</span>
-</span><span id="line-126">        <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-127">        <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-</span><span id="line-128">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-129"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-130"><span class="sd">        Initialize instance for class using provided parameters.</span>
-</span><span id="line-131"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-121">    <span class="n">system</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-122">        <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-123">        <span class="n">Field</span><span class="p">(</span><span class="n">_DEFAULT_PROMPT</span><span class="p">,</span>
+</span><span id="line-124">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Override the agent system prompt&#39;</span><span class="p">,</span>
+</span><span id="line-125">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+</span><span id="line-126">
+</span><span id="line-127">    <span class="n">client</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-128">        <span class="n">AinswerPluginPromptClientParams</span><span class="p">,</span>
+</span><span id="line-129">        <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">AinswerPluginPromptClientParams</span><span class="p">,</span>
+</span><span id="line-130">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Additional chat platform prompt&#39;</span><span class="p">)]</span>
+</span><span id="line-131">
 </span><span id="line-132">
-</span><span id="line-133">
-</span><span id="line-134">        <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-135">
-</span><span id="line-136">            <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">]</span>
-</span><span id="line-137">
-</span><span id="line-138">            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
-</span><span id="line-139">
-</span><span id="line-140">                <span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-</span><span id="line-141">
-</span><span id="line-142">                <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-143">                    <span class="k">continue</span>
+</span><span id="line-133">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-134">        <span class="c1"># NOCVR</span>
+</span><span id="line-135">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-136">        <span class="o">/</span><span class="p">,</span>
+</span><span id="line-137">        <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-138">        <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+</span><span id="line-139">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-140"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-141"><span class="sd">        Initialize instance for class using provided parameters.</span>
+</span><span id="line-142"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-143">
 </span><span id="line-144">
-</span><span id="line-145">                <span class="n">value</span> <span class="o">=</span> <span class="n">_parse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span><span id="line-145">        <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-146">
-</span><span id="line-147">                <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span><span id="line-147">            <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">]</span>
 </span><span id="line-148">
-</span><span id="line-149">
-</span><span id="line-150">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span></div>
-
-</span><span id="line-151">
+</span><span id="line-149">            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
+</span><span id="line-150">
+</span><span id="line-151">                <span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 </span><span id="line-152">
-</span><span id="line-153">
+</span><span id="line-153">                <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-154">                    <span class="k">continue</span>
+</span><span id="line-155">
+</span><span id="line-156">                <span class="n">value</span> <span class="o">=</span> <span class="n">_parse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span><span id="line-157">
+</span><span id="line-158">                <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span><span id="line-159">
+</span><span id="line-160">
+</span><span id="line-161">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span></div>
+
+</span><span id="line-162">
+</span><span id="line-163">
+</span><span id="line-164">
 <div class="viewcode-block" id="AinswerPluginParams">
 <a class="viewcode-back" href="../../../../index.html#enrobie.plugins.AinswerPluginParams">[docs]</a>
-</span><span id="line-154"><span class="k">class</span><span class="w"> </span><span class="nc">AinswerPluginParams</span><span class="p">(</span><span class="n">RobiePluginParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-</span><span id="line-155"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-156"><span class="sd">    Process and validate the Robie configuration parameters.</span>
-</span><span id="line-157"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-158">
-</span><span id="line-159">    <span class="n">database</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-160">        <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-161">        <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;sqlite:///:memory:&#39;</span><span class="p">,</span>
-</span><span id="line-162">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Database connection string&#39;</span><span class="p">,</span>
-</span><span id="line-163">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
-</span><span id="line-164">
-</span><span id="line-165">    <span class="n">clients</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-166">        <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
-</span><span id="line-167">        <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-</span><span id="line-168">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;List of clients to enable plugin&#39;</span><span class="p">,</span>
-</span><span id="line-169">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
-</span><span id="line-170">
-</span><span id="line-171">    <span class="n">ainswer</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-172">        <span class="n">AinswerPluginAinswerParams</span><span class="p">,</span>
-</span><span id="line-173">        <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-</span><span id="line-174">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Parameters for the AI platforms&#39;</span><span class="p">)]</span>
+</span><span id="line-165"><span class="k">class</span><span class="w"> </span><span class="nc">AinswerPluginParams</span><span class="p">(</span><span class="n">RobiePluginParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
+</span><span id="line-166"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-167"><span class="sd">    Process and validate the Robie configuration parameters.</span>
+</span><span id="line-168"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-169">
+</span><span id="line-170">    <span class="n">database</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-171">        <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-172">        <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;sqlite:///:memory:&#39;</span><span class="p">,</span>
+</span><span id="line-173">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Database connection string&#39;</span><span class="p">,</span>
+</span><span id="line-174">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 </span><span id="line-175">
-</span><span id="line-176">    <span class="n">prompt</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-177">        <span class="n">AinswerPluginPromptParams</span><span class="p">,</span>
-</span><span id="line-178">        <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">AinswerPluginPromptParams</span><span class="p">,</span>
-</span><span id="line-179">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Override the agent system prompt&#39;</span><span class="p">)]</span>
-</span><span id="line-180">
-</span><span id="line-181">    <span class="n">status</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-182">        <span class="n">StatusPluginIconParams</span><span class="p">,</span>
-</span><span id="line-183">        <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">StatusPluginIconParams</span><span class="p">,</span>
-</span><span id="line-184">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per chat platform&#39;</span><span class="p">)]</span>
-</span><span id="line-185">
+</span><span id="line-176">    <span class="n">clients</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-177">        <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+</span><span id="line-178">        <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+</span><span id="line-179">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;List of clients to enable plugin&#39;</span><span class="p">,</span>
+</span><span id="line-180">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+</span><span id="line-181">
+</span><span id="line-182">    <span class="n">ainswer</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-183">        <span class="n">AinswerPluginAinswerParams</span><span class="p">,</span>
+</span><span id="line-184">        <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+</span><span id="line-185">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Parameters for the AI platforms&#39;</span><span class="p">)]</span>
 </span><span id="line-186">
-</span><span id="line-187">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
-</span><span id="line-188">        <span class="c1"># NOCVR</span>
-</span><span id="line-189">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-190">        <span class="o">/</span><span class="p">,</span>
-</span><span id="line-191">        <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-192">        <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-</span><span id="line-193">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-194"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-195"><span class="sd">        Initialize instance for class using provided parameters.</span>
-</span><span id="line-196"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-187">    <span class="n">prompt</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-188">        <span class="n">AinswerPluginPromptParams</span><span class="p">,</span>
+</span><span id="line-189">        <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">AinswerPluginPromptParams</span><span class="p">,</span>
+</span><span id="line-190">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Override the agent system prompt&#39;</span><span class="p">)]</span>
+</span><span id="line-191">
+</span><span id="line-192">    <span class="n">status</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-193">        <span class="n">StatusPluginIconParams</span><span class="p">,</span>
+</span><span id="line-194">        <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">StatusPluginIconParams</span><span class="p">,</span>
+</span><span id="line-195">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per chat platform&#39;</span><span class="p">)]</span>
+</span><span id="line-196">
 </span><span id="line-197">
-</span><span id="line-198">
-</span><span id="line-199">        <span class="n">clients</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;clients&#39;</span><span class="p">)</span>
-</span><span id="line-200">
-</span><span id="line-201">        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">clients</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="line-202">            <span class="n">data</span><span class="p">[</span><span class="s1">&#39;clients&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">clients</span><span class="p">]</span>
-</span><span id="line-203">
-</span><span id="line-204">
-</span><span id="line-205">        <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-206">
-</span><span id="line-207">            <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;prompt&#39;</span><span class="p">]</span>
+</span><span id="line-198">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-199">        <span class="c1"># NOCVR</span>
+</span><span id="line-200">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-201">        <span class="o">/</span><span class="p">,</span>
+</span><span id="line-202">        <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-203">        <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+</span><span id="line-204">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-205"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-206"><span class="sd">        Initialize instance for class using provided parameters.</span>
+</span><span id="line-207"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-208">
-</span><span id="line-209">            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
-</span><span id="line-210">
-</span><span id="line-211">                <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-</span><span id="line-212">                    <span class="k">continue</span>
-</span><span id="line-213">
-</span><span id="line-214">                <span class="n">item</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</span><span id="line-209">
+</span><span id="line-210">        <span class="n">clients</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;clients&#39;</span><span class="p">)</span>
+</span><span id="line-211">
+</span><span id="line-212">        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">clients</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="line-213">            <span class="n">data</span><span class="p">[</span><span class="s1">&#39;clients&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">clients</span><span class="p">]</span>
+</span><span id="line-214">
 </span><span id="line-215">
-</span><span id="line-216">                <span class="n">item</span><span class="p">[</span><span class="s1">&#39;_parse&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_parse</span>
+</span><span id="line-216">        <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-217">
-</span><span id="line-218">
-</span><span id="line-219">            <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="line-220">                <span class="s1">&#39;database&#39;</span><span class="p">,</span>
-</span><span id="line-221">                <span class="s1">&#39;ainswer&#39;</span><span class="p">,</span>
-</span><span id="line-222">                <span class="s1">&#39;status&#39;</span><span class="p">]</span>
-</span><span id="line-223">
-</span><span id="line-224">            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
-</span><span id="line-225">
-</span><span id="line-226">                <span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-</span><span id="line-227">
-</span><span id="line-228">                <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-229">                    <span class="k">continue</span>
-</span><span id="line-230">
-</span><span id="line-231">                <span class="n">value</span> <span class="o">=</span> <span class="n">_parse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-</span><span id="line-232">
-</span><span id="line-233">                <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span><span id="line-218">            <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;prompt&#39;</span><span class="p">]</span>
+</span><span id="line-219">
+</span><span id="line-220">            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
+</span><span id="line-221">
+</span><span id="line-222">                <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+</span><span id="line-223">                    <span class="k">continue</span>
+</span><span id="line-224">
+</span><span id="line-225">                <span class="n">item</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</span><span id="line-226">
+</span><span id="line-227">                <span class="n">item</span><span class="p">[</span><span class="s1">&#39;_parse&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_parse</span>
+</span><span id="line-228">
+</span><span id="line-229">
+</span><span id="line-230">            <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="line-231">                <span class="s1">&#39;database&#39;</span><span class="p">,</span>
+</span><span id="line-232">                <span class="s1">&#39;ainswer&#39;</span><span class="p">,</span>
+</span><span id="line-233">                <span class="s1">&#39;status&#39;</span><span class="p">]</span>
 </span><span id="line-234">
-</span><span id="line-235">
-</span><span id="line-236">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span></div>
+</span><span id="line-235">            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
+</span><span id="line-236">
+</span><span id="line-237">                <span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</span><span id="line-238">
+</span><span id="line-239">                <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-240">                    <span class="k">continue</span>
+</span><span id="line-241">
+</span><span id="line-242">                <span class="n">value</span> <span class="o">=</span> <span class="n">_parse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span><span id="line-243">
+</span><span id="line-244">                <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span><span id="line-245">
+</span><span id="line-246">
+</span><span id="line-247">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span></div>
 
 </span></code></pre></div>
     </div></div>
