@@ -24,6 +24,7 @@ from encommon.utils.common import PATHABLE
 from .params import RobieClientParams
 from .params import RobieParams
 from .params import RobiePluginParams
+from ..utils import importer
 
 
 
@@ -111,6 +112,8 @@ class RobieConfig(Config):
             model=RobieParams)
 
         self.merge_params()
+
+        self.register_locate()
 
 
     @property
@@ -422,3 +425,75 @@ class RobieConfig(Config):
 
         if merge is True:
             self.merge_params()
+
+
+    def register_locate(
+        self,
+    ) -> None:
+        """
+        Register the plugin parameters for parameter processing.
+        """
+
+        merge = self.merge
+
+
+        clients = (
+            merge.get('clients')
+            or {})
+
+        items = clients.items()
+
+        for name, source in items:
+
+            locate = (
+                source
+                .get('locate'))
+
+            if locate is None:
+                continue  # NOCVR
+
+            client = (
+                importer(locate))
+
+            params = (
+                client
+                .schema())
+
+            assert issubclass(
+                params,
+                RobieClientParams)
+
+            self.register(
+                name=name,
+                client=params)
+
+
+        plugins = (
+            merge.get('plugins')
+            or {})
+
+        items = plugins.items()
+
+        for name, source in items:
+
+            locate = (
+                source
+                .get('locate'))
+
+            if locate is None:
+                continue  # NOCVR
+
+            plugin = (
+                importer(locate))
+
+            params = (
+                plugin
+                .schema())
+
+            assert issubclass(
+                params,
+                RobiePluginParams)
+
+            self.register(
+                name=name,
+                plugin=params)

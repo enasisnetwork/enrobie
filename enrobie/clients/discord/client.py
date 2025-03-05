@@ -15,6 +15,7 @@ from typing import Any
 from typing import Literal
 from typing import Optional
 from typing import TYPE_CHECKING
+from typing import Type
 
 from encommon.types import NCNone
 
@@ -56,9 +57,6 @@ class DSCClient(RobieClient):
 
         params = self.params
 
-        assert isinstance(
-            params, DSCClientParams)
-
         client = Client(
             params.client,
             self.__debugger)
@@ -74,6 +72,38 @@ class DSCClient(RobieClient):
         """
 
         # Nothing to do for client
+
+
+    @classmethod
+    def schema(
+        cls,
+    ) -> Type[DSCClientParams]:
+        """
+        Return the configuration parameters relevant for class.
+
+        :returns: Configuration parameters relevant for class.
+        """
+
+        return DSCClientParams
+
+
+    @property
+    def params(
+        self,
+    ) -> DSCClientParams:
+        """
+        Return the Pydantic model containing the configuration.
+
+        :returns: Pydantic model containing the configuration.
+        """
+
+        params = super().params
+
+        assert isinstance(
+            params,
+            DSCClientParams)
+
+        return params
 
 
     @property
@@ -118,9 +148,6 @@ class DSCClient(RobieClient):
         cqueue = thread.cqueue
         vacate = member.vacate
         params = self.params
-
-        assert isinstance(
-            params, DSCClientParams)
 
         delay = params.delay
 
@@ -446,9 +473,6 @@ class DSCClient(RobieClient):
         childs = robie.childs
         plugins = childs.plugins
         params = self.params
-
-        assert isinstance(
-            params, DSCClientParams)
 
         if 'status' not in plugins:
             return NCNone

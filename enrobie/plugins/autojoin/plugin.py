@@ -8,6 +8,7 @@ is permitted, for more information consult the project license file.
 
 
 from typing import TYPE_CHECKING
+from typing import Type
 
 from encommon.times import Timer
 from encommon.types import NCNone
@@ -52,15 +53,7 @@ class AutoJoinPlugin(RobiePlugin):
 
         params = self.params
 
-        assert isinstance(
-            params,
-            AutoJoinPluginParams)
-
         channels = params.channels
-
-        assert isinstance(
-            params,
-            AutoJoinPluginParams)
 
         self.__joined = {}
 
@@ -96,6 +89,38 @@ class AutoJoinPlugin(RobiePlugin):
         """
 
         # Review the parameters
+
+
+    @classmethod
+    def schema(
+        cls,
+    ) -> Type[AutoJoinPluginParams]:
+        """
+        Return the configuration parameters relevant for class.
+
+        :returns: Configuration parameters relevant for class.
+        """
+
+        return AutoJoinPluginParams
+
+
+    @property
+    def params(
+        self,
+    ) -> AutoJoinPluginParams:
+        """
+        Return the Pydantic model containing the configuration.
+
+        :returns: Pydantic model containing the configuration.
+        """
+
+        params = super().params
+
+        assert isinstance(
+            params,
+            AutoJoinPluginParams)
+
+        return params
 
 
     def operate(
@@ -313,12 +338,8 @@ class AutoJoinPlugin(RobiePlugin):
         plugins = childs.plugins
         params = self.params
 
-        assert isinstance(
-            params,
-            AutoJoinPluginParams)
-
         if 'status' not in plugins:
-            return None
+            return NCNone
 
         plugin = plugins['status']
 

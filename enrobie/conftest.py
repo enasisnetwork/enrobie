@@ -20,20 +20,6 @@ from pytest import fixture
 
 from . import EXAMPLES
 from . import PROJECT
-from .clients import DSCClient
-from .clients import DSCClientParams
-from .clients import IRCClient
-from .clients import IRCClientParams
-from .clients import MTMClient
-from .clients import MTMClientParams
-from .plugins import AinswerPlugin
-from .plugins import AinswerPluginParams
-from .plugins import AutoJoinPlugin
-from .plugins import AutoJoinPluginParams
-from .plugins import AutoNickPlugin
-from .plugins import AutoNickPluginParams
-from .plugins import StatusPlugin
-from .plugins import StatusPluginParams
 from .robie import Robie
 from .robie import RobieConfig
 from .robie import RobieService
@@ -101,37 +87,7 @@ def config(
     :returns: Newly constructed instance of related class.
     """
 
-    config = config_factory(tmp_path)
-
-    config.register(
-        name='dscbot',
-        client=DSCClientParams)
-
-    config.register(
-        name='ircbot',
-        client=IRCClientParams)
-
-    config.register(
-        name='mtmbot',
-        client=MTMClientParams)
-
-    config.register(
-        name='autojoin',
-        plugin=AutoJoinPluginParams)
-
-    config.register(
-        name='autonick',
-        plugin=AutoNickPluginParams)
-
-    config.register(
-        name='ainswer',
-        plugin=AinswerPluginParams)
-
-    config.register(
-        name='status',
-        plugin=StatusPluginParams)
-
-    return config
+    return config_factory(tmp_path)
 
 
 
@@ -162,37 +118,7 @@ def robie_factory(
     :returns: Newly constructed instance of related class.
     """
 
-    robie = Robie(config)
-
-    robie.register(
-        name='dscbot',
-        client=DSCClient)
-
-    robie.register(
-        name='ircbot',
-        client=IRCClient)
-
-    robie.register(
-        name='mtmbot',
-        client=MTMClient)
-
-    robie.register(
-        name='autojoin',
-        plugin=AutoJoinPlugin)
-
-    robie.register(
-        name='autonick',
-        plugin=AutoNickPlugin)
-
-    robie.register(
-        name='ainswer',
-        plugin=AinswerPlugin)
-
-    robie.register(
-        name='status',
-        plugin=StatusPlugin)
-
-    return robie
+    return Robie(config)
 
 
 

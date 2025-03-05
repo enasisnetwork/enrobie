@@ -15,12 +15,9 @@ from encommon.types import sort_dict
 from encommon.types.strings import NEWLINE
 from encommon.types.strings import SEMPTY
 
-from .params import StatusPluginParams
-
 if TYPE_CHECKING:
     from ...robie.addons import RobieQueue
     from ...robie.childs import RobieClient
-    from ...robie.childs import RobiePlugin
     from ...robie.models import RobieCommand
     from ...robie.models import RobieMessage
     from .common import StatusPluginItem
@@ -89,10 +86,6 @@ def composedsc(
 
     def _format() -> None:
 
-        assert isinstance(
-            params,
-            StatusPluginParams)
-
         epoch = int(value.time)
 
         sicon = (
@@ -142,7 +135,7 @@ def composedsc(
 
 
 def reportdsc(
-    plugin: 'RobiePlugin',
+    plugin: 'StatusPlugin',
     client: 'RobieClient',
     cqueue: 'RobieQueue[RobieCommand]',
     status: 'StatusPluginItem',
@@ -159,10 +152,6 @@ def reportdsc(
     """
 
     params = plugin.params
-
-    assert isinstance(
-        params,
-        StatusPluginParams)
 
 
     def _compose(
@@ -237,10 +226,6 @@ def composeirc(
 
     def _format() -> None:
 
-        assert isinstance(
-            params,
-            StatusPluginParams)
-
         durate = Duration(
             value.time.since)
 
@@ -286,7 +271,7 @@ def composeirc(
 
 
 def reportirc(
-    plugin: 'RobiePlugin',
+    plugin: 'StatusPlugin',
     client: 'RobieClient',
     cqueue: 'RobieQueue[RobieCommand]',
     status: 'StatusPluginItem',
@@ -303,10 +288,6 @@ def reportirc(
     """
 
     params = plugin.params
-
-    assert isinstance(
-        params,
-        StatusPluginParams)
 
 
     def _compose(
@@ -384,10 +365,6 @@ def composemtm(
 
     def _format() -> None:
 
-        assert isinstance(
-            params,
-            StatusPluginParams)
-
         durate = Duration(
             value.time.since)
 
@@ -438,7 +415,7 @@ def composemtm(
 
 
 def reportmtm(
-    plugin: 'RobiePlugin',
+    plugin: 'StatusPlugin',
     client: 'RobieClient',
     cqueue: 'RobieQueue[RobieCommand]',
     status: 'StatusPluginItem',
@@ -455,10 +432,6 @@ def reportmtm(
     """
 
     params = plugin.params
-
-    assert isinstance(
-        params,
-        StatusPluginParams)
 
 
     def _compose(

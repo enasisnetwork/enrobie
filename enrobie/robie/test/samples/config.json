@@ -2,6 +2,7 @@
   "clients": {
     "dscbot": {
       "enable": true,
+      "locate": "enrobie.clients.DSCClient",
       "client": {
         "token": "mocked",
         "timeout": 30,
@@ -18,6 +19,7 @@
     },
     "ircbot": {
       "enable": true,
+      "locate": "enrobie.clients.IRCClient",
       "client": {
         "server": "mocked",
         "port": 6697,
@@ -42,6 +44,7 @@
     },
     "mtmbot": {
       "enable": true,
+      "locate": "enrobie.clients.MTMClient",
       "client": {
         "server": "mocked",
         "port": 443,
@@ -76,6 +79,7 @@
   "plugins": {
     "status": {
       "enable": true,
+      "locate": "enrobie.plugins.StatusPlugin",
       "reports": [
         {
           "client": "dscbot",
@@ -126,6 +130,7 @@
     },
     "autojoin": {
       "enable": true,
+      "locate": "enrobie.plugins.AutoJoinPlugin",
       "channels": [
         {
           "client": "ircbot",
@@ -140,6 +145,7 @@
     },
     "autonick": {
       "enable": true,
+      "locate": "enrobie.plugins.AutoNickPlugin",
       "clients": [
         "ircbot"
       ],
@@ -151,6 +157,7 @@
     },
     "ainswer": {
       "enable": true,
+      "locate": "enrobie.plugins.AinswerPlugin",
       "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
       "clients": [
         "dscbot",

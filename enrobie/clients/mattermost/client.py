@@ -15,6 +15,7 @@ from typing import Any
 from typing import Literal
 from typing import Optional
 from typing import TYPE_CHECKING
+from typing import Type
 
 from encommon.types import NCNone
 
@@ -56,9 +57,6 @@ class MTMClient(RobieClient):
 
         params = self.params
 
-        assert isinstance(
-            params, MTMClientParams)
-
         client = Client(
             params.client,
             self.__debugger)
@@ -74,6 +72,38 @@ class MTMClient(RobieClient):
         """
 
         # Nothing to do for client
+
+
+    @classmethod
+    def schema(
+        cls,
+    ) -> Type[MTMClientParams]:
+        """
+        Return the configuration parameters relevant for class.
+
+        :returns: Configuration parameters relevant for class.
+        """
+
+        return MTMClientParams
+
+
+    @property
+    def params(
+        self,
+    ) -> MTMClientParams:
+        """
+        Return the Pydantic model containing the configuration.
+
+        :returns: Pydantic model containing the configuration.
+        """
+
+        params = super().params
+
+        assert isinstance(
+            params,
+            MTMClientParams)
+
+        return params
 
 
     @property
@@ -118,9 +148,6 @@ class MTMClient(RobieClient):
         cqueue = thread.cqueue
         vacate = member.vacate
         params = self.params
-
-        assert isinstance(
-            params, MTMClientParams)
 
         delay = params.delay
 
@@ -443,9 +470,6 @@ class MTMClient(RobieClient):
         childs = robie.childs
         plugins = childs.plugins
         params = self.params
-
-        assert isinstance(
-            params, MTMClientParams)
 
         if 'status' not in plugins:
             return NCNone

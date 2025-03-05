@@ -84,6 +84,8 @@ def test_AinswerPlugin(
 
     assert plugin.kind == 'plugin'
 
+    assert plugin.schema()
+
     assert plugin.params
 
     assert plugin.dumped

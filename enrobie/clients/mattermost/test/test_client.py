@@ -79,6 +79,8 @@ def test_MTMClient(
 
     assert client.kind == 'client'
 
+    assert client.schema()
+
     assert client.params
 
     assert client.dumped
