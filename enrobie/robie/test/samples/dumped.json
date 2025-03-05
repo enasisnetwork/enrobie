@@ -27,6 +27,7 @@
       "kind": "client",
       "params": {
         "enable": true,
+        "locate": "enrobie.clients.DSCClient",
         "client": {
           "token": "mocked",
           "timeout": 30,
@@ -48,6 +49,7 @@
       "kind": "client",
       "params": {
         "enable": true,
+        "locate": "enrobie.clients.IRCClient",
         "client": {
           "server": "mocked",
           "port": 6697,
@@ -77,6 +79,7 @@
       "kind": "client",
       "params": {
         "enable": true,
+        "locate": "enrobie.clients.MTMClient",
         "client": {
           "server": "mocked",
           "port": 443,
@@ -98,80 +101,12 @@
     }
   },
   "plugins": {
-    "autojoin": {
-      "name": "autojoin",
-      "kind": "plugin",
-      "params": {
-        "enable": true,
-        "channels": [
-          {
-            "client": "ircbot",
-            "channel": "mocked"
-          }
-        ],
-        "status": {
-          "irc": "\u2699\ufe0f",
-          "dsc": "<:unknown:mocked>",
-          "mtm": ":unknown:"
-        }
-      }
-    },
-    "autonick": {
-      "name": "autonick",
-      "kind": "plugin",
-      "params": {
-        "enable": true,
-        "clients": [
-          "ircbot"
-        ],
-        "status": {
-          "irc": "\u2699\ufe0f",
-          "dsc": "<:unknown:mocked>",
-          "mtm": ":unknown:"
-        }
-      }
-    },
-    "ainswer": {
-      "name": "ainswer",
-      "kind": "plugin",
-      "params": {
-        "enable": true,
-        "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
-        "clients": [
-          "dscbot",
-          "ircbot",
-          "mtmbot"
-        ],
-        "ainswer": {
-          "origin": "openai",
-          "model": "gpt-4o",
-          "secret": "somekey",
-          "timeout": 30,
-          "sleep": [
-            0,
-            0
-          ]
-        },
-        "prompt": {
-          "system": "You are Bender from Futurama.",
-          "client": {
-            "dsc": "Your nickname is {{ whoami }}. Use some markdown and emojis.",
-            "irc": "Your nickname is {{ whoami }}. Keep it short and use colors.",
-            "mtm": "Your nickname is {{ whoami }}. Use some markdown and emojis."
-          }
-        },
-        "status": {
-          "irc": "\ud83d\udcac",
-          "dsc": "<:unknown:mocked>",
-          "mtm": ":unknown:"
-        }
-      }
-    },
     "status": {
       "name": "status",
       "kind": "plugin",
       "params": {
         "enable": true,
+        "locate": "enrobie.plugins.StatusPlugin",
         "reports": [
           {
             "client": "dscbot",
@@ -218,6 +153,78 @@
             "dsc": "<:unknown:mocked>",
             "mtm": ":unknown:"
           }
+        }
+      }
+    },
+    "autojoin": {
+      "name": "autojoin",
+      "kind": "plugin",
+      "params": {
+        "enable": true,
+        "locate": "enrobie.plugins.AutoJoinPlugin",
+        "channels": [
+          {
+            "client": "ircbot",
+            "channel": "mocked"
+          }
+        ],
+        "status": {
+          "irc": "\u2699\ufe0f",
+          "dsc": "<:unknown:mocked>",
+          "mtm": ":unknown:"
+        }
+      }
+    },
+    "autonick": {
+      "name": "autonick",
+      "kind": "plugin",
+      "params": {
+        "enable": true,
+        "locate": "enrobie.plugins.AutoNickPlugin",
+        "clients": [
+          "ircbot"
+        ],
+        "status": {
+          "irc": "\u2699\ufe0f",
+          "dsc": "<:unknown:mocked>",
+          "mtm": ":unknown:"
+        }
+      }
+    },
+    "ainswer": {
+      "name": "ainswer",
+      "kind": "plugin",
+      "params": {
+        "enable": true,
+        "locate": "enrobie.plugins.AinswerPlugin",
+        "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
+        "clients": [
+          "dscbot",
+          "ircbot",
+          "mtmbot"
+        ],
+        "ainswer": {
+          "origin": "openai",
+          "model": "gpt-4o",
+          "secret": "somekey",
+          "timeout": 30,
+          "sleep": [
+            0,
+            0
+          ]
+        },
+        "prompt": {
+          "system": "You are Bender from Futurama.",
+          "client": {
+            "dsc": "Your nickname is {{ whoami }}. Use some markdown and emojis.",
+            "irc": "Your nickname is {{ whoami }}. Keep it short and use colors.",
+            "mtm": "Your nickname is {{ whoami }}. Use some markdown and emojis."
+          }
+        },
+        "status": {
+          "irc": "\ud83d\udcac",
+          "dsc": "<:unknown:mocked>",
+          "mtm": ":unknown:"
         }
       }
     }

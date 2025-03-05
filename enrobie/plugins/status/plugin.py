@@ -9,6 +9,7 @@ is permitted, for more information consult the project license file.
 
 from typing import Optional
 from typing import TYPE_CHECKING
+from typing import Type
 from typing import get_args
 
 from encommon.times import Time
@@ -69,6 +70,38 @@ class StatusPlugin(RobiePlugin):
         # Nothing to do for plugin
 
 
+    @classmethod
+    def schema(
+        cls,
+    ) -> Type[StatusPluginParams]:
+        """
+        Return the configuration parameters relevant for class.
+
+        :returns: Configuration parameters relevant for class.
+        """
+
+        return StatusPluginParams
+
+
+    @property
+    def params(
+        self,
+    ) -> StatusPluginParams:
+        """
+        Return the Pydantic model containing the configuration.
+
+        :returns: Pydantic model containing the configuration.
+        """
+
+        params = super().params
+
+        assert isinstance(
+            params,
+            StatusPluginParams)
+
+        return params
+
+
     def operate(
         self,
         thread: 'RobieThread',
@@ -84,10 +117,6 @@ class StatusPlugin(RobiePlugin):
         cqueue = member.cqueue
         params = self.params
         status = self.__status
-
-        assert isinstance(
-            params,
-            StatusPluginParams)
 
         command = params.command
         match: Optional[str]
@@ -175,10 +204,6 @@ class StatusPlugin(RobiePlugin):
         clients = childs.clients
         member = thread.member
         cqueue = member.cqueue
-
-        assert isinstance(
-            params,
-            StatusPluginParams)
 
         if not params.reports:
             return NCNone

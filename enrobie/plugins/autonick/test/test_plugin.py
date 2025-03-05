@@ -81,6 +81,8 @@ def test_AutoNickPlugin(
 
     assert plugin.kind == 'plugin'
 
+    assert plugin.schema()
+
     assert plugin.params
 
     assert plugin.dumped

@@ -15,6 +15,7 @@ from typing import Any
 from typing import Literal
 from typing import Optional
 from typing import TYPE_CHECKING
+from typing import Type
 
 from encommon.types import NCNone
 
@@ -54,9 +55,6 @@ class IRCClient(RobieClient):
 
         params = self.params
 
-        assert isinstance(
-            params, IRCClientParams)
-
         client = Client(
             params.client,
             self.__debugger)
@@ -72,6 +70,38 @@ class IRCClient(RobieClient):
         """
 
         # Nothing to do for client
+
+
+    @classmethod
+    def schema(
+        cls,
+    ) -> Type[IRCClientParams]:
+        """
+        Return the configuration parameters relevant for class.
+
+        :returns: Configuration parameters relevant for class.
+        """
+
+        return IRCClientParams
+
+
+    @property
+    def params(
+        self,
+    ) -> IRCClientParams:
+        """
+        Return the Pydantic model containing the configuration.
+
+        :returns: Pydantic model containing the configuration.
+        """
+
+        params = super().params
+
+        assert isinstance(
+            params,
+            IRCClientParams)
+
+        return params
 
 
     @property
@@ -116,9 +146,6 @@ class IRCClient(RobieClient):
         cqueue = thread.cqueue
         vacate = member.vacate
         params = self.params
-
-        assert isinstance(
-            params, IRCClientParams)
 
         delay = params.delay
 
@@ -420,9 +447,6 @@ class IRCClient(RobieClient):
         childs = robie.childs
         plugins = childs.plugins
         params = self.params
-
-        assert isinstance(
-            params, IRCClientParams)
 
         if 'status' not in plugins:
             return NCNone

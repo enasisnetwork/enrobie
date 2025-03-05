@@ -83,6 +83,8 @@ def test_AutoJoinPlugin(
 
     assert plugin.kind == 'plugin'
 
+    assert plugin.schema()
+
     assert plugin.params
 
     assert plugin.dumped

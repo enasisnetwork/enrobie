@@ -8,8 +8,10 @@ is permitted, for more information consult the project license file.
 
 
 from typing import TYPE_CHECKING
+from typing import Type
 
 from encommon.times import Timer
+from encommon.types import NCNone
 
 from .params import AutoNickPluginParams
 from ..status import StatusPlugin
@@ -54,6 +56,38 @@ class AutoNickPlugin(RobiePlugin):
         # Review the parameters
 
 
+    @classmethod
+    def schema(
+        cls,
+    ) -> Type[AutoNickPluginParams]:
+        """
+        Return the configuration parameters relevant for class.
+
+        :returns: Configuration parameters relevant for class.
+        """
+
+        return AutoNickPluginParams
+
+
+    @property
+    def params(
+        self,
+    ) -> AutoNickPluginParams:
+        """
+        Return the Pydantic model containing the configuration.
+
+        :returns: Pydantic model containing the configuration.
+        """
+
+        params = super().params
+
+        assert isinstance(
+            params,
+            AutoNickPluginParams)
+
+        return params
+
+
     def operate(
         self,
         thread: 'RobieThread',
@@ -87,7 +121,6 @@ class AutoNickPlugin(RobiePlugin):
         """
 
         from ...clients import IRCClient
-        from ...clients import IRCClientParams
 
         robie = self.robie
         childs = robie.childs
@@ -98,10 +131,6 @@ class AutoNickPlugin(RobiePlugin):
         clients = (
             childs.clients
             .values())
-
-        assert isinstance(
-            params,
-            AutoNickPluginParams)
 
         names = params.clients
 
@@ -122,10 +151,6 @@ class AutoNickPlugin(RobiePlugin):
                 return None
 
             params = client.params
-
-            assert isinstance(
-                params,
-                IRCClientParams)
 
             should = (
                 params.client
@@ -180,12 +205,8 @@ class AutoNickPlugin(RobiePlugin):
         plugins = childs.plugins
         params = self.params
 
-        assert isinstance(
-            params,
-            AutoNickPluginParams)
-
         if 'status' not in plugins:
-            return None
+            return NCNone
 
         plugin = plugins['status']
 

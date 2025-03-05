@@ -26,7 +26,7 @@ if TYPE_CHECKING:
 
 
 
-def test_RobieService(
+def test_RobieService(  # noqa: CFQ001
     service: 'RobieService',
     client_dscsock: DSCClientSocket,
     client_ircsock: IRCClientSocket,
@@ -93,6 +93,22 @@ def test_RobieService(
 
 
     assert len(service.zombies) == 4
+
+
+    clients = service.clients
+    threads = clients.threads
+
+    for name in list(threads):
+
+        if name == 'ircbot':
+            continue
+
+        del threads[name]
+
+    clients.threads = threads
+
+
+    assert len(service.zombies) == 2
 
 
     client_dscsock()

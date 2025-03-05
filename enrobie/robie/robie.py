@@ -22,13 +22,14 @@ from encommon.utils import print_ansi
 from .addons import RobieJinja2
 from .addons import RobieLogger
 from .childs import RobieChilds
+from .childs import RobieClient
+from .childs import RobiePlugin
 from .models import RobieModels
+from ..utils import importer
 
 if TYPE_CHECKING:
     from .common import RobiePrint
     from .config import RobieConfig
-    from .childs import RobieClient
-    from .childs import RobiePlugin
     from .params import RobieParams
 
 
@@ -76,6 +77,8 @@ class Robie:
         config.logger.log_d(
             base=clsname(self),
             status='created')
+
+        self.register_locate()
 
 
     @property
@@ -245,6 +248,71 @@ class Robie:
             name=name,
             client=client,
             plugin=plugin)
+
+
+    def register_locate(
+        self,
+    ) -> None:
+        """
+        Register the plugin with the internal operation routine.
+        """
+
+        config = self.config
+        merge = config.merge
+
+
+        clients = (
+            merge.get('clients')
+            or {})
+
+        items = clients.items()
+
+        for name, source in items:
+
+            locate = (
+                source
+                .get('locate'))
+
+            if locate is None:
+                continue  # NOCVR
+
+            client = (
+                importer(locate))
+
+            assert issubclass(
+                client,
+                RobieClient)
+
+            self.register(
+                name=name,
+                client=client)
+
+
+        plugins = (
+            merge.get('plugins')
+            or {})
+
+        items = plugins.items()
+
+        for name, source in items:
+
+            locate = (
+                source
+                .get('locate'))
+
+            if locate is None:
+                continue  # NOCVR
+
+            plugin = (
+                importer(locate))
+
+            assert issubclass(
+                plugin,
+                RobiePlugin)
+
+            self.register(
+                name=name,
+                plugin=plugin)
 
 
     def j2parse(

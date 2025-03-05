@@ -16,6 +16,7 @@
   "clients": {
     "dscbot": {
       "enable": true,
+      "locate": "enrobie.clients.DSCClient",
       "status": {
         "dsc": "<:discord:mocked>",
         "irc": "\ud83d\udcac",
@@ -27,6 +28,7 @@
     },
     "ircbot": {
       "enable": true,
+      "locate": "enrobie.clients.IRCClient",
       "status": {
         "dsc": "<:irc:mocked>",
         "irc": "\ud83d\udcac",
@@ -41,6 +43,7 @@
     },
     "mtmbot": {
       "enable": true,
+      "locate": "enrobie.clients.MTMClient",
       "status": {
         "dsc": "<:mattermost:mocked>",
         "irc": "\ud83d\udcac",
@@ -56,6 +59,7 @@
   "plugins": {
     "status": {
       "enable": true,
+      "locate": "enrobie.plugins.StatusPlugin",
       "icons": {
         "pending": {
           "dsc": "<:initial:mocked>",
@@ -98,6 +102,7 @@
     },
     "autojoin": {
       "enable": true,
+      "locate": "enrobie.plugins.AutoJoinPlugin",
       "channels": [
         {
           "client": "ircbot",
@@ -112,6 +117,7 @@
     },
     "autonick": {
       "enable": true,
+      "locate": "enrobie.plugins.AutoNickPlugin",
       "clients": "ircbot",
       "status": {
         "dsc": "<:unknown:mocked>",
@@ -121,6 +127,7 @@
     },
     "ainswer": {
       "enable": true,
+      "locate": "enrobie.plugins.AinswerPlugin",
       "database": "{{ config.params.database }}",
       "clients": [
         "dscbot",

@@ -9,6 +9,7 @@ is permitted, for more information consult the project license file.
 
 from typing import Literal
 from typing import TYPE_CHECKING
+from typing import Type
 
 from encommon.types import DictStrAny
 
@@ -18,6 +19,7 @@ from ..addons import RobieQueue
 if TYPE_CHECKING:
     from ..models import RobieCommand
     from ..models import RobieMessage
+    from ..params import RobieClientParams
 
 
 
@@ -51,6 +53,19 @@ class RobieClient(RobieChild):
         """
 
         return 'client'
+
+
+    @classmethod
+    def schema(
+        cls,
+    ) -> Type['RobieClientParams']:
+        """
+        Return the configuration parameters relevant for class.
+
+        :returns: Configuration parameters relevant for class.
+        """
+
+        raise NotImplementedError
 
 
     @property

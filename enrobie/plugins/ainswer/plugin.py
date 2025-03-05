@@ -12,6 +12,7 @@ from time import sleep as block_sleep
 from typing import TYPE_CHECKING
 from typing import Type
 
+from encommon.types import NCNone
 
 from pydantic_ai import Agent
 from pydantic_ai.models import Model
@@ -109,6 +110,19 @@ class AinswerPlugin(RobiePlugin):
         """
 
         # Review the parameters
+
+
+    @classmethod
+    def schema(
+        cls,
+    ) -> Type[AinswerPluginParams]:
+        """
+        Return the configuration parameters relevant for class.
+
+        :returns: Configuration parameters relevant for class.
+        """
+
+        return AinswerPluginParams
 
 
     @property
@@ -323,7 +337,7 @@ class AinswerPlugin(RobiePlugin):
         params = self.params
 
         if 'status' not in plugins:
-            return None
+            return NCNone
 
         plugin = plugins['status']
 

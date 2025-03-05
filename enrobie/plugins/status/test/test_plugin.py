@@ -138,6 +138,8 @@ def test_StatusPlugin(
 
     assert plugin.kind == 'plugin'
 
+    assert plugin.schema()
+
     assert plugin.params
 
     assert plugin.dumped
