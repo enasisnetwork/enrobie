@@ -162,22 +162,27 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-10"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
 </span><span id="line-11"><span class="w">      </span><span class="p">},</span>
 </span><span id="line-12"><span class="w">      </span><span class="nt">"locate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-13"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which client are parameters"</span><span class="p">,</span>
-</span><span id="line-14"><span class="w">         </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-15"><span class="w">            </span><span class="s2">"enrobie.clients.DSCClient"</span><span class="p">,</span>
-</span><span id="line-16"><span class="w">            </span><span class="s2">"enrobie.clients.IRCClient"</span><span class="p">,</span>
-</span><span id="line-17"><span class="w">            </span><span class="s2">"enrobie.clients.MTMClient"</span>
-</span><span id="line-18"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-19"><span class="w">         </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-20"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span><span class="p">,</span>
-</span><span id="line-21"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-22"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-23"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-24"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-25"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-26"><span class="w">      </span><span class="s2">"locate"</span>
-</span><span id="line-27"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-28"><span class="p">}</span>
+</span><span id="line-13"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-14"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-15"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-16"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-17"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-18"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-19"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-20"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-21"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-22"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-23"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which client are parameters"</span><span class="p">,</span>
+</span><span id="line-24"><span class="w">         </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-25"><span class="w">            </span><span class="s2">"enrobie.clients.DSCClient"</span><span class="p">,</span>
+</span><span id="line-26"><span class="w">            </span><span class="s2">"enrobie.clients.IRCClient"</span><span class="p">,</span>
+</span><span id="line-27"><span class="w">            </span><span class="s2">"enrobie.clients.MTMClient"</span>
+</span><span id="line-28"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-29"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span>
+</span><span id="line-30"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-31"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-32"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="line-33"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -188,13 +193,13 @@ is permitted, for more information consult the project license file.</p>
 </dd>
 <dt class="field-even">Fields<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="#enrobie.robie.params.client.RobieClientParams.locate" title="enrobie.robie.params.client.RobieClientParams.locate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span> <span class="pre">(Annotated[str,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=True,</span> <span class="pre">description='For</span> <span class="pre">which</span> <span class="pre">client</span> <span class="pre">are</span> <span class="pre">parameters',</span> <span class="pre">examples=['enrobie.clients.DSCClient',</span> <span class="pre">'enrobie.clients.IRCClient',</span> <span class="pre">'enrobie.clients.MTMClient'],</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.robie.params.client.RobieClientParams.locate" title="enrobie.robie.params.client.RobieClientParams.locate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span> <span class="pre">(Annotated[str</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='For</span> <span class="pre">which</span> <span class="pre">client</span> <span class="pre">are</span> <span class="pre">parameters',</span> <span class="pre">examples=['enrobie.clients.DSCClient',</span> <span class="pre">'enrobie.clients.IRCClient',</span> <span class="pre">'enrobie.clients.MTMClient'],</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.robie.params.client.RobieClientParams.locate">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">locate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'For</span> <span class="pre">which</span> <span class="pre">client</span> <span class="pre">are</span> <span class="pre">parameters'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">examples</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'enrobie.clients.DSCClient'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.clients.IRCClient'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.clients.MTMClient'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.robie.params.client.RobieClientParams.locate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.client.RobieClientParams.locate'">¶</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">locate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'For</span> <span class="pre">which</span> <span class="pre">client</span> <span class="pre">are</span> <span class="pre">parameters'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">examples</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'enrobie.clients.DSCClient'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.clients.IRCClient'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.clients.MTMClient'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.robie.params.client.RobieClientParams.locate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.client.RobieClientParams.locate'">¶</a></dt>
 <dd><p>For which client are parameters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Constraints<span class="colon">:</span></dt>
@@ -214,7 +219,7 @@ is permitted, for more information consult the project license file.</p>
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="enrobie.robie.params.common.RobieParamsModel">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.params.common.</span></span><span class="sig-name descname"><span class="pre">RobieParamsModel</span></span><a class="reference internal" href="_modules/enrobie/robie/params/common.html#RobieParamsModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.params.common.RobieParamsModel" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.common.RobieParamsModel'">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://enasisnetwork.github.io/encommon/sphinx/encommon.types.html#encommon.types.classes.BaseModel" title="(in encommon v0.22.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://enasisnetwork.github.io/encommon/sphinx/encommon.types.html#encommon.types.classes.BaseModel" title="(in encommon v0.22.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
 <p>Process and validate the Homie configuration parameters.</p>
 <p><details class="autodoc_pydantic_collapsable_json">
 <summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="p">{</span>
@@ -258,23 +263,28 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-10"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
 </span><span id="line-11"><span class="w">      </span><span class="p">},</span>
 </span><span id="line-12"><span class="w">      </span><span class="nt">"locate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-13"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which plugin are parameters"</span><span class="p">,</span>
-</span><span id="line-14"><span class="w">         </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-15"><span class="w">            </span><span class="s2">"enrobie.plugins.AinswerPlugin"</span><span class="p">,</span>
-</span><span id="line-16"><span class="w">            </span><span class="s2">"enrobie.plugins.AutoJoinPlugin"</span><span class="p">,</span>
-</span><span id="line-17"><span class="w">            </span><span class="s2">"enrobie.plugins.AutoNickPlugin"</span><span class="p">,</span>
-</span><span id="line-18"><span class="w">            </span><span class="s2">"enrobie.plugins.StatusPlugin"</span>
-</span><span id="line-19"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-20"><span class="w">         </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-21"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span><span class="p">,</span>
-</span><span id="line-22"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-23"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-24"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-25"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-26"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-27"><span class="w">      </span><span class="s2">"locate"</span>
-</span><span id="line-28"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-29"><span class="p">}</span>
+</span><span id="line-13"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-14"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-15"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-16"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-17"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-18"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-19"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-20"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-21"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-22"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-23"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which plugin are parameters"</span><span class="p">,</span>
+</span><span id="line-24"><span class="w">         </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-25"><span class="w">            </span><span class="s2">"enrobie.plugins.AinswerPlugin"</span><span class="p">,</span>
+</span><span id="line-26"><span class="w">            </span><span class="s2">"enrobie.plugins.AutoJoinPlugin"</span><span class="p">,</span>
+</span><span id="line-27"><span class="w">            </span><span class="s2">"enrobie.plugins.AutoNickPlugin"</span><span class="p">,</span>
+</span><span id="line-28"><span class="w">            </span><span class="s2">"enrobie.plugins.StatusPlugin"</span>
+</span><span id="line-29"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-30"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span>
+</span><span id="line-31"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-32"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-33"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="line-34"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -285,13 +295,13 @@ is permitted, for more information consult the project license file.</p>
 </dd>
 <dt class="field-even">Fields<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="#enrobie.robie.params.plugin.RobiePluginParams.locate" title="enrobie.robie.params.plugin.RobiePluginParams.locate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span> <span class="pre">(Annotated[str,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=True,</span> <span class="pre">description='For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters',</span> <span class="pre">examples=['enrobie.plugins.AinswerPlugin',</span> <span class="pre">'enrobie.plugins.AutoJoinPlugin',</span> <span class="pre">'enrobie.plugins.AutoNickPlugin',</span> <span class="pre">'enrobie.plugins.StatusPlugin'],</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.robie.params.plugin.RobiePluginParams.locate" title="enrobie.robie.params.plugin.RobiePluginParams.locate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span> <span class="pre">(Annotated[str</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters',</span> <span class="pre">examples=['enrobie.plugins.AinswerPlugin',</span> <span class="pre">'enrobie.plugins.AutoJoinPlugin',</span> <span class="pre">'enrobie.plugins.AutoNickPlugin',</span> <span class="pre">'enrobie.plugins.StatusPlugin'],</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.robie.params.plugin.RobiePluginParams.locate">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">locate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">examples</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'enrobie.plugins.AinswerPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.AutoJoinPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.AutoNickPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.StatusPlugin'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.robie.params.plugin.RobiePluginParams.locate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.plugin.RobiePluginParams.locate'">¶</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">locate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">examples</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'enrobie.plugins.AinswerPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.AutoJoinPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.AutoNickPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.StatusPlugin'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.robie.params.plugin.RobiePluginParams.locate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.plugin.RobiePluginParams.locate'">¶</a></dt>
 <dd><p>For which plugin are parameters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Constraints<span class="colon">:</span></dt>
@@ -311,7 +321,7 @@ is permitted, for more information consult the project license file.</p>
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="enrobie.robie.params.robie.RobieParams">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.params.robie.</span></span><span class="sig-name descname"><span class="pre">RobieParams</span></span><a class="reference internal" href="_modules/enrobie/robie/params/robie.html#RobieParams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.params.robie.RobieParams" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.robie.RobieParams'">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://enasisnetwork.github.io/encommon/sphinx/encommon.config.html#encommon.config.params.Params" title="(in encommon v0.22.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Params</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://enasisnetwork.github.io/encommon/sphinx/encommon.config.html#encommon.config.params.Params" title="(in encommon v0.22.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Params</span></code></a></p>
 <p>Process and validate the core configuration parameters.</p>
 <p><details class="autodoc_pydantic_collapsable_json">
 <summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="p">{</span>
@@ -543,103 +553,113 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-227"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
 </span><span id="line-228"><span class="w">            </span><span class="p">},</span>
 </span><span id="line-229"><span class="w">            </span><span class="nt">"locate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-230"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which client are parameters"</span><span class="p">,</span>
-</span><span id="line-231"><span class="w">               </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-232"><span class="w">                  </span><span class="s2">"enrobie.clients.DSCClient"</span><span class="p">,</span>
-</span><span id="line-233"><span class="w">                  </span><span class="s2">"enrobie.clients.IRCClient"</span><span class="p">,</span>
-</span><span id="line-234"><span class="w">                  </span><span class="s2">"enrobie.clients.MTMClient"</span>
-</span><span id="line-235"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-236"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-237"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span><span class="p">,</span>
-</span><span id="line-238"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-239"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-240"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-241"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-242"><span class="w">            </span><span class="s2">"locate"</span>
-</span><span id="line-243"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-244"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieClientParams"</span><span class="p">,</span>
-</span><span id="line-245"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-246"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-247"><span class="w">      </span><span class="nt">"RobiePluginParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-248"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-249"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-250"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-251"><span class="w">            </span><span class="nt">"enable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-252"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-253"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Determine whether child enabled"</span><span class="p">,</span>
-</span><span id="line-254"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enable"</span><span class="p">,</span>
-</span><span id="line-255"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-256"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-257"><span class="w">            </span><span class="nt">"locate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-258"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which plugin are parameters"</span><span class="p">,</span>
-</span><span id="line-259"><span class="w">               </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-260"><span class="w">                  </span><span class="s2">"enrobie.plugins.AinswerPlugin"</span><span class="p">,</span>
-</span><span id="line-261"><span class="w">                  </span><span class="s2">"enrobie.plugins.AutoJoinPlugin"</span><span class="p">,</span>
-</span><span id="line-262"><span class="w">                  </span><span class="s2">"enrobie.plugins.AutoNickPlugin"</span><span class="p">,</span>
-</span><span id="line-263"><span class="w">                  </span><span class="s2">"enrobie.plugins.StatusPlugin"</span>
-</span><span id="line-264"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-265"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-266"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span><span class="p">,</span>
-</span><span id="line-267"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-268"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-269"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-270"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-271"><span class="w">            </span><span class="s2">"locate"</span>
-</span><span id="line-272"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-273"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePluginParams"</span><span class="p">,</span>
-</span><span id="line-274"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-275"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-276"><span class="w">      </span><span class="nt">"RobiePrinterParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-277"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-278"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-279"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-280"><span class="w">            </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-281"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-282"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the messages to console"</span><span class="p">,</span>
-</span><span id="line-283"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span>
-</span><span id="line-284"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-285"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-286"><span class="w">            </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-287"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-288"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the commands to console"</span><span class="p">,</span>
-</span><span id="line-289"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command"</span><span class="p">,</span>
-</span><span id="line-290"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-291"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-292"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-293"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePrinterParams"</span><span class="p">,</span>
-</span><span id="line-294"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-295"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-296"><span class="w">      </span><span class="nt">"RobieServiceParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-297"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-298"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-299"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-300"><span class="w">            </span><span class="nt">"respite"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-301"><span class="w">               </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/RobieServiceRespiteParams"</span><span class="p">,</span>
-</span><span id="line-302"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When operates are performed"</span>
-</span><span id="line-303"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-304"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-305"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceParams"</span><span class="p">,</span>
-</span><span id="line-306"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-307"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-308"><span class="w">      </span><span class="nt">"RobieServiceRespiteParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-309"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-310"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-311"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-312"><span class="w">            </span><span class="nt">"health"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-313"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-</span><span id="line-314"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How often health is checked"</span><span class="p">,</span>
-</span><span id="line-315"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
-</span><span id="line-316"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-317"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health"</span><span class="p">,</span>
-</span><span id="line-318"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-319"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-320"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-321"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceRespiteParams"</span><span class="p">,</span>
-</span><span id="line-322"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-323"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-324"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-325"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-</span><span id="line-326"><span class="p">}</span>
+</span><span id="line-230"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-231"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-232"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-233"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-234"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-235"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-236"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-237"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-238"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-239"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-240"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which client are parameters"</span><span class="p">,</span>
+</span><span id="line-241"><span class="w">               </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-242"><span class="w">                  </span><span class="s2">"enrobie.clients.DSCClient"</span><span class="p">,</span>
+</span><span id="line-243"><span class="w">                  </span><span class="s2">"enrobie.clients.IRCClient"</span><span class="p">,</span>
+</span><span id="line-244"><span class="w">                  </span><span class="s2">"enrobie.clients.MTMClient"</span>
+</span><span id="line-245"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-246"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span>
+</span><span id="line-247"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-248"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-249"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieClientParams"</span><span class="p">,</span>
+</span><span id="line-250"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-251"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-252"><span class="w">      </span><span class="nt">"RobiePluginParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-253"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-254"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-255"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-256"><span class="w">            </span><span class="nt">"enable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-257"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-258"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Determine whether child enabled"</span><span class="p">,</span>
+</span><span id="line-259"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enable"</span><span class="p">,</span>
+</span><span id="line-260"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-261"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-262"><span class="w">            </span><span class="nt">"locate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-263"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-264"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-265"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-266"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-267"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-268"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-269"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-270"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-271"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-272"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-273"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which plugin are parameters"</span><span class="p">,</span>
+</span><span id="line-274"><span class="w">               </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-275"><span class="w">                  </span><span class="s2">"enrobie.plugins.AinswerPlugin"</span><span class="p">,</span>
+</span><span id="line-276"><span class="w">                  </span><span class="s2">"enrobie.plugins.AutoJoinPlugin"</span><span class="p">,</span>
+</span><span id="line-277"><span class="w">                  </span><span class="s2">"enrobie.plugins.AutoNickPlugin"</span><span class="p">,</span>
+</span><span id="line-278"><span class="w">                  </span><span class="s2">"enrobie.plugins.StatusPlugin"</span>
+</span><span id="line-279"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-280"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span>
+</span><span id="line-281"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-282"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-283"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePluginParams"</span><span class="p">,</span>
+</span><span id="line-284"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-285"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-286"><span class="w">      </span><span class="nt">"RobiePrinterParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-287"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-288"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-289"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-290"><span class="w">            </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-291"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-292"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the messages to console"</span><span class="p">,</span>
+</span><span id="line-293"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span>
+</span><span id="line-294"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-295"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-296"><span class="w">            </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-297"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-298"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the commands to console"</span><span class="p">,</span>
+</span><span id="line-299"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command"</span><span class="p">,</span>
+</span><span id="line-300"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-301"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-302"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-303"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePrinterParams"</span><span class="p">,</span>
+</span><span id="line-304"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-305"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-306"><span class="w">      </span><span class="nt">"RobieServiceParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-307"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-308"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-309"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-310"><span class="w">            </span><span class="nt">"respite"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-311"><span class="w">               </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/RobieServiceRespiteParams"</span><span class="p">,</span>
+</span><span id="line-312"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When operates are performed"</span>
+</span><span id="line-313"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-314"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-315"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceParams"</span><span class="p">,</span>
+</span><span id="line-316"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-317"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-318"><span class="w">      </span><span class="nt">"RobieServiceRespiteParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-319"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-320"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-321"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-322"><span class="w">            </span><span class="nt">"health"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-323"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+</span><span id="line-324"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How often health is checked"</span><span class="p">,</span>
+</span><span id="line-325"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+</span><span id="line-326"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-327"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health"</span><span class="p">,</span>
+</span><span id="line-328"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-329"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-330"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-331"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceRespiteParams"</span><span class="p">,</span>
+</span><span id="line-332"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-333"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-334"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-335"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="line-336"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -933,22 +953,27 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-10"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
 </span><span id="line-11"><span class="w">      </span><span class="p">},</span>
 </span><span id="line-12"><span class="w">      </span><span class="nt">"locate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-13"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which client are parameters"</span><span class="p">,</span>
-</span><span id="line-14"><span class="w">         </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-15"><span class="w">            </span><span class="s2">"enrobie.clients.DSCClient"</span><span class="p">,</span>
-</span><span id="line-16"><span class="w">            </span><span class="s2">"enrobie.clients.IRCClient"</span><span class="p">,</span>
-</span><span id="line-17"><span class="w">            </span><span class="s2">"enrobie.clients.MTMClient"</span>
-</span><span id="line-18"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-19"><span class="w">         </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-20"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span><span class="p">,</span>
-</span><span id="line-21"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-22"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-23"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-24"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-25"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-26"><span class="w">      </span><span class="s2">"locate"</span>
-</span><span id="line-27"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-28"><span class="p">}</span>
+</span><span id="line-13"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-14"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-15"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-16"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-17"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-18"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-19"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-20"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-21"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-22"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-23"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which client are parameters"</span><span class="p">,</span>
+</span><span id="line-24"><span class="w">         </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-25"><span class="w">            </span><span class="s2">"enrobie.clients.DSCClient"</span><span class="p">,</span>
+</span><span id="line-26"><span class="w">            </span><span class="s2">"enrobie.clients.IRCClient"</span><span class="p">,</span>
+</span><span id="line-27"><span class="w">            </span><span class="s2">"enrobie.clients.MTMClient"</span>
+</span><span id="line-28"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-29"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span>
+</span><span id="line-30"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-31"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-32"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="line-33"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -960,7 +985,7 @@ is permitted, for more information consult the project license file.</p>
 <dt class="field-even">Fields<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable</span> <span class="pre">(Annotated[bool,</span> <span class="pre">Field(False,</span> <span class="pre">description='Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled')])</span></code></p></li>
-<li><p><a class="reference internal" href="#enrobie.robie.params.client.RobieClientParams.locate" title="enrobie.robie.params.client.RobieClientParams.locate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span> <span class="pre">(Annotated[str,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=True,</span> <span class="pre">description='For</span> <span class="pre">which</span> <span class="pre">client</span> <span class="pre">are</span> <span class="pre">parameters',</span> <span class="pre">examples=['enrobie.clients.DSCClient',</span> <span class="pre">'enrobie.clients.IRCClient',</span> <span class="pre">'enrobie.clients.MTMClient'],</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.robie.params.client.RobieClientParams.locate" title="enrobie.robie.params.client.RobieClientParams.locate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span> <span class="pre">(Annotated[str</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='For</span> <span class="pre">which</span> <span class="pre">client</span> <span class="pre">are</span> <span class="pre">parameters',</span> <span class="pre">examples=['enrobie.clients.DSCClient',</span> <span class="pre">'enrobie.clients.IRCClient',</span> <span class="pre">'enrobie.clients.MTMClient'],</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -971,7 +996,7 @@ is permitted, for more information consult the project license file.</p>
 </dd></dl>
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.robie.params.RobieClientParams.locate">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">locate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'For</span> <span class="pre">which</span> <span class="pre">client</span> <span class="pre">are</span> <span class="pre">parameters'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">examples</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'enrobie.clients.DSCClient'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.clients.IRCClient'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.clients.MTMClient'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.robie.params.RobieClientParams.locate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.RobieClientParams.locate'">¶</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">locate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'For</span> <span class="pre">which</span> <span class="pre">client</span> <span class="pre">are</span> <span class="pre">parameters'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">examples</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'enrobie.clients.DSCClient'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.clients.IRCClient'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.clients.MTMClient'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.robie.params.RobieClientParams.locate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.RobieClientParams.locate'">¶</a></dt>
 <dd><p>For which client are parameters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Constraints<span class="colon">:</span></dt>
@@ -985,7 +1010,7 @@ is permitted, for more information consult the project license file.</p>
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="enrobie.robie.params.RobieParams">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.params.</span></span><span class="sig-name descname"><span class="pre">RobieParams</span></span><a class="reference internal" href="_modules/enrobie/robie/params/robie.html#RobieParams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.params.RobieParams" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.RobieParams'">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://enasisnetwork.github.io/encommon/sphinx/encommon.config.html#encommon.config.params.Params" title="(in encommon v0.22.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Params</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://enasisnetwork.github.io/encommon/sphinx/encommon.config.html#encommon.config.params.Params" title="(in encommon v0.22.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Params</span></code></a></p>
 <p>Process and validate the core configuration parameters.</p>
 <p><details class="autodoc_pydantic_collapsable_json">
 <summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="p">{</span>
@@ -1217,103 +1242,113 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-227"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
 </span><span id="line-228"><span class="w">            </span><span class="p">},</span>
 </span><span id="line-229"><span class="w">            </span><span class="nt">"locate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-230"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which client are parameters"</span><span class="p">,</span>
-</span><span id="line-231"><span class="w">               </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-232"><span class="w">                  </span><span class="s2">"enrobie.clients.DSCClient"</span><span class="p">,</span>
-</span><span id="line-233"><span class="w">                  </span><span class="s2">"enrobie.clients.IRCClient"</span><span class="p">,</span>
-</span><span id="line-234"><span class="w">                  </span><span class="s2">"enrobie.clients.MTMClient"</span>
-</span><span id="line-235"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-236"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-237"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span><span class="p">,</span>
-</span><span id="line-238"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-239"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-240"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-241"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-242"><span class="w">            </span><span class="s2">"locate"</span>
-</span><span id="line-243"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-244"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieClientParams"</span><span class="p">,</span>
-</span><span id="line-245"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-246"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-247"><span class="w">      </span><span class="nt">"RobiePluginParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-248"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-249"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-250"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-251"><span class="w">            </span><span class="nt">"enable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-252"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-253"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Determine whether child enabled"</span><span class="p">,</span>
-</span><span id="line-254"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enable"</span><span class="p">,</span>
-</span><span id="line-255"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-256"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-257"><span class="w">            </span><span class="nt">"locate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-258"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which plugin are parameters"</span><span class="p">,</span>
-</span><span id="line-259"><span class="w">               </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-260"><span class="w">                  </span><span class="s2">"enrobie.plugins.AinswerPlugin"</span><span class="p">,</span>
-</span><span id="line-261"><span class="w">                  </span><span class="s2">"enrobie.plugins.AutoJoinPlugin"</span><span class="p">,</span>
-</span><span id="line-262"><span class="w">                  </span><span class="s2">"enrobie.plugins.AutoNickPlugin"</span><span class="p">,</span>
-</span><span id="line-263"><span class="w">                  </span><span class="s2">"enrobie.plugins.StatusPlugin"</span>
-</span><span id="line-264"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-265"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-266"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span><span class="p">,</span>
-</span><span id="line-267"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-268"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-269"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-270"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-271"><span class="w">            </span><span class="s2">"locate"</span>
-</span><span id="line-272"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-273"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePluginParams"</span><span class="p">,</span>
-</span><span id="line-274"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-275"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-276"><span class="w">      </span><span class="nt">"RobiePrinterParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-277"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-278"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-279"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-280"><span class="w">            </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-281"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-282"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the messages to console"</span><span class="p">,</span>
-</span><span id="line-283"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span>
-</span><span id="line-284"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-285"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-286"><span class="w">            </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-287"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-288"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the commands to console"</span><span class="p">,</span>
-</span><span id="line-289"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command"</span><span class="p">,</span>
-</span><span id="line-290"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-291"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-292"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-293"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePrinterParams"</span><span class="p">,</span>
-</span><span id="line-294"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-295"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-296"><span class="w">      </span><span class="nt">"RobieServiceParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-297"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-298"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-299"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-300"><span class="w">            </span><span class="nt">"respite"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-301"><span class="w">               </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/RobieServiceRespiteParams"</span><span class="p">,</span>
-</span><span id="line-302"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When operates are performed"</span>
-</span><span id="line-303"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-304"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-305"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceParams"</span><span class="p">,</span>
-</span><span id="line-306"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-307"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-308"><span class="w">      </span><span class="nt">"RobieServiceRespiteParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-309"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-310"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-311"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-312"><span class="w">            </span><span class="nt">"health"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-313"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-</span><span id="line-314"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How often health is checked"</span><span class="p">,</span>
-</span><span id="line-315"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
-</span><span id="line-316"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-317"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health"</span><span class="p">,</span>
-</span><span id="line-318"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-319"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-320"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-321"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceRespiteParams"</span><span class="p">,</span>
-</span><span id="line-322"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-323"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-324"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-325"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-</span><span id="line-326"><span class="p">}</span>
+</span><span id="line-230"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-231"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-232"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-233"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-234"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-235"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-236"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-237"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-238"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-239"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-240"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which client are parameters"</span><span class="p">,</span>
+</span><span id="line-241"><span class="w">               </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-242"><span class="w">                  </span><span class="s2">"enrobie.clients.DSCClient"</span><span class="p">,</span>
+</span><span id="line-243"><span class="w">                  </span><span class="s2">"enrobie.clients.IRCClient"</span><span class="p">,</span>
+</span><span id="line-244"><span class="w">                  </span><span class="s2">"enrobie.clients.MTMClient"</span>
+</span><span id="line-245"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-246"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span>
+</span><span id="line-247"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-248"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-249"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieClientParams"</span><span class="p">,</span>
+</span><span id="line-250"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-251"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-252"><span class="w">      </span><span class="nt">"RobiePluginParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-253"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-254"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-255"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-256"><span class="w">            </span><span class="nt">"enable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-257"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-258"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Determine whether child enabled"</span><span class="p">,</span>
+</span><span id="line-259"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enable"</span><span class="p">,</span>
+</span><span id="line-260"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-261"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-262"><span class="w">            </span><span class="nt">"locate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-263"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-264"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-265"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-266"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-267"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-268"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-269"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-270"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-271"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-272"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-273"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which plugin are parameters"</span><span class="p">,</span>
+</span><span id="line-274"><span class="w">               </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-275"><span class="w">                  </span><span class="s2">"enrobie.plugins.AinswerPlugin"</span><span class="p">,</span>
+</span><span id="line-276"><span class="w">                  </span><span class="s2">"enrobie.plugins.AutoJoinPlugin"</span><span class="p">,</span>
+</span><span id="line-277"><span class="w">                  </span><span class="s2">"enrobie.plugins.AutoNickPlugin"</span><span class="p">,</span>
+</span><span id="line-278"><span class="w">                  </span><span class="s2">"enrobie.plugins.StatusPlugin"</span>
+</span><span id="line-279"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-280"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span>
+</span><span id="line-281"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-282"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-283"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePluginParams"</span><span class="p">,</span>
+</span><span id="line-284"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-285"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-286"><span class="w">      </span><span class="nt">"RobiePrinterParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-287"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-288"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-289"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-290"><span class="w">            </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-291"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-292"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the messages to console"</span><span class="p">,</span>
+</span><span id="line-293"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span>
+</span><span id="line-294"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-295"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-296"><span class="w">            </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-297"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-298"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the commands to console"</span><span class="p">,</span>
+</span><span id="line-299"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command"</span><span class="p">,</span>
+</span><span id="line-300"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-301"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-302"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-303"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePrinterParams"</span><span class="p">,</span>
+</span><span id="line-304"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-305"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-306"><span class="w">      </span><span class="nt">"RobieServiceParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-307"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-308"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-309"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-310"><span class="w">            </span><span class="nt">"respite"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-311"><span class="w">               </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/RobieServiceRespiteParams"</span><span class="p">,</span>
+</span><span id="line-312"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When operates are performed"</span>
+</span><span id="line-313"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-314"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-315"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceParams"</span><span class="p">,</span>
+</span><span id="line-316"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-317"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-318"><span class="w">      </span><span class="nt">"RobieServiceRespiteParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-319"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-320"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-321"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-322"><span class="w">            </span><span class="nt">"health"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-323"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+</span><span id="line-324"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How often health is checked"</span><span class="p">,</span>
+</span><span id="line-325"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+</span><span id="line-326"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-327"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health"</span><span class="p">,</span>
+</span><span id="line-328"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-329"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-330"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-331"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceRespiteParams"</span><span class="p">,</span>
+</span><span id="line-332"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-333"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-334"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-335"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="line-336"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -1400,7 +1435,7 @@ is permitted, for more information consult the project license file.</p>
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="enrobie.robie.params.RobieParamsModel">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.params.</span></span><span class="sig-name descname"><span class="pre">RobieParamsModel</span></span><a class="reference internal" href="_modules/enrobie/robie/params/common.html#RobieParamsModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.params.RobieParamsModel" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.RobieParamsModel'">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://enasisnetwork.github.io/encommon/sphinx/encommon.types.html#encommon.types.classes.BaseModel" title="(in encommon v0.22.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://enasisnetwork.github.io/encommon/sphinx/encommon.types.html#encommon.types.classes.BaseModel" title="(in encommon v0.22.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
 <p>Process and validate the Homie configuration parameters.</p>
 <p><details class="autodoc_pydantic_collapsable_json">
 <summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="p">{</span>
@@ -1438,23 +1473,28 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-10"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
 </span><span id="line-11"><span class="w">      </span><span class="p">},</span>
 </span><span id="line-12"><span class="w">      </span><span class="nt">"locate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-13"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which plugin are parameters"</span><span class="p">,</span>
-</span><span id="line-14"><span class="w">         </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-15"><span class="w">            </span><span class="s2">"enrobie.plugins.AinswerPlugin"</span><span class="p">,</span>
-</span><span id="line-16"><span class="w">            </span><span class="s2">"enrobie.plugins.AutoJoinPlugin"</span><span class="p">,</span>
-</span><span id="line-17"><span class="w">            </span><span class="s2">"enrobie.plugins.AutoNickPlugin"</span><span class="p">,</span>
-</span><span id="line-18"><span class="w">            </span><span class="s2">"enrobie.plugins.StatusPlugin"</span>
-</span><span id="line-19"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-20"><span class="w">         </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-21"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span><span class="p">,</span>
-</span><span id="line-22"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-23"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-24"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-25"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-26"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-27"><span class="w">      </span><span class="s2">"locate"</span>
-</span><span id="line-28"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-29"><span class="p">}</span>
+</span><span id="line-13"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-14"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-15"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-16"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-17"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-18"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-19"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-20"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-21"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-22"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-23"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For which plugin are parameters"</span><span class="p">,</span>
+</span><span id="line-24"><span class="w">         </span><span class="nt">"examples"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-25"><span class="w">            </span><span class="s2">"enrobie.plugins.AinswerPlugin"</span><span class="p">,</span>
+</span><span id="line-26"><span class="w">            </span><span class="s2">"enrobie.plugins.AutoJoinPlugin"</span><span class="p">,</span>
+</span><span id="line-27"><span class="w">            </span><span class="s2">"enrobie.plugins.AutoNickPlugin"</span><span class="p">,</span>
+</span><span id="line-28"><span class="w">            </span><span class="s2">"enrobie.plugins.StatusPlugin"</span>
+</span><span id="line-29"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-30"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span>
+</span><span id="line-31"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-32"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-33"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="line-34"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -1466,7 +1506,7 @@ is permitted, for more information consult the project license file.</p>
 <dt class="field-even">Fields<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable</span> <span class="pre">(Annotated[bool,</span> <span class="pre">Field(False,</span> <span class="pre">description='Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled')])</span></code></p></li>
-<li><p><a class="reference internal" href="#enrobie.robie.params.plugin.RobiePluginParams.locate" title="enrobie.robie.params.plugin.RobiePluginParams.locate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span> <span class="pre">(Annotated[str,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=True,</span> <span class="pre">description='For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters',</span> <span class="pre">examples=['enrobie.plugins.AinswerPlugin',</span> <span class="pre">'enrobie.plugins.AutoJoinPlugin',</span> <span class="pre">'enrobie.plugins.AutoNickPlugin',</span> <span class="pre">'enrobie.plugins.StatusPlugin'],</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.robie.params.plugin.RobiePluginParams.locate" title="enrobie.robie.params.plugin.RobiePluginParams.locate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span> <span class="pre">(Annotated[str</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters',</span> <span class="pre">examples=['enrobie.plugins.AinswerPlugin',</span> <span class="pre">'enrobie.plugins.AutoJoinPlugin',</span> <span class="pre">'enrobie.plugins.AutoNickPlugin',</span> <span class="pre">'enrobie.plugins.StatusPlugin'],</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -1477,7 +1517,7 @@ is permitted, for more information consult the project license file.</p>
 </dd></dl>
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.robie.params.RobiePluginParams.locate">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">locate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">examples</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'enrobie.plugins.AinswerPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.AutoJoinPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.AutoNickPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.StatusPlugin'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.robie.params.RobiePluginParams.locate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.RobiePluginParams.locate'">¶</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">locate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">examples</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'enrobie.plugins.AinswerPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.AutoJoinPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.AutoNickPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.StatusPlugin'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.robie.params.RobiePluginParams.locate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.RobiePluginParams.locate'">¶</a></dt>
 <dd><p>For which plugin are parameters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Constraints<span class="colon">:</span></dt>
