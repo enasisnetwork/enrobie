@@ -14,12 +14,6 @@ from typing import Type
 
 from encommon.types import NCNone
 
-from pydantic_ai import Agent
-from pydantic_ai.models import Model
-from pydantic_ai.models.anthropic import AnthropicModel
-from pydantic_ai.models.openai import OpenAIModel
-from pydantic_ai.settings import ModelSettings
-
 from .helpers import composedsc
 from .helpers import composeirc
 from .helpers import composemtm
@@ -33,6 +27,8 @@ from ..status import StatusPluginStates
 from ...robie.childs import RobiePlugin
 
 if TYPE_CHECKING:
+    from pydantic_ai import Agent
+    from pydantic_ai.models import Model
     from ...robie.threads import RobieThread
     from ...robie.childs import RobieClient
 
@@ -47,8 +43,8 @@ class AinswerPlugin(RobiePlugin):
     """
 
     __history: AinswerHistory
-    __model: Model
-    __agent: Agent
+    __model: 'Model'
+    __agent: 'Agent'
 
 
     def __post__(
@@ -57,6 +53,10 @@ class AinswerPlugin(RobiePlugin):
         """
         Initialize instance for class using provided parameters.
         """
+
+        from pydantic_ai import Agent
+        from pydantic_ai.settings import ModelSettings
+
 
         params = self.params
 
@@ -72,15 +72,27 @@ class AinswerPlugin(RobiePlugin):
             AinswerHistory(self))
 
 
-        model: Model | None = None
+        model: 'Model' | None = None
 
         if origin == 'anthropic':
-            model = AnthropicModel(
+
+            from pydantic_ai.models import anthropic
+
+            _anthropic = (
+                anthropic.AnthropicModel)
+
+            model = _anthropic(
                 ainswer.model,
                 api_key=secret)
 
         elif origin == 'openai':
-            model = OpenAIModel(
+
+            from pydantic_ai.models import openai
+
+            _openai = (
+                openai.OpenAIModel)
+
+            model = _openai(
                 ainswer.model,
                 api_key=secret)
 
@@ -160,7 +172,7 @@ class AinswerPlugin(RobiePlugin):
     @property
     def agent(
         self,
-    ) -> Agent:
+    ) -> 'Agent':
         """
         Return the value for the attribute from class instance.
 
