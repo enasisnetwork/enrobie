@@ -10,6 +10,7 @@ is permitted, for more information consult the project license file.
 from json import dumps
 from re import IGNORECASE
 from re import match as re_match
+from re import search as re_search
 from typing import TYPE_CHECKING
 from typing import Type
 
@@ -442,7 +443,11 @@ def _nocompose(
 
     return not any([
 
-        current in question,
+        re_search(
+            (rf'\s{current}'
+             r'(\;|\,|\-|\s|$)'),
+            question,
+            IGNORECASE),
 
         re_match(
             (r'^(\s+)?\@?'
