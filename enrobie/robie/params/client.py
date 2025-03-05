@@ -24,8 +24,8 @@ class RobieClientParams(RobieChildParams, extra='forbid'):
     """
 
     locate: Annotated[
-        str,
-        Field(...,
+        Optional[str],
+        Field(None,
               description='For which client are parameters',
               examples=[
                   'enrobie.clients.DSCClient',

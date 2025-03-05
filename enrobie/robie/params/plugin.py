@@ -24,8 +24,8 @@ class RobiePluginParams(RobieChildParams, extra='forbid'):
     """
 
     locate: Annotated[
-        str,
-        Field(...,
+        Optional[str],
+        Field(None,
               description='For which plugin are parameters',
               examples=[
                   'enrobie.plugins.AinswerPlugin',
