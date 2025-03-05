@@ -158,511 +158,484 @@
 </span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types.strings</span><span class="w"> </span><span class="kn">import</span> <span class="n">NEWLINE</span>
 </span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types.strings</span><span class="w"> </span><span class="kn">import</span> <span class="n">SEMPTY</span>
 </span><span id="line-17">
-</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginParams</span>
-</span><span id="line-19">
-</span><span id="line-20"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-21">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.addons</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieQueue</span>
-</span><span id="line-22">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieClient</span>
-</span><span id="line-23">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobiePlugin</span>
-</span><span id="line-24">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieCommand</span>
-</span><span id="line-25">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieMessage</span>
-</span><span id="line-26">    <span class="kn">from</span><span class="w"> </span><span class="nn">.common</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginItem</span>
-</span><span id="line-27">    <span class="kn">from</span><span class="w"> </span><span class="nn">.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginReportParams</span>
-</span><span id="line-28">    <span class="kn">from</span><span class="w"> </span><span class="nn">.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPlugin</span>
-</span><span id="line-29">
-</span><span id="line-30">
-</span><span id="line-31">
+</span><span id="line-18"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+</span><span id="line-19">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.addons</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieQueue</span>
+</span><span id="line-20">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieClient</span>
+</span><span id="line-21">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieCommand</span>
+</span><span id="line-22">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieMessage</span>
+</span><span id="line-23">    <span class="kn">from</span><span class="w"> </span><span class="nn">.common</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginItem</span>
+</span><span id="line-24">    <span class="kn">from</span><span class="w"> </span><span class="nn">.params</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPluginReportParams</span>
+</span><span id="line-25">    <span class="kn">from</span><span class="w"> </span><span class="nn">.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusPlugin</span>
+</span><span id="line-26">
+</span><span id="line-27">
+</span><span id="line-28">
 <div class="viewcode-block" id="grouped">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.status.helpers.grouped">[docs]</a>
-</span><span id="line-32"><span class="k">def</span><span class="w"> </span><span class="nf">grouped</span><span class="p">(</span>
-</span><span id="line-33">    <span class="n">status</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">],</span>
-</span><span id="line-34"><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">]]:</span>
-</span><span id="line-35"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-36"><span class="sd">    Return the dictionary with status value stored by group.</span>
-</span><span id="line-37">
-</span><span id="line-38"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-39"><span class="sd">    :returns: Dictionary with status value stored by group.</span>
-</span><span id="line-40"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-41">
-</span><span id="line-42">    <span class="n">groups</span><span class="p">:</span> <span class="n">DictStrAny</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="line-43">        <span class="n">x</span><span class="o">.</span><span class="n">group</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">x</span>
-</span><span id="line-44">        <span class="ow">in</span> <span class="n">status</span><span class="o">.</span><span class="n">values</span><span class="p">()}</span>
-</span><span id="line-45">
-</span><span id="line-46">    <span class="n">items</span> <span class="o">=</span> <span class="n">status</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-</span><span id="line-47">
-</span><span id="line-48">    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
-</span><span id="line-49">
-</span><span id="line-50">        <span class="n">group</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">group</span>
+</span><span id="line-29"><span class="k">def</span><span class="w"> </span><span class="nf">grouped</span><span class="p">(</span>
+</span><span id="line-30">    <span class="n">status</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">],</span>
+</span><span id="line-31"><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">]]:</span>
+</span><span id="line-32"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-33"><span class="sd">    Return the dictionary with status value stored by group.</span>
+</span><span id="line-34">
+</span><span id="line-35"><span class="sd">    :param status: Object containing the status information.</span>
+</span><span id="line-36"><span class="sd">    :returns: Dictionary with status value stored by group.</span>
+</span><span id="line-37"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-38">
+</span><span id="line-39">    <span class="n">groups</span><span class="p">:</span> <span class="n">DictStrAny</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="line-40">        <span class="n">x</span><span class="o">.</span><span class="n">group</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">x</span>
+</span><span id="line-41">        <span class="ow">in</span> <span class="n">status</span><span class="o">.</span><span class="n">values</span><span class="p">()}</span>
+</span><span id="line-42">
+</span><span id="line-43">    <span class="n">items</span> <span class="o">=</span> <span class="n">status</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span><span id="line-44">
+</span><span id="line-45">    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+</span><span id="line-46">
+</span><span id="line-47">        <span class="n">group</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">group</span>
+</span><span id="line-48">
+</span><span id="line-49">        <span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="n">group</span><span class="p">]</span>
+</span><span id="line-50">         <span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
 </span><span id="line-51">
-</span><span id="line-52">        <span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="n">group</span><span class="p">]</span>
-</span><span id="line-53">         <span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
-</span><span id="line-54">
-</span><span id="line-55">    <span class="k">return</span> <span class="n">sort_dict</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span></div>
+</span><span id="line-52">    <span class="k">return</span> <span class="n">sort_dict</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span></div>
 
-</span><span id="line-56">
-</span><span id="line-57">
-</span><span id="line-58">
+</span><span id="line-53">
+</span><span id="line-54">
+</span><span id="line-55">
 <div class="viewcode-block" id="composedsc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.status.helpers.composedsc">[docs]</a>
-</span><span id="line-59"><span class="k">def</span><span class="w"> </span><span class="nf">composedsc</span><span class="p">(</span>
-</span><span id="line-60">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;StatusPlugin&#39;</span><span class="p">,</span>
-</span><span id="line-61">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
-</span><span id="line-62">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
-</span><span id="line-63">    <span class="n">status</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">],</span>
-</span><span id="line-64"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-65"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-66"><span class="sd">    Construct and format message for related chat platform.</span>
-</span><span id="line-67">
-</span><span id="line-68"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-69"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
-</span><span id="line-70"><span class="sd">    :param mitem: Item containing information for operation.</span>
-</span><span id="line-71"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-72"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-56"><span class="k">def</span><span class="w"> </span><span class="nf">composedsc</span><span class="p">(</span>
+</span><span id="line-57">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;StatusPlugin&#39;</span><span class="p">,</span>
+</span><span id="line-58">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
+</span><span id="line-59">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+</span><span id="line-60">    <span class="n">status</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">],</span>
+</span><span id="line-61"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-62"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-63"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-64">
+</span><span id="line-65"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-66"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
+</span><span id="line-67"><span class="sd">    :param mitem: Item containing information for operation.</span>
+</span><span id="line-68"><span class="sd">    :param status: Object containing the status information.</span>
+</span><span id="line-69"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-70">
+</span><span id="line-71">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-72">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
 </span><span id="line-73">
-</span><span id="line-74">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-75">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-74">    <span class="n">compose</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-75">
 </span><span id="line-76">
-</span><span id="line-77">    <span class="n">compose</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-78">
-</span><span id="line-79">
-</span><span id="line-80">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
-</span><span id="line-81">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-82">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-77">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
+</span><span id="line-78">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-79">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-80">
+</span><span id="line-81">        <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-82">            <span class="n">robie</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
 </span><span id="line-83">
-</span><span id="line-84">        <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-85">            <span class="n">robie</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</span><span id="line-84">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
+</span><span id="line-85">
 </span><span id="line-86">
-</span><span id="line-87">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
+</span><span id="line-87">    <span class="k">def</span><span class="w"> </span><span class="nf">_format</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-88">
-</span><span id="line-89">
-</span><span id="line-90">    <span class="k">def</span><span class="w"> </span><span class="nf">_format</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-91">
-</span><span id="line-92">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-93">            <span class="n">params</span><span class="p">,</span>
-</span><span id="line-94">            <span class="n">StatusPluginParams</span><span class="p">)</span>
-</span><span id="line-95">
-</span><span id="line-96">        <span class="n">epoch</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+</span><span id="line-89">        <span class="n">epoch</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+</span><span id="line-90">
+</span><span id="line-91">        <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-92">            <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span>
+</span><span id="line-93">                <span class="n">params</span><span class="o">.</span><span class="n">icons</span><span class="p">,</span>
+</span><span id="line-94">                <span class="n">value</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
+</span><span id="line-95">             <span class="o">.</span><span class="n">dsc</span><span class="p">)</span>
+</span><span id="line-96">            <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
 </span><span id="line-97">
 </span><span id="line-98">        <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-99">            <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span>
-</span><span id="line-100">                <span class="n">params</span><span class="o">.</span><span class="n">icons</span><span class="p">,</span>
-</span><span id="line-101">                <span class="n">value</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-</span><span id="line-102">             <span class="o">.</span><span class="n">dsc</span><span class="p">)</span>
-</span><span id="line-103">            <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
-</span><span id="line-104">
-</span><span id="line-105">        <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-106">            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sicon</span><span class="si">}</span><span class="s1"> &#39;</span>
-</span><span id="line-107">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sicon</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
-</span><span id="line-108">            <span class="k">else</span> <span class="n">sicon</span><span class="p">)</span>
-</span><span id="line-109">
-</span><span id="line-110">        <span class="n">vicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-111">            <span class="n">value</span><span class="o">.</span><span class="n">icon</span><span class="o">.</span><span class="n">dsc</span>
-</span><span id="line-112">            <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
-</span><span id="line-113">
-</span><span id="line-114">        <span class="n">compose</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-</span><span id="line-115">            <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">vicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1"> &#39;</span>
-</span><span id="line-116">             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">/&#39;</span>
-</span><span id="line-117">             <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">unique</span><span class="si">}</span><span class="s1">`:&#39;</span>
-</span><span id="line-118">             <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">sicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1">&#39;</span>
-</span><span id="line-119">             <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s1">` &#39;</span>
-</span><span id="line-120">             <span class="sa">f</span><span class="s1">&#39;&lt;t:</span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s1">:R&gt;&#39;</span><span class="p">)</span>
-</span><span id="line-121">            <span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span><span id="line-99">            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sicon</span><span class="si">}</span><span class="s1"> &#39;</span>
+</span><span id="line-100">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sicon</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+</span><span id="line-101">            <span class="k">else</span> <span class="n">sicon</span><span class="p">)</span>
+</span><span id="line-102">
+</span><span id="line-103">        <span class="n">vicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-104">            <span class="n">value</span><span class="o">.</span><span class="n">icon</span><span class="o">.</span><span class="n">dsc</span>
+</span><span id="line-105">            <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
+</span><span id="line-106">
+</span><span id="line-107">        <span class="n">compose</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+</span><span id="line-108">            <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">vicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1"> &#39;</span>
+</span><span id="line-109">             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">/&#39;</span>
+</span><span id="line-110">             <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">unique</span><span class="si">}</span><span class="s1">`:&#39;</span>
+</span><span id="line-111">             <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">sicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1">&#39;</span>
+</span><span id="line-112">             <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s1">` &#39;</span>
+</span><span id="line-113">             <span class="sa">f</span><span class="s1">&#39;&lt;t:</span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s1">:R&gt;&#39;</span><span class="p">)</span>
+</span><span id="line-114">            <span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span><span id="line-115">
+</span><span id="line-116">
+</span><span id="line-117">    <span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+</span><span id="line-118">        <span class="n">grouped</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+</span><span id="line-119">        <span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</span><span id="line-120">
+</span><span id="line-121">    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
 </span><span id="line-122">
-</span><span id="line-123">
-</span><span id="line-124">    <span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
-</span><span id="line-125">        <span class="n">grouped</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
-</span><span id="line-126">        <span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</span><span id="line-123">        <span class="n">compose</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+</span><span id="line-124">            <span class="sa">f</span><span class="s1">&#39;**</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">**&#39;</span><span class="p">)</span>
+</span><span id="line-125">
+</span><span id="line-126">        <span class="n">_values</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 </span><span id="line-127">
-</span><span id="line-128">    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
-</span><span id="line-129">
-</span><span id="line-130">        <span class="n">compose</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-</span><span id="line-131">            <span class="sa">f</span><span class="s1">&#39;**</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">**&#39;</span><span class="p">)</span>
-</span><span id="line-132">
-</span><span id="line-133">        <span class="n">_values</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-</span><span id="line-134">
-</span><span id="line-135">        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">_values</span><span class="p">:</span>
-</span><span id="line-136">            <span class="n">_format</span><span class="p">()</span>
-</span><span id="line-137">
-</span><span id="line-138">    <span class="n">_compose</span><span class="p">(</span>
-</span><span id="line-139">        <span class="n">NEWLINE</span>
-</span><span id="line-140">        <span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">compose</span><span class="p">))</span></div>
+</span><span id="line-128">        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">_values</span><span class="p">:</span>
+</span><span id="line-129">            <span class="n">_format</span><span class="p">()</span>
+</span><span id="line-130">
+</span><span id="line-131">    <span class="n">_compose</span><span class="p">(</span>
+</span><span id="line-132">        <span class="n">NEWLINE</span>
+</span><span id="line-133">        <span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">compose</span><span class="p">))</span></div>
 
-</span><span id="line-141">
-</span><span id="line-142">
-</span><span id="line-143">
+</span><span id="line-134">
+</span><span id="line-135">
+</span><span id="line-136">
 <div class="viewcode-block" id="reportdsc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.status.helpers.reportdsc">[docs]</a>
-</span><span id="line-144"><span class="k">def</span><span class="w"> </span><span class="nf">reportdsc</span><span class="p">(</span>
-</span><span id="line-145">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;RobiePlugin&#39;</span><span class="p">,</span>
-</span><span id="line-146">    <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;RobieClient&#39;</span><span class="p">,</span>
-</span><span id="line-147">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
-</span><span id="line-148">    <span class="n">status</span><span class="p">:</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">,</span>
-</span><span id="line-149">    <span class="n">report</span><span class="p">:</span> <span class="s1">&#39;StatusPluginReportParams&#39;</span><span class="p">,</span>
-</span><span id="line-150"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-151"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-152"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-137"><span class="k">def</span><span class="w"> </span><span class="nf">reportdsc</span><span class="p">(</span>
+</span><span id="line-138">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;StatusPlugin&#39;</span><span class="p">,</span>
+</span><span id="line-139">    <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;RobieClient&#39;</span><span class="p">,</span>
+</span><span id="line-140">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
+</span><span id="line-141">    <span class="n">status</span><span class="p">:</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">,</span>
+</span><span id="line-142">    <span class="n">report</span><span class="p">:</span> <span class="s1">&#39;StatusPluginReportParams&#39;</span><span class="p">,</span>
+</span><span id="line-143"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-144"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-145"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-146">
+</span><span id="line-147"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-148"><span class="sd">    :param client: Client class instance for Chatting Robie.</span>
+</span><span id="line-149"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
+</span><span id="line-150"><span class="sd">    :param status: Object containing the status information.</span>
+</span><span id="line-151"><span class="sd">    :param report: Object containing the report information.</span>
+</span><span id="line-152"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="line-153">
-</span><span id="line-154"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-155"><span class="sd">    :param client: Client class instance for Chatting Robie.</span>
-</span><span id="line-156"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
-</span><span id="line-157"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-158"><span class="sd">    :param report: Object containing the report information.</span>
-</span><span id="line-159"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-154">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-155">
+</span><span id="line-156">
+</span><span id="line-157">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
+</span><span id="line-158">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-159">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-160">
-</span><span id="line-161">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
-</span><span id="line-162">
-</span><span id="line-163">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-164">        <span class="n">params</span><span class="p">,</span>
-</span><span id="line-165">        <span class="n">StatusPluginParams</span><span class="p">)</span>
-</span><span id="line-166">
+</span><span id="line-161">        <span class="n">citem</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-162">            <span class="n">client</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span>
+</span><span id="line-163">                <span class="n">report</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
+</span><span id="line-164">                <span class="n">message</span><span class="p">))</span>
+</span><span id="line-165">
+</span><span id="line-166">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
 </span><span id="line-167">
-</span><span id="line-168">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
-</span><span id="line-169">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-170">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-171">
-</span><span id="line-172">        <span class="n">citem</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-173">            <span class="n">client</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span>
-</span><span id="line-174">                <span class="n">report</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
-</span><span id="line-175">                <span class="n">message</span><span class="p">))</span>
-</span><span id="line-176">
-</span><span id="line-177">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
-</span><span id="line-178">
-</span><span id="line-179">
-</span><span id="line-180">    <span class="n">epoch</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">status</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
-</span><span id="line-181">
-</span><span id="line-182">    <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-183">        <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span>
-</span><span id="line-184">            <span class="n">params</span><span class="o">.</span><span class="n">icons</span><span class="p">,</span>
-</span><span id="line-185">            <span class="n">status</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-</span><span id="line-186">         <span class="o">.</span><span class="n">dsc</span><span class="p">)</span>
-</span><span id="line-187">        <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
-</span><span id="line-188">
-</span><span id="line-189">    <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-190">        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sicon</span><span class="si">}</span><span class="s1"> &#39;</span>
-</span><span id="line-191">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sicon</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
-</span><span id="line-192">        <span class="k">else</span> <span class="n">sicon</span><span class="p">)</span>
-</span><span id="line-193">
-</span><span id="line-194">    <span class="n">vicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-195">        <span class="n">status</span><span class="o">.</span><span class="n">icon</span><span class="o">.</span><span class="n">dsc</span>
-</span><span id="line-196">        <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
-</span><span id="line-197">
-</span><span id="line-198">    <span class="n">_compose</span><span class="p">(</span>
-</span><span id="line-199">        <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">vicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1"> &#39;</span>
-</span><span id="line-200">         <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">/&#39;</span>
-</span><span id="line-201">         <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">unique</span><span class="si">}</span><span class="s1">`:&#39;</span>
-</span><span id="line-202">         <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">sicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1">&#39;</span>
-</span><span id="line-203">         <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s1">` &#39;</span>
-</span><span id="line-204">         <span class="sa">f</span><span class="s1">&#39;&lt;t:</span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s1">:R&gt;&#39;</span><span class="p">)</span>
-</span><span id="line-205">        <span class="o">.</span><span class="n">strip</span><span class="p">())</span></div>
+</span><span id="line-168">
+</span><span id="line-169">    <span class="n">epoch</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">status</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+</span><span id="line-170">
+</span><span id="line-171">    <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-172">        <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span>
+</span><span id="line-173">            <span class="n">params</span><span class="o">.</span><span class="n">icons</span><span class="p">,</span>
+</span><span id="line-174">            <span class="n">status</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
+</span><span id="line-175">         <span class="o">.</span><span class="n">dsc</span><span class="p">)</span>
+</span><span id="line-176">        <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
+</span><span id="line-177">
+</span><span id="line-178">    <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-179">        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sicon</span><span class="si">}</span><span class="s1"> &#39;</span>
+</span><span id="line-180">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sicon</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+</span><span id="line-181">        <span class="k">else</span> <span class="n">sicon</span><span class="p">)</span>
+</span><span id="line-182">
+</span><span id="line-183">    <span class="n">vicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-184">        <span class="n">status</span><span class="o">.</span><span class="n">icon</span><span class="o">.</span><span class="n">dsc</span>
+</span><span id="line-185">        <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
+</span><span id="line-186">
+</span><span id="line-187">    <span class="n">_compose</span><span class="p">(</span>
+</span><span id="line-188">        <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">vicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1"> &#39;</span>
+</span><span id="line-189">         <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">/&#39;</span>
+</span><span id="line-190">         <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">unique</span><span class="si">}</span><span class="s1">`:&#39;</span>
+</span><span id="line-191">         <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">sicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1">&#39;</span>
+</span><span id="line-192">         <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s1">` &#39;</span>
+</span><span id="line-193">         <span class="sa">f</span><span class="s1">&#39;&lt;t:</span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s1">:R&gt;&#39;</span><span class="p">)</span>
+</span><span id="line-194">        <span class="o">.</span><span class="n">strip</span><span class="p">())</span></div>
 
-</span><span id="line-206">
-</span><span id="line-207">
-</span><span id="line-208">
+</span><span id="line-195">
+</span><span id="line-196">
+</span><span id="line-197">
 <div class="viewcode-block" id="composeirc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.status.helpers.composeirc">[docs]</a>
-</span><span id="line-209"><span class="k">def</span><span class="w"> </span><span class="nf">composeirc</span><span class="p">(</span>
-</span><span id="line-210">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;StatusPlugin&#39;</span><span class="p">,</span>
-</span><span id="line-211">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
-</span><span id="line-212">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
-</span><span id="line-213">    <span class="n">status</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">],</span>
-</span><span id="line-214"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-215"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-216"><span class="sd">    Construct and format message for related chat platform.</span>
-</span><span id="line-217">
-</span><span id="line-218"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-219"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
-</span><span id="line-220"><span class="sd">    :param mitem: Item containing information for operation.</span>
-</span><span id="line-221"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-222"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-198"><span class="k">def</span><span class="w"> </span><span class="nf">composeirc</span><span class="p">(</span>
+</span><span id="line-199">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;StatusPlugin&#39;</span><span class="p">,</span>
+</span><span id="line-200">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
+</span><span id="line-201">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+</span><span id="line-202">    <span class="n">status</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">],</span>
+</span><span id="line-203"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-204"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-205"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-206">
+</span><span id="line-207"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-208"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
+</span><span id="line-209"><span class="sd">    :param mitem: Item containing information for operation.</span>
+</span><span id="line-210"><span class="sd">    :param status: Object containing the status information.</span>
+</span><span id="line-211"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-212">
+</span><span id="line-213">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-214">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-215">
+</span><span id="line-216">
+</span><span id="line-217">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
+</span><span id="line-218">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-219">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-220">
+</span><span id="line-221">        <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-222">            <span class="n">robie</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
 </span><span id="line-223">
-</span><span id="line-224">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-225">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-224">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
+</span><span id="line-225">
 </span><span id="line-226">
-</span><span id="line-227">
-</span><span id="line-228">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
-</span><span id="line-229">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-230">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-227">    <span class="k">def</span><span class="w"> </span><span class="nf">_format</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-228">
+</span><span id="line-229">        <span class="n">durate</span> <span class="o">=</span> <span class="n">Duration</span><span class="p">(</span>
+</span><span id="line-230">            <span class="n">value</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">since</span><span class="p">)</span>
 </span><span id="line-231">
-</span><span id="line-232">        <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-233">            <span class="n">robie</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
-</span><span id="line-234">
-</span><span id="line-235">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
-</span><span id="line-236">
-</span><span id="line-237">
-</span><span id="line-238">    <span class="k">def</span><span class="w"> </span><span class="nf">_format</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-239">
-</span><span id="line-240">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-241">            <span class="n">params</span><span class="p">,</span>
-</span><span id="line-242">            <span class="n">StatusPluginParams</span><span class="p">)</span>
+</span><span id="line-232">        <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-233">            <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span>
+</span><span id="line-234">                <span class="n">params</span><span class="o">.</span><span class="n">icons</span><span class="p">,</span>
+</span><span id="line-235">                <span class="n">value</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
+</span><span id="line-236">             <span class="o">.</span><span class="n">irc</span><span class="p">)</span>
+</span><span id="line-237">            <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
+</span><span id="line-238">
+</span><span id="line-239">        <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-240">            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sicon</span><span class="si">}</span><span class="s1"> &#39;</span>
+</span><span id="line-241">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sicon</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+</span><span id="line-242">            <span class="k">else</span> <span class="n">sicon</span><span class="p">)</span>
 </span><span id="line-243">
-</span><span id="line-244">        <span class="n">durate</span> <span class="o">=</span> <span class="n">Duration</span><span class="p">(</span>
-</span><span id="line-245">            <span class="n">value</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">since</span><span class="p">)</span>
-</span><span id="line-246">
-</span><span id="line-247">        <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-248">            <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span>
-</span><span id="line-249">                <span class="n">params</span><span class="o">.</span><span class="n">icons</span><span class="p">,</span>
-</span><span id="line-250">                <span class="n">value</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-</span><span id="line-251">             <span class="o">.</span><span class="n">irc</span><span class="p">)</span>
-</span><span id="line-252">            <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
-</span><span id="line-253">
-</span><span id="line-254">        <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-255">            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sicon</span><span class="si">}</span><span class="s1"> &#39;</span>
-</span><span id="line-256">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sicon</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
-</span><span id="line-257">            <span class="k">else</span> <span class="n">sicon</span><span class="p">)</span>
-</span><span id="line-258">
-</span><span id="line-259">        <span class="n">vicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-260">            <span class="n">value</span><span class="o">.</span><span class="n">icon</span><span class="o">.</span><span class="n">irc</span>
-</span><span id="line-261">            <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
-</span><span id="line-262">
-</span><span id="line-263">        <span class="n">_compose</span><span class="p">(</span>
-</span><span id="line-264">            <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">vicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1"> &#39;</span>
-</span><span id="line-265">             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">/&#39;</span>
-</span><span id="line-266">             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">unique</span><span class="si">}</span><span class="s1">:&#39;</span>
-</span><span id="line-267">             <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">sicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1">&#39;</span>
-</span><span id="line-268">             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s1"> &#39;</span>
-</span><span id="line-269">             <span class="sa">f</span><span class="s1">&#39;for </span><span class="si">{</span><span class="n">durate</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</span><span id="line-270">            <span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span><span id="line-244">        <span class="n">vicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-245">            <span class="n">value</span><span class="o">.</span><span class="n">icon</span><span class="o">.</span><span class="n">irc</span>
+</span><span id="line-246">            <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
+</span><span id="line-247">
+</span><span id="line-248">        <span class="n">_compose</span><span class="p">(</span>
+</span><span id="line-249">            <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">vicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1"> &#39;</span>
+</span><span id="line-250">             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">/&#39;</span>
+</span><span id="line-251">             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">unique</span><span class="si">}</span><span class="s1">:&#39;</span>
+</span><span id="line-252">             <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">sicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1">&#39;</span>
+</span><span id="line-253">             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s1"> &#39;</span>
+</span><span id="line-254">             <span class="sa">f</span><span class="s1">&#39;for </span><span class="si">{</span><span class="n">durate</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="line-255">            <span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span><span id="line-256">
+</span><span id="line-257">
+</span><span id="line-258">    <span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+</span><span id="line-259">        <span class="n">grouped</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+</span><span id="line-260">        <span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</span><span id="line-261">
+</span><span id="line-262">    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+</span><span id="line-263">
+</span><span id="line-264">        <span class="n">_compose</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</span><span id="line-265">
+</span><span id="line-266">        <span class="n">_values</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+</span><span id="line-267">
+</span><span id="line-268">        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">_values</span><span class="p">:</span>
+</span><span id="line-269">            <span class="n">_format</span><span class="p">()</span></div>
+
+</span><span id="line-270">
 </span><span id="line-271">
 </span><span id="line-272">
-</span><span id="line-273">    <span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
-</span><span id="line-274">        <span class="n">grouped</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
-</span><span id="line-275">        <span class="o">.</span><span class="n">items</span><span class="p">())</span>
-</span><span id="line-276">
-</span><span id="line-277">    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
-</span><span id="line-278">
-</span><span id="line-279">        <span class="n">_compose</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-</span><span id="line-280">
-</span><span id="line-281">        <span class="n">_values</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-</span><span id="line-282">
-</span><span id="line-283">        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">_values</span><span class="p">:</span>
-</span><span id="line-284">            <span class="n">_format</span><span class="p">()</span></div>
-
-</span><span id="line-285">
-</span><span id="line-286">
-</span><span id="line-287">
 <div class="viewcode-block" id="reportirc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.status.helpers.reportirc">[docs]</a>
-</span><span id="line-288"><span class="k">def</span><span class="w"> </span><span class="nf">reportirc</span><span class="p">(</span>
-</span><span id="line-289">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;RobiePlugin&#39;</span><span class="p">,</span>
-</span><span id="line-290">    <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;RobieClient&#39;</span><span class="p">,</span>
-</span><span id="line-291">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
-</span><span id="line-292">    <span class="n">status</span><span class="p">:</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">,</span>
-</span><span id="line-293">    <span class="n">report</span><span class="p">:</span> <span class="s1">&#39;StatusPluginReportParams&#39;</span><span class="p">,</span>
-</span><span id="line-294"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-295"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-296"><span class="sd">    Construct and format message for related chat platform.</span>
-</span><span id="line-297">
-</span><span id="line-298"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-299"><span class="sd">    :param client: Client class instance for Chatting Robie.</span>
-</span><span id="line-300"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
-</span><span id="line-301"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-302"><span class="sd">    :param report: Object containing the report information.</span>
-</span><span id="line-303"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-273"><span class="k">def</span><span class="w"> </span><span class="nf">reportirc</span><span class="p">(</span>
+</span><span id="line-274">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;StatusPlugin&#39;</span><span class="p">,</span>
+</span><span id="line-275">    <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;RobieClient&#39;</span><span class="p">,</span>
+</span><span id="line-276">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
+</span><span id="line-277">    <span class="n">status</span><span class="p">:</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">,</span>
+</span><span id="line-278">    <span class="n">report</span><span class="p">:</span> <span class="s1">&#39;StatusPluginReportParams&#39;</span><span class="p">,</span>
+</span><span id="line-279"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-280"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-281"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-282">
+</span><span id="line-283"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-284"><span class="sd">    :param client: Client class instance for Chatting Robie.</span>
+</span><span id="line-285"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
+</span><span id="line-286"><span class="sd">    :param status: Object containing the status information.</span>
+</span><span id="line-287"><span class="sd">    :param report: Object containing the report information.</span>
+</span><span id="line-288"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-289">
+</span><span id="line-290">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-291">
+</span><span id="line-292">
+</span><span id="line-293">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
+</span><span id="line-294">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-295">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-296">
+</span><span id="line-297">        <span class="n">citem</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-298">            <span class="n">client</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span>
+</span><span id="line-299">                <span class="n">report</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
+</span><span id="line-300">                <span class="n">message</span><span class="p">))</span>
+</span><span id="line-301">
+</span><span id="line-302">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
+</span><span id="line-303">
 </span><span id="line-304">
-</span><span id="line-305">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
-</span><span id="line-306">
-</span><span id="line-307">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-308">        <span class="n">params</span><span class="p">,</span>
-</span><span id="line-309">        <span class="n">StatusPluginParams</span><span class="p">)</span>
-</span><span id="line-310">
-</span><span id="line-311">
-</span><span id="line-312">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
-</span><span id="line-313">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-314">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-315">
-</span><span id="line-316">        <span class="n">citem</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-317">            <span class="n">client</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span>
-</span><span id="line-318">                <span class="n">report</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
-</span><span id="line-319">                <span class="n">message</span><span class="p">))</span>
-</span><span id="line-320">
-</span><span id="line-321">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
-</span><span id="line-322">
+</span><span id="line-305">    <span class="n">durate</span> <span class="o">=</span> <span class="n">Duration</span><span class="p">(</span>
+</span><span id="line-306">        <span class="n">status</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">since</span><span class="p">)</span>
+</span><span id="line-307">
+</span><span id="line-308">    <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-309">        <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span>
+</span><span id="line-310">            <span class="n">params</span><span class="o">.</span><span class="n">icons</span><span class="p">,</span>
+</span><span id="line-311">            <span class="n">status</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
+</span><span id="line-312">         <span class="o">.</span><span class="n">irc</span><span class="p">)</span>
+</span><span id="line-313">        <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
+</span><span id="line-314">
+</span><span id="line-315">    <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-316">        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sicon</span><span class="si">}</span><span class="s1"> &#39;</span>
+</span><span id="line-317">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sicon</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+</span><span id="line-318">        <span class="k">else</span> <span class="n">sicon</span><span class="p">)</span>
+</span><span id="line-319">
+</span><span id="line-320">    <span class="n">vicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-321">        <span class="n">status</span><span class="o">.</span><span class="n">icon</span><span class="o">.</span><span class="n">irc</span>
+</span><span id="line-322">        <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
 </span><span id="line-323">
-</span><span id="line-324">    <span class="n">durate</span> <span class="o">=</span> <span class="n">Duration</span><span class="p">(</span>
-</span><span id="line-325">        <span class="n">status</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">since</span><span class="p">)</span>
-</span><span id="line-326">
-</span><span id="line-327">    <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-328">        <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span>
-</span><span id="line-329">            <span class="n">params</span><span class="o">.</span><span class="n">icons</span><span class="p">,</span>
-</span><span id="line-330">            <span class="n">status</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-</span><span id="line-331">         <span class="o">.</span><span class="n">irc</span><span class="p">)</span>
-</span><span id="line-332">        <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
-</span><span id="line-333">
-</span><span id="line-334">    <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-335">        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sicon</span><span class="si">}</span><span class="s1"> &#39;</span>
-</span><span id="line-336">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sicon</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
-</span><span id="line-337">        <span class="k">else</span> <span class="n">sicon</span><span class="p">)</span>
-</span><span id="line-338">
-</span><span id="line-339">    <span class="n">vicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-340">        <span class="n">status</span><span class="o">.</span><span class="n">icon</span><span class="o">.</span><span class="n">irc</span>
-</span><span id="line-341">        <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
-</span><span id="line-342">
-</span><span id="line-343">    <span class="n">_compose</span><span class="p">(</span>
-</span><span id="line-344">        <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">vicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1"> &#39;</span>
-</span><span id="line-345">         <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">/&#39;</span>
-</span><span id="line-346">         <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">unique</span><span class="si">}</span><span class="s1">:&#39;</span>
-</span><span id="line-347">         <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">sicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1">&#39;</span>
-</span><span id="line-348">         <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s1"> &#39;</span>
-</span><span id="line-349">         <span class="sa">f</span><span class="s1">&#39;for </span><span class="si">{</span><span class="n">durate</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</span><span id="line-350">        <span class="o">.</span><span class="n">strip</span><span class="p">())</span></div>
+</span><span id="line-324">    <span class="n">_compose</span><span class="p">(</span>
+</span><span id="line-325">        <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">vicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1"> &#39;</span>
+</span><span id="line-326">         <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">/&#39;</span>
+</span><span id="line-327">         <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">unique</span><span class="si">}</span><span class="s1">:&#39;</span>
+</span><span id="line-328">         <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">sicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1">&#39;</span>
+</span><span id="line-329">         <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s1"> &#39;</span>
+</span><span id="line-330">         <span class="sa">f</span><span class="s1">&#39;for </span><span class="si">{</span><span class="n">durate</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="line-331">        <span class="o">.</span><span class="n">strip</span><span class="p">())</span></div>
 
-</span><span id="line-351">
-</span><span id="line-352">
-</span><span id="line-353">
+</span><span id="line-332">
+</span><span id="line-333">
+</span><span id="line-334">
 <div class="viewcode-block" id="composemtm">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.status.helpers.composemtm">[docs]</a>
-</span><span id="line-354"><span class="k">def</span><span class="w"> </span><span class="nf">composemtm</span><span class="p">(</span>
-</span><span id="line-355">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;StatusPlugin&#39;</span><span class="p">,</span>
-</span><span id="line-356">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
-</span><span id="line-357">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
-</span><span id="line-358">    <span class="n">status</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">],</span>
-</span><span id="line-359"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-360"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-361"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-335"><span class="k">def</span><span class="w"> </span><span class="nf">composemtm</span><span class="p">(</span>
+</span><span id="line-336">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;StatusPlugin&#39;</span><span class="p">,</span>
+</span><span id="line-337">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
+</span><span id="line-338">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+</span><span id="line-339">    <span class="n">status</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">],</span>
+</span><span id="line-340"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-341"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-342"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-343">
+</span><span id="line-344"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-345"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
+</span><span id="line-346"><span class="sd">    :param mitem: Item containing information for operation.</span>
+</span><span id="line-347"><span class="sd">    :param status: Object containing the status information.</span>
+</span><span id="line-348"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-349">
+</span><span id="line-350">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-351">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-352">
+</span><span id="line-353">    <span class="n">compose</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-354">
+</span><span id="line-355">
+</span><span id="line-356">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
+</span><span id="line-357">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-358">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-359">
+</span><span id="line-360">        <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-361">            <span class="n">robie</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
 </span><span id="line-362">
-</span><span id="line-363"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-364"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
-</span><span id="line-365"><span class="sd">    :param mitem: Item containing information for operation.</span>
-</span><span id="line-366"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-367"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-368">
-</span><span id="line-369">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-370">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
-</span><span id="line-371">
-</span><span id="line-372">    <span class="n">compose</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-373">
-</span><span id="line-374">
-</span><span id="line-375">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
-</span><span id="line-376">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-377">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-378">
-</span><span id="line-379">        <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-380">            <span class="n">robie</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
-</span><span id="line-381">
-</span><span id="line-382">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
-</span><span id="line-383">
-</span><span id="line-384">
-</span><span id="line-385">    <span class="k">def</span><span class="w"> </span><span class="nf">_format</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-363">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
+</span><span id="line-364">
+</span><span id="line-365">
+</span><span id="line-366">    <span class="k">def</span><span class="w"> </span><span class="nf">_format</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-367">
+</span><span id="line-368">        <span class="n">durate</span> <span class="o">=</span> <span class="n">Duration</span><span class="p">(</span>
+</span><span id="line-369">            <span class="n">value</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">since</span><span class="p">)</span>
+</span><span id="line-370">
+</span><span id="line-371">        <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-372">            <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span>
+</span><span id="line-373">                <span class="n">params</span><span class="o">.</span><span class="n">icons</span><span class="p">,</span>
+</span><span id="line-374">                <span class="n">value</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
+</span><span id="line-375">             <span class="o">.</span><span class="n">mtm</span><span class="p">)</span>
+</span><span id="line-376">            <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
+</span><span id="line-377">
+</span><span id="line-378">        <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-379">            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sicon</span><span class="si">}</span><span class="s1"> &#39;</span>
+</span><span id="line-380">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sicon</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+</span><span id="line-381">            <span class="k">else</span> <span class="n">sicon</span><span class="p">)</span>
+</span><span id="line-382">
+</span><span id="line-383">        <span class="n">vicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-384">            <span class="n">value</span><span class="o">.</span><span class="n">icon</span><span class="o">.</span><span class="n">mtm</span>
+</span><span id="line-385">            <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
 </span><span id="line-386">
-</span><span id="line-387">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-388">            <span class="n">params</span><span class="p">,</span>
-</span><span id="line-389">            <span class="n">StatusPluginParams</span><span class="p">)</span>
-</span><span id="line-390">
-</span><span id="line-391">        <span class="n">durate</span> <span class="o">=</span> <span class="n">Duration</span><span class="p">(</span>
-</span><span id="line-392">            <span class="n">value</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">since</span><span class="p">)</span>
-</span><span id="line-393">
-</span><span id="line-394">        <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-395">            <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span>
-</span><span id="line-396">                <span class="n">params</span><span class="o">.</span><span class="n">icons</span><span class="p">,</span>
-</span><span id="line-397">                <span class="n">value</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-</span><span id="line-398">             <span class="o">.</span><span class="n">mtm</span><span class="p">)</span>
-</span><span id="line-399">            <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
+</span><span id="line-387">        <span class="n">compose</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+</span><span id="line-388">            <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">vicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1"> &#39;</span>
+</span><span id="line-389">             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">/&#39;</span>
+</span><span id="line-390">             <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">unique</span><span class="si">}</span><span class="s1">`:&#39;</span>
+</span><span id="line-391">             <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">sicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1">&#39;</span>
+</span><span id="line-392">             <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s1">` &#39;</span>
+</span><span id="line-393">             <span class="sa">f</span><span class="s1">&#39;for `</span><span class="si">{</span><span class="n">durate</span><span class="si">}</span><span class="s1">`&#39;</span><span class="p">)</span>
+</span><span id="line-394">            <span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span><span id="line-395">
+</span><span id="line-396">
+</span><span id="line-397">    <span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+</span><span id="line-398">        <span class="n">grouped</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+</span><span id="line-399">        <span class="o">.</span><span class="n">items</span><span class="p">())</span>
 </span><span id="line-400">
-</span><span id="line-401">        <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-402">            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sicon</span><span class="si">}</span><span class="s1"> &#39;</span>
-</span><span id="line-403">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sicon</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
-</span><span id="line-404">            <span class="k">else</span> <span class="n">sicon</span><span class="p">)</span>
+</span><span id="line-401">    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+</span><span id="line-402">
+</span><span id="line-403">        <span class="n">compose</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+</span><span id="line-404">            <span class="sa">f</span><span class="s1">&#39;**</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">**&#39;</span><span class="p">)</span>
 </span><span id="line-405">
-</span><span id="line-406">        <span class="n">vicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-407">            <span class="n">value</span><span class="o">.</span><span class="n">icon</span><span class="o">.</span><span class="n">mtm</span>
-</span><span id="line-408">            <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
-</span><span id="line-409">
-</span><span id="line-410">        <span class="n">compose</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-</span><span id="line-411">            <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">vicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1"> &#39;</span>
-</span><span id="line-412">             <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">/&#39;</span>
-</span><span id="line-413">             <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">unique</span><span class="si">}</span><span class="s1">`:&#39;</span>
-</span><span id="line-414">             <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">sicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1">&#39;</span>
-</span><span id="line-415">             <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s1">` &#39;</span>
-</span><span id="line-416">             <span class="sa">f</span><span class="s1">&#39;for `</span><span class="si">{</span><span class="n">durate</span><span class="si">}</span><span class="s1">`&#39;</span><span class="p">)</span>
-</span><span id="line-417">            <span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-</span><span id="line-418">
-</span><span id="line-419">
-</span><span id="line-420">    <span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
-</span><span id="line-421">        <span class="n">grouped</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
-</span><span id="line-422">        <span class="o">.</span><span class="n">items</span><span class="p">())</span>
-</span><span id="line-423">
-</span><span id="line-424">    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
-</span><span id="line-425">
-</span><span id="line-426">        <span class="n">compose</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-</span><span id="line-427">            <span class="sa">f</span><span class="s1">&#39;**</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">**&#39;</span><span class="p">)</span>
-</span><span id="line-428">
-</span><span id="line-429">        <span class="n">_values</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-</span><span id="line-430">
-</span><span id="line-431">        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">_values</span><span class="p">:</span>
-</span><span id="line-432">            <span class="n">_format</span><span class="p">()</span>
-</span><span id="line-433">
-</span><span id="line-434">    <span class="n">_compose</span><span class="p">(</span>
-</span><span id="line-435">        <span class="n">NEWLINE</span>
-</span><span id="line-436">        <span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">compose</span><span class="p">))</span></div>
+</span><span id="line-406">        <span class="n">_values</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+</span><span id="line-407">
+</span><span id="line-408">        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">_values</span><span class="p">:</span>
+</span><span id="line-409">            <span class="n">_format</span><span class="p">()</span>
+</span><span id="line-410">
+</span><span id="line-411">    <span class="n">_compose</span><span class="p">(</span>
+</span><span id="line-412">        <span class="n">NEWLINE</span>
+</span><span id="line-413">        <span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">compose</span><span class="p">))</span></div>
 
-</span><span id="line-437">
-</span><span id="line-438">
-</span><span id="line-439">
+</span><span id="line-414">
+</span><span id="line-415">
+</span><span id="line-416">
 <div class="viewcode-block" id="reportmtm">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.status.helpers.reportmtm">[docs]</a>
-</span><span id="line-440"><span class="k">def</span><span class="w"> </span><span class="nf">reportmtm</span><span class="p">(</span>
-</span><span id="line-441">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;RobiePlugin&#39;</span><span class="p">,</span>
-</span><span id="line-442">    <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;RobieClient&#39;</span><span class="p">,</span>
-</span><span id="line-443">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
-</span><span id="line-444">    <span class="n">status</span><span class="p">:</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">,</span>
-</span><span id="line-445">    <span class="n">report</span><span class="p">:</span> <span class="s1">&#39;StatusPluginReportParams&#39;</span><span class="p">,</span>
-</span><span id="line-446"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-447"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-448"><span class="sd">    Construct and format message for related chat platform.</span>
-</span><span id="line-449">
-</span><span id="line-450"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-451"><span class="sd">    :param client: Client class instance for Chatting Robie.</span>
-</span><span id="line-452"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
-</span><span id="line-453"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-454"><span class="sd">    :param report: Object containing the report information.</span>
-</span><span id="line-455"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-456">
-</span><span id="line-457">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-417"><span class="k">def</span><span class="w"> </span><span class="nf">reportmtm</span><span class="p">(</span>
+</span><span id="line-418">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;StatusPlugin&#39;</span><span class="p">,</span>
+</span><span id="line-419">    <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;RobieClient&#39;</span><span class="p">,</span>
+</span><span id="line-420">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
+</span><span id="line-421">    <span class="n">status</span><span class="p">:</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">,</span>
+</span><span id="line-422">    <span class="n">report</span><span class="p">:</span> <span class="s1">&#39;StatusPluginReportParams&#39;</span><span class="p">,</span>
+</span><span id="line-423"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-424"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-425"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-426">
+</span><span id="line-427"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-428"><span class="sd">    :param client: Client class instance for Chatting Robie.</span>
+</span><span id="line-429"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
+</span><span id="line-430"><span class="sd">    :param status: Object containing the status information.</span>
+</span><span id="line-431"><span class="sd">    :param report: Object containing the report information.</span>
+</span><span id="line-432"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-433">
+</span><span id="line-434">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-435">
+</span><span id="line-436">
+</span><span id="line-437">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
+</span><span id="line-438">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-439">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-440">
+</span><span id="line-441">        <span class="n">citem</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-442">            <span class="n">client</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span>
+</span><span id="line-443">                <span class="n">report</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
+</span><span id="line-444">                <span class="n">message</span><span class="p">))</span>
+</span><span id="line-445">
+</span><span id="line-446">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
+</span><span id="line-447">
+</span><span id="line-448">
+</span><span id="line-449">    <span class="n">durate</span> <span class="o">=</span> <span class="n">Duration</span><span class="p">(</span>
+</span><span id="line-450">        <span class="n">status</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">since</span><span class="p">)</span>
+</span><span id="line-451">
+</span><span id="line-452">    <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-453">        <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span>
+</span><span id="line-454">            <span class="n">params</span><span class="o">.</span><span class="n">icons</span><span class="p">,</span>
+</span><span id="line-455">            <span class="n">status</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
+</span><span id="line-456">         <span class="o">.</span><span class="n">mtm</span><span class="p">)</span>
+</span><span id="line-457">        <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
 </span><span id="line-458">
-</span><span id="line-459">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-460">        <span class="n">params</span><span class="p">,</span>
-</span><span id="line-461">        <span class="n">StatusPluginParams</span><span class="p">)</span>
-</span><span id="line-462">
+</span><span id="line-459">    <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-460">        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sicon</span><span class="si">}</span><span class="s1"> &#39;</span>
+</span><span id="line-461">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sicon</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+</span><span id="line-462">        <span class="k">else</span> <span class="n">sicon</span><span class="p">)</span>
 </span><span id="line-463">
-</span><span id="line-464">    <span class="k">def</span><span class="w"> </span><span class="nf">_compose</span><span class="p">(</span>
-</span><span id="line-465">        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-466">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-464">    <span class="n">vicon</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-465">        <span class="n">status</span><span class="o">.</span><span class="n">icon</span><span class="o">.</span><span class="n">mtm</span>
+</span><span id="line-466">        <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
 </span><span id="line-467">
-</span><span id="line-468">        <span class="n">citem</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-469">            <span class="n">client</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span>
-</span><span id="line-470">                <span class="n">report</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
-</span><span id="line-471">                <span class="n">message</span><span class="p">))</span>
-</span><span id="line-472">
-</span><span id="line-473">        <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span>
-</span><span id="line-474">
-</span><span id="line-475">
-</span><span id="line-476">    <span class="n">durate</span> <span class="o">=</span> <span class="n">Duration</span><span class="p">(</span>
-</span><span id="line-477">        <span class="n">status</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">since</span><span class="p">)</span>
-</span><span id="line-478">
-</span><span id="line-479">    <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-480">        <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span>
-</span><span id="line-481">            <span class="n">params</span><span class="o">.</span><span class="n">icons</span><span class="p">,</span>
-</span><span id="line-482">            <span class="n">status</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-</span><span id="line-483">         <span class="o">.</span><span class="n">mtm</span><span class="p">)</span>
-</span><span id="line-484">        <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
-</span><span id="line-485">
-</span><span id="line-486">    <span class="n">sicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-487">        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sicon</span><span class="si">}</span><span class="s1"> &#39;</span>
-</span><span id="line-488">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sicon</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span>
-</span><span id="line-489">        <span class="k">else</span> <span class="n">sicon</span><span class="p">)</span>
-</span><span id="line-490">
-</span><span id="line-491">    <span class="n">vicon</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-492">        <span class="n">status</span><span class="o">.</span><span class="n">icon</span><span class="o">.</span><span class="n">mtm</span>
-</span><span id="line-493">        <span class="ow">or</span> <span class="n">SEMPTY</span><span class="p">)</span>
-</span><span id="line-494">
-</span><span id="line-495">    <span class="n">_compose</span><span class="p">(</span>
-</span><span id="line-496">        <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">vicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1"> &#39;</span>
-</span><span id="line-497">         <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">/&#39;</span>
-</span><span id="line-498">         <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">unique</span><span class="si">}</span><span class="s1">`:&#39;</span>
-</span><span id="line-499">         <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">sicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1">&#39;</span>
-</span><span id="line-500">         <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s1">` &#39;</span>
-</span><span id="line-501">         <span class="sa">f</span><span class="s1">&#39;for `</span><span class="si">{</span><span class="n">durate</span><span class="si">}</span><span class="s1">`&#39;</span><span class="p">)</span>
-</span><span id="line-502">        <span class="o">.</span><span class="n">strip</span><span class="p">())</span></div>
+</span><span id="line-468">    <span class="n">_compose</span><span class="p">(</span>
+</span><span id="line-469">        <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">vicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1"> &#39;</span>
+</span><span id="line-470">         <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">/&#39;</span>
+</span><span id="line-471">         <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">unique</span><span class="si">}</span><span class="s1">`:&#39;</span>
+</span><span id="line-472">         <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">sicon</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s1">&#39;</span>
+</span><span id="line-473">         <span class="sa">f</span><span class="s1">&#39;`</span><span class="si">{</span><span class="n">status</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s1">` &#39;</span>
+</span><span id="line-474">         <span class="sa">f</span><span class="s1">&#39;for `</span><span class="si">{</span><span class="n">durate</span><span class="si">}</span><span class="s1">`&#39;</span><span class="p">)</span>
+</span><span id="line-475">        <span class="o">.</span><span class="n">strip</span><span class="p">())</span></div>
 
 </span></code></pre></div>
     </div></div>

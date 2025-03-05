@@ -229,74 +229,76 @@
 </span><span id="line-84">
 </span><span id="line-85">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;plugin&#39;</span>
 </span><span id="line-86">
-</span><span id="line-87">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-87">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span>
 </span><span id="line-88">
-</span><span id="line-89">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">dumped</span></div>
-
+</span><span id="line-89">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
 </span><span id="line-90">
-</span><span id="line-91">
+</span><span id="line-91">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">dumped</span></div>
+
 </span><span id="line-92">
+</span><span id="line-93">
+</span><span id="line-94">
 <div class="viewcode-block" id="test_AinswerPlugin_cover">
 <a class="viewcode-back" href="../../../../../enrobie.plugins.ainswer.test.html#enrobie.plugins.ainswer.test.test_plugin.test_AinswerPlugin_cover">[docs]</a>
-</span><span id="line-93"><span class="k">def</span><span class="w"> </span><span class="nf">test_AinswerPlugin_cover</span><span class="p">(</span>
-</span><span id="line-94">    <span class="n">service</span><span class="p">:</span> <span class="s1">&#39;RobieService&#39;</span><span class="p">,</span>
-</span><span id="line-95">    <span class="n">client_dscsock</span><span class="p">:</span> <span class="n">DSCClientSocket</span><span class="p">,</span>
-</span><span id="line-96">    <span class="n">client_ircsock</span><span class="p">:</span> <span class="n">IRCClientSocket</span><span class="p">,</span>
-</span><span id="line-97">    <span class="n">client_mtmsock</span><span class="p">:</span> <span class="n">MTMClientSocket</span><span class="p">,</span>
-</span><span id="line-98"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-99"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-100"><span class="sd">    Perform various tests associated with relevant routines.</span>
-</span><span id="line-101">
-</span><span id="line-102"><span class="sd">    :param service: Ancilary Chatting Robie class instance.</span>
-</span><span id="line-103"><span class="sd">    :param client_dscsock: Object to mock client connection.</span>
-</span><span id="line-104"><span class="sd">    :param client_ircsock: Object to mock client connection.</span>
-</span><span id="line-105"><span class="sd">    :param client_mtmsock: Object to mock client connection.</span>
-</span><span id="line-106"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-107">
-</span><span id="line-108">    <span class="n">robie</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-109">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
-</span><span id="line-110">    <span class="n">plugins</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">plugins</span>
-</span><span id="line-111">
-</span><span id="line-112">    <span class="n">plugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="p">[</span><span class="s1">&#39;ainswer&#39;</span><span class="p">]</span>
+</span><span id="line-95"><span class="k">def</span><span class="w"> </span><span class="nf">test_AinswerPlugin_cover</span><span class="p">(</span>
+</span><span id="line-96">    <span class="n">service</span><span class="p">:</span> <span class="s1">&#39;RobieService&#39;</span><span class="p">,</span>
+</span><span id="line-97">    <span class="n">client_dscsock</span><span class="p">:</span> <span class="n">DSCClientSocket</span><span class="p">,</span>
+</span><span id="line-98">    <span class="n">client_ircsock</span><span class="p">:</span> <span class="n">IRCClientSocket</span><span class="p">,</span>
+</span><span id="line-99">    <span class="n">client_mtmsock</span><span class="p">:</span> <span class="n">MTMClientSocket</span><span class="p">,</span>
+</span><span id="line-100"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-101"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-102"><span class="sd">    Perform various tests associated with relevant routines.</span>
+</span><span id="line-103">
+</span><span id="line-104"><span class="sd">    :param service: Ancilary Chatting Robie class instance.</span>
+</span><span id="line-105"><span class="sd">    :param client_dscsock: Object to mock client connection.</span>
+</span><span id="line-106"><span class="sd">    :param client_ircsock: Object to mock client connection.</span>
+</span><span id="line-107"><span class="sd">    :param client_mtmsock: Object to mock client connection.</span>
+</span><span id="line-108"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-109">
+</span><span id="line-110">    <span class="n">robie</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-111">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
+</span><span id="line-112">    <span class="n">plugins</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">plugins</span>
 </span><span id="line-113">
-</span><span id="line-114">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-115">        <span class="n">plugin</span><span class="p">,</span> <span class="n">AinswerPlugin</span><span class="p">)</span>
-</span><span id="line-116">
-</span><span id="line-117">
-</span><span id="line-118">    <span class="n">client_dscsock</span><span class="p">(</span><span class="n">DSCEVENTS</span><span class="p">)</span>
-</span><span id="line-119">    <span class="n">client_ircsock</span><span class="p">(</span><span class="n">IRCEVENTS</span><span class="p">)</span>
-</span><span id="line-120">    <span class="n">client_mtmsock</span><span class="p">(</span><span class="n">MTMEVENTS</span><span class="p">)</span>
-</span><span id="line-121">
-</span><span id="line-122">
-</span><span id="line-123">    <span class="n">testing</span> <span class="o">=</span> <span class="n">TestModel</span><span class="p">()</span>
+</span><span id="line-114">    <span class="n">plugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="p">[</span><span class="s1">&#39;ainswer&#39;</span><span class="p">]</span>
+</span><span id="line-115">
+</span><span id="line-116">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-117">        <span class="n">plugin</span><span class="p">,</span> <span class="n">AinswerPlugin</span><span class="p">)</span>
+</span><span id="line-118">
+</span><span id="line-119">
+</span><span id="line-120">    <span class="n">client_dscsock</span><span class="p">(</span><span class="n">DSCEVENTS</span><span class="p">)</span>
+</span><span id="line-121">    <span class="n">client_ircsock</span><span class="p">(</span><span class="n">IRCEVENTS</span><span class="p">)</span>
+</span><span id="line-122">    <span class="n">client_mtmsock</span><span class="p">(</span><span class="n">MTMEVENTS</span><span class="p">)</span>
+</span><span id="line-123">
 </span><span id="line-124">
-</span><span id="line-125">    <span class="n">override_agent</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-126">        <span class="n">plugin</span><span class="o">.</span><span class="n">agent</span>
-</span><span id="line-127">        <span class="o">.</span><span class="n">override</span><span class="p">(</span>
-</span><span id="line-128">            <span class="n">model</span><span class="o">=</span><span class="n">testing</span><span class="p">))</span>
-</span><span id="line-129">
-</span><span id="line-130">    <span class="k">with</span> <span class="n">override_agent</span><span class="p">:</span>
+</span><span id="line-125">    <span class="n">testing</span> <span class="o">=</span> <span class="n">TestModel</span><span class="p">()</span>
+</span><span id="line-126">
+</span><span id="line-127">    <span class="n">override_agent</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-128">        <span class="n">plugin</span><span class="o">.</span><span class="n">agent</span>
+</span><span id="line-129">        <span class="o">.</span><span class="n">override</span><span class="p">(</span>
+</span><span id="line-130">            <span class="n">model</span><span class="o">=</span><span class="n">testing</span><span class="p">))</span>
 </span><span id="line-131">
-</span><span id="line-132">
-</span><span id="line-133">        <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-132">    <span class="k">with</span> <span class="n">override_agent</span><span class="p">:</span>
+</span><span id="line-133">
 </span><span id="line-134">
-</span><span id="line-135">
-</span><span id="line-136">        <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span>
-</span><span id="line-137">            <span class="n">target</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">operate</span><span class="p">)</span>
-</span><span id="line-138">
-</span><span id="line-139">        <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-135">        <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-136">
+</span><span id="line-137">
+</span><span id="line-138">        <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span>
+</span><span id="line-139">            <span class="n">target</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">operate</span><span class="p">)</span>
 </span><span id="line-140">
-</span><span id="line-141">
-</span><span id="line-142">        <span class="n">block_sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="line-141">        <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-142">
 </span><span id="line-143">
-</span><span id="line-144">        <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
+</span><span id="line-144">        <span class="n">block_sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </span><span id="line-145">
-</span><span id="line-146">        <span class="k">while</span> <span class="n">service</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
-</span><span id="line-147">            <span class="n">block_sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="line-148">
-</span><span id="line-149">        <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</span><span id="line-146">        <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
+</span><span id="line-147">
+</span><span id="line-148">        <span class="k">while</span> <span class="n">service</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+</span><span id="line-149">            <span class="n">block_sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </span><span id="line-150">
-</span><span id="line-151">        <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
+</span><span id="line-151">        <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</span><span id="line-152">
+</span><span id="line-153">        <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
 
 </span></code></pre></div>
     </div></div>
