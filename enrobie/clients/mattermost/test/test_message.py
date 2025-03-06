@@ -83,10 +83,19 @@ def test_MTMMessage(
 
     assert item.kind == 'privmsg'
 
-    assert item.event == event
-
     assert not item.isme
 
+    assert not item.hasme
+
+    assert not item.whome
+
+    assert item.author
+    assert item.author[0] == 'user'
+
+    assert item.message
+
+
+    assert item.event == event
 
     assert event.type == 'posted'
     assert event.data
@@ -99,8 +108,11 @@ def test_MTMMessage(
     assert not event.seqre
 
     assert event.kind == 'privmsg'
+    assert not event.isme
+    assert not event.hasme
+    assert not event.whome
     assert event.author == (
-        '@user', 'userid')
+        'user', 'userid')
     assert event.recipient == 'privid'
     assert event.message == (
         'Hello mtmbot')

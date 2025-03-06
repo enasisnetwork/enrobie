@@ -85,6 +85,58 @@ class MTMMessage(RobieMessage):
         return self.event.isme
 
 
+    @property
+    def hasme(
+        self,
+    ) -> bool:
+        """
+        Return the boolean indicating message mention the client.
+
+        :returns: Boolean indicating message mention the client.
+        """
+
+        return self.event.hasme
+
+
+    @property
+    def whome(
+        self,
+    ) -> tuple[str, str] | None:
+        """
+        Return the current nickname of the client on the server.
+
+        :returns: Current nickname of the client on the server.
+        """
+
+        return self.event.whome
+
+
+    @property
+    def author(
+        self,
+    ) -> tuple[str, str] | None:
+        """
+        Return the current nickname of the client on the server.
+
+        :returns: Current nickname of the client on the server.
+        """
+
+        return self.event.author
+
+
+    @property
+    def message(
+        self,
+    ) -> str | None:
+        """
+        Return the string containing the content of the message.
+
+        :returns: String containing the content of the message.
+        """
+
+        return self.event.message
+
+
     def reply(
         self,
         robie: 'Robie',
