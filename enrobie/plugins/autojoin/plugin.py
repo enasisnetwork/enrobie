@@ -179,7 +179,7 @@ class AutoJoinPlugin(RobiePlugin):
             family = mitem.family
 
             if family != 'irc':
-                continue
+                continue  # NOCVR
 
             client = clients[name]
 

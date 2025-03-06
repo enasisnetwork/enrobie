@@ -10,6 +10,7 @@ is permitted, for more information consult the project license file.
 from threading import Event
 from time import sleep as block_sleep
 from typing import Any
+from typing import Optional
 from typing import TYPE_CHECKING
 
 from encommon.times import Timer
@@ -499,3 +500,26 @@ class RobieService:
         robie.logger.log_i(
             base=self,
             status='stopped')
+
+
+    def limit_threads(
+        self,
+        clients: Optional[list[str]] = None,
+        plugins: Optional[list[str]] = None,
+    ) -> None:
+        """
+        Remove the threads from members if not already started.
+
+        :param clients: Names of the clients that are permitted.
+        :param plugins: Names of the plugins that are permitted.
+        """
+
+        assert clients or plugins
+
+        if plugins is not None:
+            (self.__plugins
+             .limit_threads(plugins))
+
+        if clients is not None:
+            (self.__clients
+             .limit_threads(clients))

@@ -122,6 +122,10 @@ def test_AutoJoinPlugin_cover(
 
     client_ircsock(events)
 
+    service.limit_threads(
+        clients=['ircbot'],
+        plugins=['autojoin'])
+
     service.start()
 
 

@@ -8,9 +8,6 @@ is permitted, for more information consult the project license file.
 
 
 from json import dumps
-from re import IGNORECASE
-from re import match as re_match
-from re import search as re_search
 from typing import TYPE_CHECKING
 from typing import Type
 
@@ -189,12 +186,14 @@ def composedsc(
         DSCClientEvent)
 
 
-    assert event.message
-    assert event.author
+    assert mitem.whome
+    assert mitem.author
     assert event.recipient
+    assert mitem.message
 
-    author = event.author[0]
-    message = event.message
+    whoami = mitem.whome[0]
+    author = mitem.author[0]
+    message = mitem.message
 
 
     client = (
@@ -204,20 +203,9 @@ def composedsc(
     assert isinstance(
         client, DSCClient)
 
-    current = (
-        client.client
-        .nickname)
-
-    assert current is not None
-
-    _current = current[0]
-
-
-    ignore = _nocompose(
-        _current, message)
 
     if (mitem.kind == 'chanmsg'
-            and ignore is True):
+            and not mitem.hasme):
         return None
 
 
@@ -226,14 +214,14 @@ def composedsc(
     anchor = (
         event.recipient[1]
         if kind == 'chanmsg'
-        else event.author[1])
+        else mitem.author[1])
 
     ainswer = (
         plugin.ainswer(
             client,
             (params.prompt
              .client.dsc),
-            whoami=_current,
+            whoami=whoami,
             author=author,
             anchor=anchor,
             message=message,
@@ -281,12 +269,14 @@ def composeirc(
         IRCClientEvent)
 
 
-    assert event.message
-    assert event.author
+    assert mitem.whome
+    assert mitem.author
     assert event.recipient
+    assert mitem.message
 
-    author = event.author
-    message = event.message
+    whoami = mitem.whome[0]
+    author = mitem.author[0]
+    message = mitem.message
 
 
     client = (
@@ -296,18 +286,9 @@ def composeirc(
     assert isinstance(
         client, IRCClient)
 
-    current = (
-        client.client
-        .nickname)
-
-    assert current is not None
-
-
-    ignore = _nocompose(
-        current, message)
 
     if (mitem.kind == 'chanmsg'
-            and ignore is True):
+            and not mitem.hasme):
         return None
 
 
@@ -316,14 +297,14 @@ def composeirc(
     anchor = (
         event.recipient
         if kind == 'chanmsg'
-        else event.author)
+        else mitem.author[1])
 
     ainswer = (
         plugin.ainswer(
             client,
             (params.prompt
              .client.irc),
-            whoami=current,
+            whoami=whoami,
             author=author,
             anchor=anchor,
             message=message,
@@ -371,12 +352,14 @@ def composemtm(
         MTMClientEvent)
 
 
-    assert event.message
-    assert event.author
+    assert mitem.whome
+    assert mitem.author
     assert event.recipient
+    assert mitem.message
 
-    author = event.author[0][1:]
-    message = event.message
+    whoami = mitem.whome[0]
+    author = mitem.author[0]
+    message = mitem.message
 
 
     client = (
@@ -386,20 +369,9 @@ def composemtm(
     assert isinstance(
         client, MTMClient)
 
-    current = (
-        client.client
-        .nickname)
-
-    assert current is not None
-
-    _current = current[0][1:]
-
-
-    ignore = _nocompose(
-        _current, message)
 
     if (mitem.kind == 'chanmsg'
-            and ignore is True):
+            and not mitem.hasme):
         return None
 
 
@@ -408,14 +380,14 @@ def composemtm(
     anchor = (
         event.recipient[1]
         if kind == 'chanmsg'
-        else event.author[1])
+        else mitem.author[1])
 
     ainswer = (
         plugin.ainswer(
             client,
             (params.prompt
              .client.mtm),
-            whoami=_current,
+            whoami=whoami,
             author=author,
             anchor=anchor,
             message=message,
@@ -426,32 +398,3 @@ def composemtm(
         robie, ainswer)
 
     cqueue.put(citem)
-
-
-
-def _nocompose(
-    current: str,
-    question: str,
-) -> bool:
-    """
-    Return the boolean indicating that we are not reference.
-
-    :param current: Current nickname of the operated client.
-    :param question: Question that will be asked of the LLM.
-    :returns: Boolean indicating that we are not reference.
-    """
-
-    return not any([
-
-        re_search(
-            (rf'\s{current}'
-             r'(\;|\,|\-|\s|$)'),
-            question,
-            IGNORECASE),
-
-        re_match(
-            (r'^(\s+)?\@?'
-             f'{current}'
-             r'(\:|\,|\-)?\s+'),
-            question,
-            IGNORECASE)])

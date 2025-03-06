@@ -165,6 +165,9 @@ def test_StatusPlugin_cover(
     client_ircsock(IRCEVENTS)
     client_mtmsock(MTMEVENTS)
 
+    service.limit_threads(
+        plugins=['status'])
+
     service.start()
 
 
