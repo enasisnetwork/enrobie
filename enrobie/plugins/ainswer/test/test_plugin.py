@@ -132,6 +132,9 @@ def test_AinswerPlugin_cover(
     with override_agent:
 
 
+        service.limit_threads(
+            plugins=['ainswer'])
+
         service.start()
 
 

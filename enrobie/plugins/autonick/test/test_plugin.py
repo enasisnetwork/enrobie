@@ -102,6 +102,10 @@ def test_AutoNickPlugin_cover(
 
     client_ircsock(IRCEVENTS)
 
+    service.limit_threads(
+        clients=['ircbot'],
+        plugins=['autonick'])
+
     service.start()
 
 

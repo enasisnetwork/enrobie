@@ -104,6 +104,35 @@ class RobieMember:
         raise NotImplementedError
 
 
+    def limit_threads(
+        self,
+        names: list[str],
+    ) -> None:
+        """
+        Remove the thread from member when not already started.
+
+        .. note::
+           Deviates from enhomie in build happens downstream,
+           because all of the enhomie members are origin based
+           where enrobie children do not have consistent base.
+
+        :param names: Names of the children that are permitted.
+        """
+
+        threads = self.__threads
+
+        for name in list(threads):
+
+            thread = threads[name]
+
+            if name in names:
+                continue
+
+            assert not thread.ident
+
+            del threads[name]
+
+
     @property
     def robie(
         self,

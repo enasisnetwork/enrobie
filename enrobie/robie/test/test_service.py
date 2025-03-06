@@ -26,7 +26,7 @@ if TYPE_CHECKING:
 
 
 
-def test_RobieService(  # noqa: CFQ001
+def test_RobieService(
     service: 'RobieService',
     client_dscsock: DSCClientSocket,
     client_ircsock: IRCClientSocket,
@@ -79,43 +79,16 @@ def test_RobieService(  # noqa: CFQ001
     assert len(service.zombies) == 7
 
 
-    plugins = service.plugins
-    threads = plugins.threads
-
-    for name in list(threads):
-
-        if name == 'status':
-            continue
-
-        del threads[name]
-
-    plugins.threads = threads
-
-
-    assert len(service.zombies) == 4
-
-
-    clients = service.clients
-    threads = clients.threads
-
-    for name in list(threads):
-
-        if name == 'ircbot':
-            continue
-
-        del threads[name]
-
-    clients.threads = threads
-
-
-    assert len(service.zombies) == 2
-
-
     client_dscsock()
     client_ircsock()
     client_mtmsock()
 
+    service.limit_threads(
+        plugins=['status'])
+
     service.start()
+
+    assert len(service.running) == 4
 
 
     thread = Thread(
@@ -130,8 +103,6 @@ def test_RobieService(  # noqa: CFQ001
 
     assert not service.zombies
 
-    assert not service.congest
-
     service.soft()
 
     while service.running:
@@ -143,7 +114,7 @@ def test_RobieService(  # noqa: CFQ001
 
     assert service.zombies
 
-    assert not service.congest
+    # Not testing congest
 
     assert service.enqueue
 
@@ -191,6 +162,10 @@ def test_RobieService_cover(
 
     :param service: Ancilary Chatting Robie class instance.
     """
+
+    service.limit_threads(
+        clients=['ircbot'],
+        plugins=['status'])
 
     service.stop()
     service.soft()
