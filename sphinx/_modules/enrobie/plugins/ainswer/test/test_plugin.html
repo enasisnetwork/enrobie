@@ -280,25 +280,28 @@
 </span><span id="line-132">    <span class="k">with</span> <span class="n">override_agent</span><span class="p">:</span>
 </span><span id="line-133">
 </span><span id="line-134">
-</span><span id="line-135">        <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span><span id="line-136">
+</span><span id="line-135">        <span class="n">service</span><span class="o">.</span><span class="n">limit_threads</span><span class="p">(</span>
+</span><span id="line-136">            <span class="n">plugins</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ainswer&#39;</span><span class="p">])</span>
 </span><span id="line-137">
-</span><span id="line-138">        <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span>
-</span><span id="line-139">            <span class="n">target</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">operate</span><span class="p">)</span>
+</span><span id="line-138">        <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-139">
 </span><span id="line-140">
-</span><span id="line-141">        <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span><span id="line-142">
+</span><span id="line-141">        <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span>
+</span><span id="line-142">            <span class="n">target</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">operate</span><span class="p">)</span>
 </span><span id="line-143">
-</span><span id="line-144">        <span class="n">block_sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="line-144">        <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span><span id="line-145">
-</span><span id="line-146">        <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
-</span><span id="line-147">
-</span><span id="line-148">        <span class="k">while</span> <span class="n">service</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
-</span><span id="line-149">            <span class="n">block_sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="line-146">
+</span><span id="line-147">        <span class="n">block_sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="line-148">
+</span><span id="line-149">        <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
 </span><span id="line-150">
-</span><span id="line-151">        <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-</span><span id="line-152">
-</span><span id="line-153">        <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
+</span><span id="line-151">        <span class="k">while</span> <span class="n">service</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+</span><span id="line-152">            <span class="n">block_sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="line-153">
+</span><span id="line-154">        <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</span><span id="line-155">
+</span><span id="line-156">        <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
 
 </span></code></pre></div>
     </div></div>

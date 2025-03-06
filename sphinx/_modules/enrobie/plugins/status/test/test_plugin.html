@@ -313,25 +313,28 @@
 </span><span id="line-165">    <span class="n">client_ircsock</span><span class="p">(</span><span class="n">IRCEVENTS</span><span class="p">)</span>
 </span><span id="line-166">    <span class="n">client_mtmsock</span><span class="p">(</span><span class="n">MTMEVENTS</span><span class="p">)</span>
 </span><span id="line-167">
-</span><span id="line-168">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span><span id="line-169">
+</span><span id="line-168">    <span class="n">service</span><span class="o">.</span><span class="n">limit_threads</span><span class="p">(</span>
+</span><span id="line-169">        <span class="n">plugins</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">])</span>
 </span><span id="line-170">
-</span><span id="line-171">    <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span>
-</span><span id="line-172">        <span class="n">target</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">operate</span><span class="p">)</span>
+</span><span id="line-171">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-172">
 </span><span id="line-173">
-</span><span id="line-174">    <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span><span id="line-175">
+</span><span id="line-174">    <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span>
+</span><span id="line-175">        <span class="n">target</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">operate</span><span class="p">)</span>
 </span><span id="line-176">
-</span><span id="line-177">    <span class="n">block_sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="line-177">    <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span><span id="line-178">
-</span><span id="line-179">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
-</span><span id="line-180">
-</span><span id="line-181">    <span class="k">while</span> <span class="n">service</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
-</span><span id="line-182">        <span class="n">block_sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="line-179">
+</span><span id="line-180">    <span class="n">block_sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="line-181">
+</span><span id="line-182">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
 </span><span id="line-183">
-</span><span id="line-184">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-</span><span id="line-185">
-</span><span id="line-186">    <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
+</span><span id="line-184">    <span class="k">while</span> <span class="n">service</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+</span><span id="line-185">        <span class="n">block_sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="line-186">
+</span><span id="line-187">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</span><span id="line-188">
+</span><span id="line-189">    <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
 
 </span></code></pre></div>
     </div></div>

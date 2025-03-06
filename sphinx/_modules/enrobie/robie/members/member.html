@@ -252,312 +252,344 @@
 
 </span><span id="line-105">
 </span><span id="line-106">
-</span><span id="line-107">    <span class="nd">@property</span>
-</span><span id="line-108">    <span class="k">def</span><span class="w"> </span><span class="nf">robie</span><span class="p">(</span>
-</span><span id="line-109">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-110">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Robie&#39;</span><span class="p">:</span>
+<div class="viewcode-block" id="RobieMember.limit_threads">
+<a class="viewcode-back" href="../../../../enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.limit_threads">[docs]</a>
+</span><span id="line-107">    <span class="k">def</span><span class="w"> </span><span class="nf">limit_threads</span><span class="p">(</span>
+</span><span id="line-108">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-109">        <span class="n">names</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+</span><span id="line-110">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-111"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-112"><span class="sd">        Return the Robie instance to which the instance belongs.</span>
+</span><span id="line-112"><span class="sd">        Remove the thread from member when not already started.</span>
 </span><span id="line-113">
-</span><span id="line-114"><span class="sd">        :returns: Robie instance to which the instance belongs.</span>
-</span><span id="line-115"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-116">
-</span><span id="line-117">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+</span><span id="line-114"><span class="sd">        .. note::</span>
+</span><span id="line-115"><span class="sd">           Deviates from enhomie in build happens downstream,</span>
+</span><span id="line-116"><span class="sd">           because all of the enhomie members are origin based</span>
+</span><span id="line-117"><span class="sd">           where enrobie children do not have consistent base.</span>
 </span><span id="line-118">
-</span><span id="line-119">
-</span><span id="line-120">    <span class="nd">@property</span>
-</span><span id="line-121">    <span class="k">def</span><span class="w"> </span><span class="nf">threads</span><span class="p">(</span>
-</span><span id="line-122">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-123">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieThreads</span><span class="p">:</span>
-</span><span id="line-124"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-125"><span class="sd">        Return the value for the attribute from class instance.</span>
-</span><span id="line-126">
-</span><span id="line-127"><span class="sd">        :returns: Value for the attribute from class instance.</span>
-</span><span id="line-128"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-129">
-</span><span id="line-130">        <span class="n">threads</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
-</span><span id="line-131">
-</span><span id="line-132">        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">threads</span><span class="p">)</span>
-</span><span id="line-133">
+</span><span id="line-119"><span class="sd">        :param names: Names of the children that are permitted.</span>
+</span><span id="line-120"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-121">
+</span><span id="line-122">        <span class="n">threads</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
+</span><span id="line-123">
+</span><span id="line-124">        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">threads</span><span class="p">):</span>
+</span><span id="line-125">
+</span><span id="line-126">            <span class="n">thread</span> <span class="o">=</span> <span class="n">threads</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</span><span id="line-127">
+</span><span id="line-128">            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+</span><span id="line-129">                <span class="k">continue</span>
+</span><span id="line-130">
+</span><span id="line-131">            <span class="k">assert</span> <span class="ow">not</span> <span class="n">thread</span><span class="o">.</span><span class="n">ident</span>
+</span><span id="line-132">
+</span><span id="line-133">            <span class="k">del</span> <span class="n">threads</span><span class="p">[</span><span class="n">name</span><span class="p">]</span></div>
+
 </span><span id="line-134">
-</span><span id="line-135">    <span class="nd">@threads</span><span class="o">.</span><span class="n">setter</span>
-</span><span id="line-136">    <span class="k">def</span><span class="w"> </span><span class="nf">threads</span><span class="p">(</span>
-</span><span id="line-137">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-138">        <span class="n">value</span><span class="p">:</span> <span class="n">RobieThreads</span><span class="p">,</span>
-</span><span id="line-139">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-135">
+</span><span id="line-136">    <span class="nd">@property</span>
+</span><span id="line-137">    <span class="k">def</span><span class="w"> </span><span class="nf">robie</span><span class="p">(</span>
+</span><span id="line-138">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-139">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Robie&#39;</span><span class="p">:</span>
 </span><span id="line-140"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-141"><span class="sd">        Update the value for the attribute from class instance.</span>
-</span><span id="line-142"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-143">
-</span><span id="line-144">        <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span> <span class="o">=</span> <span class="n">value</span>
+</span><span id="line-141"><span class="sd">        Return the Robie instance to which the instance belongs.</span>
+</span><span id="line-142">
+</span><span id="line-143"><span class="sd">        :returns: Robie instance to which the instance belongs.</span>
+</span><span id="line-144"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-145">
-</span><span id="line-146">
-</span><span id="line-147">    <span class="nd">@property</span>
-</span><span id="line-148">    <span class="k">def</span><span class="w"> </span><span class="nf">mqueue</span><span class="p">(</span>
-</span><span id="line-149">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-150">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieMessage&#39;</span><span class="p">]:</span>
-</span><span id="line-151"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-152"><span class="sd">        Return the value for the attribute from class instance.</span>
-</span><span id="line-153">
-</span><span id="line-154"><span class="sd">        :returns: Value for the attribute from class instance.</span>
-</span><span id="line-155"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-156">
-</span><span id="line-157">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__mqueue</span>
+</span><span id="line-146">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+</span><span id="line-147">
+</span><span id="line-148">
+</span><span id="line-149">    <span class="nd">@property</span>
+</span><span id="line-150">    <span class="k">def</span><span class="w"> </span><span class="nf">threads</span><span class="p">(</span>
+</span><span id="line-151">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-152">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieThreads</span><span class="p">:</span>
+</span><span id="line-153"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-154"><span class="sd">        Return the value for the attribute from class instance.</span>
+</span><span id="line-155">
+</span><span id="line-156"><span class="sd">        :returns: Value for the attribute from class instance.</span>
+</span><span id="line-157"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-158">
-</span><span id="line-159">
-</span><span id="line-160">    <span class="nd">@property</span>
-</span><span id="line-161">    <span class="k">def</span><span class="w"> </span><span class="nf">cqueue</span><span class="p">(</span>
-</span><span id="line-162">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-163">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieCommand&#39;</span><span class="p">]:</span>
-</span><span id="line-164"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-165"><span class="sd">        Return the value for the attribute from class instance.</span>
-</span><span id="line-166">
-</span><span id="line-167"><span class="sd">        :returns: Value for the attribute from class instance.</span>
-</span><span id="line-168"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-169">
-</span><span id="line-170">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cqueue</span>
-</span><span id="line-171">
+</span><span id="line-159">        <span class="n">threads</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
+</span><span id="line-160">
+</span><span id="line-161">        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">threads</span><span class="p">)</span>
+</span><span id="line-162">
+</span><span id="line-163">
+</span><span id="line-164">    <span class="nd">@threads</span><span class="o">.</span><span class="n">setter</span>
+</span><span id="line-165">    <span class="k">def</span><span class="w"> </span><span class="nf">threads</span><span class="p">(</span>
+</span><span id="line-166">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-167">        <span class="n">value</span><span class="p">:</span> <span class="n">RobieThreads</span><span class="p">,</span>
+</span><span id="line-168">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-169"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-170"><span class="sd">        Update the value for the attribute from class instance.</span>
+</span><span id="line-171"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-172">
-</span><span id="line-173">    <span class="nd">@property</span>
-</span><span id="line-174">    <span class="k">def</span><span class="w"> </span><span class="nf">vacate</span><span class="p">(</span>
-</span><span id="line-175">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-176">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Event</span><span class="p">:</span>
-</span><span id="line-177"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-178"><span class="sd">        Return the value for the attribute from class instance.</span>
-</span><span id="line-179">
-</span><span id="line-180"><span class="sd">        :returns: Value for the attribute from class instance.</span>
-</span><span id="line-181"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-173">        <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span> <span class="o">=</span> <span class="n">value</span>
+</span><span id="line-174">
+</span><span id="line-175">
+</span><span id="line-176">    <span class="nd">@property</span>
+</span><span id="line-177">    <span class="k">def</span><span class="w"> </span><span class="nf">mqueue</span><span class="p">(</span>
+</span><span id="line-178">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-179">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieMessage&#39;</span><span class="p">]:</span>
+</span><span id="line-180"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-181"><span class="sd">        Return the value for the attribute from class instance.</span>
 </span><span id="line-182">
-</span><span id="line-183">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__vacate</span>
-</span><span id="line-184">
+</span><span id="line-183"><span class="sd">        :returns: Value for the attribute from class instance.</span>
+</span><span id="line-184"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-185">
-</span><span id="line-186">    <span class="nd">@property</span>
-</span><span id="line-187">    <span class="k">def</span><span class="w"> </span><span class="nf">cancel</span><span class="p">(</span>
-</span><span id="line-188">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-189">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Event</span><span class="p">:</span>
-</span><span id="line-190"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-191"><span class="sd">        Return the value for the attribute from class instance.</span>
-</span><span id="line-192">
-</span><span id="line-193"><span class="sd">        :returns: Value for the attribute from class instance.</span>
-</span><span id="line-194"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-186">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__mqueue</span>
+</span><span id="line-187">
+</span><span id="line-188">
+</span><span id="line-189">    <span class="nd">@property</span>
+</span><span id="line-190">    <span class="k">def</span><span class="w"> </span><span class="nf">cqueue</span><span class="p">(</span>
+</span><span id="line-191">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-192">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieCommand&#39;</span><span class="p">]:</span>
+</span><span id="line-193"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-194"><span class="sd">        Return the value for the attribute from class instance.</span>
 </span><span id="line-195">
-</span><span id="line-196">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cancel</span>
-</span><span id="line-197">
+</span><span id="line-196"><span class="sd">        :returns: Value for the attribute from class instance.</span>
+</span><span id="line-197"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-198">
-</span><span id="line-199">    <span class="nd">@property</span>
-</span><span id="line-200">    <span class="k">def</span><span class="w"> </span><span class="nf">running</span><span class="p">(</span>
-</span><span id="line-201">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-202">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-</span><span id="line-203"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-204"><span class="sd">        Return the list of threads which are determined running.</span>
-</span><span id="line-205">
-</span><span id="line-206"><span class="sd">        :returns: List of threads which are determined running.</span>
-</span><span id="line-207"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-199">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cqueue</span>
+</span><span id="line-200">
+</span><span id="line-201">
+</span><span id="line-202">    <span class="nd">@property</span>
+</span><span id="line-203">    <span class="k">def</span><span class="w"> </span><span class="nf">vacate</span><span class="p">(</span>
+</span><span id="line-204">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-205">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Event</span><span class="p">:</span>
+</span><span id="line-206"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-207"><span class="sd">        Return the value for the attribute from class instance.</span>
 </span><span id="line-208">
-</span><span id="line-209">        <span class="n">running</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-210">
-</span><span id="line-211">        <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-212">            <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
-</span><span id="line-213">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span><span id="line-209"><span class="sd">        :returns: Value for the attribute from class instance.</span>
+</span><span id="line-210"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-211">
+</span><span id="line-212">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__vacate</span>
+</span><span id="line-213">
 </span><span id="line-214">
-</span><span id="line-215">        <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
-</span><span id="line-216">
-</span><span id="line-217">            <span class="k">if</span> <span class="ow">not</span> <span class="n">thread</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
-</span><span id="line-218">                <span class="k">continue</span>
-</span><span id="line-219">
-</span><span id="line-220">            <span class="n">name</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">name</span>
+</span><span id="line-215">    <span class="nd">@property</span>
+</span><span id="line-216">    <span class="k">def</span><span class="w"> </span><span class="nf">cancel</span><span class="p">(</span>
+</span><span id="line-217">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-218">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Event</span><span class="p">:</span>
+</span><span id="line-219"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-220"><span class="sd">        Return the value for the attribute from class instance.</span>
 </span><span id="line-221">
-</span><span id="line-222">            <span class="n">running</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-</span><span id="line-223">
-</span><span id="line-224">        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">running</span><span class="p">)</span>
-</span><span id="line-225">
+</span><span id="line-222"><span class="sd">        :returns: Value for the attribute from class instance.</span>
+</span><span id="line-223"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-224">
+</span><span id="line-225">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cancel</span>
 </span><span id="line-226">
-</span><span id="line-227">    <span class="nd">@property</span>
-</span><span id="line-228">    <span class="k">def</span><span class="w"> </span><span class="nf">zombies</span><span class="p">(</span>
-</span><span id="line-229">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-230">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-</span><span id="line-231"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-232"><span class="sd">        Return the list of threads which are determined zombies.</span>
-</span><span id="line-233">
-</span><span id="line-234"><span class="sd">        :returns: List of threads which are determined zombies.</span>
-</span><span id="line-235"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-236">
-</span><span id="line-237">        <span class="n">zombies</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-238">
-</span><span id="line-239">        <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-240">            <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
-</span><span id="line-241">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
-</span><span id="line-242">
-</span><span id="line-243">        <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
-</span><span id="line-244">
-</span><span id="line-245">            <span class="k">if</span> <span class="n">thread</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
-</span><span id="line-246">                <span class="k">continue</span>
-</span><span id="line-247">
-</span><span id="line-248">            <span class="n">name</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">name</span>
-</span><span id="line-249">
-</span><span id="line-250">            <span class="n">zombies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-</span><span id="line-251">
-</span><span id="line-252">        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">zombies</span><span class="p">)</span>
-</span><span id="line-253">
+</span><span id="line-227">
+</span><span id="line-228">    <span class="nd">@property</span>
+</span><span id="line-229">    <span class="k">def</span><span class="w"> </span><span class="nf">running</span><span class="p">(</span>
+</span><span id="line-230">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-231">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+</span><span id="line-232"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-233"><span class="sd">        Return the list of threads which are determined running.</span>
+</span><span id="line-234">
+</span><span id="line-235"><span class="sd">        :returns: List of threads which are determined running.</span>
+</span><span id="line-236"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-237">
+</span><span id="line-238">        <span class="n">running</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-239">
+</span><span id="line-240">        <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-241">            <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
+</span><span id="line-242">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span><span id="line-243">
+</span><span id="line-244">        <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+</span><span id="line-245">
+</span><span id="line-246">            <span class="k">if</span> <span class="ow">not</span> <span class="n">thread</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
+</span><span id="line-247">                <span class="k">continue</span>
+</span><span id="line-248">
+</span><span id="line-249">            <span class="n">name</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">name</span>
+</span><span id="line-250">
+</span><span id="line-251">            <span class="n">running</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</span><span id="line-252">
+</span><span id="line-253">        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">running</span><span class="p">)</span>
 </span><span id="line-254">
-</span><span id="line-255">    <span class="nd">@property</span>
-</span><span id="line-256">    <span class="k">def</span><span class="w"> </span><span class="nf">congest</span><span class="p">(</span>
-</span><span id="line-257">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-258">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_CONGEST</span><span class="p">:</span>
-</span><span id="line-259"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-260"><span class="sd">        Return the list of congested threads and members queues.</span>
-</span><span id="line-261">
-</span><span id="line-262"><span class="sd">        :returns: List of congested threads and members queues.</span>
-</span><span id="line-263"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-264">
-</span><span id="line-265">        <span class="n">congest</span><span class="p">:</span> <span class="n">_CONGEST</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-266">
-</span><span id="line-267">        <span class="n">name</span> <span class="o">=</span> <span class="n">clsname</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-</span><span id="line-268">
-</span><span id="line-269">        <span class="n">mqueue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqueue</span>
-</span><span id="line-270">        <span class="n">cqueue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cqueue</span>
+</span><span id="line-255">
+</span><span id="line-256">    <span class="nd">@property</span>
+</span><span id="line-257">    <span class="k">def</span><span class="w"> </span><span class="nf">zombies</span><span class="p">(</span>
+</span><span id="line-258">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-259">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+</span><span id="line-260"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-261"><span class="sd">        Return the list of threads which are determined zombies.</span>
+</span><span id="line-262">
+</span><span id="line-263"><span class="sd">        :returns: List of threads which are determined zombies.</span>
+</span><span id="line-264"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-265">
+</span><span id="line-266">        <span class="n">zombies</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-267">
+</span><span id="line-268">        <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-269">            <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
+</span><span id="line-270">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
 </span><span id="line-271">
-</span><span id="line-272">
-</span><span id="line-273">        <span class="k">if</span> <span class="n">mqueue</span><span class="o">.</span><span class="n">qsize</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-</span><span id="line-274">
-</span><span id="line-275">            <span class="n">append</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-276">                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/mqueue&#39;</span><span class="p">,</span>
-</span><span id="line-277">                <span class="n">mqueue</span><span class="o">.</span><span class="n">qsize</span><span class="p">)</span>
+</span><span id="line-272">        <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+</span><span id="line-273">
+</span><span id="line-274">            <span class="k">if</span> <span class="n">thread</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
+</span><span id="line-275">                <span class="k">continue</span>
+</span><span id="line-276">
+</span><span id="line-277">            <span class="n">name</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">name</span>
 </span><span id="line-278">
-</span><span id="line-279">            <span class="n">congest</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">append</span><span class="p">)</span>
+</span><span id="line-279">            <span class="n">zombies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </span><span id="line-280">
-</span><span id="line-281">        <span class="k">if</span> <span class="n">cqueue</span><span class="o">.</span><span class="n">qsize</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+</span><span id="line-281">        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">zombies</span><span class="p">)</span>
 </span><span id="line-282">
-</span><span id="line-283">            <span class="n">append</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-284">                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/cqueue&#39;</span><span class="p">,</span>
-</span><span id="line-285">                <span class="n">cqueue</span><span class="o">.</span><span class="n">qsize</span><span class="p">)</span>
-</span><span id="line-286">
-</span><span id="line-287">            <span class="n">congest</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">append</span><span class="p">)</span>
-</span><span id="line-288">
-</span><span id="line-289">
-</span><span id="line-290">        <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-291">            <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
-</span><span id="line-292">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span><span id="line-283">
+</span><span id="line-284">    <span class="nd">@property</span>
+</span><span id="line-285">    <span class="k">def</span><span class="w"> </span><span class="nf">congest</span><span class="p">(</span>
+</span><span id="line-286">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-287">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_CONGEST</span><span class="p">:</span>
+</span><span id="line-288"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-289"><span class="sd">        Return the list of congested threads and members queues.</span>
+</span><span id="line-290">
+</span><span id="line-291"><span class="sd">        :returns: List of congested threads and members queues.</span>
+</span><span id="line-292"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-293">
-</span><span id="line-294">        <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+</span><span id="line-294">        <span class="n">congest</span><span class="p">:</span> <span class="n">_CONGEST</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="line-295">
-</span><span id="line-296">            <span class="n">congest</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
-</span><span id="line-297">                <span class="n">thread</span><span class="o">.</span><span class="n">congest</span><span class="p">)</span>
-</span><span id="line-298">
-</span><span id="line-299">
-</span><span id="line-300">        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">congest</span><span class="p">)</span>
+</span><span id="line-296">        <span class="n">name</span> <span class="o">=</span> <span class="n">clsname</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</span><span id="line-297">
+</span><span id="line-298">        <span class="n">mqueue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqueue</span>
+</span><span id="line-299">        <span class="n">cqueue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cqueue</span>
+</span><span id="line-300">
 </span><span id="line-301">
-</span><span id="line-302">
-</span><span id="line-303">    <span class="nd">@property</span>
-</span><span id="line-304">    <span class="k">def</span><span class="w"> </span><span class="nf">enqueue</span><span class="p">(</span>
-</span><span id="line-305">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-306">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_CONGEST</span><span class="p">:</span>
-</span><span id="line-307"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-308"><span class="sd">        Return the list of congested threads and members queues.</span>
+</span><span id="line-302">        <span class="k">if</span> <span class="n">mqueue</span><span class="o">.</span><span class="n">qsize</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+</span><span id="line-303">
+</span><span id="line-304">            <span class="n">append</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-305">                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/mqueue&#39;</span><span class="p">,</span>
+</span><span id="line-306">                <span class="n">mqueue</span><span class="o">.</span><span class="n">qsize</span><span class="p">)</span>
+</span><span id="line-307">
+</span><span id="line-308">            <span class="n">congest</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">append</span><span class="p">)</span>
 </span><span id="line-309">
-</span><span id="line-310"><span class="sd">        :returns: List of congested threads and members queues.</span>
-</span><span id="line-311"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-312">
-</span><span id="line-313">        <span class="n">enqueue</span><span class="p">:</span> <span class="n">_CONGEST</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-314">
-</span><span id="line-315">        <span class="n">name</span> <span class="o">=</span> <span class="n">clsname</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-</span><span id="line-316">
-</span><span id="line-317">        <span class="n">mqueue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqueue</span>
-</span><span id="line-318">        <span class="n">cqueue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cqueue</span>
-</span><span id="line-319">
-</span><span id="line-320">
-</span><span id="line-321">        <span class="k">if</span> <span class="n">mqueue</span><span class="o">.</span><span class="n">qsize</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="line-310">        <span class="k">if</span> <span class="n">cqueue</span><span class="o">.</span><span class="n">qsize</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+</span><span id="line-311">
+</span><span id="line-312">            <span class="n">append</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-313">                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/cqueue&#39;</span><span class="p">,</span>
+</span><span id="line-314">                <span class="n">cqueue</span><span class="o">.</span><span class="n">qsize</span><span class="p">)</span>
+</span><span id="line-315">
+</span><span id="line-316">            <span class="n">congest</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">append</span><span class="p">)</span>
+</span><span id="line-317">
+</span><span id="line-318">
+</span><span id="line-319">        <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-320">            <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
+</span><span id="line-321">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
 </span><span id="line-322">
-</span><span id="line-323">            <span class="n">append</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-324">                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/mqueue&#39;</span><span class="p">,</span>
-</span><span id="line-325">                <span class="n">mqueue</span><span class="o">.</span><span class="n">qsize</span><span class="p">)</span>
-</span><span id="line-326">
-</span><span id="line-327">            <span class="n">enqueue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">append</span><span class="p">)</span>
+</span><span id="line-323">        <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+</span><span id="line-324">
+</span><span id="line-325">            <span class="n">congest</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+</span><span id="line-326">                <span class="n">thread</span><span class="o">.</span><span class="n">congest</span><span class="p">)</span>
+</span><span id="line-327">
 </span><span id="line-328">
-</span><span id="line-329">        <span class="k">if</span> <span class="n">cqueue</span><span class="o">.</span><span class="n">qsize</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="line-329">        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">congest</span><span class="p">)</span>
 </span><span id="line-330">
-</span><span id="line-331">            <span class="n">append</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-332">                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/cqueue&#39;</span><span class="p">,</span>
-</span><span id="line-333">                <span class="n">cqueue</span><span class="o">.</span><span class="n">qsize</span><span class="p">)</span>
-</span><span id="line-334">
-</span><span id="line-335">            <span class="n">enqueue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">append</span><span class="p">)</span>
-</span><span id="line-336">
-</span><span id="line-337">
-</span><span id="line-338">        <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-339">            <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
-</span><span id="line-340">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span><span id="line-331">
+</span><span id="line-332">    <span class="nd">@property</span>
+</span><span id="line-333">    <span class="k">def</span><span class="w"> </span><span class="nf">enqueue</span><span class="p">(</span>
+</span><span id="line-334">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-335">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_CONGEST</span><span class="p">:</span>
+</span><span id="line-336"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-337"><span class="sd">        Return the list of congested threads and members queues.</span>
+</span><span id="line-338">
+</span><span id="line-339"><span class="sd">        :returns: List of congested threads and members queues.</span>
+</span><span id="line-340"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-341">
-</span><span id="line-342">        <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+</span><span id="line-342">        <span class="n">enqueue</span><span class="p">:</span> <span class="n">_CONGEST</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="line-343">
-</span><span id="line-344">            <span class="n">enqueue</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
-</span><span id="line-345">                <span class="n">thread</span><span class="o">.</span><span class="n">enqueue</span><span class="p">)</span>
-</span><span id="line-346">
-</span><span id="line-347">
-</span><span id="line-348">        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">enqueue</span><span class="p">)</span>
+</span><span id="line-344">        <span class="n">name</span> <span class="o">=</span> <span class="n">clsname</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</span><span id="line-345">
+</span><span id="line-346">        <span class="n">mqueue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqueue</span>
+</span><span id="line-347">        <span class="n">cqueue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cqueue</span>
+</span><span id="line-348">
 </span><span id="line-349">
-</span><span id="line-350">
+</span><span id="line-350">        <span class="k">if</span> <span class="n">mqueue</span><span class="o">.</span><span class="n">qsize</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="line-351">
+</span><span id="line-352">            <span class="n">append</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-353">                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/mqueue&#39;</span><span class="p">,</span>
+</span><span id="line-354">                <span class="n">mqueue</span><span class="o">.</span><span class="n">qsize</span><span class="p">)</span>
+</span><span id="line-355">
+</span><span id="line-356">            <span class="n">enqueue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">append</span><span class="p">)</span>
+</span><span id="line-357">
+</span><span id="line-358">        <span class="k">if</span> <span class="n">cqueue</span><span class="o">.</span><span class="n">qsize</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="line-359">
+</span><span id="line-360">            <span class="n">append</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-361">                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/cqueue&#39;</span><span class="p">,</span>
+</span><span id="line-362">                <span class="n">cqueue</span><span class="o">.</span><span class="n">qsize</span><span class="p">)</span>
+</span><span id="line-363">
+</span><span id="line-364">            <span class="n">enqueue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">append</span><span class="p">)</span>
+</span><span id="line-365">
+</span><span id="line-366">
+</span><span id="line-367">        <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-368">            <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
+</span><span id="line-369">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span><span id="line-370">
+</span><span id="line-371">        <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+</span><span id="line-372">
+</span><span id="line-373">            <span class="n">enqueue</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+</span><span id="line-374">                <span class="n">thread</span><span class="o">.</span><span class="n">enqueue</span><span class="p">)</span>
+</span><span id="line-375">
+</span><span id="line-376">
+</span><span id="line-377">        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">enqueue</span><span class="p">)</span>
+</span><span id="line-378">
+</span><span id="line-379">
 <div class="viewcode-block" id="RobieMember.start">
 <a class="viewcode-back" href="../../../../enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.start">[docs]</a>
-</span><span id="line-351">    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span>
-</span><span id="line-352">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-353">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-354"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-355"><span class="sd">        Start the various threads within the Robie class object.</span>
-</span><span id="line-356"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-357">
-</span><span id="line-358">        <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-359">            <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
-</span><span id="line-360">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
-</span><span id="line-361">
-</span><span id="line-362">        <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
-</span><span id="line-363">            <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></div>
+</span><span id="line-380">    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span>
+</span><span id="line-381">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-382">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-383"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-384"><span class="sd">        Start the various threads within the Robie class object.</span>
+</span><span id="line-385"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-386">
+</span><span id="line-387">        <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-388">            <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
+</span><span id="line-389">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span><span id="line-390">
+</span><span id="line-391">        <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+</span><span id="line-392">            <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></div>
 
-</span><span id="line-364">
-</span><span id="line-365">
+</span><span id="line-393">
+</span><span id="line-394">
 <div class="viewcode-block" id="RobieMember.operate">
 <a class="viewcode-back" href="../../../../enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.operate">[docs]</a>
-</span><span id="line-366">    <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>
-</span><span id="line-367">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-368">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-369"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-370"><span class="sd">        Perform the operation related to Robie service members.</span>
-</span><span id="line-371"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-372">
-</span><span id="line-373">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</span><span id="line-395">    <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>
+</span><span id="line-396">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-397">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-398"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-399"><span class="sd">        Perform the operation related to Robie service members.</span>
+</span><span id="line-400"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-401">
+</span><span id="line-402">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-</span><span id="line-374">
-</span><span id="line-375">
+</span><span id="line-403">
+</span><span id="line-404">
 <div class="viewcode-block" id="RobieMember.soft">
 <a class="viewcode-back" href="../../../../enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.soft">[docs]</a>
-</span><span id="line-376">    <span class="k">def</span><span class="w"> </span><span class="nf">soft</span><span class="p">(</span>
-</span><span id="line-377">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-378">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-379"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-380"><span class="sd">        Stop the various threads within the Robie class object.</span>
-</span><span id="line-381"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-382">
-</span><span id="line-383">        <span class="bp">self</span><span class="o">.</span><span class="n">__vacate</span><span class="o">.</span><span class="n">set</span><span class="p">()</span></div>
+</span><span id="line-405">    <span class="k">def</span><span class="w"> </span><span class="nf">soft</span><span class="p">(</span>
+</span><span id="line-406">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-407">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-408"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-409"><span class="sd">        Stop the various threads within the Robie class object.</span>
+</span><span id="line-410"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-411">
+</span><span id="line-412">        <span class="bp">self</span><span class="o">.</span><span class="n">__vacate</span><span class="o">.</span><span class="n">set</span><span class="p">()</span></div>
 
-</span><span id="line-384">
-</span><span id="line-385">
+</span><span id="line-413">
+</span><span id="line-414">
 <div class="viewcode-block" id="RobieMember.stop">
 <a class="viewcode-back" href="../../../../enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.stop">[docs]</a>
-</span><span id="line-386">    <span class="k">def</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span>
-</span><span id="line-387">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-388">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-389"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-390"><span class="sd">        Stop the various threads within the Robie class object.</span>
-</span><span id="line-391"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-392">
-</span><span id="line-393">        <span class="bp">self</span><span class="o">.</span><span class="n">__vacate</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
-</span><span id="line-394">        <span class="bp">self</span><span class="o">.</span><span class="n">__cancel</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
-</span><span id="line-395">
-</span><span id="line-396">        <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-397">            <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
-</span><span id="line-398">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
-</span><span id="line-399">
-</span><span id="line-400">        <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
-</span><span id="line-401">            <span class="n">thread</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
+</span><span id="line-415">    <span class="k">def</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span>
+</span><span id="line-416">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-417">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-418"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-419"><span class="sd">        Stop the various threads within the Robie class object.</span>
+</span><span id="line-420"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-421">
+</span><span id="line-422">        <span class="bp">self</span><span class="o">.</span><span class="n">__vacate</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+</span><span id="line-423">        <span class="bp">self</span><span class="o">.</span><span class="n">__cancel</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+</span><span id="line-424">
+</span><span id="line-425">        <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-426">            <span class="bp">self</span><span class="o">.</span><span class="n">__threads</span>
+</span><span id="line-427">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span><span id="line-428">
+</span><span id="line-429">        <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+</span><span id="line-430">            <span class="n">thread</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
 </div>
 
 </span></code></pre></div>

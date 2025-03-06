@@ -250,25 +250,29 @@
 </span><span id="line-102">
 </span><span id="line-103">    <span class="n">client_ircsock</span><span class="p">(</span><span class="n">IRCEVENTS</span><span class="p">)</span>
 </span><span id="line-104">
-</span><span id="line-105">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span><span id="line-106">
-</span><span id="line-107">
-</span><span id="line-108">    <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span>
-</span><span id="line-109">        <span class="n">target</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">operate</span><span class="p">)</span>
+</span><span id="line-105">    <span class="n">service</span><span class="o">.</span><span class="n">limit_threads</span><span class="p">(</span>
+</span><span id="line-106">        <span class="n">clients</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ircbot&#39;</span><span class="p">],</span>
+</span><span id="line-107">        <span class="n">plugins</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;autonick&#39;</span><span class="p">])</span>
+</span><span id="line-108">
+</span><span id="line-109">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span><span id="line-110">
-</span><span id="line-111">    <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span><span id="line-112">
-</span><span id="line-113">
-</span><span id="line-114">    <span class="n">block_sleep</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-</span><span id="line-115">
-</span><span id="line-116">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
+</span><span id="line-111">
+</span><span id="line-112">    <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span>
+</span><span id="line-113">        <span class="n">target</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">operate</span><span class="p">)</span>
+</span><span id="line-114">
+</span><span id="line-115">    <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-116">
 </span><span id="line-117">
-</span><span id="line-118">    <span class="k">while</span> <span class="n">service</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
-</span><span id="line-119">        <span class="n">block_sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="line-120">
-</span><span id="line-121">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-</span><span id="line-122">
-</span><span id="line-123">    <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
+</span><span id="line-118">    <span class="n">block_sleep</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</span><span id="line-119">
+</span><span id="line-120">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
+</span><span id="line-121">
+</span><span id="line-122">    <span class="k">while</span> <span class="n">service</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+</span><span id="line-123">        <span class="n">block_sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="line-124">
+</span><span id="line-125">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</span><span id="line-126">
+</span><span id="line-127">    <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
 
 </span></code></pre></div>
     </div></div>
