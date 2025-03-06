@@ -233,21 +233,73 @@
 </span><span id="line-88">        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </span><span id="line-89">
 </span><span id="line-90">
+</span><span id="line-91">    <span class="nd">@property</span>
+</span><span id="line-92">    <span class="k">def</span><span class="w"> </span><span class="nf">hasme</span><span class="p">(</span>
+</span><span id="line-93">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-94">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="line-95"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-96"><span class="sd">        Return the boolean indicating message mention the client.</span>
+</span><span id="line-97">
+</span><span id="line-98"><span class="sd">        :returns: Boolean indicating message mention the client.</span>
+</span><span id="line-99"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-100">
+</span><span id="line-101">        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</span><span id="line-102">
+</span><span id="line-103">
+</span><span id="line-104">    <span class="nd">@property</span>
+</span><span id="line-105">    <span class="k">def</span><span class="w"> </span><span class="nf">whome</span><span class="p">(</span>
+</span><span id="line-106">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-107">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-108"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-109"><span class="sd">        Return the current nickname of the client on the server.</span>
+</span><span id="line-110">
+</span><span id="line-111"><span class="sd">        :returns: Current nickname of the client on the server.</span>
+</span><span id="line-112"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-113">
+</span><span id="line-114">        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</span><span id="line-115">
+</span><span id="line-116">
+</span><span id="line-117">    <span class="nd">@property</span>
+</span><span id="line-118">    <span class="k">def</span><span class="w"> </span><span class="nf">author</span><span class="p">(</span>
+</span><span id="line-119">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-120">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-121"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-122"><span class="sd">        Return the current nickname of the client on the server.</span>
+</span><span id="line-123">
+</span><span id="line-124"><span class="sd">        :returns: Current nickname of the client on the server.</span>
+</span><span id="line-125"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-126">
+</span><span id="line-127">        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</span><span id="line-128">
+</span><span id="line-129">
+</span><span id="line-130">    <span class="nd">@property</span>
+</span><span id="line-131">    <span class="k">def</span><span class="w"> </span><span class="nf">message</span><span class="p">(</span>
+</span><span id="line-132">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-133">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-134"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-135"><span class="sd">        Return the string containing the content of the message.</span>
+</span><span id="line-136">
+</span><span id="line-137"><span class="sd">        :returns: String containing the content of the message.</span>
+</span><span id="line-138"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-139">
+</span><span id="line-140">        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</span><span id="line-141">
+</span><span id="line-142">
 <div class="viewcode-block" id="RobieMessage.reply">
 <a class="viewcode-back" href="../../../../enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage.reply">[docs]</a>
-</span><span id="line-91">    <span class="k">def</span><span class="w"> </span><span class="nf">reply</span><span class="p">(</span>
-</span><span id="line-92">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-93">        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
-</span><span id="line-94">        <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-95">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieCommand&#39;</span><span class="p">:</span>
-</span><span id="line-96"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-97"><span class="sd">        Compose the message and transmit using the chat client.</span>
-</span><span id="line-98">
-</span><span id="line-99"><span class="sd">        :param robie: Primary class instance for Chatting Robie.</span>
-</span><span id="line-100"><span class="sd">        :param content: Content that will be source of message.</span>
-</span><span id="line-101"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-102">
-</span><span id="line-103">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</span><span id="line-143">    <span class="k">def</span><span class="w"> </span><span class="nf">reply</span><span class="p">(</span>
+</span><span id="line-144">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-145">        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
+</span><span id="line-146">        <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-147">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieCommand&#39;</span><span class="p">:</span>
+</span><span id="line-148"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-149"><span class="sd">        Compose the message and transmit using the chat client.</span>
+</span><span id="line-150">
+</span><span id="line-151"><span class="sd">        :param robie: Primary class instance for Chatting Robie.</span>
+</span><span id="line-152"><span class="sd">        :param content: Content that will be source of message.</span>
+</span><span id="line-153"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-154">
+</span><span id="line-155">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 </div>
 
 </span></code></pre></div>
