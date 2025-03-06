@@ -83,10 +83,19 @@ def test_DSCMessage(
 
     assert item.kind == 'privmsg'
 
-    assert item.event == event
-
     assert not item.isme
 
+    assert not item.hasme
+
+    assert not item.whome
+
+    assert item.author
+    assert item.author[0] == 'user'
+
+    assert item.message
+
+
+    assert item.event == event
 
     assert event.type == (
         'MESSAGE_CREATE')
@@ -97,6 +106,9 @@ def test_DSCMessage(
     assert len(event.original) == 4
 
     assert event.kind == 'privmsg'
+    assert not event.isme
+    assert not event.hasme
+    assert not event.whome
     assert event.author == (
         'user', 'userid')
     assert event.recipient == (

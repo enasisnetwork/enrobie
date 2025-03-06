@@ -83,10 +83,19 @@ def test_IRCMessage(
 
     assert item.kind == 'privmsg'
 
-    assert item.event == event
-
     assert not item.isme
 
+    assert not item.hasme
+
+    assert not item.whome
+
+    assert item.author
+    assert item.author[0] == 'nick'
+
+    assert item.message
+
+
+    assert item.event == event
 
     assert event.prefix == (
         'nick!user@host')
@@ -96,6 +105,9 @@ def test_IRCMessage(
     assert len(event.original) == 44
 
     assert event.kind == 'privmsg'
+    assert not event.isme
+    assert not event.hasme
+    assert not event.whome
     assert event.author == 'nick'
     assert event.recipient == 'ircbot'
     assert event.message == (
