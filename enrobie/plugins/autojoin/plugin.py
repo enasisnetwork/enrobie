@@ -224,6 +224,9 @@ class AutoJoinPlugin(RobiePlugin):
 
         def _autojoin() -> None:
 
+            if name not in clients:
+                return NCNone
+
             client = clients[name]
 
             assert isinstance(

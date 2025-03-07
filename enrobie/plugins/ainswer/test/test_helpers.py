@@ -90,7 +90,9 @@ def test_promptllm(
         whoami='Robie',
         author='nickname1',
         anchor='#channel',
-        message=message)
+        message=message,
+        header='header',
+        footer='footer')
 
 
     assert prompt.startswith(
@@ -100,34 +102,51 @@ def test_promptllm(
         ' and use colors.\n\n'
         '**Conversations**\n')
 
-    assert prompt.endswith(
-        '**User Information**'
-        "\nThe user's nick"
-        ' is nickname1.\n\n'
-        '**User Question**\n'
-        'This is the question')
-
 
     _, history = (
         prompt
         .split('**Conversations**\n'))
 
-    history, _ = (
+    _history = (
         history
-        .split('\n', 1))
-
-    _history = loads(history)
-
-    assert len(_history) == 20
+        .split('\n', 22))
 
 
-    assert _history[0] == {
+    records = [
+        loads(x) for x
+        in _history[1:-2]]
+
+    assert len(records) == 20
+
+
+    assert records[0] == {
         'content': 'Message 2',
         'nick': 'nickname3',
         'role': 'user',
-        'time': _history[0]['time']}
+        'time': records[0]['time']}
 
-    assert _history[1] == {
+    assert records[1] == {
         'content': 'Ainswer 2',
         'role': 'assistant',
-        'time': _history[0]['time']}
+        'time': records[1]['time']}
+
+    assert records[-2] == {
+        'content': 'Message 4',
+        'nick': 'nickname4',
+        'role': 'user',
+        'time': records[-2]['time']}
+
+    assert records[-1] == {
+        'content': 'Ainswer 4',
+        'role': 'assistant',
+        'time': records[-1]['time']}
+
+
+    assert prompt.endswith(
+        '**User Information**'
+        "\nThe user's nick"
+        ' is nickname1.\n\n'
+        'header\n\n'
+        '**User Question**\n'
+        'This is the question'
+        '\n\nfooter')

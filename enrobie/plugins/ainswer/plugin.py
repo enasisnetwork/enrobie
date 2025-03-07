@@ -231,7 +231,7 @@ class AinswerPlugin(RobiePlugin):
                     self, cqueue, mitem)
 
 
-    def ainswer(  # noqa: CFQ002
+    def ainswer(  # noqa: CFQ001,CFQ002
         self,
         client: 'RobieClient',
         prompt: str,
@@ -256,6 +256,8 @@ class AinswerPlugin(RobiePlugin):
         """
 
         robie = self.robie
+        config = robie.config
+        sargs = config.sargs
         history = self.history
         params = self.params
 
@@ -269,28 +271,56 @@ class AinswerPlugin(RobiePlugin):
             message=message)
 
 
+        sleep = (
+            params.ainswer
+            .sleep)
+
+        system = (
+            params.prompt
+            .system)
+
+        header = (
+            params.prompt
+            .header)
+
+        footer = (
+            params.prompt
+            .footer)
+
+        ignore = (
+            params.prompt
+            .ignore)
+
+
         imsorry = (
             f"I'm sorry {author}, I'm"
             " afraid I can't do that.")
 
 
-        sleep = params.ainswer.sleep
-
-        # Useful to prevent abuse but
-        # also reduce immediate reply
-        block_sleep(randint(*sleep))
-
-
-        prompt = promptllm(
-            self, client,
-            prompt=prompt,
-            whoami=whoami,
-            author=author,
-            anchor=anchor,
-            message=message)
-
-
         try:
+
+            prompt = promptllm(
+                self, client,
+                prompt=prompt,
+                whoami=whoami,
+                author=author,
+                anchor=anchor,
+                message=message,
+                header=header,
+                footer=footer,
+                ignore=ignore)
+
+            _sleep = randint(*sleep)
+
+            if sargs.get('console'):
+                robie.printer({
+                    'system': system,
+                    'prompt': prompt,
+                    'sleep': _sleep})
+
+            # Useful to prevent abuse but
+            # also reduce immediate reply
+            block_sleep(_sleep)
 
             response = engagellm(
                 self, prompt, respond)

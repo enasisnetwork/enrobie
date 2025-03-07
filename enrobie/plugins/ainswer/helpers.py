@@ -8,6 +8,7 @@ is permitted, for more information consult the project license file.
 
 
 from json import dumps
+from typing import Optional
 from typing import TYPE_CHECKING
 from typing import Type
 
@@ -38,6 +39,7 @@ if TYPE_CHECKING:
 
 
 _KINDS = ['privmsg', 'chanmsg']
+_NORESPOND = 'no_response'
 
 
 
@@ -66,7 +68,7 @@ def engagellm(
 
 
 
-def promptllm(  # noqa: CFQ002
+def promptllm(  # noqa: CFQ001,CFQ002
     plugin: 'AinswerPlugin',
     client: 'RobieClient',
     prompt: str,
@@ -75,6 +77,9 @@ def promptllm(  # noqa: CFQ002
     author: str,
     anchor: str,
     message: str,
+    header: Optional[str] = None,
+    footer: Optional[str] = None,
+    ignore: Optional[list[str]] = None,
 ) -> str:
     """
     Return the message prefixed with runtime prompt values.
@@ -86,6 +91,9 @@ def promptllm(  # noqa: CFQ002
     :param author: Name of the user that submitted question.
     :param anchor: Channel name or other context or thread.
     :param message: Question that will be asked of the LLM.
+    :param header: Optinoal header included before question.
+    :param footer: Optinoal footer included after question.
+    :param ignore: Optional reasons for LLM not responding.
     :returns: Message prefixed with runtime prompt values.
     """
 
@@ -93,14 +101,22 @@ def promptllm(  # noqa: CFQ002
     history = plugin.history
 
 
-    prompt = robie.j2parse(
-        prompt,
-        {'whoami': whoami,
-         'plugin': plugin,
-         'client': client})
+    parsed = robie.j2parse(
+        {'prompt': prompt,
+         'header': header,
+         'footer': footer},
+        {'plugin': plugin,
+         'client': client,
+         'whoami': whoami,
+         'author': author,
+         'anchor': anchor,
+         'message': message})
 
-    if not isinstance(prompt, str):
-        raise ValueError('prompt')
+    prompt = parsed['prompt']
+    header = parsed['header']
+    footer = parsed['footer']
+
+    assert isinstance(prompt, str)
 
 
     def _histories() -> str:
@@ -132,21 +148,61 @@ def promptllm(  # noqa: CFQ002
                  'content': _ainswer,
                  'time': _create}])
 
+        _items = '\n'.join([
+            dumps(x)
+            for x in items])
+
         return (
-            ('**Conversations**\n'
-             f'{dumps(items)}\n\n')
+            ('**Conversations**'
+             '\nYou have previously had'
+             ' these conversations with'
+             f' the user.\n{_items}\n\n')
             if items else SEMPTY)
 
 
     returned = (
         '**Instructions**'
         f'\n{prompt}\n\n'
-        f'{_histories()}'
+        f'{_histories()}')
+
+
+    if ignore is not None:
+
+        ignored = (
+            '\n - '
+            .join(ignore))
+
+        returned += (
+            '**Not Responding**'
+            '\nThere are reasons for'
+            ' not responding to the'
+            ' question. If you think'
+            ' you should not respond'
+            ' to the question, reply'
+            f' with only {_NORESPOND}.'
+            f'\nReasons for replying'
+            f' with {_NORESPOND} are:'
+            f'\n - {ignored}\n\n')
+
+
+    returned += (
         '**User Information**'
         "\nThe user's nick"
-        f' is {author}.\n\n'
+        f' is {author}.\n\n')
+
+
+    if header is not None:
+        returned += (
+            f'{header}\n\n')
+
+    returned += (
         '**User Question**'
         f'\n{message}')
+
+    if footer is not None:
+        returned += (
+            f'\n\n{footer}\n\n')
+
 
     return returned.strip()
 
@@ -222,6 +278,10 @@ def composedsc(
             anchor=anchor,
             message=message,
             respond=respond))
+
+
+    if ainswer == _NORESPOND:
+        return NCNone
 
 
     citem = mitem.reply(
@@ -303,6 +363,10 @@ def composeirc(
             respond=respond))
 
 
+    if ainswer == _NORESPOND:
+        return NCNone
+
+
     citem = mitem.reply(
         robie, ainswer)
 
@@ -380,6 +444,10 @@ def composemtm(
             anchor=anchor,
             message=message,
             respond=respond))
+
+
+    if ainswer == _NORESPOND:
+        return NCNone
 
 
     citem = mitem.reply(

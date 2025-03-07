@@ -359,12 +359,14 @@ class LoggerHistory:
         self,
         client: 'RobieClient',
         anchor: str,
+        limit: Optional[int] = None,
     ) -> list[LoggerHistoryRecord]:
         """
         Return all historical records for the chat interactions.
 
         :param client: Client class instance for Chatting Robie.
         :param anchor: Channel name or other context or thread.
+        :param limit: Optionally restrict the records returned.
         :returns: Historical records for the chat interactions.
         """
 
@@ -394,7 +396,10 @@ class LoggerHistory:
                     _plugin == plugin.name,
                     _client == client.name,
                     _anchor == anchor)
-                .order_by(_create.asc()))
+                .order_by(_create.desc()))
+
+            if limit is not NCNone:
+                query = query.limit(limit)
 
 
             for record in query.all():
@@ -403,4 +408,4 @@ class LoggerHistory:
 
                 records.append(object)
 
-            return records
+            return records[::-1]

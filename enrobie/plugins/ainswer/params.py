@@ -27,6 +27,11 @@ _DEFAULT_PROMPT = (
     ' You were built by Robert,'
     ' at the Enasis Network.')
 
+_DEFAULT_IGNORE = [
+    ('If you believe that you'
+     ' are being abused by the'
+     ' user asking the quesiton.')]
+
 _DSC_PROMPT = (
     'In 800 characters or less,'
     ' answer the user question.'
@@ -129,6 +134,24 @@ class AinswerPluginPromptParams(RobieParamsModel, extra='forbid'):
         Field(default_factory=AinswerPluginPromptClientParams,
               description='Additional chat platform prompt')]
 
+    header: Annotated[
+        Optional[str],
+        Field(None,
+              description='Optional header before question',
+              min_length=1)]
+
+    footer: Annotated[
+        Optional[str],
+        Field(None,
+              description='Optional footer after question',
+              min_length=1)]
+
+    ignore: Annotated[
+        list[str],
+        Field(_DEFAULT_IGNORE,
+              description='Optional footer after question',
+              min_length=1)]
+
 
     def __init__(
         # NOCVR
@@ -144,7 +167,9 @@ class AinswerPluginPromptParams(RobieParamsModel, extra='forbid'):
 
         if _parse is not None:
 
-            parsable = ['system']
+            parsable = [
+                'system',
+                'ignore']
 
             for key in parsable:
 
