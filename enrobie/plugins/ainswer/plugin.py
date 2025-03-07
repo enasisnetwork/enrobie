@@ -196,7 +196,7 @@ class AinswerPlugin(RobiePlugin):
         member = thread.member
         cqueue = member.cqueue
 
-        clients = (
+        names = (
             self.params.clients)
 
 
@@ -209,7 +209,7 @@ class AinswerPlugin(RobiePlugin):
             isme = mitem.isme
             family = mitem.family
 
-            if name not in clients:
+            if name not in names:
                 continue  # NOCVR
 
             if isme is True:
@@ -359,6 +359,6 @@ class AinswerPlugin(RobiePlugin):
         (plugin.update(
             unique=self.name,
             group='Extensions',
-            title='Chatting',
+            title='Ainswer',
             icon=params.status,
             state=status))

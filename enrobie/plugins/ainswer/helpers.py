@@ -188,11 +188,12 @@ def composedsc(
 
     assert mitem.whome
     assert mitem.author
-    assert event.recipient
+    assert mitem.anchor
     assert mitem.message
 
     whoami = mitem.whome[0]
     author = mitem.author[0]
+    anchor = mitem.anchor
     message = mitem.message
 
 
@@ -210,11 +211,6 @@ def composedsc(
 
 
     respond = AinswerResponseDSC
-
-    anchor = (
-        event.recipient[1]
-        if kind == 'chanmsg'
-        else mitem.author[1])
 
     ainswer = (
         plugin.ainswer(
@@ -271,11 +267,12 @@ def composeirc(
 
     assert mitem.whome
     assert mitem.author
-    assert event.recipient
+    assert mitem.anchor
     assert mitem.message
 
     whoami = mitem.whome[0]
     author = mitem.author[0]
+    anchor = mitem.anchor
     message = mitem.message
 
 
@@ -293,11 +290,6 @@ def composeirc(
 
 
     respond = AinswerResponseIRC
-
-    anchor = (
-        event.recipient
-        if kind == 'chanmsg'
-        else mitem.author[1])
 
     ainswer = (
         plugin.ainswer(
@@ -354,11 +346,12 @@ def composemtm(
 
     assert mitem.whome
     assert mitem.author
-    assert event.recipient
+    assert mitem.anchor
     assert mitem.message
 
     whoami = mitem.whome[0]
     author = mitem.author[0]
+    anchor = mitem.anchor
     message = mitem.message
 
 
@@ -376,11 +369,6 @@ def composemtm(
 
 
     respond = AinswerResponseMTM
-
-    anchor = (
-        event.recipient[1]
-        if kind == 'chanmsg'
-        else mitem.author[1])
 
     ainswer = (
         plugin.ainswer(

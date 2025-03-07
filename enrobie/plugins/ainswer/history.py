@@ -164,7 +164,7 @@ class AinswerHistoryRecord(BaseModel, extra='forbid'):
                 for x in fields}
 
 
-        elif kwargs is not None:
+        elif record is None:
 
             params = {
                 x: kwargs.get(x)
@@ -316,6 +316,8 @@ class AinswerHistory:
         """
 
         plugin = self.__plugin
+        params = plugin.params
+        maximum = params.histories
 
         sess = self.__session()
         lock = self.__locker
@@ -330,19 +332,37 @@ class AinswerHistory:
 
         with lock, sess as session:
 
-            query = (
+            total = (
                 session.query(table)
                 .filter(
                     _plugin == plugin.name,
                     _client == client.name,
                     _anchor == anchor)
+                .count())
+
+            if total <= maximum:
+                return
+
+            cutoff = (
+                session.query(_create)
+                .filter(
+                    _plugin == plugin.name,
+                    _client == client.name,
+                    _anchor == anchor)
                 .order_by(_create.desc())
-                .distinct())
+                .offset(maximum - 1)
+                .limit(1).scalar())
 
-            delete = query.all()[10:]
+            if cutoff is None:
+                return
 
-            for record in delete:
-                session.delete(record)
+            (session.query(table)
+             .filter(
+                 _plugin == plugin.name,
+                 _client == client.name,
+                 _anchor == anchor,
+                 _create < cutoff)
+             .delete(synchronize_session=False))
 
             session.commit()
 
