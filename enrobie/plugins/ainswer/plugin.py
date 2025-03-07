@@ -256,6 +256,8 @@ class AinswerPlugin(RobiePlugin):
         """
 
         robie = self.robie
+        config = robie.config
+        sargs = config.sargs
         history = self.history
         params = self.params
 
@@ -310,10 +312,11 @@ class AinswerPlugin(RobiePlugin):
 
             _sleep = randint(*sleep)
 
-            robie.printer({
-                'system': system,
-                'prompt': prompt,
-                'sleep': _sleep})
+            if sargs.get('console'):
+                robie.printer({
+                    'system': system,
+                    'prompt': prompt,
+                    'sleep': _sleep})
 
             # Useful to prevent abuse but
             # also reduce immediate reply
