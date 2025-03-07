@@ -128,6 +128,19 @@ class RobieMessage(RobieQueueItem):
 
 
     @property
+    def anchor(
+        self,
+    ) -> str | None:
+        """
+        Return the unique value for the context with the client.
+
+        :returns: Unique value for the context with the client.
+        """
+
+        raise NotImplementedError
+
+
+    @property
     def message(
         self,
     ) -> str | None:

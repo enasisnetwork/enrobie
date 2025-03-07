@@ -173,6 +173,12 @@ class AinswerPluginParams(RobiePluginParams, extra='forbid'):
               description='Database connection string',
               min_length=1)]
 
+    histories: Annotated[
+        int,
+        Field(10,
+              description='Number of messages per anchor',
+              ge=1, le=1000)]
+
     clients: Annotated[
         list[str],
         Field(...,
@@ -229,6 +235,7 @@ class AinswerPluginParams(RobiePluginParams, extra='forbid'):
 
             parsable = [
                 'database',
+                'histories',
                 'ainswer',
                 'status']
 

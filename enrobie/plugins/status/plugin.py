@@ -133,8 +133,9 @@ class StatusPlugin(RobiePlugin):
 
             time = mitem.time
             kind = mitem.kind
-            isme = mitem.isme
             family = mitem.family
+            isme = mitem.isme
+            message = mitem.message
 
             if kind not in kinds:
                 continue
@@ -144,9 +145,6 @@ class StatusPlugin(RobiePlugin):
 
             if time.since > 15:
                 continue  # NOCVR
-
-            event = getattr(
-                mitem, 'event')
 
 
             match = None
@@ -162,9 +160,6 @@ class StatusPlugin(RobiePlugin):
 
             if match is None:
                 continue  # NOCVR
-
-
-            message = event.message
 
             if message != match:
                 continue  # NOCVR

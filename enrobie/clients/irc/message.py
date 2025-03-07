@@ -138,6 +138,33 @@ class IRCMessage(RobieMessage):
 
 
     @property
+    def anchor(
+        self,
+    ) -> str | None:
+        """
+        Return the unique value for the context with the client.
+
+        :returns: Unique value for the context with the client.
+        """
+
+        kind = self.kind
+        author = self.author
+        event = self.event
+
+        recipient = (
+            event.recipient)
+
+        if (recipient is None
+                or author is None):
+            return None
+
+        return (
+            recipient
+            if kind == 'chanmsg'
+            else author[1])
+
+
+    @property
     def message(
         self,
     ) -> str | None:
