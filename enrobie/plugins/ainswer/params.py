@@ -129,6 +129,18 @@ class AinswerPluginPromptParams(RobieParamsModel, extra='forbid'):
         Field(default_factory=AinswerPluginPromptClientParams,
               description='Additional chat platform prompt')]
 
+    header: Annotated[
+        Optional[str],
+        Field(None,
+              description='Optional header before question',
+              min_length=1)]
+
+    footer: Annotated[
+        Optional[str],
+        Field(None,
+              description='Optional footer after question',
+              min_length=1)]
+
 
     def __init__(
         # NOCVR

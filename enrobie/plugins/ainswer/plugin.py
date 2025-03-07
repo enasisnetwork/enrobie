@@ -269,28 +269,50 @@ class AinswerPlugin(RobiePlugin):
             message=message)
 
 
+        sleep = (
+            params.ainswer
+            .sleep)
+
+        system = (
+            params.prompt
+            .system)
+
+        header = (
+            params.prompt
+            .header)
+
+        footer = (
+            params.prompt
+            .footer)
+
+
         imsorry = (
             f"I'm sorry {author}, I'm"
             " afraid I can't do that.")
 
 
-        sleep = params.ainswer.sleep
-
-        # Useful to prevent abuse but
-        # also reduce immediate reply
-        block_sleep(randint(*sleep))
-
-
-        prompt = promptllm(
-            self, client,
-            prompt=prompt,
-            whoami=whoami,
-            author=author,
-            anchor=anchor,
-            message=message)
-
-
         try:
+
+            prompt = promptllm(
+                self, client,
+                prompt=prompt,
+                whoami=whoami,
+                author=author,
+                anchor=anchor,
+                message=message,
+                header=header,
+                footer=footer)
+
+            _sleep = randint(*sleep)
+
+            robie.printer({
+                'system': system,
+                'prompt': prompt,
+                'sleep': _sleep})
+
+            # Useful to prevent abuse but
+            # also reduce immediate reply
+            block_sleep(_sleep)
 
             response = engagellm(
                 self, prompt, respond)
