@@ -39,6 +39,7 @@ if TYPE_CHECKING:
 
 
 _KINDS = ['privmsg', 'chanmsg']
+_NORESPOND = 'no_response'
 
 
 
@@ -67,7 +68,7 @@ def engagellm(
 
 
 
-def promptllm(  # noqa: CFQ002
+def promptllm(  # noqa: CFQ001,CFQ002
     plugin: 'AinswerPlugin',
     client: 'RobieClient',
     prompt: str,
@@ -78,6 +79,7 @@ def promptllm(  # noqa: CFQ002
     message: str,
     header: Optional[str] = None,
     footer: Optional[str] = None,
+    ignore: Optional[list[str]] = None,
 ) -> str:
     """
     Return the message prefixed with runtime prompt values.
@@ -91,6 +93,7 @@ def promptllm(  # noqa: CFQ002
     :param message: Question that will be asked of the LLM.
     :param header: Optinoal header included before question.
     :param footer: Optinoal footer included after question.
+    :param ignore: Optional reasons for LLM not responding.
     :returns: Message prefixed with runtime prompt values.
     """
 
@@ -160,10 +163,33 @@ def promptllm(  # noqa: CFQ002
     returned = (
         '**Instructions**'
         f'\n{prompt}\n\n'
-        f'{_histories()}'
+        f'{_histories()}')
+
+
+    if ignore is not None:
+
+        ignored = (
+            '\n - '
+            .join(ignore))
+
+        returned += (
+            '**Not Responding**'
+            '\nThere are reasons for'
+            ' not responding to the'
+            ' question. If you think'
+            ' you should not respond'
+            ' to the question, reply'
+            f' with only {_NORESPOND}.'
+            f'\nReasons for replying'
+            f' with {_NORESPOND} are:'
+            f'\n - {ignored}\n\n')
+
+
+    returned += (
         '**User Information**'
         "\nThe user's nick"
         f' is {author}.\n\n')
+
 
     if header is not None:
         returned += (
@@ -176,6 +202,7 @@ def promptllm(  # noqa: CFQ002
     if footer is not None:
         returned += (
             f'\n\n{footer}\n\n')
+
 
     return returned.strip()
 
@@ -251,6 +278,10 @@ def composedsc(
             anchor=anchor,
             message=message,
             respond=respond))
+
+
+    if ainswer == _NORESPOND:
+        return NCNone
 
 
     citem = mitem.reply(
@@ -332,6 +363,10 @@ def composeirc(
             respond=respond))
 
 
+    if ainswer == _NORESPOND:
+        return NCNone
+
+
     citem = mitem.reply(
         robie, ainswer)
 
@@ -409,6 +444,10 @@ def composemtm(
             anchor=anchor,
             message=message,
             respond=respond))
+
+
+    if ainswer == _NORESPOND:
+        return NCNone
 
 
     citem = mitem.reply(

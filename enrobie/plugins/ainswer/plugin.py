@@ -231,7 +231,7 @@ class AinswerPlugin(RobiePlugin):
                     self, cqueue, mitem)
 
 
-    def ainswer(  # noqa: CFQ002
+    def ainswer(  # noqa: CFQ001,CFQ002
         self,
         client: 'RobieClient',
         prompt: str,
@@ -285,6 +285,10 @@ class AinswerPlugin(RobiePlugin):
             params.prompt
             .footer)
 
+        ignore = (
+            params.prompt
+            .ignore)
+
 
         imsorry = (
             f"I'm sorry {author}, I'm"
@@ -301,7 +305,8 @@ class AinswerPlugin(RobiePlugin):
                 anchor=anchor,
                 message=message,
                 header=header,
-                footer=footer)
+                footer=footer,
+                ignore=ignore)
 
             _sleep = randint(*sleep)
 
