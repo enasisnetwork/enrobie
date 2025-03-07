@@ -228,6 +228,26 @@
           "mtm": ":unknown:"
         }
       }
+    },
+    "logger": {
+      "name": "logger",
+      "kind": "plugin",
+      "params": {
+        "enable": true,
+        "locate": "enrobie.plugins.LoggerPlugin",
+        "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
+        "histories": 10,
+        "clients": [
+          "dscbot",
+          "ircbot",
+          "mtmbot"
+        ],
+        "status": {
+          "irc": null,
+          "dsc": null,
+          "mtm": null
+        }
+      }
     }
   }
 }
