@@ -339,222 +339,210 @@
 </span><span id="line-188">
 </span><span id="line-189">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">whome</span>
 </span><span id="line-190">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">author</span>
-</span><span id="line-191">    <span class="k">assert</span> <span class="n">event</span><span class="o">.</span><span class="n">recipient</span>
+</span><span id="line-191">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">anchor</span>
 </span><span id="line-192">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
 </span><span id="line-193">
 </span><span id="line-194">    <span class="n">whoami</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">whome</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </span><span id="line-195">    <span class="n">author</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">author</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="line-196">    <span class="n">message</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
-</span><span id="line-197">
+</span><span id="line-196">    <span class="n">anchor</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">anchor</span>
+</span><span id="line-197">    <span class="n">message</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
 </span><span id="line-198">
-</span><span id="line-199">    <span class="n">client</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-200">        <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
-</span><span id="line-201">        <span class="p">[</span><span class="n">mitem</span><span class="o">.</span><span class="n">client</span><span class="p">])</span>
-</span><span id="line-202">
-</span><span id="line-203">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-204">        <span class="n">client</span><span class="p">,</span> <span class="n">DSCClient</span><span class="p">)</span>
-</span><span id="line-205">
+</span><span id="line-199">
+</span><span id="line-200">    <span class="n">client</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-201">        <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
+</span><span id="line-202">        <span class="p">[</span><span class="n">mitem</span><span class="o">.</span><span class="n">client</span><span class="p">])</span>
+</span><span id="line-203">
+</span><span id="line-204">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-205">        <span class="n">client</span><span class="p">,</span> <span class="n">DSCClient</span><span class="p">)</span>
 </span><span id="line-206">
-</span><span id="line-207">    <span class="k">if</span> <span class="p">(</span><span class="n">mitem</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;chanmsg&#39;</span>
-</span><span id="line-208">            <span class="ow">and</span> <span class="ow">not</span> <span class="n">mitem</span><span class="o">.</span><span class="n">hasme</span><span class="p">):</span>
-</span><span id="line-209">        <span class="k">return</span> <span class="kc">None</span>
-</span><span id="line-210">
+</span><span id="line-207">
+</span><span id="line-208">    <span class="k">if</span> <span class="p">(</span><span class="n">mitem</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;chanmsg&#39;</span>
+</span><span id="line-209">            <span class="ow">and</span> <span class="ow">not</span> <span class="n">mitem</span><span class="o">.</span><span class="n">hasme</span><span class="p">):</span>
+</span><span id="line-210">        <span class="k">return</span> <span class="kc">None</span>
 </span><span id="line-211">
-</span><span id="line-212">    <span class="n">respond</span> <span class="o">=</span> <span class="n">AinswerResponseDSC</span>
-</span><span id="line-213">
-</span><span id="line-214">    <span class="n">anchor</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-215">        <span class="n">event</span><span class="o">.</span><span class="n">recipient</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</span><span id="line-216">        <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;chanmsg&#39;</span>
-</span><span id="line-217">        <span class="k">else</span> <span class="n">mitem</span><span class="o">.</span><span class="n">author</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</span><span id="line-218">
-</span><span id="line-219">    <span class="n">ainswer</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-220">        <span class="n">plugin</span><span class="o">.</span><span class="n">ainswer</span><span class="p">(</span>
-</span><span id="line-221">            <span class="n">client</span><span class="p">,</span>
-</span><span id="line-222">            <span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">prompt</span>
-</span><span id="line-223">             <span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dsc</span><span class="p">),</span>
-</span><span id="line-224">            <span class="n">whoami</span><span class="o">=</span><span class="n">whoami</span><span class="p">,</span>
-</span><span id="line-225">            <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
-</span><span id="line-226">            <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
-</span><span id="line-227">            <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
-</span><span id="line-228">            <span class="n">respond</span><span class="o">=</span><span class="n">respond</span><span class="p">))</span>
+</span><span id="line-212">
+</span><span id="line-213">    <span class="n">respond</span> <span class="o">=</span> <span class="n">AinswerResponseDSC</span>
+</span><span id="line-214">
+</span><span id="line-215">    <span class="n">ainswer</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-216">        <span class="n">plugin</span><span class="o">.</span><span class="n">ainswer</span><span class="p">(</span>
+</span><span id="line-217">            <span class="n">client</span><span class="p">,</span>
+</span><span id="line-218">            <span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">prompt</span>
+</span><span id="line-219">             <span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">dsc</span><span class="p">),</span>
+</span><span id="line-220">            <span class="n">whoami</span><span class="o">=</span><span class="n">whoami</span><span class="p">,</span>
+</span><span id="line-221">            <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
+</span><span id="line-222">            <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
+</span><span id="line-223">            <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+</span><span id="line-224">            <span class="n">respond</span><span class="o">=</span><span class="n">respond</span><span class="p">))</span>
+</span><span id="line-225">
+</span><span id="line-226">
+</span><span id="line-227">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-228">        <span class="n">robie</span><span class="p">,</span> <span class="n">ainswer</span><span class="p">)</span>
 </span><span id="line-229">
-</span><span id="line-230">
-</span><span id="line-231">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-232">        <span class="n">robie</span><span class="p">,</span> <span class="n">ainswer</span><span class="p">)</span>
-</span><span id="line-233">
-</span><span id="line-234">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
+</span><span id="line-230">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
 
-</span><span id="line-235">
-</span><span id="line-236">
-</span><span id="line-237">
+</span><span id="line-231">
+</span><span id="line-232">
+</span><span id="line-233">
 <div class="viewcode-block" id="composeirc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.composeirc">[docs]</a>
-</span><span id="line-238"><span class="k">def</span><span class="w"> </span><span class="nf">composeirc</span><span class="p">(</span>
-</span><span id="line-239">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;AinswerPlugin&#39;</span><span class="p">,</span>
-</span><span id="line-240">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
-</span><span id="line-241">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
-</span><span id="line-242"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-243"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-244"><span class="sd">    Construct and format message for related chat platform.</span>
-</span><span id="line-245">
-</span><span id="line-246"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-247"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
-</span><span id="line-248"><span class="sd">    :param mitem: Item containing information for operation.</span>
-</span><span id="line-249"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-250">
-</span><span id="line-251">    <span class="kn">from</span><span class="w"> </span><span class="nn">...clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClient</span>
+</span><span id="line-234"><span class="k">def</span><span class="w"> </span><span class="nf">composeirc</span><span class="p">(</span>
+</span><span id="line-235">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;AinswerPlugin&#39;</span><span class="p">,</span>
+</span><span id="line-236">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
+</span><span id="line-237">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+</span><span id="line-238"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-239"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-240"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-241">
+</span><span id="line-242"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-243"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
+</span><span id="line-244"><span class="sd">    :param mitem: Item containing information for operation.</span>
+</span><span id="line-245"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-246">
+</span><span id="line-247">    <span class="kn">from</span><span class="w"> </span><span class="nn">...clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClient</span>
+</span><span id="line-248">
+</span><span id="line-249">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-250">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
+</span><span id="line-251">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
 </span><span id="line-252">
-</span><span id="line-253">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-254">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
-</span><span id="line-255">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
-</span><span id="line-256">
-</span><span id="line-257">
-</span><span id="line-258">    <span class="n">kind</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">kind</span>
+</span><span id="line-253">
+</span><span id="line-254">    <span class="n">kind</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">kind</span>
+</span><span id="line-255">
+</span><span id="line-256">    <span class="k">if</span> <span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_KINDS</span><span class="p">:</span>
+</span><span id="line-257">        <span class="k">return</span> <span class="n">NCNone</span>
+</span><span id="line-258">
 </span><span id="line-259">
-</span><span id="line-260">    <span class="k">if</span> <span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_KINDS</span><span class="p">:</span>
-</span><span id="line-261">        <span class="k">return</span> <span class="n">NCNone</span>
+</span><span id="line-260">    <span class="n">event</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
+</span><span id="line-261">        <span class="n">mitem</span><span class="p">,</span> <span class="s1">&#39;event&#39;</span><span class="p">)</span>
 </span><span id="line-262">
-</span><span id="line-263">
-</span><span id="line-264">    <span class="n">event</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
-</span><span id="line-265">        <span class="n">mitem</span><span class="p">,</span> <span class="s1">&#39;event&#39;</span><span class="p">)</span>
+</span><span id="line-263">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-264">        <span class="n">event</span><span class="p">,</span>
+</span><span id="line-265">        <span class="n">IRCClientEvent</span><span class="p">)</span>
 </span><span id="line-266">
-</span><span id="line-267">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-268">        <span class="n">event</span><span class="p">,</span>
-</span><span id="line-269">        <span class="n">IRCClientEvent</span><span class="p">)</span>
-</span><span id="line-270">
-</span><span id="line-271">
-</span><span id="line-272">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">whome</span>
-</span><span id="line-273">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">author</span>
-</span><span id="line-274">    <span class="k">assert</span> <span class="n">event</span><span class="o">.</span><span class="n">recipient</span>
-</span><span id="line-275">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
-</span><span id="line-276">
-</span><span id="line-277">    <span class="n">whoami</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">whome</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="line-278">    <span class="n">author</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">author</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="line-279">    <span class="n">message</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
-</span><span id="line-280">
-</span><span id="line-281">
-</span><span id="line-282">    <span class="n">client</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-283">        <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
-</span><span id="line-284">        <span class="p">[</span><span class="n">mitem</span><span class="o">.</span><span class="n">client</span><span class="p">])</span>
+</span><span id="line-267">
+</span><span id="line-268">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">whome</span>
+</span><span id="line-269">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">author</span>
+</span><span id="line-270">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">anchor</span>
+</span><span id="line-271">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
+</span><span id="line-272">
+</span><span id="line-273">    <span class="n">whoami</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">whome</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="line-274">    <span class="n">author</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">author</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="line-275">    <span class="n">anchor</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">anchor</span>
+</span><span id="line-276">    <span class="n">message</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
+</span><span id="line-277">
+</span><span id="line-278">
+</span><span id="line-279">    <span class="n">client</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-280">        <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
+</span><span id="line-281">        <span class="p">[</span><span class="n">mitem</span><span class="o">.</span><span class="n">client</span><span class="p">])</span>
+</span><span id="line-282">
+</span><span id="line-283">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-284">        <span class="n">client</span><span class="p">,</span> <span class="n">IRCClient</span><span class="p">)</span>
 </span><span id="line-285">
-</span><span id="line-286">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-287">        <span class="n">client</span><span class="p">,</span> <span class="n">IRCClient</span><span class="p">)</span>
-</span><span id="line-288">
-</span><span id="line-289">
-</span><span id="line-290">    <span class="k">if</span> <span class="p">(</span><span class="n">mitem</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;chanmsg&#39;</span>
-</span><span id="line-291">            <span class="ow">and</span> <span class="ow">not</span> <span class="n">mitem</span><span class="o">.</span><span class="n">hasme</span><span class="p">):</span>
-</span><span id="line-292">        <span class="k">return</span> <span class="kc">None</span>
+</span><span id="line-286">
+</span><span id="line-287">    <span class="k">if</span> <span class="p">(</span><span class="n">mitem</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;chanmsg&#39;</span>
+</span><span id="line-288">            <span class="ow">and</span> <span class="ow">not</span> <span class="n">mitem</span><span class="o">.</span><span class="n">hasme</span><span class="p">):</span>
+</span><span id="line-289">        <span class="k">return</span> <span class="kc">None</span>
+</span><span id="line-290">
+</span><span id="line-291">
+</span><span id="line-292">    <span class="n">respond</span> <span class="o">=</span> <span class="n">AinswerResponseIRC</span>
 </span><span id="line-293">
-</span><span id="line-294">
-</span><span id="line-295">    <span class="n">respond</span> <span class="o">=</span> <span class="n">AinswerResponseIRC</span>
-</span><span id="line-296">
-</span><span id="line-297">    <span class="n">anchor</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-298">        <span class="n">event</span><span class="o">.</span><span class="n">recipient</span>
-</span><span id="line-299">        <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;chanmsg&#39;</span>
-</span><span id="line-300">        <span class="k">else</span> <span class="n">mitem</span><span class="o">.</span><span class="n">author</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</span><span id="line-301">
-</span><span id="line-302">    <span class="n">ainswer</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-303">        <span class="n">plugin</span><span class="o">.</span><span class="n">ainswer</span><span class="p">(</span>
-</span><span id="line-304">            <span class="n">client</span><span class="p">,</span>
-</span><span id="line-305">            <span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">prompt</span>
-</span><span id="line-306">             <span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">irc</span><span class="p">),</span>
-</span><span id="line-307">            <span class="n">whoami</span><span class="o">=</span><span class="n">whoami</span><span class="p">,</span>
-</span><span id="line-308">            <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
-</span><span id="line-309">            <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
-</span><span id="line-310">            <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
-</span><span id="line-311">            <span class="n">respond</span><span class="o">=</span><span class="n">respond</span><span class="p">))</span>
-</span><span id="line-312">
-</span><span id="line-313">
-</span><span id="line-314">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-315">        <span class="n">robie</span><span class="p">,</span> <span class="n">ainswer</span><span class="p">)</span>
-</span><span id="line-316">
-</span><span id="line-317">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
+</span><span id="line-294">    <span class="n">ainswer</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-295">        <span class="n">plugin</span><span class="o">.</span><span class="n">ainswer</span><span class="p">(</span>
+</span><span id="line-296">            <span class="n">client</span><span class="p">,</span>
+</span><span id="line-297">            <span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">prompt</span>
+</span><span id="line-298">             <span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">irc</span><span class="p">),</span>
+</span><span id="line-299">            <span class="n">whoami</span><span class="o">=</span><span class="n">whoami</span><span class="p">,</span>
+</span><span id="line-300">            <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
+</span><span id="line-301">            <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
+</span><span id="line-302">            <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+</span><span id="line-303">            <span class="n">respond</span><span class="o">=</span><span class="n">respond</span><span class="p">))</span>
+</span><span id="line-304">
+</span><span id="line-305">
+</span><span id="line-306">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-307">        <span class="n">robie</span><span class="p">,</span> <span class="n">ainswer</span><span class="p">)</span>
+</span><span id="line-308">
+</span><span id="line-309">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
 
-</span><span id="line-318">
-</span><span id="line-319">
-</span><span id="line-320">
+</span><span id="line-310">
+</span><span id="line-311">
+</span><span id="line-312">
 <div class="viewcode-block" id="composemtm">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.composemtm">[docs]</a>
-</span><span id="line-321"><span class="k">def</span><span class="w"> </span><span class="nf">composemtm</span><span class="p">(</span>
-</span><span id="line-322">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;AinswerPlugin&#39;</span><span class="p">,</span>
-</span><span id="line-323">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
-</span><span id="line-324">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
-</span><span id="line-325"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-326"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-327"><span class="sd">    Construct and format message for related chat platform.</span>
-</span><span id="line-328">
-</span><span id="line-329"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-330"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
-</span><span id="line-331"><span class="sd">    :param mitem: Item containing information for operation.</span>
-</span><span id="line-332"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-333">
-</span><span id="line-334">    <span class="kn">from</span><span class="w"> </span><span class="nn">...clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">MTMClient</span>
-</span><span id="line-335">
-</span><span id="line-336">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-337">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
-</span><span id="line-338">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
-</span><span id="line-339">
-</span><span id="line-340">
-</span><span id="line-341">    <span class="n">kind</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">kind</span>
-</span><span id="line-342">
-</span><span id="line-343">    <span class="k">if</span> <span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_KINDS</span><span class="p">:</span>
-</span><span id="line-344">        <span class="k">return</span> <span class="n">NCNone</span>
+</span><span id="line-313"><span class="k">def</span><span class="w"> </span><span class="nf">composemtm</span><span class="p">(</span>
+</span><span id="line-314">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;AinswerPlugin&#39;</span><span class="p">,</span>
+</span><span id="line-315">    <span class="n">cqueue</span><span class="p">:</span> <span class="s1">&#39;RobieQueue[RobieCommand]&#39;</span><span class="p">,</span>
+</span><span id="line-316">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+</span><span id="line-317"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-318"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-319"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-320">
+</span><span id="line-321"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-322"><span class="sd">    :param cqueue: Queue instance where the item is received.</span>
+</span><span id="line-323"><span class="sd">    :param mitem: Item containing information for operation.</span>
+</span><span id="line-324"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-325">
+</span><span id="line-326">    <span class="kn">from</span><span class="w"> </span><span class="nn">...clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">MTMClient</span>
+</span><span id="line-327">
+</span><span id="line-328">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-329">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
+</span><span id="line-330">    <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-331">
+</span><span id="line-332">
+</span><span id="line-333">    <span class="n">kind</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">kind</span>
+</span><span id="line-334">
+</span><span id="line-335">    <span class="k">if</span> <span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_KINDS</span><span class="p">:</span>
+</span><span id="line-336">        <span class="k">return</span> <span class="n">NCNone</span>
+</span><span id="line-337">
+</span><span id="line-338">
+</span><span id="line-339">    <span class="n">event</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
+</span><span id="line-340">        <span class="n">mitem</span><span class="p">,</span> <span class="s1">&#39;event&#39;</span><span class="p">)</span>
+</span><span id="line-341">
+</span><span id="line-342">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-343">        <span class="n">event</span><span class="p">,</span>
+</span><span id="line-344">        <span class="n">MTMClientEvent</span><span class="p">)</span>
 </span><span id="line-345">
 </span><span id="line-346">
-</span><span id="line-347">    <span class="n">event</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
-</span><span id="line-348">        <span class="n">mitem</span><span class="p">,</span> <span class="s1">&#39;event&#39;</span><span class="p">)</span>
-</span><span id="line-349">
-</span><span id="line-350">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-351">        <span class="n">event</span><span class="p">,</span>
-</span><span id="line-352">        <span class="n">MTMClientEvent</span><span class="p">)</span>
-</span><span id="line-353">
-</span><span id="line-354">
-</span><span id="line-355">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">whome</span>
-</span><span id="line-356">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">author</span>
-</span><span id="line-357">    <span class="k">assert</span> <span class="n">event</span><span class="o">.</span><span class="n">recipient</span>
-</span><span id="line-358">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
-</span><span id="line-359">
-</span><span id="line-360">    <span class="n">whoami</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">whome</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="line-361">    <span class="n">author</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">author</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="line-362">    <span class="n">message</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
-</span><span id="line-363">
+</span><span id="line-347">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">whome</span>
+</span><span id="line-348">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">author</span>
+</span><span id="line-349">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">anchor</span>
+</span><span id="line-350">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
+</span><span id="line-351">
+</span><span id="line-352">    <span class="n">whoami</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">whome</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="line-353">    <span class="n">author</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">author</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="line-354">    <span class="n">anchor</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">anchor</span>
+</span><span id="line-355">    <span class="n">message</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
+</span><span id="line-356">
+</span><span id="line-357">
+</span><span id="line-358">    <span class="n">client</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-359">        <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
+</span><span id="line-360">        <span class="p">[</span><span class="n">mitem</span><span class="o">.</span><span class="n">client</span><span class="p">])</span>
+</span><span id="line-361">
+</span><span id="line-362">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-363">        <span class="n">client</span><span class="p">,</span> <span class="n">MTMClient</span><span class="p">)</span>
 </span><span id="line-364">
-</span><span id="line-365">    <span class="n">client</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-366">        <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
-</span><span id="line-367">        <span class="p">[</span><span class="n">mitem</span><span class="o">.</span><span class="n">client</span><span class="p">])</span>
-</span><span id="line-368">
-</span><span id="line-369">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-370">        <span class="n">client</span><span class="p">,</span> <span class="n">MTMClient</span><span class="p">)</span>
-</span><span id="line-371">
+</span><span id="line-365">
+</span><span id="line-366">    <span class="k">if</span> <span class="p">(</span><span class="n">mitem</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;chanmsg&#39;</span>
+</span><span id="line-367">            <span class="ow">and</span> <span class="ow">not</span> <span class="n">mitem</span><span class="o">.</span><span class="n">hasme</span><span class="p">):</span>
+</span><span id="line-368">        <span class="k">return</span> <span class="kc">None</span>
+</span><span id="line-369">
+</span><span id="line-370">
+</span><span id="line-371">    <span class="n">respond</span> <span class="o">=</span> <span class="n">AinswerResponseMTM</span>
 </span><span id="line-372">
-</span><span id="line-373">    <span class="k">if</span> <span class="p">(</span><span class="n">mitem</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;chanmsg&#39;</span>
-</span><span id="line-374">            <span class="ow">and</span> <span class="ow">not</span> <span class="n">mitem</span><span class="o">.</span><span class="n">hasme</span><span class="p">):</span>
-</span><span id="line-375">        <span class="k">return</span> <span class="kc">None</span>
-</span><span id="line-376">
-</span><span id="line-377">
-</span><span id="line-378">    <span class="n">respond</span> <span class="o">=</span> <span class="n">AinswerResponseMTM</span>
-</span><span id="line-379">
-</span><span id="line-380">    <span class="n">anchor</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-381">        <span class="n">event</span><span class="o">.</span><span class="n">recipient</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</span><span id="line-382">        <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;chanmsg&#39;</span>
-</span><span id="line-383">        <span class="k">else</span> <span class="n">mitem</span><span class="o">.</span><span class="n">author</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="line-373">    <span class="n">ainswer</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-374">        <span class="n">plugin</span><span class="o">.</span><span class="n">ainswer</span><span class="p">(</span>
+</span><span id="line-375">            <span class="n">client</span><span class="p">,</span>
+</span><span id="line-376">            <span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">prompt</span>
+</span><span id="line-377">             <span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">mtm</span><span class="p">),</span>
+</span><span id="line-378">            <span class="n">whoami</span><span class="o">=</span><span class="n">whoami</span><span class="p">,</span>
+</span><span id="line-379">            <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
+</span><span id="line-380">            <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
+</span><span id="line-381">            <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+</span><span id="line-382">            <span class="n">respond</span><span class="o">=</span><span class="n">respond</span><span class="p">))</span>
+</span><span id="line-383">
 </span><span id="line-384">
-</span><span id="line-385">    <span class="n">ainswer</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-386">        <span class="n">plugin</span><span class="o">.</span><span class="n">ainswer</span><span class="p">(</span>
-</span><span id="line-387">            <span class="n">client</span><span class="p">,</span>
-</span><span id="line-388">            <span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">prompt</span>
-</span><span id="line-389">             <span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">mtm</span><span class="p">),</span>
-</span><span id="line-390">            <span class="n">whoami</span><span class="o">=</span><span class="n">whoami</span><span class="p">,</span>
-</span><span id="line-391">            <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
-</span><span id="line-392">            <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
-</span><span id="line-393">            <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
-</span><span id="line-394">            <span class="n">respond</span><span class="o">=</span><span class="n">respond</span><span class="p">))</span>
-</span><span id="line-395">
-</span><span id="line-396">
-</span><span id="line-397">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-398">        <span class="n">robie</span><span class="p">,</span> <span class="n">ainswer</span><span class="p">)</span>
-</span><span id="line-399">
-</span><span id="line-400">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
+</span><span id="line-385">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-386">        <span class="n">robie</span><span class="p">,</span> <span class="n">ainswer</span><span class="p">)</span>
+</span><span id="line-387">
+</span><span id="line-388">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
 
 </span></code></pre></div>
     </div></div>

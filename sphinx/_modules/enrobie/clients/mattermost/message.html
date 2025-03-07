@@ -270,48 +270,75 @@
 </span><span id="line-125">
 </span><span id="line-126">
 </span><span id="line-127">    <span class="nd">@property</span>
-</span><span id="line-128">    <span class="k">def</span><span class="w"> </span><span class="nf">message</span><span class="p">(</span>
+</span><span id="line-128">    <span class="k">def</span><span class="w"> </span><span class="nf">anchor</span><span class="p">(</span>
 </span><span id="line-129">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-130">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-131"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-132"><span class="sd">        Return the string containing the content of the message.</span>
+</span><span id="line-132"><span class="sd">        Return the unique value for the context with the client.</span>
 </span><span id="line-133">
-</span><span id="line-134"><span class="sd">        :returns: String containing the content of the message.</span>
+</span><span id="line-134"><span class="sd">        :returns: Unique value for the context with the client.</span>
 </span><span id="line-135"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-136">
-</span><span id="line-137">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">message</span>
-</span><span id="line-138">
-</span><span id="line-139">
+</span><span id="line-137">        <span class="n">kind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span>
+</span><span id="line-138">        <span class="n">author</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">author</span>
+</span><span id="line-139">        <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span>
+</span><span id="line-140">
+</span><span id="line-141">        <span class="n">recipient</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-142">            <span class="n">event</span><span class="o">.</span><span class="n">recipient</span><span class="p">)</span>
+</span><span id="line-143">
+</span><span id="line-144">        <span class="k">if</span> <span class="p">(</span><span class="n">recipient</span> <span class="ow">is</span> <span class="kc">None</span>
+</span><span id="line-145">                <span class="ow">or</span> <span class="n">author</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+</span><span id="line-146">            <span class="k">return</span> <span class="kc">None</span>
+</span><span id="line-147">
+</span><span id="line-148">        <span class="k">return</span> <span class="p">(</span>
+</span><span id="line-149">            <span class="n">recipient</span>
+</span><span id="line-150">            <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;chanmsg&#39;</span>
+</span><span id="line-151">            <span class="k">else</span> <span class="n">author</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="line-152">
+</span><span id="line-153">
+</span><span id="line-154">    <span class="nd">@property</span>
+</span><span id="line-155">    <span class="k">def</span><span class="w"> </span><span class="nf">message</span><span class="p">(</span>
+</span><span id="line-156">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-157">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-158"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-159"><span class="sd">        Return the string containing the content of the message.</span>
+</span><span id="line-160">
+</span><span id="line-161"><span class="sd">        :returns: String containing the content of the message.</span>
+</span><span id="line-162"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-163">
+</span><span id="line-164">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">message</span>
+</span><span id="line-165">
+</span><span id="line-166">
 <div class="viewcode-block" id="MTMMessage.reply">
 <a class="viewcode-back" href="../../../../enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage.reply">[docs]</a>
-</span><span id="line-140">    <span class="k">def</span><span class="w"> </span><span class="nf">reply</span><span class="p">(</span>
-</span><span id="line-141">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-142">        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
-</span><span id="line-143">        <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-144">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieCommand&#39;</span><span class="p">:</span>
-</span><span id="line-145"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-146"><span class="sd">        Compose the message and transmit using the chat client.</span>
-</span><span id="line-147">
-</span><span id="line-148"><span class="sd">        :param robie: Primary class instance for Chatting Robie.</span>
-</span><span id="line-149"><span class="sd">        :param content: Content that will be source of message.</span>
-</span><span id="line-150"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-151">
-</span><span id="line-152">        <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
-</span><span id="line-153">        <span class="n">clients</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
-</span><span id="line-154">
-</span><span id="line-155">        <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span>
-</span><span id="line-156">            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">]</span>
-</span><span id="line-157">
-</span><span id="line-158">        <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span>
-</span><span id="line-159">
-</span><span id="line-160">
-</span><span id="line-161">        <span class="n">target</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">recipient</span>
-</span><span id="line-162">
-</span><span id="line-163">        <span class="k">assert</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-</span><span id="line-164">
-</span><span id="line-165">
-</span><span id="line-166">        <span class="k">return</span> <span class="n">client</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span>
-</span><span id="line-167">            <span class="n">target</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></div>
+</span><span id="line-167">    <span class="k">def</span><span class="w"> </span><span class="nf">reply</span><span class="p">(</span>
+</span><span id="line-168">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-169">        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
+</span><span id="line-170">        <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-171">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieCommand&#39;</span><span class="p">:</span>
+</span><span id="line-172"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-173"><span class="sd">        Compose the message and transmit using the chat client.</span>
+</span><span id="line-174">
+</span><span id="line-175"><span class="sd">        :param robie: Primary class instance for Chatting Robie.</span>
+</span><span id="line-176"><span class="sd">        :param content: Content that will be source of message.</span>
+</span><span id="line-177"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-178">
+</span><span id="line-179">        <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
+</span><span id="line-180">        <span class="n">clients</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
+</span><span id="line-181">
+</span><span id="line-182">        <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span>
+</span><span id="line-183">            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">]</span>
+</span><span id="line-184">
+</span><span id="line-185">        <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span>
+</span><span id="line-186">
+</span><span id="line-187">
+</span><span id="line-188">        <span class="n">target</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">recipient</span>
+</span><span id="line-189">
+</span><span id="line-190">        <span class="k">assert</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="line-191">
+</span><span id="line-192">
+</span><span id="line-193">        <span class="k">return</span> <span class="n">client</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span>
+</span><span id="line-194">            <span class="n">target</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></div>
 </div>
 
 </span></code></pre></div>

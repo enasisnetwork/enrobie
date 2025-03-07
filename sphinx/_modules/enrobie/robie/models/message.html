@@ -273,33 +273,46 @@
 </span><span id="line-128">
 </span><span id="line-129">
 </span><span id="line-130">    <span class="nd">@property</span>
-</span><span id="line-131">    <span class="k">def</span><span class="w"> </span><span class="nf">message</span><span class="p">(</span>
+</span><span id="line-131">    <span class="k">def</span><span class="w"> </span><span class="nf">anchor</span><span class="p">(</span>
 </span><span id="line-132">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-133">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-134"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-135"><span class="sd">        Return the string containing the content of the message.</span>
+</span><span id="line-135"><span class="sd">        Return the unique value for the context with the client.</span>
 </span><span id="line-136">
-</span><span id="line-137"><span class="sd">        :returns: String containing the content of the message.</span>
+</span><span id="line-137"><span class="sd">        :returns: Unique value for the context with the client.</span>
 </span><span id="line-138"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-139">
 </span><span id="line-140">        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </span><span id="line-141">
 </span><span id="line-142">
+</span><span id="line-143">    <span class="nd">@property</span>
+</span><span id="line-144">    <span class="k">def</span><span class="w"> </span><span class="nf">message</span><span class="p">(</span>
+</span><span id="line-145">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-146">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-147"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-148"><span class="sd">        Return the string containing the content of the message.</span>
+</span><span id="line-149">
+</span><span id="line-150"><span class="sd">        :returns: String containing the content of the message.</span>
+</span><span id="line-151"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-152">
+</span><span id="line-153">        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</span><span id="line-154">
+</span><span id="line-155">
 <div class="viewcode-block" id="RobieMessage.reply">
 <a class="viewcode-back" href="../../../../enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage.reply">[docs]</a>
-</span><span id="line-143">    <span class="k">def</span><span class="w"> </span><span class="nf">reply</span><span class="p">(</span>
-</span><span id="line-144">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-145">        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
-</span><span id="line-146">        <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-147">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieCommand&#39;</span><span class="p">:</span>
-</span><span id="line-148"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-149"><span class="sd">        Compose the message and transmit using the chat client.</span>
-</span><span id="line-150">
-</span><span id="line-151"><span class="sd">        :param robie: Primary class instance for Chatting Robie.</span>
-</span><span id="line-152"><span class="sd">        :param content: Content that will be source of message.</span>
-</span><span id="line-153"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-154">
-</span><span id="line-155">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</span><span id="line-156">    <span class="k">def</span><span class="w"> </span><span class="nf">reply</span><span class="p">(</span>
+</span><span id="line-157">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-158">        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
+</span><span id="line-159">        <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-160">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieCommand&#39;</span><span class="p">:</span>
+</span><span id="line-161"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-162"><span class="sd">        Compose the message and transmit using the chat client.</span>
+</span><span id="line-163">
+</span><span id="line-164"><span class="sd">        :param robie: Primary class instance for Chatting Robie.</span>
+</span><span id="line-165"><span class="sd">        :param content: Content that will be source of message.</span>
+</span><span id="line-166"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-167">
+</span><span id="line-168">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 </div>
 
 </span></code></pre></div>
