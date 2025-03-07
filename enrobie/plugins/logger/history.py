@@ -30,7 +30,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy.orm import sessionmaker
 
 if TYPE_CHECKING:
-    from .plugin import AinswerPlugin
+    from .plugin import LoggerPlugin
     from ...robie.childs import RobieClient
 
 
@@ -42,7 +42,7 @@ class SQLBase(DeclarativeBase):
 
 
 
-class AinswerHistoryTable(SQLBase):
+class LoggerHistoryTable(SQLBase):
     """
     Schematic for the database operations using SQLAlchemy.
 
@@ -74,20 +74,16 @@ class AinswerHistoryTable(SQLBase):
         String,
         nullable=False)
 
-    ainswer = Column(
-        String,
-        nullable=False)
-
     create = Column(
         Float,
         primary_key=True,
         nullable=False)
 
-    __tablename__ = 'ainswer'
+    __tablename__ = 'logger'
 
 
 
-class AinswerHistoryRecord(BaseModel, extra='forbid'):
+class LoggerHistoryRecord(BaseModel, extra='forbid'):
     """
     Contain the information regarding the chatting history.
 
@@ -124,11 +120,6 @@ class AinswerHistoryRecord(BaseModel, extra='forbid'):
         Field(...,
               description='Historical interaction content')]
 
-    ainswer: Annotated[
-        str,
-        Field(...,
-              description='Historical interaction content')]
-
     create: Annotated[
         str,
         Field(...,
@@ -139,7 +130,7 @@ class AinswerHistoryRecord(BaseModel, extra='forbid'):
 
     def __init__(
         self,
-        record: Optional[AinswerHistoryTable] = None,
+        record: Optional[LoggerHistoryTable] = None,
         **kwargs: Any,
     ) -> None:
         """
@@ -154,7 +145,6 @@ class AinswerHistoryRecord(BaseModel, extra='forbid'):
             'author',
             'anchor',
             'message',
-            'ainswer',
             'create']
 
 
@@ -186,14 +176,14 @@ class AinswerHistoryRecord(BaseModel, extra='forbid'):
 
 
 
-class AinswerHistory:
+class LoggerHistory:
     """
     Store the historical information for chat interactions.
 
     :param plugin: Plugin class instance for Chatting Robie.
     """
 
-    __plugin: 'AinswerPlugin'
+    __plugin: 'LoggerPlugin'
 
     __connect: str
     __locker: Lock
@@ -206,7 +196,7 @@ class AinswerHistory:
 
     def __init__(
         self,
-        plugin: 'AinswerPlugin',
+        plugin: 'LoggerPlugin',
     ) -> None:
         """
         Initialize instance for class using provided parameters.
@@ -252,7 +242,6 @@ class AinswerHistory:
         author: str,
         anchor: str,
         message: str,
-        ainswer: str,
     ) -> None:
         """
         Insert the record into the historical chat interactions.
@@ -261,7 +250,6 @@ class AinswerHistory:
         :param author: Name of the user that submitted question.
         :param anchor: Channel name or other context or thread.
         :param message: Question that will be asked of the LLM.
-        :param ainswer: Response from LLM relevant to question.
         """
 
         plugin = self.__plugin
@@ -269,8 +257,8 @@ class AinswerHistory:
         sess = self.__session()
         lock = self.__locker
 
-        table = AinswerHistoryTable
-        model = AinswerHistoryRecord
+        table = LoggerHistoryTable
+        model = LoggerHistoryRecord
 
 
         inputs: DictStrAny = {
@@ -279,7 +267,6 @@ class AinswerHistory:
             'author': author,
             'anchor': anchor,
             'message': message,
-            'ainswer': ainswer,
             'create': float(Time())}
 
         record = model(**inputs)
@@ -323,7 +310,7 @@ class AinswerHistory:
         sess = self.__session()
         lock = self.__locker
 
-        table = AinswerHistoryTable
+        table = LoggerHistoryTable
 
         _plugin = table.plugin
         _client = table.client
@@ -372,7 +359,7 @@ class AinswerHistory:
         self,
         client: 'RobieClient',
         anchor: str,
-    ) -> list[AinswerHistoryRecord]:
+    ) -> list[LoggerHistoryRecord]:
         """
         Return all historical records for the chat interactions.
 
@@ -386,10 +373,10 @@ class AinswerHistory:
         sess = self.__session()
         lock = self.__locker
 
-        records: list[AinswerHistoryRecord]
+        records: list[LoggerHistoryRecord]
 
-        table = AinswerHistoryTable
-        model = AinswerHistoryRecord
+        table = LoggerHistoryTable
+        model = LoggerHistoryRecord
 
         _plugin = table.plugin
         _client = table.client

@@ -13,6 +13,8 @@ from .autojoin import AutoJoinPlugin
 from .autojoin import AutoJoinPluginParams
 from .autonick import AutoNickPlugin
 from .autonick import AutoNickPluginParams
+from .logger import LoggerPlugin
+from .logger import LoggerPluginParams
 from .status import StatusPlugin
 from .status import StatusPluginIconParams
 from .status import StatusPluginItem
@@ -28,6 +30,8 @@ __all__ = [
     'AutoNickPluginParams',
     'AinswerPlugin',
     'AinswerPluginParams',
+    'LoggerPlugin',
+    'LoggerPluginParams',
     'StatusPlugin',
     'StatusPluginParams',
     'StatusPluginIconParams',

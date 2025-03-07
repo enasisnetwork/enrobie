@@ -123,3 +123,21 @@ plugins:
       dsc: <:unknown:mocked>
       irc: 💬
       mtm: ':unknown:'
+
+
+  ############
+  ## Logger ##
+  ############
+  logger:
+    enable: true
+    locate: enrobie.plugins.LoggerPlugin
+
+    database: >-
+      {{ config.params.database }}
+
+    histories: 10
+
+    clients:
+      - dscbot
+      - ircbot
+      - mtmbot
