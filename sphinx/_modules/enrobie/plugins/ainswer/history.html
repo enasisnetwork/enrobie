@@ -534,51 +534,56 @@
 </span><span id="line-372">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-373">        <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;RobieClient&#39;</span><span class="p">,</span>
 </span><span id="line-374">        <span class="n">anchor</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-375">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">AinswerHistoryRecord</span><span class="p">]:</span>
-</span><span id="line-376"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-377"><span class="sd">        Return all historical records for the chat interactions.</span>
-</span><span id="line-378">
-</span><span id="line-379"><span class="sd">        :param client: Client class instance for Chatting Robie.</span>
-</span><span id="line-380"><span class="sd">        :param anchor: Channel name or other context or thread.</span>
-</span><span id="line-381"><span class="sd">        :returns: Historical records for the chat interactions.</span>
-</span><span id="line-382"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-383">
-</span><span id="line-384">        <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span>
+</span><span id="line-375">        <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-376">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">AinswerHistoryRecord</span><span class="p">]:</span>
+</span><span id="line-377"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-378"><span class="sd">        Return all historical records for the chat interactions.</span>
+</span><span id="line-379">
+</span><span id="line-380"><span class="sd">        :param client: Client class instance for Chatting Robie.</span>
+</span><span id="line-381"><span class="sd">        :param anchor: Channel name or other context or thread.</span>
+</span><span id="line-382"><span class="sd">        :param limit: Optionally restrict the records returned.</span>
+</span><span id="line-383"><span class="sd">        :returns: Historical records for the chat interactions.</span>
+</span><span id="line-384"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-385">
-</span><span id="line-386">        <span class="n">sess</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__session</span><span class="p">()</span>
-</span><span id="line-387">        <span class="n">lock</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__locker</span>
-</span><span id="line-388">
-</span><span id="line-389">        <span class="n">records</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">AinswerHistoryRecord</span><span class="p">]</span>
+</span><span id="line-386">        <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span>
+</span><span id="line-387">
+</span><span id="line-388">        <span class="n">sess</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__session</span><span class="p">()</span>
+</span><span id="line-389">        <span class="n">lock</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__locker</span>
 </span><span id="line-390">
-</span><span id="line-391">        <span class="n">table</span> <span class="o">=</span> <span class="n">AinswerHistoryTable</span>
-</span><span id="line-392">        <span class="n">model</span> <span class="o">=</span> <span class="n">AinswerHistoryRecord</span>
-</span><span id="line-393">
-</span><span id="line-394">        <span class="n">_plugin</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">plugin</span>
-</span><span id="line-395">        <span class="n">_client</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">client</span>
-</span><span id="line-396">        <span class="n">_anchor</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">anchor</span>
-</span><span id="line-397">        <span class="n">_create</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">create</span>
-</span><span id="line-398">
-</span><span id="line-399">
-</span><span id="line-400">        <span class="k">with</span> <span class="n">lock</span><span class="p">,</span> <span class="n">sess</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+</span><span id="line-391">        <span class="n">records</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">AinswerHistoryRecord</span><span class="p">]</span>
+</span><span id="line-392">
+</span><span id="line-393">        <span class="n">table</span> <span class="o">=</span> <span class="n">AinswerHistoryTable</span>
+</span><span id="line-394">        <span class="n">model</span> <span class="o">=</span> <span class="n">AinswerHistoryRecord</span>
+</span><span id="line-395">
+</span><span id="line-396">        <span class="n">_plugin</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">plugin</span>
+</span><span id="line-397">        <span class="n">_client</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">client</span>
+</span><span id="line-398">        <span class="n">_anchor</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">anchor</span>
+</span><span id="line-399">        <span class="n">_create</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">create</span>
+</span><span id="line-400">
 </span><span id="line-401">
-</span><span id="line-402">            <span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-402">        <span class="k">with</span> <span class="n">lock</span><span class="p">,</span> <span class="n">sess</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
 </span><span id="line-403">
-</span><span id="line-404">            <span class="n">query</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-405">                <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
-</span><span id="line-406">                <span class="o">.</span><span class="n">filter</span><span class="p">(</span>
-</span><span id="line-407">                    <span class="n">_plugin</span> <span class="o">==</span> <span class="n">plugin</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-</span><span id="line-408">                    <span class="n">_client</span> <span class="o">==</span> <span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-</span><span id="line-409">                    <span class="n">_anchor</span> <span class="o">==</span> <span class="n">anchor</span><span class="p">)</span>
-</span><span id="line-410">                <span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">_create</span><span class="o">.</span><span class="n">asc</span><span class="p">()))</span>
-</span><span id="line-411">
-</span><span id="line-412">
-</span><span id="line-413">            <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
-</span><span id="line-414">
-</span><span id="line-415">                <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+</span><span id="line-404">            <span class="n">records</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-405">
+</span><span id="line-406">            <span class="n">query</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-407">                <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</span><span id="line-408">                <span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+</span><span id="line-409">                    <span class="n">_plugin</span> <span class="o">==</span> <span class="n">plugin</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+</span><span id="line-410">                    <span class="n">_client</span> <span class="o">==</span> <span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+</span><span id="line-411">                    <span class="n">_anchor</span> <span class="o">==</span> <span class="n">anchor</span><span class="p">)</span>
+</span><span id="line-412">                <span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">_create</span><span class="o">.</span><span class="n">desc</span><span class="p">()))</span>
+</span><span id="line-413">
+</span><span id="line-414">            <span class="k">if</span> <span class="n">limit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">NCNone</span><span class="p">:</span>
+</span><span id="line-415">                <span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
 </span><span id="line-416">
-</span><span id="line-417">                <span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
-</span><span id="line-418">
-</span><span id="line-419">            <span class="k">return</span> <span class="n">records</span></div>
+</span><span id="line-417">
+</span><span id="line-418">            <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+</span><span id="line-419">
+</span><span id="line-420">                <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+</span><span id="line-421">
+</span><span id="line-422">                <span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+</span><span id="line-423">
+</span><span id="line-424">            <span class="k">return</span> <span class="n">records</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
 </div>
 
 </span></code></pre></div>

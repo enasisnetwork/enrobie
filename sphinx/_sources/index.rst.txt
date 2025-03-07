@@ -53,6 +53,11 @@ Robie Plugins
    :show-inheritance:
    :noindex:
 
+.. autopydantic_model:: enrobie.plugins.logger.params.LoggerPluginParams
+   :members:
+   :show-inheritance:
+   :noindex:
+
 .. autopydantic_model:: enrobie.plugins.status.params.StatusPluginParams
    :members:
    :show-inheritance:

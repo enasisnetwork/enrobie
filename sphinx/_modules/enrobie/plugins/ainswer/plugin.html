@@ -387,7 +387,7 @@
 </span><span id="line-233">
 <div class="viewcode-block" id="AinswerPlugin.ainswer">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.AinswerPlugin.ainswer">[docs]</a>
-</span><span id="line-234">    <span class="k">def</span><span class="w"> </span><span class="nf">ainswer</span><span class="p">(</span>  <span class="c1"># noqa: CFQ002</span>
+</span><span id="line-234">    <span class="k">def</span><span class="w"> </span><span class="nf">ainswer</span><span class="p">(</span>  <span class="c1"># noqa: CFQ001,CFQ002</span>
 </span><span id="line-235">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-236">        <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;RobieClient&#39;</span><span class="p">,</span>
 </span><span id="line-237">        <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -412,113 +412,143 @@
 </span><span id="line-256"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-257">
 </span><span id="line-258">        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-259">        <span class="n">history</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">history</span>
-</span><span id="line-260">        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
-</span><span id="line-261">
-</span><span id="line-262">        <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
-</span><span id="line-263">            <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-</span><span id="line-264">            <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-</span><span id="line-265">            <span class="n">item</span><span class="o">=</span><span class="s1">&#39;ainswer&#39;</span><span class="p">,</span>
-</span><span id="line-266">            <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-</span><span id="line-267">            <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
-</span><span id="line-268">            <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
-</span><span id="line-269">            <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">)</span>
-</span><span id="line-270">
-</span><span id="line-271">
-</span><span id="line-272">        <span class="n">imsorry</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-273">            <span class="sa">f</span><span class="s2">&quot;I&#39;m sorry </span><span class="si">{</span><span class="n">author</span><span class="si">}</span><span class="s2">, I&#39;m&quot;</span>
-</span><span id="line-274">            <span class="s2">&quot; afraid I can&#39;t do that.&quot;</span><span class="p">)</span>
-</span><span id="line-275">
-</span><span id="line-276">
-</span><span id="line-277">        <span class="n">sleep</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">ainswer</span><span class="o">.</span><span class="n">sleep</span>
-</span><span id="line-278">
-</span><span id="line-279">        <span class="c1"># Useful to prevent abuse but</span>
-</span><span id="line-280">        <span class="c1"># also reduce immediate reply</span>
-</span><span id="line-281">        <span class="n">block_sleep</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="o">*</span><span class="n">sleep</span><span class="p">))</span>
-</span><span id="line-282">
-</span><span id="line-283">
-</span><span id="line-284">        <span class="n">prompt</span> <span class="o">=</span> <span class="n">promptllm</span><span class="p">(</span>
-</span><span id="line-285">            <span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span>
-</span><span id="line-286">            <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">,</span>
-</span><span id="line-287">            <span class="n">whoami</span><span class="o">=</span><span class="n">whoami</span><span class="p">,</span>
-</span><span id="line-288">            <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
-</span><span id="line-289">            <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
-</span><span id="line-290">            <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">)</span>
-</span><span id="line-291">
-</span><span id="line-292">
-</span><span id="line-293">        <span class="k">try</span><span class="p">:</span>
+</span><span id="line-259">        <span class="n">config</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">config</span>
+</span><span id="line-260">        <span class="n">sargs</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">sargs</span>
+</span><span id="line-261">        <span class="n">history</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">history</span>
+</span><span id="line-262">        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-263">
+</span><span id="line-264">        <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
+</span><span id="line-265">            <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+</span><span id="line-266">            <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+</span><span id="line-267">            <span class="n">item</span><span class="o">=</span><span class="s1">&#39;ainswer&#39;</span><span class="p">,</span>
+</span><span id="line-268">            <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+</span><span id="line-269">            <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
+</span><span id="line-270">            <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
+</span><span id="line-271">            <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">)</span>
+</span><span id="line-272">
+</span><span id="line-273">
+</span><span id="line-274">        <span class="n">sleep</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-275">            <span class="n">params</span><span class="o">.</span><span class="n">ainswer</span>
+</span><span id="line-276">            <span class="o">.</span><span class="n">sleep</span><span class="p">)</span>
+</span><span id="line-277">
+</span><span id="line-278">        <span class="n">system</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-279">            <span class="n">params</span><span class="o">.</span><span class="n">prompt</span>
+</span><span id="line-280">            <span class="o">.</span><span class="n">system</span><span class="p">)</span>
+</span><span id="line-281">
+</span><span id="line-282">        <span class="n">header</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-283">            <span class="n">params</span><span class="o">.</span><span class="n">prompt</span>
+</span><span id="line-284">            <span class="o">.</span><span class="n">header</span><span class="p">)</span>
+</span><span id="line-285">
+</span><span id="line-286">        <span class="n">footer</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-287">            <span class="n">params</span><span class="o">.</span><span class="n">prompt</span>
+</span><span id="line-288">            <span class="o">.</span><span class="n">footer</span><span class="p">)</span>
+</span><span id="line-289">
+</span><span id="line-290">        <span class="n">ignore</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-291">            <span class="n">params</span><span class="o">.</span><span class="n">prompt</span>
+</span><span id="line-292">            <span class="o">.</span><span class="n">ignore</span><span class="p">)</span>
+</span><span id="line-293">
 </span><span id="line-294">
-</span><span id="line-295">            <span class="n">response</span> <span class="o">=</span> <span class="n">engagellm</span><span class="p">(</span>
-</span><span id="line-296">                <span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">respond</span><span class="p">)</span>
-</span><span id="line-297">
-</span><span id="line-298">            <span class="n">ainswer</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+</span><span id="line-295">        <span class="n">imsorry</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-296">            <span class="sa">f</span><span class="s2">&quot;I&#39;m sorry </span><span class="si">{</span><span class="n">author</span><span class="si">}</span><span class="s2">, I&#39;m&quot;</span>
+</span><span id="line-297">            <span class="s2">&quot; afraid I can&#39;t do that.&quot;</span><span class="p">)</span>
+</span><span id="line-298">
 </span><span id="line-299">
-</span><span id="line-300">            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+</span><span id="line-300">        <span class="k">try</span><span class="p">:</span>
 </span><span id="line-301">
-</span><span id="line-302">            <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
-</span><span id="line-303">                <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-</span><span id="line-304">                <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-</span><span id="line-305">                <span class="n">item</span><span class="o">=</span><span class="s1">&#39;ainswer&#39;</span><span class="p">,</span>
-</span><span id="line-306">                <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-</span><span id="line-307">                <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
-</span><span id="line-308">                <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
-</span><span id="line-309">                <span class="n">ainswer</span><span class="o">=</span><span class="n">ainswer</span><span class="p">)</span>
-</span><span id="line-310">
-</span><span id="line-311">            <span class="n">history</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
-</span><span id="line-312">                <span class="n">client</span><span class="p">,</span>
-</span><span id="line-313">                <span class="n">author</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span>
-</span><span id="line-314">                <span class="n">message</span><span class="p">,</span> <span class="n">ainswer</span><span class="p">)</span>
-</span><span id="line-315">
-</span><span id="line-316">            <span class="k">return</span> <span class="n">ainswer</span>
-</span><span id="line-317">
-</span><span id="line-318">
-</span><span id="line-319">        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">reason</span><span class="p">:</span>
+</span><span id="line-302">            <span class="n">prompt</span> <span class="o">=</span> <span class="n">promptllm</span><span class="p">(</span>
+</span><span id="line-303">                <span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span>
+</span><span id="line-304">                <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">,</span>
+</span><span id="line-305">                <span class="n">whoami</span><span class="o">=</span><span class="n">whoami</span><span class="p">,</span>
+</span><span id="line-306">                <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
+</span><span id="line-307">                <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
+</span><span id="line-308">                <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+</span><span id="line-309">                <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span>
+</span><span id="line-310">                <span class="n">footer</span><span class="o">=</span><span class="n">footer</span><span class="p">,</span>
+</span><span id="line-311">                <span class="n">ignore</span><span class="o">=</span><span class="n">ignore</span><span class="p">)</span>
+</span><span id="line-312">
+</span><span id="line-313">            <span class="n">_sleep</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="o">*</span><span class="n">sleep</span><span class="p">)</span>
+</span><span id="line-314">
+</span><span id="line-315">            <span class="k">if</span> <span class="n">sargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;console&#39;</span><span class="p">):</span>
+</span><span id="line-316">                <span class="n">robie</span><span class="o">.</span><span class="n">printer</span><span class="p">({</span>
+</span><span id="line-317">                    <span class="s1">&#39;system&#39;</span><span class="p">:</span> <span class="n">system</span><span class="p">,</span>
+</span><span id="line-318">                    <span class="s1">&#39;prompt&#39;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">,</span>
+</span><span id="line-319">                    <span class="s1">&#39;sleep&#39;</span><span class="p">:</span> <span class="n">_sleep</span><span class="p">})</span>
 </span><span id="line-320">
-</span><span id="line-321">            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;failure&#39;</span><span class="p">)</span>
-</span><span id="line-322">
-</span><span id="line-323">            <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_e</span><span class="p">(</span>
-</span><span id="line-324">                <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-</span><span id="line-325">                <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-</span><span id="line-326">                <span class="n">item</span><span class="o">=</span><span class="s1">&#39;ainswer&#39;</span><span class="p">,</span>
-</span><span id="line-327">                <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-</span><span id="line-328">                <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
-</span><span id="line-329">                <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
-</span><span id="line-330">                <span class="n">status</span><span class="o">=</span><span class="s1">&#39;exception&#39;</span><span class="p">,</span>
-</span><span id="line-331">                <span class="n">exc_info</span><span class="o">=</span><span class="n">reason</span><span class="p">)</span>
-</span><span id="line-332">
-</span><span id="line-333">            <span class="k">return</span> <span class="n">imsorry</span></div>
-
-</span><span id="line-334">
-</span><span id="line-335">
-</span><span id="line-336">    <span class="k">def</span><span class="w"> </span><span class="nf">__status</span><span class="p">(</span>
-</span><span id="line-337">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-338">        <span class="n">status</span><span class="p">:</span> <span class="n">StatusPluginStates</span><span class="p">,</span>
-</span><span id="line-339">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-340"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-341"><span class="sd">        Update or insert the status of the Robie child instance.</span>
-</span><span id="line-342">
-</span><span id="line-343"><span class="sd">        :param status: One of several possible value for status.</span>
-</span><span id="line-344"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-321">            <span class="c1"># Useful to prevent abuse but</span>
+</span><span id="line-322">            <span class="c1"># also reduce immediate reply</span>
+</span><span id="line-323">            <span class="n">block_sleep</span><span class="p">(</span><span class="n">_sleep</span><span class="p">)</span>
+</span><span id="line-324">
+</span><span id="line-325">            <span class="n">response</span> <span class="o">=</span> <span class="n">engagellm</span><span class="p">(</span>
+</span><span id="line-326">                <span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">respond</span><span class="p">)</span>
+</span><span id="line-327">
+</span><span id="line-328">            <span class="n">ainswer</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+</span><span id="line-329">
+</span><span id="line-330">            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+</span><span id="line-331">
+</span><span id="line-332">            <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
+</span><span id="line-333">                <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+</span><span id="line-334">                <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+</span><span id="line-335">                <span class="n">item</span><span class="o">=</span><span class="s1">&#39;ainswer&#39;</span><span class="p">,</span>
+</span><span id="line-336">                <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+</span><span id="line-337">                <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
+</span><span id="line-338">                <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
+</span><span id="line-339">                <span class="n">ainswer</span><span class="o">=</span><span class="n">ainswer</span><span class="p">)</span>
+</span><span id="line-340">
+</span><span id="line-341">            <span class="n">history</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+</span><span id="line-342">                <span class="n">client</span><span class="p">,</span>
+</span><span id="line-343">                <span class="n">author</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span>
+</span><span id="line-344">                <span class="n">message</span><span class="p">,</span> <span class="n">ainswer</span><span class="p">)</span>
 </span><span id="line-345">
-</span><span id="line-346">        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-347">        <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
-</span><span id="line-348">        <span class="n">plugins</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">plugins</span>
-</span><span id="line-349">        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-346">            <span class="k">return</span> <span class="n">ainswer</span>
+</span><span id="line-347">
+</span><span id="line-348">
+</span><span id="line-349">        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">reason</span><span class="p">:</span>
 </span><span id="line-350">
-</span><span id="line-351">        <span class="k">if</span> <span class="s1">&#39;status&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
-</span><span id="line-352">            <span class="k">return</span> <span class="n">NCNone</span>
-</span><span id="line-353">
-</span><span id="line-354">        <span class="n">plugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span>
-</span><span id="line-355">
-</span><span id="line-356">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-357">            <span class="n">plugin</span><span class="p">,</span> <span class="n">StatusPlugin</span><span class="p">)</span>
-</span><span id="line-358">
-</span><span id="line-359">        <span class="p">(</span><span class="n">plugin</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
-</span><span id="line-360">            <span class="n">unique</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-</span><span id="line-361">            <span class="n">group</span><span class="o">=</span><span class="s1">&#39;Extensions&#39;</span><span class="p">,</span>
-</span><span id="line-362">            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Ainswer&#39;</span><span class="p">,</span>
-</span><span id="line-363">            <span class="n">icon</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
-</span><span id="line-364">            <span class="n">state</span><span class="o">=</span><span class="n">status</span><span class="p">))</span></div>
+</span><span id="line-351">            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;failure&#39;</span><span class="p">)</span>
+</span><span id="line-352">
+</span><span id="line-353">            <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_e</span><span class="p">(</span>
+</span><span id="line-354">                <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+</span><span id="line-355">                <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+</span><span id="line-356">                <span class="n">item</span><span class="o">=</span><span class="s1">&#39;ainswer&#39;</span><span class="p">,</span>
+</span><span id="line-357">                <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+</span><span id="line-358">                <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span>
+</span><span id="line-359">                <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
+</span><span id="line-360">                <span class="n">status</span><span class="o">=</span><span class="s1">&#39;exception&#39;</span><span class="p">,</span>
+</span><span id="line-361">                <span class="n">exc_info</span><span class="o">=</span><span class="n">reason</span><span class="p">)</span>
+</span><span id="line-362">
+</span><span id="line-363">            <span class="k">return</span> <span class="n">imsorry</span></div>
+
+</span><span id="line-364">
+</span><span id="line-365">
+</span><span id="line-366">    <span class="k">def</span><span class="w"> </span><span class="nf">__status</span><span class="p">(</span>
+</span><span id="line-367">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-368">        <span class="n">status</span><span class="p">:</span> <span class="n">StatusPluginStates</span><span class="p">,</span>
+</span><span id="line-369">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-370"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-371"><span class="sd">        Update or insert the status of the Robie child instance.</span>
+</span><span id="line-372">
+</span><span id="line-373"><span class="sd">        :param status: One of several possible value for status.</span>
+</span><span id="line-374"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-375">
+</span><span id="line-376">        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-377">        <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
+</span><span id="line-378">        <span class="n">plugins</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">plugins</span>
+</span><span id="line-379">        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-380">
+</span><span id="line-381">        <span class="k">if</span> <span class="s1">&#39;status&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
+</span><span id="line-382">            <span class="k">return</span> <span class="n">NCNone</span>
+</span><span id="line-383">
+</span><span id="line-384">        <span class="n">plugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span>
+</span><span id="line-385">
+</span><span id="line-386">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-387">            <span class="n">plugin</span><span class="p">,</span> <span class="n">StatusPlugin</span><span class="p">)</span>
+</span><span id="line-388">
+</span><span id="line-389">        <span class="p">(</span><span class="n">plugin</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+</span><span id="line-390">            <span class="n">unique</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+</span><span id="line-391">            <span class="n">group</span><span class="o">=</span><span class="s1">&#39;Extensions&#39;</span><span class="p">,</span>
+</span><span id="line-392">            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Ainswer&#39;</span><span class="p">,</span>
+</span><span id="line-393">            <span class="n">icon</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
+</span><span id="line-394">            <span class="n">state</span><span class="o">=</span><span class="n">status</span><span class="p">))</span></div>
 
 </span></code></pre></div>
     </div></div>

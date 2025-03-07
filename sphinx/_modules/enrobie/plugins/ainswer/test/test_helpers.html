@@ -238,47 +238,66 @@
 </span><span id="line-90">        <span class="n">whoami</span><span class="o">=</span><span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
 </span><span id="line-91">        <span class="n">author</span><span class="o">=</span><span class="s1">&#39;nickname1&#39;</span><span class="p">,</span>
 </span><span id="line-92">        <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;#channel&#39;</span><span class="p">,</span>
-</span><span id="line-93">        <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">)</span>
-</span><span id="line-94">
-</span><span id="line-95">
-</span><span id="line-96">    <span class="k">assert</span> <span class="n">prompt</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span>
-</span><span id="line-97">        <span class="s1">&#39;**Instructions**</span><span class="se">\n</span><span class="s1">&#39;</span>
-</span><span id="line-98">        <span class="s1">&#39;Your nickname is&#39;</span>
-</span><span id="line-99">        <span class="s1">&#39; Robie. Keep it short&#39;</span>
-</span><span id="line-100">        <span class="s1">&#39; and use colors.</span><span class="se">\n\n</span><span class="s1">&#39;</span>
-</span><span id="line-101">        <span class="s1">&#39;**Conversations**</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-</span><span id="line-102">
-</span><span id="line-103">    <span class="k">assert</span> <span class="n">prompt</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span>
-</span><span id="line-104">        <span class="s1">&#39;**User Information**&#39;</span>
-</span><span id="line-105">        <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The user&#39;s nick&quot;</span>
-</span><span id="line-106">        <span class="s1">&#39; is nickname1.</span><span class="se">\n\n</span><span class="s1">&#39;</span>
-</span><span id="line-107">        <span class="s1">&#39;**User Question**</span><span class="se">\n</span><span class="s1">&#39;</span>
-</span><span id="line-108">        <span class="s1">&#39;This is the question&#39;</span><span class="p">)</span>
+</span><span id="line-93">        <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+</span><span id="line-94">        <span class="n">header</span><span class="o">=</span><span class="s1">&#39;header&#39;</span><span class="p">,</span>
+</span><span id="line-95">        <span class="n">footer</span><span class="o">=</span><span class="s1">&#39;footer&#39;</span><span class="p">)</span>
+</span><span id="line-96">
+</span><span id="line-97">
+</span><span id="line-98">    <span class="k">assert</span> <span class="n">prompt</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span>
+</span><span id="line-99">        <span class="s1">&#39;**Instructions**</span><span class="se">\n</span><span class="s1">&#39;</span>
+</span><span id="line-100">        <span class="s1">&#39;Your nickname is&#39;</span>
+</span><span id="line-101">        <span class="s1">&#39; Robie. Keep it short&#39;</span>
+</span><span id="line-102">        <span class="s1">&#39; and use colors.</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+</span><span id="line-103">        <span class="s1">&#39;**Conversations**</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="line-104">
+</span><span id="line-105">
+</span><span id="line-106">    <span class="n">_</span><span class="p">,</span> <span class="n">history</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-107">        <span class="n">prompt</span>
+</span><span id="line-108">        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;**Conversations**</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
 </span><span id="line-109">
-</span><span id="line-110">
-</span><span id="line-111">    <span class="n">_</span><span class="p">,</span> <span class="n">history</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-112">        <span class="n">prompt</span>
-</span><span id="line-113">        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;**Conversations**</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+</span><span id="line-110">    <span class="n">_history</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-111">        <span class="n">history</span>
+</span><span id="line-112">        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">22</span><span class="p">))</span>
+</span><span id="line-113">
 </span><span id="line-114">
-</span><span id="line-115">    <span class="n">history</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-116">        <span class="n">history</span>
-</span><span id="line-117">        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</span><span id="line-115">    <span class="n">records</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="line-116">        <span class="n">loads</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span>
+</span><span id="line-117">        <span class="ow">in</span> <span class="n">_history</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]]</span>
 </span><span id="line-118">
-</span><span id="line-119">    <span class="n">_history</span> <span class="o">=</span> <span class="n">loads</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
+</span><span id="line-119">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">)</span> <span class="o">==</span> <span class="mi">20</span>
 </span><span id="line-120">
-</span><span id="line-121">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">_history</span><span class="p">)</span> <span class="o">==</span> <span class="mi">20</span>
-</span><span id="line-122">
-</span><span id="line-123">
-</span><span id="line-124">    <span class="k">assert</span> <span class="n">_history</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="p">{</span>
-</span><span id="line-125">        <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;Message 2&#39;</span><span class="p">,</span>
-</span><span id="line-126">        <span class="s1">&#39;nick&#39;</span><span class="p">:</span> <span class="s1">&#39;nickname3&#39;</span><span class="p">,</span>
-</span><span id="line-127">        <span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span>
-</span><span id="line-128">        <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">_history</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;time&#39;</span><span class="p">]}</span>
-</span><span id="line-129">
-</span><span id="line-130">    <span class="k">assert</span> <span class="n">_history</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">{</span>
-</span><span id="line-131">        <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;Ainswer 2&#39;</span><span class="p">,</span>
-</span><span id="line-132">        <span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;assistant&#39;</span><span class="p">,</span>
-</span><span id="line-133">        <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">_history</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;time&#39;</span><span class="p">]}</span></div>
+</span><span id="line-121">
+</span><span id="line-122">    <span class="k">assert</span> <span class="n">records</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="p">{</span>
+</span><span id="line-123">        <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;Message 2&#39;</span><span class="p">,</span>
+</span><span id="line-124">        <span class="s1">&#39;nick&#39;</span><span class="p">:</span> <span class="s1">&#39;nickname3&#39;</span><span class="p">,</span>
+</span><span id="line-125">        <span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span>
+</span><span id="line-126">        <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">records</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;time&#39;</span><span class="p">]}</span>
+</span><span id="line-127">
+</span><span id="line-128">    <span class="k">assert</span> <span class="n">records</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">{</span>
+</span><span id="line-129">        <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;Ainswer 2&#39;</span><span class="p">,</span>
+</span><span id="line-130">        <span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;assistant&#39;</span><span class="p">,</span>
+</span><span id="line-131">        <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">records</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;time&#39;</span><span class="p">]}</span>
+</span><span id="line-132">
+</span><span id="line-133">    <span class="k">assert</span> <span class="n">records</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">{</span>
+</span><span id="line-134">        <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;Message 4&#39;</span><span class="p">,</span>
+</span><span id="line-135">        <span class="s1">&#39;nick&#39;</span><span class="p">:</span> <span class="s1">&#39;nickname4&#39;</span><span class="p">,</span>
+</span><span id="line-136">        <span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span>
+</span><span id="line-137">        <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">records</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;time&#39;</span><span class="p">]}</span>
+</span><span id="line-138">
+</span><span id="line-139">    <span class="k">assert</span> <span class="n">records</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">{</span>
+</span><span id="line-140">        <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;Ainswer 4&#39;</span><span class="p">,</span>
+</span><span id="line-141">        <span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;assistant&#39;</span><span class="p">,</span>
+</span><span id="line-142">        <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">records</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;time&#39;</span><span class="p">]}</span>
+</span><span id="line-143">
+</span><span id="line-144">
+</span><span id="line-145">    <span class="k">assert</span> <span class="n">prompt</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span>
+</span><span id="line-146">        <span class="s1">&#39;**User Information**&#39;</span>
+</span><span id="line-147">        <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The user&#39;s nick&quot;</span>
+</span><span id="line-148">        <span class="s1">&#39; is nickname1.</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+</span><span id="line-149">        <span class="s1">&#39;header</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+</span><span id="line-150">        <span class="s1">&#39;**User Question**</span><span class="se">\n</span><span class="s1">&#39;</span>
+</span><span id="line-151">        <span class="s1">&#39;This is the question&#39;</span>
+</span><span id="line-152">        <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">footer&#39;</span><span class="p">)</span></div>
 
 </span></code></pre></div>
     </div></div>
