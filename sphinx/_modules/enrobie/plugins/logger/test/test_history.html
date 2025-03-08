@@ -287,7 +287,18 @@
 </span><span id="line-142">        <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;ircbot&#39;</span><span class="p">,</span>
 </span><span id="line-143">        <span class="s1">&#39;create&#39;</span><span class="p">:</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;create&#39;</span><span class="p">],</span>
 </span><span id="line-144">        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Message 4&#39;</span><span class="p">,</span>
-</span><span id="line-145">        <span class="s1">&#39;plugin&#39;</span><span class="p">:</span> <span class="s1">&#39;logger&#39;</span><span class="p">}</span></div>
+</span><span id="line-145">        <span class="s1">&#39;plugin&#39;</span><span class="p">:</span> <span class="s1">&#39;logger&#39;</span><span class="p">}</span>
+</span><span id="line-146">
+</span><span id="line-147">
+</span><span id="line-148">    <span class="n">plaintext</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-149">        <span class="n">history</span><span class="o">.</span><span class="n">plaintext</span><span class="p">(</span>
+</span><span id="line-150">            <span class="n">client</span><span class="p">,</span>
+</span><span id="line-151">            <span class="s1">&#39;nickname1&#39;</span><span class="p">))</span>
+</span><span id="line-152">
+</span><span id="line-153">    <span class="n">plain</span> <span class="o">=</span> <span class="n">plaintext</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="line-154">
+</span><span id="line-155">    <span class="k">assert</span> <span class="n">plain</span><span class="p">[</span><span class="mi">27</span><span class="p">:]</span> <span class="o">==</span> <span class="p">(</span>
+</span><span id="line-156">        <span class="s1">&#39;&lt;nickname1&gt; Message 4&#39;</span><span class="p">)</span></div>
 
 </span></code></pre></div>
     </div></div>

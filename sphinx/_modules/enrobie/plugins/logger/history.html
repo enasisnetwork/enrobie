@@ -571,6 +571,34 @@
 </span><span id="line-409">                <span class="n">records</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
 </span><span id="line-410">
 </span><span id="line-411">            <span class="k">return</span> <span class="n">records</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
+
+</span><span id="line-412">
+</span><span id="line-413">
+<div class="viewcode-block" id="LoggerHistory.plaintext">
+<a class="viewcode-back" href="../../../../enrobie.plugins.logger.html#enrobie.plugins.logger.history.LoggerHistory.plaintext">[docs]</a>
+</span><span id="line-414">    <span class="k">def</span><span class="w"> </span><span class="nf">plaintext</span><span class="p">(</span>
+</span><span id="line-415">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-416">        <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;RobieClient&#39;</span><span class="p">,</span>
+</span><span id="line-417">        <span class="n">anchor</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-418">        <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-419">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+</span><span id="line-420"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-421"><span class="sd">        Return all historical records for the chat interactions.</span>
+</span><span id="line-422">
+</span><span id="line-423"><span class="sd">        :param client: Client class instance for Chatting Robie.</span>
+</span><span id="line-424"><span class="sd">        :param anchor: Channel name or other context or thread.</span>
+</span><span id="line-425"><span class="sd">        :param limit: Optionally restrict the records returned.</span>
+</span><span id="line-426"><span class="sd">        :returns: Historical records for the chat interactions.</span>
+</span><span id="line-427"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-428">
+</span><span id="line-429">        <span class="n">records</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="p">(</span>
+</span><span id="line-430">            <span class="n">client</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+</span><span id="line-431">
+</span><span id="line-432">        <span class="k">return</span> <span class="p">[</span>
+</span><span id="line-433">            <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;[</span><span class="si">{</span><span class="n">Time</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">create</span><span class="p">)</span><span class="o">.</span><span class="n">simple</span><span class="si">}</span><span class="s1">]&#39;</span>
+</span><span id="line-434">             <span class="sa">f</span><span class="s1">&#39; &lt;</span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">author</span><span class="si">}</span><span class="s1">&gt;&#39;</span>
+</span><span id="line-435">             <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="line-436">            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">records</span><span class="p">]</span></div>
 </div>
 
 </span></code></pre></div>
