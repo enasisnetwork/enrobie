@@ -409,3 +409,28 @@ class LoggerHistory:
                 records.append(object)
 
             return records[::-1]
+
+
+    def plaintext(
+        self,
+        client: 'RobieClient',
+        anchor: str,
+        limit: Optional[int] = None,
+    ) -> list[str]:
+        """
+        Return all historical records for the chat interactions.
+
+        :param client: Client class instance for Chatting Robie.
+        :param anchor: Channel name or other context or thread.
+        :param limit: Optionally restrict the records returned.
+        :returns: Historical records for the chat interactions.
+        """
+
+        records = self.records(
+            client, anchor, limit)
+
+        return [
+            (f'[{Time(x.create).simple}]'
+             f' <{x.author}>'
+             f' {x.message}')
+            for x in records]

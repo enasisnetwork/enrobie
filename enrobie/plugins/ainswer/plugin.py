@@ -297,6 +297,25 @@ class AinswerPlugin(RobiePlugin):
             " afraid I can't do that.")
 
 
+        _sleep = randint(*sleep)
+
+        robie.logger.log_i(
+            base=self,
+            name=self,
+            item='ainswer',
+            client=client.name,
+            author=author,
+            anchor=anchor,
+            status='pausing',
+            seconds=_sleep)
+
+        # Useful to prevent abuse but
+        # also reduce immediate reply
+        # and allow for plugin events
+        # before Jinja2 referencing
+        block_sleep(_sleep)
+
+
         try:
 
             prompt = promptllm(
@@ -310,17 +329,11 @@ class AinswerPlugin(RobiePlugin):
                 footer=footer,
                 ignore=ignore)
 
-            _sleep = randint(*sleep)
-
             if sargs.get('console'):
                 robie.printer({
                     'system': system,
                     'prompt': prompt,
                     'sleep': _sleep})
-
-            # Useful to prevent abuse but
-            # also reduce immediate reply
-            block_sleep(_sleep)
 
             response = engagellm(
                 self, prompt, respond)

@@ -155,8 +155,8 @@ def promptllm(  # noqa: CFQ001,CFQ002
         return (
             ('**Conversations**'
              '\nYou have previously had'
-             ' these conversations with'
-             f' the user.\n{_items}\n\n')
+             ' these conversations within'
+             f' context.\n{_items}\n\n')
             if items else SEMPTY)
 
 

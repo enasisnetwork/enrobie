@@ -46,7 +46,8 @@ _IRC_PROMPT = (
     ' The user may refer to you'
     ' as {{ whoami }} or similar.'
     ' Format for IRCv2.'
-    ' Do not use markdown.')
+    ' Do not use markdown.'
+    ' Do not use colors.')
 
 _MTM_PROMPT = (
     'In 800 characters or less,'
