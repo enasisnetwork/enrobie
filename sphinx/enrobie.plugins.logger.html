@@ -178,7 +178,7 @@ is permitted, for more information consult the project license file.</p>
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="enrobie.plugins.logger.history.LoggerHistoryRecord">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.logger.history.</span></span><span class="sig-name descname"><span class="pre">LoggerHistoryRecord</span></span><a class="reference internal" href="_modules/enrobie/plugins/logger/history.html#LoggerHistoryRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.logger.history.LoggerHistoryRecord" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.logger.history.LoggerHistoryRecord'">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://enasisnetwork.github.io/encommon/sphinx/encommon.types.html#encommon.types.classes.BaseModel" title="(in encommon v0.22.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://enasisnetwork.github.io/encommon/sphinx/encommon.types.html#encommon.types.classes.BaseModel" title="(in encommon v0.22.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
 <p>Contain the information regarding the chatting history.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -450,31 +450,31 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-53"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clients"</span><span class="p">,</span>
 </span><span id="line-54"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
 </span><span id="line-55"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-56"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-57"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-58"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
-</span><span id="line-59"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-60"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-61"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-62"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-63"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-64"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
-</span><span id="line-65"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-66"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-67"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-68"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-69"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-70"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-71"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-72"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-73"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-74"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-75"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-76"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-77"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-78"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
-</span><span id="line-79"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-80"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-56"><span class="w">      </span><span class="nt">"output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-57"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-58"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-59"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="line-60"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-61"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-62"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-63"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-64"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-65"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-66"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-67"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Optional path where logs append"</span><span class="p">,</span>
+</span><span id="line-68"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Output"</span>
+</span><span id="line-69"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-70"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-71"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-72"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
+</span><span id="line-73"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-74"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-75"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-76"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-77"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-78"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
+</span><span id="line-79"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-80"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="line-81"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="line-82"><span class="w">                  </span><span class="p">{</span>
 </span><span id="line-83"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -486,9 +486,9 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-89"><span class="w">               </span><span class="p">],</span>
 </span><span id="line-90"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 </span><span id="line-91"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-92"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-92"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
 </span><span id="line-93"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-94"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-94"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="line-95"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="line-96"><span class="w">                  </span><span class="p">{</span>
 </span><span id="line-97"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -500,18 +500,32 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-103"><span class="w">               </span><span class="p">],</span>
 </span><span id="line-104"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 </span><span id="line-105"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-106"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
-</span><span id="line-107"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-108"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-109"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-110"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-111"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-112"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-113"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-114"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-115"><span class="w">      </span><span class="s2">"clients"</span>
-</span><span id="line-116"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-117"><span class="p">}</span>
+</span><span id="line-106"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-107"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-108"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-109"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-110"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-111"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-112"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-113"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-114"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-115"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-116"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-117"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-118"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-119"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-120"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
+</span><span id="line-121"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-122"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-123"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-124"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-125"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-126"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-127"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-128"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-129"><span class="w">      </span><span class="s2">"clients"</span>
+</span><span id="line-130"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-131"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -527,6 +541,7 @@ is permitted, for more information consult the project license file.</p>
 <li><p><a class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.enable" title="enrobie.plugins.logger.params.LoggerPluginParams.enable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable</span> <span class="pre">(Annotated[bool,</span> <span class="pre">Field(False,</span> <span class="pre">description='Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled')])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.histories" title="enrobie.plugins.logger.params.LoggerPluginParams.histories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histories</span> <span class="pre">(Annotated[int,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=100,</span> <span class="pre">description='Number</span> <span class="pre">of</span> <span class="pre">messages</span> <span class="pre">per</span> <span class="pre">anchor',</span> <span class="pre">metadata=[Ge(ge=1),</span> <span class="pre">Le(le=10000)])])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.locate" title="enrobie.plugins.logger.params.LoggerPluginParams.locate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span> <span class="pre">(Annotated[Optional[str],</span> <span class="pre">Field(None,</span> <span class="pre">description='For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters',</span> <span class="pre">examples=['enrobie.plugins.AinswerPlugin',</span> <span class="pre">'enrobie.plugins.AutoJoinPlugin',</span> <span class="pre">'enrobie.plugins.AutoNickPlugin',</span> <span class="pre">'enrobie.plugins.StatusPlugin'],</span> <span class="pre">min_length=1)])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.output" title="enrobie.plugins.logger.params.LoggerPluginParams.output"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output</span> <span class="pre">(Annotated[str</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='Optional</span> <span class="pre">path</span> <span class="pre">where</span> <span class="pre">logs</span> <span class="pre">append',</span> <span class="pre">metadata=[MinLen(min_length=4)])])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.status" title="enrobie.plugins.logger.params.LoggerPluginParams.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span> <span class="pre">(Annotated[enrobie.plugins.status.params.StatusPluginIconParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=StatusPluginIconParams,</span> <span class="pre">description='Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform')])</span></code></a></p></li>
 </ul>
 </dd>
@@ -581,6 +596,18 @@ is permitted, for more information consult the project license file.</p>
 <dt class="field-odd">Constraints<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.logger.params.LoggerPluginParams.output">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Optional</span> <span class="pre">path</span> <span class="pre">where</span> <span class="pre">logs</span> <span class="pre">append'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.logger.params.LoggerPluginParams.output" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.logger.params.LoggerPluginParams.output'">¶</a></dt>
+<dd><p>Optional path where logs append</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 4</p></li>
 </ul>
 </dd>
 </dl>
@@ -774,31 +801,31 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-53"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clients"</span><span class="p">,</span>
 </span><span id="line-54"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
 </span><span id="line-55"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-56"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-57"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-58"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
-</span><span id="line-59"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-60"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-61"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-62"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-63"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-64"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
-</span><span id="line-65"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-66"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-67"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-68"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-69"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-70"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-71"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-72"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-73"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-74"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-75"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-76"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-77"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-78"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
-</span><span id="line-79"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-80"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-56"><span class="w">      </span><span class="nt">"output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-57"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-58"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-59"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="line-60"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-61"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-62"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-63"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-64"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-65"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-66"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-67"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Optional path where logs append"</span><span class="p">,</span>
+</span><span id="line-68"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Output"</span>
+</span><span id="line-69"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-70"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-71"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-72"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
+</span><span id="line-73"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-74"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-75"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-76"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-77"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-78"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
+</span><span id="line-79"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-80"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="line-81"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="line-82"><span class="w">                  </span><span class="p">{</span>
 </span><span id="line-83"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -810,9 +837,9 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-89"><span class="w">               </span><span class="p">],</span>
 </span><span id="line-90"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 </span><span id="line-91"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-92"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-92"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
 </span><span id="line-93"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-94"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-94"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="line-95"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="line-96"><span class="w">                  </span><span class="p">{</span>
 </span><span id="line-97"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -824,18 +851,32 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-103"><span class="w">               </span><span class="p">],</span>
 </span><span id="line-104"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 </span><span id="line-105"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-106"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
-</span><span id="line-107"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-108"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-109"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-110"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-111"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-112"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-113"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-114"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-115"><span class="w">      </span><span class="s2">"clients"</span>
-</span><span id="line-116"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-117"><span class="p">}</span>
+</span><span id="line-106"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-107"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-108"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-109"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-110"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-111"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-112"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-113"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-114"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-115"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-116"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-117"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-118"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-119"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-120"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
+</span><span id="line-121"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-122"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-123"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-124"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-125"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-126"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-127"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-128"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-129"><span class="w">      </span><span class="s2">"clients"</span>
+</span><span id="line-130"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-131"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -851,6 +892,7 @@ is permitted, for more information consult the project license file.</p>
 <li><p><a class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.enable" title="enrobie.plugins.logger.params.LoggerPluginParams.enable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable</span> <span class="pre">(Annotated[bool,</span> <span class="pre">Field(False,</span> <span class="pre">description='Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled')])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.histories" title="enrobie.plugins.logger.params.LoggerPluginParams.histories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histories</span> <span class="pre">(Annotated[int,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=100,</span> <span class="pre">description='Number</span> <span class="pre">of</span> <span class="pre">messages</span> <span class="pre">per</span> <span class="pre">anchor',</span> <span class="pre">metadata=[Ge(ge=1),</span> <span class="pre">Le(le=10000)])])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.locate" title="enrobie.plugins.logger.params.LoggerPluginParams.locate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span> <span class="pre">(Annotated[Optional[str],</span> <span class="pre">Field(None,</span> <span class="pre">description='For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters',</span> <span class="pre">examples=['enrobie.plugins.AinswerPlugin',</span> <span class="pre">'enrobie.plugins.AutoJoinPlugin',</span> <span class="pre">'enrobie.plugins.AutoNickPlugin',</span> <span class="pre">'enrobie.plugins.StatusPlugin'],</span> <span class="pre">min_length=1)])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.output" title="enrobie.plugins.logger.params.LoggerPluginParams.output"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output</span> <span class="pre">(Annotated[str</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='Optional</span> <span class="pre">path</span> <span class="pre">where</span> <span class="pre">logs</span> <span class="pre">append',</span> <span class="pre">metadata=[MinLen(min_length=4)])])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.status" title="enrobie.plugins.logger.params.LoggerPluginParams.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span> <span class="pre">(Annotated[enrobie.plugins.status.params.StatusPluginIconParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=StatusPluginIconParams,</span> <span class="pre">description='Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform')])</span></code></a></p></li>
 </ul>
 </dd>
@@ -910,6 +952,18 @@ is permitted, for more information consult the project license file.</p>
 </dl>
 </dd></dl>
 <dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.logger.LoggerPluginParams.output">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Optional</span> <span class="pre">path</span> <span class="pre">where</span> <span class="pre">logs</span> <span class="pre">append'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.logger.LoggerPluginParams.output" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.logger.LoggerPluginParams.output'">¶</a></dt>
+<dd><p>Optional path where logs append</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 4</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.plugins.logger.LoggerPluginParams.status">
 <em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.plugins.status.html#enrobie.plugins.status.params.StatusPluginIconParams" title="enrobie.plugins.status.params.StatusPluginIconParams"><span class="pre">StatusPluginIconParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default_factory</span></span><span class="o"><span class="pre">=</span></span><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.StatusPluginIconParams" title="enrobie.plugins.StatusPluginIconParams"><span class="pre">StatusPluginIconParams</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Optional]</span></em><a class="headerlink" href="#enrobie.plugins.logger.LoggerPluginParams.status" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.logger.LoggerPluginParams.status'">¶</a></dt>
 <dd><p>Icon used per chat platform</p>
@@ -961,6 +1015,7 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.plugins.logger.params.LoggerPluginParams.enable'" class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.enable"><code class="docutils literal notranslate"><span class="pre">LoggerPluginParams.enable</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.logger.params.LoggerPluginParams.histories'" class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.histories"><code class="docutils literal notranslate"><span class="pre">LoggerPluginParams.histories</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.logger.params.LoggerPluginParams.locate'" class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.locate"><code class="docutils literal notranslate"><span class="pre">LoggerPluginParams.locate</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.logger.params.LoggerPluginParams.output'" class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.output"><code class="docutils literal notranslate"><span class="pre">LoggerPluginParams.output</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.logger.params.LoggerPluginParams.status'" class="reference internal" href="#enrobie.plugins.logger.params.LoggerPluginParams.status"><code class="docutils literal notranslate"><span class="pre">LoggerPluginParams.status</span></code></a></li>
 </ul>
 </li>
@@ -992,6 +1047,7 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.plugins.logger.LoggerPluginParams.enable'" class="reference internal" href="#enrobie.plugins.logger.LoggerPluginParams.enable"><code class="docutils literal notranslate"><span class="pre">LoggerPluginParams.enable</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.logger.LoggerPluginParams.histories'" class="reference internal" href="#enrobie.plugins.logger.LoggerPluginParams.histories"><code class="docutils literal notranslate"><span class="pre">LoggerPluginParams.histories</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.logger.LoggerPluginParams.locate'" class="reference internal" href="#enrobie.plugins.logger.LoggerPluginParams.locate"><code class="docutils literal notranslate"><span class="pre">LoggerPluginParams.locate</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.logger.LoggerPluginParams.output'" class="reference internal" href="#enrobie.plugins.logger.LoggerPluginParams.output"><code class="docutils literal notranslate"><span class="pre">LoggerPluginParams.output</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.logger.LoggerPluginParams.status'" class="reference internal" href="#enrobie.plugins.logger.LoggerPluginParams.status"><code class="docutils literal notranslate"><span class="pre">LoggerPluginParams.status</span></code></a></li>
 </ul>
 </li>
