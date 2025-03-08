@@ -42,6 +42,12 @@ class LoggerPluginParams(RobiePluginParams, extra='forbid'):
               description='List of clients to enable plugin',
               min_length=1)]
 
+    output: Annotated[
+        Optional[str],
+        Field(None,
+              description='Optional path where logs append',
+              min_length=4)]
+
     status: Annotated[
         StatusPluginIconParams,
         Field(default_factory=StatusPluginIconParams,
@@ -65,7 +71,8 @@ class LoggerPluginParams(RobiePluginParams, extra='forbid'):
             parsable = [
                 'database',
                 'histories',
-                'channels',
+                'clients',
+                'output',
                 'status']
 
             for key in parsable:

@@ -7,6 +7,7 @@ is permitted, for more information consult the project license file.
 
 
 
+from pathlib import Path
 from threading import Thread
 from time import sleep as block_sleep
 from typing import TYPE_CHECKING
@@ -14,6 +15,7 @@ from typing import TYPE_CHECKING
 from encommon.types import inrepr
 from encommon.types import instr
 from encommon.types import lattrs
+from encommon.utils import read_text
 
 from enconnect.discord.test import EVENTS as DSCEVENTS
 from enconnect.fixtures import DSCClientSocket
@@ -93,6 +95,7 @@ def test_LoggerPlugin_cover(
     client_dscsock: DSCClientSocket,
     client_ircsock: IRCClientSocket,
     client_mtmsock: MTMClientSocket,
+    tmp_path: Path,
 ) -> None:
     """
     Perform various tests associated with relevant routines.
@@ -101,11 +104,26 @@ def test_LoggerPlugin_cover(
     :param client_dscsock: Object to mock client connection.
     :param client_ircsock: Object to mock client connection.
     :param client_mtmsock: Object to mock client connection.
+    :param tmp_path: pytest object for temporal filesystem.
     """
+
+    robie = service.robie
+    childs = robie.childs
+    plugins = childs.plugins
+
+    plugin = plugins['logger']
+
+    assert isinstance(
+        plugin, LoggerPlugin)
+
+    plugin.params.output = (
+        f'{tmp_path}/fart.txt')
+
 
     client_dscsock(DSCEVENTS)
     client_ircsock(IRCEVENTS)
     client_mtmsock(MTMEVENTS)
+
 
     service.limit_threads(
         plugins=['logger'])
@@ -129,3 +147,11 @@ def test_LoggerPlugin_cover(
     service.stop()
 
     thread.join()
+
+
+    content = read_text(
+        f'{tmp_path}/fart.txt')
+
+    assert 'Hello dscbot' in content
+    assert 'Hello ircbot' in content
+    assert 'Hello mtmbot' in content
