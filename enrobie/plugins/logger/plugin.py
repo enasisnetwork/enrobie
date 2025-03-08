@@ -7,10 +7,12 @@ is permitted, for more information consult the project license file.
 
 
 
+from json import dumps
 from typing import TYPE_CHECKING
 from typing import Type
 
 from encommon.types import NCNone
+from encommon.utils import append_text
 
 from .history import LoggerHistory
 from .params import LoggerPluginParams
@@ -121,6 +123,9 @@ class LoggerPlugin(RobiePlugin):
         names = (
             self.params.clients)
 
+        output = (
+            self.params.output)
+
 
         kinds = ['privmsg', 'chanmsg']
 
@@ -149,6 +154,21 @@ class LoggerPlugin(RobiePlugin):
             history.insert(
                 client, author[0],
                 anchor, message)
+
+
+            if output is None:
+                continue  # NOCVR
+
+            append = {
+                'client': client.name,
+                'time': str(mitem.time),
+                'author': author,
+                'anchor': anchor,
+                'message': message}
+
+            append_text(
+                output,
+                f'{dumps(append)}\n')
 
 
     def __status(
