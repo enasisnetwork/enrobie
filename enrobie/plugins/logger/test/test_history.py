@@ -143,3 +143,14 @@ def test_LoggerHistory(
         'create': record['create'],
         'message': 'Message 4',
         'plugin': 'logger'}
+
+
+    plaintext = (
+        history.plaintext(
+            client,
+            'nickname1'))
+
+    plain = plaintext[-1]
+
+    assert plain[27:] == (
+        '<nickname1> Message 4')
