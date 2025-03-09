@@ -7,6 +7,8 @@ is permitted, for more information consult the project license file.
 
 
 
+from threading import Thread
+from time import sleep as block_sleep
 from typing import TYPE_CHECKING
 
 from encommon.types import DictStrAny
@@ -17,6 +19,7 @@ from encommon.types import lattrs
 
 from enconnect.discord import ClientEvent
 from enconnect.discord.test import EVENTS
+from enconnect.fixtures import DSCClientSocket
 
 from ..client import DSCClient
 from ..command import DSCCommand
@@ -24,6 +27,7 @@ from ....robie.addons import RobieQueue
 
 if TYPE_CHECKING:
     from ....robie import Robie
+    from ....robie import RobieService
     from ....robie.models import RobieCommand  # noqa: F401
     from ....robie.models import RobieMessage  # noqa: F401
 
@@ -86,7 +90,8 @@ def test_DSCClient(
         '_RobieChild__robie',
         '_RobieChild__name',
         '_RobieChild__params',
-        '_DSCClient__client']
+        '_DSCClient__client',
+        '_DSCClient__channels']
 
 
     assert inrepr(
@@ -114,6 +119,8 @@ def test_DSCClient(
     assert client.kind == 'client'
 
     assert client.client
+
+    assert client.channels
 
     assert client.schema()
 
@@ -225,3 +232,66 @@ def test_DSCClient_compose(
 
     assert citem.json == {
         'content': 'message'}
+
+
+
+def test_DSCClient_channels(
+    service: 'RobieService',
+    client_dscsock: DSCClientSocket,
+) -> None:
+    """
+    Perform various tests associated with relevant routines.
+
+    :param service: Ancilary Chatting Robie class instance.
+    :param client_dscsock: Object to mock client connection.
+    """
+
+    robie = service.robie
+    childs = robie.childs
+    clients = childs.clients
+
+    client = clients['dscbot']
+
+    assert isinstance(
+        client, DSCClient)
+
+
+    client_dscsock(DSCEVENTS)
+
+    service.limit_threads(
+        clients=['dscbot'],
+        plugins=['status'])
+
+    service.start()
+
+
+    thread = Thread(
+        target=service.operate)
+
+    thread.start()
+
+
+    block_sleep(5)
+
+
+    select = (
+        client.channels
+        .select('dscunq'))
+
+    assert select is not None
+
+    assert select.endumped == {
+        'members': None,
+        'title': 'testing',
+        'topic': 'topico',
+        'unique': 'dscunq'}
+
+
+    service.soft()
+
+    while service.running:
+        block_sleep(1)
+
+    service.stop()
+
+    thread.join()

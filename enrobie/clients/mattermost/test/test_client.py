@@ -7,6 +7,10 @@ is permitted, for more information consult the project license file.
 
 
 
+from json import dumps
+from pathlib import Path
+from threading import Thread
+from time import sleep as block_sleep
 from typing import TYPE_CHECKING
 
 from encommon.types import DictStrAny
@@ -15,11 +19,19 @@ from encommon.types import inrepr
 from encommon.types import instr
 from encommon.types import lattrs
 
+from enconnect.fixtures import MTMClientSocket
 from enconnect.mattermost import ClientEvent
 from enconnect.mattermost.test import EVENTS
 
+from httpx import Response
+
+from respx import MockRouter
+
 from ..client import MTMClient
 from ..command import MTMCommand
+from ....conftest import config_factory
+from ....conftest import robie_factory
+from ....conftest import service_factory
 from ....robie.addons import RobieQueue
 
 if TYPE_CHECKING:
@@ -86,7 +98,8 @@ def test_MTMClient(
         '_RobieChild__robie',
         '_RobieChild__name',
         '_RobieChild__params',
-        '_MTMClient__client']
+        '_MTMClient__client',
+        '_MTMClient__channels']
 
 
     assert inrepr(
@@ -114,6 +127,8 @@ def test_MTMClient(
     assert client.kind == 'client'
 
     assert client.client
+
+    assert client.channels
 
     assert client.schema()
 
@@ -226,3 +241,90 @@ def test_MTMClient_compose(
     assert citem.json == {
         'channel_id': 'chan',
         'message': 'message'}
+
+
+
+def test_MTMClient_channels(
+    tmp_path: Path,
+    client_mtmsock: MTMClientSocket,
+    respx_mock: MockRouter,
+) -> None:
+    """
+    Perform various tests associated with relevant routines.
+
+    :param tmp_path: pytest object for temporal filesystem.
+    :param client_mtmsock: Object to mock client connection.
+    :param respx_mock: Object for mocking request operation.
+    """
+
+    robie = robie_factory(
+        config_factory(tmp_path))
+
+    service = (
+        service_factory(robie))
+
+
+    childs = robie.childs
+    clients = childs.clients
+
+    client = clients['mtmbot']
+
+    assert isinstance(
+        client, MTMClient)
+
+
+    content = [
+        {'header': 'Testing',
+         'id': 'mtmunq',
+         'name': 'testing'}]
+
+
+    (respx_mock
+     .get(
+         'https://mocked:443'
+         '/api/v4/users/mtmunq/'
+         'teams/mocked/channels')
+     .mock(Response(
+         status_code=200,
+         content=dumps(content))))
+
+
+    client_mtmsock(MTMEVENTS)
+
+    service.limit_threads(
+        clients=['mtmbot'],
+        plugins=['status'])
+
+    service.start()
+
+
+    thread = Thread(
+        target=service.operate)
+
+    thread.start()
+
+
+    block_sleep(5)
+
+
+    select = (
+        client.channels
+        .select('mtmunq'))
+
+    assert select is not None
+
+    assert select.endumped == {
+        'members': None,
+        'title': 'testing',
+        'topic': 'Testing',
+        'unique': 'mtmunq'}
+
+
+    service.soft()
+
+    while service.running:
+        block_sleep(1)
+
+    service.stop()
+
+    thread.join()

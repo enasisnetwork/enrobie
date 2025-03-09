@@ -7,12 +7,15 @@ is permitted, for more information consult the project license file.
 
 
 
+from threading import Thread
+from time import sleep as block_sleep
 from typing import TYPE_CHECKING
 
 from encommon.types import inrepr
 from encommon.types import instr
 from encommon.types import lattrs
 
+from enconnect.fixtures import IRCClientSocket
 from enconnect.irc import ClientEvent
 from enconnect.irc.test import EVENTS
 
@@ -22,6 +25,7 @@ from ....robie.addons import RobieQueue
 
 if TYPE_CHECKING:
     from ....robie import Robie
+    from ....robie import RobieService
     from ....robie.models import RobieCommand  # noqa: F401
     from ....robie.models import RobieMessage  # noqa: F401
 
@@ -86,7 +90,8 @@ def test_IRCClient(
         '_RobieChild__robie',
         '_RobieChild__name',
         '_RobieChild__params',
-        '_IRCClient__client']
+        '_IRCClient__client',
+        '_IRCClient__channels']
 
 
     assert inrepr(
@@ -114,6 +119,8 @@ def test_IRCClient(
     assert client.kind == 'client'
 
     assert client.client
+
+    assert client.channels
 
     assert client.schema()
 
@@ -219,3 +226,69 @@ def test_IRCClient_compose(
     assert citem.event == (
         'PRIVMSG #channel'
         ' :message')
+
+
+
+def test_IRCClient_channels(
+    service: 'RobieService',
+    client_ircsock: IRCClientSocket,
+) -> None:
+    """
+    Perform various tests associated with relevant routines.
+
+    :param service: Ancilary Chatting Robie class instance.
+    :param client_ircsock: Object to mock client connection.
+    """
+
+    robie = service.robie
+    childs = robie.childs
+    clients = childs.clients
+
+    client = clients['ircbot']
+
+    assert isinstance(
+        client, IRCClient)
+
+
+    client_ircsock(IRCEVENTS)
+
+    service.limit_threads(
+        clients=['ircbot'],
+        plugins=['status'])
+
+    service.start()
+
+
+    thread = Thread(
+        target=service.operate)
+
+    thread.start()
+
+
+    block_sleep(5)
+
+
+    select = (
+        client.channels
+        .select('#test'))
+
+    assert select is not None
+
+    assert select.endumped == {
+        'members': {
+            'robert',
+            'sirrah',
+            'trebor'},
+        'title': '#test',
+        'topic': 'Test topic is changed',
+        'unique': '#test'}
+
+
+    service.soft()
+
+    while service.running:
+        block_sleep(1)
+
+    service.stop()
+
+    thread.join()

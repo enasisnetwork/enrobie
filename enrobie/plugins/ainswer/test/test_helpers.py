@@ -100,12 +100,16 @@ def test_promptllm(
         'Your nickname is'
         ' Robie. Keep it short'
         ' and use colors.\n\n'
-        '**Conversations**\n')
+        '**Previous**\n'
+        'You have previously'
+        ' had the following'
+        ' conversations in the'
+        ' channel with users.')
 
 
     _, history = (
         prompt
-        .split('**Conversations**\n'))
+        .split('**Previous**\n'))
 
     _history = (
         history
@@ -143,10 +147,11 @@ def test_promptllm(
 
 
     assert prompt.endswith(
-        '**User Information**'
-        "\nThe user's nick"
-        ' is nickname1.\n\n'
+        '**Message**\n'
+        'Your nickname: Robie\n'
+        'User nickname: nickname1\n'
+        'Client family: irc\n\n'
         'header\n\n'
-        '**User Question**\n'
+        '**Question**\n'
         'This is the question'
         '\n\nfooter')

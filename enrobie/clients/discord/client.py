@@ -31,6 +31,7 @@ from ...plugins import StatusPlugin
 from ...plugins import StatusPluginStates
 from ...robie.addons import RobieQueue
 from ...robie.childs import RobieClient
+from ...utils import ClientChannels
 from ...utils import DupliThread
 
 if TYPE_CHECKING:
@@ -46,6 +47,7 @@ class DSCClient(RobieClient):
     """
 
     __client: Client
+    __channels: ClientChannels
 
 
     def __post__(
@@ -62,6 +64,9 @@ class DSCClient(RobieClient):
             self.__debugger)
 
         self.__client = client
+
+        self.__channels = (
+            ClientChannels())
 
 
     def validate(
@@ -120,6 +125,19 @@ class DSCClient(RobieClient):
 
 
     @property
+    def channels(
+        self,
+    ) -> ClientChannels:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__channels
+
+
+    @property
     def client(
         self,
     ) -> Client:
@@ -158,6 +176,17 @@ class DSCClient(RobieClient):
         def _put_mqueue() -> None:
 
             event = source.get()
+
+            try:
+                self.__events(event)
+
+            except Exception as reason:
+
+                robie.logger.log_e(
+                    base=self,
+                    name=self,
+                    status='exception',
+                    exc_info=reason)
 
             self.put_message(
                 target, event)
@@ -299,6 +328,60 @@ class DSCClient(RobieClient):
 
         while not source.empty():
             _put_mqueue()  # NOCVR
+
+
+    def __events(
+        self,
+        event: ClientEvent,
+    ) -> None:
+        """
+        Process the provided message item from the Robie thread.
+
+        :param event: Raw event received from the network peer.
+        """
+
+        type = event.type
+        data = event.data
+
+        if data is None:
+            return None
+
+
+        if type == 'GUILD_CREATE':
+
+            chans = data.get('channels')
+
+            if chans is None:
+                return NCNone
+
+            for chan in chans:
+
+                chid = chan['id']
+
+                if 'topic' in chan:
+                    topic = chan['topic']
+                    (self.channels
+                     .set_topic(chid, topic))
+
+                if 'name' in chan:
+                    name = chan['name']
+                    (self.channels
+                     .set_title(chid, name))
+
+
+        if type == 'CHANNEL_UPDATE':
+
+            chid = data['id']
+
+            if 'topic' in data:
+                topic = data['topic']
+                (self.channels
+                 .set_topic(chid, topic))
+
+            if 'name' in data:
+                name = data['name']
+                (self.channels
+                 .set_title(chid, name))
 
 
     def get_message(

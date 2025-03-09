@@ -18,6 +18,7 @@ from typing import TYPE_CHECKING
 from typing import Type
 
 from encommon.types import NCNone
+from encommon.types.strings import SPACED
 
 from enconnect.irc import Client
 from enconnect.irc import ClientEvent
@@ -25,6 +26,7 @@ from enconnect.irc import ClientEvent
 from .command import IRCCommand
 from .message import IRCMessage
 from .params import IRCClientParams
+from .states import ClientChannels
 from ...plugins import StatusPlugin
 from ...plugins import StatusPluginStates
 from ...robie.addons import RobieQueue
@@ -44,6 +46,7 @@ class IRCClient(RobieClient):
     """
 
     __client: Client
+    __channels: ClientChannels
 
 
     def __post__(
@@ -60,6 +63,9 @@ class IRCClient(RobieClient):
             self.__debugger)
 
         self.__client = client
+
+        self.__channels = (
+            ClientChannels())
 
 
     def validate(
@@ -118,6 +124,19 @@ class IRCClient(RobieClient):
 
 
     @property
+    def channels(
+        self,
+    ) -> ClientChannels:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__channels
+
+
+    @property
     def client(
         self,
     ) -> Client:
@@ -155,6 +174,18 @@ class IRCClient(RobieClient):
         def _put_mqueue() -> None:
 
             event = source.get()
+
+            try:
+                self.__event(event)
+
+
+            except Exception as reason:
+
+                robie.logger.log_e(
+                    base=self,
+                    name=self,
+                    status='exception',
+                    exc_info=reason)
 
             self.put_message(
                 target, event)
@@ -297,6 +328,130 @@ class IRCClient(RobieClient):
 
         while not source.empty():
             _put_mqueue()  # NOCVR
+
+
+    def __event(  # noqa: CFQ001
+        self,
+        event: ClientEvent,
+    ) -> None:
+        """
+        Process the provided message item from the Robie thread.
+
+        :param event: Raw event received from the network peer.
+        """
+
+        command = event.command
+        params = event.params
+        prefix = event.prefix
+
+
+        if command == '353':
+
+            assert params
+
+            chan, members = (
+                params.split(SPACED, 3)[2:])
+
+            assert members
+
+            _names = [
+                x.lstrip('~@%&+')
+                for x in
+                (members.lstrip(':')
+                 .split(SPACED))]
+
+            for name in _names:
+                (self.channels
+                 .add_member(chan, name))
+
+
+        if command == 'JOIN':
+
+            assert prefix
+            assert params
+
+            nick = prefix.split('!')[0]
+            chan = (
+                params.lstrip(':')
+                .split(SPACED, 1)[0])
+
+            if event.whome == nick:
+                (self.channels
+                 .clear_members(chan))
+
+            (self.channels
+             .add_member(chan, nick))
+
+
+        if command == 'PART':
+
+            assert prefix
+            assert params
+
+            nick = prefix.split('!')[0]
+            chan = (
+                params.lstrip(':')
+                .split(SPACED, 1)[0])
+
+            (self.channels
+             .del_member(chan, nick))
+
+
+        if command == 'KICK':
+
+            assert params
+
+            chan, nick, _ = (
+                params.split(SPACED, 3))
+
+            (self.channels
+             .del_member(chan, nick))
+
+
+        if command in ['332', 'TOPIC']:
+
+            assert params
+
+            topic: Optional[str] = None
+
+            if command == '332':
+
+                chan = (
+                    params
+                    .split(SPACED, 2)[1])
+
+                topic = (
+                    params
+                    .split(SPACED, 2)[2]
+                    .lstrip(':'))
+
+            if command == 'TOPIC':
+
+                chan = (
+                    params
+                    .split(SPACED, 1)[0])
+
+                topic = (
+                    params
+                    .split(SPACED, 1)[1]
+                    .lstrip(':'))
+
+            assert topic is not None
+
+            (self.channels
+             .set_topic(chan, topic))
+
+
+        if command == 'NICK':
+
+            assert prefix
+            assert params
+
+            current = prefix.split('!')[0]
+            update = params.lstrip(':')
+
+            (self.channels
+             .rename_member(current, update))
 
 
     def get_message(
