@@ -35,16 +35,12 @@ _DEFAULT_IGNORE = [
 _DSC_PROMPT = (
     'In 800 characters or less,'
     ' answer the user question.'
-    ' The user may refer to you'
-    ' as {{ whoami }} or similar.'
     ' Format for Discord.'
     ' Markdown is encouraged.')
 
 _IRC_PROMPT = (
     'In 200 characters or less,'
     ' answer the user question.'
-    ' The user may refer to you'
-    ' as {{ whoami }} or similar.'
     ' Format for IRCv2.'
     ' Do not use markdown.'
     ' Do not use colors.')
@@ -52,8 +48,6 @@ _IRC_PROMPT = (
 _MTM_PROMPT = (
     'In 800 characters or less,'
     ' answer the user question.'
-    ' The user may refer to you'
-    ' as {{ whoami }} or similar.'
     ' Format for Mattermost.'
     ' Markdown is encouraged.')
 

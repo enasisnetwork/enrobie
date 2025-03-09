@@ -9,6 +9,7 @@ is permitted, for more information consult the project license file.
 
 from random import randint
 from time import sleep as block_sleep
+from typing import Optional
 from typing import TYPE_CHECKING
 from typing import Type
 
@@ -31,6 +32,7 @@ if TYPE_CHECKING:
     from pydantic_ai.models import Model
     from ...robie.threads import RobieThread
     from ...robie.childs import RobieClient
+    from ...robie.models import RobieMessage
 
 
 
@@ -71,6 +73,7 @@ class AinswerPlugin(RobiePlugin):
         origin = ainswer.origin
 
         system = prompt.system
+
 
         self.__history = (
             AinswerHistory(self))
@@ -113,7 +116,6 @@ class AinswerPlugin(RobiePlugin):
             self.__model,
             model_settings=settings,
             system_prompt=system)
-
 
         self.__status('pending')
 
@@ -243,23 +245,25 @@ class AinswerPlugin(RobiePlugin):
         self,
         client: 'RobieClient',
         prompt: str,
-        *,
-        whoami: str,
-        author: str,
-        anchor: str,
-        message: str,
         respond: Type[AinswerResponse],
+        *,
+        whoami: Optional[str] = None,
+        author: Optional[str] = None,
+        anchor: Optional[str] = None,
+        message: Optional[str] = None,
+        mitem: Optional['RobieMessage'] = None,
     ) -> str:
         """
         Submit the question to the LLM and return the response.
 
         :param client: Client class instance for Chatting Robie.
         :param prompt: Additional prompt insert before question.
+        :param respond: Model to describe the expected response.
         :param whoami: What is my current nickname on platform.
         :param author: Name of the user that submitted question.
         :param anchor: Channel name or other context or thread.
         :param message: Question that will be asked of the LLM.
-        :param respond: Model to describe the expected response.
+        :param mitem: Item containing information for operation.
         :returns: Response adhering to provided specifications.
         """
 
@@ -268,6 +272,60 @@ class AinswerPlugin(RobiePlugin):
         sargs = config.sargs
         history = self.history
         params = self.params
+
+        _whoami: Optional[str] = None
+        _author: Optional[str] = None
+
+
+        # Also in promptllm helper
+        if mitem is not None:
+
+            if mitem.whome is not None:
+
+                whoami = (
+                    mitem.whome[0]
+                    if whoami is None
+                    else whoami)
+
+                _whoami = mitem.whome[1]
+
+                _whoami = (
+                    _whoami
+                    if _whoami != whoami
+                    else None)
+
+
+            if mitem.author is not None:
+
+                author = (
+                    mitem.author[0]
+                    if author is None
+                    else author)
+
+                _author = mitem.author[1]
+
+                _author = (
+                    _author
+                    if _author != author
+                    else None)
+
+
+            anchor = (
+                mitem.anchor
+                if anchor is None
+                else anchor)
+
+            message = (
+                mitem.message
+                if message is None
+                else message)
+
+
+        assert whoami is not None
+        assert author is not None
+        assert anchor is not None
+        assert message is not None
+
 
         robie.logger.log_i(
             base=self,
@@ -280,24 +338,19 @@ class AinswerPlugin(RobiePlugin):
 
 
         sleep = (
-            params.ainswer
-            .sleep)
+            params.ainswer.sleep)
 
         system = (
-            params.prompt
-            .system)
+            params.prompt.system)
 
         header = (
-            params.prompt
-            .header)
+            params.prompt.header)
 
         footer = (
-            params.prompt
-            .footer)
+            params.prompt.footer)
 
         ignore = (
-            params.prompt
-            .ignore)
+            params.prompt.ignore)
 
 
         imsorry = (
@@ -330,12 +383,15 @@ class AinswerPlugin(RobiePlugin):
                 self, client,
                 prompt=prompt,
                 whoami=whoami,
+                whoami_uniq=_whoami,
                 author=author,
+                author_uniq=_author,
                 anchor=anchor,
                 message=message,
                 header=header,
                 footer=footer,
-                ignore=ignore)
+                ignore=ignore,
+                mitem=mitem)
 
             if sargs.get('console'):
                 robie.printer({

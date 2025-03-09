@@ -161,6 +161,13 @@ def test_AinswerPlugin_cover(
         block_sleep(10)
 
 
+        select = (
+            clients['ircbot']
+            .channels
+            .select('#test'))
+
+        assert select is not None
+
         records = (
             history.records(
                 clients['ircbot'],

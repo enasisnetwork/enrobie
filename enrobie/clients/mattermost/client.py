@@ -7,6 +7,7 @@ is permitted, for more information consult the project license file.
 
 
 
+from json import loads
 from threading import Event
 from threading import Thread
 from threading import enumerate as thread_enumerate
@@ -31,6 +32,7 @@ from ...plugins import StatusPlugin
 from ...plugins import StatusPluginStates
 from ...robie.addons import RobieQueue
 from ...robie.childs import RobieClient
+from ...utils import ClientChannels
 from ...utils import DupliThread
 
 if TYPE_CHECKING:
@@ -46,6 +48,7 @@ class MTMClient(RobieClient):
     """
 
     __client: Client
+    __channels: ClientChannels
 
 
     def __post__(
@@ -62,6 +65,9 @@ class MTMClient(RobieClient):
             self.__debugger)
 
         self.__client = client
+
+        self.__channels = (
+            ClientChannels())
 
 
     def validate(
@@ -120,6 +126,19 @@ class MTMClient(RobieClient):
 
 
     @property
+    def channels(
+        self,
+    ) -> ClientChannels:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__channels
+
+
+    @property
     def client(
         self,
     ) -> Client:
@@ -157,6 +176,17 @@ class MTMClient(RobieClient):
         def _put_mqueue() -> None:
 
             event = source.get()
+
+            try:
+                self.__event(event)
+
+            except Exception as reason:
+
+                robie.logger.log_e(
+                    base=self,
+                    name=self,
+                    status='exception',
+                    exc_info=reason)
 
             self.put_message(
                 target, event)
@@ -297,6 +327,82 @@ class MTMClient(RobieClient):
 
         while not source.empty():
             _put_mqueue()  # NOCVR
+
+
+    def __event(
+        self,
+        event: ClientEvent,
+    ) -> None:
+        """
+        Process the provided message item from the Robie thread.
+
+        :param event: Raw event received from the network peer.
+        """
+
+        client = self.__client
+
+        type = event.type
+        data = event.data
+        broadcast = event.broadcast
+
+
+        if type == 'channel_updated':
+
+            if data is None:
+                return NCNone
+
+            chan = loads(data['channel'])
+
+            chid = chan['id']
+
+            if 'header' in chan:
+
+                topic = chan['header']
+
+                (self.channels
+                 .set_topic(chid, topic))
+
+            if 'name' in chan:
+
+                name = chan['name']
+
+                (self.channels
+                 .set_title(chid, name))
+
+
+        if type == 'hello':
+
+            assert broadcast
+
+            uniq = broadcast['user_id']
+            teamid = client.params.teamid
+
+            path = (
+                f'users/{uniq}/teams'
+                f'/{teamid}/channels')
+
+            chans = (
+                client
+                .request('get', path)
+                .json())
+
+            for chan in chans:
+
+                chid = chan['id']
+
+                if 'header' in chan:
+
+                    topic = chan['header']
+
+                    (self.channels
+                     .set_topic(chid, topic))
+
+                if 'name' in chan:
+
+                    name = chan['name']
+
+                    (self.channels
+                     .set_title(chid, name))
 
 
     def get_message(

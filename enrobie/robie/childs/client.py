@@ -15,6 +15,7 @@ from encommon.types import DictStrAny
 
 from .child import RobieChild
 from ..addons import RobieQueue
+from ...utils import ClientChannels
 
 if TYPE_CHECKING:
     from ..models import RobieCommand
@@ -53,6 +54,19 @@ class RobieClient(RobieChild):
         """
 
         return 'client'
+
+
+    @property
+    def channels(
+        self,
+    ) -> ClientChannels:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        raise NotImplementedError
 
 
     @classmethod

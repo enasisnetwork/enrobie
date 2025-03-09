@@ -15,6 +15,7 @@ from typing import Type
 from encommon.times import Time
 from encommon.types import DictStrAny
 from encommon.types import NCNone
+from encommon.types.strings import COMMAS
 from encommon.types.strings import SEMPTY
 
 from enconnect.discord import (
@@ -39,6 +40,7 @@ if TYPE_CHECKING:
 
 
 _KINDS = ['privmsg', 'chanmsg']
+
 _NORESPOND = 'no_response'
 
 
@@ -68,7 +70,7 @@ def engagellm(
 
 
 
-def promptllm(  # noqa: CFQ001,CFQ002
+def promptllm(  # noqa: CFQ001,CFQ002,CFQ004
     plugin: 'AinswerPlugin',
     client: 'RobieClient',
     prompt: str,
@@ -77,9 +79,12 @@ def promptllm(  # noqa: CFQ001,CFQ002
     author: str,
     anchor: str,
     message: str,
+    whoami_uniq: Optional[str] = None,
+    author_uniq: Optional[str] = None,
     header: Optional[str] = None,
     footer: Optional[str] = None,
     ignore: Optional[list[str]] = None,
+    mitem: Optional['RobieMessage'] = None,
 ) -> str:
     """
     Return the message prefixed with runtime prompt values.
@@ -94,11 +99,14 @@ def promptllm(  # noqa: CFQ001,CFQ002
     :param header: Optinoal header included before question.
     :param footer: Optinoal footer included after question.
     :param ignore: Optional reasons for LLM not responding.
+    :param mitem: Item containing information for operation.
     :returns: Message prefixed with runtime prompt values.
     """
 
     robie = plugin.robie
     history = plugin.history
+    family = client.family
+    noresp = _NORESPOND
 
 
     parsed = robie.j2parse(
@@ -107,10 +115,14 @@ def promptllm(  # noqa: CFQ001,CFQ002
          'footer': footer},
         {'plugin': plugin,
          'client': client,
+         'family': family,
          'whoami': whoami,
+         'whoami_uniq': whoami_uniq,
          'author': author,
+         'author_uniq': author_uniq,
          'anchor': anchor,
-         'message': message})
+         'message': message,
+         'mitem': mitem})
 
     prompt = parsed['prompt']
     header = parsed['header']
@@ -119,7 +131,10 @@ def promptllm(  # noqa: CFQ001,CFQ002
     assert isinstance(prompt, str)
 
 
-    def _histories() -> str:
+    def _history() -> str:
+
+        if anchor is None:
+            return SEMPTY  # NOCVR
 
         items: list[DictStrAny] = []
 
@@ -129,80 +144,149 @@ def promptllm(  # noqa: CFQ001,CFQ002
 
         for record in records:
 
-            _author = record.author
-            _message = record.message
-            _ainswer = record.ainswer
+            author = record.author
+            message = record.message
+            ainswer = record.ainswer
 
-            _create = (
+            create = (
                 Time(record.create)
                 .simple)
 
             items.extend([
-
                 {'role': 'user',
-                 'content': _message,
-                 'nick': _author,
-                 'time': _create},
-
+                 'content': message,
+                 'nick': author,
+                 'time': create},
                 {'role': 'assistant',
-                 'content': _ainswer,
-                 'time': _create}])
+                 'content': ainswer,
+                 'time': create}])
 
-        _items = '\n'.join([
+        joined = '\n'.join([
             dumps(x)
             for x in items])
 
         return (
-            ('**Conversations**'
-             '\nYou have previously had'
-             ' these conversations within'
-             f' context.\n{_items}\n\n')
+            ('**Previous**\n'
+             'You have previously'
+             ' had the following'
+             ' conversations in the'
+             ' channel with users.'
+             f'\n{joined}\n\n')
             if items else SEMPTY)
 
 
-    returned = (
-        '**Instructions**'
-        f'\n{prompt}\n\n'
-        f'{_histories()}')
+    def _ignored() -> str:
 
+        if ignore is None:
+            return SEMPTY
 
-    if ignore is not None:
+        joined = (
+            '\n - '.join(ignore))
 
-        ignored = (
-            '\n - '
-            .join(ignore))
-
-        returned += (
-            '**Not Responding**'
-            '\nThere are reasons for'
+        return (
+            '**Responding**\n'
+            'There are reasons for'
             ' not responding to the'
-            ' question. If you think'
-            ' you should not respond'
-            ' to the question, reply'
-            f' with only {_NORESPOND}.'
-            f'\nReasons for replying'
-            f' with {_NORESPOND} are:'
-            f'\n - {ignored}\n\n')
+            ' user question. If you'
+            ' think you should not'
+            ' respond, simply reply'
+            f' with only {noresp}.\n'
+            f'Reasons for replying'
+            f' {noresp} include:'
+            f'\n - {joined}\n\n')
 
 
-    returned += (
-        '**User Information**'
-        "\nThe user's nick"
-        f' is {author}.\n\n')
+    def _metadata() -> str:
 
+        returned = (
+            '**Message**\n'
+            'Your nickname:'
+            f' {whoami}\n')
 
-    if header is not None:
+        if whoami_uniq is not None:
+            returned += (
+                'Your ID: '
+                f'{whoami_uniq}\n')
+
         returned += (
-            f'{header}\n\n')
+            'User nickname:'
+            f' {author}\n')
 
-    returned += (
-        '**User Question**'
-        f'\n{message}')
+        if author_uniq is not None:
+            returned += (
+                'User ID: '
+                f'{author_uniq}\n')
 
-    if footer is not None:
         returned += (
-            f'\n\n{footer}\n\n')
+            'Client family:'
+            f' {family}\n')
 
+        if mitem is not None:
+
+            kind = mitem.kind
+            time = mitem.time
+
+            returned += (
+                f'Time: {time}\n'
+                f'Kind: {kind}\n')
+
+        return returned
+
+
+    def _channel() -> str:
+
+        channel = (
+            client.channels
+            .select(anchor))
+
+        if channel is None:
+            return SEMPTY
+
+        title = channel.title
+        topic = channel.topic
+
+        returned = (
+            f'Unique: {anchor}\n')
+
+        if (title is not None
+                and title != anchor):
+            returned += (
+                f'Title: {title}\n')
+
+        if topic is not None:
+            returned += (
+                f'Topic: {topic}\n')
+
+        if channel.members:
+
+            join = COMMAS.join(
+                channel.members)
+
+            returned += (
+                f'Users: {join}\n')
+
+        return (
+            '\n**Channel**\n'
+            f'{returned}')
+
+
+    returned = SEMPTY.join([
+        ('**Instructions**\n'
+         f'{prompt}\n\n'
+         f'{_history()}'
+         f'{_ignored()}'
+         f'{_metadata()}'
+         f'{_channel()}\n'),
+        (f'{header}\n\n'
+         if header is not None
+         and len(header) >= 1
+         else SEMPTY),
+        ('**Question**\n'
+         f'{message}\n\n'),
+        (f'{footer}\n\n'
+         if footer is not None
+         and len(footer) >= 1
+         else SEMPTY)])
 
     return returned.strip()
 
@@ -227,11 +311,16 @@ def composedsc(
     childs = robie.childs
     params = plugin.params
 
-
     kind = mitem.kind
+    hasme = mitem.hasme
+
 
     if kind not in _KINDS:
         return NCNone
+
+    if (kind == 'chanmsg'
+            and not hasme):
+        return None
 
 
     event = getattr(
@@ -242,17 +331,6 @@ def composedsc(
         DSCClientEvent)
 
 
-    assert mitem.whome
-    assert mitem.author
-    assert mitem.anchor
-    assert mitem.message
-
-    whoami = mitem.whome[0]
-    author = mitem.author[0]
-    anchor = mitem.anchor
-    message = mitem.message
-
-
     client = (
         childs.clients
         [mitem.client])
@@ -261,23 +339,13 @@ def composedsc(
         client, DSCClient)
 
 
-    if (mitem.kind == 'chanmsg'
-            and not mitem.hasme):
-        return None
-
-
-    respond = AinswerResponseDSC
-
     ainswer = (
         plugin.ainswer(
             client,
             (params.prompt
              .client.dsc),
-            whoami=whoami,
-            author=author,
-            anchor=anchor,
-            message=message,
-            respond=respond))
+            AinswerResponseDSC,
+            mitem=mitem))
 
 
     if ainswer == _NORESPOND:
@@ -310,11 +378,16 @@ def composeirc(
     childs = robie.childs
     params = plugin.params
 
-
     kind = mitem.kind
+    hasme = mitem.hasme
+
 
     if kind not in _KINDS:
         return NCNone
+
+    if (kind == 'chanmsg'
+            and not hasme):
+        return None
 
 
     event = getattr(
@@ -325,17 +398,6 @@ def composeirc(
         IRCClientEvent)
 
 
-    assert mitem.whome
-    assert mitem.author
-    assert mitem.anchor
-    assert mitem.message
-
-    whoami = mitem.whome[0]
-    author = mitem.author[0]
-    anchor = mitem.anchor
-    message = mitem.message
-
-
     client = (
         childs.clients
         [mitem.client])
@@ -344,23 +406,13 @@ def composeirc(
         client, IRCClient)
 
 
-    if (mitem.kind == 'chanmsg'
-            and not mitem.hasme):
-        return None
-
-
-    respond = AinswerResponseIRC
-
     ainswer = (
         plugin.ainswer(
             client,
             (params.prompt
              .client.irc),
-            whoami=whoami,
-            author=author,
-            anchor=anchor,
-            message=message,
-            respond=respond))
+            AinswerResponseIRC,
+            mitem=mitem))
 
 
     if ainswer == _NORESPOND:
@@ -393,11 +445,16 @@ def composemtm(
     childs = robie.childs
     params = plugin.params
 
-
     kind = mitem.kind
+    hasme = mitem.hasme
+
 
     if kind not in _KINDS:
         return NCNone
+
+    if (kind == 'chanmsg'
+            and not hasme):
+        return None
 
 
     event = getattr(
@@ -408,17 +465,6 @@ def composemtm(
         MTMClientEvent)
 
 
-    assert mitem.whome
-    assert mitem.author
-    assert mitem.anchor
-    assert mitem.message
-
-    whoami = mitem.whome[0]
-    author = mitem.author[0]
-    anchor = mitem.anchor
-    message = mitem.message
-
-
     client = (
         childs.clients
         [mitem.client])
@@ -427,23 +473,13 @@ def composemtm(
         client, MTMClient)
 
 
-    if (mitem.kind == 'chanmsg'
-            and not mitem.hasme):
-        return None
-
-
-    respond = AinswerResponseMTM
-
     ainswer = (
         plugin.ainswer(
             client,
             (params.prompt
              .client.mtm),
-            whoami=whoami,
-            author=author,
-            anchor=anchor,
-            message=message,
-            respond=respond))
+            AinswerResponseMTM,
+            mitem=mitem))
 
 
     if ainswer == _NORESPOND:
