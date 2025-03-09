@@ -42,7 +42,10 @@ class AinswerPlugin(RobiePlugin):
        This plugin allows for interacting with an LLM model.
     """
 
+    __started: bool
+
     __history: AinswerHistory
+
     __model: 'Model'
     __agent: 'Agent'
 
@@ -58,6 +61,8 @@ class AinswerPlugin(RobiePlugin):
         from pydantic_ai.settings import ModelSettings
 
 
+        self.__started = False
+
         params = self.params
 
         prompt = params.prompt
@@ -66,7 +71,6 @@ class AinswerPlugin(RobiePlugin):
         origin = ainswer.origin
 
         system = prompt.system
-
 
         self.__history = (
             AinswerHistory(self))
@@ -111,7 +115,7 @@ class AinswerPlugin(RobiePlugin):
             system_prompt=system)
 
 
-        self.__status('normal')
+        self.__status('pending')
 
 
     def validate(
@@ -187,7 +191,7 @@ class AinswerPlugin(RobiePlugin):
         thread: 'RobieThread',
     ) -> None:
         """
-        Perform the operation related to Homie service threads.
+        Perform the operation related to Robie service threads.
 
         :param thread: Child class instance for Chatting Robie.
         """
@@ -198,6 +202,10 @@ class AinswerPlugin(RobiePlugin):
 
         names = (
             self.params.clients)
+
+        if not self.__started:
+            self.__started = True
+            self.__status('normal')
 
 
         while not mqueue.empty:

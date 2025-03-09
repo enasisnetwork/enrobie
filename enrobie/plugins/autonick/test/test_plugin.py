@@ -56,6 +56,7 @@ def test_AutoNickPlugin(
         '_RobieChild__robie',
         '_RobieChild__name',
         '_RobieChild__params',
+        '_AutoNickPlugin__started',
         '_AutoNickPlugin__timer']
 
 

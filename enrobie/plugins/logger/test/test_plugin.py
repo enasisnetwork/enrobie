@@ -57,6 +57,7 @@ def test_LoggerPlugin(
         '_RobieChild__robie',
         '_RobieChild__name',
         '_RobieChild__params',
+        '_LoggerPlugin__started',
         '_LoggerPlugin__history']
 
 
@@ -117,13 +118,12 @@ def test_LoggerPlugin_cover(
         plugin, LoggerPlugin)
 
     plugin.params.output = (
-        f'{tmp_path}/fart.txt')
+        f'{tmp_path}/output.txt')
 
 
     client_dscsock(DSCEVENTS)
     client_ircsock(IRCEVENTS)
     client_mtmsock(MTMEVENTS)
-
 
     service.limit_threads(
         plugins=['logger'])
@@ -150,7 +150,7 @@ def test_LoggerPlugin_cover(
 
 
     content = read_text(
-        f'{tmp_path}/fart.txt')
+        f'{tmp_path}/output.txt')
 
     assert 'Hello dscbot' in content
     assert 'Hello ircbot' in content

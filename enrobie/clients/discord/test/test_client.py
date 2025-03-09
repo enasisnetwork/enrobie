@@ -9,11 +9,14 @@ is permitted, for more information consult the project license file.
 
 from typing import TYPE_CHECKING
 
+from encommon.types import DictStrAny
+from encommon.types import expate
 from encommon.types import inrepr
 from encommon.types import instr
 from encommon.types import lattrs
 
 from enconnect.discord import ClientEvent
+from enconnect.discord.test import EVENTS
 
 from ..client import DSCClient
 from ..command import DSCCommand
@@ -23,6 +26,37 @@ if TYPE_CHECKING:
     from ....robie import Robie
     from ....robie.models import RobieCommand  # noqa: F401
     from ....robie.models import RobieMessage  # noqa: F401
+
+
+
+DSCEVENTS: list[DictStrAny] = [
+
+    {'t': 'GUILD_CREATE',
+     's': 2,
+     'op': 0,
+     'd/channels': [
+         {'id': 'dscunq',
+          'name': 'test',
+          'topic': 'topic'}]},
+
+    {'t': 'CHANNEL_UPDATE',
+     's': 3,
+     'op': 0,
+     'd/id': 'dscunq',
+     'd/topic': 'topico',
+     'd/name': 'testing'},
+
+    {'t': 'MESSAGE_CREATE',
+     's': 4,
+     'op': 0,
+     'd/channel_id': 'chanid',
+     'd/guild_id': 'guldid',
+     'd/author/id': 'userid',
+     'd/author/username': 'user',
+     'd/content': 'Hello dscbot'}]
+
+DSCEVENTS = EVENTS + [
+    expate(x) for x in DSCEVENTS]
 
 
 
@@ -78,6 +112,8 @@ def test_DSCClient(
     assert client.family == 'discord'
 
     assert client.kind == 'client'
+
+    assert client.client
 
     assert client.schema()
 

@@ -9,11 +9,14 @@ is permitted, for more information consult the project license file.
 
 from typing import TYPE_CHECKING
 
+from encommon.types import DictStrAny
+from encommon.types import expate
 from encommon.types import inrepr
 from encommon.types import instr
 from encommon.types import lattrs
 
 from enconnect.mattermost import ClientEvent
+from enconnect.mattermost.test import EVENTS
 
 from ..client import MTMClient
 from ..command import MTMCommand
@@ -23,6 +26,37 @@ if TYPE_CHECKING:
     from ....robie import Robie
     from ....robie.models import RobieCommand  # noqa: F401
     from ....robie.models import RobieMessage  # noqa: F401
+
+
+
+MTMEVENTS: list[DictStrAny] = [
+
+    {'event': 'hello',
+     'broadcast': {
+         'user_id': 'mtmunq'}},
+
+    {'event': 'posted',
+     'seq': 5,
+     'broadcast': {
+         'channel_id': 'chanid'},
+     'data/channel_type': 'P',
+     'data/post': (
+         '{"user_id":"userid",'
+         '"channel_id":"chanid",'
+         '"message":"Hello mtmbot"}'),
+     'data/sender_name': '@user'},
+
+    {'event': 'channel_updated',
+     'broadcast': {
+         'channel_id': 'mtmunq'},
+     'data/channel': (
+         '{"id":"mtmunq",'
+         '"name":"testing",'
+         '"header":"Testing"}'),
+     'seq': 2}]
+
+MTMEVENTS = EVENTS + [
+    expate(x) for x in MTMEVENTS]
 
 
 
@@ -78,6 +112,8 @@ def test_MTMClient(
     assert client.family == 'mattermost'
 
     assert client.kind == 'client'
+
+    assert client.client
 
     assert client.schema()
 

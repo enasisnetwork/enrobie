@@ -92,6 +92,8 @@ def test_IRCMessage(
     assert item.author
     assert item.author[0] == 'nick'
 
+    assert item.anchor == 'nick'
+
     assert item.message
 
 

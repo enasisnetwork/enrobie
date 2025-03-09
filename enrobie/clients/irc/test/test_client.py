@@ -14,6 +14,7 @@ from encommon.types import instr
 from encommon.types import lattrs
 
 from enconnect.irc import ClientEvent
+from enconnect.irc.test import EVENTS
 
 from ..client import IRCClient
 from ..command import IRCCommand
@@ -23,6 +24,39 @@ if TYPE_CHECKING:
     from ....robie import Robie
     from ....robie.models import RobieCommand  # noqa: F401
     from ....robie.models import RobieMessage  # noqa: F401
+
+
+
+IRCEVENTS: list[str] = [
+
+    ':ircbot JOIN :#test',
+
+    (':mocked 353 ircbot = #test '
+     ':ircbot robert trebor sirrah'),
+
+    (':mocked 332 ircbot #test '
+     ':Test topic already set'),
+
+    (':foo!bar@baz KICK '
+     '#test ircbot :foo'),
+
+    ':ircbot JOIN :#test',
+
+    (':mocked 353 ircbot = #test '
+     ':ircbot robert trebor sirrah'),
+
+    (':mocked 332 ircbot #test '
+     ':Test topic already set'),
+
+    (':foo!bar@baz TOPIC #test '
+     ':Test topic is changed'),
+
+    (':nick!user@host PRIVMSG'
+     ' #test :Hello ircbot'),
+
+    ':ircbot PART :#test']
+
+IRCEVENTS.extend(EVENTS[:-1])
 
 
 
@@ -78,6 +112,8 @@ def test_IRCClient(
     assert client.family == 'irc'
 
     assert client.kind == 'client'
+
+    assert client.client
 
     assert client.schema()
 

@@ -27,7 +27,7 @@ class RobieClients(RobieMember):
         self,
     ) -> None:
         """
-        Perform the operation related to Homie service members.
+        Perform the operation related to Robie service members.
         """
 
         # Spread commands to clients

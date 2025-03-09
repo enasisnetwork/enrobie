@@ -322,7 +322,7 @@ class RobieThread(Thread):
         self,
     ) -> None:
         """
-        Perform the operation related to Homie service threads.
+        Perform the operation related to Robie service threads.
         """
 
         member = self.__member

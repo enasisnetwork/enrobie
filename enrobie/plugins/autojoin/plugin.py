@@ -12,6 +12,7 @@ from typing import Type
 
 from encommon.times import Timer
 from encommon.types import NCNone
+from encommon.types.strings import SPACED
 
 from enconnect.irc import ClientEvent
 
@@ -38,6 +39,8 @@ class AutoJoinPlugin(RobiePlugin):
        This plugin maintains joined for configured channels.
     """
 
+    __started: bool
+
     __should: _CHANNELS
     __joined: _CHANNELS
 
@@ -50,6 +53,8 @@ class AutoJoinPlugin(RobiePlugin):
         """
         Initialize instance for class using provided parameters.
         """
+
+        self.__started = False
 
         params = self.params
 
@@ -128,7 +133,7 @@ class AutoJoinPlugin(RobiePlugin):
         thread: 'RobieThread',
     ) -> None:
         """
-        Perform the operation related to Homie service threads.
+        Perform the operation related to Robie service threads.
 
         :param thread: Child class instance for Chatting Robie.
         """
@@ -144,6 +149,10 @@ class AutoJoinPlugin(RobiePlugin):
         member = thread.member
         cqueue = member.cqueue
         timer = self.__timer
+
+        if not self.__started:
+            self.__started = True
+            self.__status('normal')
 
 
         if timer.ready():
@@ -204,7 +213,7 @@ class AutoJoinPlugin(RobiePlugin):
         thread: 'RobieThread',
     ) -> None:
         """
-        Perform the operation related to Homie service threads.
+        Perform the operation related to Robie service threads.
 
         :param thread: Child class instance for Chatting Robie.
         """
@@ -294,7 +303,7 @@ class AutoJoinPlugin(RobiePlugin):
         if params is None:
             return NCNone
 
-        split = params.split(' ')
+        split = params.split(SPACED)
 
         current = (
             client.client
