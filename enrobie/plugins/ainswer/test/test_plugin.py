@@ -7,6 +7,7 @@ is permitted, for more information consult the project license file.
 
 
 
+from pathlib import Path
 from threading import Thread
 from time import sleep as block_sleep
 from typing import TYPE_CHECKING
@@ -15,20 +16,22 @@ from encommon.types import inrepr
 from encommon.types import instr
 from encommon.types import lattrs
 
-from enconnect.discord.test import EVENTS as DSCEVENTS
 from enconnect.fixtures import DSCClientSocket
 from enconnect.fixtures import IRCClientSocket
 from enconnect.fixtures import MTMClientSocket
-from enconnect.irc.test import EVENTS as IRCEVENTS
-from enconnect.mattermost.test import EVENTS as MTMEVENTS
 
 from pydantic_ai.models.test import TestModel
 
 from ..plugin import AinswerPlugin
+from ....clients.discord.test import DSCEVENTS
+from ....clients.irc.test import IRCEVENTS
+from ....clients.mattermost.test import MTMEVENTS
+from ....conftest import config_factory
+from ....conftest import robie_factory
+from ....conftest import service_factory
 
 if TYPE_CHECKING:
     from ....robie import Robie
-    from ....robie import RobieService
 
 
 
@@ -57,6 +60,7 @@ def test_AinswerPlugin(
         '_RobieChild__robie',
         '_RobieChild__name',
         '_RobieChild__params',
+        '_AinswerPlugin__started',
         '_AinswerPlugin__history',
         '_AinswerPlugin__model',
         '_AinswerPlugin__agent']
@@ -93,7 +97,7 @@ def test_AinswerPlugin(
 
 
 def test_AinswerPlugin_cover(
-    service: 'RobieService',
+    tmp_path: Path,
     client_dscsock: DSCClientSocket,
     client_ircsock: IRCClientSocket,
     client_mtmsock: MTMClientSocket,
@@ -101,20 +105,30 @@ def test_AinswerPlugin_cover(
     """
     Perform various tests associated with relevant routines.
 
-    :param service: Ancilary Chatting Robie class instance.
+    :param tmp_path: pytest object for temporal filesystem.
     :param client_dscsock: Object to mock client connection.
     :param client_ircsock: Object to mock client connection.
     :param client_mtmsock: Object to mock client connection.
     """
 
+    robie = robie_factory(
+        config_factory(tmp_path))
+
+    service = (
+        service_factory(robie))
+
+
     robie = service.robie
     childs = robie.childs
     plugins = childs.plugins
+    clients = childs.clients
 
     plugin = plugins['ainswer']
 
     assert isinstance(
         plugin, AinswerPlugin)
+
+    history = plugin.history
 
 
     client_dscsock(DSCEVENTS)
@@ -144,7 +158,16 @@ def test_AinswerPlugin_cover(
         thread.start()
 
 
-        block_sleep(5)
+        block_sleep(10)
+
+
+        records = (
+            history.records(
+                clients['ircbot'],
+                '#test'))
+
+        assert len(records) >= 1
+
 
         service.soft()
 

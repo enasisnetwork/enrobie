@@ -137,7 +137,7 @@ class DSCClient(RobieClient):
         thread: 'RobieThread',
     ) -> None:
         """
-        Perform the operation related to Homie service threads.
+        Perform the operation related to Robie service threads.
 
         :param thread: Child class instance for Chatting Robie.
         """
@@ -149,6 +149,7 @@ class DSCClient(RobieClient):
         vacate = member.vacate
         params = self.params
 
+        intents = params.intents
         delay = params.delay
 
         self.__status('pending')
@@ -201,7 +202,8 @@ class DSCClient(RobieClient):
 
             try:
 
-                client.operate()
+                client.operate(
+                    intents=intents)
 
                 self.__status('pending')
 

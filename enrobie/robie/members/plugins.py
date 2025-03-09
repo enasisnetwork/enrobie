@@ -27,7 +27,7 @@ class RobiePlugins(RobieMember):
         self,
     ) -> None:
         """
-        Perform the operation related to Homie service members.
+        Perform the operation related to Robie service members.
         """
 
         vacate = self.vacate

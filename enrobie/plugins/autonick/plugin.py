@@ -31,6 +31,8 @@ class AutoNickPlugin(RobiePlugin):
        This plugin maintains configured nickname on server.
     """
 
+    __started: bool
+
     __timer: Timer
 
 
@@ -40,6 +42,8 @@ class AutoNickPlugin(RobiePlugin):
         """
         Initialize instance for class using provided parameters.
         """
+
+        self.__started = False
 
         self.__timer = Timer(5)
 
@@ -93,13 +97,17 @@ class AutoNickPlugin(RobiePlugin):
         thread: 'RobieThread',
     ) -> None:
         """
-        Perform the operation related to Homie service threads.
+        Perform the operation related to Robie service threads.
 
         :param thread: Child class instance for Chatting Robie.
         """
 
         mqueue = thread.mqueue
         timer = self.__timer
+
+        if not self.__started:
+            self.__started = True
+            self.__status('normal')
 
 
         if timer.ready():
@@ -115,7 +123,7 @@ class AutoNickPlugin(RobiePlugin):
         thread: 'RobieThread',
     ) -> None:
         """
-        Perform the operation related to Homie service threads.
+        Perform the operation related to Robie service threads.
 
         :param thread: Child class instance for Chatting Robie.
         """

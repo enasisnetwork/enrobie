@@ -31,6 +31,12 @@ class DSCClientParams(RobieClientParams, extra='forbid'):
         Field(...,
               description='Parameters for the base client')]
 
+    intents: Annotated[
+        int,
+        Field(4609,
+              description='Timeout connecting to server',
+              ge=0, le=65535)]
+
     delay: Annotated[
         int,
         Field(15,
@@ -59,6 +65,7 @@ class DSCClientParams(RobieClientParams, extra='forbid'):
 
             parsable = [
                 'client',
+                'intents',
                 'delay',
                 'status']
 

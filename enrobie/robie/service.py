@@ -252,7 +252,7 @@ class RobieService:
         self,
     ) -> None:
         """
-        Start the various threads within the Homie class object.
+        Start the various threads within the Robie class object.
         """
 
         robie = self.__robie
@@ -279,7 +279,7 @@ class RobieService:
         self,
     ) -> None:
         """
-        Perform the operation related to Homie service members.
+        Perform the operation related to Robie service members.
         """
 
         robie = self.__robie
@@ -308,7 +308,7 @@ class RobieService:
         self,
     ) -> None:
         """
-        Perform the operation related to Homie service members.
+        Perform the operation related to Robie service members.
         """
 
         robie = self.__robie
@@ -337,7 +337,7 @@ class RobieService:
         self,
     ) -> None:
         """
-        Perform the operation related to Homie service members.
+        Perform the operation related to Robie service members.
         """
 
         robie = self.__robie
@@ -366,7 +366,7 @@ class RobieService:
         self,
     ) -> None:
         """
-        Perform the operation related to Homie service members.
+        Perform the operation related to Robie service members.
         """
 
         timer = self.__timer
@@ -438,7 +438,7 @@ class RobieService:
         **kwargs: Any,
     ) -> None:
         """
-        Stop the various threads within the Homie class object.
+        Stop the various threads within the Robie class object.
 
         :param kwargs: Keyword arguments ignored by the method.
         :param args: Positional arguments ignored by the method.
@@ -470,7 +470,7 @@ class RobieService:
         **kwargs: Any,
     ) -> None:
         """
-        Stop the various threads within the Homie class object.
+        Stop the various threads within the Robie class object.
 
         :param kwargs: Keyword arguments ignored by the method.
         :param args: Positional arguments ignored by the method.

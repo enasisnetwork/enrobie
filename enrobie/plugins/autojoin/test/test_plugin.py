@@ -56,6 +56,7 @@ def test_AutoJoinPlugin(
         '_RobieChild__robie',
         '_RobieChild__name',
         '_RobieChild__params',
+        '_AutoJoinPlugin__started',
         '_AutoJoinPlugin__joined',
         '_AutoJoinPlugin__should',
         '_AutoJoinPlugin__timer']

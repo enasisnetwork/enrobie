@@ -33,6 +33,8 @@ class LoggerPlugin(RobiePlugin):
        This plugin allows for interacting with an LLM model.
     """
 
+    __started: bool
+
     __history: LoggerHistory
 
 
@@ -43,10 +45,12 @@ class LoggerPlugin(RobiePlugin):
         Initialize instance for class using provided parameters.
         """
 
+        self.__started = False
+
         self.__history = (
             LoggerHistory(self))
 
-        self.__status('normal')
+        self.__status('pending')
 
 
     def validate(
@@ -109,7 +113,7 @@ class LoggerPlugin(RobiePlugin):
         thread: 'RobieThread',
     ) -> None:
         """
-        Perform the operation related to Homie service threads.
+        Perform the operation related to Robie service threads.
 
         :param thread: Child class instance for Chatting Robie.
         """
@@ -125,6 +129,10 @@ class LoggerPlugin(RobiePlugin):
 
         output = (
             self.params.output)
+
+        if not self.__started:
+            self.__started = True
+            self.__status('normal')
 
 
         kinds = ['privmsg', 'chanmsg']
@@ -169,6 +177,8 @@ class LoggerPlugin(RobiePlugin):
             append_text(
                 output,
                 f'{dumps(append)}\n')
+
+            self.__status('normal')
 
 
     def __status(

@@ -135,7 +135,7 @@ class IRCClient(RobieClient):
         thread: 'RobieThread',
     ) -> None:
         """
-        Perform the operation related to Homie service threads.
+        Perform the operation related to Robie service threads.
 
         :param thread: Child class instance for Chatting Robie.
         """

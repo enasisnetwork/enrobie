@@ -92,6 +92,8 @@ def test_MTMMessage(
     assert item.author
     assert item.author[0] == 'user'
 
+    assert item.anchor == 'userid'
+
     assert item.message
 
 
