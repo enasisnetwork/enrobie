@@ -113,6 +113,7 @@
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc.command">enrobie.clients.irc.command module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc.message">enrobie.clients.irc.message module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc.params">enrobie.clients.irc.params module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc.states">enrobie.clients.irc.states module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.irc.html#module-enrobie.clients.irc">Module contents</a></li>
 </ul>
 </li>
@@ -130,6 +131,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="enrobie.clients.html#module-enrobie.clients">Module contents</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient"><code class="docutils literal notranslate"><span class="pre">DSCClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient.channels"><code class="docutils literal notranslate"><span class="pre">DSCClient.channels</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient.client"><code class="docutils literal notranslate"><span class="pre">DSCClient.client</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient.compose"><code class="docutils literal notranslate"><span class="pre">DSCClient.compose()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClient.family"><code class="docutils literal notranslate"><span class="pre">DSCClient.family</span></code></a></li>
@@ -146,10 +148,12 @@
 <li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClientParams"><code class="docutils literal notranslate"><span class="pre">DSCClientParams</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClientParams.client"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.client</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClientParams.delay"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.delay</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClientParams.intents"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.intents</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.DSCClientParams.status"><code class="docutils literal notranslate"><span class="pre">DSCClientParams.status</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient"><code class="docutils literal notranslate"><span class="pre">IRCClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient.channels"><code class="docutils literal notranslate"><span class="pre">IRCClient.channels</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient.client"><code class="docutils literal notranslate"><span class="pre">IRCClient.client</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient.compose"><code class="docutils literal notranslate"><span class="pre">IRCClient.compose()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.IRCClient.family"><code class="docutils literal notranslate"><span class="pre">IRCClient.family</span></code></a></li>
@@ -170,6 +174,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient"><code class="docutils literal notranslate"><span class="pre">MTMClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient.channels"><code class="docutils literal notranslate"><span class="pre">MTMClient.channels</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient.client"><code class="docutils literal notranslate"><span class="pre">MTMClient.client</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient.compose"><code class="docutils literal notranslate"><span class="pre">MTMClient.compose()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.clients.html#enrobie.clients.MTMClient.family"><code class="docutils literal notranslate"><span class="pre">MTMClient.family</span></code></a></li>
@@ -549,6 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test.test_child">enrobie.utils.test.test_child module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test.test_importer">enrobie.utils.test.test_importer module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test.test_param">enrobie.utils.test.test_param module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test.test_states">enrobie.utils.test.test_states module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test.test_thread">enrobie.utils.test.test_thread module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test">Module contents</a></li>
 </ul>
@@ -580,6 +586,28 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.utils.html#module-enrobie.utils.states">enrobie.utils.states module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannel"><code class="docutils literal notranslate"><span class="pre">ClientChannel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannel.members"><code class="docutils literal notranslate"><span class="pre">ClientChannel.members</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannel.title"><code class="docutils literal notranslate"><span class="pre">ClientChannel.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannel.topic"><code class="docutils literal notranslate"><span class="pre">ClientChannel.topic</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannel.unique"><code class="docutils literal notranslate"><span class="pre">ClientChannel.unique</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannels"><code class="docutils literal notranslate"><span class="pre">ClientChannels</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannels.add_member"><code class="docutils literal notranslate"><span class="pre">ClientChannels.add_member()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannels.clear_members"><code class="docutils literal notranslate"><span class="pre">ClientChannels.clear_members()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannels.create"><code class="docutils literal notranslate"><span class="pre">ClientChannels.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannels.del_member"><code class="docutils literal notranslate"><span class="pre">ClientChannels.del_member()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannels.delete"><code class="docutils literal notranslate"><span class="pre">ClientChannels.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannels.rename_member"><code class="docutils literal notranslate"><span class="pre">ClientChannels.rename_member()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannels.select"><code class="docutils literal notranslate"><span class="pre">ClientChannels.select()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannels.set_title"><code class="docutils literal notranslate"><span class="pre">ClientChannels.set_title()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientChannels.set_topic"><code class="docutils literal notranslate"><span class="pre">ClientChannels.set_topic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="enrobie.utils.html#module-enrobie.utils.thread">enrobie.utils.thread module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.thread.DupliThread"><code class="docutils literal notranslate"><span class="pre">DupliThread</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.thread.DupliThread.about"><code class="docutils literal notranslate"><span class="pre">DupliThread.about</span></code></a></li>
@@ -589,6 +617,25 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="enrobie.utils.html#module-enrobie.utils">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannel"><code class="docutils literal notranslate"><span class="pre">ClientChannel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannel.members"><code class="docutils literal notranslate"><span class="pre">ClientChannel.members</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannel.title"><code class="docutils literal notranslate"><span class="pre">ClientChannel.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannel.topic"><code class="docutils literal notranslate"><span class="pre">ClientChannel.topic</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannel.unique"><code class="docutils literal notranslate"><span class="pre">ClientChannel.unique</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannels"><code class="docutils literal notranslate"><span class="pre">ClientChannels</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannels.add_member"><code class="docutils literal notranslate"><span class="pre">ClientChannels.add_member()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannels.clear_members"><code class="docutils literal notranslate"><span class="pre">ClientChannels.clear_members()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannels.create"><code class="docutils literal notranslate"><span class="pre">ClientChannels.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannels.del_member"><code class="docutils literal notranslate"><span class="pre">ClientChannels.del_member()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannels.delete"><code class="docutils literal notranslate"><span class="pre">ClientChannels.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannels.rename_member"><code class="docutils literal notranslate"><span class="pre">ClientChannels.rename_member()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannels.select"><code class="docutils literal notranslate"><span class="pre">ClientChannels.select()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannels.set_title"><code class="docutils literal notranslate"><span class="pre">ClientChannels.set_title()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.ClientChannels.set_topic"><code class="docutils literal notranslate"><span class="pre">ClientChannels.set_topic()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.DupliThread"><code class="docutils literal notranslate"><span class="pre">DupliThread</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.DupliThread.about"><code class="docutils literal notranslate"><span class="pre">DupliThread.about</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.utils.html#enrobie.utils.DupliThread.thread"><code class="docutils literal notranslate"><span class="pre">DupliThread.thread</span></code></a></li>
@@ -626,7 +673,7 @@
 is permitted, for more information consult the project license file.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="enrobie.conftest.client_dscsock">
-<span class="sig-prename descclassname"><span class="pre">enrobie.conftest.</span></span><span class="sig-name descname"><span class="pre">client_dscsock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mocker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockerFixture</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">respx_mock</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockRouter</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://enasisnetwork.github.io/enconnect/sphinx/enconnect.discord.test.html#enconnect.discord.test.helpers.DSCClientSocket" title="(in enconnect v0.17.10)"><span class="pre">DSCClientSocket</span></a></span></span><a class="reference internal" href="_modules/enconnect/discord/test/helpers.html#client_dscsock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.conftest.client_dscsock" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.conftest.client_dscsock'">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">enrobie.conftest.</span></span><span class="sig-name descname"><span class="pre">client_dscsock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mocker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockerFixture</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">respx_mock</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockRouter</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://enasisnetwork.github.io/enconnect/sphinx/enconnect.discord.test.html#enconnect.discord.test.helpers.DSCClientSocket" title="(in enconnect v0.17.11)"><span class="pre">DSCClientSocket</span></a></span></span><a class="reference internal" href="_modules/enconnect/discord/test/helpers.html#client_dscsock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.conftest.client_dscsock" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.conftest.client_dscsock'">¶</a></dt>
 <dd><p>Construct the instance for use in the downstream tests.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -642,7 +689,7 @@ is permitted, for more information consult the project license file.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="enrobie.conftest.client_ircsock">
-<span class="sig-prename descclassname"><span class="pre">enrobie.conftest.</span></span><span class="sig-name descname"><span class="pre">client_ircsock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mocker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockerFixture</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://enasisnetwork.github.io/enconnect/sphinx/enconnect.irc.test.html#enconnect.irc.test.helpers.IRCClientSocket" title="(in enconnect v0.17.10)"><span class="pre">IRCClientSocket</span></a></span></span><a class="reference internal" href="_modules/enconnect/irc/test/helpers.html#client_ircsock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.conftest.client_ircsock" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.conftest.client_ircsock'">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">enrobie.conftest.</span></span><span class="sig-name descname"><span class="pre">client_ircsock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mocker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockerFixture</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://enasisnetwork.github.io/enconnect/sphinx/enconnect.irc.test.html#enconnect.irc.test.helpers.IRCClientSocket" title="(in enconnect v0.17.11)"><span class="pre">IRCClientSocket</span></a></span></span><a class="reference internal" href="_modules/enconnect/irc/test/helpers.html#client_ircsock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.conftest.client_ircsock" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.conftest.client_ircsock'">¶</a></dt>
 <dd><p>Construct the instance for use in the downstream tests.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -655,7 +702,7 @@ is permitted, for more information consult the project license file.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="enrobie.conftest.client_mtmsock">
-<span class="sig-prename descclassname"><span class="pre">enrobie.conftest.</span></span><span class="sig-name descname"><span class="pre">client_mtmsock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mocker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockerFixture</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">respx_mock</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockRouter</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://enasisnetwork.github.io/enconnect/sphinx/enconnect.mattermost.test.html#enconnect.mattermost.test.helpers.MTMClientSocket" title="(in enconnect v0.17.10)"><span class="pre">MTMClientSocket</span></a></span></span><a class="reference internal" href="_modules/enconnect/mattermost/test/helpers.html#client_mtmsock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.conftest.client_mtmsock" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.conftest.client_mtmsock'">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">enrobie.conftest.</span></span><span class="sig-name descname"><span class="pre">client_mtmsock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mocker</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockerFixture</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">respx_mock</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MockRouter</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://enasisnetwork.github.io/enconnect/sphinx/enconnect.mattermost.test.html#enconnect.mattermost.test.helpers.MTMClientSocket" title="(in enconnect v0.17.11)"><span class="pre">MTMClientSocket</span></a></span></span><a class="reference internal" href="_modules/enconnect/mattermost/test/helpers.html#client_mtmsock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.conftest.client_mtmsock" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.conftest.client_mtmsock'">¶</a></dt>
 <dd><p>Construct the instance for use in the downstream tests.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

@@ -109,6 +109,11 @@
 <li class="toctree-l3"><a class="reference internal" href="enrobie.utils.test.html#enrobie.utils.test.test_param.test_InvalidParam"><code class="docutils literal notranslate"><span class="pre">test_InvalidParam()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test.test_states">enrobie.utils.test.test_states module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.test.html#enrobie.utils.test.test_states.test_ClientChannels"><code class="docutils literal notranslate"><span class="pre">test_ClientChannels()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.test.html#enrobie.utils.test.test_states.test_ClientChannels_cover"><code class="docutils literal notranslate"><span class="pre">test_ClientChannels_cover()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test.test_thread">enrobie.utils.test.test_thread module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.utils.test.html#enrobie.utils.test.test_thread.test_DupliThread"><code class="docutils literal notranslate"><span class="pre">test_DupliThread()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.utils.test.html#enrobie.utils.test.test_thread.test_DupliThread_cover"><code class="docutils literal notranslate"><span class="pre">test_DupliThread_cover()</span></code></a></li>
@@ -226,6 +231,266 @@ is permitted, for more information consult the project license file.</p>
 <dd></dd></dl>
 </dd></dl>
 </section>
+<section id="module-enrobie.utils.states">
+<span id="enrobie-utils-states-module"></span><h2>enrobie.utils.states module<a class="headerlink" href="#module-enrobie.utils.states" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.utils.states'">¶</a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannel">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.utils.states.</span></span><span class="sig-name descname"><span class="pre">ClientChannel</span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.states.ClientChannel" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannel'">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://enasisnetwork.github.io/encommon/sphinx/encommon.types.html#encommon.types.classes.BaseModel" title="(in encommon v0.22.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<p>Cache the information regarding client status on server.</p>
+<p><details class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="p">{</span>
+</span><span id="line-2"><span class="w">   </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ClientChannel"</span><span class="p">,</span>
+</span><span id="line-3"><span class="w">   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cache the information regarding client status on server."</span><span class="p">,</span>
+</span><span id="line-4"><span class="w">   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span>
+</span><span id="line-5"><span class="w">   </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-6"><span class="w">      </span><span class="nt">"unique"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-7"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unique ID of channel on server"</span><span class="p">,</span>
+</span><span id="line-8"><span class="w">         </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-9"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unique"</span><span class="p">,</span>
+</span><span id="line-10"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-11"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-12"><span class="w">      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-13"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-14"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-15"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-16"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-17"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-18"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-19"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-20"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-21"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-22"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-23"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Friendly human name of channel"</span><span class="p">,</span>
+</span><span id="line-24"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title"</span>
+</span><span id="line-25"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-26"><span class="w">      </span><span class="nt">"topic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-27"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-28"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-29"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-30"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-31"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-32"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-33"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-34"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-35"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-36"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-37"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Current topic for the channel"</span><span class="p">,</span>
+</span><span id="line-38"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Topic"</span>
+</span><span id="line-39"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-40"><span class="w">      </span><span class="nt">"members"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-41"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-42"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-43"><span class="w">               </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-44"><span class="w">                  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-45"><span class="w">               </span><span class="p">},</span>
+</span><span id="line-46"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-47"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span>
+</span><span id="line-48"><span class="w">               </span><span class="nt">"uniqueItems"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="line-49"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-50"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-51"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-52"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-53"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-54"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-55"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Current members of the channel"</span><span class="p">,</span>
+</span><span id="line-56"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Members"</span>
+</span><span id="line-57"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-58"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-59"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-60"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-61"><span class="w">      </span><span class="s2">"unique"</span>
+</span><span id="line-62"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-63"><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#enrobie.utils.states.ClientChannel.members" title="enrobie.utils.states.ClientChannel.members"><code class="xref py py-obj docutils literal notranslate"><span class="pre">members</span> <span class="pre">(set[str]</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.utils.states.ClientChannel.title" title="enrobie.utils.states.ClientChannel.title"><code class="xref py py-obj docutils literal notranslate"><span class="pre">title</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.utils.states.ClientChannel.topic" title="enrobie.utils.states.ClientChannel.topic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">topic</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.utils.states.ClientChannel.unique" title="enrobie.utils.states.ClientChannel.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span> <span class="pre">(str)</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannel.members">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">members</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.13)"><span class="pre">set</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Current</span> <span class="pre">members</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">channel'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.utils.states.ClientChannel.members" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannel.members'">¶</a></dt>
+<dd><p>Current members of the channel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannel.title">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Friendly</span> <span class="pre">human</span> <span class="pre">name</span> <span class="pre">of</span> <span class="pre">channel'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.utils.states.ClientChannel.title" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannel.title'">¶</a></dt>
+<dd><p>Friendly human name of channel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannel.topic">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">topic</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Current</span> <span class="pre">topic</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">channel'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.utils.states.ClientChannel.topic" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannel.topic'">¶</a></dt>
+<dd><p>Current topic for the channel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannel.unique">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unique</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Unique</span> <span class="pre">ID</span> <span class="pre">of</span> <span class="pre">channel</span> <span class="pre">on</span> <span class="pre">server'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.utils.states.ClientChannel.unique" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannel.unique'">¶</a></dt>
+<dd><p>Unique ID of channel on server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannels">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.utils.states.</span></span><span class="sig-name descname"><span class="pre">ClientChannels</span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.states.ClientChannels" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannels'">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Cache the information regarding client status on server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client</strong> – Client class instance for Chatting Robie.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannels.add_member">
+<span class="sig-name descname"><span class="pre">add_member</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">member</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.add_member"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.states.ClientChannels.add_member" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannels.add_member'">¶</a></dt>
+<dd><p>Update attribute for channel and create when not exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unique</strong> – Unique identifier for channel on server.</p></li>
+<li><p><strong>member</strong> – Remember relevant to the cache operation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannels.clear_members">
+<span class="sig-name descname"><span class="pre">clear_members</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.clear_members"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.states.ClientChannels.clear_members" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannels.clear_members'">¶</a></dt>
+<dd><p>Update attribute for channel and create when not exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unique</strong> – Unique identifier for channel on server.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannels.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.states.ClientChannels.create" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannels.create'">¶</a></dt>
+<dd><p>Create the channel within the internal cache dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unique</strong> – Unique identifier for channel on server.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannels.del_member">
+<span class="sig-name descname"><span class="pre">del_member</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">member</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.del_member"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.states.ClientChannels.del_member" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannels.del_member'">¶</a></dt>
+<dd><p>Update attribute for channel and create when not exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unique</strong> – Unique identifier for channel on server.</p></li>
+<li><p><strong>member</strong> – Remember relevant to the cache operation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannels.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.states.ClientChannels.delete" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannels.delete'">¶</a></dt>
+<dd><p>Delete the channel within the internal cache dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unique</strong> – Unique identifier for channel on server.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannels.rename_member">
+<span class="sig-name descname"><span class="pre">rename_member</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.rename_member"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.states.ClientChannels.rename_member" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannels.rename_member'">¶</a></dt>
+<dd><p>Update attribute for channel and create when not exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>current</strong> – Current member name to be be searched.</p></li>
+<li><p><strong>update</strong> – Value to replace current when is found.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannels.select">
+<span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="#enrobie.utils.states.ClientChannel" title="enrobie.utils.states.ClientChannel"><span class="pre">ClientChannel</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.select"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.states.ClientChannels.select" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannels.select'">¶</a></dt>
+<dd><p>Select the channel within the internal cache dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unique</strong> – Unique identifier for channel on server.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Channel within the internal cache dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannels.set_title">
+<span class="sig-name descname"><span class="pre">set_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.set_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.states.ClientChannels.set_title" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannels.set_title'">¶</a></dt>
+<dd><p>Update attribute for channel and create when not exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unique</strong> – Unique identifier for channel on server.</p></li>
+<li><p><strong>title</strong> – Proper huamn friendly name of the channel.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientChannels.set_topic">
+<span class="sig-name descname"><span class="pre">set_topic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">topic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.set_topic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.states.ClientChannels.set_topic" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientChannels.set_topic'">¶</a></dt>
+<dd><p>Update attribute for channel and create when not exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unique</strong> – Unique identifier for channel on server.</p></li>
+<li><p><strong>topic</strong> – Topic for discussion within the channel.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
 <section id="module-enrobie.utils.thread">
 <span id="enrobie-utils-thread-module"></span><h2>enrobie.utils.thread module<a class="headerlink" href="#module-enrobie.utils.thread" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.utils.thread'">¶</a></h2>
 <p>Functions and routines associated with Enasis Network Chatting Robie.</p>
@@ -259,6 +524,260 @@ is permitted, for more information consult the project license file.</p>
 <p>Functions and routines associated with Enasis Network Chatting Robie.</p>
 <p>This file is part of Enasis Network software eco-system. Distribution
 is permitted, for more information consult the project license file.</p>
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannel">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.utils.</span></span><span class="sig-name descname"><span class="pre">ClientChannel</span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.ClientChannel" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannel'">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://enasisnetwork.github.io/encommon/sphinx/encommon.types.html#encommon.types.classes.BaseModel" title="(in encommon v0.22.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<p>Cache the information regarding client status on server.</p>
+<p><details class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="p">{</span>
+</span><span id="line-2"><span class="w">   </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ClientChannel"</span><span class="p">,</span>
+</span><span id="line-3"><span class="w">   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cache the information regarding client status on server."</span><span class="p">,</span>
+</span><span id="line-4"><span class="w">   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span>
+</span><span id="line-5"><span class="w">   </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-6"><span class="w">      </span><span class="nt">"unique"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-7"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unique ID of channel on server"</span><span class="p">,</span>
+</span><span id="line-8"><span class="w">         </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-9"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unique"</span><span class="p">,</span>
+</span><span id="line-10"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-11"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-12"><span class="w">      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-13"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-14"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-15"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-16"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-17"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-18"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-19"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-20"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-21"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-22"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-23"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Friendly human name of channel"</span><span class="p">,</span>
+</span><span id="line-24"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title"</span>
+</span><span id="line-25"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-26"><span class="w">      </span><span class="nt">"topic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-27"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-28"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-29"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-30"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-31"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-32"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-33"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-34"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-35"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-36"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-37"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Current topic for the channel"</span><span class="p">,</span>
+</span><span id="line-38"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Topic"</span>
+</span><span id="line-39"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-40"><span class="w">      </span><span class="nt">"members"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-41"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-42"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-43"><span class="w">               </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-44"><span class="w">                  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-45"><span class="w">               </span><span class="p">},</span>
+</span><span id="line-46"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-47"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span>
+</span><span id="line-48"><span class="w">               </span><span class="nt">"uniqueItems"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="line-49"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-50"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-51"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-52"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-53"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-54"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-55"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Current members of the channel"</span><span class="p">,</span>
+</span><span id="line-56"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Members"</span>
+</span><span id="line-57"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-58"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-59"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-60"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-61"><span class="w">      </span><span class="s2">"unique"</span>
+</span><span id="line-62"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-63"><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#enrobie.utils.states.ClientChannel.members" title="enrobie.utils.states.ClientChannel.members"><code class="xref py py-obj docutils literal notranslate"><span class="pre">members</span> <span class="pre">(Annotated[set[str]</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='Current</span> <span class="pre">members</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">channel',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.utils.states.ClientChannel.title" title="enrobie.utils.states.ClientChannel.title"><code class="xref py py-obj docutils literal notranslate"><span class="pre">title</span> <span class="pre">(Annotated[str</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='Friendly</span> <span class="pre">human</span> <span class="pre">name</span> <span class="pre">of</span> <span class="pre">channel',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.utils.states.ClientChannel.topic" title="enrobie.utils.states.ClientChannel.topic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">topic</span> <span class="pre">(Annotated[str</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='Current</span> <span class="pre">topic</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">channel',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.utils.states.ClientChannel.unique" title="enrobie.utils.states.ClientChannel.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span> <span class="pre">(Annotated[str,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=True,</span> <span class="pre">description='Unique</span> <span class="pre">ID</span> <span class="pre">of</span> <span class="pre">channel</span> <span class="pre">on</span> <span class="pre">server',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannel.members">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">members</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.13)"><span class="pre">set</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Current</span> <span class="pre">members</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">channel'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.utils.ClientChannel.members" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannel.members'">¶</a></dt>
+<dd><p>Current members of the channel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannel.title">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Friendly</span> <span class="pre">human</span> <span class="pre">name</span> <span class="pre">of</span> <span class="pre">channel'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.utils.ClientChannel.title" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannel.title'">¶</a></dt>
+<dd><p>Friendly human name of channel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannel.topic">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">topic</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Current</span> <span class="pre">topic</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">channel'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.utils.ClientChannel.topic" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannel.topic'">¶</a></dt>
+<dd><p>Current topic for the channel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannel.unique">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unique</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Unique</span> <span class="pre">ID</span> <span class="pre">of</span> <span class="pre">channel</span> <span class="pre">on</span> <span class="pre">server'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.utils.ClientChannel.unique" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannel.unique'">¶</a></dt>
+<dd><p>Unique ID of channel on server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannels">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.utils.</span></span><span class="sig-name descname"><span class="pre">ClientChannels</span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.ClientChannels" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannels'">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Cache the information regarding client status on server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client</strong> – Client class instance for Chatting Robie.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannels.add_member">
+<span class="sig-name descname"><span class="pre">add_member</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">member</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.add_member"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.ClientChannels.add_member" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannels.add_member'">¶</a></dt>
+<dd><p>Update attribute for channel and create when not exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unique</strong> – Unique identifier for channel on server.</p></li>
+<li><p><strong>member</strong> – Remember relevant to the cache operation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannels.clear_members">
+<span class="sig-name descname"><span class="pre">clear_members</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.clear_members"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.ClientChannels.clear_members" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannels.clear_members'">¶</a></dt>
+<dd><p>Update attribute for channel and create when not exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unique</strong> – Unique identifier for channel on server.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannels.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.ClientChannels.create" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannels.create'">¶</a></dt>
+<dd><p>Create the channel within the internal cache dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unique</strong> – Unique identifier for channel on server.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannels.del_member">
+<span class="sig-name descname"><span class="pre">del_member</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">member</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.del_member"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.ClientChannels.del_member" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannels.del_member'">¶</a></dt>
+<dd><p>Update attribute for channel and create when not exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unique</strong> – Unique identifier for channel on server.</p></li>
+<li><p><strong>member</strong> – Remember relevant to the cache operation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannels.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.ClientChannels.delete" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannels.delete'">¶</a></dt>
+<dd><p>Delete the channel within the internal cache dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unique</strong> – Unique identifier for channel on server.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannels.rename_member">
+<span class="sig-name descname"><span class="pre">rename_member</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.rename_member"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.ClientChannels.rename_member" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannels.rename_member'">¶</a></dt>
+<dd><p>Update attribute for channel and create when not exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>current</strong> – Current member name to be be searched.</p></li>
+<li><p><strong>update</strong> – Value to replace current when is found.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannels.select">
+<span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="#enrobie.utils.states.ClientChannel" title="enrobie.utils.states.ClientChannel"><span class="pre">ClientChannel</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.select"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.ClientChannels.select" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannels.select'">¶</a></dt>
+<dd><p>Select the channel within the internal cache dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unique</strong> – Unique identifier for channel on server.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Channel within the internal cache dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannels.set_title">
+<span class="sig-name descname"><span class="pre">set_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.set_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.ClientChannels.set_title" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannels.set_title'">¶</a></dt>
+<dd><p>Update attribute for channel and create when not exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unique</strong> – Unique identifier for channel on server.</p></li>
+<li><p><strong>title</strong> – Proper huamn friendly name of the channel.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.ClientChannels.set_topic">
+<span class="sig-name descname"><span class="pre">set_topic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">topic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientChannels.set_topic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.ClientChannels.set_topic" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientChannels.set_topic'">¶</a></dt>
+<dd><p>Update attribute for channel and create when not exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unique</strong> – Unique identifier for channel on server.</p></li>
+<li><p><strong>topic</strong> – Topic for discussion within the channel.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
 <dl class="py exception">
 <dt class="sig sig-object py" id="enrobie.utils.DupliThread">
 <em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.utils.</span></span><span class="sig-name descname"><span class="pre">DupliThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/threading.html#threading.Thread" title="(in Python v3.13)"><span class="pre">Thread</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">about</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/utils/thread.html#DupliThread"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.DupliThread" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.DupliThread'">¶</a></dt>
@@ -397,6 +916,28 @@ is permitted, for more information consult the project license file.</p>
 </li>
 </ul>
 </li>
+<li><a :data-current="activeSection === '#module-enrobie.utils.states'" class="reference internal" href="#module-enrobie.utils.states">enrobie.utils.states module</a><ul>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannel'" class="reference internal" href="#enrobie.utils.states.ClientChannel"><code class="docutils literal notranslate"><span class="pre">ClientChannel</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannel.members'" class="reference internal" href="#enrobie.utils.states.ClientChannel.members"><code class="docutils literal notranslate"><span class="pre">ClientChannel.members</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannel.title'" class="reference internal" href="#enrobie.utils.states.ClientChannel.title"><code class="docutils literal notranslate"><span class="pre">ClientChannel.title</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannel.topic'" class="reference internal" href="#enrobie.utils.states.ClientChannel.topic"><code class="docutils literal notranslate"><span class="pre">ClientChannel.topic</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannel.unique'" class="reference internal" href="#enrobie.utils.states.ClientChannel.unique"><code class="docutils literal notranslate"><span class="pre">ClientChannel.unique</span></code></a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannels'" class="reference internal" href="#enrobie.utils.states.ClientChannels"><code class="docutils literal notranslate"><span class="pre">ClientChannels</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannels.add_member'" class="reference internal" href="#enrobie.utils.states.ClientChannels.add_member"><code class="docutils literal notranslate"><span class="pre">ClientChannels.add_member()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannels.clear_members'" class="reference internal" href="#enrobie.utils.states.ClientChannels.clear_members"><code class="docutils literal notranslate"><span class="pre">ClientChannels.clear_members()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannels.create'" class="reference internal" href="#enrobie.utils.states.ClientChannels.create"><code class="docutils literal notranslate"><span class="pre">ClientChannels.create()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannels.del_member'" class="reference internal" href="#enrobie.utils.states.ClientChannels.del_member"><code class="docutils literal notranslate"><span class="pre">ClientChannels.del_member()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannels.delete'" class="reference internal" href="#enrobie.utils.states.ClientChannels.delete"><code class="docutils literal notranslate"><span class="pre">ClientChannels.delete()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannels.rename_member'" class="reference internal" href="#enrobie.utils.states.ClientChannels.rename_member"><code class="docutils literal notranslate"><span class="pre">ClientChannels.rename_member()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannels.select'" class="reference internal" href="#enrobie.utils.states.ClientChannels.select"><code class="docutils literal notranslate"><span class="pre">ClientChannels.select()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannels.set_title'" class="reference internal" href="#enrobie.utils.states.ClientChannels.set_title"><code class="docutils literal notranslate"><span class="pre">ClientChannels.set_title()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannels.set_topic'" class="reference internal" href="#enrobie.utils.states.ClientChannels.set_topic"><code class="docutils literal notranslate"><span class="pre">ClientChannels.set_topic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a :data-current="activeSection === '#module-enrobie.utils.thread'" class="reference internal" href="#module-enrobie.utils.thread">enrobie.utils.thread module</a><ul>
 <li><a :data-current="activeSection === '#enrobie.utils.thread.DupliThread'" class="reference internal" href="#enrobie.utils.thread.DupliThread"><code class="docutils literal notranslate"><span class="pre">DupliThread</span></code></a><ul>
 <li><a :data-current="activeSection === '#enrobie.utils.thread.DupliThread.about'" class="reference internal" href="#enrobie.utils.thread.DupliThread.about"><code class="docutils literal notranslate"><span class="pre">DupliThread.about</span></code></a></li>
@@ -406,6 +947,25 @@ is permitted, for more information consult the project license file.</p>
 </ul>
 </li>
 <li><a :data-current="activeSection === '#module-enrobie.utils'" class="reference internal" href="#module-enrobie.utils">Module contents</a><ul>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannel'" class="reference internal" href="#enrobie.utils.ClientChannel"><code class="docutils literal notranslate"><span class="pre">ClientChannel</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannel.members'" class="reference internal" href="#enrobie.utils.ClientChannel.members"><code class="docutils literal notranslate"><span class="pre">ClientChannel.members</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannel.title'" class="reference internal" href="#enrobie.utils.ClientChannel.title"><code class="docutils literal notranslate"><span class="pre">ClientChannel.title</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannel.topic'" class="reference internal" href="#enrobie.utils.ClientChannel.topic"><code class="docutils literal notranslate"><span class="pre">ClientChannel.topic</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannel.unique'" class="reference internal" href="#enrobie.utils.ClientChannel.unique"><code class="docutils literal notranslate"><span class="pre">ClientChannel.unique</span></code></a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannels'" class="reference internal" href="#enrobie.utils.ClientChannels"><code class="docutils literal notranslate"><span class="pre">ClientChannels</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannels.add_member'" class="reference internal" href="#enrobie.utils.ClientChannels.add_member"><code class="docutils literal notranslate"><span class="pre">ClientChannels.add_member()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannels.clear_members'" class="reference internal" href="#enrobie.utils.ClientChannels.clear_members"><code class="docutils literal notranslate"><span class="pre">ClientChannels.clear_members()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannels.create'" class="reference internal" href="#enrobie.utils.ClientChannels.create"><code class="docutils literal notranslate"><span class="pre">ClientChannels.create()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannels.del_member'" class="reference internal" href="#enrobie.utils.ClientChannels.del_member"><code class="docutils literal notranslate"><span class="pre">ClientChannels.del_member()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannels.delete'" class="reference internal" href="#enrobie.utils.ClientChannels.delete"><code class="docutils literal notranslate"><span class="pre">ClientChannels.delete()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannels.rename_member'" class="reference internal" href="#enrobie.utils.ClientChannels.rename_member"><code class="docutils literal notranslate"><span class="pre">ClientChannels.rename_member()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannels.select'" class="reference internal" href="#enrobie.utils.ClientChannels.select"><code class="docutils literal notranslate"><span class="pre">ClientChannels.select()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannels.set_title'" class="reference internal" href="#enrobie.utils.ClientChannels.set_title"><code class="docutils literal notranslate"><span class="pre">ClientChannels.set_title()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientChannels.set_topic'" class="reference internal" href="#enrobie.utils.ClientChannels.set_topic"><code class="docutils literal notranslate"><span class="pre">ClientChannels.set_topic()</span></code></a></li>
+</ul>
+</li>
 <li><a :data-current="activeSection === '#enrobie.utils.DupliThread'" class="reference internal" href="#enrobie.utils.DupliThread"><code class="docutils literal notranslate"><span class="pre">DupliThread</span></code></a><ul>
 <li><a :data-current="activeSection === '#enrobie.utils.DupliThread.about'" class="reference internal" href="#enrobie.utils.DupliThread.about"><code class="docutils literal notranslate"><span class="pre">DupliThread.about</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.utils.DupliThread.thread'" class="reference internal" href="#enrobie.utils.DupliThread.thread"><code class="docutils literal notranslate"><span class="pre">DupliThread.thread</span></code></a></li>
