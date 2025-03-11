@@ -15,6 +15,7 @@ from .child import RobieChild
 
 if TYPE_CHECKING:
     from ..params import RobiePluginParams
+    from ..threads import RobieThread
 
 
 
@@ -45,6 +46,23 @@ class RobiePlugin(RobieChild):
         Return the configuration parameters relevant for class.
 
         :returns: Configuration parameters relevant for class.
+        """
+
+        raise NotImplementedError
+
+
+    def operate(
+        self,
+        thread: 'RobieThread',
+    ) -> None:
+        """
+        Perform the operation related to Robie service threads.
+
+        .. note::
+           Deviates from enhomie in children have operations,
+           and are more isolated from internal core routines.
+
+        :param thread: Child class instance for Chatting Robie.
         """
 
         raise NotImplementedError

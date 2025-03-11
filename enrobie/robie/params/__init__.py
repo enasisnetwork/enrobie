@@ -10,6 +10,7 @@ is permitted, for more information consult the project license file.
 from .child import RobieChildParams
 from .client import RobieClientParams
 from .common import RobieParamsModel
+from .person import RobiePersonParams
 from .plugin import RobiePluginParams
 from .robie import RobieParams
 from .robie import RobiePrinterParams
@@ -24,4 +25,5 @@ __all__ = [
     'RobieChildParams',
     'RobiePluginParams',
     'RobieClientParams',
+    'RobiePersonParams',
     'RobieServiceParams']

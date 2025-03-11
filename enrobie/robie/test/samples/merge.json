@@ -56,6 +56,64 @@
       }
     }
   },
+  "persons": {
+    "anonymous": {
+      "enable": true,
+      "weight": 1,
+      "matches": [
+        {
+          "client": "ircbot",
+          "match": "*!*@*"
+        }
+      ]
+    },
+    "hubert": {
+      "enable": true,
+      "first": "Hubert",
+      "last": "Farnsworth",
+      "about": "Chief Executive Officer of Planet Express.",
+      "matches": [
+        {
+          "client": "dscbot",
+          "match": "823039201390230492"
+        },
+        {
+          "client": "ircbot",
+          "match": [
+            "hubert!hubert@localhost",
+            "hubert!hubert@science.*"
+          ]
+        },
+        {
+          "client": "mtmbot",
+          "match": "kjf9al2klaiietalkw"
+        }
+      ]
+    },
+    "bender": {
+      "enable": true,
+      "first": "Bender",
+      "last": "Rodr\u00edguez",
+      "about": "Robo delivery assistant at Planet Express.",
+      "matches": [
+        {
+          "client": "dscbot",
+          "match": "823902304920392013"
+        },
+        {
+          "client": "ircbot",
+          "match": [
+            "bender!bender@localhost",
+            "bender!bender@bending.*"
+          ]
+        },
+        {
+          "client": "mtmbot",
+          "match": "iietalkwkjf9al2kla"
+        }
+      ]
+    }
+  },
   "plugins": {
     "status": {
       "enable": true,

@@ -97,6 +97,9 @@ class RobieClients(RobieMember):
 
         for name, client in items:
 
+            if not client.enable:
+                continue  # NOCVR
+
             object = model(
                 self, client)
 

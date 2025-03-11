@@ -16,6 +16,7 @@ from encommon.types import DictStrAny
 from encommon.types import NCNone
 
 from .client import RobieClient
+from .person import RobiePerson
 from .plugin import RobiePlugin
 
 if TYPE_CHECKING:
@@ -25,6 +26,7 @@ if TYPE_CHECKING:
 
 RobieClients = dict[str, RobieClient]
 RobiePlugins = dict[str, RobiePlugin]
+RobiePersons = dict[str, RobiePerson]
 
 
 
@@ -39,6 +41,7 @@ class RobieChilds:
 
     __clients: RobieClients
     __plugins: RobiePlugins
+    __persons: RobiePersons
 
 
     def __init__(
@@ -57,10 +60,56 @@ class RobieChilds:
 
         self.__clients = {}
         self.__plugins = {}
+        self.__persons = {}
+
+        self.build_objects()
 
         robie.logger.log_i(
             base=self,
             status='created')
+
+
+    def build_objects(
+        self,
+    ) -> None:
+        """
+        Construct instances using the configuration parameters.
+        """
+
+        self.__build_persons()
+
+
+    def __build_persons(
+        self,
+    ) -> None:
+        """
+        Construct instances using the configuration parameters.
+        """
+
+        robie = self.__robie
+        params = robie.params
+        persons = params.persons
+
+        if persons is None:
+            return None
+
+        model = RobiePerson
+
+
+        childs: RobiePersons = {}
+
+
+        items = persons.items()
+
+        for name, person in items:
+
+            object = model(
+                robie, name, person)
+
+            childs[name] = object
+
+
+        self.__persons = childs
 
 
     def validate(
@@ -85,6 +134,14 @@ class RobieChilds:
 
         for plugin in plugins:
             plugin.validate()
+
+
+        persons = (
+            self.__persons
+            .values())
+
+        for person in persons:
+            person.validate()
 
 
     @property
@@ -115,6 +172,21 @@ class RobieChilds:
         plugins = self.__plugins
 
         return dict(plugins)
+
+
+    @property
+    def persons(
+        self,
+    ) -> RobiePersons:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        persons = self.__persons
+
+        return dict(persons)
 
 
     @property
@@ -179,9 +251,6 @@ class RobieChilds:
 
             assert callable(client)
 
-            if not params.enable:
-                return NCNone
-
             object = client(
                 robie, name, params)
 
@@ -205,9 +274,6 @@ class RobieChilds:
             params = _plugins[name]
 
             assert callable(plugin)
-
-            if not params.enable:
-                return NCNone
 
             object = plugin(
                 robie, name, params)
