@@ -11,6 +11,7 @@ from json import dumps
 from typing import Optional
 from typing import TYPE_CHECKING
 from typing import Type
+from typing import get_args
 
 from encommon.times import Time
 from encommon.types import DictStrAny
@@ -25,6 +26,7 @@ from enconnect.irc import (
 from enconnect.mattermost import (
     ClientEvent as MTMClientEvent)
 
+from .history import AinswerHistoryKinds
 from .models import AinswerResponse
 from .models import AinswerResponseDSC
 from .models import AinswerResponseIRC
@@ -33,117 +35,151 @@ from .models import AinswerResponseMTM
 if TYPE_CHECKING:
     from .plugin import AinswerPlugin
     from ...robie.childs import RobieClient
+    from ...robie.childs import RobiePerson
     from ...robie.models import RobieCommand
     from ...robie.models import RobieMessage
     from ...robie.addons import RobieQueue
 
 
 
-_KINDS = ['privmsg', 'chanmsg']
+_KINDS = get_args(AinswerHistoryKinds)
 
-_NORESPOND = 'no_response'
+_IGNORED = 'no_response'
 
 
 
-def engagellm(
-    plugin: 'AinswerPlugin',
-    message: str,
-    respond: Type[AinswerResponse],
-) -> AinswerResponse:
+class AinswerQuestion:
     """
-    Submit the question to the LLM and return the response.
+    Construct prompt and allow for interacting with the LLM.
 
     :param plugin: Plugin class instance for Chatting Robie.
-    :param message: Question that will be asked of the LLM.
-    :param respond: Model to describe the expected response.
-    :returns: Response adhering to provided specifications.
     """
 
-    agent = plugin.agent
-    request = agent.run_sync
-
-    runsync = request(
-        user_prompt=message,
-        result_type=respond)
-
-    return runsync.data
+    __plugin: 'AinswerPlugin'
 
 
+    def __init__(
+        self,
+        plugin: 'AinswerPlugin',
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
 
-def promptllm(  # noqa: CFQ001,CFQ002,CFQ004
-    plugin: 'AinswerPlugin',
-    client: 'RobieClient',
-    prompt: str,
-    *,
-    whoami: str,
-    author: str,
-    anchor: str,
-    message: str,
-    whoami_uniq: Optional[str] = None,
-    author_uniq: Optional[str] = None,
-    header: Optional[str] = None,
-    footer: Optional[str] = None,
-    ignore: Optional[list[str]] = None,
-    mitem: Optional['RobieMessage'] = None,
-) -> str:
-    """
-    Return the message prefixed with runtime prompt values.
-
-    :param plugin: Plugin class instance for Chatting Robie.
-    :param client: Client class instance for Chatting Robie.
-    :param prompt: Additional prompt insert before question.
-    :param whoami: What is my current nickname on platform.
-    :param author: Name of the user that submitted question.
-    :param anchor: Channel name or other context or thread.
-    :param message: Question that will be asked of the LLM.
-    :param header: Optinoal header included before question.
-    :param footer: Optinoal footer included after question.
-    :param ignore: Optional reasons for LLM not responding.
-    :param mitem: Item containing information for operation.
-    :returns: Message prefixed with runtime prompt values.
-    """
-
-    robie = plugin.robie
-    history = plugin.history
-    family = client.family
-    noresp = _NORESPOND
+        self.__plugin = plugin
 
 
-    parsed = robie.j2parse(
-        {'prompt': prompt,
-         'header': header,
-         'footer': footer},
-        {'plugin': plugin,
-         'client': client,
-         'family': family,
-         'whoami': whoami,
-         'whoami_uniq': whoami_uniq,
-         'author': author,
-         'author_uniq': author_uniq,
-         'anchor': anchor,
-         'message': message,
-         'mitem': mitem})
+    def prompt(
+        self,
+        mitem: 'RobieMessage',
+        prompt: str,
+    ) -> str:
+        """
+        Return the message prefixed with runtime prompt values.
 
-    prompt = parsed['prompt']
-    header = parsed['header']
-    footer = parsed['footer']
+        :param mitem: Item containing information for operation.
+        :param prompt: Additional prompt insert before question.
+        :returns: Message prefixed with runtime prompt values.
+        """
 
-    assert isinstance(prompt, str)
+        plugin = self.__plugin
+        robie = plugin.robie
+        params = plugin.params
+
+        _prompt = params.prompt
+
+        header = _prompt.header
+        footer = _prompt.footer
+
+        assert mitem.whome
+
+        person = self.__person(mitem)
+        client = self.__client(mitem)
+        family = mitem.family
+        kind = mitem.kind
+        whome = mitem.whome
 
 
-    def _history() -> str:
+        parsed = robie.j2parse(
+            {'prompt': prompt,
+             'header': header,
+             'footer': footer},
+            {'plugin': plugin,
+             'client': client,
+             'person': person,
+             'family': family,
+             'kind': kind,
+             'whoami': whome[0],
+             'mitem': mitem})
 
-        if anchor is None:
-            return SEMPTY  # NOCVR
+        prompt = parsed['prompt']
+        header = parsed['header']
+        footer = parsed['footer']
+
+
+        history = (
+            self.prompt_history(
+                mitem, prompt))
+
+        ignored = (
+            self.prompt_ignored(
+                mitem, prompt))
+
+        metadata = (
+            self.prompt_metadata(
+                mitem, prompt))
+
+        channel = (
+            self.prompt_channel(
+                mitem, prompt))
+
+
+        returned = SEMPTY.join([
+            ('**Instructions**\n'
+             f'{prompt}\n\n'
+             f'{history}\n\n'
+             f'{ignored}\n\n'
+             f'{metadata}\n\n'
+             f'{channel}\n\n'),
+            (f'{header}\n\n'
+             if header is not None
+             and len(header) >= 1
+             else SEMPTY),
+            ('**Question**\n'
+             f'{mitem.message}'),
+            (f'\n\n{footer}'
+             if footer is not None
+             and len(footer) >= 1
+             else SEMPTY)])
+
+
+        return returned.strip()
+
+
+    def prompt_history(
+        self,
+        mitem: 'RobieMessage',
+        prompt: str,
+    ) -> str:
+        """
+        Return the message prefixed with runtime prompt values.
+
+        :param mitem: Item containing information for operation.
+        :param prompt: Additional prompt insert before question.
+        :returns: Message prefixed with runtime prompt values.
+        """
+
+        plugin = self.__plugin
+        history = plugin.history
 
         items: list[DictStrAny] = []
 
         records = (
-            history.records(
-                client, anchor))
+            history.records(mitem))
 
         for record in records:
 
+            person = record.person
             author = record.author
             message = record.message
             ainswer = record.ainswer
@@ -156,84 +192,139 @@ def promptllm(  # noqa: CFQ001,CFQ002,CFQ004
                 {'role': 'user',
                  'content': message,
                  'nick': author,
+                 'user': person,
                  'time': create},
                 {'role': 'assistant',
-                 'content': ainswer,
-                 'time': create}])
+                 'content': ainswer}])
 
-        joined = '\n'.join([
-            dumps(x)
-            for x in items])
-
-        return (
-            ('**Previous**\n'
-             'You have previously'
-             ' had the following'
-             ' conversations in the'
-             ' channel with users.'
-             f'\n{joined}\n\n')
-            if items else SEMPTY)
-
-
-    def _ignored() -> str:
-
-        if ignore is None:
+        if len(items) == 0:
             return SEMPTY
 
-        joined = (
-            '\n - '.join(ignore))
+        dumped = [
+            dumps(x) for x in items]
+
+        return (
+            '**Previous Interactions**\n'
+            'You have previously had the following'
+            ' direct conversations within scope.\n'
+            f"{'\n'.join(dumped)}")
+
+
+    def prompt_ignored(
+        self,
+        mitem: 'RobieMessage',
+        prompt: str,
+    ) -> str:
+        """
+        Return the message prefixed with runtime prompt values.
+
+        :param mitem: Item containing information for operation.
+        :param prompt: Additional prompt insert before question.
+        :returns: Message prefixed with runtime prompt values.
+        """
+
+        plugin = self.__plugin
+        params = plugin.params
+
+        _prompt = params.prompt
+        ignore = _prompt.ignore
+
+        response = _IGNORED
+        delim = '\n - '
 
         return (
             '**Responding**\n'
-            'There are reasons for'
-            ' not responding to the'
-            ' user question. If you'
-            ' think you should not'
-            ' respond, simply reply'
-            f' with only {noresp}.\n'
-            f'Reasons for replying'
-            f' {noresp} include:'
-            f'\n - {joined}\n\n')
+            'There are reasons not to respond to the'
+            ' user question. If you think you should'
+            f' not respond, reply with {response}.\n'
+            f'Reasons to reply with only {response}'
+            f' include:{delim}{delim.join(ignore)}')
 
 
-    def _metadata() -> str:
+    def prompt_metadata(
+        self,
+        mitem: 'RobieMessage',
+        prompt: str,
+    ) -> str:
+        """
+        Return the message prefixed with runtime prompt values.
+
+        :param mitem: Item containing information for operation.
+        :param prompt: Additional prompt insert before question.
+        :returns: Message prefixed with runtime prompt values.
+        """
+
+        assert mitem.whome
+        assert mitem.author
+
+        person = self.__person(mitem)
+        time = mitem.time
+        family = mitem.family
+        kind = mitem.kind
+        whome = mitem.whome
+        author = mitem.author
 
         returned = (
-            '**Message**\n'
-            'Your nickname:'
-            f' {whoami}\n')
+            '**Message Metadata**\n'
+            f'Client family: {family}\n'
+            f'Message kind: {kind}\n'
+            f'Message time: {time}\n\n'
+            '**User Metadata**\n'
+            f'User nickname: {author[0]}\n'
+            f'User serverID: {author[1]}\n')
 
-        if whoami_uniq is not None:
+
+        if person is not None:
+
             returned += (
-                'Your ID: '
-                f'{whoami_uniq}\n')
+                'Robie username: '
+                f'{person.name}\n')
+
+            _first = person.first
+            _last = person.last
+            _about = person.about
+
+            if _first is not None:
+                returned += (
+                    f'First name: {_first}\n')
+
+            if _last is not None:
+                returned += (
+                    f'Last name: {_last}\n')
+
+            if _about is not None:
+                returned += (
+                    f'Description: {_about}\n')
 
         returned += (
-            'User nickname:'
-            f' {author}\n')
+            '**Additional Metadata**\n'
+            f'Your nickname: {whome[0]}\n'
+            f'Your serverID: {whome[1]}\n')
 
-        if author_uniq is not None:
-            returned += (
-                'User ID: '
-                f'{author_uniq}\n')
-
-        returned += (
-            'Client family:'
-            f' {family}\n')
-
-        if mitem is not None:
-
-            kind = mitem.kind
-            time = mitem.time
-
-            returned += (
-                f'Time: {time}\n'
-                f'Kind: {kind}\n')
-
-        return returned
+        return returned.strip()
 
 
-    def _channel() -> str:
+    def prompt_channel(
+        self,
+        mitem: 'RobieMessage',
+        prompt: str,
+    ) -> str:
+        """
+        Return the message prefixed with runtime prompt values.
+
+        :param mitem: Item containing information for operation.
+        :param prompt: Additional prompt insert before question.
+        :returns: Message prefixed with runtime prompt values.
+        """
+
+        assert mitem.anchor
+
+        client = self.__client(mitem)
+        kind = mitem.kind
+        anchor = mitem.anchor
+
+        if kind != 'chanmsg':
+            return SEMPTY
 
         channel = (
             client.channels
@@ -242,53 +333,99 @@ def promptllm(  # noqa: CFQ001,CFQ002,CFQ004
         if channel is None:
             return SEMPTY
 
+        unique = channel.unique
         title = channel.title
         topic = channel.topic
+        members = channel.members
+
 
         returned = (
-            f'Unique: {anchor}\n')
+            '**Channel Metadata**\n'
+            f'Unique: {unique}\n')
 
-        if (title is not None
-                and title != anchor):
-            returned += (
-                f'Title: {title}\n')
+
+        if title and title != anchor:
+            returned += f'Title: {title}\n'
 
         if topic is not None:
-            returned += (
-                f'Topic: {topic}\n')
+            returned += f'Topic: {topic}\n'
 
-        if channel.members:
-
-            join = COMMAS.join(
-                channel.members)
-
-            returned += (
-                f'Users: {join}\n')
-
-        return (
-            '\n**Channel**\n'
-            f'{returned}')
+        if members is not None:
+            users = COMMAS.join(members)
+            returned += f'Users: {users}\n'
 
 
-    returned = SEMPTY.join([
-        ('**Instructions**\n'
-         f'{prompt}\n\n'
-         f'{_history()}'
-         f'{_ignored()}'
-         f'{_metadata()}'
-         f'{_channel()}\n'),
-        (f'{header}\n\n'
-         if header is not None
-         and len(header) >= 1
-         else SEMPTY),
-        ('**Question**\n'
-         f'{message}\n\n'),
-        (f'{footer}\n\n'
-         if footer is not None
-         and len(footer) >= 1
-         else SEMPTY)])
+        return returned.strip()
 
-    return returned.strip()
+
+    def __person(
+        self,
+        mitem: 'RobieMessage',
+    ) -> Optional['RobiePerson']:
+        """
+        Return the person instance where the message originated.
+
+        :param mitem: Item containing information for operation.
+        :returns: Person instance where the message originated.
+        """
+
+        plugin = self.__plugin
+        robie = plugin.robie
+        childs = robie.childs
+        persons = childs.persons
+
+        _person = mitem.person
+
+        if _person is None:
+            return None
+
+        return persons[_person]
+
+
+    def __client(
+        self,
+        mitem: 'RobieMessage',
+    ) -> 'RobieClient':
+        """
+        Return the client instance where the message originated.
+
+        :param mitem: Item containing information for operation.
+        :returns: Client instance where the message originated.
+        """
+
+        plugin = self.__plugin
+        robie = plugin.robie
+        childs = robie.childs
+        clients = childs.clients
+
+        _client = mitem.client
+
+        return clients[_client]
+
+
+    def submit(
+        self,
+        message: str,
+        respond: Type[AinswerResponse],
+    ) -> AinswerResponse:
+        """
+        Submit the question to the LLM and return the response.
+
+        :param message: Question that will be asked of the LLM.
+        :param respond: Model to describe the expected response.
+        :returns: Response adhering to provided specifications.
+        """
+
+        plugin = self.__plugin
+
+        agent = plugin.agent
+        request = agent.run_sync
+
+        runsync = request(
+            user_prompt=message,
+            result_type=respond)
+
+        return runsync.data
 
 
 
@@ -339,16 +476,17 @@ def composedsc(
         client, DSCClient)
 
 
+    prompt = (
+        params.prompt
+        .client.dsc)
+
     ainswer = (
         plugin.ainswer(
-            client,
-            (params.prompt
-             .client.dsc),
-            AinswerResponseDSC,
-            mitem=mitem))
+            mitem, prompt,
+            AinswerResponseDSC))
 
 
-    if ainswer == _NORESPOND:
+    if ainswer == _IGNORED:
         return NCNone
 
 
@@ -406,16 +544,17 @@ def composeirc(
         client, IRCClient)
 
 
+    prompt = (
+        params.prompt
+        .client.irc)
+
     ainswer = (
         plugin.ainswer(
-            client,
-            (params.prompt
-             .client.irc),
-            AinswerResponseIRC,
-            mitem=mitem))
+            mitem, prompt,
+            AinswerResponseIRC))
 
 
-    if ainswer == _NORESPOND:
+    if ainswer == _IGNORED:
         return NCNone
 
 
@@ -473,16 +612,17 @@ def composemtm(
         client, MTMClient)
 
 
+    prompt = (
+        params.prompt
+        .client.mtm)
+
     ainswer = (
         plugin.ainswer(
-            client,
-            (params.prompt
-             .client.mtm),
-            AinswerResponseMTM,
-            mitem=mitem))
+            mitem, prompt,
+            AinswerResponseMTM))
 
 
-    if ainswer == _NORESPOND:
+    if ainswer == _IGNORED:
         return NCNone
 
 

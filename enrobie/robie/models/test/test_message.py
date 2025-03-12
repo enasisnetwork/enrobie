@@ -45,6 +45,7 @@ def test_RobieMessage(
 
     assert attrs == [
         'client',
+        'person',
         'time']
 
 

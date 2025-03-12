@@ -60,6 +60,7 @@ def test_MTMMessage(
     assert attrs == [
         'event',
         'client',
+        'person',
         'time']
 
 
@@ -82,6 +83,8 @@ def test_MTMMessage(
     assert item.family == 'mattermost'
 
     assert item.kind == 'privmsg'
+
+    assert not item.person
 
     assert not item.isme
 

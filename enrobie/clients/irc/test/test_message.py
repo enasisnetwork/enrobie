@@ -60,6 +60,7 @@ def test_IRCMessage(
     assert attrs == [
         'event',
         'client',
+        'person',
         'time']
 
 
@@ -82,6 +83,8 @@ def test_IRCMessage(
     assert item.family == 'irc'
 
     assert item.kind == 'privmsg'
+
+    assert item.person == 'anonymous'
 
     assert not item.isme
 

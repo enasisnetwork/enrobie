@@ -9,12 +9,14 @@ is permitted, for more information consult the project license file.
 
 from dataclasses import dataclass
 from typing import Literal
+from typing import Optional
 from typing import TYPE_CHECKING
 
 from ..addons import RobieQueueItem
 
 if TYPE_CHECKING:
     from ..childs import RobieClient
+    from ..childs import RobiePerson
     from ..models import RobieCommand
     from ..robie import Robie
 
@@ -34,17 +36,24 @@ class RobieMessage(RobieQueueItem):
     """
 
     client: str
+    person: Optional[str]
 
 
     def __init__(
         self,
         client: 'RobieClient',
+        person: Optional['RobiePerson'] = None,
     ) -> None:
         """
         Initialize instance for class using provided parameters.
         """
 
         self.client = client.name
+
+        self.person = (
+            person.name
+            if person is not None
+            else None)
 
         super().__init__()
 

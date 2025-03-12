@@ -10,6 +10,7 @@ is permitted, for more information consult the project license file.
 from threading import Lock
 from typing import Annotated
 from typing import Any
+from typing import Literal
 from typing import Optional
 from typing import TYPE_CHECKING
 
@@ -31,7 +32,12 @@ from sqlalchemy.orm import sessionmaker
 
 if TYPE_CHECKING:
     from .plugin import AinswerPlugin
-    from ...robie.childs import RobieClient
+    from ...robie.models import RobieMessage
+
+
+
+AinswerHistoryKinds = Literal[
+    'privmsg', 'chanmsg']
 
 
 
@@ -56,6 +62,16 @@ class AinswerHistoryTable(SQLBase):
         nullable=False)
 
     client = Column(
+        String,
+        primary_key=True,
+        nullable=False)
+
+    person = Column(
+        String,
+        primary_key=True,
+        nullable=True)
+
+    kind = Column(
         String,
         primary_key=True,
         nullable=False)
@@ -107,6 +123,18 @@ class AinswerHistoryRecord(BaseModel, extra='forbid'):
               description='Client name where originated',
               min_length=1)]
 
+    person: Annotated[
+        Optional[str],
+        Field(None,
+              description='Person that author is matched',
+              min_length=1)]
+
+    kind: Annotated[
+        AinswerHistoryKinds,
+        Field(...,
+              description='What kind of original message',
+              min_length=1)]
+
     author: Annotated[
         str,
         Field(...,
@@ -151,6 +179,8 @@ class AinswerHistoryRecord(BaseModel, extra='forbid'):
         fields = [
             'plugin',
             'client',
+            'person',
+            'kind',
             'author',
             'anchor',
             'message',
@@ -246,9 +276,12 @@ class AinswerHistory:
         self.__session = session
 
 
-    def insert(
+    def insert(  # noqa: CFQ002
         self,
-        client: 'RobieClient',
+        *,
+        client: str,
+        person: str | None,
+        kind: str,
         author: str,
         anchor: str,
         message: str,
@@ -256,12 +289,6 @@ class AinswerHistory:
     ) -> None:
         """
         Insert the record into the historical chat interactions.
-
-        :param client: Client class instance for Chatting Robie.
-        :param author: Name of the user that submitted question.
-        :param anchor: Channel name or other context or thread.
-        :param message: Question that will be asked of the LLM.
-        :param ainswer: Response from LLM relevant to question.
         """
 
         plugin = self.__plugin
@@ -275,7 +302,9 @@ class AinswerHistory:
 
         inputs: DictStrAny = {
             'plugin': plugin.name,
-            'client': client.name,
+            'client': client,
+            'person': person,
+            'kind': kind,
             'author': author,
             'anchor': anchor,
             'message': message,
@@ -301,24 +330,77 @@ class AinswerHistory:
             session.commit()
 
 
-        self.expunge(client, anchor)
+        self.expunge(
+            client=record.client,
+            kind=record.kind,
+            anchor=record.anchor)
+
+
+    def process(
+        self,
+        mitem: 'RobieMessage',
+        ainswer: str,
+    ) -> None:
+        """
+        Insert the record into the historical chat interactions.
+
+        :param mitem: Item containing information for operation.
+        :param ainswer: Response from LLM relevant to question.
+        """
+
+        plugin = self.__plugin
+        robie = plugin.robie
+        childs = robie.childs
+        persons = childs.persons
+        clients = childs.clients
+
+        assert mitem.author
+        assert mitem.anchor
+        assert mitem.message
+
+        _person = mitem.person
+        _kind = mitem.kind
+        _author = mitem.author
+        _anchor = mitem.anchor
+        _message = mitem.message
+
+        client = clients[
+            mitem.client]
+
+        person = (
+            persons[_person]
+            if _person is not None
+            else None)
+
+        self.insert(
+            client=client.name,
+            person=(
+                person.name
+                if person is not None
+                else None),
+            kind=_kind,
+            author=_author[1],
+            anchor=_anchor,
+            message=_message,
+            ainswer=ainswer)
 
 
     def expunge(
         self,
-        client: 'RobieClient',
-        anchor: str,
+        *,
+        client: Optional[str] = None,
+        kind: Optional[str] = None,
+        anchor: Optional[str] = None,
     ) -> None:
         """
         Remove the expired historical chat interaction records.
-
-        :param client: Client class instance for Chatting Robie.
-        :param anchor: Channel name or other context or thread.
         """
 
         plugin = self.__plugin
         params = plugin.params
+
         maximum = params.histories
+
 
         sess = self.__session()
         lock = self.__locker
@@ -327,6 +409,7 @@ class AinswerHistory:
 
         _plugin = table.plugin
         _client = table.client
+        _kind = table.kind
         _anchor = table.anchor
         _create = table.create
 
@@ -337,7 +420,8 @@ class AinswerHistory:
                 session.query(table)
                 .filter(
                     _plugin == plugin.name,
-                    _client == client.name,
+                    _client == client,
+                    _kind == kind,
                     _anchor == anchor)
                 .count())
 
@@ -348,7 +432,8 @@ class AinswerHistory:
                 session.query(_create)
                 .filter(
                     _plugin == plugin.name,
-                    _client == client.name,
+                    _client == client,
+                    _kind == kind,
                     _anchor == anchor)
                 .order_by(_create.desc())
                 .offset(maximum - 1)
@@ -360,7 +445,8 @@ class AinswerHistory:
             (session.query(table)
              .filter(
                  _plugin == plugin.name,
-                 _client == client.name,
+                 _client == client,
+                 _kind == kind,
                  _anchor == anchor,
                  _create < cutoff)
              .delete(synchronize_session=False))
@@ -370,20 +456,61 @@ class AinswerHistory:
 
     def records(
         self,
-        client: 'RobieClient',
-        anchor: str,
+        mitem: 'RobieMessage',
         limit: Optional[int] = None,
     ) -> list[AinswerHistoryRecord]:
         """
         Return all historical records for the chat interactions.
 
-        :param client: Client class instance for Chatting Robie.
-        :param anchor: Channel name or other context or thread.
+        :param mitem: Item containing information for operation.
         :param limit: Optionally restrict the records returned.
         :returns: Historical records for the chat interactions.
         """
 
         plugin = self.__plugin
+        robie = plugin.robie
+        childs = robie.childs
+        clients = childs.clients
+        persons = childs.persons
+
+        assert mitem.author
+
+        _person = mitem.person
+
+        client = clients[
+            mitem.client]
+
+
+        return self.search(
+            limit=limit,
+            client=client.name,
+            person=(
+                persons[_person].name
+                if _person is not None
+                else None),
+            kind=mitem.kind,
+            anchor=mitem.anchor)
+
+
+    def search(  # noqa: CFQ002
+        self,
+        limit: Optional[int] = None,
+        *,
+        client: Optional[str] = None,
+        person: Optional[str] = None,
+        kind: Optional[str] = None,
+        author: Optional[str] = None,
+        anchor: Optional[str] = None,
+    ) -> list[AinswerHistoryRecord]:
+        """
+        Return all historical records for the chat interactions.
+
+        :param limit: Optionally restrict the records returned.
+        :returns: Historical records for the chat interactions.
+        """
+
+        plugin = self.__plugin
+
 
         sess = self.__session()
         lock = self.__locker
@@ -395,6 +522,9 @@ class AinswerHistory:
 
         _plugin = table.plugin
         _client = table.client
+        _person = table.person
+        _kind = table.kind
+        _author = table.author
         _anchor = table.anchor
         _create = table.create
 
@@ -406,12 +536,30 @@ class AinswerHistory:
             query = (
                 session.query(table)
                 .filter(
-                    _plugin == plugin.name,
-                    _client == client.name,
-                    _anchor == anchor)
+                    _plugin == plugin.name)
                 .order_by(_create.desc()))
 
-            if limit is not NCNone:
+            if client is not None:
+                query = query.filter(
+                    _client == client)
+
+            if person is not None:
+                query = query.filter(
+                    _person == person)
+
+            if kind is not None:
+                query = query.filter(
+                    _kind == kind)
+
+            if author is not None:
+                query = query.filter(
+                    _author == author)
+
+            if anchor is not None:
+                query = query.filter(
+                    _anchor == anchor)
+
+            if limit is not None:
                 query = query.limit(limit)
 
 

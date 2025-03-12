@@ -112,6 +112,18 @@ plugins:
         mtm: >-
           Your nickname is {{ whoami }}.
           Use some markdown and emojis.
+      header: |-
+        {%- set records = (
+              robie.childs.plugins.logger.history
+              .plaintext(10, mitem)) -%}
+        {%- if records | length >= 1 -%}
+        **Channel Recent**
+        These are previous messages from the current channel.
+        {%-   if mitem.family in ['irc', 'mattermost'] %}
+        You will not see what you have said in this history.
+        {%-   endif %}
+        {{    records | join('\n') -}}
+        {%- endif -%}
 
     ainswer:
       origin: openai

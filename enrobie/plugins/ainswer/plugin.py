@@ -9,17 +9,15 @@ is permitted, for more information consult the project license file.
 
 from random import randint
 from time import sleep as block_sleep
-from typing import Optional
 from typing import TYPE_CHECKING
 from typing import Type
 
 from encommon.types import NCNone
 
+from .helpers import AinswerQuestion
 from .helpers import composedsc
 from .helpers import composeirc
 from .helpers import composemtm
-from .helpers import engagellm
-from .helpers import promptllm
 from .history import AinswerHistory
 from .models import AinswerResponse
 from .params import AinswerPluginParams
@@ -31,7 +29,6 @@ if TYPE_CHECKING:
     from pydantic_ai import Agent
     from pydantic_ai.models import Model
     from ...robie.threads import RobieThread
-    from ...robie.childs import RobieClient
     from ...robie.models import RobieMessage
 
 
@@ -46,6 +43,7 @@ class AinswerPlugin(RobiePlugin):
 
     __started: bool
 
+    __question: AinswerQuestion
     __history: AinswerHistory
 
     __model: 'Model'
@@ -74,6 +72,9 @@ class AinswerPlugin(RobiePlugin):
 
         system = prompt.system
 
+
+        self.__question = (
+            AinswerQuestion(self))
 
         self.__history = (
             AinswerHistory(self))
@@ -163,6 +164,19 @@ class AinswerPlugin(RobiePlugin):
 
 
     @property
+    def question(
+        self,
+    ) -> AinswerQuestion:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__question
+
+
+    @property
     def history(
         self,
     ) -> AinswerHistory:
@@ -241,90 +255,57 @@ class AinswerPlugin(RobiePlugin):
                     self, cqueue, mitem)
 
 
-    def ainswer(  # noqa: CFQ001,CFQ002
+    def ainswer(  # noqa: CFQ001
         self,
-        client: 'RobieClient',
+        mitem: 'RobieMessage',
         prompt: str,
         respond: Type[AinswerResponse],
-        *,
-        whoami: Optional[str] = None,
-        author: Optional[str] = None,
-        anchor: Optional[str] = None,
-        message: Optional[str] = None,
-        mitem: Optional['RobieMessage'] = None,
     ) -> str:
         """
         Submit the question to the LLM and return the response.
 
-        :param client: Client class instance for Chatting Robie.
+        :param mitem: Item containing information for operation.
         :param prompt: Additional prompt insert before question.
         :param respond: Model to describe the expected response.
-        :param whoami: What is my current nickname on platform.
-        :param author: Name of the user that submitted question.
-        :param anchor: Channel name or other context or thread.
-        :param message: Question that will be asked of the LLM.
-        :param mitem: Item containing information for operation.
         :returns: Response adhering to provided specifications.
         """
 
         robie = self.robie
         config = robie.config
+        childs = robie.childs
+        persons = childs.persons
+        clients = childs.clients
         sargs = config.sargs
+        question = self.question
         history = self.history
         params = self.params
 
-        _whoami: Optional[str] = None
-        _author: Optional[str] = None
+        _ainswer = params.ainswer
+        _prompt = params.prompt
 
+        sleep = _ainswer.sleep
+        system = _prompt.system
 
-        # Also in promptllm helper
-        if mitem is not None:
+        assert mitem.whome
+        assert mitem.author
+        assert mitem.anchor
+        assert mitem.message
 
-            if mitem.whome is not None:
+        _client = mitem.client
+        _person = mitem.person
+        author = mitem.author
+        anchor = mitem.anchor
+        message = mitem.message
 
-                whoami = (
-                    mitem.whome[0]
-                    if whoami is None
-                    else whoami)
+        client = (
+            clients[_client]
+            if _client is not None
+            else None)
 
-                _whoami = mitem.whome[1]
-
-                _whoami = (
-                    _whoami
-                    if _whoami != whoami
-                    else None)
-
-
-            if mitem.author is not None:
-
-                author = (
-                    mitem.author[0]
-                    if author is None
-                    else author)
-
-                _author = mitem.author[1]
-
-                _author = (
-                    _author
-                    if _author != author
-                    else None)
-
-
-            anchor = (
-                mitem.anchor
-                if anchor is None
-                else anchor)
-
-            message = (
-                mitem.message
-                if message is None
-                else message)
-
-
-        assert whoami is not None
-        assert author is not None
-        assert anchor is not None
-        assert message is not None
+        person = (
+            persons[_person]
+            if _person is not None
+            else None)
 
 
         robie.logger.log_i(
@@ -332,29 +313,17 @@ class AinswerPlugin(RobiePlugin):
             name=self,
             item='ainswer',
             client=client.name,
-            author=author,
+            person=(
+                person.name
+                if person is not None
+                else None),
+            author=author[0],
             anchor=anchor,
             message=message)
 
 
-        sleep = (
-            params.ainswer.sleep)
-
-        system = (
-            params.prompt.system)
-
-        header = (
-            params.prompt.header)
-
-        footer = (
-            params.prompt.footer)
-
-        ignore = (
-            params.prompt.ignore)
-
-
         imsorry = (
-            f"I'm sorry {author}, I'm"
+            f"I'm sorry {author[0]}, I'm"
             " afraid I can't do that.")
 
 
@@ -365,7 +334,11 @@ class AinswerPlugin(RobiePlugin):
             name=self,
             item='ainswer',
             client=client.name,
-            author=author,
+            person=(
+                person.name
+                if person is not None
+                else None),
+            author=author[0],
             anchor=anchor,
             status='pausing',
             seconds=_sleep)
@@ -379,19 +352,9 @@ class AinswerPlugin(RobiePlugin):
 
         try:
 
-            prompt = promptllm(
-                self, client,
-                prompt=prompt,
-                whoami=whoami,
-                whoami_uniq=_whoami,
-                author=author,
-                author_uniq=_author,
-                anchor=anchor,
-                message=message,
-                header=header,
-                footer=footer,
-                ignore=ignore,
-                mitem=mitem)
+            prompt = (
+                question.prompt(
+                    mitem, prompt))
 
             if sargs.get('console'):
                 robie.printer({
@@ -399,8 +362,9 @@ class AinswerPlugin(RobiePlugin):
                     'prompt': prompt,
                     'sleep': _sleep})
 
-            response = engagellm(
-                self, prompt, respond)
+            response = (
+                question.submit(
+                    prompt, respond))
 
             ainswer = response.text
 
@@ -411,14 +375,16 @@ class AinswerPlugin(RobiePlugin):
                 name=self,
                 item='ainswer',
                 client=client.name,
-                author=author,
+                person=(
+                    person.name
+                    if person is not None
+                    else None),
+                author=author[0],
                 anchor=anchor,
                 ainswer=ainswer)
 
-            history.insert(
-                client,
-                author, anchor,
-                message, ainswer)
+            history.process(
+                mitem, ainswer)
 
             return ainswer
 
@@ -432,7 +398,11 @@ class AinswerPlugin(RobiePlugin):
                 name=self,
                 item='ainswer',
                 client=client.name,
-                author=author,
+                person=(
+                    person.name
+                    if person is not None
+                    else None),
+                author=author[0],
                 anchor=anchor,
                 status='exception',
                 exc_info=reason)

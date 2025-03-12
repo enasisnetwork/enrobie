@@ -61,6 +61,7 @@ def test_AinswerPlugin(
         '_RobieChild__name',
         '_RobieChild__params',
         '_AinswerPlugin__started',
+        '_AinswerPlugin__question',
         '_AinswerPlugin__history',
         '_AinswerPlugin__model',
         '_AinswerPlugin__agent']
@@ -93,6 +94,10 @@ def test_AinswerPlugin(
     assert plugin.params
 
     assert plugin.dumped
+
+    assert plugin.question
+
+    assert plugin.history
 
 
 
@@ -169,9 +174,9 @@ def test_AinswerPlugin_cover(
         assert select is not None
 
         records = (
-            history.records(
-                clients['ircbot'],
-                '#test'))
+            history.search(
+                client='ircbot',
+                anchor='#test'))
 
         assert len(records) >= 1
 

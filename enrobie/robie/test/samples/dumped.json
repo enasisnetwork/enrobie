@@ -222,7 +222,7 @@
             "irc": "Your nickname is {{ whoami }}. Keep it short and use colors.",
             "mtm": "Your nickname is {{ whoami }}. Use some markdown and emojis."
           },
-          "header": null,
+          "header": "{%- set records = (\n      robie.childs.plugins.logger.history\n      .plaintext(10, mitem)) -%}\n{%- if records | length >= 1 -%}\n**Channel Recent**\nThese are previous messages from the current channel.\n{%-   if mitem.family in ['irc', 'mattermost'] %}\nYou will not see what you have said in this history.\n{%-   endif %}\n{{    records | join('\\n') -}}\n{%- endif -%}",
           "footer": null,
           "ignore": [
             "If you believe that you are being abused by the user asking the quesiton."
