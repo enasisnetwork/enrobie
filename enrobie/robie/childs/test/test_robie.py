@@ -35,7 +35,8 @@ def test_RobieChilds(
     assert attrs == [
         '_RobieChilds__robie',
         '_RobieChilds__clients',
-        '_RobieChilds__plugins']
+        '_RobieChilds__plugins',
+        '_RobieChilds__persons']
 
 
     assert inrepr(
@@ -55,3 +56,5 @@ def test_RobieChilds(
     assert childs.clients
 
     assert childs.plugins
+
+    assert childs.persons

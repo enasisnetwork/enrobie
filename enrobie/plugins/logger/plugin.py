@@ -120,15 +120,15 @@ class LoggerPlugin(RobiePlugin):
 
         robie = self.robie
         childs = robie.childs
+        persons = childs.persons
         clients = childs.clients
         mqueue = thread.mqueue
+        params = self.params
         history = self.history
 
-        names = (
-            self.params.clients)
+        names = params.clients
+        output = params.output
 
-        output = (
-            self.params.output)
 
         if not self.__started:
             self.__started = True
@@ -141,6 +141,7 @@ class LoggerPlugin(RobiePlugin):
 
             mitem = mqueue.get()
 
+            _person = mitem.person
             name = mitem.client
             kind = mitem.kind
             author = mitem.author
@@ -157,19 +158,26 @@ class LoggerPlugin(RobiePlugin):
             assert anchor is not None
             assert message is not None
 
+            person = (
+                persons[_person]
+                if _person is not None
+                else None)
+
             client = clients[name]
 
-            history.insert(
-                client, author[0],
-                anchor, message)
+            history.process(mitem)
 
 
             if output is None:
                 continue  # NOCVR
 
             append = {
-                'client': client.name,
                 'time': str(mitem.time),
+                'client': client.name,
+                'person': (
+                    person.name
+                    if person is not None
+                    else None),
                 'author': author,
                 'anchor': anchor,
                 'message': message}

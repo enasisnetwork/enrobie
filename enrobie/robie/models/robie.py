@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from ..params import RobieServiceParams
     from ..params import RobieChildParams
     from ..params import RobieClientParams
+    from ..params import RobiePersonParams
     from ..params import RobiePluginParams
 
 
@@ -123,6 +124,22 @@ class RobieModels:
             RobiePluginParams)
 
         return RobiePluginParams
+
+
+    @classmethod
+    def person(
+        cls,
+    ) -> Type['RobiePersonParams']:
+        """
+        Return the class object that was imported within method.
+
+        :returns: Class object that was imported within method.
+        """
+
+        from ..params import (
+            RobiePersonParams)
+
+        return RobiePersonParams
 
 
     @classmethod

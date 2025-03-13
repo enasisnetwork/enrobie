@@ -35,16 +35,15 @@ def test_RobieMessage(
     clients = childs.clients
     client = clients['ircbot']
 
-    model = RobieMessage
 
-
-    item = model(client)
+    item = RobieMessage(client)
 
 
     attrs = lattrs(item)
 
     assert attrs == [
         'client',
+        'person',
         'time']
 
 

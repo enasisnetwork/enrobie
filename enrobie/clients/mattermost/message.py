@@ -41,9 +41,20 @@ class MTMMessage(RobieMessage):
         Initialize instance for class using provided parameters.
         """
 
+        robie = client.robie
+
         self.event = event
 
-        super().__init__(client=client)
+        person = (
+            robie.person(
+                client,
+                event.author[1])
+            if event.author
+            else None)
+
+        super().__init__(
+            client=client,
+            person=person)
 
 
     @property

@@ -21,6 +21,7 @@ if TYPE_CHECKING:
     from ..models import RobieCommand
     from ..models import RobieMessage
     from ..params import RobieClientParams
+    from ..threads import RobieThread
 
 
 
@@ -98,6 +99,23 @@ class RobieClient(RobieChild):
 
         return dumped | {
             'family': family}
+
+
+    def operate(
+        self,
+        thread: 'RobieThread',
+    ) -> None:
+        """
+        Perform the operation related to Robie service threads.
+
+        .. note::
+           Deviates from enhomie in children have operations,
+           and are more isolated from internal core routines.
+
+        :param thread: Child class instance for Chatting Robie.
+        """
+
+        raise NotImplementedError
 
 
     def get_message(

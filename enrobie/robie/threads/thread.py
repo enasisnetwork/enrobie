@@ -18,7 +18,7 @@ from ..addons import RobieQueue
 from ...utils import DupliThread
 
 if TYPE_CHECKING:
-    from ..childs import RobieChild
+    from ..common import RobieOperate
     from ..members import RobieMember
     from ..models import RobieCommand
     from ..models import RobieMessage
@@ -45,7 +45,7 @@ class RobieThread(Thread):
     """
 
     __member: 'RobieMember'
-    __child: 'RobieChild'
+    __child: 'RobieOperate'
 
     __mqueue: RobieQueue['RobieMessage']
     __cqueue: RobieQueue['RobieCommand']
@@ -54,7 +54,7 @@ class RobieThread(Thread):
     def __init__(
         self,
         member: 'RobieMember',
-        child: 'RobieChild',
+        child: 'RobieOperate',
     ) -> None:
         """
         Initialize instance for class using provided parameters.
@@ -130,7 +130,7 @@ class RobieThread(Thread):
     @property
     def child(
         self,
-    ) -> 'RobieChild':
+    ) -> 'RobieOperate':
         """
         Return the value for the attribute from class instance.
 

@@ -18,6 +18,7 @@ from pydantic import Field
 
 from .client import RobieClientParams
 from .common import RobieParamsModel
+from .person import RobiePersonParams
 from .plugin import RobiePluginParams
 from .service import RobieServiceParams
 
@@ -73,6 +74,12 @@ class RobieParams(Params, extra='forbid'):
               description='Parameters for Robie plugins',
               min_length=1)]
 
+    persons: Annotated[
+        Optional[dict[str, RobiePersonParams]],
+        Field(None,
+              description='Parameters for Robie persons',
+              min_length=1)]
+
 
     def __init__(
         # NOCVR
@@ -84,6 +91,23 @@ class RobieParams(Params, extra='forbid'):
         """
         Initialize instance for class using provided parameters.
         """
+
+
+        if _parse is not None:
+
+            parsable = ['persons']
+
+            for key in parsable:
+
+                if not data.get(key):
+                    continue
+
+                values = (
+                    data[key]
+                    .values())
+
+                for item in values:
+                    item['_parse'] = _parse
 
 
         if _parse is not None:

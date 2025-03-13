@@ -7,23 +7,37 @@ is permitted, for more information consult the project license file.
 
 
 
-from json import loads
+from re import sub as re_sub
 from typing import TYPE_CHECKING
+
+from encommon.types import NCTrue
+from encommon.utils import read_text
+from encommon.utils import save_text
+from encommon.utils.sample import ENPYRWS
+
+from enconnect.irc import ClientEvent
 
 from pydantic_ai.models.test import TestModel
 
-from .test_history import _insert_history
-from ..helpers import engagellm
-from ..helpers import promptllm
+from pytest import mark
+
+from . import SAMPLES
+from .test_history import _ainswer_history
+from ..history import AinswerHistoryKinds
 from ..models import AinswerResponse
 from ..plugin import AinswerPlugin
+from ...logger import LoggerPlugin
+from ...logger.test.test_history import _logger_history
+from ....clients.irc import IRCClient
+from ....clients.irc.message import IRCMessage
+from ....clients.irc.test import IRCEVENTS
 
 if TYPE_CHECKING:
     from ....robie import Robie
 
 
 
-def test_engagellm(
+def test_AinswerQuestion_engage(
     robie: 'Robie',
 ) -> None:
     """
@@ -39,6 +53,8 @@ def test_engagellm(
 
     assert isinstance(
         plugin, AinswerPlugin)
+
+    question = plugin.question
 
 
     testing = TestModel()
@@ -50,20 +66,33 @@ def test_engagellm(
 
     with override_agent:
 
-        response = engagellm(
-            plugin, 'Hello',
-            AinswerResponse)
+        response = (
+            question.submit(
+                'Hello World!',
+                AinswerResponse))
 
     assert response.text == 'a'
 
 
 
-def test_promptllm(
+@mark.parametrize(
+    'file,kind,event',
+    [('random_chanmsg', 'chanmsg', IRCEVENTS[8]),
+     ('random_privmsg', 'privmsg', IRCEVENTS[9]),
+     ('hubert_chanmsg', 'chanmsg', IRCEVENTS[10]),
+     ('hubert_privmsg', 'privmsg', IRCEVENTS[12])])
+def test_AinswerQuestion_prompt(
     robie: 'Robie',
+    file: str,
+    kind: 'AinswerHistoryKinds',
+    event: str,
 ) -> None:
     """
     Perform various tests associated with relevant routines.
 
+    :param file: Name of the file within the samples folder.
+    :param kind: What kind of Robie message we dealing with.
+    :param event: Raw event received from the network peer.
     :param robie: Primary class instance for Chatting Robie.
     """
 
@@ -73,85 +102,74 @@ def test_promptllm(
 
     client = clients['ircbot']
     plugin = plugins['ainswer']
+    logger = plugins['logger']
+
+    assert isinstance(
+        client, IRCClient)
 
     assert isinstance(
         plugin, AinswerPlugin)
 
-    _insert_history(
+    assert isinstance(
+        logger, LoggerPlugin)
+
+    question = plugin.question
+
+
+    item = IRCMessage(
+        client,
+        ClientEvent(
+            client.client,
+            event))
+
+    assert item.kind == kind
+    assert item.author
+    assert item.author == (
+        ('hubert', 'hubert')
+        if 'hubert' in file
+        else ('nick', 'nick'))
+
+    if 'hubert' not in file:
+        item.event.author = 'nickname1'
+        item.event.recipient = (
+            '#enrobie'
+            if kind == 'chanmsg'
+            else 'ircbot')
+
+    item.event.whome = 'ircbot'
+
+    item.event.message = (
+        'Do the thing?')
+
+
+    _ainswer_history(
         plugin, client)
 
-
-    message = 'This is the question'
-
-    prompt = promptllm(
-        plugin, client,
-        (plugin.params
-         .prompt.client.irc),
-        whoami='Robie',
-        author='nickname1',
-        anchor='#channel',
-        message=message,
-        header='header',
-        footer='footer')
+    _logger_history(
+        logger, client)
 
 
-    assert prompt.startswith(
-        '**Instructions**\n'
-        'Your nickname is'
-        ' Robie. Keep it short'
-        ' and use colors.\n\n'
-        '**Previous**\n'
-        'You have previously'
-        ' had the following'
-        ' conversations in the'
-        ' channel with users.')
+    sample_path = (
+        SAMPLES / f'{file}.txt')
 
+    prompt = (
+        question.prompt(
+            item,
+            'Do the thing!'))
 
-    _, history = (
-        prompt
-        .split('**Previous**\n'))
+    prompt = re_sub(
+        (r'\d{4}\-\d{2}\-\d{2}'
+         r'T\d{2}:\d{2}:\d{2}'
+         r'(\.\d+)?\+0000'),
+        '1980-01-01T00:00:00Z',
+        prompt)
 
-    _history = (
-        history
-        .split('\n', 22))
+    if ENPYRWS is NCTrue:
+        save_text(
+            sample_path,
+            prompt)
 
+    loaded = read_text(
+        sample_path)
 
-    records = [
-        loads(x) for x
-        in _history[1:-2]]
-
-    assert len(records) == 20
-
-
-    assert records[0] == {
-        'content': 'Message 2',
-        'nick': 'nickname3',
-        'role': 'user',
-        'time': records[0]['time']}
-
-    assert records[1] == {
-        'content': 'Ainswer 2',
-        'role': 'assistant',
-        'time': records[1]['time']}
-
-    assert records[-2] == {
-        'content': 'Message 4',
-        'nick': 'nickname4',
-        'role': 'user',
-        'time': records[-2]['time']}
-
-    assert records[-1] == {
-        'content': 'Ainswer 4',
-        'role': 'assistant',
-        'time': records[-1]['time']}
-
-
-    assert prompt.endswith(
-        '**Message**\n'
-        'Your nickname: Robie\n'
-        'User nickname: nickname1\n'
-        'Client family: irc\n\n'
-        'header\n\n'
-        '**Question**\n'
-        'This is the question'
-        '\n\nfooter')
+    assert prompt == loaded

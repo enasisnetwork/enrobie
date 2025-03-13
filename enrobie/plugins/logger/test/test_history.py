@@ -15,16 +15,16 @@ from encommon.types import instr
 from encommon.types import lattrs
 
 from ..plugin import LoggerPlugin
+from ....clients import IRCClient
 
 if TYPE_CHECKING:
-    from ....robie.childs import RobieClient
     from ....robie import Robie
 
 
 
-def _insert_history(
+def _logger_history(
     plugin: LoggerPlugin,
-    client: 'RobieClient',
+    client: 'IRCClient',
 ) -> None:
     """
     Insert testing records into the provided history object.
@@ -35,6 +35,7 @@ def _insert_history(
 
     history = plugin.history
 
+
     for count in range(4):
 
         count += 1
@@ -44,18 +45,39 @@ def _insert_history(
             nick += 1
 
             history.insert(
-                client,
-                f'nickname{nick}',
-                '#channel',
-                f'Message {count}')
+                client=client.name,
+                person=None,
+                kind='chanmsg',
+                author=f'nickname{nick}',
+                anchor='#enrobie',
+                message=f'Message {count}')
 
             history.insert(
-                client,
-                f'nickname{nick}',
-                f'nickname{nick}',
-                f'Message {count}')
+                client=client.name,
+                person=None,
+                kind='privmsg',
+                author=f'nickname{nick}',
+                anchor=f'nickname{nick}',
+                message=f'Message {count}')
 
             block_sleep(0.001)
+
+
+    history.insert(
+        client=client.name,
+        person='hubert',
+        kind='chanmsg',
+        author='hubert',
+        anchor='#enrobie',
+        message='Good news')
+
+    history.insert(
+        client=client.name,
+        person='hubert',
+        kind='privmsg',
+        author='hubert',
+        anchor='hubert',
+        message='Good news')
 
 
 
@@ -69,10 +91,8 @@ def test_LoggerHistory(
     """
 
     childs = robie.childs
-    clients = childs.clients
     plugins = childs.plugins
 
-    client = clients['ircbot']
     plugin = plugins['logger']
 
     assert isinstance(
@@ -104,14 +124,40 @@ def test_LoggerHistory(
         history)
 
 
-    _insert_history(
+
+def test_LoggerHistory_cover(
+    robie: 'Robie',
+) -> None:
+    """
+    Perform various tests associated with relevant routines.
+
+    :param robie: Primary class instance for Chatting Robie.
+    """
+
+    childs = robie.childs
+    clients = childs.clients
+    plugins = childs.plugins
+
+    client = clients['ircbot']
+    plugin = plugins['logger']
+
+    assert isinstance(
+        client, IRCClient)
+
+    assert isinstance(
+        plugin, LoggerPlugin)
+
+    history = plugin.history
+
+
+    _logger_history(
         plugin, client)
 
 
     records = (
-        history.records(
-            client,
-            '#channel'))
+        history.search(
+            client=client.name,
+            anchor='#enrobie'))
 
     assert len(records) == 10
 
@@ -120,18 +166,20 @@ def test_LoggerHistory(
         records[0].endumped)
 
     assert record == {
-        'anchor': '#channel',
-        'author': 'nickname3',
+        'anchor': '#enrobie',
+        'author': 'nickname4',
         'client': 'ircbot',
         'create': record['create'],
+        'kind': 'chanmsg',
         'message': 'Message 2',
+        'person': None,
         'plugin': 'logger'}
 
 
     records = (
-        history.records(
-            client,
-            'nickname1'))
+        history.search(
+            client=client.name,
+            anchor='nickname1'))
 
     record = (
         records[-1].endumped)
@@ -141,14 +189,26 @@ def test_LoggerHistory(
         'author': 'nickname1',
         'client': 'ircbot',
         'create': record['create'],
+        'kind': 'privmsg',
         'message': 'Message 4',
+        'person': None,
         'plugin': 'logger'}
+
+
+    records = (
+        history.search(
+            client=client.name,
+            author='nickname1',
+            anchor='nickname1',
+            limit=1))
+
+    assert len(records) == 1
 
 
     plaintext = (
         history.plaintext(
-            client,
-            'nickname1'))
+            client=client.name,
+            anchor='nickname1'))
 
     plain = plaintext[-1]
 

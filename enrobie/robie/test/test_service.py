@@ -139,9 +139,7 @@ def test_RobieService_healths(
     thread = threads['ircbot']
     mqueue = thread.mqueue
 
-    model = RobieMessage
-
-    item = model(client)
+    item = RobieMessage(client)
 
 
     for _ in range(6):

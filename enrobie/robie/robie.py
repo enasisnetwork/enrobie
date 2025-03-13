@@ -31,6 +31,7 @@ if TYPE_CHECKING:
     from .common import RobiePrint
     from .config import RobieConfig
     from .params import RobieParams
+    from .childs import RobiePerson
 
 
 
@@ -313,6 +314,52 @@ class Robie:
             self.register(
                 name=name,
                 plugin=plugin)
+
+
+    def person(
+        self,
+        client: RobieClient,
+        check: str,
+    ) -> Optional['RobiePerson']:
+        """
+        Return the heaviest weighted match using provided check.
+
+        :param client: Client class instance for Chatting Robie.
+        :param check: Value to be searched within the haystack.
+        :returns: Heaviest weighted match using provided check.
+        """
+
+        childs = self.childs
+
+        persons = (
+            childs.persons
+            .values())
+
+
+        matched: set['RobiePerson'] = set()
+
+
+        for person in persons:
+
+            if not person.enable:
+                continue  # NOCVR
+
+            match = person.match(
+                client, check)
+
+            if match is True:
+                matched.add(person)
+
+
+        if len(matched) == 0:
+            return None
+
+        ordered = sorted(
+            matched,
+            key=lambda x: x.weight,
+            reverse=True)
+
+        return ordered[0]
 
 
     def j2parse(

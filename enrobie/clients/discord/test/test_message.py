@@ -39,8 +39,6 @@ def test_DSCMessage(
     childs = robie.childs
     clients = childs.clients
 
-    model = DSCMessage
-
     client = clients['dscbot']
 
     assert isinstance(
@@ -51,7 +49,7 @@ def test_DSCMessage(
         EVENTS[0])
 
 
-    item = model(
+    item = DSCMessage(
         client, event)
 
 
@@ -60,6 +58,7 @@ def test_DSCMessage(
     assert attrs == [
         'event',
         'client',
+        'person',
         'time']
 
 
@@ -82,6 +81,8 @@ def test_DSCMessage(
     assert item.family == 'discord'
 
     assert item.kind == 'privmsg'
+
+    assert not item.person
 
     assert not item.isme
 
@@ -132,15 +133,13 @@ def test_DSCMessage_reply(
     childs = robie.childs
     clients = childs.clients
 
-    model = DSCMessage
-
     client = clients['dscbot']
 
     assert isinstance(
         client, DSCClient)
 
 
-    item = model(
+    item = DSCMessage(
         client,
         ClientEvent(
             client.client,

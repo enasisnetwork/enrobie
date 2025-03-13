@@ -25,6 +25,7 @@ def test_RobieModels_cover() -> None:
     assert models.child()
     assert models.client()
     assert models.plugin()
+    assert models.person()
 
     assert models.queue()
     assert models.message()

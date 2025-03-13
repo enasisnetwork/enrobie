@@ -34,12 +34,10 @@ def test_MTMCommand(
     childs = robie.childs
     clients = childs.clients
 
-    model = MTMCommand
-
     client = clients['mtmbot']
 
 
-    item = model(
+    item = MTMCommand(
         client, 'delete',
         'posts/mocked')
 

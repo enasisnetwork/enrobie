@@ -97,11 +97,64 @@ def test_Robie_printer(
 
     client = clients['ircbot']
 
-    model = RobieMessage
-
-    item = model(client)
+    item = RobieMessage(client)
 
     robie.printer(item)
+
+
+
+def test_Robie_person(
+    robie: Robie,
+) -> None:
+    """
+    Perform various tests associated with relevant routines.
+
+    :param robie: Primary class instance for Chatting Robie.
+    """
+
+    childs = robie.childs
+    clients = childs.clients
+
+
+    person = robie.person(
+        clients['dscbot'],
+        '823902304920392013')
+
+    assert person is not None
+    assert person.name == 'bender'
+
+    person = robie.person(
+        clients['dscbot'], '123')
+
+    assert person is None
+
+
+    person = robie.person(
+        clients['ircbot'],
+        'bender!bender@bending.com')
+
+    assert person is not None
+    assert person.name == 'bender'
+
+    person = robie.person(
+        clients['ircbot'],
+        'some!user@domain.invalid')
+
+    assert person is not None
+    assert person.name == 'anonymous'
+
+
+    person = robie.person(
+        clients['mtmbot'],
+        'iietalkwkjf9al2kla')
+
+    assert person is not None
+    assert person.name == 'bender'
+
+    person = robie.person(
+        clients['mtmbot'], '123')
+
+    assert person is None
 
 
 

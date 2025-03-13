@@ -15,13 +15,12 @@ if TYPE_CHECKING:
     from ..common import RobieKinds
     from ..params import RobieChildParams
     from ..robie import Robie
-    from ..threads import RobieThread
 
 
 
 class RobieChild:
     """
-    Normalize the desired parameters with multiple products.
+    Parent object for child objects within the project base.
 
     :param robie: Primary class instance for Chatting Robie.
     :param name: Name of the object within the Robie config.
@@ -181,20 +180,3 @@ class RobieChild:
             'name': self.name,
             'kind': self.kind,
             'params': dumped}
-
-
-    def operate(
-        self,
-        thread: 'RobieThread',
-    ) -> None:
-        """
-        Perform the operation related to Robie service threads.
-
-        .. note::
-           Deviates from enhomie in children have operations,
-           and are more isolated from internal core routines.
-
-        :param thread: Child class instance for Chatting Robie.
-        """
-
-        raise NotImplementedError

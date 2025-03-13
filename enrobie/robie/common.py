@@ -14,14 +14,21 @@ from typing import Union
 from encommon.utils.stdout import ANSIARRAY
 
 if TYPE_CHECKING:
+    from .childs import RobieClient
+    from .childs import RobiePlugin
     from .threads import RobieThreadItems
 
 
 
 RobieKinds = Literal[
     'client',
-    'plugin']
+    'plugin',
+    'person']
 
 RobiePrint = Union[
     ANSIARRAY,
     'RobieThreadItems']
+
+RobieOperate = Union[
+    'RobieClient',
+    'RobiePlugin']

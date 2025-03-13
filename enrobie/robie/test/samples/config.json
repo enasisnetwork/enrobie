@@ -77,6 +77,79 @@
     "file_level": null,
     "file_path": null
   },
+  "persons": {
+    "anonymous": {
+      "enable": true,
+      "first": null,
+      "last": null,
+      "about": null,
+      "matches": [
+        {
+          "client": "ircbot",
+          "match": [
+            "*!*@*"
+          ]
+        }
+      ],
+      "weight": 1
+    },
+    "hubert": {
+      "enable": true,
+      "first": "Hubert",
+      "last": "Farnsworth",
+      "about": "Chief Executive Officer of Planet Express.",
+      "matches": [
+        {
+          "client": "dscbot",
+          "match": [
+            "823039201390230492"
+          ]
+        },
+        {
+          "client": "ircbot",
+          "match": [
+            "hubert!hubert@localhost",
+            "hubert!hubert@science.*"
+          ]
+        },
+        {
+          "client": "mtmbot",
+          "match": [
+            "kjf9al2klaiietalkw"
+          ]
+        }
+      ],
+      "weight": 50
+    },
+    "bender": {
+      "enable": true,
+      "first": "Bender",
+      "last": "Rodr\u00edguez",
+      "about": "Robo delivery assistant at Planet Express.",
+      "matches": [
+        {
+          "client": "dscbot",
+          "match": [
+            "823902304920392013"
+          ]
+        },
+        {
+          "client": "ircbot",
+          "match": [
+            "bender!bender@localhost",
+            "bender!bender@bending.*"
+          ]
+        },
+        {
+          "client": "mtmbot",
+          "match": [
+            "iietalkwkjf9al2kla"
+          ]
+        }
+      ],
+      "weight": 50
+    }
+  },
   "plugins": {
     "status": {
       "enable": true,
@@ -183,7 +256,7 @@
           "irc": "Your nickname is {{ whoami }}. Keep it short and use colors.",
           "mtm": "Your nickname is {{ whoami }}. Use some markdown and emojis."
         },
-        "header": null,
+        "header": "{%- set records = (\n      robie.childs.plugins.logger.history\n      .plaintext(10, mitem)) -%}\n{%- if records | length >= 1 -%}\n**Channel Recent**\nThese are previous messages from the current channel.\n{%-   if mitem.family in ['irc', 'mattermost'] %}\nYou will not see what you have said in this history.\n{%-   endif %}\n{{    records | join('\\n') -}}\n{%- endif -%}",
         "footer": null,
         "ignore": [
           "If you believe that you are being abused by the user asking the quesiton."

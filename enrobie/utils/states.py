@@ -94,9 +94,8 @@ class ClientChannels:
 
         cached = self.__cached
 
-        model = ClientChannel
-
-        item = model(unique=unique)
+        item = ClientChannel(
+            unique=unique)
 
         cached[unique] = item
 

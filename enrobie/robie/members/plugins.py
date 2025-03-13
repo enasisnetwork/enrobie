@@ -81,6 +81,9 @@ class RobiePlugins(RobieMember):
 
         for name, plugin in items:
 
+            if not plugin.enable:
+                continue  # NOCVR
+
             object = model(
                 self, plugin)
 

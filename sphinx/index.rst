@@ -17,6 +17,14 @@ Parameters Container
    :show-inheritance:
    :noindex:
 
+Homie Persons
+-------------
+
+.. autopydantic_model:: enrobie.robie.params.RobiePersonParams
+   :members:
+   :show-inheritance:
+   :noindex:
+
 Robie Clients
 -------------
 
