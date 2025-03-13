@@ -180,26 +180,29 @@
 </span><span id="line-35">    <span class="k">assert</span> <span class="n">attrs</span> <span class="o">==</span> <span class="p">[</span>
 </span><span id="line-36">        <span class="s1">&#39;_RobieChilds__robie&#39;</span><span class="p">,</span>
 </span><span id="line-37">        <span class="s1">&#39;_RobieChilds__clients&#39;</span><span class="p">,</span>
-</span><span id="line-38">        <span class="s1">&#39;_RobieChilds__plugins&#39;</span><span class="p">]</span>
-</span><span id="line-39">
+</span><span id="line-38">        <span class="s1">&#39;_RobieChilds__plugins&#39;</span><span class="p">,</span>
+</span><span id="line-39">        <span class="s1">&#39;_RobieChilds__persons&#39;</span><span class="p">]</span>
 </span><span id="line-40">
-</span><span id="line-41">    <span class="k">assert</span> <span class="n">inrepr</span><span class="p">(</span>
-</span><span id="line-42">        <span class="s1">&#39;robie.RobieChilds&#39;</span><span class="p">,</span>
-</span><span id="line-43">        <span class="n">childs</span><span class="p">)</span>
-</span><span id="line-44">
-</span><span id="line-45">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-46">        <span class="nb">hash</span><span class="p">(</span><span class="n">childs</span><span class="p">),</span> <span class="nb">int</span><span class="p">)</span>
-</span><span id="line-47">
-</span><span id="line-48">    <span class="k">assert</span> <span class="n">instr</span><span class="p">(</span>
-</span><span id="line-49">        <span class="s1">&#39;robie.RobieChilds&#39;</span><span class="p">,</span>
-</span><span id="line-50">        <span class="n">childs</span><span class="p">)</span>
-</span><span id="line-51">
+</span><span id="line-41">
+</span><span id="line-42">    <span class="k">assert</span> <span class="n">inrepr</span><span class="p">(</span>
+</span><span id="line-43">        <span class="s1">&#39;robie.RobieChilds&#39;</span><span class="p">,</span>
+</span><span id="line-44">        <span class="n">childs</span><span class="p">)</span>
+</span><span id="line-45">
+</span><span id="line-46">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-47">        <span class="nb">hash</span><span class="p">(</span><span class="n">childs</span><span class="p">),</span> <span class="nb">int</span><span class="p">)</span>
+</span><span id="line-48">
+</span><span id="line-49">    <span class="k">assert</span> <span class="n">instr</span><span class="p">(</span>
+</span><span id="line-50">        <span class="s1">&#39;robie.RobieChilds&#39;</span><span class="p">,</span>
+</span><span id="line-51">        <span class="n">childs</span><span class="p">)</span>
 </span><span id="line-52">
-</span><span id="line-53">    <span class="n">childs</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
-</span><span id="line-54">
-</span><span id="line-55">    <span class="k">assert</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
-</span><span id="line-56">
-</span><span id="line-57">    <span class="k">assert</span> <span class="n">childs</span><span class="o">.</span><span class="n">plugins</span></div>
+</span><span id="line-53">
+</span><span id="line-54">    <span class="n">childs</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</span><span id="line-55">
+</span><span id="line-56">    <span class="k">assert</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
+</span><span id="line-57">
+</span><span id="line-58">    <span class="k">assert</span> <span class="n">childs</span><span class="o">.</span><span class="n">plugins</span>
+</span><span id="line-59">
+</span><span id="line-60">    <span class="k">assert</span> <span class="n">childs</span><span class="o">.</span><span class="n">persons</span></div>
 
 </span></code></pre></div>
     </div></div>

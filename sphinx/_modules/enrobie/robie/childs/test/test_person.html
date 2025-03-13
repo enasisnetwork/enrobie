@@ -12,9 +12,9 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
   
-    <title>enrobie.robie.models.test.test_models | enrobie  documentation</title>
-    <meta property="og:title" content="enrobie.robie.models.test.test_models | enrobie  documentation" />
-    <meta name="twitter:title" content="enrobie.robie.models.test.test_models | enrobie  documentation" />
+    <title>enrobie.robie.childs.test.test_person | enrobie  documentation</title>
+    <meta property="og:title" content="enrobie.robie.childs.test.test_person | enrobie  documentation" />
+    <meta name="twitter:title" content="enrobie.robie.childs.test.test_person | enrobie  documentation" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=e72c8e07" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/theme.css?v=42baaae4" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/autodoc_pydantic.css" />
@@ -136,11 +136,11 @@
        href="../../../../index.html">Module code</a>
     
 <div class="mr-1">/</div><span aria-current="page"
-        class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">enrobie.robie.models.test.test_models</span>
+        class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">enrobie.robie.childs.test.test_person</span>
 </nav>
 
     <div id="content" role="main">
-      <h1>Source code for enrobie.robie.models.test.test_models</h1><div class="highlight"><pre>
+      <h1>Source code for enrobie.robie.childs.test.test_person</h1><div class="highlight"><pre>
 <span></span><code><span id="line-1"><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-2"><span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 </span><span id="line-3">
@@ -150,31 +150,91 @@
 </span><span id="line-7">
 </span><span id="line-8">
 </span><span id="line-9">
-</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieModels</span>
+</span><span id="line-10"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 </span><span id="line-11">
-</span><span id="line-12">
-</span><span id="line-13">
-<div class="viewcode-block" id="test_RobieModels_cover">
-<a class="viewcode-back" href="../../../../../enrobie.robie.models.test.html#enrobie.robie.models.test.test_models.test_RobieModels_cover">[docs]</a>
-</span><span id="line-14"><span class="k">def</span><span class="w"> </span><span class="nf">test_RobieModels_cover</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-15"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-16"><span class="sd">    Perform various tests associated with relevant routines.</span>
-</span><span id="line-17"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-12"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">inrepr</span>
+</span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">instr</span>
+</span><span id="line-14"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">lattrs</span>
+</span><span id="line-15">
+</span><span id="line-16"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+</span><span id="line-17">    <span class="kn">from</span><span class="w"> </span><span class="nn">...robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robie</span>
 </span><span id="line-18">
-</span><span id="line-19">    <span class="n">models</span> <span class="o">=</span> <span class="n">RobieModels</span>
+</span><span id="line-19">
 </span><span id="line-20">
-</span><span id="line-21">    <span class="k">assert</span> <span class="n">models</span><span class="o">.</span><span class="n">robie</span><span class="p">()</span>
-</span><span id="line-22">    <span class="k">assert</span> <span class="n">models</span><span class="o">.</span><span class="n">printer</span><span class="p">()</span>
-</span><span id="line-23">    <span class="k">assert</span> <span class="n">models</span><span class="o">.</span><span class="n">service</span><span class="p">()</span>
-</span><span id="line-24">
-</span><span id="line-25">    <span class="k">assert</span> <span class="n">models</span><span class="o">.</span><span class="n">child</span><span class="p">()</span>
-</span><span id="line-26">    <span class="k">assert</span> <span class="n">models</span><span class="o">.</span><span class="n">client</span><span class="p">()</span>
-</span><span id="line-27">    <span class="k">assert</span> <span class="n">models</span><span class="o">.</span><span class="n">plugin</span><span class="p">()</span>
-</span><span id="line-28">    <span class="k">assert</span> <span class="n">models</span><span class="o">.</span><span class="n">person</span><span class="p">()</span>
+<div class="viewcode-block" id="test_RobieClient_cover">
+<a class="viewcode-back" href="../../../../../enrobie.robie.childs.test.html#enrobie.robie.childs.test.test_person.test_RobieClient_cover">[docs]</a>
+</span><span id="line-21"><span class="k">def</span><span class="w"> </span><span class="nf">test_RobieClient_cover</span><span class="p">(</span>
+</span><span id="line-22">    <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
+</span><span id="line-23"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-24"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-25"><span class="sd">    Perform various tests associated with relevant routines.</span>
+</span><span id="line-26">
+</span><span id="line-27"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
+</span><span id="line-28"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="line-29">
-</span><span id="line-30">    <span class="k">assert</span> <span class="n">models</span><span class="o">.</span><span class="n">queue</span><span class="p">()</span>
-</span><span id="line-31">    <span class="k">assert</span> <span class="n">models</span><span class="o">.</span><span class="n">message</span><span class="p">()</span>
-</span><span id="line-32">    <span class="k">assert</span> <span class="n">models</span><span class="o">.</span><span class="n">command</span><span class="p">()</span></div>
+</span><span id="line-30">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
+</span><span id="line-31">    <span class="n">persons</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">persons</span>
+</span><span id="line-32">    <span class="n">clients</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
+</span><span id="line-33">
+</span><span id="line-34">    <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;ircbot&#39;</span><span class="p">]</span>
+</span><span id="line-35">
+</span><span id="line-36">
+</span><span id="line-37">    <span class="n">person</span> <span class="o">=</span> <span class="n">persons</span><span class="p">[</span><span class="s1">&#39;hubert&#39;</span><span class="p">]</span>
+</span><span id="line-38">
+</span><span id="line-39">
+</span><span id="line-40">    <span class="n">attrs</span> <span class="o">=</span> <span class="n">lattrs</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</span><span id="line-41">
+</span><span id="line-42">    <span class="k">assert</span> <span class="n">attrs</span> <span class="o">==</span> <span class="p">[</span>
+</span><span id="line-43">        <span class="s1">&#39;_RobieChild__robie&#39;</span><span class="p">,</span>
+</span><span id="line-44">        <span class="s1">&#39;_RobieChild__name&#39;</span><span class="p">,</span>
+</span><span id="line-45">        <span class="s1">&#39;_RobieChild__params&#39;</span><span class="p">]</span>
+</span><span id="line-46">
+</span><span id="line-47">
+</span><span id="line-48">    <span class="k">assert</span> <span class="n">inrepr</span><span class="p">(</span>
+</span><span id="line-49">        <span class="s1">&#39;person.RobiePerson&#39;</span><span class="p">,</span>
+</span><span id="line-50">        <span class="n">person</span><span class="p">)</span>
+</span><span id="line-51">
+</span><span id="line-52">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-53">        <span class="nb">hash</span><span class="p">(</span><span class="n">person</span><span class="p">),</span> <span class="nb">int</span><span class="p">)</span>
+</span><span id="line-54">
+</span><span id="line-55">    <span class="k">assert</span> <span class="n">instr</span><span class="p">(</span>
+</span><span id="line-56">        <span class="s1">&#39;person.RobiePerson&#39;</span><span class="p">,</span>
+</span><span id="line-57">        <span class="n">person</span><span class="p">)</span>
+</span><span id="line-58">
+</span><span id="line-59">
+</span><span id="line-60">    <span class="n">person</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</span><span id="line-61">
+</span><span id="line-62">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-63">
+</span><span id="line-64">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">enable</span>
+</span><span id="line-65">
+</span><span id="line-66">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;hubert&#39;</span>
+</span><span id="line-67">
+</span><span id="line-68">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;person&#39;</span>
+</span><span id="line-69">
+</span><span id="line-70">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-71">
+</span><span id="line-72">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">dumped</span>
+</span><span id="line-73">
+</span><span id="line-74">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">first</span> <span class="o">==</span> <span class="s1">&#39;Hubert&#39;</span>
+</span><span id="line-75">
+</span><span id="line-76">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">last</span> <span class="o">==</span> <span class="s1">&#39;Farnsworth&#39;</span>
+</span><span id="line-77">
+</span><span id="line-78">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">about</span>
+</span><span id="line-79">
+</span><span id="line-80">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">weight</span>
+</span><span id="line-81">
+</span><span id="line-82">
+</span><span id="line-83">    <span class="k">assert</span> <span class="ow">not</span> <span class="n">person</span><span class="o">.</span><span class="n">match</span><span class="p">(</span>
+</span><span id="line-84">        <span class="n">client</span><span class="p">,</span> <span class="s1">&#39;anonymous&#39;</span><span class="p">)</span>
+</span><span id="line-85">
+</span><span id="line-86">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">match</span><span class="p">(</span>
+</span><span id="line-87">        <span class="n">client</span><span class="p">,</span>
+</span><span id="line-88">        <span class="s1">&#39;hubert!hubert@science.com&#39;</span><span class="p">)</span>
+</span><span id="line-89">
+</span><span id="line-90">    <span class="k">assert</span> <span class="ow">not</span> <span class="n">person</span><span class="o">.</span><span class="n">match</span><span class="p">(</span>
+</span><span id="line-91">        <span class="n">client</span><span class="p">,</span>
+</span><span id="line-92">        <span class="s1">&#39;bender!bender@bending.com&#39;</span><span class="p">)</span></div>
 
 </span></code></pre></div>
     </div></div>

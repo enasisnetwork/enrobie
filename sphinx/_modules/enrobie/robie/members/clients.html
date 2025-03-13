@@ -247,13 +247,16 @@
 </span><span id="line-97">
 </span><span id="line-98">        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">client</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
 </span><span id="line-99">
-</span><span id="line-100">            <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
-</span><span id="line-101">                <span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+</span><span id="line-100">            <span class="k">if</span> <span class="ow">not</span> <span class="n">client</span><span class="o">.</span><span class="n">enable</span><span class="p">:</span>
+</span><span id="line-101">                <span class="k">continue</span>  <span class="c1"># NOCVR</span>
 </span><span id="line-102">
-</span><span id="line-103">            <span class="n">threads</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">object</span>
-</span><span id="line-104">
+</span><span id="line-103">            <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
+</span><span id="line-104">                <span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
 </span><span id="line-105">
-</span><span id="line-106">        <span class="bp">self</span><span class="o">.</span><span class="n">threads</span> <span class="o">=</span> <span class="n">threads</span></div>
+</span><span id="line-106">            <span class="n">threads</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">object</span>
+</span><span id="line-107">
+</span><span id="line-108">
+</span><span id="line-109">        <span class="bp">self</span><span class="o">.</span><span class="n">threads</span> <span class="o">=</span> <span class="n">threads</span></div>
 </div>
 
 </span></code></pre></div>

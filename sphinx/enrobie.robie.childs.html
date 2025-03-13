@@ -104,6 +104,10 @@
 <li class="toctree-l3"><a class="reference internal" href="enrobie.robie.childs.test.html#enrobie.robie.childs.test.test_client.test_RobieClient_cover"><code class="docutils literal notranslate"><span class="pre">test_RobieClient_cover()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.robie.childs.test.html#module-enrobie.robie.childs.test.test_person">enrobie.robie.childs.test.test_person module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.robie.childs.test.html#enrobie.robie.childs.test.test_person.test_RobieClient_cover"><code class="docutils literal notranslate"><span class="pre">test_RobieClient_cover()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="enrobie.robie.childs.test.html#module-enrobie.robie.childs.test.test_plugin">enrobie.robie.childs.test.test_plugin module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.robie.childs.test.html#enrobie.robie.childs.test.test_plugin.test_RobiePlugin_cover"><code class="docutils literal notranslate"><span class="pre">test_RobiePlugin_cover()</span></code></a></li>
 </ul>
@@ -130,7 +134,7 @@ is permitted, for more information consult the project license file.</p>
 <dt class="sig sig-object py" id="enrobie.robie.childs.child.RobieChild">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.childs.child.</span></span><span class="sig-name descname"><span class="pre">RobieChild</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/childs/child.html#RobieChild"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.child.RobieChild" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.child.RobieChild'">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>Normalize the desired parameters with multiple products.</p>
+<p>Parent object for child objects within the project base.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -177,21 +181,6 @@ is permitted, for more information consult the project license file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Value for the attribute from class instance.</p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="enrobie.robie.childs.child.RobieChild.operate">
-<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/childs/child.html#RobieChild.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.child.RobieChild.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.child.RobieChild.operate'">¶</a></dt>
-<dd><p>Perform the operation related to Robie service threads.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Deviates from enhomie in children have operations,
-and are more isolated from internal core routines.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -306,6 +295,21 @@ is permitted, for more information consult the project license file.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.childs.client.RobieClient.operate">
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/childs/client.html#RobieClient.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.client.RobieClient.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.client.RobieClient.operate'">¶</a></dt>
+<dd><p>Perform the operation related to Robie service threads.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deviates from enhomie in children have operations,
+and are more isolated from internal core routines.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="enrobie.robie.childs.client.RobieClient.put_command">
 <span class="sig-name descname"><span class="pre">put_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cqueue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue" title="enrobie.robie.addons.queue.RobieQueue"><span class="pre">RobieQueue</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.command.RobieCommand" title="enrobie.robie.models.command.RobieCommand"><span class="pre">RobieCommand</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/childs/client.html#RobieClient.put_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.client.RobieClient.put_command" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.client.RobieClient.put_command'">¶</a></dt>
 <dd><p>Insert the new item containing information for operation.</p>
@@ -337,6 +341,99 @@ is permitted, for more information consult the project license file.</p>
 </dd></dl>
 </dd></dl>
 </section>
+<section id="module-enrobie.robie.childs.person">
+<span id="enrobie-robie-childs-person-module"></span><h2>enrobie.robie.childs.person module<a class="headerlink" href="#module-enrobie.robie.childs.person" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.robie.childs.person'">¶</a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.childs.person.RobiePerson">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.childs.person.</span></span><span class="sig-name descname"><span class="pre">RobiePerson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/childs/person.html#RobiePerson"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.person.RobiePerson" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.person.RobiePerson'">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#enrobie.robie.childs.child.RobieChild" title="enrobie.robie.childs.child.RobieChild"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobieChild</span></code></a></p>
+<p>Contain the properties regarding the actual user person.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.childs.person.RobiePerson.about">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">about</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#enrobie.robie.childs.person.RobiePerson.about" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.person.RobiePerson.about'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.childs.person.RobiePerson.first">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">first</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#enrobie.robie.childs.person.RobiePerson.first" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.person.RobiePerson.first'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.childs.person.RobiePerson.kind">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kind</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.13)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'person'</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.childs.person.RobiePerson.kind" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.person.RobiePerson.kind'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.childs.person.RobiePerson.last">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#enrobie.robie.childs.person.RobiePerson.last" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.person.RobiePerson.last'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.childs.person.RobiePerson.match">
+<span class="sig-name descname"><span class="pre">match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#enrobie.robie.childs.client.RobieClient" title="enrobie.robie.childs.client.RobieClient"><span class="pre">RobieClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/childs/person.html#RobiePerson.match"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.person.RobiePerson.match" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.person.RobiePerson.match'">¶</a></dt>
+<dd><p>Return the boolean indicating whether check is a match.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – Client class instance for Chatting Robie.</p></li>
+<li><p><strong>check</strong> – Value to be searched within the haystack.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Boolean indicating whether check is a match.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.childs.person.RobiePerson.params">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.person.RobiePersonParams" title="enrobie.robie.params.person.RobiePersonParams"><span class="pre">RobiePersonParams</span></a></em><a class="headerlink" href="#enrobie.robie.childs.person.RobiePerson.params" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.person.RobiePerson.params'">¶</a></dt>
+<dd><p>Return the Pydantic model containing the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pydantic model containing the configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.childs.person.RobiePerson.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/childs/person.html#RobiePerson.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.person.RobiePerson.validate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.person.RobiePerson.validate'">¶</a></dt>
+<dd><p>Perform advanced validation on the parameters provided.</p>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.childs.person.RobiePerson.weight">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">weight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></em><a class="headerlink" href="#enrobie.robie.childs.person.RobiePerson.weight" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.person.RobiePerson.weight'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
 <section id="module-enrobie.robie.childs.plugin">
 <span id="enrobie-robie-childs-plugin-module"></span><h2>enrobie.robie.childs.plugin module<a class="headerlink" href="#module-enrobie.robie.childs.plugin" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.robie.childs.plugin'">¶</a></h2>
 <p>Functions and routines associated with Enasis Network Chatting Robie.</p>
@@ -354,6 +451,21 @@ is permitted, for more information consult the project license file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.childs.plugin.RobiePlugin.operate">
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/childs/plugin.html#RobiePlugin.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.plugin.RobiePlugin.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.plugin.RobiePlugin.operate'">¶</a></dt>
+<dd><p>Perform the operation related to Robie service threads.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deviates from enhomie in children have operations,
+and are more isolated from internal core routines.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -384,6 +496,11 @@ is permitted, for more information consult the project license file.</p>
 <dd class="field-odd"><p><strong>robie</strong> – Primary class instance for Chatting Robie.</p>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.childs.robie.RobieChilds.build_objects">
+<span class="sig-name descname"><span class="pre">build_objects</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/childs/robie.html#RobieChilds.build_objects"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.robie.RobieChilds.build_objects" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.robie.RobieChilds.build_objects'">¶</a></dt>
+<dd><p>Construct instances using the configuration parameters.</p>
+</dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="enrobie.robie.childs.robie.RobieChilds.clients">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clients</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.robie.childs.client.RobieClient" title="enrobie.robie.childs.client.RobieClient"><span class="pre">RobieClient</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.childs.robie.RobieChilds.clients" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.robie.RobieChilds.clients'">¶</a></dt>
@@ -401,6 +518,16 @@ is permitted, for more information consult the project license file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Facts about the attributes from the instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.childs.robie.RobieChilds.persons">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">persons</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.robie.childs.person.RobiePerson" title="enrobie.robie.childs.person.RobiePerson"><span class="pre">RobiePerson</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.childs.robie.RobieChilds.persons" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.robie.RobieChilds.persons'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -444,7 +571,7 @@ is permitted, for more information consult the project license file.</p>
 <dt class="sig sig-object py" id="enrobie.robie.childs.RobieChild">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.childs.</span></span><span class="sig-name descname"><span class="pre">RobieChild</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/childs/child.html#RobieChild"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.RobieChild" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobieChild'">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>Normalize the desired parameters with multiple products.</p>
+<p>Parent object for child objects within the project base.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -494,21 +621,6 @@ is permitted, for more information consult the project license file.</p>
 </dd>
 </dl>
 </dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="enrobie.robie.childs.RobieChild.operate">
-<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/childs/child.html#RobieChild.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.RobieChild.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobieChild.operate'">¶</a></dt>
-<dd><p>Perform the operation related to Robie service threads.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Deviates from enhomie in children have operations,
-and are more isolated from internal core routines.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
-</dd>
-</dl>
-</dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="enrobie.robie.childs.RobieChild.params">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a></em><a class="headerlink" href="#enrobie.robie.childs.RobieChild.params" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobieChild.params'">¶</a></dt>
@@ -545,6 +657,11 @@ and are more isolated from internal core routines.</p>
 <dd class="field-odd"><p><strong>robie</strong> – Primary class instance for Chatting Robie.</p>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.childs.RobieChilds.build_objects">
+<span class="sig-name descname"><span class="pre">build_objects</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/childs/robie.html#RobieChilds.build_objects"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.RobieChilds.build_objects" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobieChilds.build_objects'">¶</a></dt>
+<dd><p>Construct instances using the configuration parameters.</p>
+</dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="enrobie.robie.childs.RobieChilds.clients">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clients</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.robie.childs.client.RobieClient" title="enrobie.robie.childs.client.RobieClient"><span class="pre">RobieClient</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.childs.RobieChilds.clients" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobieChilds.clients'">¶</a></dt>
@@ -562,6 +679,16 @@ and are more isolated from internal core routines.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Facts about the attributes from the instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.childs.RobieChilds.persons">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">persons</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.robie.childs.person.RobiePerson" title="enrobie.robie.childs.person.RobiePerson"><span class="pre">RobiePerson</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.childs.RobieChilds.persons" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobieChilds.persons'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -674,6 +801,21 @@ and are more isolated from internal core routines.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.childs.RobieClient.operate">
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/childs/client.html#RobieClient.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.RobieClient.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobieClient.operate'">¶</a></dt>
+<dd><p>Perform the operation related to Robie service threads.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deviates from enhomie in children have operations,
+and are more isolated from internal core routines.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="enrobie.robie.childs.RobieClient.put_command">
 <span class="sig-name descname"><span class="pre">put_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cqueue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue" title="enrobie.robie.addons.queue.RobieQueue"><span class="pre">RobieQueue</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.command.RobieCommand" title="enrobie.robie.models.command.RobieCommand"><span class="pre">RobieCommand</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/childs/client.html#RobieClient.put_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.RobieClient.put_command" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobieClient.put_command'">¶</a></dt>
 <dd><p>Insert the new item containing information for operation.</p>
@@ -705,6 +847,93 @@ and are more isolated from internal core routines.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
+<dt class="sig sig-object py" id="enrobie.robie.childs.RobiePerson">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.childs.</span></span><span class="sig-name descname"><span class="pre">RobiePerson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/childs/person.html#RobiePerson"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.RobiePerson" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobiePerson'">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#enrobie.robie.childs.child.RobieChild" title="enrobie.robie.childs.child.RobieChild"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobieChild</span></code></a></p>
+<p>Contain the properties regarding the actual user person.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.childs.RobiePerson.about">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">about</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#enrobie.robie.childs.RobiePerson.about" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobiePerson.about'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.childs.RobiePerson.first">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">first</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#enrobie.robie.childs.RobiePerson.first" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobiePerson.first'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.childs.RobiePerson.kind">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kind</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.13)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'person'</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.robie.childs.RobiePerson.kind" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobiePerson.kind'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.childs.RobiePerson.last">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#enrobie.robie.childs.RobiePerson.last" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobiePerson.last'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.childs.RobiePerson.match">
+<span class="sig-name descname"><span class="pre">match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#enrobie.robie.childs.RobieClient" title="enrobie.robie.childs.RobieClient"><span class="pre">RobieClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/childs/person.html#RobiePerson.match"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.RobiePerson.match" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobiePerson.match'">¶</a></dt>
+<dd><p>Return the boolean indicating whether check is a match.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – Client class instance for Chatting Robie.</p></li>
+<li><p><strong>check</strong> – Value to be searched within the haystack.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Boolean indicating whether check is a match.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.childs.RobiePerson.params">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.person.RobiePersonParams" title="enrobie.robie.params.person.RobiePersonParams"><span class="pre">RobiePersonParams</span></a></em><a class="headerlink" href="#enrobie.robie.childs.RobiePerson.params" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobiePerson.params'">¶</a></dt>
+<dd><p>Return the Pydantic model containing the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pydantic model containing the configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.childs.RobiePerson.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/childs/person.html#RobiePerson.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.RobiePerson.validate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobiePerson.validate'">¶</a></dt>
+<dd><p>Perform advanced validation on the parameters provided.</p>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.robie.childs.RobiePerson.weight">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">weight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></em><a class="headerlink" href="#enrobie.robie.childs.RobiePerson.weight" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobiePerson.weight'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
 <dt class="sig sig-object py" id="enrobie.robie.childs.RobiePlugin">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.robie.childs.</span></span><span class="sig-name descname"><span class="pre">RobiePlugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robie</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.html#enrobie.robie.robie.Robie" title="enrobie.robie.robie.Robie"><span class="pre">Robie</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams" title="enrobie.robie.params.child.RobieChildParams"><span class="pre">RobieChildParams</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/robie/childs/plugin.html#RobiePlugin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.RobiePlugin" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobiePlugin'">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#enrobie.robie.childs.child.RobieChild" title="enrobie.robie.childs.child.RobieChild"><code class="xref py py-class docutils literal notranslate"><span class="pre">RobieChild</span></code></a></p>
@@ -716,6 +945,21 @@ and are more isolated from internal core routines.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.robie.childs.RobiePlugin.operate">
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/robie/childs/plugin.html#RobiePlugin.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.robie.childs.RobiePlugin.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.childs.RobiePlugin.operate'">¶</a></dt>
+<dd><p>Perform the operation related to Robie service threads.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deviates from enhomie in children have operations,
+and are more isolated from internal core routines.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -743,7 +987,6 @@ and are more isolated from internal core routines.</p>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.child.RobieChild.enable'" class="reference internal" href="#enrobie.robie.childs.child.RobieChild.enable"><code class="docutils literal notranslate"><span class="pre">RobieChild.enable</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.child.RobieChild.kind'" class="reference internal" href="#enrobie.robie.childs.child.RobieChild.kind"><code class="docutils literal notranslate"><span class="pre">RobieChild.kind</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.child.RobieChild.name'" class="reference internal" href="#enrobie.robie.childs.child.RobieChild.name"><code class="docutils literal notranslate"><span class="pre">RobieChild.name</span></code></a></li>
-<li><a :data-current="activeSection === '#enrobie.robie.childs.child.RobieChild.operate'" class="reference internal" href="#enrobie.robie.childs.child.RobieChild.operate"><code class="docutils literal notranslate"><span class="pre">RobieChild.operate()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.child.RobieChild.params'" class="reference internal" href="#enrobie.robie.childs.child.RobieChild.params"><code class="docutils literal notranslate"><span class="pre">RobieChild.params</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.child.RobieChild.robie'" class="reference internal" href="#enrobie.robie.childs.child.RobieChild.robie"><code class="docutils literal notranslate"><span class="pre">RobieChild.robie</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.child.RobieChild.validate'" class="reference internal" href="#enrobie.robie.childs.child.RobieChild.validate"><code class="docutils literal notranslate"><span class="pre">RobieChild.validate()</span></code></a></li>
@@ -760,6 +1003,7 @@ and are more isolated from internal core routines.</p>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.client.RobieClient.get_command'" class="reference internal" href="#enrobie.robie.childs.client.RobieClient.get_command"><code class="docutils literal notranslate"><span class="pre">RobieClient.get_command()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.client.RobieClient.get_message'" class="reference internal" href="#enrobie.robie.childs.client.RobieClient.get_message"><code class="docutils literal notranslate"><span class="pre">RobieClient.get_message()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.client.RobieClient.kind'" class="reference internal" href="#enrobie.robie.childs.client.RobieClient.kind"><code class="docutils literal notranslate"><span class="pre">RobieClient.kind</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.client.RobieClient.operate'" class="reference internal" href="#enrobie.robie.childs.client.RobieClient.operate"><code class="docutils literal notranslate"><span class="pre">RobieClient.operate()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.client.RobieClient.put_command'" class="reference internal" href="#enrobie.robie.childs.client.RobieClient.put_command"><code class="docutils literal notranslate"><span class="pre">RobieClient.put_command()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.client.RobieClient.put_message'" class="reference internal" href="#enrobie.robie.childs.client.RobieClient.put_message"><code class="docutils literal notranslate"><span class="pre">RobieClient.put_message()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.client.RobieClient.schema'" class="reference internal" href="#enrobie.robie.childs.client.RobieClient.schema"><code class="docutils literal notranslate"><span class="pre">RobieClient.schema()</span></code></a></li>
@@ -767,9 +1011,24 @@ and are more isolated from internal core routines.</p>
 </li>
 </ul>
 </li>
+<li><a :data-current="activeSection === '#module-enrobie.robie.childs.person'" class="reference internal" href="#module-enrobie.robie.childs.person">enrobie.robie.childs.person module</a><ul>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.person.RobiePerson'" class="reference internal" href="#enrobie.robie.childs.person.RobiePerson"><code class="docutils literal notranslate"><span class="pre">RobiePerson</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.person.RobiePerson.about'" class="reference internal" href="#enrobie.robie.childs.person.RobiePerson.about"><code class="docutils literal notranslate"><span class="pre">RobiePerson.about</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.person.RobiePerson.first'" class="reference internal" href="#enrobie.robie.childs.person.RobiePerson.first"><code class="docutils literal notranslate"><span class="pre">RobiePerson.first</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.person.RobiePerson.kind'" class="reference internal" href="#enrobie.robie.childs.person.RobiePerson.kind"><code class="docutils literal notranslate"><span class="pre">RobiePerson.kind</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.person.RobiePerson.last'" class="reference internal" href="#enrobie.robie.childs.person.RobiePerson.last"><code class="docutils literal notranslate"><span class="pre">RobiePerson.last</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.person.RobiePerson.match'" class="reference internal" href="#enrobie.robie.childs.person.RobiePerson.match"><code class="docutils literal notranslate"><span class="pre">RobiePerson.match()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.person.RobiePerson.params'" class="reference internal" href="#enrobie.robie.childs.person.RobiePerson.params"><code class="docutils literal notranslate"><span class="pre">RobiePerson.params</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.person.RobiePerson.validate'" class="reference internal" href="#enrobie.robie.childs.person.RobiePerson.validate"><code class="docutils literal notranslate"><span class="pre">RobiePerson.validate()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.person.RobiePerson.weight'" class="reference internal" href="#enrobie.robie.childs.person.RobiePerson.weight"><code class="docutils literal notranslate"><span class="pre">RobiePerson.weight</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a :data-current="activeSection === '#module-enrobie.robie.childs.plugin'" class="reference internal" href="#module-enrobie.robie.childs.plugin">enrobie.robie.childs.plugin module</a><ul>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.plugin.RobiePlugin'" class="reference internal" href="#enrobie.robie.childs.plugin.RobiePlugin"><code class="docutils literal notranslate"><span class="pre">RobiePlugin</span></code></a><ul>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.plugin.RobiePlugin.kind'" class="reference internal" href="#enrobie.robie.childs.plugin.RobiePlugin.kind"><code class="docutils literal notranslate"><span class="pre">RobiePlugin.kind</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.plugin.RobiePlugin.operate'" class="reference internal" href="#enrobie.robie.childs.plugin.RobiePlugin.operate"><code class="docutils literal notranslate"><span class="pre">RobiePlugin.operate()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.plugin.RobiePlugin.schema'" class="reference internal" href="#enrobie.robie.childs.plugin.RobiePlugin.schema"><code class="docutils literal notranslate"><span class="pre">RobiePlugin.schema()</span></code></a></li>
 </ul>
 </li>
@@ -777,8 +1036,10 @@ and are more isolated from internal core routines.</p>
 </li>
 <li><a :data-current="activeSection === '#module-enrobie.robie.childs.robie'" class="reference internal" href="#module-enrobie.robie.childs.robie">enrobie.robie.childs.robie module</a><ul>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.robie.RobieChilds'" class="reference internal" href="#enrobie.robie.childs.robie.RobieChilds"><code class="docutils literal notranslate"><span class="pre">RobieChilds</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.robie.RobieChilds.build_objects'" class="reference internal" href="#enrobie.robie.childs.robie.RobieChilds.build_objects"><code class="docutils literal notranslate"><span class="pre">RobieChilds.build_objects()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.robie.RobieChilds.clients'" class="reference internal" href="#enrobie.robie.childs.robie.RobieChilds.clients"><code class="docutils literal notranslate"><span class="pre">RobieChilds.clients</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.robie.RobieChilds.dumped'" class="reference internal" href="#enrobie.robie.childs.robie.RobieChilds.dumped"><code class="docutils literal notranslate"><span class="pre">RobieChilds.dumped</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.robie.RobieChilds.persons'" class="reference internal" href="#enrobie.robie.childs.robie.RobieChilds.persons"><code class="docutils literal notranslate"><span class="pre">RobieChilds.persons</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.robie.RobieChilds.plugins'" class="reference internal" href="#enrobie.robie.childs.robie.RobieChilds.plugins"><code class="docutils literal notranslate"><span class="pre">RobieChilds.plugins</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.robie.RobieChilds.register'" class="reference internal" href="#enrobie.robie.childs.robie.RobieChilds.register"><code class="docutils literal notranslate"><span class="pre">RobieChilds.register()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.robie.RobieChilds.validate'" class="reference internal" href="#enrobie.robie.childs.robie.RobieChilds.validate"><code class="docutils literal notranslate"><span class="pre">RobieChilds.validate()</span></code></a></li>
@@ -792,15 +1053,16 @@ and are more isolated from internal core routines.</p>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChild.enable'" class="reference internal" href="#enrobie.robie.childs.RobieChild.enable"><code class="docutils literal notranslate"><span class="pre">RobieChild.enable</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChild.kind'" class="reference internal" href="#enrobie.robie.childs.RobieChild.kind"><code class="docutils literal notranslate"><span class="pre">RobieChild.kind</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChild.name'" class="reference internal" href="#enrobie.robie.childs.RobieChild.name"><code class="docutils literal notranslate"><span class="pre">RobieChild.name</span></code></a></li>
-<li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChild.operate'" class="reference internal" href="#enrobie.robie.childs.RobieChild.operate"><code class="docutils literal notranslate"><span class="pre">RobieChild.operate()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChild.params'" class="reference internal" href="#enrobie.robie.childs.RobieChild.params"><code class="docutils literal notranslate"><span class="pre">RobieChild.params</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChild.robie'" class="reference internal" href="#enrobie.robie.childs.RobieChild.robie"><code class="docutils literal notranslate"><span class="pre">RobieChild.robie</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChild.validate'" class="reference internal" href="#enrobie.robie.childs.RobieChild.validate"><code class="docutils literal notranslate"><span class="pre">RobieChild.validate()</span></code></a></li>
 </ul>
 </li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChilds'" class="reference internal" href="#enrobie.robie.childs.RobieChilds"><code class="docutils literal notranslate"><span class="pre">RobieChilds</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChilds.build_objects'" class="reference internal" href="#enrobie.robie.childs.RobieChilds.build_objects"><code class="docutils literal notranslate"><span class="pre">RobieChilds.build_objects()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChilds.clients'" class="reference internal" href="#enrobie.robie.childs.RobieChilds.clients"><code class="docutils literal notranslate"><span class="pre">RobieChilds.clients</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChilds.dumped'" class="reference internal" href="#enrobie.robie.childs.RobieChilds.dumped"><code class="docutils literal notranslate"><span class="pre">RobieChilds.dumped</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChilds.persons'" class="reference internal" href="#enrobie.robie.childs.RobieChilds.persons"><code class="docutils literal notranslate"><span class="pre">RobieChilds.persons</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChilds.plugins'" class="reference internal" href="#enrobie.robie.childs.RobieChilds.plugins"><code class="docutils literal notranslate"><span class="pre">RobieChilds.plugins</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChilds.register'" class="reference internal" href="#enrobie.robie.childs.RobieChilds.register"><code class="docutils literal notranslate"><span class="pre">RobieChilds.register()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieChilds.validate'" class="reference internal" href="#enrobie.robie.childs.RobieChilds.validate"><code class="docutils literal notranslate"><span class="pre">RobieChilds.validate()</span></code></a></li>
@@ -814,13 +1076,26 @@ and are more isolated from internal core routines.</p>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieClient.get_command'" class="reference internal" href="#enrobie.robie.childs.RobieClient.get_command"><code class="docutils literal notranslate"><span class="pre">RobieClient.get_command()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieClient.get_message'" class="reference internal" href="#enrobie.robie.childs.RobieClient.get_message"><code class="docutils literal notranslate"><span class="pre">RobieClient.get_message()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieClient.kind'" class="reference internal" href="#enrobie.robie.childs.RobieClient.kind"><code class="docutils literal notranslate"><span class="pre">RobieClient.kind</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.RobieClient.operate'" class="reference internal" href="#enrobie.robie.childs.RobieClient.operate"><code class="docutils literal notranslate"><span class="pre">RobieClient.operate()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieClient.put_command'" class="reference internal" href="#enrobie.robie.childs.RobieClient.put_command"><code class="docutils literal notranslate"><span class="pre">RobieClient.put_command()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieClient.put_message'" class="reference internal" href="#enrobie.robie.childs.RobieClient.put_message"><code class="docutils literal notranslate"><span class="pre">RobieClient.put_message()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobieClient.schema'" class="reference internal" href="#enrobie.robie.childs.RobieClient.schema"><code class="docutils literal notranslate"><span class="pre">RobieClient.schema()</span></code></a></li>
 </ul>
 </li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.RobiePerson'" class="reference internal" href="#enrobie.robie.childs.RobiePerson"><code class="docutils literal notranslate"><span class="pre">RobiePerson</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.RobiePerson.about'" class="reference internal" href="#enrobie.robie.childs.RobiePerson.about"><code class="docutils literal notranslate"><span class="pre">RobiePerson.about</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.RobiePerson.first'" class="reference internal" href="#enrobie.robie.childs.RobiePerson.first"><code class="docutils literal notranslate"><span class="pre">RobiePerson.first</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.RobiePerson.kind'" class="reference internal" href="#enrobie.robie.childs.RobiePerson.kind"><code class="docutils literal notranslate"><span class="pre">RobiePerson.kind</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.RobiePerson.last'" class="reference internal" href="#enrobie.robie.childs.RobiePerson.last"><code class="docutils literal notranslate"><span class="pre">RobiePerson.last</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.RobiePerson.match'" class="reference internal" href="#enrobie.robie.childs.RobiePerson.match"><code class="docutils literal notranslate"><span class="pre">RobiePerson.match()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.RobiePerson.params'" class="reference internal" href="#enrobie.robie.childs.RobiePerson.params"><code class="docutils literal notranslate"><span class="pre">RobiePerson.params</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.RobiePerson.validate'" class="reference internal" href="#enrobie.robie.childs.RobiePerson.validate"><code class="docutils literal notranslate"><span class="pre">RobiePerson.validate()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.RobiePerson.weight'" class="reference internal" href="#enrobie.robie.childs.RobiePerson.weight"><code class="docutils literal notranslate"><span class="pre">RobiePerson.weight</span></code></a></li>
+</ul>
+</li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobiePlugin'" class="reference internal" href="#enrobie.robie.childs.RobiePlugin"><code class="docutils literal notranslate"><span class="pre">RobiePlugin</span></code></a><ul>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobiePlugin.kind'" class="reference internal" href="#enrobie.robie.childs.RobiePlugin.kind"><code class="docutils literal notranslate"><span class="pre">RobiePlugin.kind</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.childs.RobiePlugin.operate'" class="reference internal" href="#enrobie.robie.childs.RobiePlugin.operate"><code class="docutils literal notranslate"><span class="pre">RobiePlugin.operate()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.childs.RobiePlugin.schema'" class="reference internal" href="#enrobie.robie.childs.RobiePlugin.schema"><code class="docutils literal notranslate"><span class="pre">RobiePlugin.schema()</span></code></a></li>
 </ul>
 </li>

@@ -158,43 +158,64 @@
 </span><span id="line-15">
 </span><span id="line-16"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
 </span><span id="line-17">    <span class="kn">from</span><span class="w"> </span><span class="nn">..params</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobiePluginParams</span>
-</span><span id="line-18">
+</span><span id="line-18">    <span class="kn">from</span><span class="w"> </span><span class="nn">..threads</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieThread</span>
 </span><span id="line-19">
 </span><span id="line-20">
+</span><span id="line-21">
 <div class="viewcode-block" id="RobiePlugin">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin">[docs]</a>
-</span><span id="line-21"><span class="k">class</span><span class="w"> </span><span class="nc">RobiePlugin</span><span class="p">(</span><span class="n">RobieChild</span><span class="p">):</span>
-</span><span id="line-22"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-23"><span class="sd">    Integrate with the Robie routine and perform operations.</span>
-</span><span id="line-24"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-25">
+</span><span id="line-22"><span class="k">class</span><span class="w"> </span><span class="nc">RobiePlugin</span><span class="p">(</span><span class="n">RobieChild</span><span class="p">):</span>
+</span><span id="line-23"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-24"><span class="sd">    Integrate with the Robie routine and perform operations.</span>
+</span><span id="line-25"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="line-26">
-</span><span id="line-27">    <span class="nd">@property</span>
-</span><span id="line-28">    <span class="k">def</span><span class="w"> </span><span class="nf">kind</span><span class="p">(</span>
-</span><span id="line-29">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-30">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;plugin&#39;</span><span class="p">]:</span>
-</span><span id="line-31"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-32"><span class="sd">        Return the value for the attribute from class instance.</span>
-</span><span id="line-33">
-</span><span id="line-34"><span class="sd">        :returns: Value for the attribute from class instance.</span>
-</span><span id="line-35"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-36">
-</span><span id="line-37">        <span class="k">return</span> <span class="s1">&#39;plugin&#39;</span>
-</span><span id="line-38">
+</span><span id="line-27">
+</span><span id="line-28">    <span class="nd">@property</span>
+</span><span id="line-29">    <span class="k">def</span><span class="w"> </span><span class="nf">kind</span><span class="p">(</span>
+</span><span id="line-30">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-31">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;plugin&#39;</span><span class="p">]:</span>
+</span><span id="line-32"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-33"><span class="sd">        Return the value for the attribute from class instance.</span>
+</span><span id="line-34">
+</span><span id="line-35"><span class="sd">        :returns: Value for the attribute from class instance.</span>
+</span><span id="line-36"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-37">
+</span><span id="line-38">        <span class="k">return</span> <span class="s1">&#39;plugin&#39;</span>
 </span><span id="line-39">
+</span><span id="line-40">
 <div class="viewcode-block" id="RobiePlugin.schema">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin.schema">[docs]</a>
-</span><span id="line-40">    <span class="nd">@classmethod</span>
-</span><span id="line-41">    <span class="k">def</span><span class="w"> </span><span class="nf">schema</span><span class="p">(</span>
-</span><span id="line-42">        <span class="bp">cls</span><span class="p">,</span>
-</span><span id="line-43">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="s1">&#39;RobiePluginParams&#39;</span><span class="p">]:</span>
-</span><span id="line-44"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-45"><span class="sd">        Return the configuration parameters relevant for class.</span>
-</span><span id="line-46">
-</span><span id="line-47"><span class="sd">        :returns: Configuration parameters relevant for class.</span>
-</span><span id="line-48"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-49">
-</span><span id="line-50">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</span><span id="line-41">    <span class="nd">@classmethod</span>
+</span><span id="line-42">    <span class="k">def</span><span class="w"> </span><span class="nf">schema</span><span class="p">(</span>
+</span><span id="line-43">        <span class="bp">cls</span><span class="p">,</span>
+</span><span id="line-44">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="s1">&#39;RobiePluginParams&#39;</span><span class="p">]:</span>
+</span><span id="line-45"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-46"><span class="sd">        Return the configuration parameters relevant for class.</span>
+</span><span id="line-47">
+</span><span id="line-48"><span class="sd">        :returns: Configuration parameters relevant for class.</span>
+</span><span id="line-49"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-50">
+</span><span id="line-51">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+</span><span id="line-52">
+</span><span id="line-53">
+<div class="viewcode-block" id="RobiePlugin.operate">
+<a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin.operate">[docs]</a>
+</span><span id="line-54">    <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>
+</span><span id="line-55">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-56">        <span class="n">thread</span><span class="p">:</span> <span class="s1">&#39;RobieThread&#39;</span><span class="p">,</span>
+</span><span id="line-57">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-58"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-59"><span class="sd">        Perform the operation related to Robie service threads.</span>
+</span><span id="line-60">
+</span><span id="line-61"><span class="sd">        .. note::</span>
+</span><span id="line-62"><span class="sd">           Deviates from enhomie in children have operations,</span>
+</span><span id="line-63"><span class="sd">           and are more isolated from internal core routines.</span>
+</span><span id="line-64">
+</span><span id="line-65"><span class="sd">        :param thread: Child class instance for Chatting Robie.</span>
+</span><span id="line-66"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-67">
+</span><span id="line-68">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 </div>
 
 </span></code></pre></div>

@@ -161,7 +161,7 @@
 </span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">...utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">DupliThread</span>
 </span><span id="line-19">
 </span><span id="line-20"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-21">    <span class="kn">from</span><span class="w"> </span><span class="nn">..childs</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieChild</span>
+</span><span id="line-21">    <span class="kn">from</span><span class="w"> </span><span class="nn">..common</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieOperate</span>
 </span><span id="line-22">    <span class="kn">from</span><span class="w"> </span><span class="nn">..members</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieMember</span>
 </span><span id="line-23">    <span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieCommand</span>
 </span><span id="line-24">    <span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieMessage</span>
@@ -190,7 +190,7 @@
 </span><span id="line-45"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="line-46">
 </span><span id="line-47">    <span class="n">__member</span><span class="p">:</span> <span class="s1">&#39;RobieMember&#39;</span>
-</span><span id="line-48">    <span class="n">__child</span><span class="p">:</span> <span class="s1">&#39;RobieChild&#39;</span>
+</span><span id="line-48">    <span class="n">__child</span><span class="p">:</span> <span class="s1">&#39;RobieOperate&#39;</span>
 </span><span id="line-49">
 </span><span id="line-50">    <span class="n">__mqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieMessage&#39;</span><span class="p">]</span>
 </span><span id="line-51">    <span class="n">__cqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieCommand&#39;</span><span class="p">]</span>
@@ -199,7 +199,7 @@
 </span><span id="line-54">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="line-55">        <span class="bp">self</span><span class="p">,</span>
 </span><span id="line-56">        <span class="n">member</span><span class="p">:</span> <span class="s1">&#39;RobieMember&#39;</span><span class="p">,</span>
-</span><span id="line-57">        <span class="n">child</span><span class="p">:</span> <span class="s1">&#39;RobieChild&#39;</span><span class="p">,</span>
+</span><span id="line-57">        <span class="n">child</span><span class="p">:</span> <span class="s1">&#39;RobieOperate&#39;</span><span class="p">,</span>
 </span><span id="line-58">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-59"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-60"><span class="sd">        Initialize instance for class using provided parameters.</span>
@@ -275,7 +275,7 @@
 </span><span id="line-130">    <span class="nd">@property</span>
 </span><span id="line-131">    <span class="k">def</span><span class="w"> </span><span class="nf">child</span><span class="p">(</span>
 </span><span id="line-132">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-133">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieChild&#39;</span><span class="p">:</span>
+</span><span id="line-133">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieOperate&#39;</span><span class="p">:</span>
 </span><span id="line-134"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-135"><span class="sd">        Return the value for the attribute from class instance.</span>
 </span><span id="line-136">

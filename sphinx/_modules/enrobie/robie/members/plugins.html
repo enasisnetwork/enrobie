@@ -231,13 +231,16 @@
 </span><span id="line-81">
 </span><span id="line-82">        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">plugin</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
 </span><span id="line-83">
-</span><span id="line-84">            <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
-</span><span id="line-85">                <span class="bp">self</span><span class="p">,</span> <span class="n">plugin</span><span class="p">)</span>
+</span><span id="line-84">            <span class="k">if</span> <span class="ow">not</span> <span class="n">plugin</span><span class="o">.</span><span class="n">enable</span><span class="p">:</span>
+</span><span id="line-85">                <span class="k">continue</span>  <span class="c1"># NOCVR</span>
 </span><span id="line-86">
-</span><span id="line-87">            <span class="n">threads</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">object</span>
-</span><span id="line-88">
+</span><span id="line-87">            <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
+</span><span id="line-88">                <span class="bp">self</span><span class="p">,</span> <span class="n">plugin</span><span class="p">)</span>
 </span><span id="line-89">
-</span><span id="line-90">        <span class="bp">self</span><span class="o">.</span><span class="n">threads</span> <span class="o">=</span> <span class="n">threads</span></div>
+</span><span id="line-90">            <span class="n">threads</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">object</span>
+</span><span id="line-91">
+</span><span id="line-92">
+</span><span id="line-93">        <span class="bp">self</span><span class="o">.</span><span class="n">threads</span> <span class="o">=</span> <span class="n">threads</span></div>
 </div>
 
 </span></code></pre></div>

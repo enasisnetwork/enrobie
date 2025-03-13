@@ -287,45 +287,43 @@
 </span><span id="line-139">    <span class="n">thread</span> <span class="o">=</span> <span class="n">threads</span><span class="p">[</span><span class="s1">&#39;ircbot&#39;</span><span class="p">]</span>
 </span><span id="line-140">    <span class="n">mqueue</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">mqueue</span>
 </span><span id="line-141">
-</span><span id="line-142">    <span class="n">model</span> <span class="o">=</span> <span class="n">RobieMessage</span>
+</span><span id="line-142">    <span class="n">item</span> <span class="o">=</span> <span class="n">RobieMessage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
 </span><span id="line-143">
-</span><span id="line-144">    <span class="n">item</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
-</span><span id="line-145">
-</span><span id="line-146">
-</span><span id="line-147">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
-</span><span id="line-148">        <span class="n">mqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</span><span id="line-149">
+</span><span id="line-144">
+</span><span id="line-145">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+</span><span id="line-146">        <span class="n">mqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span><span id="line-147">
+</span><span id="line-148">
+</span><span id="line-149">    <span class="k">assert</span> <span class="n">service</span><span class="o">.</span><span class="n">congest</span>
 </span><span id="line-150">
-</span><span id="line-151">    <span class="k">assert</span> <span class="n">service</span><span class="o">.</span><span class="n">congest</span>
-</span><span id="line-152">
-</span><span id="line-153">    <span class="n">service</span><span class="o">.</span><span class="n">operate_healths</span><span class="p">()</span></div>
+</span><span id="line-151">    <span class="n">service</span><span class="o">.</span><span class="n">operate_healths</span><span class="p">()</span></div>
 
+</span><span id="line-152">
+</span><span id="line-153">
 </span><span id="line-154">
-</span><span id="line-155">
-</span><span id="line-156">
 <div class="viewcode-block" id="test_RobieService_cover">
 <a class="viewcode-back" href="../../../../enrobie.robie.test.html#enrobie.robie.test.test_service.test_RobieService_cover">[docs]</a>
-</span><span id="line-157"><span class="k">def</span><span class="w"> </span><span class="nf">test_RobieService_cover</span><span class="p">(</span>
-</span><span id="line-158">    <span class="n">service</span><span class="p">:</span> <span class="s1">&#39;RobieService&#39;</span><span class="p">,</span>
-</span><span id="line-159"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-160"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-161"><span class="sd">    Perform various tests associated with relevant routines.</span>
-</span><span id="line-162">
-</span><span id="line-163"><span class="sd">    :param service: Ancilary Chatting Robie class instance.</span>
-</span><span id="line-164"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-165">
-</span><span id="line-166">    <span class="n">service</span><span class="o">.</span><span class="n">limit_threads</span><span class="p">(</span>
-</span><span id="line-167">        <span class="n">clients</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ircbot&#39;</span><span class="p">],</span>
-</span><span id="line-168">        <span class="n">plugins</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">])</span>
-</span><span id="line-169">
-</span><span id="line-170">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-</span><span id="line-171">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
-</span><span id="line-172">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span><span id="line-173">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span><span id="line-174">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
-</span><span id="line-175">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
-</span><span id="line-176">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-</span><span id="line-177">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
+</span><span id="line-155"><span class="k">def</span><span class="w"> </span><span class="nf">test_RobieService_cover</span><span class="p">(</span>
+</span><span id="line-156">    <span class="n">service</span><span class="p">:</span> <span class="s1">&#39;RobieService&#39;</span><span class="p">,</span>
+</span><span id="line-157"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-158"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-159"><span class="sd">    Perform various tests associated with relevant routines.</span>
+</span><span id="line-160">
+</span><span id="line-161"><span class="sd">    :param service: Ancilary Chatting Robie class instance.</span>
+</span><span id="line-162"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-163">
+</span><span id="line-164">    <span class="n">service</span><span class="o">.</span><span class="n">limit_threads</span><span class="p">(</span>
+</span><span id="line-165">        <span class="n">clients</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ircbot&#39;</span><span class="p">],</span>
+</span><span id="line-166">        <span class="n">plugins</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">])</span>
+</span><span id="line-167">
+</span><span id="line-168">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</span><span id="line-169">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
+</span><span id="line-170">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-171">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-172">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
+</span><span id="line-173">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
+</span><span id="line-174">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</span><span id="line-175">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
 
 </span></code></pre></div>
     </div></div>

@@ -179,53 +179,51 @@
 </span><span id="line-34">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
 </span><span id="line-35">    <span class="n">clients</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
 </span><span id="line-36">
-</span><span id="line-37">    <span class="n">model</span> <span class="o">=</span> <span class="n">DSCCommand</span>
+</span><span id="line-37">    <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;ircbot&#39;</span><span class="p">]</span>
 </span><span id="line-38">
-</span><span id="line-39">    <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;ircbot&#39;</span><span class="p">]</span>
-</span><span id="line-40">
-</span><span id="line-41">
-</span><span id="line-42">    <span class="n">item</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
-</span><span id="line-43">        <span class="n">client</span><span class="p">,</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span>
-</span><span id="line-44">        <span class="s1">&#39;/channels/privid&#39;</span>
-</span><span id="line-45">        <span class="s1">&#39;/messages/msgunq&#39;</span><span class="p">)</span>
-</span><span id="line-46">
+</span><span id="line-39">
+</span><span id="line-40">    <span class="n">item</span> <span class="o">=</span> <span class="n">DSCCommand</span><span class="p">(</span>
+</span><span id="line-41">        <span class="n">client</span><span class="p">,</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span>
+</span><span id="line-42">        <span class="s1">&#39;/channels/privid&#39;</span>
+</span><span id="line-43">        <span class="s1">&#39;/messages/msgunq&#39;</span><span class="p">)</span>
+</span><span id="line-44">
+</span><span id="line-45">
+</span><span id="line-46">    <span class="n">attrs</span> <span class="o">=</span> <span class="n">lattrs</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </span><span id="line-47">
-</span><span id="line-48">    <span class="n">attrs</span> <span class="o">=</span> <span class="n">lattrs</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</span><span id="line-49">
-</span><span id="line-50">    <span class="k">assert</span> <span class="n">attrs</span> <span class="o">==</span> <span class="p">[</span>
-</span><span id="line-51">        <span class="s1">&#39;method&#39;</span><span class="p">,</span>
-</span><span id="line-52">        <span class="s1">&#39;path&#39;</span><span class="p">,</span>
-</span><span id="line-53">        <span class="s1">&#39;params&#39;</span><span class="p">,</span>
-</span><span id="line-54">        <span class="s1">&#39;json&#39;</span><span class="p">,</span>
-</span><span id="line-55">        <span class="s1">&#39;client&#39;</span><span class="p">,</span>
-</span><span id="line-56">        <span class="s1">&#39;time&#39;</span><span class="p">]</span>
-</span><span id="line-57">
-</span><span id="line-58">
-</span><span id="line-59">    <span class="k">assert</span> <span class="n">inrepr</span><span class="p">(</span>
-</span><span id="line-60">        <span class="s1">&#39;DSCCommand&#39;</span><span class="p">,</span>
-</span><span id="line-61">        <span class="n">item</span><span class="p">)</span>
-</span><span id="line-62">
-</span><span id="line-63">    <span class="k">with</span> <span class="n">raises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
-</span><span id="line-64">        <span class="nb">hash</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</span><span id="line-65">
-</span><span id="line-66">    <span class="k">assert</span> <span class="n">instr</span><span class="p">(</span>
-</span><span id="line-67">        <span class="s1">&#39;DSCCommand&#39;</span><span class="p">,</span>
-</span><span id="line-68">        <span class="n">item</span><span class="p">)</span>
-</span><span id="line-69">
+</span><span id="line-48">    <span class="k">assert</span> <span class="n">attrs</span> <span class="o">==</span> <span class="p">[</span>
+</span><span id="line-49">        <span class="s1">&#39;method&#39;</span><span class="p">,</span>
+</span><span id="line-50">        <span class="s1">&#39;path&#39;</span><span class="p">,</span>
+</span><span id="line-51">        <span class="s1">&#39;params&#39;</span><span class="p">,</span>
+</span><span id="line-52">        <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+</span><span id="line-53">        <span class="s1">&#39;client&#39;</span><span class="p">,</span>
+</span><span id="line-54">        <span class="s1">&#39;time&#39;</span><span class="p">]</span>
+</span><span id="line-55">
+</span><span id="line-56">
+</span><span id="line-57">    <span class="k">assert</span> <span class="n">inrepr</span><span class="p">(</span>
+</span><span id="line-58">        <span class="s1">&#39;DSCCommand&#39;</span><span class="p">,</span>
+</span><span id="line-59">        <span class="n">item</span><span class="p">)</span>
+</span><span id="line-60">
+</span><span id="line-61">    <span class="k">with</span> <span class="n">raises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+</span><span id="line-62">        <span class="nb">hash</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span><span id="line-63">
+</span><span id="line-64">    <span class="k">assert</span> <span class="n">instr</span><span class="p">(</span>
+</span><span id="line-65">        <span class="s1">&#39;DSCCommand&#39;</span><span class="p">,</span>
+</span><span id="line-66">        <span class="n">item</span><span class="p">)</span>
+</span><span id="line-67">
+</span><span id="line-68">
+</span><span id="line-69">    <span class="k">assert</span> <span class="n">item</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">since</span> <span class="o">&gt;</span> <span class="mi">0</span>
 </span><span id="line-70">
-</span><span id="line-71">    <span class="k">assert</span> <span class="n">item</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">since</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span><span id="line-71">    <span class="k">assert</span> <span class="n">item</span><span class="o">.</span><span class="n">client</span> <span class="o">==</span> <span class="n">client</span><span class="o">.</span><span class="n">name</span>
 </span><span id="line-72">
-</span><span id="line-73">    <span class="k">assert</span> <span class="n">item</span><span class="o">.</span><span class="n">client</span> <span class="o">==</span> <span class="n">client</span><span class="o">.</span><span class="n">name</span>
+</span><span id="line-73">    <span class="k">assert</span> <span class="n">item</span><span class="o">.</span><span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;discord&#39;</span>
 </span><span id="line-74">
-</span><span id="line-75">    <span class="k">assert</span> <span class="n">item</span><span class="o">.</span><span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;discord&#39;</span>
+</span><span id="line-75">    <span class="k">assert</span> <span class="n">item</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;delete&#39;</span>
 </span><span id="line-76">
-</span><span id="line-77">    <span class="k">assert</span> <span class="n">item</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;delete&#39;</span>
+</span><span id="line-77">    <span class="k">assert</span> <span class="n">item</span><span class="o">.</span><span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;msgunq&#39;</span>
 </span><span id="line-78">
-</span><span id="line-79">    <span class="k">assert</span> <span class="n">item</span><span class="o">.</span><span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;msgunq&#39;</span>
+</span><span id="line-79">    <span class="k">assert</span> <span class="ow">not</span> <span class="n">item</span><span class="o">.</span><span class="n">params</span>
 </span><span id="line-80">
-</span><span id="line-81">    <span class="k">assert</span> <span class="ow">not</span> <span class="n">item</span><span class="o">.</span><span class="n">params</span>
-</span><span id="line-82">
-</span><span id="line-83">    <span class="k">assert</span> <span class="ow">not</span> <span class="n">item</span><span class="o">.</span><span class="n">json</span></div>
+</span><span id="line-81">    <span class="k">assert</span> <span class="ow">not</span> <span class="n">item</span><span class="o">.</span><span class="n">json</span></div>
 
 </span></code></pre></div>
     </div></div>

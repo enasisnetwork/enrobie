@@ -159,214 +159,283 @@
 </span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">NCNone</span>
 </span><span id="line-17">
 </span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieClient</span>
-</span><span id="line-19"><span class="kn">from</span><span class="w"> </span><span class="nn">.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobiePlugin</span>
-</span><span id="line-20">
-</span><span id="line-21"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-22">    <span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robie</span>
-</span><span id="line-23">
+</span><span id="line-19"><span class="kn">from</span><span class="w"> </span><span class="nn">.person</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobiePerson</span>
+</span><span id="line-20"><span class="kn">from</span><span class="w"> </span><span class="nn">.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobiePlugin</span>
+</span><span id="line-21">
+</span><span id="line-22"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+</span><span id="line-23">    <span class="kn">from</span><span class="w"> </span><span class="nn">..robie</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robie</span>
 </span><span id="line-24">
 </span><span id="line-25">
-</span><span id="line-26"><span class="n">RobieClients</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">RobieClient</span><span class="p">]</span>
-</span><span id="line-27"><span class="n">RobiePlugins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">RobiePlugin</span><span class="p">]</span>
-</span><span id="line-28">
-</span><span id="line-29">
+</span><span id="line-26">
+</span><span id="line-27"><span class="n">RobieClients</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">RobieClient</span><span class="p">]</span>
+</span><span id="line-28"><span class="n">RobiePlugins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">RobiePlugin</span><span class="p">]</span>
+</span><span id="line-29"><span class="n">RobiePersons</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">RobiePerson</span><span class="p">]</span>
 </span><span id="line-30">
+</span><span id="line-31">
+</span><span id="line-32">
 <div class="viewcode-block" id="RobieChilds">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds">[docs]</a>
-</span><span id="line-31"><span class="k">class</span><span class="w"> </span><span class="nc">RobieChilds</span><span class="p">:</span>
-</span><span id="line-32"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-33"><span class="sd">    Contain the object instances for related Robie children.</span>
-</span><span id="line-34">
-</span><span id="line-35"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
-</span><span id="line-36"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-37">
-</span><span id="line-38">    <span class="n">__robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span>
+</span><span id="line-33"><span class="k">class</span><span class="w"> </span><span class="nc">RobieChilds</span><span class="p">:</span>
+</span><span id="line-34"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-35"><span class="sd">    Contain the object instances for related Robie children.</span>
+</span><span id="line-36">
+</span><span id="line-37"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
+</span><span id="line-38"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="line-39">
-</span><span id="line-40">    <span class="n">__clients</span><span class="p">:</span> <span class="n">RobieClients</span>
-</span><span id="line-41">    <span class="n">__plugins</span><span class="p">:</span> <span class="n">RobiePlugins</span>
-</span><span id="line-42">
-</span><span id="line-43">
-</span><span id="line-44">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
-</span><span id="line-45">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-46">        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
-</span><span id="line-47">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-48"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-49"><span class="sd">        Initialize instance for class using provided parameters.</span>
-</span><span id="line-50"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-51">
-</span><span id="line-52">        <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_d</span><span class="p">(</span>
-</span><span id="line-53">            <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-</span><span id="line-54">            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;initial&#39;</span><span class="p">)</span>
-</span><span id="line-55">
-</span><span id="line-56">        <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span> <span class="o">=</span> <span class="n">robie</span>
-</span><span id="line-57">
-</span><span id="line-58">        <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span id="line-59">        <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="line-40">    <span class="n">__robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span>
+</span><span id="line-41">
+</span><span id="line-42">    <span class="n">__clients</span><span class="p">:</span> <span class="n">RobieClients</span>
+</span><span id="line-43">    <span class="n">__plugins</span><span class="p">:</span> <span class="n">RobiePlugins</span>
+</span><span id="line-44">    <span class="n">__persons</span><span class="p">:</span> <span class="n">RobiePersons</span>
+</span><span id="line-45">
+</span><span id="line-46">
+</span><span id="line-47">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-48">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-49">        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
+</span><span id="line-50">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-51"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-52"><span class="sd">        Initialize instance for class using provided parameters.</span>
+</span><span id="line-53"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-54">
+</span><span id="line-55">        <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_d</span><span class="p">(</span>
+</span><span id="line-56">            <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+</span><span id="line-57">            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;initial&#39;</span><span class="p">)</span>
+</span><span id="line-58">
+</span><span id="line-59">        <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span> <span class="o">=</span> <span class="n">robie</span>
 </span><span id="line-60">
-</span><span id="line-61">        <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
-</span><span id="line-62">            <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-</span><span id="line-63">            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;created&#39;</span><span class="p">)</span>
+</span><span id="line-61">        <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="line-62">        <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="line-63">        <span class="bp">self</span><span class="o">.</span><span class="n">__persons</span> <span class="o">=</span> <span class="p">{}</span>
 </span><span id="line-64">
-</span><span id="line-65">
-<div class="viewcode-block" id="RobieChilds.validate">
-<a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.validate">[docs]</a>
-</span><span id="line-66">    <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span>
-</span><span id="line-67">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-68">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-69"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-70"><span class="sd">        Perform advanced validation on the parameters provided.</span>
-</span><span id="line-71"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-72">
-</span><span id="line-73">
-</span><span id="line-74">        <span class="n">clients</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-75">            <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
-</span><span id="line-76">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
-</span><span id="line-77">
-</span><span id="line-78">        <span class="k">for</span> <span class="n">client</span> <span class="ow">in</span> <span class="n">clients</span><span class="p">:</span>
-</span><span id="line-79">            <span class="n">client</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</span><span id="line-65">        <span class="bp">self</span><span class="o">.</span><span class="n">build_objects</span><span class="p">()</span>
+</span><span id="line-66">
+</span><span id="line-67">        <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
+</span><span id="line-68">            <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+</span><span id="line-69">            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;created&#39;</span><span class="p">)</span>
+</span><span id="line-70">
+</span><span id="line-71">
+<div class="viewcode-block" id="RobieChilds.build_objects">
+<a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.build_objects">[docs]</a>
+</span><span id="line-72">    <span class="k">def</span><span class="w"> </span><span class="nf">build_objects</span><span class="p">(</span>
+</span><span id="line-73">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-74">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-75"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-76"><span class="sd">        Construct instances using the configuration parameters.</span>
+</span><span id="line-77"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-78">
+</span><span id="line-79">        <span class="bp">self</span><span class="o">.</span><span class="n">__build_persons</span><span class="p">()</span></div>
+
 </span><span id="line-80">
 </span><span id="line-81">
-</span><span id="line-82">        <span class="n">plugins</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-83">            <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
-</span><span id="line-84">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
-</span><span id="line-85">
-</span><span id="line-86">        <span class="k">for</span> <span class="n">plugin</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
-</span><span id="line-87">            <span class="n">plugin</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span></div>
-
+</span><span id="line-82">    <span class="k">def</span><span class="w"> </span><span class="nf">__build_persons</span><span class="p">(</span>
+</span><span id="line-83">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-84">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-85"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-86"><span class="sd">        Construct instances using the configuration parameters.</span>
+</span><span id="line-87"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-88">
-</span><span id="line-89">
-</span><span id="line-90">    <span class="nd">@property</span>
-</span><span id="line-91">    <span class="k">def</span><span class="w"> </span><span class="nf">clients</span><span class="p">(</span>
-</span><span id="line-92">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-93">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieClients</span><span class="p">:</span>
-</span><span id="line-94"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-95"><span class="sd">        Return the value for the attribute from class instance.</span>
-</span><span id="line-96">
-</span><span id="line-97"><span class="sd">        :returns: Value for the attribute from class instance.</span>
-</span><span id="line-98"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-99">
-</span><span id="line-100">        <span class="n">clients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+</span><span id="line-89">        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+</span><span id="line-90">        <span class="n">params</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-91">        <span class="n">persons</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">persons</span>
+</span><span id="line-92">
+</span><span id="line-93">        <span class="k">if</span> <span class="n">persons</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-94">            <span class="k">return</span> <span class="kc">None</span>
+</span><span id="line-95">
+</span><span id="line-96">        <span class="n">model</span> <span class="o">=</span> <span class="n">RobiePerson</span>
+</span><span id="line-97">
+</span><span id="line-98">
+</span><span id="line-99">        <span class="n">childs</span><span class="p">:</span> <span class="n">RobiePersons</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="line-100">
 </span><span id="line-101">
-</span><span id="line-102">        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">clients</span><span class="p">)</span>
+</span><span id="line-102">        <span class="n">items</span> <span class="o">=</span> <span class="n">persons</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 </span><span id="line-103">
-</span><span id="line-104">
-</span><span id="line-105">    <span class="nd">@property</span>
-</span><span id="line-106">    <span class="k">def</span><span class="w"> </span><span class="nf">plugins</span><span class="p">(</span>
-</span><span id="line-107">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-108">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobiePlugins</span><span class="p">:</span>
-</span><span id="line-109"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-110"><span class="sd">        Return the value for the attribute from class instance.</span>
+</span><span id="line-104">        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+</span><span id="line-105">
+</span><span id="line-106">            <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
+</span><span id="line-107">                <span class="n">robie</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">person</span><span class="p">)</span>
+</span><span id="line-108">
+</span><span id="line-109">            <span class="n">childs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">object</span>
+</span><span id="line-110">
 </span><span id="line-111">
-</span><span id="line-112"><span class="sd">        :returns: Value for the attribute from class instance.</span>
-</span><span id="line-113"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-112">        <span class="bp">self</span><span class="o">.</span><span class="n">__persons</span> <span class="o">=</span> <span class="n">childs</span>
+</span><span id="line-113">
 </span><span id="line-114">
-</span><span id="line-115">        <span class="n">plugins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
-</span><span id="line-116">
-</span><span id="line-117">        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">plugins</span><span class="p">)</span>
-</span><span id="line-118">
-</span><span id="line-119">
-</span><span id="line-120">    <span class="nd">@property</span>
-</span><span id="line-121">    <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
-</span><span id="line-122">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-123">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
-</span><span id="line-124"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-125"><span class="sd">        Return the facts about the attributes from the instance.</span>
+<div class="viewcode-block" id="RobieChilds.validate">
+<a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.validate">[docs]</a>
+</span><span id="line-115">    <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span>
+</span><span id="line-116">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-117">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-118"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-119"><span class="sd">        Perform advanced validation on the parameters provided.</span>
+</span><span id="line-120"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-121">
+</span><span id="line-122">
+</span><span id="line-123">        <span class="n">clients</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-124">            <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+</span><span id="line-125">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
 </span><span id="line-126">
-</span><span id="line-127"><span class="sd">        :returns: Facts about the attributes from the instance.</span>
-</span><span id="line-128"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-127">        <span class="k">for</span> <span class="n">client</span> <span class="ow">in</span> <span class="n">clients</span><span class="p">:</span>
+</span><span id="line-128">            <span class="n">client</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
 </span><span id="line-129">
-</span><span id="line-130">        <span class="n">clients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clients</span>
-</span><span id="line-131">        <span class="n">plugins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plugins</span>
-</span><span id="line-132">
-</span><span id="line-133">        <span class="n">dumped</span><span class="p">:</span> <span class="n">DictStrAny</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="line-130">
+</span><span id="line-131">        <span class="n">plugins</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-132">            <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
+</span><span id="line-133">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
 </span><span id="line-134">
-</span><span id="line-135">            <span class="s1">&#39;clients&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span><span id="line-136">                <span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">dumped</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
-</span><span id="line-137">                <span class="ow">in</span> <span class="n">clients</span><span class="o">.</span><span class="n">items</span><span class="p">()},</span>
+</span><span id="line-135">        <span class="k">for</span> <span class="n">plugin</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
+</span><span id="line-136">            <span class="n">plugin</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+</span><span id="line-137">
 </span><span id="line-138">
-</span><span id="line-139">            <span class="s1">&#39;plugins&#39;</span><span class="p">:</span> <span class="p">{</span>
-</span><span id="line-140">                <span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">dumped</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
-</span><span id="line-141">                <span class="ow">in</span> <span class="n">plugins</span><span class="o">.</span><span class="n">items</span><span class="p">()}}</span>
+</span><span id="line-139">        <span class="n">persons</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-140">            <span class="bp">self</span><span class="o">.</span><span class="n">__persons</span>
+</span><span id="line-141">            <span class="o">.</span><span class="n">values</span><span class="p">())</span>
 </span><span id="line-142">
-</span><span id="line-143">        <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">dumped</span><span class="p">)</span>
-</span><span id="line-144">
+</span><span id="line-143">        <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">persons</span><span class="p">:</span>
+</span><span id="line-144">            <span class="n">person</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span></div>
+
 </span><span id="line-145">
-<div class="viewcode-block" id="RobieChilds.register">
-<a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.register">[docs]</a>
-</span><span id="line-146">    <span class="k">def</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span>  <span class="c1"># noqa: CFQ004</span>
-</span><span id="line-147">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-148">        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-149">        <span class="o">*</span><span class="p">,</span>
-</span><span id="line-150">        <span class="n">client</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">RobieClient</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-151">        <span class="n">plugin</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">RobiePlugin</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-152">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-153"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-154"><span class="sd">        Register the plugin with the internal operation routine.</span>
-</span><span id="line-155">
-</span><span id="line-156"><span class="sd">        :param name: Name of the object within the Robie config.</span>
-</span><span id="line-157"><span class="sd">        :param client: Class definition for the instantiation.</span>
-</span><span id="line-158"><span class="sd">        :param plugin: Class definition for the instantiation.</span>
-</span><span id="line-159"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-146">
+</span><span id="line-147">    <span class="nd">@property</span>
+</span><span id="line-148">    <span class="k">def</span><span class="w"> </span><span class="nf">clients</span><span class="p">(</span>
+</span><span id="line-149">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-150">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieClients</span><span class="p">:</span>
+</span><span id="line-151"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-152"><span class="sd">        Return the value for the attribute from class instance.</span>
+</span><span id="line-153">
+</span><span id="line-154"><span class="sd">        :returns: Value for the attribute from class instance.</span>
+</span><span id="line-155"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-156">
+</span><span id="line-157">        <span class="n">clients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+</span><span id="line-158">
+</span><span id="line-159">        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">clients</span><span class="p">)</span>
 </span><span id="line-160">
-</span><span id="line-161">        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
-</span><span id="line-162">        <span class="n">params</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">params</span>
-</span><span id="line-163">
-</span><span id="line-164">        <span class="n">_clients</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">clients</span>
-</span><span id="line-165">        <span class="n">_plugins</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">plugins</span>
-</span><span id="line-166">
-</span><span id="line-167">
-</span><span id="line-168">        <span class="k">def</span><span class="w"> </span><span class="nf">_put_client</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-169">
-</span><span id="line-170">            <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+</span><span id="line-161">
+</span><span id="line-162">    <span class="nd">@property</span>
+</span><span id="line-163">    <span class="k">def</span><span class="w"> </span><span class="nf">plugins</span><span class="p">(</span>
+</span><span id="line-164">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-165">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobiePlugins</span><span class="p">:</span>
+</span><span id="line-166"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-167"><span class="sd">        Return the value for the attribute from class instance.</span>
+</span><span id="line-168">
+</span><span id="line-169"><span class="sd">        :returns: Value for the attribute from class instance.</span>
+</span><span id="line-170"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-171">
-</span><span id="line-172">            <span class="k">if</span> <span class="n">_clients</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-173">                <span class="k">return</span> <span class="n">NCNone</span>
-</span><span id="line-174">
-</span><span id="line-175">            <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_clients</span><span class="p">:</span>
-</span><span id="line-176">                <span class="k">return</span> <span class="n">NCNone</span>
-</span><span id="line-177">
-</span><span id="line-178">            <span class="n">params</span> <span class="o">=</span> <span class="n">_clients</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-</span><span id="line-179">
-</span><span id="line-180">            <span class="k">assert</span> <span class="nb">callable</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
-</span><span id="line-181">
-</span><span id="line-182">            <span class="k">if</span> <span class="ow">not</span> <span class="n">params</span><span class="o">.</span><span class="n">enable</span><span class="p">:</span>
-</span><span id="line-183">                <span class="k">return</span> <span class="n">NCNone</span>
-</span><span id="line-184">
-</span><span id="line-185">            <span class="nb">object</span> <span class="o">=</span> <span class="n">client</span><span class="p">(</span>
-</span><span id="line-186">                <span class="n">robie</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
-</span><span id="line-187">
-</span><span id="line-188">            <span class="n">target</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">object</span>
-</span><span id="line-189">
+</span><span id="line-172">        <span class="n">plugins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
+</span><span id="line-173">
+</span><span id="line-174">        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">plugins</span><span class="p">)</span>
+</span><span id="line-175">
+</span><span id="line-176">
+</span><span id="line-177">    <span class="nd">@property</span>
+</span><span id="line-178">    <span class="k">def</span><span class="w"> </span><span class="nf">persons</span><span class="p">(</span>
+</span><span id="line-179">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-180">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobiePersons</span><span class="p">:</span>
+</span><span id="line-181"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-182"><span class="sd">        Return the value for the attribute from class instance.</span>
+</span><span id="line-183">
+</span><span id="line-184"><span class="sd">        :returns: Value for the attribute from class instance.</span>
+</span><span id="line-185"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-186">
+</span><span id="line-187">        <span class="n">persons</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__persons</span>
+</span><span id="line-188">
+</span><span id="line-189">        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">persons</span><span class="p">)</span>
 </span><span id="line-190">
-</span><span id="line-191">        <span class="k">if</span> <span class="n">client</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-192">            <span class="n">_put_client</span><span class="p">()</span>
-</span><span id="line-193">
-</span><span id="line-194">
-</span><span id="line-195">        <span class="k">def</span><span class="w"> </span><span class="nf">_put_plugin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-196">
-</span><span id="line-197">            <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
+</span><span id="line-191">
+</span><span id="line-192">    <span class="nd">@property</span>
+</span><span id="line-193">    <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
+</span><span id="line-194">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-195">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
+</span><span id="line-196"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-197"><span class="sd">        Return the facts about the attributes from the instance.</span>
 </span><span id="line-198">
-</span><span id="line-199">            <span class="k">if</span> <span class="n">_plugins</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-200">                <span class="k">return</span> <span class="n">NCNone</span>
+</span><span id="line-199"><span class="sd">        :returns: Facts about the attributes from the instance.</span>
+</span><span id="line-200"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-201">
-</span><span id="line-202">            <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_plugins</span><span class="p">:</span>
-</span><span id="line-203">                <span class="k">return</span> <span class="n">NCNone</span>
+</span><span id="line-202">        <span class="n">clients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clients</span>
+</span><span id="line-203">        <span class="n">plugins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plugins</span>
 </span><span id="line-204">
-</span><span id="line-205">            <span class="n">params</span> <span class="o">=</span> <span class="n">_plugins</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</span><span id="line-205">        <span class="n">dumped</span><span class="p">:</span> <span class="n">DictStrAny</span> <span class="o">=</span> <span class="p">{</span>
 </span><span id="line-206">
-</span><span id="line-207">            <span class="k">assert</span> <span class="nb">callable</span><span class="p">(</span><span class="n">plugin</span><span class="p">)</span>
-</span><span id="line-208">
-</span><span id="line-209">            <span class="k">if</span> <span class="ow">not</span> <span class="n">params</span><span class="o">.</span><span class="n">enable</span><span class="p">:</span>
-</span><span id="line-210">                <span class="k">return</span> <span class="n">NCNone</span>
-</span><span id="line-211">
-</span><span id="line-212">            <span class="nb">object</span> <span class="o">=</span> <span class="n">plugin</span><span class="p">(</span>
-</span><span id="line-213">                <span class="n">robie</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+</span><span id="line-207">            <span class="s1">&#39;clients&#39;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="line-208">                <span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">dumped</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
+</span><span id="line-209">                <span class="ow">in</span> <span class="n">clients</span><span class="o">.</span><span class="n">items</span><span class="p">()},</span>
+</span><span id="line-210">
+</span><span id="line-211">            <span class="s1">&#39;plugins&#39;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="line-212">                <span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">dumped</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
+</span><span id="line-213">                <span class="ow">in</span> <span class="n">plugins</span><span class="o">.</span><span class="n">items</span><span class="p">()}}</span>
 </span><span id="line-214">
-</span><span id="line-215">            <span class="n">target</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">object</span>
+</span><span id="line-215">        <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">dumped</span><span class="p">)</span>
 </span><span id="line-216">
 </span><span id="line-217">
-</span><span id="line-218">        <span class="k">if</span> <span class="n">plugin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-219">            <span class="n">_put_plugin</span><span class="p">()</span></div>
+<div class="viewcode-block" id="RobieChilds.register">
+<a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.register">[docs]</a>
+</span><span id="line-218">    <span class="k">def</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span>  <span class="c1"># noqa: CFQ004</span>
+</span><span id="line-219">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-220">        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-221">        <span class="o">*</span><span class="p">,</span>
+</span><span id="line-222">        <span class="n">client</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">RobieClient</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-223">        <span class="n">plugin</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">RobiePlugin</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-224">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-225"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-226"><span class="sd">        Register the plugin with the internal operation routine.</span>
+</span><span id="line-227">
+</span><span id="line-228"><span class="sd">        :param name: Name of the object within the Robie config.</span>
+</span><span id="line-229"><span class="sd">        :param client: Class definition for the instantiation.</span>
+</span><span id="line-230"><span class="sd">        :param plugin: Class definition for the instantiation.</span>
+</span><span id="line-231"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-232">
+</span><span id="line-233">        <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
+</span><span id="line-234">        <span class="n">params</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-235">
+</span><span id="line-236">        <span class="n">_clients</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">clients</span>
+</span><span id="line-237">        <span class="n">_plugins</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">plugins</span>
+</span><span id="line-238">
+</span><span id="line-239">
+</span><span id="line-240">        <span class="k">def</span><span class="w"> </span><span class="nf">_put_client</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-241">
+</span><span id="line-242">            <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
+</span><span id="line-243">
+</span><span id="line-244">            <span class="k">if</span> <span class="n">_clients</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-245">                <span class="k">return</span> <span class="n">NCNone</span>
+</span><span id="line-246">
+</span><span id="line-247">            <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_clients</span><span class="p">:</span>
+</span><span id="line-248">                <span class="k">return</span> <span class="n">NCNone</span>
+</span><span id="line-249">
+</span><span id="line-250">            <span class="n">params</span> <span class="o">=</span> <span class="n">_clients</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</span><span id="line-251">
+</span><span id="line-252">            <span class="k">assert</span> <span class="nb">callable</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</span><span id="line-253">
+</span><span id="line-254">            <span class="nb">object</span> <span class="o">=</span> <span class="n">client</span><span class="p">(</span>
+</span><span id="line-255">                <span class="n">robie</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+</span><span id="line-256">
+</span><span id="line-257">            <span class="n">target</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">object</span>
+</span><span id="line-258">
+</span><span id="line-259">
+</span><span id="line-260">        <span class="k">if</span> <span class="n">client</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-261">            <span class="n">_put_client</span><span class="p">()</span>
+</span><span id="line-262">
+</span><span id="line-263">
+</span><span id="line-264">        <span class="k">def</span><span class="w"> </span><span class="nf">_put_plugin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-265">
+</span><span id="line-266">            <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
+</span><span id="line-267">
+</span><span id="line-268">            <span class="k">if</span> <span class="n">_plugins</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-269">                <span class="k">return</span> <span class="n">NCNone</span>
+</span><span id="line-270">
+</span><span id="line-271">            <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_plugins</span><span class="p">:</span>
+</span><span id="line-272">                <span class="k">return</span> <span class="n">NCNone</span>
+</span><span id="line-273">
+</span><span id="line-274">            <span class="n">params</span> <span class="o">=</span> <span class="n">_plugins</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</span><span id="line-275">
+</span><span id="line-276">            <span class="k">assert</span> <span class="nb">callable</span><span class="p">(</span><span class="n">plugin</span><span class="p">)</span>
+</span><span id="line-277">
+</span><span id="line-278">            <span class="nb">object</span> <span class="o">=</span> <span class="n">plugin</span><span class="p">(</span>
+</span><span id="line-279">                <span class="n">robie</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+</span><span id="line-280">
+</span><span id="line-281">            <span class="n">target</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">object</span>
+</span><span id="line-282">
+</span><span id="line-283">
+</span><span id="line-284">        <span class="k">if</span> <span class="n">plugin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-285">            <span class="n">_put_plugin</span><span class="p">()</span></div>
 </div>
 
 </span></code></pre></div>
