@@ -39,8 +39,6 @@ def test_MTMMessage(
     childs = robie.childs
     clients = childs.clients
 
-    model = MTMMessage
-
     client = clients['mtmbot']
 
     assert isinstance(
@@ -51,7 +49,7 @@ def test_MTMMessage(
         EVENTS[0])
 
 
-    item = model(
+    item = MTMMessage(
         client, event)
 
 
@@ -136,15 +134,13 @@ def test_MTMMessage_reply(
     childs = robie.childs
     clients = childs.clients
 
-    model = MTMMessage
-
     client = clients['mtmbot']
 
     assert isinstance(
         client, MTMClient)
 
 
-    item = model(
+    item = MTMMessage(
         client,
         ClientEvent(
             client.client,

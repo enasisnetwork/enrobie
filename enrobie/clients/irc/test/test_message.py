@@ -39,8 +39,6 @@ def test_IRCMessage(
     childs = robie.childs
     clients = childs.clients
 
-    model = IRCMessage
-
     client = clients['ircbot']
 
     assert isinstance(
@@ -51,7 +49,7 @@ def test_IRCMessage(
         EVENTS[1])
 
 
-    item = model(
+    item = IRCMessage(
         client, event)
 
 
@@ -132,15 +130,13 @@ def test_IRCMessage_reply(
     childs = robie.childs
     clients = childs.clients
 
-    model = IRCMessage
-
     client = clients['ircbot']
 
     assert isinstance(
         client, IRCClient)
 
 
-    item = model(
+    item = IRCMessage(
         client,
         ClientEvent(
             client.client,
@@ -156,10 +152,10 @@ def test_IRCMessage_reply(
     event = ClientEvent(
         client.client,
         EVENTS[1].replace(
-            '#channel',
+            '#enrobie',
             'ircbot'))
 
-    item = model(
+    item = IRCMessage(
         client, event)
 
     reply = item.reply(

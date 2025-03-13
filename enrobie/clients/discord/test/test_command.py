@@ -34,12 +34,10 @@ def test_DSCCommand(
     childs = robie.childs
     clients = childs.clients
 
-    model = DSCCommand
-
     client = clients['ircbot']
 
 
-    item = model(
+    item = DSCCommand(
         client, 'delete',
         '/channels/privid'
         '/messages/msgunq')

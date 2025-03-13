@@ -35,10 +35,8 @@ def test_RobieCommand(
     clients = childs.clients
     client = clients['ircbot']
 
-    model = RobieCommand
 
-
-    item = model(client)
+    item = RobieCommand(client)
 
 
     attrs = lattrs(item)

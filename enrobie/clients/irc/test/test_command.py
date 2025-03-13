@@ -34,12 +34,10 @@ def test_IRCCommand(
     childs = robie.childs
     clients = childs.clients
 
-    model = IRCCommand
-
     client = clients['ircbot']
 
 
-    item = model(
+    item = IRCCommand(
         client,
         'PRIVMSG # :Hello')
 

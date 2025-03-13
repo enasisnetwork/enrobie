@@ -456,11 +456,8 @@ class LoggerHistory:
         robie = plugin.robie
         childs = robie.childs
         clients = childs.clients
-        persons = childs.persons
 
         assert mitem.author
-
-        _person = mitem.person
 
         client = clients[
             mitem.client]
@@ -469,10 +466,6 @@ class LoggerHistory:
         return self.search(
             limit=limit,
             client=client.name,
-            person=(
-                persons[_person].name
-                if _person is not None
-                else None),
             kind=mitem.kind,
             anchor=mitem.anchor)
 
@@ -568,7 +561,7 @@ class LoggerHistory:
                 query = query.filter(
                     _client == client)
 
-            if person is not None:
+            if person is not NCNone:
                 query = query.filter(
                     _person == person)
 

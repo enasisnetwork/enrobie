@@ -38,26 +38,65 @@ DSCEVENTS: list[DictStrAny] = [
     {'t': 'GUILD_CREATE',
      's': 2,
      'op': 0,
-     'd/channels': [
-         {'id': 'dscunq',
-          'name': 'test',
-          'topic': 'topic'}]},
+     'd/channels/0': {
+         'id': 'enrobie',
+         'topic': 'Test topic already set',
+         'name': 'enrobie'}},
 
     {'t': 'CHANNEL_UPDATE',
      's': 3,
      'op': 0,
-     'd/id': 'dscunq',
-     'd/topic': 'topico',
-     'd/name': 'testing'},
+     'd/id': 'enrobie',
+     'd/topic': 'Test topic is changed',
+     'd/name': 'enrobie'},
 
+    # From random to channel
     {'t': 'MESSAGE_CREATE',
      's': 4,
      'op': 0,
-     'd/channel_id': 'chanid',
+     'd/channel_id': 'enrobie',
      'd/guild_id': 'guldid',
      'd/author/id': 'userid',
      'd/author/username': 'user',
-     'd/content': 'Hello dscbot'}]
+     'd/content': 'Hello dscbot'},
+
+    # From random to private
+    {'t': 'MESSAGE_CREATE',
+     's': 5,
+     'op': 0,
+     'd/channel_id': 'privid',
+     'd/author/id': 'userid',
+     'd/author/username': 'user',
+     'd/content': 'Hello dscbot'},
+
+    # From hubert to channel
+    {'t': 'MESSAGE_CREATE',
+     's': 6,
+     'op': 0,
+     'd/channel_id': 'enrobie',
+     'd/guild_id': 'guldid',
+     'd/author/id': 823039201390230492,
+     'd/author/username': 'hubert',
+     'd/content': 'dscbot'},
+
+    # From hubert to channel
+    {'t': 'MESSAGE_CREATE',
+     's': 7,
+     'op': 0,
+     'd/channel_id': 'enrobie',
+     'd/guild_id': 'guldid',
+     'd/author/id': 823039201390230492,
+     'd/author/username': 'hubert',
+     'd/content': 'dscbot'},
+
+    # From hubert to private
+    {'t': 'MESSAGE_CREATE',
+     's': 8,
+     'op': 0,
+     'd/channel_id': 'privid',
+     'd/author/id': 823039201390230492,
+     'd/author/username': 'hubert',
+     'd/content': 'dscbot'}]
 
 DSCEVENTS = EVENTS + [
     expate(x) for x in DSCEVENTS]
@@ -276,15 +315,15 @@ def test_DSCClient_channels(
 
     select = (
         client.channels
-        .select('dscunq'))
+        .select('enrobie'))
 
     assert select is not None
 
     assert select.endumped == {
         'members': None,
-        'title': 'testing',
-        'topic': 'topico',
-        'unique': 'dscunq'}
+        'title': 'enrobie',
+        'topic': 'Test topic is changed',
+        'unique': 'enrobie'}
 
 
     service.soft()

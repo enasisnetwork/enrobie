@@ -108,14 +108,14 @@ def test_AutoJoinPlugin_cover(
         (':mocked 376 ircbot '
          ':End of /MOTD command.'),
 
-        ':ircbot JOIN :#test',
+        ':ircbot JOIN :#enrobie',
 
         (':foo!bar@baz KICK '
-         '#test ircbot :foo'),
+         '#enrobie ircbot :foo'),
 
-        ':ircbot JOIN :#test',
+        ':ircbot JOIN :#enrobie',
 
-        ':ircbot PART :#test',
+        ':ircbot PART :#enrobie',
 
         ('ERROR :Closing Link: ircbot'
          '[mocked] (Quit: ircbot)')]

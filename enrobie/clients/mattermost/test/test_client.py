@@ -44,28 +44,70 @@ if TYPE_CHECKING:
 MTMEVENTS: list[DictStrAny] = [
 
     {'event': 'hello',
-     'broadcast': {
-         'user_id': 'mtmunq'}},
+     'broadcast/user_id': 'mtmunq'},
 
+    {'event': 'channel_updated',
+     'broadcast/channel_id': 'enrobie',
+     'data/channel': (
+         '{"id":"enrobie",'
+         '"name":"enrobie",'
+         '"header":"Testing"}'),
+     'seq': 2},
+
+    # From random to channel
     {'event': 'posted',
-     'seq': 5,
-     'broadcast': {
-         'channel_id': 'chanid'},
+     'seq': 3,
+     'broadcast/channel_id': 'enrobie',
      'data/channel_type': 'P',
      'data/post': (
          '{"user_id":"userid",'
-         '"channel_id":"chanid",'
+         '"channel_id":"enrobie",'
          '"message":"Hello mtmbot"}'),
      'data/sender_name': '@user'},
 
-    {'event': 'channel_updated',
-     'broadcast': {
-         'channel_id': 'mtmunq'},
-     'data/channel': (
-         '{"id":"mtmunq",'
-         '"name":"testing",'
-         '"header":"Testing"}'),
-     'seq': 2}]
+    # From random to private
+    {'event': 'posted',
+     'seq': 4,
+     'broadcast/channel_id': 'privid',
+     'data/channel_type': 'D',
+     'data/post': (
+         '{"user_id":"userid",'
+         '"channel_id":"privid",'
+         '"message":"Hello mtmbot"}'),
+     'data/sender_name': '@user'},
+
+    # From hubert to channel
+    {'event': 'posted',
+     'seq': 5,
+     'broadcast/channel_id': 'privid',
+     'data/channel_type': 'P',
+     'data/post': (
+         '{"user_id":"kjf9al2klaiietalkw",'
+         '"channel_id":"enrobie",'
+         '"message":"mtmbot"}'),
+     'data/sender_name': '@hubert'},
+
+    # From hubert to channel
+    {'event': 'posted',
+     'seq': 6,
+     'broadcast/channel_id': 'privid',
+     'data/channel_type': 'P',
+     'data/post': (
+         '{"user_id":"kjf9al2klaiietalkw",'
+         '"channel_id":"enrobie",'
+         '"message":"mtmbot"}'),
+     'data/sender_name': '@hubert'},
+
+    # From hubert to private
+    {'event': 'posted',
+     'seq': 7,
+     'broadcast/channel_id': 'privid',
+     'data/channel_type': 'D',
+     'data/post': (
+         '{"user_id":"kjf9al2klaiietalkw",'
+         '"channel_id":"privid",'
+         '"message":"mtmbot"}'),
+     'data/sender_name': '@hubert'}]
 
 MTMEVENTS = EVENTS + [
     expate(x) for x in MTMEVENTS]
@@ -275,8 +317,8 @@ def test_MTMClient_channels(
 
     content = [
         {'header': 'Testing',
-         'id': 'mtmunq',
-         'name': 'testing'}]
+         'id': 'enrobie',
+         'name': 'enrobie'}]
 
 
     (respx_mock
@@ -309,15 +351,15 @@ def test_MTMClient_channels(
 
     select = (
         client.channels
-        .select('mtmunq'))
+        .select('enrobie'))
 
     assert select is not None
 
     assert select.endumped == {
         'members': None,
-        'title': 'testing',
+        'title': 'enrobie',
         'topic': 'Testing',
-        'unique': 'mtmunq'}
+        'unique': 'enrobie'}
 
 
     service.soft()

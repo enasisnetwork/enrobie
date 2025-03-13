@@ -15,16 +15,16 @@ from encommon.types import instr
 from encommon.types import lattrs
 
 from ..plugin import LoggerPlugin
+from ....clients import IRCClient
 
 if TYPE_CHECKING:
-    from ....robie.childs import RobieClient
     from ....robie import Robie
 
 
 
-def _insert_history(
+def _logger_history(
     plugin: LoggerPlugin,
-    client: 'RobieClient',
+    client: 'IRCClient',
 ) -> None:
     """
     Insert testing records into the provided history object.
@@ -34,6 +34,7 @@ def _insert_history(
     """
 
     history = plugin.history
+
 
     for count in range(4):
 
@@ -48,7 +49,7 @@ def _insert_history(
                 person=None,
                 kind='chanmsg',
                 author=f'nickname{nick}',
-                anchor='#channel',
+                anchor='#enrobie',
                 message=f'Message {count}')
 
             history.insert(
@@ -60,6 +61,23 @@ def _insert_history(
                 message=f'Message {count}')
 
             block_sleep(0.001)
+
+
+    history.insert(
+        client=client.name,
+        person='hubert',
+        kind='chanmsg',
+        author='hubert',
+        anchor='#enrobie',
+        message='Good news')
+
+    history.insert(
+        client=client.name,
+        person='hubert',
+        kind='privmsg',
+        author='hubert',
+        anchor='hubert',
+        message='Good news')
 
 
 
@@ -124,19 +142,22 @@ def test_LoggerHistory_cover(
     plugin = plugins['logger']
 
     assert isinstance(
+        client, IRCClient)
+
+    assert isinstance(
         plugin, LoggerPlugin)
 
     history = plugin.history
 
 
-    _insert_history(
+    _logger_history(
         plugin, client)
 
 
     records = (
         history.search(
             client=client.name,
-            anchor='#channel'))
+            anchor='#enrobie'))
 
     assert len(records) == 10
 
@@ -145,8 +166,8 @@ def test_LoggerHistory_cover(
         records[0].endumped)
 
     assert record == {
-        'anchor': '#channel',
-        'author': 'nickname3',
+        'anchor': '#enrobie',
+        'author': 'nickname4',
         'client': 'ircbot',
         'create': record['create'],
         'kind': 'chanmsg',

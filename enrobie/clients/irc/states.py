@@ -30,9 +30,7 @@ class ClientChannels(_ClientChannels):
 
         cached = self.__cached
 
-        model = ClientChannel
-
-        item = model(
+        item = ClientChannel(
             unique=unique,
             title=unique)
 

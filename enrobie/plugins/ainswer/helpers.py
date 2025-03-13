@@ -17,6 +17,7 @@ from encommon.times import Time
 from encommon.types import DictStrAny
 from encommon.types import NCNone
 from encommon.types.strings import COMMAS
+from encommon.types.strings import NEWLINE
 from encommon.types.strings import SEMPTY
 
 from enconnect.discord import (
@@ -135,12 +136,22 @@ class AinswerQuestion:
 
 
         returned = SEMPTY.join([
-            ('**Instructions**\n'
-             f'{prompt}\n\n'
-             f'{history}\n\n'
-             f'{ignored}\n\n'
-             f'{metadata}\n\n'
-             f'{channel}\n\n'),
+            '**Instructions**\n',
+            (f'{prompt}\n\n'
+             if prompt
+             else SEMPTY),
+            (f'{history}\n\n'
+             if history
+             else SEMPTY),
+            (f'{ignored}\n\n'
+             if ignored
+             else SEMPTY),
+            (f'{metadata}\n\n'
+             if metadata
+             else SEMPTY),
+            (f'{channel}\n\n'
+             if channel
+             else SEMPTY),
             (f'{header}\n\n'
              if header is not None
              and len(header) >= 1
@@ -207,7 +218,7 @@ class AinswerQuestion:
             '**Previous Interactions**\n'
             'You have previously had the following'
             ' direct conversations within scope.\n'
-            f"{'\n'.join(dumped)}")
+            f'{NEWLINE.join(dumped)}')
 
 
     def prompt_ignored(
@@ -230,7 +241,7 @@ class AinswerQuestion:
         ignore = _prompt.ignore
 
         response = _IGNORED
-        delim = '\n - '
+        delim = f'{NEWLINE} - '
 
         return (
             '**Responding**\n'
@@ -297,7 +308,7 @@ class AinswerQuestion:
                     f'Description: {_about}\n')
 
         returned += (
-            '**Additional Metadata**\n'
+            '\n**Additional Metadata**\n'
             f'Your nickname: {whome[0]}\n'
             f'Your serverID: {whome[1]}\n')
 

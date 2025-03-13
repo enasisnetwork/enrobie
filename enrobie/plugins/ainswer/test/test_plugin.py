@@ -169,14 +169,14 @@ def test_AinswerPlugin_cover(
         select = (
             clients['ircbot']
             .channels
-            .select('#test'))
+            .select('#enrobie'))
 
         assert select is not None
 
         records = (
             history.search(
                 client='ircbot',
-                anchor='#test'))
+                anchor='#enrobie'))
 
         assert len(records) >= 1
 

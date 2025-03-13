@@ -33,32 +33,49 @@ if TYPE_CHECKING:
 
 IRCEVENTS: list[str] = [
 
-    ':ircbot JOIN :#test',
+    ':ircbot JOIN :#enrobie',
 
-    (':mocked 353 ircbot = #test '
-     ':ircbot robert trebor sirrah'),
+    (':mocked 353 ircbot = #enrobie'
+     ' :ircbot robert trebor sirrah'),
 
-    (':mocked 332 ircbot #test '
-     ':Test topic already set'),
+    (':mocked 332 ircbot #enrobie'
+     ' :Test topic already set'),
 
-    (':foo!bar@baz KICK '
-     '#test ircbot :foo'),
+    (':nick!user@host TOPIC #enrobie'
+     ' :Test topic is changed'),
 
-    ':ircbot JOIN :#test',
+    (':nick!user@host KICK '
+     '#enrobie ircbot :foo'),
 
-    (':mocked 353 ircbot = #test '
-     ':ircbot robert trebor sirrah'),
+    ':ircbot JOIN :#enrobie',
 
-    (':mocked 332 ircbot #test '
-     ':Test topic already set'),
+    (':mocked 353 ircbot = #enrobie'
+     ' :ircbot robert trebor sirrah'),
 
-    (':foo!bar@baz TOPIC #test '
-     ':Test topic is changed'),
+    (':mocked 332 ircbot #enrobie'
+     ' :Test topic is changed'),
 
+    # From random to channel
     (':nick!user@host PRIVMSG'
-     ' #test :Hello ircbot'),
+     ' #enrobie :Hello ircbot'),
 
-    ':ircbot PART :#test']
+    # From random to private
+    (':nick!user@host PRIVMSG'
+     ' ircbot :Hello ircbot'),
+
+    # From hubert to channel
+    (':hubert!hubert@science.com'
+     ' PRIVMSG #enrobie :ircbot'),
+
+    # From hubert to channel
+    (':hubert!hubert@science.com'
+     ' PRIVMSG #enrobie :ircbot'),
+
+    # From hubert to private
+    (':hubert!hubert@science.com'
+     ' PRIVMSG ircbot :ircbot'),
+
+    ':ircbot PART :#enrobie']
 
 IRCEVENTS.extend(EVENTS[:-1])
 
@@ -216,7 +233,7 @@ def test_IRCClient_compose(
 
     citem = (
         client.compose(
-            '#channel',
+            '#enrobie',
             'message'))
 
     assert isinstance(
@@ -224,7 +241,7 @@ def test_IRCClient_compose(
 
 
     assert citem.event == (
-        'PRIVMSG #channel'
+        'PRIVMSG #enrobie'
         ' :message')
 
 
@@ -270,7 +287,7 @@ def test_IRCClient_channels(
 
     select = (
         client.channels
-        .select('#test'))
+        .select('#enrobie'))
 
     assert select is not None
 
@@ -279,9 +296,9 @@ def test_IRCClient_channels(
             'robert',
             'sirrah',
             'trebor'},
-        'title': '#test',
+        'title': '#enrobie',
         'topic': 'Test topic is changed',
-        'unique': '#test'}
+        'unique': '#enrobie'}
 
 
     service.soft()
