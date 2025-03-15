@@ -14,6 +14,8 @@ from encommon.types import inrepr
 from encommon.types import instr
 from encommon.types import lattrs
 
+from ..plugin import RobiePluginThread
+
 if TYPE_CHECKING:
     from ...service import RobieService
 
@@ -36,6 +38,10 @@ def test_RobiePluginThread(
 
 
     for thread in threads:
+
+        assert isinstance(
+            thread,
+            RobiePluginThread)
 
 
         attrs = lattrs(thread)
@@ -76,6 +82,8 @@ def test_RobiePluginThread(
         assert thread.member
 
         assert thread.child
+
+        assert thread.plugin
 
         assert thread.mqueue
 

@@ -14,6 +14,11 @@ from ..threads import RobieClientThread
 
 if TYPE_CHECKING:
     from .member import RobieThreads
+    from ..childs import RobieClient  # noqa: F401
+
+
+
+_CLIENTS = dict[str, 'RobieClient']
 
 
 
@@ -21,6 +26,43 @@ class RobieClients(RobieMember):
     """
     Common methods and routines for Chatting Robie members.
     """
+
+
+    @property
+    def childs(
+        self,
+    ) -> _CLIENTS:
+        """
+        Return the value for the attribute from class instance.
+
+        .. note::
+           Deviates from enhomie in build happens downstream,
+           because all of the enhomie members are origin based
+           where enrobie children do not have consistent base.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        clients: _CLIENTS = {}
+
+        threads = (
+            self.threads
+            .values())
+
+
+        for thread in threads:
+
+            assert isinstance(
+                thread,
+                RobieClientThread)
+
+            client = thread.client
+            name = client.name
+
+            clients[name] = client
+
+
+        return clients
 
 
     def operate(

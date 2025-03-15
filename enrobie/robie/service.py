@@ -76,17 +76,16 @@ class RobieService:
         Construct instances using the configuration parameters.
         """
 
-        robie = self.__robie
         params = self.params
 
         respite = params.respite
 
 
         self.__clients = (
-            RobieClients(robie))
+            RobieClients(self))
 
         self.__plugins = (
-            RobiePlugins(robie))
+            RobiePlugins(self))
 
 
         self.__timer = Timer(

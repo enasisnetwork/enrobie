@@ -33,7 +33,7 @@ def test_RobieClients(
     attrs = lattrs(member)
 
     assert attrs == [
-        '_RobieMember__robie',
+        '_RobieMember__service',
         '_RobieMember__threads',
         '_RobieMember__mqueue',
         '_RobieMember__cqueue',
@@ -55,7 +55,11 @@ def test_RobieClients(
 
     assert member.robie
 
+    assert member.service
+
     assert len(member.threads) == 3
+
+    assert len(member.childs) == 3
 
     assert member.mqueue
 

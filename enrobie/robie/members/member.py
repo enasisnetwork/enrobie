@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from ..models import RobieCommand
     from ..models import RobieMessage
     from ..robie import Robie
+    from ..service import RobieService
 
 
 
@@ -35,7 +36,7 @@ class RobieMember:
     :param robie: Primary class instance for Chatting Robie.
     """
 
-    __robie: 'Robie'
+    __service: 'RobieService'
 
     __threads: RobieThreads
 
@@ -47,17 +48,19 @@ class RobieMember:
 
     def __init__(
         self,
-        robie: 'Robie',
+        service: 'RobieService',
     ) -> None:
         """
         Initialize instance for class using provided parameters.
         """
 
+        robie = service.robie
+
         robie.logger.log_d(
             base=self,
             status='initial')
 
-        self.__robie = robie
+        self.__service = service
 
         self.__threads = {}
 
@@ -75,7 +78,7 @@ class RobieMember:
         Construct instances using the configuration parameters.
         """
 
-        robie = self.__robie
+        robie = self.robie
 
         self.__mqueue = (
             RobieQueue(robie))
@@ -143,7 +146,20 @@ class RobieMember:
         :returns: Robie instance to which the instance belongs.
         """
 
-        return self.__robie
+        return self.__service.robie
+
+
+    @property
+    def service(
+        self,
+    ) -> 'RobieService':
+        """
+        Return the Robie instance to which the instance belongs.
+
+        :returns: Robie instance to which the instance belongs.
+        """
+
+        return self.__service
 
 
     @property
