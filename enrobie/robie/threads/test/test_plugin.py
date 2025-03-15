@@ -79,6 +79,8 @@ def test_RobiePluginThread(
 
         assert thread.robie
 
+        assert thread.service
+
         assert thread.member
 
         assert thread.child

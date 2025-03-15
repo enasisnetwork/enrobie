@@ -23,6 +23,7 @@ if TYPE_CHECKING:
     from ..models import RobieCommand
     from ..models import RobieMessage
     from ..robie import Robie
+    from ..service import RobieService
 
 
 
@@ -112,6 +113,19 @@ class RobieThread(Thread):
         """
 
         return self.member.robie
+
+
+    @property
+    def service(
+        self,
+    ) -> 'RobieService':
+        """
+        Return the Robie instance to which the instance belongs.
+
+        :returns: Robie instance to which the instance belongs.
+        """
+
+        return self.__member.service
 
 
     @property

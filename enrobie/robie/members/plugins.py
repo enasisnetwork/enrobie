@@ -130,6 +130,7 @@ class RobiePlugins(RobieMember):
                 self, plugin)
 
             threads[name] = object
+            plugin.thread = object
 
 
         self.threads = threads

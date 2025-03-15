@@ -8,6 +8,7 @@ is permitted, for more information consult the project license file.
 
 
 from typing import Literal
+from typing import Optional
 from typing import TYPE_CHECKING
 from typing import Type
 
@@ -22,6 +23,7 @@ if TYPE_CHECKING:
     from ..models import RobieMessage
     from ..params import RobieClientParams
     from ..threads import RobieThread
+    from ..threads import RobieClientThread
 
 
 
@@ -29,6 +31,8 @@ class RobieClient(RobieChild):
     """
     Establish and maintain connection with the chat service.
     """
+
+    __thread: Optional['RobieClientThread'] = None
 
 
     @property
@@ -81,6 +85,50 @@ class RobieClient(RobieChild):
         """
 
         raise NotImplementedError
+
+
+    @property
+    def thread(
+        self,
+    ) -> Optional['RobieClientThread']:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        from ..threads import (
+            RobieClientThread)
+
+        thread = self.__thread
+
+        if thread is None:
+            return None
+
+        assert isinstance(
+            thread,
+            RobieClientThread)
+
+        return thread
+
+
+    @thread.setter
+    def thread(
+        self,
+        value: 'RobieClientThread',
+    ) -> None:
+        """
+        Update the value for the attribute from class instance.
+        """
+
+        from ..threads import (
+            RobieClientThread)
+
+        assert isinstance(
+            value,
+            RobieClientThread)
+
+        self.__thread = value
 
 
     @property

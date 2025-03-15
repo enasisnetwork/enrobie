@@ -146,6 +146,7 @@ class RobieClients(RobieMember):
                 self, client)
 
             threads[name] = object
+            client.thread = object
 
 
         self.threads = threads

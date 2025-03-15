@@ -165,6 +165,8 @@ def test_DSCClient(
 
     assert client.params
 
+    assert not client.thread
+
     assert client.dumped
 
 

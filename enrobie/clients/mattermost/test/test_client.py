@@ -176,6 +176,8 @@ def test_MTMClient(
 
     assert client.params
 
+    assert not client.thread
+
     assert client.dumped
 
 

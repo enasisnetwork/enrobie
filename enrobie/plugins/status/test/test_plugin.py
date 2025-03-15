@@ -142,6 +142,8 @@ def test_StatusPlugin(
 
     assert plugin.params
 
+    assert not plugin.thread
+
     assert plugin.dumped
 
 

@@ -88,6 +88,8 @@ def test_AutoJoinPlugin(
 
     assert plugin.params
 
+    assert not plugin.thread
+
     assert plugin.dumped
 
 
