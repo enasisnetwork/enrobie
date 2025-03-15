@@ -73,3 +73,22 @@ def test_RobieClients(
 
 
     member.operate()
+
+
+
+def test_RobieClients_cover(
+    service: 'RobieService',
+) -> None:
+    """
+    Perform various tests associated with relevant routines.
+
+    :param service: Ancilary Chatting Robie class instance.
+    """
+
+    member = service.clients
+    childs = member.childs
+
+    assert all(
+        x.thread
+        for x in
+        childs.values())

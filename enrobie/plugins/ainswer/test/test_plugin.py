@@ -93,6 +93,8 @@ def test_AinswerPlugin(
 
     assert plugin.params
 
+    assert not plugin.thread
+
     assert plugin.dumped
 
     assert plugin.question

@@ -143,6 +143,8 @@ def test_IRCClient(
 
     assert client.params
 
+    assert not client.thread
+
     assert client.dumped
 
 

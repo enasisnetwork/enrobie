@@ -87,6 +87,8 @@ def test_LoggerPlugin(
 
     assert plugin.params
 
+    assert not plugin.thread
+
     assert plugin.dumped
 
 

@@ -86,6 +86,8 @@ def test_AutoNickPlugin(
 
     assert plugin.params
 
+    assert not plugin.thread
+
     assert plugin.dumped
 
 
