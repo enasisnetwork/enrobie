@@ -178,7 +178,7 @@
 </span><span id="line-33">    <span class="n">attrs</span> <span class="o">=</span> <span class="n">lattrs</span><span class="p">(</span><span class="n">member</span><span class="p">)</span>
 </span><span id="line-34">
 </span><span id="line-35">    <span class="k">assert</span> <span class="n">attrs</span> <span class="o">==</span> <span class="p">[</span>
-</span><span id="line-36">        <span class="s1">&#39;_RobieMember__robie&#39;</span><span class="p">,</span>
+</span><span id="line-36">        <span class="s1">&#39;_RobieMember__service&#39;</span><span class="p">,</span>
 </span><span id="line-37">        <span class="s1">&#39;_RobieMember__threads&#39;</span><span class="p">,</span>
 </span><span id="line-38">        <span class="s1">&#39;_RobieMember__mqueue&#39;</span><span class="p">,</span>
 </span><span id="line-39">        <span class="s1">&#39;_RobieMember__cqueue&#39;</span><span class="p">,</span>
@@ -200,20 +200,24 @@
 </span><span id="line-55">
 </span><span id="line-56">    <span class="k">assert</span> <span class="n">member</span><span class="o">.</span><span class="n">robie</span>
 </span><span id="line-57">
-</span><span id="line-58">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">member</span><span class="o">.</span><span class="n">threads</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
+</span><span id="line-58">    <span class="k">assert</span> <span class="n">member</span><span class="o">.</span><span class="n">service</span>
 </span><span id="line-59">
-</span><span id="line-60">    <span class="k">assert</span> <span class="n">member</span><span class="o">.</span><span class="n">mqueue</span>
+</span><span id="line-60">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">member</span><span class="o">.</span><span class="n">threads</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
 </span><span id="line-61">
-</span><span id="line-62">    <span class="k">assert</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
+</span><span id="line-62">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">member</span><span class="o">.</span><span class="n">childs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
 </span><span id="line-63">
-</span><span id="line-64">    <span class="k">assert</span> <span class="n">member</span><span class="o">.</span><span class="n">vacate</span>
+</span><span id="line-64">    <span class="k">assert</span> <span class="n">member</span><span class="o">.</span><span class="n">mqueue</span>
 </span><span id="line-65">
-</span><span id="line-66">    <span class="k">assert</span> <span class="n">member</span><span class="o">.</span><span class="n">cancel</span>
+</span><span id="line-66">    <span class="k">assert</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
 </span><span id="line-67">
-</span><span id="line-68">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">member</span><span class="o">.</span><span class="n">running</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</span><span id="line-68">    <span class="k">assert</span> <span class="n">member</span><span class="o">.</span><span class="n">vacate</span>
 </span><span id="line-69">
-</span><span id="line-70">
-</span><span id="line-71">    <span class="n">member</span><span class="o">.</span><span class="n">operate</span><span class="p">()</span></div>
+</span><span id="line-70">    <span class="k">assert</span> <span class="n">member</span><span class="o">.</span><span class="n">cancel</span>
+</span><span id="line-71">
+</span><span id="line-72">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">member</span><span class="o">.</span><span class="n">running</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</span><span id="line-73">
+</span><span id="line-74">
+</span><span id="line-75">    <span class="n">member</span><span class="o">.</span><span class="n">operate</span><span class="p">()</span></div>
 
 </span></code></pre></div>
     </div></div>
