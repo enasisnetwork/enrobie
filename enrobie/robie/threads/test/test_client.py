@@ -14,6 +14,8 @@ from encommon.types import inrepr
 from encommon.types import instr
 from encommon.types import lattrs
 
+from ..client import RobieClientThread
+
 if TYPE_CHECKING:
     from ...service import RobieService
 
@@ -36,6 +38,10 @@ def test_RobieClientThread(
 
 
     for thread in threads:
+
+        assert isinstance(
+            thread,
+            RobieClientThread)
 
 
         attrs = lattrs(thread)
@@ -76,6 +82,8 @@ def test_RobieClientThread(
         assert thread.member
 
         assert thread.child
+
+        assert thread.client
 
         assert thread.mqueue
 
