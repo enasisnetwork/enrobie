@@ -219,6 +219,28 @@
 </span><span id="line-74">
 </span><span id="line-75">    <span class="n">member</span><span class="o">.</span><span class="n">operate</span><span class="p">()</span></div>
 
+</span><span id="line-76">
+</span><span id="line-77">
+</span><span id="line-78">
+<div class="viewcode-block" id="test_RobieClients_cover">
+<a class="viewcode-back" href="../../../../../enrobie.robie.members.test.html#enrobie.robie.members.test.test_clients.test_RobieClients_cover">[docs]</a>
+</span><span id="line-79"><span class="k">def</span><span class="w"> </span><span class="nf">test_RobieClients_cover</span><span class="p">(</span>
+</span><span id="line-80">    <span class="n">service</span><span class="p">:</span> <span class="s1">&#39;RobieService&#39;</span><span class="p">,</span>
+</span><span id="line-81"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-82"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-83"><span class="sd">    Perform various tests associated with relevant routines.</span>
+</span><span id="line-84">
+</span><span id="line-85"><span class="sd">    :param service: Ancilary Chatting Robie class instance.</span>
+</span><span id="line-86"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-87">
+</span><span id="line-88">    <span class="n">member</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">clients</span>
+</span><span id="line-89">    <span class="n">childs</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">childs</span>
+</span><span id="line-90">
+</span><span id="line-91">    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span>
+</span><span id="line-92">        <span class="n">x</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-93">        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span>
+</span><span id="line-94">        <span class="n">childs</span><span class="o">.</span><span class="n">values</span><span class="p">())</span></div>
+
 </span></code></pre></div>
     </div></div>
         </main>

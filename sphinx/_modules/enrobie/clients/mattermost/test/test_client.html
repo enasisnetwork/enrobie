@@ -321,212 +321,214 @@
 </span><span id="line-176">
 </span><span id="line-177">    <span class="k">assert</span> <span class="n">client</span><span class="o">.</span><span class="n">params</span>
 </span><span id="line-178">
-</span><span id="line-179">    <span class="k">assert</span> <span class="n">client</span><span class="o">.</span><span class="n">dumped</span></div>
-
+</span><span id="line-179">    <span class="k">assert</span> <span class="ow">not</span> <span class="n">client</span><span class="o">.</span><span class="n">thread</span>
 </span><span id="line-180">
-</span><span id="line-181">
+</span><span id="line-181">    <span class="k">assert</span> <span class="n">client</span><span class="o">.</span><span class="n">dumped</span></div>
+
 </span><span id="line-182">
+</span><span id="line-183">
+</span><span id="line-184">
 <div class="viewcode-block" id="test_MTMClient_message">
 <a class="viewcode-back" href="../../../../../enrobie.clients.mattermost.test.html#enrobie.clients.mattermost.test.test_client.test_MTMClient_message">[docs]</a>
-</span><span id="line-183"><span class="k">def</span><span class="w"> </span><span class="nf">test_MTMClient_message</span><span class="p">(</span>
-</span><span id="line-184">    <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
-</span><span id="line-185"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-186"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-187"><span class="sd">    Perform various tests associated with relevant routines.</span>
-</span><span id="line-188">
-</span><span id="line-189"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
-</span><span id="line-190"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-191">
-</span><span id="line-192">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
-</span><span id="line-193">    <span class="n">clients</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
-</span><span id="line-194">
-</span><span id="line-195">    <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">]</span>
+</span><span id="line-185"><span class="k">def</span><span class="w"> </span><span class="nf">test_MTMClient_message</span><span class="p">(</span>
+</span><span id="line-186">    <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
+</span><span id="line-187"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-188"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-189"><span class="sd">    Perform various tests associated with relevant routines.</span>
+</span><span id="line-190">
+</span><span id="line-191"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
+</span><span id="line-192"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-193">
+</span><span id="line-194">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
+</span><span id="line-195">    <span class="n">clients</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
 </span><span id="line-196">
-</span><span id="line-197">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-198">        <span class="n">client</span><span class="p">,</span> <span class="n">MTMClient</span><span class="p">)</span>
-</span><span id="line-199">
-</span><span id="line-200">
-</span><span id="line-201">    <span class="n">_queue</span> <span class="o">=</span> <span class="n">RobieQueue</span><span class="p">[</span>
-</span><span id="line-202">        <span class="s1">&#39;RobieMessage&#39;</span><span class="p">]</span>
-</span><span id="line-203">
-</span><span id="line-204">    <span class="n">queue</span><span class="p">:</span> <span class="n">_queue</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-205">        <span class="n">RobieQueue</span><span class="p">(</span><span class="n">robie</span><span class="p">))</span>
-</span><span id="line-206">
-</span><span id="line-207">
-</span><span id="line-208">    <span class="n">_event</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="line-209">        <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;OK&#39;</span><span class="p">,</span>
-</span><span id="line-210">        <span class="s1">&#39;seq_reply&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-</span><span id="line-211">
-</span><span id="line-212">    <span class="n">event</span> <span class="o">=</span> <span class="n">ClientEvent</span><span class="p">(</span>
-</span><span id="line-213">        <span class="n">client</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="n">_event</span><span class="p">)</span>
-</span><span id="line-214">
-</span><span id="line-215">    <span class="n">client</span><span class="o">.</span><span class="n">put_message</span><span class="p">(</span>
-</span><span id="line-216">        <span class="n">queue</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span></div>
+</span><span id="line-197">    <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">]</span>
+</span><span id="line-198">
+</span><span id="line-199">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-200">        <span class="n">client</span><span class="p">,</span> <span class="n">MTMClient</span><span class="p">)</span>
+</span><span id="line-201">
+</span><span id="line-202">
+</span><span id="line-203">    <span class="n">_queue</span> <span class="o">=</span> <span class="n">RobieQueue</span><span class="p">[</span>
+</span><span id="line-204">        <span class="s1">&#39;RobieMessage&#39;</span><span class="p">]</span>
+</span><span id="line-205">
+</span><span id="line-206">    <span class="n">queue</span><span class="p">:</span> <span class="n">_queue</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-207">        <span class="n">RobieQueue</span><span class="p">(</span><span class="n">robie</span><span class="p">))</span>
+</span><span id="line-208">
+</span><span id="line-209">
+</span><span id="line-210">    <span class="n">_event</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="line-211">        <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;OK&#39;</span><span class="p">,</span>
+</span><span id="line-212">        <span class="s1">&#39;seq_reply&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+</span><span id="line-213">
+</span><span id="line-214">    <span class="n">event</span> <span class="o">=</span> <span class="n">ClientEvent</span><span class="p">(</span>
+</span><span id="line-215">        <span class="n">client</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="n">_event</span><span class="p">)</span>
+</span><span id="line-216">
+</span><span id="line-217">    <span class="n">client</span><span class="o">.</span><span class="n">put_message</span><span class="p">(</span>
+</span><span id="line-218">        <span class="n">queue</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span></div>
 
-</span><span id="line-217">
-</span><span id="line-218">
 </span><span id="line-219">
+</span><span id="line-220">
+</span><span id="line-221">
 <div class="viewcode-block" id="test_MTMClient_command">
 <a class="viewcode-back" href="../../../../../enrobie.clients.mattermost.test.html#enrobie.clients.mattermost.test.test_client.test_MTMClient_command">[docs]</a>
-</span><span id="line-220"><span class="k">def</span><span class="w"> </span><span class="nf">test_MTMClient_command</span><span class="p">(</span>
-</span><span id="line-221">    <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
-</span><span id="line-222"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-223"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-224"><span class="sd">    Perform various tests associated with relevant routines.</span>
-</span><span id="line-225">
-</span><span id="line-226"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
-</span><span id="line-227"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-228">
-</span><span id="line-229">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
-</span><span id="line-230">    <span class="n">clients</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
-</span><span id="line-231">
-</span><span id="line-232">    <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">]</span>
+</span><span id="line-222"><span class="k">def</span><span class="w"> </span><span class="nf">test_MTMClient_command</span><span class="p">(</span>
+</span><span id="line-223">    <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
+</span><span id="line-224"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-225"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-226"><span class="sd">    Perform various tests associated with relevant routines.</span>
+</span><span id="line-227">
+</span><span id="line-228"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
+</span><span id="line-229"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-230">
+</span><span id="line-231">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
+</span><span id="line-232">    <span class="n">clients</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
 </span><span id="line-233">
-</span><span id="line-234">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-235">        <span class="n">client</span><span class="p">,</span> <span class="n">MTMClient</span><span class="p">)</span>
-</span><span id="line-236">
-</span><span id="line-237">
-</span><span id="line-238">    <span class="n">_queue</span> <span class="o">=</span> <span class="n">RobieQueue</span><span class="p">[</span>
-</span><span id="line-239">        <span class="s1">&#39;RobieCommand&#39;</span><span class="p">]</span>
-</span><span id="line-240">
-</span><span id="line-241">    <span class="n">queue</span><span class="p">:</span> <span class="n">_queue</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-242">        <span class="n">RobieQueue</span><span class="p">(</span><span class="n">robie</span><span class="p">))</span>
-</span><span id="line-243">
-</span><span id="line-244">
-</span><span id="line-245">    <span class="n">client</span><span class="o">.</span><span class="n">put_command</span><span class="p">(</span>
-</span><span id="line-246">        <span class="n">queue</span><span class="p">,</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span>
-</span><span id="line-247">        <span class="s1">&#39;posts/mocked&#39;</span><span class="p">)</span></div>
+</span><span id="line-234">    <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">]</span>
+</span><span id="line-235">
+</span><span id="line-236">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-237">        <span class="n">client</span><span class="p">,</span> <span class="n">MTMClient</span><span class="p">)</span>
+</span><span id="line-238">
+</span><span id="line-239">
+</span><span id="line-240">    <span class="n">_queue</span> <span class="o">=</span> <span class="n">RobieQueue</span><span class="p">[</span>
+</span><span id="line-241">        <span class="s1">&#39;RobieCommand&#39;</span><span class="p">]</span>
+</span><span id="line-242">
+</span><span id="line-243">    <span class="n">queue</span><span class="p">:</span> <span class="n">_queue</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-244">        <span class="n">RobieQueue</span><span class="p">(</span><span class="n">robie</span><span class="p">))</span>
+</span><span id="line-245">
+</span><span id="line-246">
+</span><span id="line-247">    <span class="n">client</span><span class="o">.</span><span class="n">put_command</span><span class="p">(</span>
+</span><span id="line-248">        <span class="n">queue</span><span class="p">,</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span>
+</span><span id="line-249">        <span class="s1">&#39;posts/mocked&#39;</span><span class="p">)</span></div>
 
-</span><span id="line-248">
-</span><span id="line-249">
 </span><span id="line-250">
+</span><span id="line-251">
+</span><span id="line-252">
 <div class="viewcode-block" id="test_MTMClient_compose">
 <a class="viewcode-back" href="../../../../../enrobie.clients.mattermost.test.html#enrobie.clients.mattermost.test.test_client.test_MTMClient_compose">[docs]</a>
-</span><span id="line-251"><span class="k">def</span><span class="w"> </span><span class="nf">test_MTMClient_compose</span><span class="p">(</span>
-</span><span id="line-252">    <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
-</span><span id="line-253"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-254"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-255"><span class="sd">    Perform various tests associated with relevant routines.</span>
-</span><span id="line-256">
-</span><span id="line-257"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
-</span><span id="line-258"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-259">
-</span><span id="line-260">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
-</span><span id="line-261">    <span class="n">clients</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
-</span><span id="line-262">
-</span><span id="line-263">    <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">]</span>
+</span><span id="line-253"><span class="k">def</span><span class="w"> </span><span class="nf">test_MTMClient_compose</span><span class="p">(</span>
+</span><span id="line-254">    <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
+</span><span id="line-255"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-256"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-257"><span class="sd">    Perform various tests associated with relevant routines.</span>
+</span><span id="line-258">
+</span><span id="line-259"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
+</span><span id="line-260"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-261">
+</span><span id="line-262">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
+</span><span id="line-263">    <span class="n">clients</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
 </span><span id="line-264">
-</span><span id="line-265">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-266">        <span class="n">client</span><span class="p">,</span> <span class="n">MTMClient</span><span class="p">)</span>
-</span><span id="line-267">
-</span><span id="line-268">
-</span><span id="line-269">    <span class="n">citem</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-270">        <span class="n">client</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span>
-</span><span id="line-271">            <span class="s1">&#39;chan&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">))</span>
-</span><span id="line-272">
-</span><span id="line-273">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-274">        <span class="n">citem</span><span class="p">,</span> <span class="n">MTMCommand</span><span class="p">)</span>
-</span><span id="line-275">
-</span><span id="line-276">
-</span><span id="line-277">    <span class="k">assert</span> <span class="n">citem</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;post&#39;</span>
+</span><span id="line-265">    <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">]</span>
+</span><span id="line-266">
+</span><span id="line-267">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-268">        <span class="n">client</span><span class="p">,</span> <span class="n">MTMClient</span><span class="p">)</span>
+</span><span id="line-269">
+</span><span id="line-270">
+</span><span id="line-271">    <span class="n">citem</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-272">        <span class="n">client</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span>
+</span><span id="line-273">            <span class="s1">&#39;chan&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">))</span>
+</span><span id="line-274">
+</span><span id="line-275">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-276">        <span class="n">citem</span><span class="p">,</span> <span class="n">MTMCommand</span><span class="p">)</span>
+</span><span id="line-277">
 </span><span id="line-278">
-</span><span id="line-279">    <span class="k">assert</span> <span class="n">citem</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s1">&#39;posts&#39;</span>
+</span><span id="line-279">    <span class="k">assert</span> <span class="n">citem</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;post&#39;</span>
 </span><span id="line-280">
-</span><span id="line-281">    <span class="k">assert</span> <span class="ow">not</span> <span class="n">citem</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-281">    <span class="k">assert</span> <span class="n">citem</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s1">&#39;posts&#39;</span>
 </span><span id="line-282">
-</span><span id="line-283">    <span class="k">assert</span> <span class="n">citem</span><span class="o">.</span><span class="n">json</span> <span class="o">==</span> <span class="p">{</span>
-</span><span id="line-284">        <span class="s1">&#39;channel_id&#39;</span><span class="p">:</span> <span class="s1">&#39;chan&#39;</span><span class="p">,</span>
-</span><span id="line-285">        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;message&#39;</span><span class="p">}</span></div>
+</span><span id="line-283">    <span class="k">assert</span> <span class="ow">not</span> <span class="n">citem</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-284">
+</span><span id="line-285">    <span class="k">assert</span> <span class="n">citem</span><span class="o">.</span><span class="n">json</span> <span class="o">==</span> <span class="p">{</span>
+</span><span id="line-286">        <span class="s1">&#39;channel_id&#39;</span><span class="p">:</span> <span class="s1">&#39;chan&#39;</span><span class="p">,</span>
+</span><span id="line-287">        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;message&#39;</span><span class="p">}</span></div>
 
-</span><span id="line-286">
-</span><span id="line-287">
 </span><span id="line-288">
+</span><span id="line-289">
+</span><span id="line-290">
 <div class="viewcode-block" id="test_MTMClient_channels">
 <a class="viewcode-back" href="../../../../../enrobie.clients.mattermost.test.html#enrobie.clients.mattermost.test.test_client.test_MTMClient_channels">[docs]</a>
-</span><span id="line-289"><span class="k">def</span><span class="w"> </span><span class="nf">test_MTMClient_channels</span><span class="p">(</span>
-</span><span id="line-290">    <span class="n">tmp_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
-</span><span id="line-291">    <span class="n">client_mtmsock</span><span class="p">:</span> <span class="n">MTMClientSocket</span><span class="p">,</span>
-</span><span id="line-292">    <span class="n">respx_mock</span><span class="p">:</span> <span class="n">MockRouter</span><span class="p">,</span>
-</span><span id="line-293"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-294"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-295"><span class="sd">    Perform various tests associated with relevant routines.</span>
-</span><span id="line-296">
-</span><span id="line-297"><span class="sd">    :param tmp_path: pytest object for temporal filesystem.</span>
-</span><span id="line-298"><span class="sd">    :param client_mtmsock: Object to mock client connection.</span>
-</span><span id="line-299"><span class="sd">    :param respx_mock: Object for mocking request operation.</span>
-</span><span id="line-300"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-301">
-</span><span id="line-302">    <span class="n">robie</span> <span class="o">=</span> <span class="n">robie_factory</span><span class="p">(</span>
-</span><span id="line-303">        <span class="n">config_factory</span><span class="p">(</span><span class="n">tmp_path</span><span class="p">))</span>
-</span><span id="line-304">
-</span><span id="line-305">    <span class="n">service</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-306">        <span class="n">service_factory</span><span class="p">(</span><span class="n">robie</span><span class="p">))</span>
-</span><span id="line-307">
-</span><span id="line-308">
-</span><span id="line-309">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
-</span><span id="line-310">    <span class="n">clients</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
-</span><span id="line-311">
-</span><span id="line-312">    <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">]</span>
+</span><span id="line-291"><span class="k">def</span><span class="w"> </span><span class="nf">test_MTMClient_channels</span><span class="p">(</span>
+</span><span id="line-292">    <span class="n">tmp_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+</span><span id="line-293">    <span class="n">client_mtmsock</span><span class="p">:</span> <span class="n">MTMClientSocket</span><span class="p">,</span>
+</span><span id="line-294">    <span class="n">respx_mock</span><span class="p">:</span> <span class="n">MockRouter</span><span class="p">,</span>
+</span><span id="line-295"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-296"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-297"><span class="sd">    Perform various tests associated with relevant routines.</span>
+</span><span id="line-298">
+</span><span id="line-299"><span class="sd">    :param tmp_path: pytest object for temporal filesystem.</span>
+</span><span id="line-300"><span class="sd">    :param client_mtmsock: Object to mock client connection.</span>
+</span><span id="line-301"><span class="sd">    :param respx_mock: Object for mocking request operation.</span>
+</span><span id="line-302"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-303">
+</span><span id="line-304">    <span class="n">robie</span> <span class="o">=</span> <span class="n">robie_factory</span><span class="p">(</span>
+</span><span id="line-305">        <span class="n">config_factory</span><span class="p">(</span><span class="n">tmp_path</span><span class="p">))</span>
+</span><span id="line-306">
+</span><span id="line-307">    <span class="n">service</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-308">        <span class="n">service_factory</span><span class="p">(</span><span class="n">robie</span><span class="p">))</span>
+</span><span id="line-309">
+</span><span id="line-310">
+</span><span id="line-311">    <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
+</span><span id="line-312">    <span class="n">clients</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>
 </span><span id="line-313">
-</span><span id="line-314">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-315">        <span class="n">client</span><span class="p">,</span> <span class="n">MTMClient</span><span class="p">)</span>
-</span><span id="line-316">
-</span><span id="line-317">
-</span><span id="line-318">    <span class="n">content</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="line-319">        <span class="p">{</span><span class="s1">&#39;header&#39;</span><span class="p">:</span> <span class="s1">&#39;Testing&#39;</span><span class="p">,</span>
-</span><span id="line-320">         <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;enrobie&#39;</span><span class="p">,</span>
-</span><span id="line-321">         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;enrobie&#39;</span><span class="p">}]</span>
-</span><span id="line-322">
-</span><span id="line-323">
-</span><span id="line-324">    <span class="p">(</span><span class="n">respx_mock</span>
-</span><span id="line-325">     <span class="o">.</span><span class="n">get</span><span class="p">(</span>
-</span><span id="line-326">         <span class="s1">&#39;https://mocked:443&#39;</span>
-</span><span id="line-327">         <span class="s1">&#39;/api/v4/users/mtmunq/&#39;</span>
-</span><span id="line-328">         <span class="s1">&#39;teams/mocked/channels&#39;</span><span class="p">)</span>
-</span><span id="line-329">     <span class="o">.</span><span class="n">mock</span><span class="p">(</span><span class="n">Response</span><span class="p">(</span>
-</span><span id="line-330">         <span class="n">status_code</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
-</span><span id="line-331">         <span class="n">content</span><span class="o">=</span><span class="n">dumps</span><span class="p">(</span><span class="n">content</span><span class="p">))))</span>
-</span><span id="line-332">
-</span><span id="line-333">
-</span><span id="line-334">    <span class="n">client_mtmsock</span><span class="p">(</span><span class="n">MTMEVENTS</span><span class="p">)</span>
+</span><span id="line-314">    <span class="n">client</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">]</span>
+</span><span id="line-315">
+</span><span id="line-316">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-317">        <span class="n">client</span><span class="p">,</span> <span class="n">MTMClient</span><span class="p">)</span>
+</span><span id="line-318">
+</span><span id="line-319">
+</span><span id="line-320">    <span class="n">content</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="line-321">        <span class="p">{</span><span class="s1">&#39;header&#39;</span><span class="p">:</span> <span class="s1">&#39;Testing&#39;</span><span class="p">,</span>
+</span><span id="line-322">         <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;enrobie&#39;</span><span class="p">,</span>
+</span><span id="line-323">         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;enrobie&#39;</span><span class="p">}]</span>
+</span><span id="line-324">
+</span><span id="line-325">
+</span><span id="line-326">    <span class="p">(</span><span class="n">respx_mock</span>
+</span><span id="line-327">     <span class="o">.</span><span class="n">get</span><span class="p">(</span>
+</span><span id="line-328">         <span class="s1">&#39;https://mocked:443&#39;</span>
+</span><span id="line-329">         <span class="s1">&#39;/api/v4/users/mtmunq/&#39;</span>
+</span><span id="line-330">         <span class="s1">&#39;teams/mocked/channels&#39;</span><span class="p">)</span>
+</span><span id="line-331">     <span class="o">.</span><span class="n">mock</span><span class="p">(</span><span class="n">Response</span><span class="p">(</span>
+</span><span id="line-332">         <span class="n">status_code</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+</span><span id="line-333">         <span class="n">content</span><span class="o">=</span><span class="n">dumps</span><span class="p">(</span><span class="n">content</span><span class="p">))))</span>
+</span><span id="line-334">
 </span><span id="line-335">
-</span><span id="line-336">    <span class="n">service</span><span class="o">.</span><span class="n">limit_threads</span><span class="p">(</span>
-</span><span id="line-337">        <span class="n">clients</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">],</span>
-</span><span id="line-338">        <span class="n">plugins</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">])</span>
-</span><span id="line-339">
-</span><span id="line-340">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-336">    <span class="n">client_mtmsock</span><span class="p">(</span><span class="n">MTMEVENTS</span><span class="p">)</span>
+</span><span id="line-337">
+</span><span id="line-338">    <span class="n">service</span><span class="o">.</span><span class="n">limit_threads</span><span class="p">(</span>
+</span><span id="line-339">        <span class="n">clients</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">],</span>
+</span><span id="line-340">        <span class="n">plugins</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">])</span>
 </span><span id="line-341">
-</span><span id="line-342">
-</span><span id="line-343">    <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span>
-</span><span id="line-344">        <span class="n">target</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">operate</span><span class="p">)</span>
-</span><span id="line-345">
-</span><span id="line-346">    <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-342">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-343">
+</span><span id="line-344">
+</span><span id="line-345">    <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span>
+</span><span id="line-346">        <span class="n">target</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">operate</span><span class="p">)</span>
 </span><span id="line-347">
-</span><span id="line-348">
-</span><span id="line-349">    <span class="n">block_sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="line-348">    <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="line-349">
 </span><span id="line-350">
-</span><span id="line-351">
-</span><span id="line-352">    <span class="n">select</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-353">        <span class="n">client</span><span class="o">.</span><span class="n">channels</span>
-</span><span id="line-354">        <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;enrobie&#39;</span><span class="p">))</span>
-</span><span id="line-355">
-</span><span id="line-356">    <span class="k">assert</span> <span class="n">select</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="line-351">    <span class="n">block_sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="line-352">
+</span><span id="line-353">
+</span><span id="line-354">    <span class="n">select</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-355">        <span class="n">client</span><span class="o">.</span><span class="n">channels</span>
+</span><span id="line-356">        <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;enrobie&#39;</span><span class="p">))</span>
 </span><span id="line-357">
-</span><span id="line-358">    <span class="k">assert</span> <span class="n">select</span><span class="o">.</span><span class="n">endumped</span> <span class="o">==</span> <span class="p">{</span>
-</span><span id="line-359">        <span class="s1">&#39;members&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-360">        <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;enrobie&#39;</span><span class="p">,</span>
-</span><span id="line-361">        <span class="s1">&#39;topic&#39;</span><span class="p">:</span> <span class="s1">&#39;Testing&#39;</span><span class="p">,</span>
-</span><span id="line-362">        <span class="s1">&#39;unique&#39;</span><span class="p">:</span> <span class="s1">&#39;enrobie&#39;</span><span class="p">}</span>
-</span><span id="line-363">
-</span><span id="line-364">
-</span><span id="line-365">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
+</span><span id="line-358">    <span class="k">assert</span> <span class="n">select</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="line-359">
+</span><span id="line-360">    <span class="k">assert</span> <span class="n">select</span><span class="o">.</span><span class="n">endumped</span> <span class="o">==</span> <span class="p">{</span>
+</span><span id="line-361">        <span class="s1">&#39;members&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-362">        <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;enrobie&#39;</span><span class="p">,</span>
+</span><span id="line-363">        <span class="s1">&#39;topic&#39;</span><span class="p">:</span> <span class="s1">&#39;Testing&#39;</span><span class="p">,</span>
+</span><span id="line-364">        <span class="s1">&#39;unique&#39;</span><span class="p">:</span> <span class="s1">&#39;enrobie&#39;</span><span class="p">}</span>
+</span><span id="line-365">
 </span><span id="line-366">
-</span><span id="line-367">    <span class="k">while</span> <span class="n">service</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
-</span><span id="line-368">        <span class="n">block_sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="line-369">
-</span><span id="line-370">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</span><span id="line-367">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
+</span><span id="line-368">
+</span><span id="line-369">    <span class="k">while</span> <span class="n">service</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+</span><span id="line-370">        <span class="n">block_sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </span><span id="line-371">
-</span><span id="line-372">    <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
+</span><span id="line-372">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</span><span id="line-373">
+</span><span id="line-374">    <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
 
 </span></code></pre></div>
     </div></div>
