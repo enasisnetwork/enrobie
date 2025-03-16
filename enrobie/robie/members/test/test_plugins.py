@@ -57,9 +57,9 @@ def test_RobiePlugins(
 
     assert member.service
 
-    assert len(member.threads) == 5
+    assert len(member.threads) == 7
 
-    assert len(member.childs) == 5
+    assert len(member.childs) == 7
 
     assert member.mqueue
 

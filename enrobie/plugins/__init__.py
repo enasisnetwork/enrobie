@@ -13,8 +13,12 @@ from .autojoin import AutoJoinPlugin
 from .autojoin import AutoJoinPluginParams
 from .autonick import AutoNickPlugin
 from .autonick import AutoNickPluginParams
+from .enhomie import HomiePlugin
+from .enhomie import HomiePluginParams
 from .logger import LoggerPlugin
 from .logger import LoggerPluginParams
+from .nagios import NagiosPlugin
+from .nagios import NagiosPluginParams
 from .status import StatusPlugin
 from .status import StatusPluginIconParams
 from .status import StatusPluginItem
@@ -30,6 +34,10 @@ __all__ = [
     'AutoNickPluginParams',
     'AinswerPlugin',
     'AinswerPluginParams',
+    'HomiePlugin',
+    'HomiePluginParams',
+    'NagiosPlugin',
+    'NagiosPluginParams',
     'LoggerPlugin',
     'LoggerPluginParams',
     'StatusPlugin',

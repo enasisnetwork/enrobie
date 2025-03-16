@@ -349,6 +349,7 @@ def test_MTMClient_channels(
 
     client_mtmsock(MTMEVENTS)
 
+
     service.limit(
         clients=['mtmbot'],
         plugins=['status'])

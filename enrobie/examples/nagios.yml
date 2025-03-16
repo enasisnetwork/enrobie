@@ -1,0 +1,27 @@
+---
+
+
+
+plugins:
+
+
+  ####################
+  ## Nagios Console ##
+  ####################
+  nagios:
+    enable: true
+    locate: enrobie.plugins.NagiosPlugin
+
+    restful: http://mocked/nagios
+    username: username
+    password: password
+
+    clients:
+      - dscbot
+      - ircbot
+      - mtmbot
+
+    status:
+      dsc: ':mag:'
+      irc: 🔍
+      mtm: ':mag:'

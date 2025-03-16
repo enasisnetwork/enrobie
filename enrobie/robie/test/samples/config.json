@@ -204,6 +204,31 @@
         "mtm": ":wrench:"
       }
     },
+    "enhomie": {
+      "enable": true,
+      "locate": "enrobie.plugins.HomiePlugin",
+      "command": {
+        "irc": "!persist",
+        "dsc": "!persist",
+        "mtm": "!persist"
+      },
+      "restful": "http://mocked:8420",
+      "username": "username",
+      "password": "password",
+      "timeout": 30,
+      "ssl_verify": true,
+      "ssl_capem": null,
+      "clients": [
+        "dscbot",
+        "ircbot",
+        "mtmbot"
+      ],
+      "status": {
+        "irc": "\ud83d\udca1",
+        "dsc": ":bulb:",
+        "mtm": ":bulb:"
+      }
+    },
     "logger": {
       "enable": true,
       "locate": "enrobie.plugins.LoggerPlugin",
@@ -219,6 +244,31 @@
         "irc": "\ud83e\udeb5",
         "dsc": ":wood:",
         "mtm": ":wood:"
+      }
+    },
+    "nagios": {
+      "enable": true,
+      "locate": "enrobie.plugins.NagiosPlugin",
+      "command": {
+        "irc": "!nagios",
+        "dsc": "!nagios",
+        "mtm": "!nagios"
+      },
+      "restful": "http://mocked/nagios",
+      "username": "username",
+      "password": "password",
+      "timeout": 30,
+      "ssl_verify": true,
+      "ssl_capem": null,
+      "clients": [
+        "dscbot",
+        "ircbot",
+        "mtmbot"
+      ],
+      "status": {
+        "irc": "\ud83d\udd0d",
+        "dsc": ":mag:",
+        "mtm": ":mag:"
       }
     },
     "status": {

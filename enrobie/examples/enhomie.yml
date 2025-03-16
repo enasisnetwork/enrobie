@@ -1,0 +1,27 @@
+---
+
+
+
+plugins:
+
+
+  ####################
+  ## Homie Automate ##
+  ####################
+  enhomie:
+    enable: true
+    locate: enrobie.plugins.HomiePlugin
+
+    restful: http://mocked:8420
+    username: username
+    password: password
+
+    clients:
+      - dscbot
+      - ircbot
+      - mtmbot
+
+    status:
+      dsc: ':bulb:'
+      irc: 💡
+      mtm: ':bulb:'
