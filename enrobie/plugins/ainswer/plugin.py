@@ -28,7 +28,6 @@ from ...robie.childs import RobiePlugin
 if TYPE_CHECKING:
     from pydantic_ai import Agent
     from pydantic_ai.models import Model
-    from ...robie.threads import RobieThread
     from ...robie.models import RobieMessage
 
 
@@ -204,14 +203,14 @@ class AinswerPlugin(RobiePlugin):
 
     def operate(
         self,
-        thread: 'RobieThread',
     ) -> None:
         """
         Perform the operation related to Robie service threads.
-
-        :param thread: Child class instance for Chatting Robie.
         """
 
+        assert self.thread
+
+        thread = self.thread
         mqueue = thread.mqueue
         member = thread.member
         cqueue = member.cqueue
@@ -233,14 +232,18 @@ class AinswerPlugin(RobiePlugin):
             isme = mitem.isme
             family = mitem.family
 
+            # Ignore unrelated clients
             if name not in names:
                 continue  # NOCVR
 
+            # Ignore event from client
             if isme is True:
                 continue
 
+            # Ignore expired messages
             if time.since > 15:
                 continue  # NOCVR
+
 
             if family == 'discord':
                 composedsc(
@@ -420,10 +423,15 @@ class AinswerPlugin(RobiePlugin):
         :param status: One of several possible value for status.
         """
 
-        robie = self.robie
-        childs = robie.childs
-        plugins = childs.plugins
+        thread = self.thread
         params = self.params
+
+        if thread is None:
+            return None
+
+        plugins = (
+            thread.service
+            .plugins.childs)
 
         if 'status' not in plugins:
             return NCNone

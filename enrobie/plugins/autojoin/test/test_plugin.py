@@ -12,17 +12,17 @@ from threading import Thread
 from time import sleep as block_sleep
 from typing import TYPE_CHECKING
 
+from encommon.times import Timer
 from encommon.types import inrepr
 from encommon.types import instr
 from encommon.types import lattrs
 
 from enconnect.fixtures import IRCClientSocket
-from enconnect.irc.test import EVENTS as IRCEVENTS
 
 from ..plugin import AutoJoinPlugin
+from ....clients.irc.test import IRCEVENTS
 
 if TYPE_CHECKING:
-    from ....robie import Robie
     from ....robie import RobieService
 
 
@@ -32,19 +32,17 @@ IRCEVENTS = deepcopy(IRCEVENTS)
 
 
 def test_AutoJoinPlugin(
-    robie: 'Robie',
+    service: 'RobieService',
 ) -> None:
     """
     Perform various tests associated with relevant routines.
 
-    :param robie: Primary class instance for Chatting Robie.
+    :param service: Ancilary Chatting Robie class instance.
     """
 
-    childs = robie.childs
-    plugins = childs.plugins
-
-
-    plugin = plugins['autojoin']
+    plugin = (
+        service.plugins
+        .childs['autojoin'])
 
     assert isinstance(
         plugin, AutoJoinPlugin)
@@ -57,9 +55,10 @@ def test_AutoJoinPlugin(
         '_RobieChild__name',
         '_RobieChild__params',
         '_AutoJoinPlugin__started',
-        '_AutoJoinPlugin__joined',
+        '_AutoJoinPlugin__timer',
         '_AutoJoinPlugin__should',
-        '_AutoJoinPlugin__timer']
+        '_AutoJoinPlugin__joined',
+        '_RobiePlugin__thread']
 
 
     assert inrepr(
@@ -88,7 +87,7 @@ def test_AutoJoinPlugin(
 
     assert plugin.params
 
-    assert not plugin.thread
+    assert plugin.thread
 
     assert plugin.dumped
 
@@ -105,7 +104,17 @@ def test_AutoJoinPlugin_cover(
     :param client_ircsock: Object to mock client connection.
     """
 
-    events = [
+    plugin = (
+        service.plugins
+        .childs['autojoin'])
+
+    setattr(
+        plugin,
+        '_AutoJoinPlugin__timer',
+        Timer(0))
+
+
+    client_ircsock([
 
         (':mocked 376 ircbot '
          ':End of /MOTD command.'),
@@ -120,14 +129,13 @@ def test_AutoJoinPlugin_cover(
         ':ircbot PART :#enrobie',
 
         ('ERROR :Closing Link: ircbot'
-         '[mocked] (Quit: ircbot)')]
+         '[mocked] (Quit: ircbot)')])
 
 
-    client_ircsock(events)
-
-    service.limit_threads(
-        clients=['ircbot'],
-        plugins=['autojoin'])
+    service.limit(
+        plugins=[
+            'autojoin',
+            'status'])
 
     service.start()
 
@@ -138,7 +146,7 @@ def test_AutoJoinPlugin_cover(
     thread.start()
 
 
-    block_sleep(6)
+    block_sleep(5)
 
     service.soft()
 

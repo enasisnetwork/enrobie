@@ -17,35 +17,32 @@ from encommon.types import instr
 from encommon.types import lattrs
 from encommon.utils import read_text
 
-from enconnect.discord.test import EVENTS as DSCEVENTS
 from enconnect.fixtures import DSCClientSocket
 from enconnect.fixtures import IRCClientSocket
 from enconnect.fixtures import MTMClientSocket
-from enconnect.irc.test import EVENTS as IRCEVENTS
-from enconnect.mattermost.test import EVENTS as MTMEVENTS
 
 from ..plugin import LoggerPlugin
+from ....clients.discord.test import DSCEVENTS
+from ....clients.irc.test import IRCEVENTS
+from ....clients.mattermost.test import MTMEVENTS
 
 if TYPE_CHECKING:
-    from ....robie import Robie
     from ....robie import RobieService
 
 
 
 def test_LoggerPlugin(
-    robie: 'Robie',
+    service: 'RobieService',
 ) -> None:
     """
     Perform various tests associated with relevant routines.
 
-    :param robie: Primary class instance for Chatting Robie.
+    :param service: Ancilary Chatting Robie class instance.
     """
 
-    childs = robie.childs
-    plugins = childs.plugins
-
-
-    plugin = plugins['logger']
+    plugin = (
+        service.plugins
+        .childs['logger'])
 
     assert isinstance(
         plugin, LoggerPlugin)
@@ -58,7 +55,8 @@ def test_LoggerPlugin(
         '_RobieChild__name',
         '_RobieChild__params',
         '_LoggerPlugin__started',
-        '_LoggerPlugin__history']
+        '_LoggerPlugin__history',
+        '_RobiePlugin__thread']
 
 
     assert inrepr(
@@ -87,7 +85,7 @@ def test_LoggerPlugin(
 
     assert plugin.params
 
-    assert not plugin.thread
+    assert plugin.thread
 
     assert plugin.dumped
 
@@ -110,11 +108,9 @@ def test_LoggerPlugin_cover(
     :param tmp_path: pytest object for temporal filesystem.
     """
 
-    robie = service.robie
-    childs = robie.childs
-    plugins = childs.plugins
-
-    plugin = plugins['logger']
+    plugin = (
+        service.plugins
+        .childs['logger'])
 
     assert isinstance(
         plugin, LoggerPlugin)
@@ -127,8 +123,11 @@ def test_LoggerPlugin_cover(
     client_ircsock(IRCEVENTS)
     client_mtmsock(MTMEVENTS)
 
-    service.limit_threads(
-        plugins=['logger'])
+
+    service.limit(
+        plugins=[
+            'logger',
+            'status'])
 
     service.start()
 

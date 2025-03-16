@@ -7,7 +7,6 @@ is permitted, for more information consult the project license file.
 
 
 
-from typing import TYPE_CHECKING
 from typing import Type
 
 from encommon.times import Timer
@@ -17,9 +16,6 @@ from .params import AutoNickPluginParams
 from ..status import StatusPlugin
 from ..status import StatusPluginStates
 from ...robie.childs import RobiePlugin
-
-if TYPE_CHECKING:
-    from ...robie.threads import RobieThread
 
 
 
@@ -45,7 +41,10 @@ class AutoNickPlugin(RobiePlugin):
 
         self.__started = False
 
-        self.__timer = Timer(5)
+        params = self.params
+
+        self.__timer = Timer(
+            params.interval)
 
         self.__status('pending')
 
@@ -94,16 +93,17 @@ class AutoNickPlugin(RobiePlugin):
 
     def operate(
         self,
-        thread: 'RobieThread',
     ) -> None:
         """
         Perform the operation related to Robie service threads.
-
-        :param thread: Child class instance for Chatting Robie.
         """
 
+        assert self.thread
+
+        thread = self.thread
         mqueue = thread.mqueue
         timer = self.__timer
+
 
         if not self.__started:
             self.__started = True
@@ -111,7 +111,7 @@ class AutoNickPlugin(RobiePlugin):
 
 
         if timer.ready():
-            self.__operate(thread)
+            self.__operate()
 
 
         while not mqueue.empty:
@@ -120,24 +120,23 @@ class AutoNickPlugin(RobiePlugin):
 
     def __operate(
         self,
-        thread: 'RobieThread',
     ) -> None:
         """
         Perform the operation related to Robie service threads.
-
-        :param thread: Child class instance for Chatting Robie.
         """
 
         from ...clients import IRCClient
 
-        robie = self.robie
-        childs = robie.childs
+        assert self.thread
+
+        thread = self.thread
         member = thread.member
         cqueue = member.cqueue
         params = self.params
 
         clients = (
-            childs.clients
+            thread.service
+            .clients.childs
             .values())
 
         names = params.clients
@@ -145,7 +144,13 @@ class AutoNickPlugin(RobiePlugin):
         failure: set[bool] = set()
 
 
-        def _autonick() -> None:
+        for client in clients:
+
+            name = client.name
+
+            # Ignore unrelated clients
+            if name not in names:
+                continue
 
             assert isinstance(
                 client, IRCClient)
@@ -154,15 +159,15 @@ class AutoNickPlugin(RobiePlugin):
                 client.client
                 .connected)
 
+            # Bypass when disconnected
             if connected is False:
                 failure.add(True)
                 return None
 
-            params = client.params
 
             should = (
-                params.client
-                .nickname)
+                client.params
+                .client.nickname)
 
             current = (
                 client.client
@@ -170,6 +175,7 @@ class AutoNickPlugin(RobiePlugin):
 
             if current == should:
                 return None
+
 
             failure.add(True)
 
@@ -179,23 +185,10 @@ class AutoNickPlugin(RobiePlugin):
                 cqueue, rawcmd)
 
 
-        for client in clients:
-
-            name = client.name
-            family = client.family
-
-            if family != 'irc':
-                continue
-
-            if name in names:
-                _autonick()
-
-
         self.__status(
             'failure'
             if any(failure)
             else 'normal')
-
 
 
     def __status(
@@ -208,10 +201,15 @@ class AutoNickPlugin(RobiePlugin):
         :param status: One of several possible value for status.
         """
 
-        robie = self.robie
-        childs = robie.childs
-        plugins = childs.plugins
+        thread = self.thread
         params = self.params
+
+        if thread is None:
+            return None
+
+        plugins = (
+            thread.service
+            .plugins.childs)
 
         if 'status' not in plugins:
             return NCNone

@@ -145,8 +145,8 @@ class RobieClients(RobieMember):
             object = model(
                 self, client)
 
-            threads[name] = object
             client.thread = object
+            threads[name] = object
 
 
         self.threads = threads

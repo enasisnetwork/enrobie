@@ -7,11 +7,43 @@ is permitted, for more information consult the project license file.
 
 
 
+from encommon.types import inrepr
+from encommon.types import instr
+from encommon.types import lattrs
+
 from ..states import ClientChannels
+from ..states import ClientPublish
 
 
 
 def test_ClientChannels() -> None:
+    """
+    Perform various tests associated with relevant routines.
+    """
+
+    channels = ClientChannels()
+
+
+    attrs = lattrs(channels)
+
+    assert attrs == [
+        '_ClientChannels__cached']
+
+
+    assert inrepr(
+        'states.ClientChannels',
+        channels)
+
+    assert isinstance(
+        hash(channels), int)
+
+    assert instr(
+        'states.ClientChannels',
+        channels)
+
+
+
+def test_ClientChannels_basics() -> None:
     """
     Perform various tests associated with relevant routines.
     """
@@ -129,3 +161,30 @@ def test_ClientChannels_cover() -> None:
         'title': None,
         'topic': None,
         'unique': 'test3'}
+
+
+
+def test_ClientPublish() -> None:
+    """
+    Perform various tests associated with relevant routines.
+    """
+
+    publish = ClientPublish()
+
+
+    attrs = lattrs(publish)
+
+    assert attrs == [
+        '_ClientPublish__callbacks']
+
+
+    assert inrepr(
+        'states.ClientPublish',
+        publish)
+
+    assert isinstance(
+        hash(publish), int)
+
+    assert instr(
+        'states.ClientPublish',
+        publish)

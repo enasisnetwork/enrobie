@@ -8,7 +8,6 @@ is permitted, for more information consult the project license file.
 
 
 from typing import Optional
-from typing import TYPE_CHECKING
 from typing import Type
 from typing import get_args
 
@@ -26,9 +25,6 @@ from .helpers import reportmtm
 from .params import StatusPluginIconParams
 from .params import StatusPluginParams
 from ...robie.childs import RobiePlugin
-
-if TYPE_CHECKING:
-    from ...robie.threads import RobieThread
 
 
 
@@ -104,14 +100,14 @@ class StatusPlugin(RobiePlugin):
 
     def operate(
         self,
-        thread: 'RobieThread',
     ) -> None:
         """
         Perform the operation related to Robie service threads.
-
-        :param thread: Child class instance for Chatting Robie.
         """
 
+        assert self.thread
+
+        thread = self.thread
         mqueue = thread.mqueue
         member = thread.member
         cqueue = member.cqueue
@@ -124,7 +120,7 @@ class StatusPlugin(RobiePlugin):
         kinds = ['privmsg', 'chanmsg']
 
 
-        self.report(thread)
+        self.report()
 
 
         while not mqueue.empty:
@@ -137,12 +133,15 @@ class StatusPlugin(RobiePlugin):
             isme = mitem.isme
             message = mitem.message
 
+            # Ignore unrelated events
             if kind not in kinds:
                 continue
 
+            # Ignore event from client
             if isme is True:
                 continue
 
+            # Ignore expired messages
             if time.since > 15:
                 continue  # NOCVR
 
@@ -158,11 +157,13 @@ class StatusPlugin(RobiePlugin):
             if family == 'mattermost':
                 match = command.mtm
 
+            # Ignore unrelated clients
             if match is None:
                 continue  # NOCVR
 
+            # Ignore unrelated message
             if message != match:
-                continue  # NOCVR
+                continue
 
 
             if family == 'discord':
@@ -183,22 +184,23 @@ class StatusPlugin(RobiePlugin):
 
     def report(
         self,
-        thread: 'RobieThread',
     ) -> None:
         """
         Perform the operation related to Robie service threads.
-
-        :param thread: Child class instance for Chatting Robie.
         """
 
+        assert self.thread
+
+        thread = self.thread
         status = self.__status
         stated = self.__stated
-        robie = self.robie
         params = self.params
-        childs = robie.childs
-        clients = childs.clients
         member = thread.member
         cqueue = member.cqueue
+
+        clients = (
+            thread.service
+            .clients.childs)
 
         if not params.reports:
             return NCNone
@@ -240,6 +242,7 @@ class StatusPlugin(RobiePlugin):
             unique = (
                 f'{name}/{target}')
 
+            # Ignore disabled clients
             if name not in clients:
                 continue  # NOCVR
 
@@ -315,7 +318,7 @@ class StatusPlugin(RobiePlugin):
             _state = _object.state
 
             if state == _state:
-                return None
+                return NCNone
 
         robie.logger.log_i(
             base=self,

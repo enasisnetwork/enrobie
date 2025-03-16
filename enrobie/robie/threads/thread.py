@@ -345,7 +345,7 @@ class RobieThread(Thread):
         vacate = member.vacate
 
         try:
-            child.operate(self)
+            child.operate()
 
         except DupliThread as reason:
 

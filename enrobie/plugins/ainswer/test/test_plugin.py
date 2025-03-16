@@ -31,24 +31,22 @@ from ....conftest import robie_factory
 from ....conftest import service_factory
 
 if TYPE_CHECKING:
-    from ....robie import Robie
+    from ....robie import RobieService
 
 
 
 def test_AinswerPlugin(
-    robie: 'Robie',
+    service: 'RobieService',
 ) -> None:
     """
     Perform various tests associated with relevant routines.
 
-    :param robie: Primary class instance for Chatting Robie.
+    :param service: Ancilary Chatting Robie class instance.
     """
 
-    childs = robie.childs
-    plugins = childs.plugins
-
-
-    plugin = plugins['ainswer']
+    plugin = (
+        service.plugins
+        .childs['ainswer'])
 
     assert isinstance(
         plugin, AinswerPlugin)
@@ -64,7 +62,8 @@ def test_AinswerPlugin(
         '_AinswerPlugin__question',
         '_AinswerPlugin__history',
         '_AinswerPlugin__model',
-        '_AinswerPlugin__agent']
+        '_AinswerPlugin__agent',
+        '_RobiePlugin__thread']
 
 
     assert inrepr(
@@ -93,7 +92,7 @@ def test_AinswerPlugin(
 
     assert plugin.params
 
-    assert not plugin.thread
+    assert plugin.thread
 
     assert plugin.dumped
 
@@ -153,8 +152,10 @@ def test_AinswerPlugin_cover(
     with override_agent:
 
 
-        service.limit_threads(
-            plugins=['ainswer'])
+        service.limit(
+            plugins=[
+                'ainswer',
+                'status'])
 
         service.start()
 
@@ -165,7 +166,7 @@ def test_AinswerPlugin_cover(
         thread.start()
 
 
-        block_sleep(10)
+        block_sleep(5)
 
 
         select = (

@@ -30,7 +30,10 @@ from ...logger import LoggerPlugin
 from ...logger.test.test_history import _logger_history
 from ....clients.irc import IRCClient
 from ....clients.irc.message import IRCMessage
-from ....clients.irc.test import IRCEVENTS
+from ....clients.irc.test import IRCEVENT_HUBERT_CHAN
+from ....clients.irc.test import IRCEVENT_HUBERT_PRIV
+from ....clients.irc.test import IRCEVENT_RANDOM_CHAN
+from ....clients.irc.test import IRCEVENT_RANDOM_PRIV
 
 if TYPE_CHECKING:
     from ....robie import Robie
@@ -77,10 +80,14 @@ def test_AinswerQuestion_engage(
 
 @mark.parametrize(
     'file,kind,event',
-    [('random_chanmsg', 'chanmsg', IRCEVENTS[8]),
-     ('random_privmsg', 'privmsg', IRCEVENTS[9]),
-     ('hubert_chanmsg', 'chanmsg', IRCEVENTS[10]),
-     ('hubert_privmsg', 'privmsg', IRCEVENTS[12])])
+    [('random_chanmsg', 'chanmsg',
+      IRCEVENT_RANDOM_CHAN),
+     ('random_privmsg', 'privmsg',
+      IRCEVENT_RANDOM_PRIV),
+     ('hubert_chanmsg', 'chanmsg',
+      IRCEVENT_HUBERT_CHAN),
+     ('hubert_privmsg', 'privmsg',
+      IRCEVENT_HUBERT_PRIV)])
 def test_AinswerQuestion_prompt(
     robie: 'Robie',
     file: str,

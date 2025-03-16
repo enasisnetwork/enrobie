@@ -83,7 +83,7 @@ def test_RobieService(
     client_ircsock()
     client_mtmsock()
 
-    service.limit_threads(
+    service.limit(
         plugins=['status'])
 
     service.start()
@@ -161,7 +161,7 @@ def test_RobieService_cover(
     :param service: Ancilary Chatting Robie class instance.
     """
 
-    service.limit_threads(
+    service.limit(
         clients=['ircbot'],
         plugins=['status'])
 

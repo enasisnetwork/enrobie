@@ -18,89 +18,38 @@ from encommon.types import instr
 from encommon.types import lattrs
 from encommon.types import setate
 
-from enconnect.discord.test import EVENTS as DSCEVENTS
 from enconnect.fixtures import DSCClientSocket
 from enconnect.fixtures import IRCClientSocket
 from enconnect.fixtures import MTMClientSocket
-from enconnect.irc.test import EVENTS as IRCEVENTS
-from enconnect.mattermost.test import EVENTS as MTMEVENTS
 
 from ..plugin import StatusPlugin
+from ....clients.discord.test import DSCEVENTS
+from ....clients.discord.test import DSCEVENT_HUBERT_CHAN
+from ....clients.discord.test import DSCEVENT_HUBERT_PRIV
+from ....clients.irc.test import IRCEVENTS
+from ....clients.irc.test import IRCEVENT_HUBERT_CHAN
+from ....clients.irc.test import IRCEVENT_HUBERT_PRIV
+from ....clients.mattermost.test import MTMEVENTS
+from ....clients.mattermost.test import MTMEVENT_HUBERT_CHAN
+from ....clients.mattermost.test import MTMEVENT_HUBERT_PRIV
 
 if TYPE_CHECKING:
-    from ....robie import Robie
     from ....robie import RobieService
 
 
 
-DSCEVENTS = deepcopy(DSCEVENTS)
-IRCEVENTS = deepcopy(IRCEVENTS)
-MTMEVENTS = deepcopy(MTMEVENTS)
-
-
-
-setate(
-    DSCEVENTS[0],
-    'd/content',
-    '!status')
-
-setate(
-    DSCEVENTS[1],
-    'd/content',
-    '!status')
-
-
-
-IRCEVENTS[1] = (
-    IRCEVENTS[1]
-    .replace(
-        'Hello ircbot',
-        '!status'))
-
-IRCEVENTS[3] = (
-    IRCEVENTS[3]
-    .replace(
-        'Hello world',
-        '!status'))
-
-
-
-setate(
-    MTMEVENTS[0],
-    'data/post',
-    (getate(
-        MTMEVENTS[0],
-        'data/post')
-     .replace(
-         'Hello mtmbot',
-         '!status')))
-
-setate(
-    MTMEVENTS[1],
-    'data/post',
-    (getate(
-        MTMEVENTS[1],
-        'data/post')
-     .replace(
-         'Hello world',
-         '!status')))
-
-
-
 def test_StatusPlugin(
-    robie: 'Robie',
+    service: 'RobieService',
 ) -> None:
     """
     Perform various tests associated with relevant routines.
 
-    :param robie: Primary class instance for Chatting Robie.
+    :param service: Ancilary Chatting Robie class instance.
     """
 
-    childs = robie.childs
-    plugins = childs.plugins
-
-
-    plugin = plugins['status']
+    plugin = (
+        service.plugins
+        .childs['status'])
 
     assert isinstance(
         plugin, StatusPlugin)
@@ -113,7 +62,8 @@ def test_StatusPlugin(
         '_RobieChild__name',
         '_RobieChild__params',
         '_StatusPlugin__status',
-        '_StatusPlugin__stated']
+        '_StatusPlugin__stated',
+        '_RobiePlugin__thread']
 
 
     assert inrepr(
@@ -142,13 +92,13 @@ def test_StatusPlugin(
 
     assert plugin.params
 
-    assert not plugin.thread
+    assert plugin.thread
 
     assert plugin.dumped
 
 
 
-def test_StatusPlugin_cover(
+def test_StatusPlugin_cover(  # noqa: CFQ001
     service: 'RobieService',
     client_dscsock: DSCClientSocket,
     client_ircsock: IRCClientSocket,
@@ -163,11 +113,89 @@ def test_StatusPlugin_cover(
     :param client_mtmsock: Object to mock client connection.
     """
 
-    client_dscsock(DSCEVENTS)
-    client_ircsock(IRCEVENTS)
-    client_mtmsock(MTMEVENTS)
 
-    service.limit_threads(
+    dscevents = (
+        deepcopy(DSCEVENTS))
+
+    dscchan = deepcopy(
+        DSCEVENT_HUBERT_CHAN)
+
+    dscpriv = deepcopy(
+        DSCEVENT_HUBERT_PRIV)
+
+    setate(
+        dscchan,
+        'd/content',
+        '!status')
+
+    setate(
+        dscpriv,
+        'd/content',
+        '!status')
+
+    dscevents.append(dscpriv)
+    dscevents.append(dscchan)
+
+    client_dscsock(dscevents)
+
+
+    ircevents = (
+        deepcopy(IRCEVENTS))
+
+    ircchan = (
+        IRCEVENT_HUBERT_CHAN)
+
+    ircpriv = (
+        IRCEVENT_HUBERT_PRIV)
+
+    ircchan = (
+        ircchan.replace(
+            ':ircbot',
+            ':!status'))
+
+    ircpriv = (
+        ircpriv.replace(
+            ':ircbot',
+            ':!status'))
+
+    ircevents.append(ircpriv)
+    ircevents.append(ircchan)
+
+    client_ircsock(ircevents)
+
+
+    mtmevents = (
+        deepcopy(MTMEVENTS))
+
+    mtmchan = deepcopy(
+        MTMEVENT_HUBERT_CHAN)
+
+    mtmpriv = deepcopy(
+        MTMEVENT_HUBERT_PRIV)
+
+    post = 'data/post'
+
+    setate(
+        mtmchan, post,
+        (getate(mtmchan, post)
+         .replace(
+             'mtmbot',
+             '!status')))
+
+    setate(
+        mtmpriv, post,
+        (getate(mtmpriv, post)
+         .replace(
+             'mtmbot',
+             '!status')))
+
+    mtmevents.append(mtmpriv)
+    mtmevents.append(mtmchan)
+
+    client_mtmsock(mtmevents)
+
+
+    service.limit(
         plugins=['status'])
 
     service.start()

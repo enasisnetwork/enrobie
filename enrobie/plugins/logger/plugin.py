@@ -21,7 +21,7 @@ from ..status import StatusPluginStates
 from ...robie.childs import RobiePlugin
 
 if TYPE_CHECKING:
-    from ...robie.threads import RobieThread
+    from ...robie.models import RobieMessage
 
 
 
@@ -110,21 +110,21 @@ class LoggerPlugin(RobiePlugin):
 
     def operate(
         self,
-        thread: 'RobieThread',
     ) -> None:
         """
         Perform the operation related to Robie service threads.
-
-        :param thread: Child class instance for Chatting Robie.
         """
 
-        robie = self.robie
-        childs = robie.childs
-        persons = childs.persons
-        clients = childs.clients
+        assert self.thread
+
+        thread = self.thread
         mqueue = thread.mqueue
         params = self.params
         history = self.history
+
+        clients = (
+            thread.service
+            .clients.childs)
 
         names = params.clients
         output = params.output
@@ -141,35 +141,69 @@ class LoggerPlugin(RobiePlugin):
 
             mitem = mqueue.get()
 
-            _person = mitem.person
             name = mitem.client
             kind = mitem.kind
-            author = mitem.author
-            anchor = mitem.anchor
-            message = mitem.message
 
+            # Ignore unrelated clients
             if name not in names:
                 continue  # NOCVR
 
+            # Ignore unrelated events
             if kind not in kinds:
                 continue
 
-            assert author is not None
-            assert anchor is not None
-            assert message is not None
+            # Ignore disabled clients
+            if name not in clients:
+                continue  # NOCVR
 
-            person = (
-                persons[_person]
-                if _person is not None
-                else None)
-
-            client = clients[name]
 
             history.process(mitem)
 
+            self.__status('normal')
 
-            if output is None:
-                continue  # NOCVR
+
+            if output is not None:
+                self.__writeout(mitem)
+
+
+    def __writeout(
+        self,
+        mitem: 'RobieMessage',
+    ) -> None:
+        """
+        Write the event out to the designated output file path.
+
+        :param mitem: Item containing information for operation.
+        """
+
+        robie = self.robie
+        childs = robie.childs
+        persons = childs.persons
+        clients = childs.clients
+        params = self.params
+
+        output = params.output
+
+        _client = mitem.client
+        _person = mitem.person
+        author = mitem.author
+        anchor = mitem.anchor
+        message = mitem.message
+
+        person = (
+            persons[_person]
+            if _person is not None
+            else None)
+
+        client = clients[_client]
+
+        assert output is not None
+        assert author is not None
+        assert anchor is not None
+        assert message is not None
+
+
+        try:
 
             append = {
                 'time': str(mitem.time),
@@ -188,6 +222,18 @@ class LoggerPlugin(RobiePlugin):
 
             self.__status('normal')
 
+        except Exception as reason:
+
+            self.__status('failure')
+
+            robie.logger.log_e(
+                base=self,
+                name=self,
+                item='writeout',
+                status='exception',
+                exc_info=reason)
+
+
 
     def __status(
         self,
@@ -199,10 +245,15 @@ class LoggerPlugin(RobiePlugin):
         :param status: One of several possible value for status.
         """
 
-        robie = self.robie
-        childs = robie.childs
-        plugins = childs.plugins
+        thread = self.thread
         params = self.params
+
+        if thread is None:
+            return None
+
+        plugins = (
+            thread.service
+            .plugins.childs)
 
         if 'status' not in plugins:
             return NCNone

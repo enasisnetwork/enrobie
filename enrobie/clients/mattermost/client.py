@@ -33,12 +33,12 @@ from ...plugins import StatusPluginStates
 from ...robie.addons import RobieQueue
 from ...robie.childs import RobieClient
 from ...utils import ClientChannels
+from ...utils import ClientPublish
 from ...utils import DupliThread
 
 if TYPE_CHECKING:
     from ...robie.models import RobieCommand
     from ...robie.models import RobieMessage
-    from ...robie.threads import RobieThread
 
 
 
@@ -49,6 +49,7 @@ class MTMClient(RobieClient):
 
     __client: Client
     __channels: ClientChannels
+    __publish: ClientPublish
 
 
     def __post__(
@@ -68,6 +69,9 @@ class MTMClient(RobieClient):
 
         self.__channels = (
             ClientChannels())
+
+        self.__publish = (
+            ClientPublish())
 
 
     def validate(
@@ -139,6 +143,19 @@ class MTMClient(RobieClient):
 
 
     @property
+    def publish(
+        self,
+    ) -> ClientPublish:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__publish
+
+
+    @property
     def client(
         self,
     ) -> Client:
@@ -153,14 +170,14 @@ class MTMClient(RobieClient):
 
     def operate(  # noqa: CFQ001
         self,
-        thread: 'RobieThread',
     ) -> None:
         """
         Perform the operation related to Robie service threads.
-
-        :param thread: Child class instance for Chatting Robie.
         """
 
+        assert self.thread
+
+        thread = self.thread
         robie = thread.robie
         member = thread.member
         target = member.mqueue
@@ -447,6 +464,8 @@ class MTMClient(RobieClient):
 
         mqueue.put(mitem)
 
+        self.__publish.publish(mitem)
+
 
     def get_command(
         self,
@@ -572,10 +591,15 @@ class MTMClient(RobieClient):
         :param status: One of several possible value for status.
         """
 
-        robie = self.robie
-        childs = robie.childs
-        plugins = childs.plugins
+        thread = self.thread
         params = self.params
+
+        if thread is None:
+            return NCNone
+
+        plugins = (
+            thread.service
+            .plugins.childs)
 
         if 'status' not in plugins:
             return NCNone

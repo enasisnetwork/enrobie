@@ -14,16 +14,13 @@ from encommon.times import Timer
 from encommon.types import NCNone
 from encommon.types.strings import SPACED
 
-from enconnect.irc import ClientEvent
-
 from .params import AutoJoinPluginParams
 from ..status import StatusPlugin
 from ..status import StatusPluginStates
 from ...robie.childs import RobiePlugin
 
 if TYPE_CHECKING:
-    from ...clients import IRCClient
-    from ...robie.threads import RobieThread
+    from ...clients.irc.message import IRCMessage
 
 
 
@@ -58,13 +55,14 @@ class AutoJoinPlugin(RobiePlugin):
 
         params = self.params
 
-        channels = params.channels
-
-        self.__joined = {}
+        self.__timer = Timer(
+            params.interval)
 
 
         should: _CHANNELS = {}
         joined: _CHANNELS = {}
+
+        channels = params.channels
 
         for channel in channels:
 
@@ -80,8 +78,6 @@ class AutoJoinPlugin(RobiePlugin):
         self.__should = should
         self.__joined = joined
 
-
-        self.__timer = Timer(5)
 
         self.__status('pending')
 
@@ -130,25 +126,25 @@ class AutoJoinPlugin(RobiePlugin):
 
     def operate(
         self,
-        thread: 'RobieThread',
     ) -> None:
         """
         Perform the operation related to Robie service threads.
-
-        :param thread: Child class instance for Chatting Robie.
         """
 
         from ...clients import IRCClient
+        from ...clients.irc.message import IRCMessage
 
-        should = self.__should
+        assert self.thread
+
+        thread = self.thread
         joined = self.__joined
-        robie = self.robie
-        childs = robie.childs
-        clients = childs.clients
         mqueue = thread.mqueue
-        member = thread.member
-        cqueue = member.cqueue
         timer = self.__timer
+
+        clients = (
+            thread.service
+            .clients.childs)
+
 
         if not self.__started:
             self.__started = True
@@ -156,28 +152,7 @@ class AutoJoinPlugin(RobiePlugin):
 
 
         if timer.ready():
-            self.__operate(thread)
-
-
-        def _autojoin() -> None:
-
-            joined[name] = set()
-
-            assert isinstance(
-                client, IRCClient)
-
-            _should = should[name]
-            _joined = joined[name]
-
-            for join in _should:
-
-                if join in _joined:
-                    continue  # NOCVR
-
-                rawcmd = f'JOIN :{join}'
-
-                client.put_command(
-                    cqueue, rawcmd)
+            self.__operate()
 
 
         while not mqueue.empty:
@@ -187,7 +162,18 @@ class AutoJoinPlugin(RobiePlugin):
             name = mitem.client
             family = mitem.family
 
+            # Ignore unrelated clients
             if family != 'irc':
+                continue
+
+            assert isinstance(
+                mitem, IRCMessage)
+
+            event = mitem.event
+            command = event.command
+
+            # Ignore disabled clients
+            if name not in clients:
                 continue  # NOCVR
 
             client = clients[name]
@@ -195,44 +181,44 @@ class AutoJoinPlugin(RobiePlugin):
             assert isinstance(
                 client, IRCClient)
 
-            event = getattr(
-                mitem, 'event')
 
-            assert isinstance(
-                event, ClientEvent)
+            self.__process(mitem)
 
-            self.__process(
-                client, event)
 
-            if event.command == '376':
-                _autojoin()
+            if command == '376':
+
+                joined[name] = set()
+
+                self.__operate()
 
 
     def __operate(
         self,
-        thread: 'RobieThread',
     ) -> None:
         """
         Perform the operation related to Robie service threads.
-
-        :param thread: Child class instance for Chatting Robie.
         """
 
         from ...clients import IRCClient
 
+        assert self.thread
+
+        thread = self.thread
         should = self.__should
         joined = self.__joined
-        robie = self.robie
-        childs = robie.childs
-        clients = childs.clients
         member = thread.member
         cqueue = member.cqueue
+
+        clients = (
+            thread.service
+            .clients.childs)
 
         failure: set[bool] = set()
 
 
-        def _autojoin() -> None:
+        for name in should:
 
+            # Ignore disabled clients
             if name not in clients:
                 return NCNone
 
@@ -245,6 +231,7 @@ class AutoJoinPlugin(RobiePlugin):
                 client.client
                 .connected)
 
+            # Bypass when disconnected
             if connected is False:
                 failure.add(True)
                 return None
@@ -265,10 +252,6 @@ class AutoJoinPlugin(RobiePlugin):
                     cqueue, rawcmd)
 
 
-        for name in should:
-            _autojoin()
-
-
         self.__status(
             'failure'
             if any(failure)
@@ -277,26 +260,36 @@ class AutoJoinPlugin(RobiePlugin):
 
     def __process(
         self,
-        client: 'IRCClient',
-        event: ClientEvent,
+        mitem: 'IRCMessage',
     ) -> None:
         """
-        Process the provided message item from the Robie thread.
+        Write the event out to the designated output file path.
 
-        :param client: Client class instance for Chatting Robie.
-        :param event: Raw event received from the network peer.
+        :param mitem: Item containing information for operation.
         """
 
-        joined = self.__joined
-        name = client.name
+        from ...clients import IRCClient
 
-        if name not in joined:
+        robie = self.robie
+        childs = robie.childs
+        clients = childs.clients
+        joined = self.__joined
+
+        _client = mitem.client
+        isme = mitem.isme
+        event = mitem.event
+
+        client = clients[_client]
+
+        if _client not in joined:
             return NCNone
 
-        _joined = joined[name]
+        assert isinstance(
+            client, IRCClient)
+
+        _joined = joined[_client]
 
 
-        isme = event.isme
         command = event.command
         params = event.params
 
@@ -345,10 +338,15 @@ class AutoJoinPlugin(RobiePlugin):
         :param status: One of several possible value for status.
         """
 
-        robie = self.robie
-        childs = robie.childs
-        plugins = childs.plugins
+        thread = self.thread
         params = self.params
+
+        if thread is None:
+            return None
+
+        plugins = (
+            thread.service
+            .plugins.childs)
 
         if 'status' not in plugins:
             return NCNone

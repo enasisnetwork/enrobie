@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 
 
 
-def test_RobieClient_cover(
+def test_RobiePerson(
     robie: 'Robie',
 ) -> None:
     """
@@ -30,8 +30,6 @@ def test_RobieClient_cover(
     childs = robie.childs
     persons = childs.persons
     clients = childs.clients
-
-    client = clients['ircbot']
 
 
     person = persons['hubert']
@@ -80,13 +78,32 @@ def test_RobieClient_cover(
     assert person.weight
 
 
+    assert person.match(
+        clients['dscbot'],
+        '823039201390230492')
+
     assert not person.match(
-        client, 'anonymous')
+        clients['dscbot'],
+        '823902304920392013')
+
+
+    assert not person.match(
+        clients['ircbot'],
+        'anonymous')
 
     assert person.match(
-        client,
+        clients['ircbot'],
         'hubert!hubert@science.com')
 
     assert not person.match(
-        client,
+        clients['ircbot'],
         'bender!bender@bending.com')
+
+
+    assert person.match(
+        clients['mtmbot'],
+        'kjf9al2klaiietalkw')
+
+    assert not person.match(
+        clients['mtmbot'],
+        'iietalkwkjf9al2kla')

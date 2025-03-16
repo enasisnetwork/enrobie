@@ -107,7 +107,7 @@ class RobieMember:
         raise NotImplementedError
 
 
-    def limit_threads(
+    def limit(
         self,
         names: list[str],
     ) -> None:
