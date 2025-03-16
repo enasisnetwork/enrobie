@@ -58,3 +58,8 @@ class StatusPluginItem:
         _unique = other.unique
 
         return unique < _unique
+
+
+
+StatusPluginItems = dict[
+    str, StatusPluginItem]

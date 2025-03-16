@@ -8,6 +8,7 @@ is permitted, for more information consult the project license file.
 
 
 from typing import Optional
+from typing import TYPE_CHECKING
 from typing import Type
 from typing import get_args
 
@@ -25,6 +26,9 @@ from .helpers import reportmtm
 from .params import StatusPluginIconParams
 from .params import StatusPluginParams
 from ...robie.childs import RobiePlugin
+
+if TYPE_CHECKING:
+    from .common import StatusPluginItems
 
 
 
@@ -98,6 +102,19 @@ class StatusPlugin(RobiePlugin):
         return params
 
 
+    @property
+    def status(
+        self,
+    ) -> 'StatusPluginItems':
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return dict(self.__status)
+
+
     def operate(
         self,
     ) -> None:
@@ -109,12 +126,11 @@ class StatusPlugin(RobiePlugin):
 
         thread = self.thread
         mqueue = thread.mqueue
-        member = thread.member
-        cqueue = member.cqueue
         params = self.params
-        status = self.__status
 
         command = params.command
+
+
         match: Optional[str]
 
         kinds = ['privmsg', 'chanmsg']
@@ -167,19 +183,13 @@ class StatusPlugin(RobiePlugin):
 
 
             if family == 'discord':
-                composedsc(
-                    self, cqueue,
-                    mitem, status)
+                composedsc(self, mitem)
 
             if family == 'irc':
-                composeirc(
-                    self, cqueue,
-                    mitem, status)
+                composeirc(self, mitem)
 
             if family == 'mattermost':
-                composemtm(
-                    self, cqueue,
-                    mitem, status)
+                composemtm(self, mitem)
 
 
     def report(
@@ -195,8 +205,6 @@ class StatusPlugin(RobiePlugin):
         status = self.__status
         stated = self.__stated
         params = self.params
-        member = thread.member
-        cqueue = member.cqueue
 
         clients = (
             thread.service
@@ -211,19 +219,16 @@ class StatusPlugin(RobiePlugin):
             if family == 'discord':
                 reportdsc(
                     self, client,
-                    cqueue,
                     _status, report)
 
             if family == 'irc':
                 reportirc(
                     self, client,
-                    cqueue,
                     _status, report)
 
             if family == 'mattermost':
                 reportmtm(
                     self, client,
-                    cqueue,
                     _status, report)
 
 

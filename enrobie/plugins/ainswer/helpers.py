@@ -20,13 +20,6 @@ from encommon.types.strings import COMMAS
 from encommon.types.strings import NEWLINE
 from encommon.types.strings import SEMPTY
 
-from enconnect.discord import (
-    ClientEvent as DSCClientEvent)
-from enconnect.irc import (
-    ClientEvent as IRCClientEvent)
-from enconnect.mattermost import (
-    ClientEvent as MTMClientEvent)
-
 from .history import AinswerHistoryKinds
 from .models import AinswerResponse
 from .models import AinswerResponseDSC
@@ -37,9 +30,7 @@ if TYPE_CHECKING:
     from .plugin import AinswerPlugin
     from ...robie.childs import RobieClient
     from ...robie.childs import RobiePerson
-    from ...robie.models import RobieCommand
     from ...robie.models import RobieMessage
-    from ...robie.addons import RobieQueue
 
 
 
@@ -442,22 +433,26 @@ class AinswerQuestion:
 
 def composedsc(
     plugin: 'AinswerPlugin',
-    cqueue: 'RobieQueue[RobieCommand]',
     mitem: 'RobieMessage',
 ) -> None:
     """
     Construct and format message for related chat platform.
 
     :param plugin: Plugin class instance for Chatting Robie.
-    :param cqueue: Queue instance where the item is received.
     :param mitem: Item containing information for operation.
     """
 
     from ...clients import DSCClient
 
+
+    assert plugin.thread
+
+    thread = plugin.thread
     robie = plugin.robie
     childs = robie.childs
     params = plugin.params
+    member = thread.member
+    cqueue = member.cqueue
 
     kind = mitem.kind
     hasme = mitem.hasme
@@ -469,14 +464,6 @@ def composedsc(
     if (kind == 'chanmsg'
             and not hasme):
         return None
-
-
-    event = getattr(
-        mitem, 'event')
-
-    assert isinstance(
-        event,
-        DSCClientEvent)
 
 
     client = (
@@ -510,22 +497,26 @@ def composedsc(
 
 def composeirc(
     plugin: 'AinswerPlugin',
-    cqueue: 'RobieQueue[RobieCommand]',
     mitem: 'RobieMessage',
 ) -> None:
     """
     Construct and format message for related chat platform.
 
     :param plugin: Plugin class instance for Chatting Robie.
-    :param cqueue: Queue instance where the item is received.
     :param mitem: Item containing information for operation.
     """
 
     from ...clients import IRCClient
 
+
+    assert plugin.thread
+
+    thread = plugin.thread
     robie = plugin.robie
     childs = robie.childs
     params = plugin.params
+    member = thread.member
+    cqueue = member.cqueue
 
     kind = mitem.kind
     hasme = mitem.hasme
@@ -537,14 +528,6 @@ def composeirc(
     if (kind == 'chanmsg'
             and not hasme):
         return None
-
-
-    event = getattr(
-        mitem, 'event')
-
-    assert isinstance(
-        event,
-        IRCClientEvent)
 
 
     client = (
@@ -578,22 +561,26 @@ def composeirc(
 
 def composemtm(
     plugin: 'AinswerPlugin',
-    cqueue: 'RobieQueue[RobieCommand]',
     mitem: 'RobieMessage',
 ) -> None:
     """
     Construct and format message for related chat platform.
 
     :param plugin: Plugin class instance for Chatting Robie.
-    :param cqueue: Queue instance where the item is received.
     :param mitem: Item containing information for operation.
     """
 
     from ...clients import MTMClient
 
+
+    assert plugin.thread
+
+    thread = plugin.thread
     robie = plugin.robie
     childs = robie.childs
     params = plugin.params
+    member = thread.member
+    cqueue = member.cqueue
 
     kind = mitem.kind
     hasme = mitem.hasme
@@ -605,14 +592,6 @@ def composemtm(
     if (kind == 'chanmsg'
             and not hasme):
         return None
-
-
-    event = getattr(
-        mitem, 'event')
-
-    assert isinstance(
-        event,
-        MTMClientEvent)
 
 
     client = (

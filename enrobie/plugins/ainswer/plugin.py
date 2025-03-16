@@ -212,11 +212,10 @@ class AinswerPlugin(RobiePlugin):
 
         thread = self.thread
         mqueue = thread.mqueue
-        member = thread.member
-        cqueue = member.cqueue
 
         names = (
             self.params.clients)
+
 
         if not self.__started:
             self.__started = True
@@ -246,16 +245,13 @@ class AinswerPlugin(RobiePlugin):
 
 
             if family == 'discord':
-                composedsc(
-                    self, cqueue, mitem)
+                composedsc(self, mitem)
 
             if family == 'irc':
-                composeirc(
-                    self, cqueue, mitem)
+                composeirc(self, mitem)
 
             if family == 'mattermost':
-                composemtm(
-                    self, cqueue, mitem)
+                composemtm(self, mitem)
 
 
     def ainswer(  # noqa: CFQ001
