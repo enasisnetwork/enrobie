@@ -16,9 +16,7 @@ from encommon.types.strings import NEWLINE
 from encommon.types.strings import SEMPTY
 
 if TYPE_CHECKING:
-    from ...robie.addons import RobieQueue
     from ...robie.childs import RobieClient
-    from ...robie.models import RobieCommand
     from ...robie.models import RobieMessage
     from .common import StatusPluginItem
     from .params import StatusPluginReportParams
@@ -27,14 +25,16 @@ if TYPE_CHECKING:
 
 
 def grouped(
-    status: dict[str, 'StatusPluginItem'],
+    plugin: 'StatusPlugin',
 ) -> dict[str, list['StatusPluginItem']]:
     """
     Return the dictionary with status value stored by group.
 
-    :param status: Object containing the status information.
+    :param plugin: Plugin class instance for Chatting Robie.
     :returns: Dictionary with status value stored by group.
     """
+
+    status = plugin.status
 
     groups: DictStrAny = {
         x.group: [] for x
@@ -55,21 +55,23 @@ def grouped(
 
 def composedsc(
     plugin: 'StatusPlugin',
-    cqueue: 'RobieQueue[RobieCommand]',
     mitem: 'RobieMessage',
-    status: dict[str, 'StatusPluginItem'],
 ) -> None:
     """
     Construct and format message for related chat platform.
 
     :param plugin: Plugin class instance for Chatting Robie.
-    :param cqueue: Queue instance where the item is received.
     :param mitem: Item containing information for operation.
     :param status: Object containing the status information.
     """
 
+    assert plugin.thread
+
+    thread = plugin.thread
     robie = plugin.robie
     params = plugin.params
+    member = thread.member
+    cqueue = member.cqueue
 
     compose: list[str] = []
 
@@ -115,7 +117,7 @@ def composedsc(
 
 
     items = sorted(
-        grouped(status)
+        grouped(plugin)
         .items())
 
     for name, values in items:
@@ -137,7 +139,6 @@ def composedsc(
 def reportdsc(
     plugin: 'StatusPlugin',
     client: 'RobieClient',
-    cqueue: 'RobieQueue[RobieCommand]',
     status: 'StatusPluginItem',
     report: 'StatusPluginReportParams',
 ) -> None:
@@ -146,12 +147,16 @@ def reportdsc(
 
     :param plugin: Plugin class instance for Chatting Robie.
     :param client: Client class instance for Chatting Robie.
-    :param cqueue: Queue instance where the item is received.
     :param status: Object containing the status information.
     :param report: Object containing the report information.
     """
 
+    assert plugin.thread
+
+    thread = plugin.thread
     params = plugin.params
+    member = thread.member
+    cqueue = member.cqueue
 
 
     def _compose(
@@ -197,21 +202,23 @@ def reportdsc(
 
 def composeirc(
     plugin: 'StatusPlugin',
-    cqueue: 'RobieQueue[RobieCommand]',
     mitem: 'RobieMessage',
-    status: dict[str, 'StatusPluginItem'],
 ) -> None:
     """
     Construct and format message for related chat platform.
 
     :param plugin: Plugin class instance for Chatting Robie.
-    :param cqueue: Queue instance where the item is received.
     :param mitem: Item containing information for operation.
     :param status: Object containing the status information.
     """
 
+    assert plugin.thread
+
+    thread = plugin.thread
     robie = plugin.robie
     params = plugin.params
+    member = thread.member
+    cqueue = member.cqueue
 
 
     def _compose(
@@ -256,7 +263,7 @@ def composeirc(
 
 
     items = sorted(
-        grouped(status)
+        grouped(plugin)
         .items())
 
     for name, values in items:
@@ -273,7 +280,6 @@ def composeirc(
 def reportirc(
     plugin: 'StatusPlugin',
     client: 'RobieClient',
-    cqueue: 'RobieQueue[RobieCommand]',
     status: 'StatusPluginItem',
     report: 'StatusPluginReportParams',
 ) -> None:
@@ -282,12 +288,16 @@ def reportirc(
 
     :param plugin: Plugin class instance for Chatting Robie.
     :param client: Client class instance for Chatting Robie.
-    :param cqueue: Queue instance where the item is received.
     :param status: Object containing the status information.
     :param report: Object containing the report information.
     """
 
+    assert plugin.thread
+
+    thread = plugin.thread
     params = plugin.params
+    member = thread.member
+    cqueue = member.cqueue
 
 
     def _compose(
@@ -334,21 +344,23 @@ def reportirc(
 
 def composemtm(
     plugin: 'StatusPlugin',
-    cqueue: 'RobieQueue[RobieCommand]',
     mitem: 'RobieMessage',
-    status: dict[str, 'StatusPluginItem'],
 ) -> None:
     """
     Construct and format message for related chat platform.
 
     :param plugin: Plugin class instance for Chatting Robie.
-    :param cqueue: Queue instance where the item is received.
     :param mitem: Item containing information for operation.
     :param status: Object containing the status information.
     """
 
+    assert plugin.thread
+
+    thread = plugin.thread
     robie = plugin.robie
     params = plugin.params
+    member = thread.member
+    cqueue = member.cqueue
 
     compose: list[str] = []
 
@@ -395,7 +407,7 @@ def composemtm(
 
 
     items = sorted(
-        grouped(status)
+        grouped(plugin)
         .items())
 
     for name, values in items:
@@ -417,7 +429,6 @@ def composemtm(
 def reportmtm(
     plugin: 'StatusPlugin',
     client: 'RobieClient',
-    cqueue: 'RobieQueue[RobieCommand]',
     status: 'StatusPluginItem',
     report: 'StatusPluginReportParams',
 ) -> None:
@@ -426,12 +437,16 @@ def reportmtm(
 
     :param plugin: Plugin class instance for Chatting Robie.
     :param client: Client class instance for Chatting Robie.
-    :param cqueue: Queue instance where the item is received.
     :param status: Object containing the status information.
     :param report: Object containing the report information.
     """
 
+    assert plugin.thread
+
+    thread = plugin.thread
     params = plugin.params
+    member = thread.member
+    cqueue = member.cqueue
 
 
     def _compose(

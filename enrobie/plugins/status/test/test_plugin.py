@@ -96,6 +96,8 @@ def test_StatusPlugin(
 
     assert plugin.dumped
 
+    assert not plugin.status
+
 
 
 def test_StatusPlugin_cover(  # noqa: CFQ001
