@@ -13,6 +13,7 @@ from typing import TYPE_CHECKING
 from typing import Type
 
 from encommon.types import DictStrAny
+from encommon.types import NCNone
 
 from .child import RobieChild
 from ..addons import RobieQueue
@@ -22,7 +23,6 @@ if TYPE_CHECKING:
     from ..models import RobieCommand
     from ..models import RobieMessage
     from ..params import RobieClientParams
-    from ..threads import RobieThread
     from ..threads import RobieClientThread
 
 
@@ -103,7 +103,7 @@ class RobieClient(RobieChild):
         thread = self.__thread
 
         if thread is None:
-            return None
+            return NCNone
 
         assert isinstance(
             thread,
@@ -151,7 +151,6 @@ class RobieClient(RobieChild):
 
     def operate(
         self,
-        thread: 'RobieThread',
     ) -> None:
         """
         Perform the operation related to Robie service threads.
@@ -159,8 +158,6 @@ class RobieClient(RobieChild):
         .. note::
            Deviates from enhomie in children have operations,
            and are more isolated from internal core routines.
-
-        :param thread: Child class instance for Chatting Robie.
         """
 
         raise NotImplementedError

@@ -30,6 +30,12 @@ class AutoNickPluginParams(RobiePluginParams, extra='forbid'):
               description='List of clients to enable plugin',
               min_length=1)]
 
+    interval: Annotated[
+        int,
+        Field(5,
+              description='Interval when nick is validated',
+              ge=5, le=300)]
+
     status: Annotated[
         StatusPluginIconParams,
         Field(default_factory=StatusPluginIconParams,
@@ -58,6 +64,7 @@ class AutoNickPluginParams(RobiePluginParams, extra='forbid'):
 
             parsable = [
                 'clients',
+                'interval',
                 'status']
 
             for key in parsable:

@@ -33,6 +33,44 @@ if TYPE_CHECKING:
 
 
 
+DSCEVENT_RANDOM_CHAN = expate({
+    't': 'MESSAGE_CREATE',
+    's': 4,
+    'op': 0,
+    'd/channel_id': 'enrobie',
+    'd/guild_id': 'guildid',
+    'd/author/id': 'userid',
+    'd/author/username': 'user',
+    'd/content': 'Hello dscbot'})
+
+DSCEVENT_RANDOM_PRIV = expate({
+    't': 'MESSAGE_CREATE',
+    's': 5,
+    'op': 0,
+    'd/channel_id': 'privid',
+    'd/author/id': 'userid',
+    'd/author/username': 'user',
+    'd/content': 'Hello dscbot'})
+
+DSCEVENT_HUBERT_CHAN = expate({
+    't': 'MESSAGE_CREATE',
+    's': 7,
+    'op': 0,
+    'd/channel_id': 'enrobie',
+    'd/guild_id': 'guildid',
+    'd/author/id': '823039201390230492',
+    'd/author/username': 'hubert',
+    'd/content': 'dscbot'})
+
+DSCEVENT_HUBERT_PRIV = expate({
+    't': 'MESSAGE_CREATE',
+    's': 8,
+    'op': 0,
+    'd/channel_id': 'privid',
+    'd/author/id': '823039201390230492',
+    'd/author/username': 'hubert',
+    'd/content': 'dscbot'})
+
 DSCEVENTS: list[DictStrAny] = [
 
     {'t': 'GUILD_CREATE',
@@ -51,52 +89,26 @@ DSCEVENTS: list[DictStrAny] = [
      'd/name': 'enrobie'},
 
     # From random to channel
-    {'t': 'MESSAGE_CREATE',
-     's': 4,
-     'op': 0,
-     'd/channel_id': 'enrobie',
-     'd/guild_id': 'guldid',
-     'd/author/id': 'userid',
-     'd/author/username': 'user',
-     'd/content': 'Hello dscbot'},
+    DSCEVENT_RANDOM_CHAN,
 
     # From random to private
-    {'t': 'MESSAGE_CREATE',
-     's': 5,
-     'op': 0,
-     'd/channel_id': 'privid',
-     'd/author/id': 'userid',
-     'd/author/username': 'user',
-     'd/content': 'Hello dscbot'},
+    DSCEVENT_RANDOM_PRIV,
 
     # From hubert to channel
-    {'t': 'MESSAGE_CREATE',
-     's': 6,
-     'op': 0,
-     'd/channel_id': 'enrobie',
-     'd/guild_id': 'guldid',
-     'd/author/id': 823039201390230492,
-     'd/author/username': 'hubert',
-     'd/content': 'dscbot'},
+    DSCEVENT_HUBERT_CHAN,
 
     # From hubert to channel
-    {'t': 'MESSAGE_CREATE',
-     's': 7,
-     'op': 0,
-     'd/channel_id': 'enrobie',
-     'd/guild_id': 'guldid',
-     'd/author/id': 823039201390230492,
-     'd/author/username': 'hubert',
-     'd/content': 'dscbot'},
+    DSCEVENT_HUBERT_CHAN,
 
     # From hubert to private
-    {'t': 'MESSAGE_CREATE',
-     's': 8,
+    DSCEVENT_HUBERT_PRIV,
+
+    {'t': 'CHANNEL_UPDATE',
+     's': 9,
      'op': 0,
-     'd/channel_id': 'privid',
-     'd/author/id': 823039201390230492,
-     'd/author/username': 'hubert',
-     'd/content': 'dscbot'}]
+     'd/id': 'enrobie',
+     'd/topic': 'Test topic',
+     'd/name': 'enrobie'}]
 
 DSCEVENTS = EVENTS + [
     expate(x) for x in DSCEVENTS]
@@ -104,19 +116,17 @@ DSCEVENTS = EVENTS + [
 
 
 def test_DSCClient(
-    robie: 'Robie',
+    service: 'RobieService',
 ) -> None:
     """
     Perform various tests associated with relevant routines.
 
-    :param robie: Primary class instance for Chatting Robie.
+    :param service: Ancilary Chatting Robie class instance.
     """
 
-    childs = robie.childs
-    clients = childs.clients
-
-
-    client = clients['dscbot']
+    client = (
+        service.clients
+        .childs['dscbot'])
 
     assert isinstance(
         client,
@@ -130,7 +140,9 @@ def test_DSCClient(
         '_RobieChild__name',
         '_RobieChild__params',
         '_DSCClient__client',
-        '_DSCClient__channels']
+        '_DSCClient__channels',
+        '_DSCClient__publish',
+        '_RobieClient__thread']
 
 
     assert inrepr(
@@ -161,11 +173,13 @@ def test_DSCClient(
 
     assert client.channels
 
+    assert client.publish
+
     assert client.schema()
 
     assert client.params
 
-    assert not client.thread
+    assert client.thread
 
     assert client.dumped
 
@@ -299,7 +313,7 @@ def test_DSCClient_channels(
 
     client_dscsock(DSCEVENTS)
 
-    service.limit_threads(
+    service.limit(
         clients=['dscbot'],
         plugins=['status'])
 
@@ -324,7 +338,7 @@ def test_DSCClient_channels(
     assert select.endumped == {
         'members': None,
         'title': 'enrobie',
-        'topic': 'Test topic is changed',
+        'topic': 'Test topic',
         'unique': 'enrobie'}
 
 

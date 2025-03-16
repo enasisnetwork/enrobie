@@ -129,8 +129,8 @@ class RobiePlugins(RobieMember):
             object = model(
                 self, plugin)
 
-            threads[name] = object
             plugin.thread = object
+            threads[name] = object
 
 
         self.threads = threads

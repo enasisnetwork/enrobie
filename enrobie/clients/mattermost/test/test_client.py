@@ -36,12 +36,57 @@ from ....robie.addons import RobieQueue
 
 if TYPE_CHECKING:
     from ....robie import Robie
+    from ....robie import RobieService
     from ....robie.models import RobieCommand  # noqa: F401
     from ....robie.models import RobieMessage  # noqa: F401
 
 
 
-MTMEVENTS: list[DictStrAny] = [
+MTMEVENT_RANDOM_CHAN = expate({
+    'event': 'posted',
+    'seq': 3,
+    'broadcast/channel_id': 'enrobie',
+    'data/channel_type': 'P',
+    'data/post': (
+        '{"user_id":"userid",'
+        '"channel_id":"enrobie",'
+        '"message":"Hello mtmbot"}'),
+    'data/sender_name': '@user'})
+
+MTMEVENT_RANDOM_PRIV = expate({
+    'event': 'posted',
+    'seq': 4,
+    'broadcast/channel_id': 'privid',
+    'data/channel_type': 'D',
+    'data/post': (
+        '{"user_id":"userid",'
+        '"channel_id":"privid",'
+        '"message":"Hello mtmbot"}'),
+    'data/sender_name': '@user'})
+
+MTMEVENT_HUBERT_CHAN = expate({
+    'event': 'posted',
+    'seq': 6,
+    'broadcast/channel_id': 'enrobie',
+    'data/channel_type': 'P',
+    'data/post': (
+        '{"user_id":"kjf9al2klaiietalkw",'
+        '"channel_id":"enrobie",'
+        '"message":"mtmbot"}'),
+    'data/sender_name': '@hubert'})
+
+MTMEVENT_HUBERT_PRIV = expate({
+    'event': 'posted',
+    'seq': 7,
+    'broadcast/channel_id': 'privid',
+    'data/channel_type': 'D',
+    'data/post': (
+        '{"user_id":"kjf9al2klaiietalkw",'
+        '"channel_id":"privid",'
+        '"message":"mtmbot"}'),
+    'data/sender_name': '@hubert'})
+
+_MTMEVENTS: list[DictStrAny] = [
 
     {'event': 'hello',
      'broadcast/user_id': 'mtmunq'},
@@ -51,83 +96,49 @@ MTMEVENTS: list[DictStrAny] = [
      'data/channel': (
          '{"id":"enrobie",'
          '"name":"enrobie",'
-         '"header":"Testing"}'),
+         '"header":"Test topic is changed"}'),
      'seq': 2},
 
     # From random to channel
-    {'event': 'posted',
-     'seq': 3,
-     'broadcast/channel_id': 'enrobie',
-     'data/channel_type': 'P',
-     'data/post': (
-         '{"user_id":"userid",'
-         '"channel_id":"enrobie",'
-         '"message":"Hello mtmbot"}'),
-     'data/sender_name': '@user'},
+    MTMEVENT_RANDOM_CHAN,
 
     # From random to private
-    {'event': 'posted',
-     'seq': 4,
-     'broadcast/channel_id': 'privid',
-     'data/channel_type': 'D',
-     'data/post': (
-         '{"user_id":"userid",'
-         '"channel_id":"privid",'
-         '"message":"Hello mtmbot"}'),
-     'data/sender_name': '@user'},
+    MTMEVENT_RANDOM_PRIV,
 
     # From hubert to channel
-    {'event': 'posted',
-     'seq': 5,
-     'broadcast/channel_id': 'privid',
-     'data/channel_type': 'P',
-     'data/post': (
-         '{"user_id":"kjf9al2klaiietalkw",'
-         '"channel_id":"enrobie",'
-         '"message":"mtmbot"}'),
-     'data/sender_name': '@hubert'},
+    MTMEVENT_HUBERT_CHAN,
 
     # From hubert to channel
-    {'event': 'posted',
-     'seq': 6,
-     'broadcast/channel_id': 'privid',
-     'data/channel_type': 'P',
-     'data/post': (
-         '{"user_id":"kjf9al2klaiietalkw",'
-         '"channel_id":"enrobie",'
-         '"message":"mtmbot"}'),
-     'data/sender_name': '@hubert'},
+    MTMEVENT_HUBERT_CHAN,
 
     # From hubert to private
-    {'event': 'posted',
-     'seq': 7,
-     'broadcast/channel_id': 'privid',
-     'data/channel_type': 'D',
-     'data/post': (
-         '{"user_id":"kjf9al2klaiietalkw",'
-         '"channel_id":"privid",'
-         '"message":"mtmbot"}'),
-     'data/sender_name': '@hubert'}]
+    MTMEVENT_HUBERT_PRIV,
+
+    {'event': 'channel_updated',
+     'broadcast/channel_id': 'enrobie',
+     'data/channel': (
+         '{"id":"enrobie",'
+         '"name":"enrobie",'
+         '"header":"Test topic"}'),
+     'seq': 8}]
 
 MTMEVENTS = EVENTS + [
-    expate(x) for x in MTMEVENTS]
+    expate(x) for x in _MTMEVENTS]
 
 
 
 def test_MTMClient(
-    robie: 'Robie',
+    service: 'RobieService',
 ) -> None:
     """
     Perform various tests associated with relevant routines.
 
-    :param robie: Primary class instance for Chatting Robie.
+    :param service: Ancilary Chatting Robie class instance.
     """
 
-    childs = robie.childs
-    clients = childs.clients
-
-
-    client = clients['mtmbot']
+    client = (
+        service.clients
+        .childs['mtmbot'])
 
     assert isinstance(
         client,
@@ -141,7 +152,9 @@ def test_MTMClient(
         '_RobieChild__name',
         '_RobieChild__params',
         '_MTMClient__client',
-        '_MTMClient__channels']
+        '_MTMClient__channels',
+        '_MTMClient__publish',
+        '_RobieClient__thread']
 
 
     assert inrepr(
@@ -172,11 +185,13 @@ def test_MTMClient(
 
     assert client.channels
 
+    assert client.publish
+
     assert client.schema()
 
     assert client.params
 
-    assert not client.thread
+    assert client.thread
 
     assert client.dumped
 
@@ -317,11 +332,10 @@ def test_MTMClient_channels(
         client, MTMClient)
 
 
-    content = [
+    mocked = dumps([
         {'header': 'Testing',
          'id': 'enrobie',
-         'name': 'enrobie'}]
-
+         'name': 'enrobie'}])
 
     (respx_mock
      .get(
@@ -330,12 +344,12 @@ def test_MTMClient_channels(
          'teams/mocked/channels')
      .mock(Response(
          status_code=200,
-         content=dumps(content))))
+         content=mocked)))
 
 
     client_mtmsock(MTMEVENTS)
 
-    service.limit_threads(
+    service.limit(
         clients=['mtmbot'],
         plugins=['status'])
 
@@ -360,7 +374,7 @@ def test_MTMClient_channels(
     assert select.endumped == {
         'members': None,
         'title': 'enrobie',
-        'topic': 'Testing',
+        'topic': 'Test topic',
         'unique': 'enrobie'}
 
 

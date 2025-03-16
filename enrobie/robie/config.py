@@ -223,7 +223,7 @@ class RobieConfig(Config):
             for name, params in items:
 
                 if name not in models:
-                    continue  # NOCVR
+                    continue
 
                 model = models[name]
 
@@ -251,7 +251,7 @@ class RobieConfig(Config):
             for name, params in items:
 
                 if name not in models:
-                    continue  # NOCVR
+                    continue
 
                 model = models[name]
 

@@ -13,6 +13,126 @@
     "message": true,
     "command": true
   },
+  "plugins": {
+    "ainswer": {
+      "enable": true,
+      "locate": "enrobie.plugins.AinswerPlugin",
+      "database": "{{ config.params.database }}",
+      "histories": 10,
+      "clients": [
+        "dscbot",
+        "ircbot",
+        "mtmbot"
+      ],
+      "prompt": {
+        "system": "You are Bender from Futurama.",
+        "client": {
+          "dsc": "Your nickname is {{ whoami }}. Use some markdown and emojis.",
+          "irc": "Your nickname is {{ whoami }}. Keep it short and use colors.",
+          "mtm": "Your nickname is {{ whoami }}. Use some markdown and emojis."
+        },
+        "header": "{%- set records = (\n      robie.childs.plugins.logger.history\n      .plaintext(10, mitem)) -%}\n{%- if records | length >= 1 -%}\n**Channel Recent**\nThese are previous messages from the current channel.\n{%-   if mitem.family in ['irc', 'mattermost'] %}\nYou will not see what you have said in this history.\n{%-   endif %}\n{{    records | join('\\n') -}}\n{%- endif -%}"
+      },
+      "ainswer": {
+        "origin": "openai",
+        "model": "gpt-4o",
+        "secret": "somekey",
+        "sleep": [
+          0,
+          0
+        ]
+      },
+      "status": {
+        "dsc": ":robot:",
+        "irc": "\ud83e\udd16",
+        "mtm": ":robot:"
+      }
+    },
+    "autojoin": {
+      "enable": true,
+      "locate": "enrobie.plugins.AutoJoinPlugin",
+      "channels": [
+        {
+          "client": "ircbot",
+          "channel": "mocked"
+        }
+      ],
+      "status": {
+        "dsc": ":wrench:",
+        "irc": "\ud83d\udd27",
+        "mtm": ":wrench:"
+      }
+    },
+    "autonick": {
+      "enable": true,
+      "locate": "enrobie.plugins.AutoNickPlugin",
+      "clients": "ircbot",
+      "status": {
+        "dsc": ":wrench:",
+        "irc": "\ud83d\udd27",
+        "mtm": ":wrench:"
+      }
+    },
+    "logger": {
+      "enable": true,
+      "locate": "enrobie.plugins.LoggerPlugin",
+      "database": "{{ config.params.database }}",
+      "histories": 10,
+      "clients": [
+        "dscbot",
+        "ircbot",
+        "mtmbot"
+      ],
+      "status": {
+        "dsc": ":wood:",
+        "irc": "\ud83e\udeb5",
+        "mtm": ":wood:"
+      }
+    },
+    "status": {
+      "enable": true,
+      "locate": "enrobie.plugins.StatusPlugin",
+      "icons": {
+        "pending": {
+          "dsc": ":hourglass:",
+          "irc": "\u23f3",
+          "mtm": ":hourglass:"
+        },
+        "normal": {
+          "dsc": ":green_circle:",
+          "irc": "\ud83d\udfe2",
+          "mtm": ":large_green_circle:"
+        },
+        "failure": {
+          "dsc": ":red_circle:",
+          "irc": "\ud83d\udd34",
+          "mtm": ":red_circle:"
+        },
+        "unknown": {
+          "dsc": ":white_circle:",
+          "irc": "\u26aa",
+          "mtm": ":white_circle:"
+        }
+      },
+      "reports": [
+        {
+          "client": "dscbot",
+          "target": "mocked",
+          "delay": 0
+        },
+        {
+          "client": "ircbot",
+          "target": "mocked",
+          "delay": 0
+        },
+        {
+          "client": "mtmbot",
+          "target": "mocked",
+          "delay": 0
+        }
+      ]
+    }
+  },
   "clients": {
     "dscbot": {
       "enable": true,
@@ -57,16 +177,6 @@
     }
   },
   "persons": {
-    "anonymous": {
-      "enable": true,
-      "weight": 1,
-      "matches": [
-        {
-          "client": "ircbot",
-          "match": "*!*@*"
-        }
-      ]
-    },
     "hubert": {
       "enable": true,
       "first": "Hubert",
@@ -112,126 +222,6 @@
           "match": "iietalkwkjf9al2kla"
         }
       ]
-    }
-  },
-  "plugins": {
-    "status": {
-      "enable": true,
-      "locate": "enrobie.plugins.StatusPlugin",
-      "icons": {
-        "pending": {
-          "dsc": ":hourglass:",
-          "irc": "\u23f3",
-          "mtm": ":hourglass:"
-        },
-        "normal": {
-          "dsc": ":green_circle:",
-          "irc": "\ud83d\udfe2",
-          "mtm": ":large_green_circle:"
-        },
-        "failure": {
-          "dsc": ":red_circle:",
-          "irc": "\ud83d\udd34",
-          "mtm": ":red_circle:"
-        },
-        "unknown": {
-          "dsc": ":white_circle:",
-          "irc": "\u26aa",
-          "mtm": ":white_circle:"
-        }
-      },
-      "reports": [
-        {
-          "client": "dscbot",
-          "target": "mocked",
-          "delay": 0
-        },
-        {
-          "client": "ircbot",
-          "target": "mocked",
-          "delay": 0
-        },
-        {
-          "client": "mtmbot",
-          "target": "mocked",
-          "delay": 0
-        }
-      ]
-    },
-    "autojoin": {
-      "enable": true,
-      "locate": "enrobie.plugins.AutoJoinPlugin",
-      "channels": [
-        {
-          "client": "ircbot",
-          "channel": "mocked"
-        }
-      ],
-      "status": {
-        "dsc": ":wrench:",
-        "irc": "\ud83d\udd27",
-        "mtm": ":wrench:"
-      }
-    },
-    "autonick": {
-      "enable": true,
-      "locate": "enrobie.plugins.AutoNickPlugin",
-      "clients": "ircbot",
-      "status": {
-        "dsc": ":wrench:",
-        "irc": "\ud83d\udd27",
-        "mtm": ":wrench:"
-      }
-    },
-    "ainswer": {
-      "enable": true,
-      "locate": "enrobie.plugins.AinswerPlugin",
-      "database": "{{ config.params.database }}",
-      "histories": 10,
-      "clients": [
-        "dscbot",
-        "ircbot",
-        "mtmbot"
-      ],
-      "prompt": {
-        "system": "You are Bender from Futurama.",
-        "client": {
-          "dsc": "Your nickname is {{ whoami }}. Use some markdown and emojis.",
-          "irc": "Your nickname is {{ whoami }}. Keep it short and use colors.",
-          "mtm": "Your nickname is {{ whoami }}. Use some markdown and emojis."
-        },
-        "header": "{%- set records = (\n      robie.childs.plugins.logger.history\n      .plaintext(10, mitem)) -%}\n{%- if records | length >= 1 -%}\n**Channel Recent**\nThese are previous messages from the current channel.\n{%-   if mitem.family in ['irc', 'mattermost'] %}\nYou will not see what you have said in this history.\n{%-   endif %}\n{{    records | join('\\n') -}}\n{%- endif -%}"
-      },
-      "ainswer": {
-        "origin": "openai",
-        "model": "gpt-4o",
-        "secret": "somekey",
-        "sleep": [
-          0,
-          0
-        ]
-      },
-      "status": {
-        "dsc": ":robot:",
-        "irc": "\ud83e\udd16",
-        "mtm": ":robot:"
-      }
-    },
-    "logger": {
-      "enable": true,
-      "locate": "enrobie.plugins.LoggerPlugin",
-      "database": "{{ config.params.database }}",
-      "histories": 10,
-      "clients": [
-        "dscbot",
-        "ircbot",
-        "mtmbot"
-      ],
-      "status": {
-        "dsc": ":wood:",
-        "irc": "\ud83e\udeb5",
-        "mtm": ":wood:"
-      }
     }
   }
 }

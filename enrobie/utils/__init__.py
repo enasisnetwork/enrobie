@@ -12,6 +12,7 @@ from .importer import importer
 from .param import InvalidParam
 from .states import ClientChannel
 from .states import ClientChannels
+from .states import ClientPublish
 from .thread import DupliThread
 
 
@@ -22,4 +23,5 @@ __all__ = [
     'DupliThread',
     'ClientChannel',
     'ClientChannels',
+    'ClientPublish',
     'importer']

@@ -1,0 +1,49 @@
+---
+
+
+
+plugins:
+
+
+  ############
+  ## Status ##
+  ############
+  status:
+    enable: true
+    locate: enrobie.plugins.StatusPlugin
+
+    icons:
+
+      pending:
+        dsc: ':hourglass:'
+        irc: ⏳
+        mtm: ':hourglass:'
+
+      normal:
+        dsc: ':green_circle:'
+        irc: 🟢
+        mtm: ':large_green_circle:'
+
+      failure:
+        dsc: ':red_circle:'
+        irc: 🔴
+        mtm: ':red_circle:'
+
+      unknown:
+        dsc: ':white_circle:'
+        irc: ⚪
+        mtm: ':white_circle:'
+
+    reports:
+
+      - client: dscbot
+        target: mocked
+        delay: 0  # For testing
+
+      - client: ircbot
+        target: mocked
+        delay: 0  # For testing
+
+      - client: mtmbot
+        target: mocked
+        delay: 0  # For testing

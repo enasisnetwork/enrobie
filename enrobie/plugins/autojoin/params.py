@@ -50,6 +50,12 @@ class AutoJoinPluginParams(RobiePluginParams, extra='forbid'):
               description='Which channels to maintain join',
               min_length=1)]
 
+    interval: Annotated[
+        int,
+        Field(5,
+              description='Interval when channels are joined',
+              ge=5, le=300)]
+
     status: Annotated[
         StatusPluginIconParams,
         Field(default_factory=StatusPluginIconParams,
@@ -72,6 +78,7 @@ class AutoJoinPluginParams(RobiePluginParams, extra='forbid'):
 
             parsable = [
                 'channels',
+                'interval',
                 'status']
 
             for key in parsable:

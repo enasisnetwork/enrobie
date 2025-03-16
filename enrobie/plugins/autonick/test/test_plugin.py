@@ -12,17 +12,17 @@ from threading import Thread
 from time import sleep as block_sleep
 from typing import TYPE_CHECKING
 
+from encommon.times import Timer
 from encommon.types import inrepr
 from encommon.types import instr
 from encommon.types import lattrs
 
 from enconnect.fixtures import IRCClientSocket
-from enconnect.irc.test import EVENTS as IRCEVENTS
 
 from ..plugin import AutoNickPlugin
+from ....clients.irc.test import IRCEVENTS
 
 if TYPE_CHECKING:
-    from ....robie import Robie
     from ....robie import RobieService
 
 
@@ -32,19 +32,17 @@ IRCEVENTS = deepcopy(IRCEVENTS)
 
 
 def test_AutoNickPlugin(
-    robie: 'Robie',
+    service: 'RobieService',
 ) -> None:
     """
     Perform various tests associated with relevant routines.
 
-    :param robie: Primary class instance for Chatting Robie.
+    :param service: Ancilary Chatting Robie class instance.
     """
 
-    childs = robie.childs
-    plugins = childs.plugins
-
-
-    plugin = plugins['autonick']
+    plugin = (
+        service.plugins
+        .childs['autonick'])
 
     assert isinstance(
         plugin, AutoNickPlugin)
@@ -57,7 +55,8 @@ def test_AutoNickPlugin(
         '_RobieChild__name',
         '_RobieChild__params',
         '_AutoNickPlugin__started',
-        '_AutoNickPlugin__timer']
+        '_AutoNickPlugin__timer',
+        '_RobiePlugin__thread']
 
 
     assert inrepr(
@@ -86,7 +85,7 @@ def test_AutoNickPlugin(
 
     assert plugin.params
 
-    assert not plugin.thread
+    assert plugin.thread
 
     assert plugin.dumped
 
@@ -103,11 +102,23 @@ def test_AutoNickPlugin_cover(
     :param client_ircsock: Object to mock client connection.
     """
 
+    plugin = (
+        service.plugins
+        .childs['autonick'])
+
+    setattr(
+        plugin,
+        '_AutoNickPlugin__timer',
+        Timer(0))
+
+
     client_ircsock(IRCEVENTS)
 
-    service.limit_threads(
-        clients=['ircbot'],
-        plugins=['autonick'])
+
+    service.limit(
+        plugins=[
+            'autonick',
+            'status'])
 
     service.start()
 
@@ -118,7 +129,7 @@ def test_AutoNickPlugin_cover(
     thread.start()
 
 
-    block_sleep(6)
+    block_sleep(5)
 
     service.soft()
 

@@ -9,12 +9,17 @@ is permitted, for more information consult the project license file.
 
 from typing import Annotated
 from typing import Any
+from typing import Callable
 from typing import Optional
+from typing import TYPE_CHECKING
 
 from encommon.types import BaseModel
 from encommon.types import NCNone
 
 from pydantic import Field
+
+if TYPE_CHECKING:
+    from ..robie.models import RobieMessage
 
 
 
@@ -305,3 +310,53 @@ class ClientChannels:
 
             members.remove(current)
             members.add(update)
+
+
+
+class ClientPublish:
+    """
+    Allow for subscription to client events useful in tests.
+    """
+
+    __callbacks: list[Callable[['RobieMessage'], None]]
+
+
+    def __init__(
+        self,
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
+
+        self.__callbacks = []
+
+
+    def subscribe(
+        self,
+        callback: Callable[['RobieMessage'], None],
+    ) -> None:
+        """
+        Store the callback within internal subscriber reference.
+
+        :param callback: Function that will be called with item.
+        """
+
+        callbacks = self.__callbacks
+
+        callbacks.append(callback)
+
+
+    def publish(
+        self,
+        mitem: 'RobieMessage',
+    ) -> None:
+        """
+        Submit the message from client to subscriber references.
+
+        :param mitem: Item containing information for operation.
+        """
+
+        callbacks = self.__callbacks
+
+        for callback in callbacks:
+            callback(mitem)

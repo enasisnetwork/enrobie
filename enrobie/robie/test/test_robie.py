@@ -140,8 +140,7 @@ def test_Robie_person(
         clients['ircbot'],
         'some!user@domain.invalid')
 
-    assert person is not None
-    assert person.name == 'anonymous'
+    assert person is None
 
 
     person = robie.person(

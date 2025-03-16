@@ -1,0 +1,28 @@
+---
+
+
+
+plugins:
+
+
+  ############
+  ## Logger ##
+  ############
+  logger:
+    enable: true
+    locate: enrobie.plugins.LoggerPlugin
+
+    database: >-
+      {{ config.params.database }}
+
+    histories: 10
+
+    clients:
+      - dscbot
+      - ircbot
+      - mtmbot
+
+    status:
+      dsc: ':wood:'
+      irc: 🪵
+      mtm: ':wood:'

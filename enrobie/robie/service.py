@@ -501,7 +501,7 @@ class RobieService:
             status='stopped')
 
 
-    def limit_threads(
+    def limit(
         self,
         clients: Optional[list[str]] = None,
         plugins: Optional[list[str]] = None,
@@ -517,8 +517,8 @@ class RobieService:
 
         if plugins is not None:
             (self.__plugins
-             .limit_threads(plugins))
+             .limit(plugins))
 
         if clients is not None:
             (self.__clients
-             .limit_threads(clients))
+             .limit(clients))

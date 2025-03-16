@@ -31,7 +31,28 @@ if TYPE_CHECKING:
 
 
 
+IRCEVENT_RANDOM_CHAN = (
+    ':nick!user@host PRIVMSG'
+    ' #enrobie :Hello ircbot')
+
+IRCEVENT_RANDOM_PRIV = (
+    ':nick!user@host PRIVMSG'
+    ' ircbot :Hello ircbot')
+
+IRCEVENT_HUBERT_CHAN = (
+    ':hubert!hubert@science.com'
+    ' PRIVMSG #enrobie :ircbot')
+
+IRCEVENT_HUBERT_PRIV = (
+    ':hubert!hubert@science.com'
+    ' PRIVMSG ircbot :ircbot')
+
 IRCEVENTS: list[str] = [
+
+    *EVENTS[:-1],
+
+    (':botirc!user@host'
+     ' NICK :ircbot'),
 
     ':ircbot JOIN :#enrobie',
 
@@ -56,45 +77,43 @@ IRCEVENTS: list[str] = [
      ' :Test topic is changed'),
 
     # From random to channel
-    (':nick!user@host PRIVMSG'
-     ' #enrobie :Hello ircbot'),
+    IRCEVENT_RANDOM_CHAN,
 
     # From random to private
-    (':nick!user@host PRIVMSG'
-     ' ircbot :Hello ircbot'),
+    IRCEVENT_RANDOM_PRIV,
 
     # From hubert to channel
-    (':hubert!hubert@science.com'
-     ' PRIVMSG #enrobie :ircbot'),
+    IRCEVENT_HUBERT_CHAN,
 
     # From hubert to channel
-    (':hubert!hubert@science.com'
-     ' PRIVMSG #enrobie :ircbot'),
+    IRCEVENT_HUBERT_CHAN,
 
     # From hubert to private
-    (':hubert!hubert@science.com'
-     ' PRIVMSG ircbot :ircbot'),
+    IRCEVENT_HUBERT_PRIV,
+
+    (':nick!user@host TOPIC #enrobie'
+     ' :Test topic'),
+
+    (':trebor!user@host NICK treb0r'),
+
+    (':nick!user@host NICK n1ck'),
 
     ':ircbot PART :#enrobie']
-
-IRCEVENTS.extend(EVENTS[:-1])
 
 
 
 def test_IRCClient(
-    robie: 'Robie',
+    service: 'RobieService',
 ) -> None:
     """
     Perform various tests associated with relevant routines.
 
-    :param robie: Primary class instance for Chatting Robie.
+    :param service: Ancilary Chatting Robie class instance.
     """
 
-    childs = robie.childs
-    clients = childs.clients
-
-
-    client = clients['ircbot']
+    client = (
+        service.clients
+        .childs['ircbot'])
 
     assert isinstance(
         client,
@@ -108,7 +127,9 @@ def test_IRCClient(
         '_RobieChild__name',
         '_RobieChild__params',
         '_IRCClient__client',
-        '_IRCClient__channels']
+        '_IRCClient__channels',
+        '_IRCClient__publish',
+        '_RobieClient__thread']
 
 
     assert inrepr(
@@ -139,11 +160,13 @@ def test_IRCClient(
 
     assert client.channels
 
+    assert client.publish
+
     assert client.schema()
 
     assert client.params
 
-    assert not client.thread
+    assert client.thread
 
     assert client.dumped
 
@@ -271,7 +294,7 @@ def test_IRCClient_channels(
 
     client_ircsock(IRCEVENTS)
 
-    service.limit_threads(
+    service.limit(
         clients=['ircbot'],
         plugins=['status'])
 
@@ -297,9 +320,9 @@ def test_IRCClient_channels(
         'members': {
             'robert',
             'sirrah',
-            'trebor'},
+            'treb0r'},
         'title': '#enrobie',
-        'topic': 'Test topic is changed',
+        'topic': 'Test topic',
         'unique': '#enrobie'}
 
 
