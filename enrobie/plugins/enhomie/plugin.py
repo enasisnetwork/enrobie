@@ -17,6 +17,7 @@ from .helpers import composedsc
 from .helpers import composeirc
 from .helpers import composemtm
 from .params import HomiePluginParams
+from ..ainswer import AinswerTool
 from ..status import StatusPlugin
 from ..status import StatusPluginStates
 from ...robie.childs import RobiePlugin
@@ -231,3 +232,17 @@ class HomiePlugin(RobiePlugin):
             title='Homie Automate',
             icon=params.status,
             state=status))
+
+
+    def ainswer(
+        self,
+    ) -> list[AinswerTool]:
+        """
+        Return the Ainswer tools that are related to the plugin.
+
+        :returns: Ainswer tools that are related to the plugin.
+        """
+
+        from .toolset import homie_persist
+
+        return [homie_persist]

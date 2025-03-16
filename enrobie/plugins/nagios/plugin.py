@@ -17,6 +17,7 @@ from .helpers import composedsc
 from .helpers import composeirc
 from .helpers import composemtm
 from .params import NagiosPluginParams
+from ..ainswer import AinswerTool
 from ..status import StatusPlugin
 from ..status import StatusPluginStates
 from ...robie.childs import RobiePlugin
@@ -229,3 +230,17 @@ class NagiosPlugin(RobiePlugin):
             title='Nagios Automate',
             icon=params.status,
             state=status))
+
+
+    def ainswer(
+        self,
+    ) -> list[AinswerTool]:
+        """
+        Return the Ainswer tools that are related to the plugin.
+
+        :returns: Ainswer tools that are related to the plugin.
+        """
+
+        from .toolset import nagios_current
+
+        return [nagios_current]

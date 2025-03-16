@@ -7,6 +7,8 @@ is permitted, for more information consult the project license file.
 
 
 
+from .helpers import AinswerDepends
+from .helpers import AinswerTool
 from .params import AinswerPluginParams
 from .plugin import AinswerPlugin
 
@@ -14,4 +16,6 @@ from .plugin import AinswerPlugin
 
 __all__ = [
     'AinswerPlugin',
-    'AinswerPluginParams']
+    'AinswerPluginParams',
+    'AinswerDepends',
+    'AinswerTool']
