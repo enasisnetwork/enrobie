@@ -7,10 +7,10 @@ is permitted, for more information consult the project license file.
 
 
 
+from typing import Any
 from typing import TYPE_CHECKING
 
 from encommon.types import BaseModel
-from encommon.types import DictStrAny
 
 from enconnect.utils import HTTPClient
 
@@ -33,7 +33,7 @@ if TYPE_CHECKING:
 
 
 
-class HomiePersistRecord(BaseModel, extra='forbid'):
+class HomiePersistRecord(BaseModel, extra='ignore'):
     """
     Information relevant to Homie Automate persistent value.
     """
@@ -61,26 +61,12 @@ class HomiePersistRecord(BaseModel, extra='forbid'):
 
     def __init__(
         self,
-        entry: DictStrAny,
+        /,
+        **data: Any,
     ) -> None:
         """
         Initialize instance for class using provided parameters.
         """
-
-        data = {
-            k: v for k, v
-            in entry.items()
-            if k in [
-                'unique',
-                'value',
-                'value_unit',
-                'value_label',
-                'about',
-                'about_label',
-                'level',
-                'tags',
-                'expire',
-                'update']}
 
         super().__init__(**data)
 
@@ -95,6 +81,10 @@ class HomiePersist:
 
     __plugin: 'HomiePlugin'
 
+    __client: HTTPClient
+
+    __location: str
+
 
     def __init__(
         self,
@@ -105,6 +95,32 @@ class HomiePersist:
         """
 
         self.__plugin = plugin
+
+        params = plugin.params
+
+        client = HTTPClient(
+            timeout=params.timeout,
+            verify=params.ssl_verify,
+            capem=params.ssl_capem)
+
+        self.__client = client
+
+        self.__location = (
+            f'{params.restful}'
+            '/api/persists')
+
+
+    @property
+    def client(
+        self,
+    ) -> HTTPClient:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__client
 
 
     def request(
@@ -118,21 +134,15 @@ class HomiePersist:
         """
 
         plugin = self.__plugin
+        client = self.__client
         params = plugin.params
-
-
-        client = HTTPClient(
-            timeout=params.timeout,
-            verify=params.ssl_verify,
-            capem=params.ssl_capem)
+        location = self.__location
 
         request = client.request_block
 
         response = request(
             method='get',
-            location=(
-                f'{params.restful}'
-                '/api/persists'),
+            location=location,
             httpauth=(
                 (params.username,
                  params.password)
@@ -172,7 +182,7 @@ class HomiePersist:
 
         for item in items:
 
-            object = model(item)
+            object = model(**item)
 
             returned.append(object)
 
@@ -241,7 +251,8 @@ def composedsc(
         .split(' ', 1)[1])
 
     current = (
-        persist.record(unique))
+        persist
+        .record(unique))
 
     citem = mitem.reply(
         robie, str(current))
@@ -283,7 +294,8 @@ def composeirc(
         .split(' ', 1)[1])
 
     current = (
-        persist.record(unique))
+        persist
+        .record(unique))
 
     citem = mitem.reply(
         robie, str(current))
@@ -325,7 +337,8 @@ def composemtm(
         .split(' ', 1)[1])
 
     current = (
-        persist.record(unique))
+        persist
+        .record(unique))
 
     citem = mitem.reply(
         robie, str(current))

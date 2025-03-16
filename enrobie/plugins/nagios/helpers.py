@@ -90,6 +90,23 @@ class NagiosCurrentService(NagiosCurrentObject, extra='forbid'):
 
 
 
+class NagiosCurrentRecords(BaseModel, extra='forbid'):
+    """
+    Summarized information regarding the items within Nagios.
+    """
+
+    hosts: Annotated[
+        list[NagiosCurrentHost],
+        Field(...,
+              description='System related status values')]
+
+    services: Annotated[
+        list[NagiosCurrentService],
+        Field(...,
+              description='Service related status values')]
+
+
+
 class NagiosCurrentSummary(BaseModel, extra='forbid'):
     """
     Summarized information regarding the items within Nagios.
@@ -312,7 +329,6 @@ class NagiosCurrent:
         """
         Return the response from upstream API endpoint request.
 
-        :param plugin: Plugin class instance for Chatting Robie.
         :returns: Response from upstream API endpoint request.
         """
 
@@ -342,6 +358,21 @@ class NagiosCurrent:
             service_issues=issues['service'],
             host_normal=normal['host'],
             host_issues=issues['host'])
+
+
+    @property
+    def records(
+        self,
+    ) -> NagiosCurrentRecords:
+        """
+        Return the response from upstream API endpoint request.
+
+        :returns: Response from upstream API endpoint request.
+        """
+
+        return NagiosCurrentRecords(
+            services=self.services,
+            hosts=self.hosts)
 
 
 

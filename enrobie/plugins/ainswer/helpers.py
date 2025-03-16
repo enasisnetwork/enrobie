@@ -7,7 +7,10 @@ is permitted, for more information consult the project license file.
 
 
 
+from dataclasses import dataclass
 from json import dumps
+from typing import Any
+from typing import Callable
 from typing import Optional
 from typing import TYPE_CHECKING
 from typing import Type
@@ -37,6 +40,105 @@ if TYPE_CHECKING:
 _KINDS = get_args(AinswerHistoryKinds)
 
 _IGNORED = 'no_response'
+
+AinswerTool = Callable[..., Any]
+
+
+
+@dataclass
+class AinswerDepends:
+    """
+    Dependencies related to operation with PydanticAI tools.
+    """
+
+    plugin: 'AinswerPlugin'
+    mitem: Optional['RobieMessage']
+
+
+
+class AinswerToolset:
+    """
+    Enumerate the plugins and return those that are related.
+
+    :param plugin: Plugin class instance for Chatting Robie.
+    """
+
+    __plugin: 'AinswerPlugin'
+
+
+    def __init__(
+        self,
+        plugin: 'AinswerPlugin',
+    ) -> None:
+        """
+        Initialize instance for class using provided parameters.
+        """
+
+        self.__plugin = plugin
+
+
+    @property
+    def toolset(
+        self,
+    ) -> list[AinswerTool]:
+        """
+        Return the related tools that were found in the plugins.
+
+        :returns: Related tools that were found in the plugins.
+        """
+
+        from .plugin import AinswerPlugin
+
+        plugin = self.__plugin
+
+        toolset: list[AinswerTool] = []
+
+        if not plugin.thread:
+            return toolset
+
+        assert plugin.thread
+
+        thread = plugin.thread
+        params = plugin.params
+
+        names = params.plugins
+
+        if names is None:
+            return toolset
+
+
+        plugins = (
+            thread.service
+            .plugins.childs
+            .values())
+
+        for helper in plugins:
+
+            name = helper.name
+
+            if name not in names:
+                continue
+
+            ignored = isinstance(
+                helper, AinswerPlugin)
+
+            if ignored is True:
+                continue
+
+            related = hasattr(
+                helper, 'ainswer')
+
+            if related is False:
+                continue
+
+            assert hasattr(
+                helper, 'ainswer')
+
+            toolset.extend(
+                helper.ainswer())
+
+
+        return toolset
 
 
 
@@ -467,14 +569,16 @@ class AinswerQuestion:
 
     def submit(
         self,
-        message: str,
+        prompt: str,
         respond: Type[AinswerResponse],
+        mitem: Optional['RobieMessage'] = None,
     ) -> AinswerResponse:
         """
         Submit the question to the LLM and return the response.
 
-        :param message: Question that will be asked of the LLM.
+        :param prompt: Question that will be asked of the LLM.
         :param respond: Model to describe the expected response.
+        :param mitem: Item containing information for operation.
         :returns: Response adhering to provided specifications.
         """
 
@@ -482,16 +586,22 @@ class AinswerQuestion:
 
         agent = plugin.agent
         request = agent.run_sync
+        model = AinswerDepends
+
+        depends = model(
+            plugin=plugin,
+            mitem=mitem)
 
         runsync = request(
-            user_prompt=message,
-            result_type=respond)
+            user_prompt=prompt,
+            result_type=respond,
+            deps=depends)
 
         return runsync.data
 
 
 
-def composedsc(
+def composedsc(  # noqa: CFQ004
     plugin: 'AinswerPlugin',
     mitem: 'RobieMessage',
 ) -> None:
@@ -516,6 +626,7 @@ def composedsc(
 
     kind = mitem.kind
     hasme = mitem.hasme
+    message = mitem.message
 
 
     if kind not in _KINDS:
@@ -524,6 +635,15 @@ def composedsc(
     if (kind == 'chanmsg'
             and not hasme):
         return None
+
+
+    assert message is not None
+
+    firschar = (
+        message[1].strip())
+
+    if firschar in '!%&/.':
+        return NCNone
 
 
     client = (
@@ -555,7 +675,7 @@ def composedsc(
 
 
 
-def composeirc(
+def composeirc(  # noqa: CFQ004
     plugin: 'AinswerPlugin',
     mitem: 'RobieMessage',
 ) -> None:
@@ -580,6 +700,7 @@ def composeirc(
 
     kind = mitem.kind
     hasme = mitem.hasme
+    message = mitem.message
 
 
     if kind not in _KINDS:
@@ -588,6 +709,15 @@ def composeirc(
     if (kind == 'chanmsg'
             and not hasme):
         return None
+
+
+    assert message is not None
+
+    firschar = (
+        message[1].strip())
+
+    if firschar in '!%&/.':
+        return NCNone
 
 
     client = (
@@ -619,7 +749,7 @@ def composeirc(
 
 
 
-def composemtm(
+def composemtm(  # noqa: CFQ004
     plugin: 'AinswerPlugin',
     mitem: 'RobieMessage',
 ) -> None:
@@ -644,6 +774,7 @@ def composemtm(
 
     kind = mitem.kind
     hasme = mitem.hasme
+    message = mitem.message
 
 
     if kind not in _KINDS:
@@ -652,6 +783,15 @@ def composemtm(
     if (kind == 'chanmsg'
             and not hasme):
         return None
+
+
+    assert message is not None
+
+    firschar = (
+        message[1].strip())
+
+    if firschar in '!%&/.':
+        return NCNone
 
 
     client = (

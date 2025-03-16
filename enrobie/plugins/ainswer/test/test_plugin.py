@@ -7,7 +7,6 @@ is permitted, for more information consult the project license file.
 
 
 
-from pathlib import Path
 from threading import Thread
 from time import sleep as block_sleep
 from typing import TYPE_CHECKING
@@ -26,9 +25,6 @@ from ..plugin import AinswerPlugin
 from ....clients.discord.test import DSCEVENTS
 from ....clients.irc.test import IRCEVENTS
 from ....clients.mattermost.test import MTMEVENTS
-from ....conftest import config_factory
-from ....conftest import robie_factory
-from ....conftest import service_factory
 
 if TYPE_CHECKING:
     from ....robie import RobieService
@@ -59,6 +55,7 @@ def test_AinswerPlugin(
         '_RobieChild__name',
         '_RobieChild__params',
         '_AinswerPlugin__started',
+        '_AinswerPlugin__toolset',
         '_AinswerPlugin__question',
         '_AinswerPlugin__history',
         '_AinswerPlugin__model',
@@ -96,6 +93,8 @@ def test_AinswerPlugin(
 
     assert plugin.dumped
 
+    assert plugin.toolset
+
     assert plugin.question
 
     assert plugin.history
@@ -103,7 +102,7 @@ def test_AinswerPlugin(
 
 
 def test_AinswerPlugin_cover(
-    tmp_path: Path,
+    service: 'RobieService',
     client_dscsock: DSCClientSocket,
     client_ircsock: IRCClientSocket,
     client_mtmsock: MTMClientSocket,
@@ -111,25 +110,19 @@ def test_AinswerPlugin_cover(
     """
     Perform various tests associated with relevant routines.
 
-    :param tmp_path: pytest object for temporal filesystem.
+    :param service: Ancilary Chatting Robie class instance.
     :param client_dscsock: Object to mock client connection.
     :param client_ircsock: Object to mock client connection.
     :param client_mtmsock: Object to mock client connection.
     """
 
-    robie = robie_factory(
-        config_factory(tmp_path))
-
-    service = (
-        service_factory(robie))
-
-
     robie = service.robie
     childs = robie.childs
-    plugins = childs.plugins
     clients = childs.clients
 
-    plugin = plugins['ainswer']
+    plugin = (
+        service.plugins
+        .childs['ainswer'])
 
     assert isinstance(
         plugin, AinswerPlugin)

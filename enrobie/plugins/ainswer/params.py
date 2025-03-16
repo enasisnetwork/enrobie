@@ -215,6 +215,12 @@ class AinswerPluginParams(RobiePluginParams, extra='forbid'):
         Field(default_factory=AinswerPluginPromptParams,
               description='Override the agent system prompt')]
 
+    plugins: Annotated[
+        Optional[list[str]],
+        Field(None,
+              description='List of plugins to load tools',
+              min_length=1)]
+
     logger: Annotated[
         Optional[str],
         Field(None,

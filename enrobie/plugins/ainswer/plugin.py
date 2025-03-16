@@ -9,12 +9,16 @@ is permitted, for more information consult the project license file.
 
 from random import randint
 from time import sleep as block_sleep
+from typing import Optional
 from typing import TYPE_CHECKING
 from typing import Type
 
+from encommon.types import DictStrAny
 from encommon.types import NCNone
 
+from .helpers import AinswerDepends
 from .helpers import AinswerQuestion
+from .helpers import AinswerToolset
 from .helpers import composedsc
 from .helpers import composeirc
 from .helpers import composemtm
@@ -42,11 +46,12 @@ class AinswerPlugin(RobiePlugin):
 
     __started: bool
 
+    __toolset: AinswerToolset
     __question: AinswerQuestion
     __history: AinswerHistory
 
     __model: 'Model'
-    __agent: 'Agent'
+    __agent: Optional['Agent[AinswerDepends, str]']
 
 
     def __post__(
@@ -56,21 +61,17 @@ class AinswerPlugin(RobiePlugin):
         Initialize instance for class using provided parameters.
         """
 
-        from pydantic_ai import Agent
-        from pydantic_ai.settings import ModelSettings
-
-
         self.__started = False
 
         params = self.params
 
-        prompt = params.prompt
         ainswer = params.ainswer
         secret = ainswer.secret
         origin = ainswer.origin
 
-        system = prompt.system
 
+        self.__toolset = (
+            AinswerToolset(self))
 
         self.__question = (
             AinswerQuestion(self))
@@ -108,14 +109,8 @@ class AinswerPlugin(RobiePlugin):
 
         self.__model = model
 
+        self.__agent = None
 
-        settings = ModelSettings(
-            timeout=ainswer.timeout)
-
-        self.__agent = Agent(
-            self.__model,
-            model_settings=settings,
-            system_prompt=system)
 
         self.__status('pending')
 
@@ -163,6 +158,19 @@ class AinswerPlugin(RobiePlugin):
 
 
     @property
+    def toolset(
+        self,
+    ) -> AinswerToolset:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__toolset
+
+
+    @property
     def question(
         self,
     ) -> AinswerQuestion:
@@ -191,12 +199,38 @@ class AinswerPlugin(RobiePlugin):
     @property
     def agent(
         self,
-    ) -> 'Agent':
+    ) -> 'Agent[AinswerDepends, str]':
         """
         Return the value for the attribute from class instance.
 
         :returns: Value for the attribute from class instance.
         """
+
+        from pydantic_ai import Agent
+        from pydantic_ai.settings import ModelSettings
+
+        agent = self.__agent
+
+        if agent is not None:
+            return agent
+
+        params = self.params
+        prompt = params.prompt
+        ainswer = params.ainswer
+        system = prompt.system
+
+        toolset = (
+            self.__toolset.toolset)
+
+        settings = ModelSettings(
+            timeout=ainswer.timeout)
+
+        self.__agent = Agent(
+            self.__model,
+            system_prompt=system,
+            model_settings=settings,
+            deps_type=AinswerDepends,
+            tools=toolset)
 
         return self.__agent
 
@@ -363,7 +397,8 @@ class AinswerPlugin(RobiePlugin):
 
             response = (
                 question.submit(
-                    prompt, respond))
+                    prompt, respond,
+                    mitem=mitem))
 
             ainswer = response.text
 
@@ -407,6 +442,28 @@ class AinswerPlugin(RobiePlugin):
                 exc_info=reason)
 
             return imsorry
+
+
+    def printer(
+        self,
+        source: DictStrAny,
+        color: int = 6,
+    ) -> None:
+        """
+        Print the contents for the object within Robie instance.
+
+        :param source: Content which will be shown after header.
+        :param color: Override the color used for box character.
+        """
+
+        robie = self.robie
+        config = robie.config
+        sargs = config.sargs
+
+        if not sargs.get('console'):
+            return None
+
+        robie.printer(source, color)
 
 
     def __status(
