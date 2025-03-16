@@ -114,6 +114,7 @@
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.AinswerQuestion.prompt_history"><code class="docutils literal notranslate"><span class="pre">AinswerQuestion.prompt_history()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.AinswerQuestion.prompt_ignored"><code class="docutils literal notranslate"><span class="pre">AinswerQuestion.prompt_ignored()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.AinswerQuestion.prompt_metadata"><code class="docutils literal notranslate"><span class="pre">AinswerQuestion.prompt_metadata()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.AinswerQuestion.prompt_recents"><code class="docutils literal notranslate"><span class="pre">AinswerQuestion.prompt_recents()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.AinswerQuestion.submit"><code class="docutils literal notranslate"><span class="pre">AinswerQuestion.submit()</span></code></a></li>
 </ul>
 </li>
@@ -197,6 +198,7 @@
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.enable"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.enable</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.histories"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.histories</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.locate"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.locate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.logger"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.logger</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.prompt"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.prompt</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.status"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.status</span></code></a></li>
 </ul>
@@ -250,6 +252,7 @@
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.enable"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.enable</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.histories"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.histories</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.locate"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.locate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.logger"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.logger</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.prompt"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.prompt</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.status"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.status</span></code></a></li>
 </ul>
@@ -952,132 +955,132 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-61"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/AinswerPluginPromptParams"</span><span class="p">,</span>
 </span><span id="line-62"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Override the agent system prompt"</span>
 </span><span id="line-63"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-64"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-65"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-66"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
-</span><span id="line-67"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-68"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-69"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-70"><span class="w">      </span><span class="nt">"AinswerPluginAinswerParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-71"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-72"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-73"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-74"><span class="w">            </span><span class="nt">"origin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-75"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Which platform hosts the model"</span><span class="p">,</span>
-</span><span id="line-76"><span class="w">               </span><span class="nt">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-77"><span class="w">                  </span><span class="s2">"anthropic"</span><span class="p">,</span>
-</span><span id="line-78"><span class="w">                  </span><span class="s2">"openai"</span>
-</span><span id="line-79"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-80"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Origin"</span><span class="p">,</span>
-</span><span id="line-81"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-82"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-83"><span class="w">            </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-84"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Platform model that will be used"</span><span class="p">,</span>
-</span><span id="line-85"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-86"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Model"</span><span class="p">,</span>
-</span><span id="line-87"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-88"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-89"><span class="w">            </span><span class="nt">"secret"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-90"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Model in platform that is used"</span><span class="p">,</span>
-</span><span id="line-91"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-92"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Secret"</span><span class="p">,</span>
-</span><span id="line-93"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-94"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-95"><span class="w">            </span><span class="nt">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-96"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
-</span><span id="line-97"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Time to wait during the request"</span><span class="p">,</span>
-</span><span id="line-98"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
-</span><span id="line-99"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-100"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout"</span><span class="p">,</span>
-</span><span id="line-101"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-64"><span class="w">      </span><span class="nt">"logger"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-65"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-66"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-67"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-68"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-69"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-70"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-71"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-72"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-73"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-74"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-75"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Logger for including recents"</span><span class="p">,</span>
+</span><span id="line-76"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Logger"</span>
+</span><span id="line-77"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-78"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-79"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-80"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
+</span><span id="line-81"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-82"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-83"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-84"><span class="w">      </span><span class="nt">"AinswerPluginAinswerParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-85"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-86"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-87"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-88"><span class="w">            </span><span class="nt">"origin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-89"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Which platform hosts the model"</span><span class="p">,</span>
+</span><span id="line-90"><span class="w">               </span><span class="nt">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-91"><span class="w">                  </span><span class="s2">"anthropic"</span><span class="p">,</span>
+</span><span id="line-92"><span class="w">                  </span><span class="s2">"openai"</span>
+</span><span id="line-93"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-94"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Origin"</span><span class="p">,</span>
+</span><span id="line-95"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-96"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-97"><span class="w">            </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-98"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Platform model that will be used"</span><span class="p">,</span>
+</span><span id="line-99"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-100"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Model"</span><span class="p">,</span>
+</span><span id="line-101"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
 </span><span id="line-102"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-103"><span class="w">            </span><span class="nt">"sleep"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-104"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-105"><span class="w">                  </span><span class="mi">15</span><span class="p">,</span>
-</span><span id="line-106"><span class="w">                  </span><span class="mi">30</span>
-</span><span id="line-107"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-108"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Time to wait before the request"</span><span class="p">,</span>
-</span><span id="line-109"><span class="w">               </span><span class="nt">"maxItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-</span><span id="line-110"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-</span><span id="line-111"><span class="w">               </span><span class="nt">"prefixItems"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-112"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-113"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-114"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-115"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-116"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-117"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-118"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-119"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sleep"</span><span class="p">,</span>
-</span><span id="line-120"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
-</span><span id="line-121"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-122"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-123"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-124"><span class="w">            </span><span class="s2">"origin"</span><span class="p">,</span>
-</span><span id="line-125"><span class="w">            </span><span class="s2">"model"</span><span class="p">,</span>
-</span><span id="line-126"><span class="w">            </span><span class="s2">"secret"</span>
-</span><span id="line-127"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-128"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AinswerPluginAinswerParams"</span><span class="p">,</span>
-</span><span id="line-129"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-130"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-131"><span class="w">      </span><span class="nt">"AinswerPluginPromptClientParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-132"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-133"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-134"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-135"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-136"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In 800 characters or less, answer the user question. Format for Discord. Markdown is encouraged."</span><span class="p">,</span>
-</span><span id="line-137"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supplement the system prompt"</span><span class="p">,</span>
-</span><span id="line-138"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-139"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span><span class="p">,</span>
-</span><span id="line-140"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-141"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-142"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-143"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In 200 characters or less, answer the user question. Format for IRCv2. Do not use markdown. Do not use colors."</span><span class="p">,</span>
-</span><span id="line-144"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supplement the system prompt"</span><span class="p">,</span>
-</span><span id="line-145"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-146"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span><span class="p">,</span>
-</span><span id="line-147"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-148"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-149"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-150"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In 800 characters or less, answer the user question. Format for Mattermost. Markdown is encouraged."</span><span class="p">,</span>
+</span><span id="line-103"><span class="w">            </span><span class="nt">"secret"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-104"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Model in platform that is used"</span><span class="p">,</span>
+</span><span id="line-105"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-106"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Secret"</span><span class="p">,</span>
+</span><span id="line-107"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-108"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-109"><span class="w">            </span><span class="nt">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-110"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+</span><span id="line-111"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Time to wait during the request"</span><span class="p">,</span>
+</span><span id="line-112"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+</span><span id="line-113"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-114"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timeout"</span><span class="p">,</span>
+</span><span id="line-115"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-116"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-117"><span class="w">            </span><span class="nt">"sleep"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-118"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-119"><span class="w">                  </span><span class="mi">15</span><span class="p">,</span>
+</span><span id="line-120"><span class="w">                  </span><span class="mi">30</span>
+</span><span id="line-121"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-122"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Time to wait before the request"</span><span class="p">,</span>
+</span><span id="line-123"><span class="w">               </span><span class="nt">"maxItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="line-124"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="line-125"><span class="w">               </span><span class="nt">"prefixItems"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-126"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-127"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-128"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-129"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-130"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-131"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-132"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-133"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sleep"</span><span class="p">,</span>
+</span><span id="line-134"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
+</span><span id="line-135"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-136"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-137"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-138"><span class="w">            </span><span class="s2">"origin"</span><span class="p">,</span>
+</span><span id="line-139"><span class="w">            </span><span class="s2">"model"</span><span class="p">,</span>
+</span><span id="line-140"><span class="w">            </span><span class="s2">"secret"</span>
+</span><span id="line-141"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-142"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AinswerPluginAinswerParams"</span><span class="p">,</span>
+</span><span id="line-143"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-144"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-145"><span class="w">      </span><span class="nt">"AinswerPluginPromptClientParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-146"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-147"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-148"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-149"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-150"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In 800 characters or less, answer the user question. Format for Discord. Markdown is encouraged."</span><span class="p">,</span>
 </span><span id="line-151"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supplement the system prompt"</span><span class="p">,</span>
 </span><span id="line-152"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-153"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span><span class="p">,</span>
+</span><span id="line-153"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span><span class="p">,</span>
 </span><span id="line-154"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-155"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-156"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-157"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AinswerPluginPromptClientParams"</span><span class="p">,</span>
-</span><span id="line-158"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-159"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-160"><span class="w">      </span><span class="nt">"AinswerPluginPromptParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-161"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-162"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-163"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-164"><span class="w">            </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-165"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You are a helpful chatbot assistant named Robie. You were built by Robert, at the Enasis Network."</span><span class="p">,</span>
-</span><span id="line-166"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Override the agent system prompt"</span><span class="p">,</span>
-</span><span id="line-167"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-168"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span>
-</span><span id="line-169"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-170"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-171"><span class="w">            </span><span class="nt">"client"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-172"><span class="w">               </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/AinswerPluginPromptClientParams"</span><span class="p">,</span>
-</span><span id="line-173"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Additional chat platform prompt"</span>
-</span><span id="line-174"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-175"><span class="w">            </span><span class="nt">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-176"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-177"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-178"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-179"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-180"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-181"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-182"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-183"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-184"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-185"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-186"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Optional header before question"</span><span class="p">,</span>
-</span><span id="line-187"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Header"</span>
+</span><span id="line-155"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-156"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-157"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In 200 characters or less, answer the user question. Format for IRCv2. Do not use markdown. Do not use colors."</span><span class="p">,</span>
+</span><span id="line-158"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supplement the system prompt"</span><span class="p">,</span>
+</span><span id="line-159"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-160"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span><span class="p">,</span>
+</span><span id="line-161"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-162"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-163"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-164"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In 800 characters or less, answer the user question. Format for Mattermost. Markdown is encouraged."</span><span class="p">,</span>
+</span><span id="line-165"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Supplement the system prompt"</span><span class="p">,</span>
+</span><span id="line-166"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-167"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span><span class="p">,</span>
+</span><span id="line-168"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-169"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-170"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-171"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AinswerPluginPromptClientParams"</span><span class="p">,</span>
+</span><span id="line-172"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-173"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-174"><span class="w">      </span><span class="nt">"AinswerPluginPromptParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-175"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-176"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-177"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-178"><span class="w">            </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-179"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You are a helpful chatbot assistant named Robie. You were built by Robert, at the Enasis Network."</span><span class="p">,</span>
+</span><span id="line-180"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Override the agent system prompt"</span><span class="p">,</span>
+</span><span id="line-181"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-182"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span>
+</span><span id="line-183"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-184"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-185"><span class="w">            </span><span class="nt">"client"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-186"><span class="w">               </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/AinswerPluginPromptClientParams"</span><span class="p">,</span>
+</span><span id="line-187"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Additional chat platform prompt"</span>
 </span><span id="line-188"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-189"><span class="w">            </span><span class="nt">"footer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-189"><span class="w">            </span><span class="nt">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="line-190"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="line-191"><span class="w">                  </span><span class="p">{</span>
 </span><span id="line-192"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -1088,44 +1091,44 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-197"><span class="w">                  </span><span class="p">}</span>
 </span><span id="line-198"><span class="w">               </span><span class="p">],</span>
 </span><span id="line-199"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-200"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Optional footer after question"</span><span class="p">,</span>
-</span><span id="line-201"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Footer"</span>
+</span><span id="line-200"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Optional header before question"</span><span class="p">,</span>
+</span><span id="line-201"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Header"</span>
 </span><span id="line-202"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-203"><span class="w">            </span><span class="nt">"ignore"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-204"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-205"><span class="w">                  </span><span class="s2">"If you believe that you are being abused by the user asking the quesiton."</span>
-</span><span id="line-206"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-207"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Optional footer after question"</span><span class="p">,</span>
-</span><span id="line-208"><span class="w">               </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-209"><span class="w">                  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-210"><span class="w">               </span><span class="p">},</span>
-</span><span id="line-211"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-212"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ignore"</span><span class="p">,</span>
-</span><span id="line-213"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
-</span><span id="line-214"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-215"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-216"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AinswerPluginPromptParams"</span><span class="p">,</span>
-</span><span id="line-217"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-218"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-219"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-220"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-221"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
-</span><span id="line-222"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-223"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-224"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-225"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-226"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-227"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-228"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-229"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-230"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-231"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-232"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-233"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-234"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-235"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
-</span><span id="line-236"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-237"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-203"><span class="w">            </span><span class="nt">"footer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-204"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-205"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-206"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-207"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-208"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-209"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-210"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-211"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-212"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-213"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-214"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Optional footer after question"</span><span class="p">,</span>
+</span><span id="line-215"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Footer"</span>
+</span><span id="line-216"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-217"><span class="w">            </span><span class="nt">"ignore"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-218"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-219"><span class="w">                  </span><span class="s2">"If you believe that you are being abused by the user asking the quesiton."</span>
+</span><span id="line-220"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-221"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Optional footer after question"</span><span class="p">,</span>
+</span><span id="line-222"><span class="w">               </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-223"><span class="w">                  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-224"><span class="w">               </span><span class="p">},</span>
+</span><span id="line-225"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-226"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ignore"</span><span class="p">,</span>
+</span><span id="line-227"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
+</span><span id="line-228"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-229"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-230"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AinswerPluginPromptParams"</span><span class="p">,</span>
+</span><span id="line-231"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-232"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-233"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-234"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-235"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
+</span><span id="line-236"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-237"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="line-238"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="line-239"><span class="w">                  </span><span class="p">{</span>
 </span><span id="line-240"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -1137,9 +1140,9 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-246"><span class="w">               </span><span class="p">],</span>
 </span><span id="line-247"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 </span><span id="line-248"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-249"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-249"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
 </span><span id="line-250"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-251"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-251"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="line-252"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="line-253"><span class="w">                  </span><span class="p">{</span>
 </span><span id="line-254"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -1151,19 +1154,33 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-260"><span class="w">               </span><span class="p">],</span>
 </span><span id="line-261"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 </span><span id="line-262"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-263"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
-</span><span id="line-264"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-265"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-266"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-267"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-268"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-269"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-270"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-271"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-272"><span class="w">      </span><span class="s2">"clients"</span><span class="p">,</span>
-</span><span id="line-273"><span class="w">      </span><span class="s2">"ainswer"</span>
-</span><span id="line-274"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-275"><span class="p">}</span>
+</span><span id="line-263"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-264"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-265"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-266"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-267"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-268"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-269"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-270"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-271"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-272"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-273"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-274"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-275"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-276"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-277"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
+</span><span id="line-278"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-279"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-280"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-281"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-282"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-283"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-284"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-285"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-286"><span class="w">      </span><span class="s2">"clients"</span><span class="p">,</span>
+</span><span id="line-287"><span class="w">      </span><span class="s2">"ainswer"</span>
+</span><span id="line-288"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-289"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -1178,6 +1195,7 @@ is permitted, for more information consult the project license file.</p>
 <li><p><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.clients" title="enrobie.plugins.ainswer.params.AinswerPluginParams.clients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clients</span> <span class="pre">(list[str])</span></code></a></p></li>
 <li><p><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.database" title="enrobie.plugins.ainswer.params.AinswerPluginParams.database"><code class="xref py py-obj docutils literal notranslate"><span class="pre">database</span> <span class="pre">(str)</span></code></a></p></li>
 <li><p><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.histories" title="enrobie.plugins.ainswer.params.AinswerPluginParams.histories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histories</span> <span class="pre">(int)</span></code></a></p></li>
+<li><p><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.logger" title="enrobie.plugins.ainswer.params.AinswerPluginParams.logger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logger</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
 <li><p><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.prompt" title="enrobie.plugins.ainswer.params.AinswerPluginParams.prompt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prompt</span> <span class="pre">(enrobie.plugins.ainswer.params.AinswerPluginPromptParams)</span></code></a></p></li>
 <li><p><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.status" title="enrobie.plugins.ainswer.params.AinswerPluginParams.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span> <span class="pre">(enrobie.plugins.status.params.StatusPluginIconParams)</span></code></a></p></li>
 </ul>
@@ -1221,6 +1239,18 @@ is permitted, for more information consult the project license file.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ge</strong> = 1</p></li>
 <li><p><strong>le</strong> = 1000</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.AinswerPluginParams.logger">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">logger</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Logger</span> <span class="pre">for</span> <span class="pre">including</span> <span class="pre">recents'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.AinswerPluginParams.logger" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.AinswerPluginParams.logger'">¶</a></dt>
+<dd><p>Logger for including recents</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
 </ul>
 </dd>
 </dl>
@@ -3169,6 +3199,7 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.plugins.AinswerPluginParams.clients'" class="reference internal" href="#enrobie.plugins.AinswerPluginParams.clients"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.clients</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.AinswerPluginParams.database'" class="reference internal" href="#enrobie.plugins.AinswerPluginParams.database"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.database</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.AinswerPluginParams.histories'" class="reference internal" href="#enrobie.plugins.AinswerPluginParams.histories"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.histories</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.AinswerPluginParams.logger'" class="reference internal" href="#enrobie.plugins.AinswerPluginParams.logger"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.logger</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.AinswerPluginParams.prompt'" class="reference internal" href="#enrobie.plugins.AinswerPluginParams.prompt"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.prompt</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.AinswerPluginParams.status'" class="reference internal" href="#enrobie.plugins.AinswerPluginParams.status"><code class="docutils literal notranslate"><span class="pre">AinswerPluginParams.status</span></code></a></li>
 </ul>
