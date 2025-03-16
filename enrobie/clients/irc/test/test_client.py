@@ -294,6 +294,7 @@ def test_IRCClient_channels(
 
     client_ircsock(IRCEVENTS)
 
+
     service.limit(
         clients=['ircbot'],
         plugins=['status'])

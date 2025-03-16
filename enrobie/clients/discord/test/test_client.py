@@ -313,6 +313,7 @@ def test_DSCClient_channels(
 
     client_dscsock(DSCEVENTS)
 
+
     service.limit(
         clients=['dscbot'],
         plugins=['status'])
