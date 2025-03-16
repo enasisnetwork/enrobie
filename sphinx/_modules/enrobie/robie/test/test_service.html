@@ -228,7 +228,7 @@
 </span><span id="line-83">    <span class="n">client_ircsock</span><span class="p">()</span>
 </span><span id="line-84">    <span class="n">client_mtmsock</span><span class="p">()</span>
 </span><span id="line-85">
-</span><span id="line-86">    <span class="n">service</span><span class="o">.</span><span class="n">limit_threads</span><span class="p">(</span>
+</span><span id="line-86">    <span class="n">service</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span>
 </span><span id="line-87">        <span class="n">plugins</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">])</span>
 </span><span id="line-88">
 </span><span id="line-89">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
@@ -312,7 +312,7 @@
 </span><span id="line-161"><span class="sd">    :param service: Ancilary Chatting Robie class instance.</span>
 </span><span id="line-162"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="line-163">
-</span><span id="line-164">    <span class="n">service</span><span class="o">.</span><span class="n">limit_threads</span><span class="p">(</span>
+</span><span id="line-164">    <span class="n">service</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span>
 </span><span id="line-165">        <span class="n">clients</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ircbot&#39;</span><span class="p">],</span>
 </span><span id="line-166">        <span class="n">plugins</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">])</span>
 </span><span id="line-167">

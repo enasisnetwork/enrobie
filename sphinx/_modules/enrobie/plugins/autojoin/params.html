@@ -198,43 +198,50 @@
 </span><span id="line-50">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Which channels to maintain join&#39;</span><span class="p">,</span>
 </span><span id="line-51">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 </span><span id="line-52">
-</span><span id="line-53">    <span class="n">status</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-54">        <span class="n">StatusPluginIconParams</span><span class="p">,</span>
-</span><span id="line-55">        <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">StatusPluginIconParams</span><span class="p">,</span>
-</span><span id="line-56">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per chat platform&#39;</span><span class="p">)]</span>
-</span><span id="line-57">
+</span><span id="line-53">    <span class="n">interval</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-54">        <span class="nb">int</span><span class="p">,</span>
+</span><span id="line-55">        <span class="n">Field</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span>
+</span><span id="line-56">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Interval when channels are joined&#39;</span><span class="p">,</span>
+</span><span id="line-57">              <span class="n">ge</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">le</span><span class="o">=</span><span class="mi">300</span><span class="p">)]</span>
 </span><span id="line-58">
-</span><span id="line-59">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
-</span><span id="line-60">        <span class="c1"># NOCVR</span>
-</span><span id="line-61">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-62">        <span class="o">/</span><span class="p">,</span>
-</span><span id="line-63">        <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-64">        <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-</span><span id="line-65">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-66"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-67"><span class="sd">        Initialize instance for class using provided parameters.</span>
-</span><span id="line-68"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-69">
-</span><span id="line-70">
-</span><span id="line-71">        <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-72">
-</span><span id="line-73">            <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="line-74">                <span class="s1">&#39;channels&#39;</span><span class="p">,</span>
-</span><span id="line-75">                <span class="s1">&#39;status&#39;</span><span class="p">]</span>
+</span><span id="line-59">    <span class="n">status</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-60">        <span class="n">StatusPluginIconParams</span><span class="p">,</span>
+</span><span id="line-61">        <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">StatusPluginIconParams</span><span class="p">,</span>
+</span><span id="line-62">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per chat platform&#39;</span><span class="p">)]</span>
+</span><span id="line-63">
+</span><span id="line-64">
+</span><span id="line-65">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-66">        <span class="c1"># NOCVR</span>
+</span><span id="line-67">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-68">        <span class="o">/</span><span class="p">,</span>
+</span><span id="line-69">        <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-70">        <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+</span><span id="line-71">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-72"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-73"><span class="sd">        Initialize instance for class using provided parameters.</span>
+</span><span id="line-74"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-75">
 </span><span id="line-76">
-</span><span id="line-77">            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
+</span><span id="line-77">        <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-78">
-</span><span id="line-79">                <span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-</span><span id="line-80">
-</span><span id="line-81">                <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-82">                    <span class="k">continue</span>
+</span><span id="line-79">            <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="line-80">                <span class="s1">&#39;channels&#39;</span><span class="p">,</span>
+</span><span id="line-81">                <span class="s1">&#39;interval&#39;</span><span class="p">,</span>
+</span><span id="line-82">                <span class="s1">&#39;status&#39;</span><span class="p">]</span>
 </span><span id="line-83">
-</span><span id="line-84">                <span class="n">value</span> <span class="o">=</span> <span class="n">_parse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span><span id="line-84">            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
 </span><span id="line-85">
-</span><span id="line-86">                <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span><span id="line-86">                <span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 </span><span id="line-87">
-</span><span id="line-88">
-</span><span id="line-89">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span></div>
+</span><span id="line-88">                <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-89">                    <span class="k">continue</span>
+</span><span id="line-90">
+</span><span id="line-91">                <span class="n">value</span> <span class="o">=</span> <span class="n">_parse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span><span id="line-92">
+</span><span id="line-93">                <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span><span id="line-94">
+</span><span id="line-95">
+</span><span id="line-96">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span></div>
 
 </span></code></pre></div>
     </div></div>

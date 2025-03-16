@@ -231,92 +231,100 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-38"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channels"</span><span class="p">,</span>
 </span><span id="line-39"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
 </span><span id="line-40"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-41"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-42"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-43"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
-</span><span id="line-44"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-45"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-46"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-47"><span class="w">      </span><span class="nt">"AutoJoinPluginChanParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-48"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-49"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-50"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-51"><span class="w">            </span><span class="nt">"client"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-52"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client where channel exists"</span><span class="p">,</span>
-</span><span id="line-53"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-54"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client"</span><span class="p">,</span>
-</span><span id="line-55"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-56"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-57"><span class="w">            </span><span class="nt">"channel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-58"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name of channel to remain joined"</span><span class="p">,</span>
-</span><span id="line-59"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-60"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channel"</span><span class="p">,</span>
-</span><span id="line-61"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-62"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-63"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-64"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-65"><span class="w">            </span><span class="s2">"client"</span><span class="p">,</span>
-</span><span id="line-66"><span class="w">            </span><span class="s2">"channel"</span>
-</span><span id="line-67"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-68"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AutoJoinPluginChanParams"</span><span class="p">,</span>
-</span><span id="line-69"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-70"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-71"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-72"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-73"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
-</span><span id="line-74"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-75"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-76"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-77"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-78"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-79"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-80"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-81"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-82"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-83"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-84"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-85"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-86"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-87"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
-</span><span id="line-88"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-89"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-90"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-91"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-92"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-93"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-94"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-95"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-96"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-97"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-98"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-99"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-100"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-101"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
-</span><span id="line-102"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-103"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-104"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-105"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-106"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-107"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-108"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-109"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-110"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-111"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-112"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-113"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-114"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-115"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
-</span><span id="line-116"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-117"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-118"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-119"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-120"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-121"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-122"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-123"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-124"><span class="w">      </span><span class="s2">"channels"</span>
-</span><span id="line-125"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-126"><span class="p">}</span>
+</span><span id="line-41"><span class="w">      </span><span class="nt">"interval"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-42"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+</span><span id="line-43"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Interval when channels are joined"</span><span class="p">,</span>
+</span><span id="line-44"><span class="w">         </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+</span><span id="line-45"><span class="w">         </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+</span><span id="line-46"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Interval"</span><span class="p">,</span>
+</span><span id="line-47"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-48"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-49"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-50"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-51"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
+</span><span id="line-52"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-53"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-54"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-55"><span class="w">      </span><span class="nt">"AutoJoinPluginChanParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-56"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-57"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-58"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-59"><span class="w">            </span><span class="nt">"client"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-60"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client where channel exists"</span><span class="p">,</span>
+</span><span id="line-61"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-62"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client"</span><span class="p">,</span>
+</span><span id="line-63"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-64"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-65"><span class="w">            </span><span class="nt">"channel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-66"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name of channel to remain joined"</span><span class="p">,</span>
+</span><span id="line-67"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-68"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channel"</span><span class="p">,</span>
+</span><span id="line-69"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-70"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-71"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-72"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-73"><span class="w">            </span><span class="s2">"client"</span><span class="p">,</span>
+</span><span id="line-74"><span class="w">            </span><span class="s2">"channel"</span>
+</span><span id="line-75"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-76"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AutoJoinPluginChanParams"</span><span class="p">,</span>
+</span><span id="line-77"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-78"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-79"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-80"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-81"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
+</span><span id="line-82"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-83"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-84"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-85"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-86"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-87"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-88"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-89"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-90"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-91"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-92"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-93"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-94"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-95"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
+</span><span id="line-96"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-97"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-98"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-99"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-100"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-101"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-102"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-103"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-104"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-105"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-106"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-107"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-108"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-109"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-110"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-111"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-112"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-113"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-114"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-115"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-116"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-117"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-118"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-119"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-120"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-121"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-122"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-123"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
+</span><span id="line-124"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-125"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-126"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-127"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-128"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-129"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-130"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-131"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-132"><span class="w">      </span><span class="s2">"channels"</span>
+</span><span id="line-133"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-134"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -329,6 +337,7 @@ is permitted, for more information consult the project license file.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><a class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.channels" title="enrobie.plugins.autojoin.params.AutoJoinPluginParams.channels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">channels</span> <span class="pre">(Annotated[list[enrobie.plugins.autojoin.params.AutoJoinPluginChanParams],</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=True,</span> <span class="pre">description='Which</span> <span class="pre">channels</span> <span class="pre">to</span> <span class="pre">maintain</span> <span class="pre">join',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.enable" title="enrobie.plugins.autojoin.params.AutoJoinPluginParams.enable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable</span> <span class="pre">(Annotated[bool,</span> <span class="pre">Field(False,</span> <span class="pre">description='Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled')])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.interval" title="enrobie.plugins.autojoin.params.AutoJoinPluginParams.interval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interval</span> <span class="pre">(Annotated[int,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=5,</span> <span class="pre">description='Interval</span> <span class="pre">when</span> <span class="pre">channels</span> <span class="pre">are</span> <span class="pre">joined',</span> <span class="pre">metadata=[Ge(ge=5),</span> <span class="pre">Le(le=300)])])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.locate" title="enrobie.plugins.autojoin.params.AutoJoinPluginParams.locate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span> <span class="pre">(Annotated[Optional[str],</span> <span class="pre">Field(None,</span> <span class="pre">description='For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters',</span> <span class="pre">examples=['enrobie.plugins.AinswerPlugin',</span> <span class="pre">'enrobie.plugins.AutoJoinPlugin',</span> <span class="pre">'enrobie.plugins.AutoNickPlugin',</span> <span class="pre">'enrobie.plugins.StatusPlugin'],</span> <span class="pre">min_length=1)])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.status" title="enrobie.plugins.autojoin.params.AutoJoinPluginParams.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span> <span class="pre">(Annotated[enrobie.plugins.status.params.StatusPluginIconParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=StatusPluginIconParams,</span> <span class="pre">description='Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform')])</span></code></a></p></li>
 </ul>
@@ -350,6 +359,19 @@ is permitted, for more information consult the project license file.</p>
 <dt class="sig sig-object py" id="enrobie.plugins.autojoin.params.AutoJoinPluginParams.enable">
 <em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enable</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Field</span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.enable" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autojoin.params.AutoJoinPluginParams.enable'">¶</a></dt>
 <dd><p>Determine whether child enabled</p>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.autojoin.params.AutoJoinPluginParams.interval">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">interval</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">5</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Interval</span> <span class="pre">when</span> <span class="pre">channels</span> <span class="pre">are</span> <span class="pre">joined'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Ge</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">ge</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">5</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Le</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">le</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">300</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.interval" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autojoin.params.AutoJoinPluginParams.interval'">¶</a></dt>
+<dd><p>Interval when channels are joined</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ge</strong> = 5</p></li>
+<li><p><strong>le</strong> = 300</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.plugins.autojoin.params.AutoJoinPluginParams.locate">
@@ -386,13 +408,8 @@ is permitted, for more information consult the project license file.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="enrobie.plugins.autojoin.plugin.AutoJoinPlugin.operate">
-<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/autojoin/plugin.html#AutoJoinPlugin.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.autojoin.plugin.AutoJoinPlugin.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autojoin.plugin.AutoJoinPlugin.operate'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/autojoin/plugin.html#AutoJoinPlugin.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.autojoin.plugin.AutoJoinPlugin.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autojoin.plugin.AutoJoinPlugin.operate'">¶</a></dt>
 <dd><p>Perform the operation related to Robie service threads.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
-</dd>
-</dl>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="enrobie.plugins.autojoin.plugin.AutoJoinPlugin.params">
@@ -437,13 +454,8 @@ is permitted, for more information consult the project license file.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="enrobie.plugins.autojoin.AutoJoinPlugin.operate">
-<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/autojoin/plugin.html#AutoJoinPlugin.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.autojoin.AutoJoinPlugin.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autojoin.AutoJoinPlugin.operate'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/autojoin/plugin.html#AutoJoinPlugin.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.autojoin.AutoJoinPlugin.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autojoin.AutoJoinPlugin.operate'">¶</a></dt>
 <dd><p>Perform the operation related to Robie service threads.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
-</dd>
-</dl>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="enrobie.plugins.autojoin.AutoJoinPlugin.params">
@@ -517,92 +529,100 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-38"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channels"</span><span class="p">,</span>
 </span><span id="line-39"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
 </span><span id="line-40"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-41"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-42"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-43"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
-</span><span id="line-44"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-45"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-46"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-47"><span class="w">      </span><span class="nt">"AutoJoinPluginChanParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-48"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-49"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-50"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-51"><span class="w">            </span><span class="nt">"client"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-52"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client where channel exists"</span><span class="p">,</span>
-</span><span id="line-53"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-54"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client"</span><span class="p">,</span>
-</span><span id="line-55"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-56"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-57"><span class="w">            </span><span class="nt">"channel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-58"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name of channel to remain joined"</span><span class="p">,</span>
-</span><span id="line-59"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-60"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channel"</span><span class="p">,</span>
-</span><span id="line-61"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-62"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-63"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-64"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-65"><span class="w">            </span><span class="s2">"client"</span><span class="p">,</span>
-</span><span id="line-66"><span class="w">            </span><span class="s2">"channel"</span>
-</span><span id="line-67"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-68"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AutoJoinPluginChanParams"</span><span class="p">,</span>
-</span><span id="line-69"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-70"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-71"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-72"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-73"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
-</span><span id="line-74"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-75"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-76"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-77"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-78"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-79"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-80"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-81"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-82"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-83"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-84"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-85"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-86"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-87"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
-</span><span id="line-88"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-89"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-90"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-91"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-92"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-93"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-94"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-95"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-96"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-97"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-98"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-99"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-100"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-101"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
-</span><span id="line-102"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-103"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-104"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-105"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-106"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-107"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-108"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-109"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-110"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-111"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-112"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-113"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-114"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-115"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
-</span><span id="line-116"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-117"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-118"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-119"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-120"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-121"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-122"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-123"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-124"><span class="w">      </span><span class="s2">"channels"</span>
-</span><span id="line-125"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-126"><span class="p">}</span>
+</span><span id="line-41"><span class="w">      </span><span class="nt">"interval"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-42"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+</span><span id="line-43"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Interval when channels are joined"</span><span class="p">,</span>
+</span><span id="line-44"><span class="w">         </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+</span><span id="line-45"><span class="w">         </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+</span><span id="line-46"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Interval"</span><span class="p">,</span>
+</span><span id="line-47"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-48"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-49"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-50"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-51"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
+</span><span id="line-52"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-53"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-54"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-55"><span class="w">      </span><span class="nt">"AutoJoinPluginChanParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-56"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-57"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-58"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-59"><span class="w">            </span><span class="nt">"client"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-60"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client where channel exists"</span><span class="p">,</span>
+</span><span id="line-61"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-62"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client"</span><span class="p">,</span>
+</span><span id="line-63"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-64"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-65"><span class="w">            </span><span class="nt">"channel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-66"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name of channel to remain joined"</span><span class="p">,</span>
+</span><span id="line-67"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-68"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channel"</span><span class="p">,</span>
+</span><span id="line-69"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-70"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-71"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-72"><span class="w">         </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-73"><span class="w">            </span><span class="s2">"client"</span><span class="p">,</span>
+</span><span id="line-74"><span class="w">            </span><span class="s2">"channel"</span>
+</span><span id="line-75"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-76"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AutoJoinPluginChanParams"</span><span class="p">,</span>
+</span><span id="line-77"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-78"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-79"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-80"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-81"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
+</span><span id="line-82"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-83"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-84"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-85"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-86"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-87"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-88"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-89"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-90"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-91"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-92"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-93"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-94"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-95"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
+</span><span id="line-96"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-97"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-98"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-99"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-100"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-101"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-102"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-103"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-104"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-105"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-106"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-107"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-108"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-109"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-110"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-111"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-112"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-113"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-114"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-115"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-116"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-117"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-118"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-119"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-120"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-121"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-122"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-123"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
+</span><span id="line-124"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-125"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-126"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-127"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-128"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-129"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-130"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-131"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-132"><span class="w">      </span><span class="s2">"channels"</span>
+</span><span id="line-133"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-134"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -615,6 +635,7 @@ is permitted, for more information consult the project license file.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><a class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.channels" title="enrobie.plugins.autojoin.params.AutoJoinPluginParams.channels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">channels</span> <span class="pre">(Annotated[list[enrobie.plugins.autojoin.params.AutoJoinPluginChanParams],</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=True,</span> <span class="pre">description='Which</span> <span class="pre">channels</span> <span class="pre">to</span> <span class="pre">maintain</span> <span class="pre">join',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.enable" title="enrobie.plugins.autojoin.params.AutoJoinPluginParams.enable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable</span> <span class="pre">(Annotated[bool,</span> <span class="pre">Field(False,</span> <span class="pre">description='Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled')])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.interval" title="enrobie.plugins.autojoin.params.AutoJoinPluginParams.interval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interval</span> <span class="pre">(Annotated[int,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=5,</span> <span class="pre">description='Interval</span> <span class="pre">when</span> <span class="pre">channels</span> <span class="pre">are</span> <span class="pre">joined',</span> <span class="pre">metadata=[Ge(ge=5),</span> <span class="pre">Le(le=300)])])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.locate" title="enrobie.plugins.autojoin.params.AutoJoinPluginParams.locate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span> <span class="pre">(Annotated[Optional[str],</span> <span class="pre">Field(None,</span> <span class="pre">description='For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters',</span> <span class="pre">examples=['enrobie.plugins.AinswerPlugin',</span> <span class="pre">'enrobie.plugins.AutoJoinPlugin',</span> <span class="pre">'enrobie.plugins.AutoNickPlugin',</span> <span class="pre">'enrobie.plugins.StatusPlugin'],</span> <span class="pre">min_length=1)])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.status" title="enrobie.plugins.autojoin.params.AutoJoinPluginParams.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span> <span class="pre">(Annotated[enrobie.plugins.status.params.StatusPluginIconParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=StatusPluginIconParams,</span> <span class="pre">description='Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform')])</span></code></a></p></li>
 </ul>
@@ -636,6 +657,19 @@ is permitted, for more information consult the project license file.</p>
 <dt class="sig sig-object py" id="enrobie.plugins.autojoin.AutoJoinPluginParams.enable">
 <em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enable</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Field</span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#enrobie.plugins.autojoin.AutoJoinPluginParams.enable" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autojoin.AutoJoinPluginParams.enable'">¶</a></dt>
 <dd><p>Determine whether child enabled</p>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.autojoin.AutoJoinPluginParams.interval">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">interval</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">5</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Interval</span> <span class="pre">when</span> <span class="pre">channels</span> <span class="pre">are</span> <span class="pre">joined'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Ge</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">ge</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">5</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Le</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">le</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">300</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#enrobie.plugins.autojoin.AutoJoinPluginParams.interval" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.autojoin.AutoJoinPluginParams.interval'">¶</a></dt>
+<dd><p>Interval when channels are joined</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ge</strong> = 5</p></li>
+<li><p><strong>le</strong> = 300</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.plugins.autojoin.AutoJoinPluginParams.locate">
@@ -671,6 +705,7 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.plugins.autojoin.params.AutoJoinPluginParams'" class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams"><code class="docutils literal notranslate"><span class="pre">AutoJoinPluginParams</span></code></a><ul>
 <li><a :data-current="activeSection === '#enrobie.plugins.autojoin.params.AutoJoinPluginParams.channels'" class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.channels"><code class="docutils literal notranslate"><span class="pre">AutoJoinPluginParams.channels</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.autojoin.params.AutoJoinPluginParams.enable'" class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.enable"><code class="docutils literal notranslate"><span class="pre">AutoJoinPluginParams.enable</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.autojoin.params.AutoJoinPluginParams.interval'" class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.interval"><code class="docutils literal notranslate"><span class="pre">AutoJoinPluginParams.interval</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.autojoin.params.AutoJoinPluginParams.locate'" class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.locate"><code class="docutils literal notranslate"><span class="pre">AutoJoinPluginParams.locate</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.autojoin.params.AutoJoinPluginParams.status'" class="reference internal" href="#enrobie.plugins.autojoin.params.AutoJoinPluginParams.status"><code class="docutils literal notranslate"><span class="pre">AutoJoinPluginParams.status</span></code></a></li>
 </ul>
@@ -698,6 +733,7 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.plugins.autojoin.AutoJoinPluginParams'" class="reference internal" href="#enrobie.plugins.autojoin.AutoJoinPluginParams"><code class="docutils literal notranslate"><span class="pre">AutoJoinPluginParams</span></code></a><ul>
 <li><a :data-current="activeSection === '#enrobie.plugins.autojoin.AutoJoinPluginParams.channels'" class="reference internal" href="#enrobie.plugins.autojoin.AutoJoinPluginParams.channels"><code class="docutils literal notranslate"><span class="pre">AutoJoinPluginParams.channels</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.autojoin.AutoJoinPluginParams.enable'" class="reference internal" href="#enrobie.plugins.autojoin.AutoJoinPluginParams.enable"><code class="docutils literal notranslate"><span class="pre">AutoJoinPluginParams.enable</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.autojoin.AutoJoinPluginParams.interval'" class="reference internal" href="#enrobie.plugins.autojoin.AutoJoinPluginParams.interval"><code class="docutils literal notranslate"><span class="pre">AutoJoinPluginParams.interval</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.autojoin.AutoJoinPluginParams.locate'" class="reference internal" href="#enrobie.plugins.autojoin.AutoJoinPluginParams.locate"><code class="docutils literal notranslate"><span class="pre">AutoJoinPluginParams.locate</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.autojoin.AutoJoinPluginParams.status'" class="reference internal" href="#enrobie.plugins.autojoin.AutoJoinPluginParams.status"><code class="docutils literal notranslate"><span class="pre">AutoJoinPluginParams.status</span></code></a></li>
 </ul>

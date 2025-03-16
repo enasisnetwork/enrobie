@@ -156,16 +156,16 @@
 </span><span id="line-13"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Type</span>
 </span><span id="line-14">
 </span><span id="line-15"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">DictStrAny</span>
-</span><span id="line-16">
-</span><span id="line-17"><span class="kn">from</span><span class="w"> </span><span class="nn">.child</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieChild</span>
-</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">..addons</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieQueue</span>
-</span><span id="line-19"><span class="kn">from</span><span class="w"> </span><span class="nn">...utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClientChannels</span>
-</span><span id="line-20">
-</span><span id="line-21"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-</span><span id="line-22">    <span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieCommand</span>
-</span><span id="line-23">    <span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieMessage</span>
-</span><span id="line-24">    <span class="kn">from</span><span class="w"> </span><span class="nn">..params</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieClientParams</span>
-</span><span id="line-25">    <span class="kn">from</span><span class="w"> </span><span class="nn">..threads</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieThread</span>
+</span><span id="line-16"><span class="kn">from</span><span class="w"> </span><span class="nn">encommon.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">NCNone</span>
+</span><span id="line-17">
+</span><span id="line-18"><span class="kn">from</span><span class="w"> </span><span class="nn">.child</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieChild</span>
+</span><span id="line-19"><span class="kn">from</span><span class="w"> </span><span class="nn">..addons</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieQueue</span>
+</span><span id="line-20"><span class="kn">from</span><span class="w"> </span><span class="nn">...utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClientChannels</span>
+</span><span id="line-21">
+</span><span id="line-22"><span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+</span><span id="line-23">    <span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieCommand</span>
+</span><span id="line-24">    <span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieMessage</span>
+</span><span id="line-25">    <span class="kn">from</span><span class="w"> </span><span class="nn">..params</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieClientParams</span>
 </span><span id="line-26">    <span class="kn">from</span><span class="w"> </span><span class="nn">..threads</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobieClientThread</span>
 </span><span id="line-27">
 </span><span id="line-28">
@@ -251,7 +251,7 @@
 </span><span id="line-103">        <span class="n">thread</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__thread</span>
 </span><span id="line-104">
 </span><span id="line-105">        <span class="k">if</span> <span class="n">thread</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-106">            <span class="k">return</span> <span class="kc">None</span>
+</span><span id="line-106">            <span class="k">return</span> <span class="n">NCNone</span>
 </span><span id="line-107">
 </span><span id="line-108">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
 </span><span id="line-109">            <span class="n">thread</span><span class="p">,</span>
@@ -301,99 +301,96 @@
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.operate">[docs]</a>
 </span><span id="line-152">    <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>
 </span><span id="line-153">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-154">        <span class="n">thread</span><span class="p">:</span> <span class="s1">&#39;RobieThread&#39;</span><span class="p">,</span>
-</span><span id="line-155">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-156"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-157"><span class="sd">        Perform the operation related to Robie service threads.</span>
-</span><span id="line-158">
-</span><span id="line-159"><span class="sd">        .. note::</span>
-</span><span id="line-160"><span class="sd">           Deviates from enhomie in children have operations,</span>
-</span><span id="line-161"><span class="sd">           and are more isolated from internal core routines.</span>
+</span><span id="line-154">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-155"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-156"><span class="sd">        Perform the operation related to Robie service threads.</span>
+</span><span id="line-157">
+</span><span id="line-158"><span class="sd">        .. note::</span>
+</span><span id="line-159"><span class="sd">           Deviates from enhomie in children have operations,</span>
+</span><span id="line-160"><span class="sd">           and are more isolated from internal core routines.</span>
+</span><span id="line-161"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-162">
-</span><span id="line-163"><span class="sd">        :param thread: Child class instance for Chatting Robie.</span>
-</span><span id="line-164"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-165">
-</span><span id="line-166">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</span><span id="line-163">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-</span><span id="line-167">
-</span><span id="line-168">
+</span><span id="line-164">
+</span><span id="line-165">
 <div class="viewcode-block" id="RobieClient.get_message">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.get_message">[docs]</a>
-</span><span id="line-169">    <span class="k">def</span><span class="w"> </span><span class="nf">get_message</span><span class="p">(</span>
-</span><span id="line-170">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-171">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">:</span>
-</span><span id="line-172"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-173"><span class="sd">        Return the new item containing information for operation.</span>
+</span><span id="line-166">    <span class="k">def</span><span class="w"> </span><span class="nf">get_message</span><span class="p">(</span>
+</span><span id="line-167">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-168">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">:</span>
+</span><span id="line-169"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-170"><span class="sd">        Return the new item containing information for operation.</span>
+</span><span id="line-171">
+</span><span id="line-172"><span class="sd">        :returns: New item containing information for operation.</span>
+</span><span id="line-173"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-174">
-</span><span id="line-175"><span class="sd">        :returns: New item containing information for operation.</span>
-</span><span id="line-176"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-177">
-</span><span id="line-178">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</span><span id="line-175">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-</span><span id="line-179">
-</span><span id="line-180">
+</span><span id="line-176">
+</span><span id="line-177">
 <div class="viewcode-block" id="RobieClient.put_message">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.put_message">[docs]</a>
-</span><span id="line-181">    <span class="k">def</span><span class="w"> </span><span class="nf">put_message</span><span class="p">(</span>
-</span><span id="line-182">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-183">        <span class="n">mqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieMessage&#39;</span><span class="p">],</span>
-</span><span id="line-184">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-185"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-186"><span class="sd">        Insert the new item containing information for operation.</span>
+</span><span id="line-178">    <span class="k">def</span><span class="w"> </span><span class="nf">put_message</span><span class="p">(</span>
+</span><span id="line-179">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-180">        <span class="n">mqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieMessage&#39;</span><span class="p">],</span>
+</span><span id="line-181">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-182"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-183"><span class="sd">        Insert the new item containing information for operation.</span>
+</span><span id="line-184">
+</span><span id="line-185"><span class="sd">        :param mqueue: Queue instance where the item is received.</span>
+</span><span id="line-186"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-187">
-</span><span id="line-188"><span class="sd">        :param mqueue: Queue instance where the item is received.</span>
-</span><span id="line-189"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-190">
-</span><span id="line-191">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</span><span id="line-188">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-</span><span id="line-192">
-</span><span id="line-193">
+</span><span id="line-189">
+</span><span id="line-190">
 <div class="viewcode-block" id="RobieClient.get_command">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.get_command">[docs]</a>
-</span><span id="line-194">    <span class="k">def</span><span class="w"> </span><span class="nf">get_command</span><span class="p">(</span>
-</span><span id="line-195">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-196">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieCommand&#39;</span><span class="p">:</span>
-</span><span id="line-197"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-198"><span class="sd">        Return the new item containing information for operation.</span>
+</span><span id="line-191">    <span class="k">def</span><span class="w"> </span><span class="nf">get_command</span><span class="p">(</span>
+</span><span id="line-192">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-193">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieCommand&#39;</span><span class="p">:</span>
+</span><span id="line-194"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-195"><span class="sd">        Return the new item containing information for operation.</span>
+</span><span id="line-196">
+</span><span id="line-197"><span class="sd">        :returns: New item containing information for operation.</span>
+</span><span id="line-198"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-199">
-</span><span id="line-200"><span class="sd">        :returns: New item containing information for operation.</span>
-</span><span id="line-201"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-202">
-</span><span id="line-203">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</span><span id="line-200">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-</span><span id="line-204">
-</span><span id="line-205">
+</span><span id="line-201">
+</span><span id="line-202">
 <div class="viewcode-block" id="RobieClient.put_command">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.put_command">[docs]</a>
-</span><span id="line-206">    <span class="k">def</span><span class="w"> </span><span class="nf">put_command</span><span class="p">(</span>
-</span><span id="line-207">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-208">        <span class="n">cqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieCommand&#39;</span><span class="p">],</span>
-</span><span id="line-209">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-210"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-211"><span class="sd">        Insert the new item containing information for operation.</span>
+</span><span id="line-203">    <span class="k">def</span><span class="w"> </span><span class="nf">put_command</span><span class="p">(</span>
+</span><span id="line-204">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-205">        <span class="n">cqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieCommand&#39;</span><span class="p">],</span>
+</span><span id="line-206">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-207"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-208"><span class="sd">        Insert the new item containing information for operation.</span>
+</span><span id="line-209">
+</span><span id="line-210"><span class="sd">        :param cqueue: Queue instance where the item is received.</span>
+</span><span id="line-211"><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="line-212">
-</span><span id="line-213"><span class="sd">        :param cqueue: Queue instance where the item is received.</span>
-</span><span id="line-214"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-215">
-</span><span id="line-216">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</span><span id="line-213">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-</span><span id="line-217">
-</span><span id="line-218">
+</span><span id="line-214">
+</span><span id="line-215">
 <div class="viewcode-block" id="RobieClient.compose">
 <a class="viewcode-back" href="../../../../enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.compose">[docs]</a>
-</span><span id="line-219">    <span class="k">def</span><span class="w"> </span><span class="nf">compose</span><span class="p">(</span>
-</span><span id="line-220">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-221">        <span class="n">target</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-222">        <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-223">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieCommand&#39;</span><span class="p">:</span>
-</span><span id="line-224"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-225"><span class="sd">        Compose the message and transmit using the chat client.</span>
-</span><span id="line-226">
-</span><span id="line-227"><span class="sd">        :param target: Where the composed message will be sent.</span>
-</span><span id="line-228"><span class="sd">        :param content: Content that will be source of message.</span>
-</span><span id="line-229"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-230">
-</span><span id="line-231">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</span><span id="line-216">    <span class="k">def</span><span class="w"> </span><span class="nf">compose</span><span class="p">(</span>
+</span><span id="line-217">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-218">        <span class="n">target</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-219">        <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-220">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieCommand&#39;</span><span class="p">:</span>
+</span><span id="line-221"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-222"><span class="sd">        Compose the message and transmit using the chat client.</span>
+</span><span id="line-223">
+</span><span id="line-224"><span class="sd">        :param target: Where the composed message will be sent.</span>
+</span><span id="line-225"><span class="sd">        :param content: Content that will be source of message.</span>
+</span><span id="line-226"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-227">
+</span><span id="line-228">        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 </div>
 
 </span></code></pre></div>

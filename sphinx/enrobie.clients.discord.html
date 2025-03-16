@@ -111,6 +111,7 @@
 <li class="toctree-l2"><a class="reference internal" href="enrobie.clients.discord.test.html#module-enrobie.clients.discord.test.test_message">enrobie.clients.discord.test.test_message module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.clients.discord.test.html#enrobie.clients.discord.test.test_message.test_DSCMessage"><code class="docutils literal notranslate"><span class="pre">test_DSCMessage()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.clients.discord.test.html#enrobie.clients.discord.test.test_message.test_DSCMessage_reply"><code class="docutils literal notranslate"><span class="pre">test_DSCMessage_reply()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.clients.discord.test.html#enrobie.clients.discord.test.test_message.test_DSCMessage_samples"><code class="docutils literal notranslate"><span class="pre">test_DSCMessage_samples()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="enrobie.clients.discord.test.html#module-enrobie.clients.discord.test">Module contents</a></li>
@@ -226,13 +227,8 @@ introduce required parameters outside of the parent.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="enrobie.clients.discord.client.DSCClient.operate">
-<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/discord/client.html#DSCClient.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.discord.client.DSCClient.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.clients.discord.client.DSCClient.operate'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/discord/client.html#DSCClient.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.discord.client.DSCClient.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.clients.discord.client.DSCClient.operate'">¶</a></dt>
 <dd><p>Perform the operation related to Robie service threads.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
-</dd>
-</dl>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="enrobie.clients.discord.client.DSCClient.params">
@@ -241,6 +237,16 @@ introduce required parameters outside of the parent.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Pydantic model containing the configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.clients.discord.client.DSCClient.publish">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">publish</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientPublish" title="enrobie.utils.states.ClientPublish"><span class="pre">ClientPublish</span></a></em><a class="headerlink" href="#enrobie.clients.discord.client.DSCClient.publish" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.clients.discord.client.DSCClient.publish'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -803,13 +809,8 @@ introduce required parameters outside of the parent.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="enrobie.clients.discord.DSCClient.operate">
-<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread" title="enrobie.robie.threads.thread.RobieThread"><span class="pre">RobieThread</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/discord/client.html#DSCClient.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.discord.DSCClient.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.clients.discord.DSCClient.operate'">¶</a></dt>
+<span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/clients/discord/client.html#DSCClient.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.clients.discord.DSCClient.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.clients.discord.DSCClient.operate'">¶</a></dt>
 <dd><p>Perform the operation related to Robie service threads.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>thread</strong> – Child class instance for Chatting Robie.</p>
-</dd>
-</dl>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="enrobie.clients.discord.DSCClient.params">
@@ -818,6 +819,16 @@ introduce required parameters outside of the parent.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Pydantic model containing the configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.clients.discord.DSCClient.publish">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">publish</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="enrobie.utils.html#enrobie.utils.states.ClientPublish" title="enrobie.utils.states.ClientPublish"><span class="pre">ClientPublish</span></a></em><a class="headerlink" href="#enrobie.clients.discord.DSCClient.publish" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.clients.discord.DSCClient.publish'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1139,6 +1150,7 @@ introduce required parameters outside of the parent.</p>
 <li><a :data-current="activeSection === '#enrobie.clients.discord.client.DSCClient.get_message'" class="reference internal" href="#enrobie.clients.discord.client.DSCClient.get_message"><code class="docutils literal notranslate"><span class="pre">DSCClient.get_message()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.clients.discord.client.DSCClient.operate'" class="reference internal" href="#enrobie.clients.discord.client.DSCClient.operate"><code class="docutils literal notranslate"><span class="pre">DSCClient.operate()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.clients.discord.client.DSCClient.params'" class="reference internal" href="#enrobie.clients.discord.client.DSCClient.params"><code class="docutils literal notranslate"><span class="pre">DSCClient.params</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.clients.discord.client.DSCClient.publish'" class="reference internal" href="#enrobie.clients.discord.client.DSCClient.publish"><code class="docutils literal notranslate"><span class="pre">DSCClient.publish</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.clients.discord.client.DSCClient.put_command'" class="reference internal" href="#enrobie.clients.discord.client.DSCClient.put_command"><code class="docutils literal notranslate"><span class="pre">DSCClient.put_command()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.clients.discord.client.DSCClient.put_message'" class="reference internal" href="#enrobie.clients.discord.client.DSCClient.put_message"><code class="docutils literal notranslate"><span class="pre">DSCClient.put_message()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.clients.discord.client.DSCClient.schema'" class="reference internal" href="#enrobie.clients.discord.client.DSCClient.schema"><code class="docutils literal notranslate"><span class="pre">DSCClient.schema()</span></code></a></li>
@@ -1196,6 +1208,7 @@ introduce required parameters outside of the parent.</p>
 <li><a :data-current="activeSection === '#enrobie.clients.discord.DSCClient.get_message'" class="reference internal" href="#enrobie.clients.discord.DSCClient.get_message"><code class="docutils literal notranslate"><span class="pre">DSCClient.get_message()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.clients.discord.DSCClient.operate'" class="reference internal" href="#enrobie.clients.discord.DSCClient.operate"><code class="docutils literal notranslate"><span class="pre">DSCClient.operate()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.clients.discord.DSCClient.params'" class="reference internal" href="#enrobie.clients.discord.DSCClient.params"><code class="docutils literal notranslate"><span class="pre">DSCClient.params</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.clients.discord.DSCClient.publish'" class="reference internal" href="#enrobie.clients.discord.DSCClient.publish"><code class="docutils literal notranslate"><span class="pre">DSCClient.publish</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.clients.discord.DSCClient.put_command'" class="reference internal" href="#enrobie.clients.discord.DSCClient.put_command"><code class="docutils literal notranslate"><span class="pre">DSCClient.put_command()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.clients.discord.DSCClient.put_message'" class="reference internal" href="#enrobie.clients.discord.DSCClient.put_message"><code class="docutils literal notranslate"><span class="pre">DSCClient.put_message()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.clients.discord.DSCClient.schema'" class="reference internal" href="#enrobie.clients.discord.DSCClient.schema"><code class="docutils literal notranslate"><span class="pre">DSCClient.schema()</span></code></a></li>

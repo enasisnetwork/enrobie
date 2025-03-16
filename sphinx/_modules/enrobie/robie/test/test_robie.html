@@ -291,54 +291,53 @@
 </span><span id="line-140">        <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;ircbot&#39;</span><span class="p">],</span>
 </span><span id="line-141">        <span class="s1">&#39;some!user@domain.invalid&#39;</span><span class="p">)</span>
 </span><span id="line-142">
-</span><span id="line-143">    <span class="k">assert</span> <span class="n">person</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-</span><span id="line-144">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;anonymous&#39;</span>
+</span><span id="line-143">    <span class="k">assert</span> <span class="n">person</span> <span class="ow">is</span> <span class="kc">None</span>
+</span><span id="line-144">
 </span><span id="line-145">
-</span><span id="line-146">
-</span><span id="line-147">    <span class="n">person</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">person</span><span class="p">(</span>
-</span><span id="line-148">        <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">],</span>
-</span><span id="line-149">        <span class="s1">&#39;iietalkwkjf9al2kla&#39;</span><span class="p">)</span>
-</span><span id="line-150">
-</span><span id="line-151">    <span class="k">assert</span> <span class="n">person</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-</span><span id="line-152">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;bender&#39;</span>
-</span><span id="line-153">
-</span><span id="line-154">    <span class="n">person</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">person</span><span class="p">(</span>
-</span><span id="line-155">        <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">],</span> <span class="s1">&#39;123&#39;</span><span class="p">)</span>
-</span><span id="line-156">
-</span><span id="line-157">    <span class="k">assert</span> <span class="n">person</span> <span class="ow">is</span> <span class="kc">None</span></div>
+</span><span id="line-146">    <span class="n">person</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">person</span><span class="p">(</span>
+</span><span id="line-147">        <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">],</span>
+</span><span id="line-148">        <span class="s1">&#39;iietalkwkjf9al2kla&#39;</span><span class="p">)</span>
+</span><span id="line-149">
+</span><span id="line-150">    <span class="k">assert</span> <span class="n">person</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="line-151">    <span class="k">assert</span> <span class="n">person</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;bender&#39;</span>
+</span><span id="line-152">
+</span><span id="line-153">    <span class="n">person</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">person</span><span class="p">(</span>
+</span><span id="line-154">        <span class="n">clients</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">],</span> <span class="s1">&#39;123&#39;</span><span class="p">)</span>
+</span><span id="line-155">
+</span><span id="line-156">    <span class="k">assert</span> <span class="n">person</span> <span class="ow">is</span> <span class="kc">None</span></div>
 
+</span><span id="line-157">
 </span><span id="line-158">
 </span><span id="line-159">
-</span><span id="line-160">
 <div class="viewcode-block" id="test_Robie_jinja2">
 <a class="viewcode-back" href="../../../../enrobie.robie.test.html#enrobie.robie.test.test_robie.test_Robie_jinja2">[docs]</a>
-</span><span id="line-161"><span class="k">def</span><span class="w"> </span><span class="nf">test_Robie_jinja2</span><span class="p">(</span>
-</span><span id="line-162">    <span class="n">robie</span><span class="p">:</span> <span class="n">Robie</span><span class="p">,</span>
-</span><span id="line-163"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-164"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-165"><span class="sd">    Perform various tests associated with relevant routines.</span>
-</span><span id="line-166">
-</span><span id="line-167"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
-</span><span id="line-168"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-169">
-</span><span id="line-170">    <span class="n">parsed</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">j2parse</span><span class="p">(</span>
-</span><span id="line-171">        <span class="s1">&#39;{{ foo }}&#39;</span><span class="p">,</span>
-</span><span id="line-172">        <span class="p">{</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="s1">&#39;bar&#39;</span><span class="p">})</span>
-</span><span id="line-173">
-</span><span id="line-174">    <span class="k">assert</span> <span class="n">parsed</span> <span class="o">==</span> <span class="s1">&#39;bar&#39;</span></div>
+</span><span id="line-160"><span class="k">def</span><span class="w"> </span><span class="nf">test_Robie_jinja2</span><span class="p">(</span>
+</span><span id="line-161">    <span class="n">robie</span><span class="p">:</span> <span class="n">Robie</span><span class="p">,</span>
+</span><span id="line-162"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-163"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-164"><span class="sd">    Perform various tests associated with relevant routines.</span>
+</span><span id="line-165">
+</span><span id="line-166"><span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
+</span><span id="line-167"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-168">
+</span><span id="line-169">    <span class="n">parsed</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">j2parse</span><span class="p">(</span>
+</span><span id="line-170">        <span class="s1">&#39;{{ foo }}&#39;</span><span class="p">,</span>
+</span><span id="line-171">        <span class="p">{</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="s1">&#39;bar&#39;</span><span class="p">})</span>
+</span><span id="line-172">
+</span><span id="line-173">    <span class="k">assert</span> <span class="n">parsed</span> <span class="o">==</span> <span class="s1">&#39;bar&#39;</span></div>
 
+</span><span id="line-174">
 </span><span id="line-175">
 </span><span id="line-176">
-</span><span id="line-177">
 <div class="viewcode-block" id="test_Robie_cover">
 <a class="viewcode-back" href="../../../../enrobie.robie.test.html#enrobie.robie.test.test_robie.test_Robie_cover">[docs]</a>
-</span><span id="line-178"><span class="k">def</span><span class="w"> </span><span class="nf">test_Robie_cover</span><span class="p">(</span>
-</span><span id="line-179"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-180"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-181"><span class="sd">    Perform various tests associated with relevant routines.</span>
-</span><span id="line-182"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-183">
-</span><span id="line-184">    <span class="n">Robie</span><span class="p">(</span><span class="n">RobieConfig</span><span class="p">())</span></div>
+</span><span id="line-177"><span class="k">def</span><span class="w"> </span><span class="nf">test_Robie_cover</span><span class="p">(</span>
+</span><span id="line-178"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-179"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-180"><span class="sd">    Perform various tests associated with relevant routines.</span>
+</span><span id="line-181"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-182">
+</span><span id="line-183">    <span class="n">Robie</span><span class="p">(</span><span class="n">RobieConfig</span><span class="p">())</span></div>
 
 </span></code></pre></div>
     </div></div>

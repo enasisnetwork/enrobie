@@ -111,7 +111,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test.test_states">enrobie.utils.test.test_states module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.utils.test.html#enrobie.utils.test.test_states.test_ClientChannels"><code class="docutils literal notranslate"><span class="pre">test_ClientChannels()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.test.html#enrobie.utils.test.test_states.test_ClientChannels_basics"><code class="docutils literal notranslate"><span class="pre">test_ClientChannels_basics()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.utils.test.html#enrobie.utils.test.test_states.test_ClientChannels_cover"><code class="docutils literal notranslate"><span class="pre">test_ClientChannels_cover()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.utils.test.html#enrobie.utils.test.test_states.test_ClientPublish"><code class="docutils literal notranslate"><span class="pre">test_ClientPublish()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="enrobie.utils.test.html#module-enrobie.utils.test.test_thread">enrobie.utils.test.test_thread module</a><ul>
@@ -490,6 +492,32 @@ is permitted, for more information consult the project license file.</p>
 </dl>
 </dd></dl>
 </dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientPublish">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.utils.states.</span></span><span class="sig-name descname"><span class="pre">ClientPublish</span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientPublish"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.states.ClientPublish" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientPublish'">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Allow for subscription to client events useful in tests.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientPublish.publish">
+<span class="sig-name descname"><span class="pre">publish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mitem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage" title="enrobie.robie.models.message.RobieMessage"><span class="pre">RobieMessage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientPublish.publish"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.states.ClientPublish.publish" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientPublish.publish'">¶</a></dt>
+<dd><p>Submit the message from client to subscriber references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mitem</strong> – Item containing information for operation.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.states.ClientPublish.subscribe">
+<span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.13)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage" title="enrobie.robie.models.message.RobieMessage"><span class="pre">RobieMessage</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientPublish.subscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.states.ClientPublish.subscribe" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.states.ClientPublish.subscribe'">¶</a></dt>
+<dd><p>Store the callback within internal subscriber reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>callback</strong> – Function that will be called with item.</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
 </section>
 <section id="module-enrobie.utils.thread">
 <span id="enrobie-utils-thread-module"></span><h2>enrobie.utils.thread module<a class="headerlink" href="#module-enrobie.utils.thread" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.utils.thread'">¶</a></h2>
@@ -778,6 +806,32 @@ is permitted, for more information consult the project license file.</p>
 </dl>
 </dd></dl>
 </dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.utils.ClientPublish">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.utils.</span></span><span class="sig-name descname"><span class="pre">ClientPublish</span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientPublish"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.ClientPublish" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientPublish'">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Allow for subscription to client events useful in tests.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.ClientPublish.publish">
+<span class="sig-name descname"><span class="pre">publish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mitem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage" title="enrobie.robie.models.message.RobieMessage"><span class="pre">RobieMessage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientPublish.publish"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.ClientPublish.publish" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientPublish.publish'">¶</a></dt>
+<dd><p>Submit the message from client to subscriber references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mitem</strong> – Item containing information for operation.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.utils.ClientPublish.subscribe">
+<span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.13)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage" title="enrobie.robie.models.message.RobieMessage"><span class="pre">RobieMessage</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/utils/states.html#ClientPublish.subscribe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.ClientPublish.subscribe" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.ClientPublish.subscribe'">¶</a></dt>
+<dd><p>Store the callback within internal subscriber reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>callback</strong> – Function that will be called with item.</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
 <dl class="py exception">
 <dt class="sig sig-object py" id="enrobie.utils.DupliThread">
 <em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.utils.</span></span><span class="sig-name descname"><span class="pre">DupliThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/threading.html#threading.Thread" title="(in Python v3.13)"><span class="pre">Thread</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">about</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/utils/thread.html#DupliThread"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.utils.DupliThread" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.utils.DupliThread'">¶</a></dt>
@@ -936,6 +990,11 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.utils.states.ClientChannels.set_topic'" class="reference internal" href="#enrobie.utils.states.ClientChannels.set_topic"><code class="docutils literal notranslate"><span class="pre">ClientChannels.set_topic()</span></code></a></li>
 </ul>
 </li>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientPublish'" class="reference internal" href="#enrobie.utils.states.ClientPublish"><code class="docutils literal notranslate"><span class="pre">ClientPublish</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientPublish.publish'" class="reference internal" href="#enrobie.utils.states.ClientPublish.publish"><code class="docutils literal notranslate"><span class="pre">ClientPublish.publish()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.states.ClientPublish.subscribe'" class="reference internal" href="#enrobie.utils.states.ClientPublish.subscribe"><code class="docutils literal notranslate"><span class="pre">ClientPublish.subscribe()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a :data-current="activeSection === '#module-enrobie.utils.thread'" class="reference internal" href="#module-enrobie.utils.thread">enrobie.utils.thread module</a><ul>
@@ -964,6 +1023,11 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.utils.ClientChannels.select'" class="reference internal" href="#enrobie.utils.ClientChannels.select"><code class="docutils literal notranslate"><span class="pre">ClientChannels.select()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.utils.ClientChannels.set_title'" class="reference internal" href="#enrobie.utils.ClientChannels.set_title"><code class="docutils literal notranslate"><span class="pre">ClientChannels.set_title()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.utils.ClientChannels.set_topic'" class="reference internal" href="#enrobie.utils.ClientChannels.set_topic"><code class="docutils literal notranslate"><span class="pre">ClientChannels.set_topic()</span></code></a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientPublish'" class="reference internal" href="#enrobie.utils.ClientPublish"><code class="docutils literal notranslate"><span class="pre">ClientPublish</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientPublish.publish'" class="reference internal" href="#enrobie.utils.ClientPublish.publish"><code class="docutils literal notranslate"><span class="pre">ClientPublish.publish()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.utils.ClientPublish.subscribe'" class="reference internal" href="#enrobie.utils.ClientPublish.subscribe"><code class="docutils literal notranslate"><span class="pre">ClientPublish.subscribe()</span></code></a></li>
 </ul>
 </li>
 <li><a :data-current="activeSection === '#enrobie.utils.DupliThread'" class="reference internal" href="#enrobie.utils.DupliThread"><code class="docutils literal notranslate"><span class="pre">DupliThread</span></code></a><ul>
