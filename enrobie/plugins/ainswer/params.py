@@ -215,6 +215,12 @@ class AinswerPluginParams(RobiePluginParams, extra='forbid'):
         Field(default_factory=AinswerPluginPromptParams,
               description='Override the agent system prompt')]
 
+    logger: Annotated[
+        Optional[str],
+        Field(None,
+              description='Logger for including recents',
+              min_length=1)]
+
     status: Annotated[
         StatusPluginIconParams,
         Field(default_factory=StatusPluginIconParams,
@@ -257,6 +263,7 @@ class AinswerPluginParams(RobiePluginParams, extra='forbid'):
                 'database',
                 'histories',
                 'ainswer',
+                'logger',
                 'status']
 
             for key in parsable:
