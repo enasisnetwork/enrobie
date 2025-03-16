@@ -155,6 +155,7 @@ def test_AinswerPlugin_cover(
         service.limit(
             plugins=[
                 'ainswer',
+                'logger',
                 'status'])
 
         service.start()

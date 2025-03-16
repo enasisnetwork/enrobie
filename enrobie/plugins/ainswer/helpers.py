@@ -125,6 +125,10 @@ class AinswerQuestion:
             self.prompt_channel(
                 mitem, prompt))
 
+        recents = (
+            self.prompt_recents(
+                mitem, prompt))
+
 
         returned = SEMPTY.join([
             '**Instructions**\n',
@@ -142,6 +146,9 @@ class AinswerQuestion:
              else SEMPTY),
             (f'{channel}\n\n'
              if channel
+             else SEMPTY),
+            (f'{recents}\n\n'
+             if recents
              else SEMPTY),
             (f'{header}\n\n'
              if header is not None
@@ -358,6 +365,59 @@ class AinswerQuestion:
 
 
         return returned.strip()
+
+
+    def prompt_recents(  # noqa: CFQ004
+        self,
+        mitem: 'RobieMessage',
+        prompt: str,
+    ) -> str:
+        """
+        Return the message prefixed with runtime prompt values.
+
+        :param mitem: Item containing information for operation.
+        :param prompt: Additional prompt insert before question.
+        :returns: Message prefixed with runtime prompt values.
+        """
+
+        from ..logger import LoggerPlugin
+
+        plugin = self.__plugin
+        robie = plugin.robie
+        childs = robie.childs
+        plugins = childs.plugins
+        params = plugin.params
+
+        name = params.logger
+        limit = params.histories
+
+        kind = mitem.kind
+
+        if kind != 'chanmsg':
+            return SEMPTY
+
+        if name not in plugins:
+            return SEMPTY  # NOCVR
+
+        _plugin = plugins[name]
+
+        if _plugin.name != name:
+            return SEMPTY  # NOCVR
+
+        assert isinstance(
+            _plugin, LoggerPlugin)
+
+        records = (
+            _plugin.history
+            .plaintext(limit, mitem))
+
+        return (
+            '**Channel Recents**\n'
+            'These are the most recent messages from'
+            ' the current channel or direct message.'
+            ' When client family is IRC or Mattermost,'
+            ' you do not see your messages below.\n'
+            f'{NEWLINE.join(records)}')
 
 
     def __person(
