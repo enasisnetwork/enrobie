@@ -125,6 +125,16 @@ is permitted, for more information consult the project license file.</p>
 <dd class="field-odd"><p><strong>plugin</strong> – Plugin class instance for Chatting Robie.</p>
 </dd>
 </dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersist.client">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">client</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://enasisnetwork.github.io/enconnect/sphinx/enconnect.utils.html#enconnect.utils.http.HTTPClient" title="(in enconnect v0.17.12)"><span class="pre">HTTPClient</span></a></em><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersist.client" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersist.client'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersist.record">
 <span class="sig-name descname"><span class="pre">record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord"><span class="pre">HomiePersistRecord</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/helpers.html#HomiePersist.record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersist.record" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersist.record'">¶</a></dt>
@@ -316,19 +326,18 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-146"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
 </span><span id="line-147"><span class="w">      </span><span class="p">}</span>
 </span><span id="line-148"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-149"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-150"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-151"><span class="w">      </span><span class="s2">"unique"</span><span class="p">,</span>
-</span><span id="line-152"><span class="w">      </span><span class="s2">"value"</span><span class="p">,</span>
-</span><span id="line-153"><span class="w">      </span><span class="s2">"update"</span>
-</span><span id="line-154"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-155"><span class="p">}</span>
+</span><span id="line-149"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-150"><span class="w">      </span><span class="s2">"unique"</span><span class="p">,</span>
+</span><span id="line-151"><span class="w">      </span><span class="s2">"value"</span><span class="p">,</span>
+</span><span id="line-152"><span class="w">      </span><span class="s2">"update"</span>
+</span><span id="line-153"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-154"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
 <dt class="field-odd">Config<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+<li><p><strong>extra</strong>: <em>str = ignore</em></p></li>
 </ul>
 </dd>
 <dt class="field-even">Fields<span class="colon">:</span></dt>
@@ -951,6 +960,16 @@ is permitted, for more information consult the project license file.</p>
 <p>This plugin allows for connecting to Homie Automate.</p>
 </div>
 <dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.plugin.HomiePlugin.ainswer">
+<span class="sig-name descname"><span class="pre">ainswer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.13)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/plugin.html#HomiePlugin.ainswer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.plugin.HomiePlugin.ainswer" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.plugin.HomiePlugin.ainswer'">¶</a></dt>
+<dd><p>Return the Ainswer tools that are related to the plugin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Ainswer tools that are related to the plugin.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="enrobie.plugins.enhomie.plugin.HomiePlugin.operate">
 <span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/plugin.html#HomiePlugin.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.plugin.HomiePlugin.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.plugin.HomiePlugin.operate'">¶</a></dt>
 <dd><p>Perform the operation related to Robie service threads.</p>
@@ -997,6 +1016,28 @@ is permitted, for more information consult the project license file.</p>
 </dd></dl>
 </dd></dl>
 </section>
+<section id="module-enrobie.plugins.enhomie.toolset">
+<span id="enrobie-plugins-enhomie-toolset-module"></span><h2>enrobie.plugins.enhomie.toolset module<a class="headerlink" href="#module-enrobie.plugins.enhomie.toolset" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.plugins.enhomie.toolset'">¶</a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.toolset.homie_persist">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.enhomie.toolset.</span></span><span class="sig-name descname"><span class="pre">homie_persist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RunContext</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.AinswerDepends" title="enrobie.plugins.ainswer.helpers.AinswerDepends"><span class="pre">AinswerDepends</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord"><span class="pre">HomiePersistRecord</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/toolset.html#homie_persist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.toolset.homie_persist" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.toolset.homie_persist'">¶</a></dt>
+<dd><p>Return the current values in Homie Automate persistence.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tool will return values from the Homie Automate
+persistence store. They may include information about
+many things regarding the Robie owner home status.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current values in Homie Automate persistence.</p>
+</dd>
+</dl>
+</dd></dl>
+</section>
 <section id="module-enrobie.plugins.enhomie">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-enrobie.plugins.enhomie" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.plugins.enhomie'">¶</a></h2>
 <p>Functions and routines associated with Enasis Network Chatting Robie.</p>
@@ -1011,6 +1052,16 @@ is permitted, for more information consult the project license file.</p>
 <p class="admonition-title">Note</p>
 <p>This plugin allows for connecting to Homie Automate.</p>
 </div>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.HomiePlugin.ainswer">
+<span class="sig-name descname"><span class="pre">ainswer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.13)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/plugin.html#HomiePlugin.ainswer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.HomiePlugin.ainswer" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.HomiePlugin.ainswer'">¶</a></dt>
+<dd><p>Return the Ainswer tools that are related to the plugin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Ainswer tools that are related to the plugin.</p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="enrobie.plugins.enhomie.HomiePlugin.operate">
 <span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/plugin.html#HomiePlugin.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.HomiePlugin.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.HomiePlugin.operate'">¶</a></dt>
@@ -1403,6 +1454,7 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#submodules'" class="reference internal" href="#submodules">Submodules</a></li>
 <li><a :data-current="activeSection === '#module-enrobie.plugins.enhomie.helpers'" class="reference internal" href="#module-enrobie.plugins.enhomie.helpers">enrobie.plugins.enhomie.helpers module</a><ul>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersist'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersist"><code class="docutils literal notranslate"><span class="pre">HomiePersist</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersist.client'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersist.client"><code class="docutils literal notranslate"><span class="pre">HomiePersist.client</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersist.record'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersist.record"><code class="docutils literal notranslate"><span class="pre">HomiePersist.record()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersist.records'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersist.records"><code class="docutils literal notranslate"><span class="pre">HomiePersist.records</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersist.request'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersist.request"><code class="docutils literal notranslate"><span class="pre">HomiePersist.request()</span></code></a></li>
@@ -1451,6 +1503,7 @@ is permitted, for more information consult the project license file.</p>
 </li>
 <li><a :data-current="activeSection === '#module-enrobie.plugins.enhomie.plugin'" class="reference internal" href="#module-enrobie.plugins.enhomie.plugin">enrobie.plugins.enhomie.plugin module</a><ul>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.plugin.HomiePlugin'" class="reference internal" href="#enrobie.plugins.enhomie.plugin.HomiePlugin"><code class="docutils literal notranslate"><span class="pre">HomiePlugin</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.plugin.HomiePlugin.ainswer'" class="reference internal" href="#enrobie.plugins.enhomie.plugin.HomiePlugin.ainswer"><code class="docutils literal notranslate"><span class="pre">HomiePlugin.ainswer()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.plugin.HomiePlugin.operate'" class="reference internal" href="#enrobie.plugins.enhomie.plugin.HomiePlugin.operate"><code class="docutils literal notranslate"><span class="pre">HomiePlugin.operate()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.plugin.HomiePlugin.params'" class="reference internal" href="#enrobie.plugins.enhomie.plugin.HomiePlugin.params"><code class="docutils literal notranslate"><span class="pre">HomiePlugin.params</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.plugin.HomiePlugin.persist'" class="reference internal" href="#enrobie.plugins.enhomie.plugin.HomiePlugin.persist"><code class="docutils literal notranslate"><span class="pre">HomiePlugin.persist</span></code></a></li>
@@ -1460,8 +1513,13 @@ is permitted, for more information consult the project license file.</p>
 </li>
 </ul>
 </li>
+<li><a :data-current="activeSection === '#module-enrobie.plugins.enhomie.toolset'" class="reference internal" href="#module-enrobie.plugins.enhomie.toolset">enrobie.plugins.enhomie.toolset module</a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.toolset.homie_persist'" class="reference internal" href="#enrobie.plugins.enhomie.toolset.homie_persist"><code class="docutils literal notranslate"><span class="pre">homie_persist()</span></code></a></li>
+</ul>
+</li>
 <li><a :data-current="activeSection === '#module-enrobie.plugins.enhomie'" class="reference internal" href="#module-enrobie.plugins.enhomie">Module contents</a><ul>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.HomiePlugin'" class="reference internal" href="#enrobie.plugins.enhomie.HomiePlugin"><code class="docutils literal notranslate"><span class="pre">HomiePlugin</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.HomiePlugin.ainswer'" class="reference internal" href="#enrobie.plugins.enhomie.HomiePlugin.ainswer"><code class="docutils literal notranslate"><span class="pre">HomiePlugin.ainswer()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.HomiePlugin.operate'" class="reference internal" href="#enrobie.plugins.enhomie.HomiePlugin.operate"><code class="docutils literal notranslate"><span class="pre">HomiePlugin.operate()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.HomiePlugin.params'" class="reference internal" href="#enrobie.plugins.enhomie.HomiePlugin.params"><code class="docutils literal notranslate"><span class="pre">HomiePlugin.params</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.HomiePlugin.persist'" class="reference internal" href="#enrobie.plugins.enhomie.HomiePlugin.persist"><code class="docutils literal notranslate"><span class="pre">HomiePlugin.persist</span></code></a></li>

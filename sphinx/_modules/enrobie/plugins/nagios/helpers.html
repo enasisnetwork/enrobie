@@ -242,362 +242,396 @@
 </span><span id="line-90">
 </span><span id="line-91">
 </span><span id="line-92">
-<div class="viewcode-block" id="NagiosCurrentSummary">
-<a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.helpers.NagiosCurrentSummary">[docs]</a>
-</span><span id="line-93"><span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrentSummary</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="NagiosCurrentRecords">
+<a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.helpers.NagiosCurrentRecords">[docs]</a>
+</span><span id="line-93"><span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrentRecords</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
 </span><span id="line-94"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-95"><span class="sd">    Summarized information regarding the items within Nagios.</span>
 </span><span id="line-96"><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="line-97">
-</span><span id="line-98">    <span class="n">service_normal</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-99">        <span class="nb">int</span><span class="p">,</span>
+</span><span id="line-98">    <span class="n">hosts</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-99">        <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentHost</span><span class="p">],</span>
 </span><span id="line-100">        <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-</span><span id="line-101">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Object count in normal state&#39;</span><span class="p">,</span>
-</span><span id="line-102">              <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
-</span><span id="line-103">
-</span><span id="line-104">    <span class="n">service_issues</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-105">        <span class="nb">int</span><span class="p">,</span>
-</span><span id="line-106">        <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-</span><span id="line-107">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Object count in issue state&#39;</span><span class="p">,</span>
-</span><span id="line-108">              <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
-</span><span id="line-109">
-</span><span id="line-110">    <span class="n">host_normal</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-111">        <span class="nb">int</span><span class="p">,</span>
-</span><span id="line-112">        <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-</span><span id="line-113">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Object count in normal state&#39;</span><span class="p">,</span>
-</span><span id="line-114">              <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
-</span><span id="line-115">
-</span><span id="line-116">    <span class="n">host_issues</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
-</span><span id="line-117">        <span class="nb">int</span><span class="p">,</span>
-</span><span id="line-118">        <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-</span><span id="line-119">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Object count in issue state&#39;</span><span class="p">,</span>
-</span><span id="line-120">              <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span></div>
+</span><span id="line-101">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;System related status values&#39;</span><span class="p">)]</span>
+</span><span id="line-102">
+</span><span id="line-103">    <span class="n">services</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-104">        <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentService</span><span class="p">],</span>
+</span><span id="line-105">        <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+</span><span id="line-106">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Service related status values&#39;</span><span class="p">)]</span></div>
 
-</span><span id="line-121">
-</span><span id="line-122">
-</span><span id="line-123">
+</span><span id="line-107">
+</span><span id="line-108">
+</span><span id="line-109">
+<div class="viewcode-block" id="NagiosCurrentSummary">
+<a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.helpers.NagiosCurrentSummary">[docs]</a>
+</span><span id="line-110"><span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrentSummary</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
+</span><span id="line-111"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-112"><span class="sd">    Summarized information regarding the items within Nagios.</span>
+</span><span id="line-113"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-114">
+</span><span id="line-115">    <span class="n">service_normal</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-116">        <span class="nb">int</span><span class="p">,</span>
+</span><span id="line-117">        <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+</span><span id="line-118">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Object count in normal state&#39;</span><span class="p">,</span>
+</span><span id="line-119">              <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
+</span><span id="line-120">
+</span><span id="line-121">    <span class="n">service_issues</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-122">        <span class="nb">int</span><span class="p">,</span>
+</span><span id="line-123">        <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+</span><span id="line-124">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Object count in issue state&#39;</span><span class="p">,</span>
+</span><span id="line-125">              <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
+</span><span id="line-126">
+</span><span id="line-127">    <span class="n">host_normal</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-128">        <span class="nb">int</span><span class="p">,</span>
+</span><span id="line-129">        <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+</span><span id="line-130">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Object count in normal state&#39;</span><span class="p">,</span>
+</span><span id="line-131">              <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
+</span><span id="line-132">
+</span><span id="line-133">    <span class="n">host_issues</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-134">        <span class="nb">int</span><span class="p">,</span>
+</span><span id="line-135">        <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+</span><span id="line-136">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Object count in issue state&#39;</span><span class="p">,</span>
+</span><span id="line-137">              <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span></div>
+
+</span><span id="line-138">
+</span><span id="line-139">
+</span><span id="line-140">
 <div class="viewcode-block" id="NagiosCurrent">
 <a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.helpers.NagiosCurrent">[docs]</a>
-</span><span id="line-124"><span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrent</span><span class="p">:</span>
-</span><span id="line-125"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-126"><span class="sd">    Collect the information using the upstream API endpoint.</span>
-</span><span id="line-127">
-</span><span id="line-128"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-129"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-130">
-</span><span id="line-131">    <span class="n">__plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span>
-</span><span id="line-132">
-</span><span id="line-133">
-</span><span id="line-134">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
-</span><span id="line-135">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-136">        <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span><span class="p">,</span>
-</span><span id="line-137">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-138"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-139"><span class="sd">        Initialize instance for class using provided parameters.</span>
-</span><span id="line-140"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-141">
-</span><span id="line-142">        <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span> <span class="o">=</span> <span class="n">plugin</span>
-</span><span id="line-143">
+</span><span id="line-141"><span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrent</span><span class="p">:</span>
+</span><span id="line-142"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-143"><span class="sd">    Collect the information using the upstream API endpoint.</span>
 </span><span id="line-144">
+</span><span id="line-145"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-146"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-147">
+</span><span id="line-148">    <span class="n">__plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span>
+</span><span id="line-149">
+</span><span id="line-150">
+</span><span id="line-151">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-152">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-153">        <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span><span class="p">,</span>
+</span><span id="line-154">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-155"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-156"><span class="sd">        Initialize instance for class using provided parameters.</span>
+</span><span id="line-157"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-158">
+</span><span id="line-159">        <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span> <span class="o">=</span> <span class="n">plugin</span>
+</span><span id="line-160">
+</span><span id="line-161">
 <div class="viewcode-block" id="NagiosCurrent.request">
 <a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.helpers.NagiosCurrent.request">[docs]</a>
-</span><span id="line-145">    <span class="k">def</span><span class="w"> </span><span class="nf">request</span><span class="p">(</span>
-</span><span id="line-146">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-147">        <span class="n">item</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">,</span> <span class="s1">&#39;service&#39;</span><span class="p">],</span>
-</span><span id="line-148">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
-</span><span id="line-149"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-150"><span class="sd">        Return the response from upstream API endpoint request.</span>
-</span><span id="line-151">
-</span><span id="line-152"><span class="sd">        :param item: Determine which items will be enumerated.</span>
-</span><span id="line-153"><span class="sd">        :returns: Response from upstream API endpoint request.</span>
-</span><span id="line-154"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-155">
-</span><span id="line-156">        <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span>
-</span><span id="line-157">        <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
-</span><span id="line-158">
-</span><span id="line-159">
-</span><span id="line-160">        <span class="n">client</span> <span class="o">=</span> <span class="n">HTTPClient</span><span class="p">(</span>
-</span><span id="line-161">            <span class="n">timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span>
-</span><span id="line-162">            <span class="n">verify</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">ssl_verify</span><span class="p">,</span>
-</span><span id="line-163">            <span class="n">capem</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">ssl_capem</span><span class="p">)</span>
-</span><span id="line-164">
-</span><span id="line-165">        <span class="n">request</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">request_block</span>
-</span><span id="line-166">
-</span><span id="line-167">        <span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="p">(</span>
-</span><span id="line-168">            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;get&#39;</span><span class="p">,</span>
-</span><span id="line-169">            <span class="n">location</span><span class="o">=</span><span class="p">(</span>
-</span><span id="line-170">                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">params</span><span class="o">.</span><span class="n">restful</span><span class="si">}</span><span class="s1">&#39;</span>
-</span><span id="line-171">                <span class="s1">&#39;/cgi-bin/statusjson.cgi&#39;</span><span class="p">),</span>
-</span><span id="line-172">            <span class="n">httpauth</span><span class="o">=</span><span class="p">(</span>
-</span><span id="line-173">                <span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">username</span><span class="p">,</span>
-</span><span id="line-174">                 <span class="n">params</span><span class="o">.</span><span class="n">password</span><span class="p">)</span>
-</span><span id="line-175">                <span class="k">if</span> <span class="n">params</span><span class="o">.</span><span class="n">username</span>
-</span><span id="line-176">                <span class="ow">and</span> <span class="n">params</span><span class="o">.</span><span class="n">password</span>
-</span><span id="line-177">                <span class="k">else</span> <span class="kc">None</span><span class="p">),</span>
+</span><span id="line-162">    <span class="k">def</span><span class="w"> </span><span class="nf">request</span><span class="p">(</span>
+</span><span id="line-163">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-164">        <span class="n">item</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">,</span> <span class="s1">&#39;service&#39;</span><span class="p">],</span>
+</span><span id="line-165">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
+</span><span id="line-166"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-167"><span class="sd">        Return the response from upstream API endpoint request.</span>
+</span><span id="line-168">
+</span><span id="line-169"><span class="sd">        :param item: Determine which items will be enumerated.</span>
+</span><span id="line-170"><span class="sd">        :returns: Response from upstream API endpoint request.</span>
+</span><span id="line-171"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-172">
+</span><span id="line-173">        <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span>
+</span><span id="line-174">        <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
+</span><span id="line-175">
+</span><span id="line-176">
+</span><span id="line-177">        <span class="n">client</span> <span class="o">=</span> <span class="n">HTTPClient</span><span class="p">(</span>
 </span><span id="line-178">            <span class="n">timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span>
-</span><span id="line-179">            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-</span><span id="line-180">                <span class="s1">&#39;query&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s1">list&#39;</span><span class="p">,</span>
-</span><span id="line-181">                <span class="s1">&#39;formatoptions&#39;</span><span class="p">:</span> <span class="s1">&#39;enumerate&#39;</span><span class="p">,</span>
-</span><span id="line-182">                <span class="s1">&#39;details&#39;</span><span class="p">:</span> <span class="s1">&#39;true&#39;</span><span class="p">})</span>
+</span><span id="line-179">            <span class="n">verify</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">ssl_verify</span><span class="p">,</span>
+</span><span id="line-180">            <span class="n">capem</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">ssl_capem</span><span class="p">)</span>
+</span><span id="line-181">
+</span><span id="line-182">        <span class="n">request</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">request_block</span>
 </span><span id="line-183">
-</span><span id="line-184">        <span class="p">(</span><span class="n">response</span>
-</span><span id="line-185">         <span class="o">.</span><span class="n">raise_for_status</span><span class="p">())</span>
-</span><span id="line-186">
-</span><span id="line-187">
-</span><span id="line-188">        <span class="k">return</span> <span class="n">response</span></div>
-
-</span><span id="line-189">
-</span><span id="line-190">
-</span><span id="line-191">    <span class="nd">@property</span>
-</span><span id="line-192">    <span class="k">def</span><span class="w"> </span><span class="nf">hosts</span><span class="p">(</span>
-</span><span id="line-193">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-194">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentHost</span><span class="p">]:</span>
-</span><span id="line-195"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-196"><span class="sd">        Return the response from upstream API endpoint request.</span>
-</span><span id="line-197">
-</span><span id="line-198"><span class="sd">        :returns: Response from upstream API endpoint request.</span>
-</span><span id="line-199"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-184">        <span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="p">(</span>
+</span><span id="line-185">            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;get&#39;</span><span class="p">,</span>
+</span><span id="line-186">            <span class="n">location</span><span class="o">=</span><span class="p">(</span>
+</span><span id="line-187">                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">params</span><span class="o">.</span><span class="n">restful</span><span class="si">}</span><span class="s1">&#39;</span>
+</span><span id="line-188">                <span class="s1">&#39;/cgi-bin/statusjson.cgi&#39;</span><span class="p">),</span>
+</span><span id="line-189">            <span class="n">httpauth</span><span class="o">=</span><span class="p">(</span>
+</span><span id="line-190">                <span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">username</span><span class="p">,</span>
+</span><span id="line-191">                 <span class="n">params</span><span class="o">.</span><span class="n">password</span><span class="p">)</span>
+</span><span id="line-192">                <span class="k">if</span> <span class="n">params</span><span class="o">.</span><span class="n">username</span>
+</span><span id="line-193">                <span class="ow">and</span> <span class="n">params</span><span class="o">.</span><span class="n">password</span>
+</span><span id="line-194">                <span class="k">else</span> <span class="kc">None</span><span class="p">),</span>
+</span><span id="line-195">            <span class="n">timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span>
+</span><span id="line-196">            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+</span><span id="line-197">                <span class="s1">&#39;query&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s1">list&#39;</span><span class="p">,</span>
+</span><span id="line-198">                <span class="s1">&#39;formatoptions&#39;</span><span class="p">:</span> <span class="s1">&#39;enumerate&#39;</span><span class="p">,</span>
+</span><span id="line-199">                <span class="s1">&#39;details&#39;</span><span class="p">:</span> <span class="s1">&#39;true&#39;</span><span class="p">})</span>
 </span><span id="line-200">
-</span><span id="line-201">        <span class="n">returned</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentHost</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-202">
-</span><span id="line-203">        <span class="n">model</span> <span class="o">=</span> <span class="n">NagiosCurrentHost</span>
+</span><span id="line-201">        <span class="p">(</span><span class="n">response</span>
+</span><span id="line-202">         <span class="o">.</span><span class="n">raise_for_status</span><span class="p">())</span>
+</span><span id="line-203">
 </span><span id="line-204">
-</span><span id="line-205">
-</span><span id="line-206">        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">&#39;host&#39;</span><span class="p">)</span>
-</span><span id="line-207">
-</span><span id="line-208">
-</span><span id="line-209">        <span class="n">items</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-210">            <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</span><span id="line-211">            <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;hostlist&#39;</span><span class="p">]</span>
-</span><span id="line-212">            <span class="o">.</span><span class="n">items</span><span class="p">())</span>
-</span><span id="line-213">
-</span><span id="line-214">        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
-</span><span id="line-215">
-</span><span id="line-216">            <span class="n">checked</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-</span><span id="line-217">                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;checked&#39;</span><span class="p">]]</span>
-</span><span id="line-218">
-</span><span id="line-219">            <span class="n">latest</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span>
-</span><span id="line-220">                <span class="n">checked</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span>
-</span><span id="line-221">                <span class="n">tzname</span><span class="o">=</span><span class="s1">&#39;US/Central&#39;</span><span class="p">)</span>
-</span><span id="line-222">
-</span><span id="line-223">            <span class="n">status</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-</span><span id="line-224">                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]]</span>
-</span><span id="line-225">
-</span><span id="line-226">            <span class="n">downtime</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-</span><span id="line-227">                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;downtime&#39;</span><span class="p">]]</span>
-</span><span id="line-228">
-</span><span id="line-229">            <span class="n">handled</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-</span><span id="line-230">                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;handled&#39;</span><span class="p">]]</span>
-</span><span id="line-231">
-</span><span id="line-232">            <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
-</span><span id="line-233">                <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
-</span><span id="line-234">                <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="p">,</span>
-</span><span id="line-235">                <span class="n">latest</span><span class="o">=</span><span class="n">latest</span><span class="o">.</span><span class="n">human</span><span class="p">,</span>
-</span><span id="line-236">                <span class="n">downtime</span><span class="o">=</span><span class="n">downtime</span><span class="p">,</span>
-</span><span id="line-237">                <span class="n">handled</span><span class="o">=</span><span class="n">handled</span><span class="p">)</span>
-</span><span id="line-238">
-</span><span id="line-239">            <span class="n">returned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
-</span><span id="line-240">
-</span><span id="line-241">
-</span><span id="line-242">        <span class="k">return</span> <span class="n">returned</span>
-</span><span id="line-243">
-</span><span id="line-244">
-</span><span id="line-245">    <span class="nd">@property</span>
-</span><span id="line-246">    <span class="k">def</span><span class="w"> </span><span class="nf">services</span><span class="p">(</span>
-</span><span id="line-247">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-248">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentService</span><span class="p">]:</span>
-</span><span id="line-249"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-250"><span class="sd">        Return the response from upstream API endpoint request.</span>
-</span><span id="line-251">
-</span><span id="line-252"><span class="sd">        :returns: Response from upstream API endpoint request.</span>
-</span><span id="line-253"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-254">
-</span><span id="line-255">        <span class="n">returned</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentService</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-256">
-</span><span id="line-257">        <span class="n">model</span> <span class="o">=</span> <span class="n">NagiosCurrentService</span>
-</span><span id="line-258">
-</span><span id="line-259">
-</span><span id="line-260">        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">&#39;service&#39;</span><span class="p">)</span>
-</span><span id="line-261">
-</span><span id="line-262">
-</span><span id="line-263">        <span class="n">items</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-264">            <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</span><span id="line-265">            <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;servicelist&#39;</span><span class="p">]</span>
-</span><span id="line-266">            <span class="o">.</span><span class="n">items</span><span class="p">())</span>
-</span><span id="line-267">
-</span><span id="line-268">
-</span><span id="line-269">        <span class="k">for</span> <span class="n">host</span><span class="p">,</span> <span class="n">_values</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
-</span><span id="line-270">
-</span><span id="line-271">            <span class="n">_items</span> <span class="o">=</span> <span class="n">_values</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
-</span><span id="line-272">
-</span><span id="line-273">            <span class="k">for</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">_items</span><span class="p">:</span>
-</span><span id="line-274">
-</span><span id="line-275">                <span class="n">checked</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-</span><span id="line-276">                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;checked&#39;</span><span class="p">]]</span>
-</span><span id="line-277">
-</span><span id="line-278">                <span class="n">latest</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span>
-</span><span id="line-279">                    <span class="n">checked</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span>
-</span><span id="line-280">                    <span class="n">tzname</span><span class="o">=</span><span class="s1">&#39;US/Central&#39;</span><span class="p">)</span>
-</span><span id="line-281">
-</span><span id="line-282">                <span class="n">name</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-</span><span id="line-283">                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]]</span>
-</span><span id="line-284">
-</span><span id="line-285">                <span class="n">status</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-</span><span id="line-286">                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]]</span>
-</span><span id="line-287">
-</span><span id="line-288">                <span class="n">downtime</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-</span><span id="line-289">                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;downtime&#39;</span><span class="p">]]</span>
-</span><span id="line-290">
-</span><span id="line-291">                <span class="n">handled</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-</span><span id="line-292">                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;handled&#39;</span><span class="p">]]</span>
-</span><span id="line-293">
-</span><span id="line-294">                <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
-</span><span id="line-295">                    <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
-</span><span id="line-296">                    <span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span>
-</span><span id="line-297">                    <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="p">,</span>
-</span><span id="line-298">                    <span class="n">latest</span><span class="o">=</span><span class="n">latest</span><span class="o">.</span><span class="n">human</span><span class="p">,</span>
-</span><span id="line-299">                    <span class="n">downtime</span><span class="o">=</span><span class="n">downtime</span><span class="p">,</span>
-</span><span id="line-300">                    <span class="n">handled</span><span class="o">=</span><span class="n">handled</span><span class="p">)</span>
-</span><span id="line-301">
-</span><span id="line-302">                <span class="n">returned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
-</span><span id="line-303">
-</span><span id="line-304">
-</span><span id="line-305">        <span class="k">return</span> <span class="n">returned</span>
-</span><span id="line-306">
-</span><span id="line-307">
-</span><span id="line-308">    <span class="nd">@property</span>
-</span><span id="line-309">    <span class="k">def</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span>
-</span><span id="line-310">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-311">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NagiosCurrentSummary</span><span class="p">:</span>
-</span><span id="line-312"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-313"><span class="sd">        Return the response from upstream API endpoint request.</span>
-</span><span id="line-314">
-</span><span id="line-315"><span class="sd">        :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-316"><span class="sd">        :returns: Response from upstream API endpoint request.</span>
-</span><span id="line-317"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-318">
-</span><span id="line-319">        <span class="n">normal</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;service&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
-</span><span id="line-320">        <span class="n">issues</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;service&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
-</span><span id="line-321">
-</span><span id="line-322">        <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="p">:</span>
-</span><span id="line-323">
-</span><span id="line-324">            <span class="n">target</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-325">                <span class="n">normal</span>
-</span><span id="line-326">                <span class="k">if</span> <span class="n">host</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;up&#39;</span>
-</span><span id="line-327">                <span class="k">else</span> <span class="n">issues</span><span class="p">)</span>
-</span><span id="line-328">
-</span><span id="line-329">            <span class="n">target</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="line-330">
-</span><span id="line-331">        <span class="k">for</span> <span class="n">srvc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">services</span><span class="p">:</span>
-</span><span id="line-332">
-</span><span id="line-333">            <span class="n">target</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-334">                <span class="n">normal</span>
-</span><span id="line-335">                <span class="k">if</span> <span class="n">srvc</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;ok&#39;</span>
-</span><span id="line-336">                <span class="k">else</span> <span class="n">issues</span><span class="p">)</span>
-</span><span id="line-337">
-</span><span id="line-338">            <span class="n">target</span><span class="p">[</span><span class="s1">&#39;service&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="line-339">
-</span><span id="line-340">        <span class="k">return</span> <span class="n">NagiosCurrentSummary</span><span class="p">(</span>
-</span><span id="line-341">            <span class="n">service_normal</span><span class="o">=</span><span class="n">normal</span><span class="p">[</span><span class="s1">&#39;service&#39;</span><span class="p">],</span>
-</span><span id="line-342">            <span class="n">service_issues</span><span class="o">=</span><span class="n">issues</span><span class="p">[</span><span class="s1">&#39;service&#39;</span><span class="p">],</span>
-</span><span id="line-343">            <span class="n">host_normal</span><span class="o">=</span><span class="n">normal</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">],</span>
-</span><span id="line-344">            <span class="n">host_issues</span><span class="o">=</span><span class="n">issues</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">])</span></div>
+</span><span id="line-205">        <span class="k">return</span> <span class="n">response</span></div>
 
-</span><span id="line-345">
+</span><span id="line-206">
+</span><span id="line-207">
+</span><span id="line-208">    <span class="nd">@property</span>
+</span><span id="line-209">    <span class="k">def</span><span class="w"> </span><span class="nf">hosts</span><span class="p">(</span>
+</span><span id="line-210">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-211">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentHost</span><span class="p">]:</span>
+</span><span id="line-212"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-213"><span class="sd">        Return the response from upstream API endpoint request.</span>
+</span><span id="line-214">
+</span><span id="line-215"><span class="sd">        :returns: Response from upstream API endpoint request.</span>
+</span><span id="line-216"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-217">
+</span><span id="line-218">        <span class="n">returned</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentHost</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-219">
+</span><span id="line-220">        <span class="n">model</span> <span class="o">=</span> <span class="n">NagiosCurrentHost</span>
+</span><span id="line-221">
+</span><span id="line-222">
+</span><span id="line-223">        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">&#39;host&#39;</span><span class="p">)</span>
+</span><span id="line-224">
+</span><span id="line-225">
+</span><span id="line-226">        <span class="n">items</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-227">            <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span><span id="line-228">            <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;hostlist&#39;</span><span class="p">]</span>
+</span><span id="line-229">            <span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</span><span id="line-230">
+</span><span id="line-231">        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+</span><span id="line-232">
+</span><span id="line-233">            <span class="n">checked</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
+</span><span id="line-234">                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;checked&#39;</span><span class="p">]]</span>
+</span><span id="line-235">
+</span><span id="line-236">            <span class="n">latest</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span>
+</span><span id="line-237">                <span class="n">checked</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span>
+</span><span id="line-238">                <span class="n">tzname</span><span class="o">=</span><span class="s1">&#39;US/Central&#39;</span><span class="p">)</span>
+</span><span id="line-239">
+</span><span id="line-240">            <span class="n">status</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
+</span><span id="line-241">                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]]</span>
+</span><span id="line-242">
+</span><span id="line-243">            <span class="n">downtime</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
+</span><span id="line-244">                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;downtime&#39;</span><span class="p">]]</span>
+</span><span id="line-245">
+</span><span id="line-246">            <span class="n">handled</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
+</span><span id="line-247">                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;handled&#39;</span><span class="p">]]</span>
+</span><span id="line-248">
+</span><span id="line-249">            <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
+</span><span id="line-250">                <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+</span><span id="line-251">                <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="p">,</span>
+</span><span id="line-252">                <span class="n">latest</span><span class="o">=</span><span class="n">latest</span><span class="o">.</span><span class="n">human</span><span class="p">,</span>
+</span><span id="line-253">                <span class="n">downtime</span><span class="o">=</span><span class="n">downtime</span><span class="p">,</span>
+</span><span id="line-254">                <span class="n">handled</span><span class="o">=</span><span class="n">handled</span><span class="p">)</span>
+</span><span id="line-255">
+</span><span id="line-256">            <span class="n">returned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+</span><span id="line-257">
+</span><span id="line-258">
+</span><span id="line-259">        <span class="k">return</span> <span class="n">returned</span>
+</span><span id="line-260">
+</span><span id="line-261">
+</span><span id="line-262">    <span class="nd">@property</span>
+</span><span id="line-263">    <span class="k">def</span><span class="w"> </span><span class="nf">services</span><span class="p">(</span>
+</span><span id="line-264">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-265">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentService</span><span class="p">]:</span>
+</span><span id="line-266"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-267"><span class="sd">        Return the response from upstream API endpoint request.</span>
+</span><span id="line-268">
+</span><span id="line-269"><span class="sd">        :returns: Response from upstream API endpoint request.</span>
+</span><span id="line-270"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-271">
+</span><span id="line-272">        <span class="n">returned</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentService</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-273">
+</span><span id="line-274">        <span class="n">model</span> <span class="o">=</span> <span class="n">NagiosCurrentService</span>
+</span><span id="line-275">
+</span><span id="line-276">
+</span><span id="line-277">        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">&#39;service&#39;</span><span class="p">)</span>
+</span><span id="line-278">
+</span><span id="line-279">
+</span><span id="line-280">        <span class="n">items</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-281">            <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span><span id="line-282">            <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;servicelist&#39;</span><span class="p">]</span>
+</span><span id="line-283">            <span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</span><span id="line-284">
+</span><span id="line-285">
+</span><span id="line-286">        <span class="k">for</span> <span class="n">host</span><span class="p">,</span> <span class="n">_values</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+</span><span id="line-287">
+</span><span id="line-288">            <span class="n">_items</span> <span class="o">=</span> <span class="n">_values</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</span><span id="line-289">
+</span><span id="line-290">            <span class="k">for</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">_items</span><span class="p">:</span>
+</span><span id="line-291">
+</span><span id="line-292">                <span class="n">checked</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
+</span><span id="line-293">                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;checked&#39;</span><span class="p">]]</span>
+</span><span id="line-294">
+</span><span id="line-295">                <span class="n">latest</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span>
+</span><span id="line-296">                    <span class="n">checked</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span>
+</span><span id="line-297">                    <span class="n">tzname</span><span class="o">=</span><span class="s1">&#39;US/Central&#39;</span><span class="p">)</span>
+</span><span id="line-298">
+</span><span id="line-299">                <span class="n">name</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
+</span><span id="line-300">                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]]</span>
+</span><span id="line-301">
+</span><span id="line-302">                <span class="n">status</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
+</span><span id="line-303">                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]]</span>
+</span><span id="line-304">
+</span><span id="line-305">                <span class="n">downtime</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
+</span><span id="line-306">                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;downtime&#39;</span><span class="p">]]</span>
+</span><span id="line-307">
+</span><span id="line-308">                <span class="n">handled</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
+</span><span id="line-309">                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;handled&#39;</span><span class="p">]]</span>
+</span><span id="line-310">
+</span><span id="line-311">                <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
+</span><span id="line-312">                    <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+</span><span id="line-313">                    <span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span>
+</span><span id="line-314">                    <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="p">,</span>
+</span><span id="line-315">                    <span class="n">latest</span><span class="o">=</span><span class="n">latest</span><span class="o">.</span><span class="n">human</span><span class="p">,</span>
+</span><span id="line-316">                    <span class="n">downtime</span><span class="o">=</span><span class="n">downtime</span><span class="p">,</span>
+</span><span id="line-317">                    <span class="n">handled</span><span class="o">=</span><span class="n">handled</span><span class="p">)</span>
+</span><span id="line-318">
+</span><span id="line-319">                <span class="n">returned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+</span><span id="line-320">
+</span><span id="line-321">
+</span><span id="line-322">        <span class="k">return</span> <span class="n">returned</span>
+</span><span id="line-323">
+</span><span id="line-324">
+</span><span id="line-325">    <span class="nd">@property</span>
+</span><span id="line-326">    <span class="k">def</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span>
+</span><span id="line-327">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-328">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NagiosCurrentSummary</span><span class="p">:</span>
+</span><span id="line-329"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-330"><span class="sd">        Return the response from upstream API endpoint request.</span>
+</span><span id="line-331">
+</span><span id="line-332"><span class="sd">        :returns: Response from upstream API endpoint request.</span>
+</span><span id="line-333"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-334">
+</span><span id="line-335">        <span class="n">normal</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;service&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+</span><span id="line-336">        <span class="n">issues</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;service&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+</span><span id="line-337">
+</span><span id="line-338">        <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="p">:</span>
+</span><span id="line-339">
+</span><span id="line-340">            <span class="n">target</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-341">                <span class="n">normal</span>
+</span><span id="line-342">                <span class="k">if</span> <span class="n">host</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;up&#39;</span>
+</span><span id="line-343">                <span class="k">else</span> <span class="n">issues</span><span class="p">)</span>
+</span><span id="line-344">
+</span><span id="line-345">            <span class="n">target</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 </span><span id="line-346">
-</span><span id="line-347">
+</span><span id="line-347">        <span class="k">for</span> <span class="n">srvc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">services</span><span class="p">:</span>
+</span><span id="line-348">
+</span><span id="line-349">            <span class="n">target</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-350">                <span class="n">normal</span>
+</span><span id="line-351">                <span class="k">if</span> <span class="n">srvc</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;ok&#39;</span>
+</span><span id="line-352">                <span class="k">else</span> <span class="n">issues</span><span class="p">)</span>
+</span><span id="line-353">
+</span><span id="line-354">            <span class="n">target</span><span class="p">[</span><span class="s1">&#39;service&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="line-355">
+</span><span id="line-356">        <span class="k">return</span> <span class="n">NagiosCurrentSummary</span><span class="p">(</span>
+</span><span id="line-357">            <span class="n">service_normal</span><span class="o">=</span><span class="n">normal</span><span class="p">[</span><span class="s1">&#39;service&#39;</span><span class="p">],</span>
+</span><span id="line-358">            <span class="n">service_issues</span><span class="o">=</span><span class="n">issues</span><span class="p">[</span><span class="s1">&#39;service&#39;</span><span class="p">],</span>
+</span><span id="line-359">            <span class="n">host_normal</span><span class="o">=</span><span class="n">normal</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">],</span>
+</span><span id="line-360">            <span class="n">host_issues</span><span class="o">=</span><span class="n">issues</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">])</span>
+</span><span id="line-361">
+</span><span id="line-362">
+</span><span id="line-363">    <span class="nd">@property</span>
+</span><span id="line-364">    <span class="k">def</span><span class="w"> </span><span class="nf">records</span><span class="p">(</span>
+</span><span id="line-365">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-366">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NagiosCurrentRecords</span><span class="p">:</span>
+</span><span id="line-367"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-368"><span class="sd">        Return the response from upstream API endpoint request.</span>
+</span><span id="line-369">
+</span><span id="line-370"><span class="sd">        :returns: Response from upstream API endpoint request.</span>
+</span><span id="line-371"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-372">
+</span><span id="line-373">        <span class="k">return</span> <span class="n">NagiosCurrentRecords</span><span class="p">(</span>
+</span><span id="line-374">            <span class="n">services</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">services</span><span class="p">,</span>
+</span><span id="line-375">            <span class="n">hosts</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="p">)</span></div>
+
+</span><span id="line-376">
+</span><span id="line-377">
+</span><span id="line-378">
 <div class="viewcode-block" id="composedsc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.helpers.composedsc">[docs]</a>
-</span><span id="line-348"><span class="k">def</span><span class="w"> </span><span class="nf">composedsc</span><span class="p">(</span>
-</span><span id="line-349">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span><span class="p">,</span>
-</span><span id="line-350">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
-</span><span id="line-351"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-352"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-353"><span class="sd">    Construct and format message for related chat platform.</span>
-</span><span id="line-354">
-</span><span id="line-355"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-356"><span class="sd">    :param mitem: Item containing information for operation.</span>
-</span><span id="line-357"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-358"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-359">
-</span><span id="line-360">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-361">
-</span><span id="line-362">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-363">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-364">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
-</span><span id="line-365">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
-</span><span id="line-366">    <span class="n">current</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">current</span>
-</span><span id="line-367">
-</span><span id="line-368">    <span class="n">summary</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">summary</span>
-</span><span id="line-369">
-</span><span id="line-370">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-371">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">summary</span><span class="p">))</span>
-</span><span id="line-372">
-</span><span id="line-373">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
+</span><span id="line-379"><span class="k">def</span><span class="w"> </span><span class="nf">composedsc</span><span class="p">(</span>
+</span><span id="line-380">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span><span class="p">,</span>
+</span><span id="line-381">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+</span><span id="line-382"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-383"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-384"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-385">
+</span><span id="line-386"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-387"><span class="sd">    :param mitem: Item containing information for operation.</span>
+</span><span id="line-388"><span class="sd">    :param status: Object containing the status information.</span>
+</span><span id="line-389"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-390">
+</span><span id="line-391">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-392">
+</span><span id="line-393">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-394">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-395">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
+</span><span id="line-396">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
+</span><span id="line-397">    <span class="n">current</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">current</span>
+</span><span id="line-398">
+</span><span id="line-399">    <span class="n">summary</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">summary</span>
+</span><span id="line-400">
+</span><span id="line-401">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-402">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">summary</span><span class="p">))</span>
+</span><span id="line-403">
+</span><span id="line-404">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
 
-</span><span id="line-374">
-</span><span id="line-375">
-</span><span id="line-376">
+</span><span id="line-405">
+</span><span id="line-406">
+</span><span id="line-407">
 <div class="viewcode-block" id="composeirc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.helpers.composeirc">[docs]</a>
-</span><span id="line-377"><span class="k">def</span><span class="w"> </span><span class="nf">composeirc</span><span class="p">(</span>
-</span><span id="line-378">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span><span class="p">,</span>
-</span><span id="line-379">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
-</span><span id="line-380"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-381"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-382"><span class="sd">    Construct and format message for related chat platform.</span>
-</span><span id="line-383">
-</span><span id="line-384"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-385"><span class="sd">    :param mitem: Item containing information for operation.</span>
-</span><span id="line-386"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-387"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-388">
-</span><span id="line-389">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-390">
-</span><span id="line-391">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-392">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-393">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
-</span><span id="line-394">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
-</span><span id="line-395">    <span class="n">current</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">current</span>
-</span><span id="line-396">
-</span><span id="line-397">    <span class="n">summary</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">summary</span>
-</span><span id="line-398">
-</span><span id="line-399">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-400">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">summary</span><span class="p">))</span>
-</span><span id="line-401">
-</span><span id="line-402">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
+</span><span id="line-408"><span class="k">def</span><span class="w"> </span><span class="nf">composeirc</span><span class="p">(</span>
+</span><span id="line-409">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span><span class="p">,</span>
+</span><span id="line-410">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+</span><span id="line-411"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-412"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-413"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-414">
+</span><span id="line-415"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-416"><span class="sd">    :param mitem: Item containing information for operation.</span>
+</span><span id="line-417"><span class="sd">    :param status: Object containing the status information.</span>
+</span><span id="line-418"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-419">
+</span><span id="line-420">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-421">
+</span><span id="line-422">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-423">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-424">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
+</span><span id="line-425">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
+</span><span id="line-426">    <span class="n">current</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">current</span>
+</span><span id="line-427">
+</span><span id="line-428">    <span class="n">summary</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">summary</span>
+</span><span id="line-429">
+</span><span id="line-430">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-431">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">summary</span><span class="p">))</span>
+</span><span id="line-432">
+</span><span id="line-433">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
 
-</span><span id="line-403">
-</span><span id="line-404">
-</span><span id="line-405">
+</span><span id="line-434">
+</span><span id="line-435">
+</span><span id="line-436">
 <div class="viewcode-block" id="composemtm">
 <a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.helpers.composemtm">[docs]</a>
-</span><span id="line-406"><span class="k">def</span><span class="w"> </span><span class="nf">composemtm</span><span class="p">(</span>
-</span><span id="line-407">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span><span class="p">,</span>
-</span><span id="line-408">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
-</span><span id="line-409"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-410"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-411"><span class="sd">    Construct and format message for related chat platform.</span>
-</span><span id="line-412">
-</span><span id="line-413"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-414"><span class="sd">    :param mitem: Item containing information for operation.</span>
-</span><span id="line-415"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-416"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-417">
-</span><span id="line-418">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-419">
-</span><span id="line-420">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-421">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-422">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
-</span><span id="line-423">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
-</span><span id="line-424">    <span class="n">current</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">current</span>
-</span><span id="line-425">
-</span><span id="line-426">    <span class="n">summary</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">summary</span>
-</span><span id="line-427">
-</span><span id="line-428">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-429">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">summary</span><span class="p">))</span>
-</span><span id="line-430">
-</span><span id="line-431">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
+</span><span id="line-437"><span class="k">def</span><span class="w"> </span><span class="nf">composemtm</span><span class="p">(</span>
+</span><span id="line-438">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span><span class="p">,</span>
+</span><span id="line-439">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+</span><span id="line-440"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-441"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-442"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-443">
+</span><span id="line-444"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-445"><span class="sd">    :param mitem: Item containing information for operation.</span>
+</span><span id="line-446"><span class="sd">    :param status: Object containing the status information.</span>
+</span><span id="line-447"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-448">
+</span><span id="line-449">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-450">
+</span><span id="line-451">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-452">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-453">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
+</span><span id="line-454">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
+</span><span id="line-455">    <span class="n">current</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">current</span>
+</span><span id="line-456">
+</span><span id="line-457">    <span class="n">summary</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">summary</span>
+</span><span id="line-458">
+</span><span id="line-459">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-460">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">summary</span><span class="p">))</span>
+</span><span id="line-461">
+</span><span id="line-462">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
 
 </span></code></pre></div>
     </div></div>
