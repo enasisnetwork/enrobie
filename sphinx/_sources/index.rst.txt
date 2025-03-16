@@ -51,6 +51,16 @@ Robie Plugins
    :show-inheritance:
    :noindex:
 
+.. autopydantic_model:: enrobie.plugins.enhomie.params.HomiePluginParams
+   :members:
+   :show-inheritance:
+   :noindex:
+
+.. autopydantic_model:: enrobie.plugins.nagios.params.NagiosPluginParams
+   :members:
+   :show-inheritance:
+   :noindex:
+
 .. autopydantic_model:: enrobie.plugins.autojoin.params.AutoJoinPluginParams
    :members:
    :show-inheritance:

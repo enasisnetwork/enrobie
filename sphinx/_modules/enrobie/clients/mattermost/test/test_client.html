@@ -506,43 +506,44 @@
 </span><span id="line-349">
 </span><span id="line-350">    <span class="n">client_mtmsock</span><span class="p">(</span><span class="n">MTMEVENTS</span><span class="p">)</span>
 </span><span id="line-351">
-</span><span id="line-352">    <span class="n">service</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span>
-</span><span id="line-353">        <span class="n">clients</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">],</span>
-</span><span id="line-354">        <span class="n">plugins</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">])</span>
-</span><span id="line-355">
-</span><span id="line-356">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span><span id="line-357">
+</span><span id="line-352">
+</span><span id="line-353">    <span class="n">service</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span>
+</span><span id="line-354">        <span class="n">clients</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mtmbot&#39;</span><span class="p">],</span>
+</span><span id="line-355">        <span class="n">plugins</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">])</span>
+</span><span id="line-356">
+</span><span id="line-357">    <span class="n">service</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span><span id="line-358">
-</span><span id="line-359">    <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span>
-</span><span id="line-360">        <span class="n">target</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">operate</span><span class="p">)</span>
-</span><span id="line-361">
-</span><span id="line-362">    <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span><span id="line-363">
+</span><span id="line-359">
+</span><span id="line-360">    <span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span>
+</span><span id="line-361">        <span class="n">target</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">operate</span><span class="p">)</span>
+</span><span id="line-362">
+</span><span id="line-363">    <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span><span id="line-364">
-</span><span id="line-365">    <span class="n">block_sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</span><span id="line-366">
+</span><span id="line-365">
+</span><span id="line-366">    <span class="n">block_sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </span><span id="line-367">
-</span><span id="line-368">    <span class="n">select</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-369">        <span class="n">client</span><span class="o">.</span><span class="n">channels</span>
-</span><span id="line-370">        <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;enrobie&#39;</span><span class="p">))</span>
-</span><span id="line-371">
-</span><span id="line-372">    <span class="k">assert</span> <span class="n">select</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-</span><span id="line-373">
-</span><span id="line-374">    <span class="k">assert</span> <span class="n">select</span><span class="o">.</span><span class="n">endumped</span> <span class="o">==</span> <span class="p">{</span>
-</span><span id="line-375">        <span class="s1">&#39;members&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-376">        <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;enrobie&#39;</span><span class="p">,</span>
-</span><span id="line-377">        <span class="s1">&#39;topic&#39;</span><span class="p">:</span> <span class="s1">&#39;Test topic&#39;</span><span class="p">,</span>
-</span><span id="line-378">        <span class="s1">&#39;unique&#39;</span><span class="p">:</span> <span class="s1">&#39;enrobie&#39;</span><span class="p">}</span>
-</span><span id="line-379">
+</span><span id="line-368">
+</span><span id="line-369">    <span class="n">select</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-370">        <span class="n">client</span><span class="o">.</span><span class="n">channels</span>
+</span><span id="line-371">        <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;enrobie&#39;</span><span class="p">))</span>
+</span><span id="line-372">
+</span><span id="line-373">    <span class="k">assert</span> <span class="n">select</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="line-374">
+</span><span id="line-375">    <span class="k">assert</span> <span class="n">select</span><span class="o">.</span><span class="n">endumped</span> <span class="o">==</span> <span class="p">{</span>
+</span><span id="line-376">        <span class="s1">&#39;members&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-377">        <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;enrobie&#39;</span><span class="p">,</span>
+</span><span id="line-378">        <span class="s1">&#39;topic&#39;</span><span class="p">:</span> <span class="s1">&#39;Test topic&#39;</span><span class="p">,</span>
+</span><span id="line-379">        <span class="s1">&#39;unique&#39;</span><span class="p">:</span> <span class="s1">&#39;enrobie&#39;</span><span class="p">}</span>
 </span><span id="line-380">
-</span><span id="line-381">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
-</span><span id="line-382">
-</span><span id="line-383">    <span class="k">while</span> <span class="n">service</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
-</span><span id="line-384">        <span class="n">block_sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="line-385">
-</span><span id="line-386">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-</span><span id="line-387">
-</span><span id="line-388">    <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
+</span><span id="line-381">
+</span><span id="line-382">    <span class="n">service</span><span class="o">.</span><span class="n">soft</span><span class="p">()</span>
+</span><span id="line-383">
+</span><span id="line-384">    <span class="k">while</span> <span class="n">service</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+</span><span id="line-385">        <span class="n">block_sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="line-386">
+</span><span id="line-387">    <span class="n">service</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</span><span id="line-388">
+</span><span id="line-389">    <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
 
 </span></code></pre></div>
     </div></div>
