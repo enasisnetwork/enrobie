@@ -64,6 +64,10 @@ async def homie_persist(
         assert isinstance(
             plugin, HomiePlugin)
 
+        # Basic trust enforcement
+        if plugin.notrust(mitem):
+            continue
+
         returned.extend(
             plugin.persist
             .records)

@@ -12,6 +12,7 @@ from time import sleep as block_sleep
 from typing import Optional
 from typing import TYPE_CHECKING
 from typing import Type
+from typing import Union
 
 from encommon.types import DictStrAny
 from encommon.types import NCNone
@@ -27,12 +28,13 @@ from .models import AinswerResponse
 from .params import AinswerPluginParams
 from ..status import StatusPlugin
 from ..status import StatusPluginStates
+from ...robie.childs import RobiePerson
 from ...robie.childs import RobiePlugin
+from ...robie.models import RobieMessage
 
 if TYPE_CHECKING:
     from pydantic_ai import Agent
     from pydantic_ai.models import Model
-    from ...robie.models import RobieMessage
 
 
 
@@ -277,6 +279,10 @@ class AinswerPlugin(RobiePlugin):
             if time.since > 15:
                 continue  # NOCVR
 
+            # Basic trust enforcement
+            if self.notrust(mitem):
+                continue
+
 
             if family == 'discord':
                 composedsc(self, mitem)
@@ -464,6 +470,50 @@ class AinswerPlugin(RobiePlugin):
             return None
 
         robie.printer(source, color)
+
+
+    def trusted(
+        self,
+        check: Union[str, RobiePerson, RobieMessage],
+    ) -> bool:
+        """
+        Return the boolean indicating whether person is trusted.
+
+        :param check: Validate the person is trusted by plugin.
+        :returns: Boolean indicating whether person is trusted.
+        """
+
+        params = self.params
+        trusted = params.trusted
+
+        if trusted is None:
+            return True
+
+        if isinstance(check, RobieMessage):
+
+            if not check.person:
+                return False
+
+            check = check.person
+
+        elif isinstance(check, RobiePerson):
+            check = check.name
+
+        return check in trusted
+
+
+    def notrust(
+        self,
+        check: Union[str, RobiePerson, RobieMessage],
+    ) -> bool:
+        """
+        Return the boolean indicating whether person is trusted.
+
+        :param check: Validate the person is trusted by plugin.
+        :returns: Boolean indicating whether person is trusted.
+        """
+
+        return not self.trusted(check)
 
 
     def __status(

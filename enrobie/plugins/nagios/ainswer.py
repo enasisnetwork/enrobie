@@ -63,6 +63,10 @@ async def nagios_current(
         assert isinstance(
             plugin, NagiosPlugin)
 
+        # Basic trust enforcement
+        if plugin.notrust(mitem):
+            continue
+
         returned.append(
             plugin.current
             .records)
