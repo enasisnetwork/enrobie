@@ -12,7 +12,7 @@ from typing import Type
 
 from encommon.types import NCNone
 
-from .helpers import NagiosCurrent
+from .current import NagiosCurrent
 from .helpers import composedsc
 from .helpers import composeirc
 from .helpers import composemtm
@@ -241,6 +241,6 @@ class NagiosPlugin(RobiePlugin):
         :returns: Ainswer tools that are related to the plugin.
         """
 
-        from .toolset import nagios_current
+        from .ainswer import nagios_current
 
         return [nagios_current]
