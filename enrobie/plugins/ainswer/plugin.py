@@ -17,9 +17,9 @@ from typing import Union
 from encommon.types import DictStrAny
 from encommon.types import NCNone
 
-from .helpers import AinswerDepends
-from .helpers import AinswerQuestion
-from .helpers import AinswerToolset
+from .ainswer import AinswerDepends
+from .ainswer import AinswerQuestion
+from .ainswer import AinswerToolset
 from .helpers import composedsc
 from .helpers import composeirc
 from .helpers import composemtm
