@@ -13,26 +13,25 @@ from encommon.types import funcname
 
 from pydantic_ai import RunContext
 
-from .helpers import HomiePersistRecord
+from .current import NagiosCurrentRecords
 from ..ainswer import AinswerDepends
 
 
 
-async def homie_persist(
+async def nagios_current(
     context: RunContext[AinswerDepends],
-) -> list[HomiePersistRecord]:
+) -> list[NagiosCurrentRecords]:
     """
-    Return the current values in Homie Automate persistence.
+    Return the current status for infratstructure in Nagios.
 
     .. note::
-       This tool will return values from the Homie Automate
-       persistence store. They may include information about
-       many things regarding the Robie owner home status.
+       This tool will return status values from Nagios Core.
+       Nagios is a network and system monitoring platform.
 
-    :returns: Current values in Homie Automate persistence.
+    :returns: Current status for infratstructure in Nagios.
     """
 
-    from .plugin import HomiePlugin
+    from .plugin import NagiosPlugin
 
     deps = context.deps
     ainswer = deps.plugin
@@ -50,22 +49,22 @@ async def homie_persist(
         .values())
 
 
-    returned: list[HomiePersistRecord] = []
+    returned: list[NagiosCurrentRecords] = []
 
 
     for plugin in plugins:
 
         related = isinstance(
-            plugin, HomiePlugin)
+            plugin, NagiosPlugin)
 
         if related is False:
             continue
 
         assert isinstance(
-            plugin, HomiePlugin)
+            plugin, NagiosPlugin)
 
-        returned.extend(
-            plugin.persist
+        returned.append(
+            plugin.current
             .records)
 
 
