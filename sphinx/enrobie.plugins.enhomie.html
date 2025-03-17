@@ -110,367 +110,33 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#submodules'">¶</a></h2>
 </section>
+<section id="module-enrobie.plugins.enhomie.ainswer">
+<span id="enrobie-plugins-enhomie-ainswer-module"></span><h2>enrobie.plugins.enhomie.ainswer module<a class="headerlink" href="#module-enrobie.plugins.enhomie.ainswer" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.plugins.enhomie.ainswer'">¶</a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.ainswer.homie_persist">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.enhomie.ainswer.</span></span><span class="sig-name descname"><span class="pre">homie_persist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RunContext</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.AinswerDepends" title="enrobie.plugins.ainswer.helpers.AinswerDepends"><span class="pre">AinswerDepends</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord" title="enrobie.plugins.enhomie.persist.HomiePersistRecord"><span class="pre">HomiePersistRecord</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/ainswer.html#homie_persist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.ainswer.homie_persist" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.ainswer.homie_persist'">¶</a></dt>
+<dd><p>Return the current values in Homie Automate persistence.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tool will return values from the Homie Automate
+persistence store. They may include information about
+many things regarding the Robie owner home status.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current values in Homie Automate persistence.</p>
+</dd>
+</dl>
+</dd></dl>
+</section>
 <section id="module-enrobie.plugins.enhomie.helpers">
 <span id="enrobie-plugins-enhomie-helpers-module"></span><h2>enrobie.plugins.enhomie.helpers module<a class="headerlink" href="#module-enrobie.plugins.enhomie.helpers" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.plugins.enhomie.helpers'">¶</a></h2>
 <p>Functions and routines associated with Enasis Network Chatting Robie.</p>
 <p>This file is part of Enasis Network software eco-system. Distribution
 is permitted, for more information consult the project license file.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersist">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.enhomie.helpers.</span></span><span class="sig-name descname"><span class="pre">HomiePersist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.HomiePlugin" title="enrobie.plugins.HomiePlugin"><span class="pre">HomiePlugin</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/helpers.html#HomiePersist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersist" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersist'">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>Collect the information using the upstream API endpoint.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>plugin</strong> – Plugin class instance for Chatting Robie.</p>
-</dd>
-</dl>
-<dl class="py property">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersist.client">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">client</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://enasisnetwork.github.io/enconnect/sphinx/enconnect.utils.html#enconnect.utils.http.HTTPClient" title="(in enconnect v0.17.12)"><span class="pre">HTTPClient</span></a></em><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersist.client" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersist.client'">¶</a></dt>
-<dd><p>Return the value for the attribute from class instance.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Value for the attribute from class instance.</p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersist.record">
-<span class="sig-name descname"><span class="pre">record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord"><span class="pre">HomiePersistRecord</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/helpers.html#HomiePersist.record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersist.record" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersist.record'">¶</a></dt>
-<dd><p>Return the response from upstream API endpoint request.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>unique</strong> – Unique identifier from within the table.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Response from upstream API endpoint request.</p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py property">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersist.records">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">records</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord"><span class="pre">HomiePersistRecord</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersist.records" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersist.records'">¶</a></dt>
-<dd><p>Return the response from upstream API endpoint request.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Response from upstream API endpoint request.</p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersist.request">
-<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/helpers.html#HomiePersist.request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersist.request" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersist.request'">¶</a></dt>
-<dd><p>Return the response from upstream API endpoint request.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>item</strong> – Determine which items will be enumerated.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Response from upstream API endpoint request.</p>
-</dd>
-</dl>
-</dd></dl>
-</dd></dl>
-<dl class="py class pydantic_model">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersistRecord">
-<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.enhomie.helpers.</span></span><span class="sig-name descname"><span class="pre">HomiePersistRecord</span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/helpers.html#HomiePersistRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersistRecord'">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://enasisnetwork.github.io/encommon/sphinx/encommon.types.html#encommon.types.classes.BaseModel" title="(in encommon v0.22.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
-<p>Information relevant to Homie Automate persistent value.</p>
-<p><details class="autodoc_pydantic_collapsable_json">
-<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="p">{</span>
-</span><span id="line-2"><span class="w">   </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HomiePersistRecord"</span><span class="p">,</span>
-</span><span id="line-3"><span class="w">   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Information relevant to Homie Automate persistent value."</span><span class="p">,</span>
-</span><span id="line-4"><span class="w">   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span>
-</span><span id="line-5"><span class="w">   </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-6"><span class="w">      </span><span class="nt">"unique"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-7"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unique key for the value"</span><span class="p">,</span>
-</span><span id="line-8"><span class="w">         </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-9"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unique"</span><span class="p">,</span>
-</span><span id="line-10"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-11"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-12"><span class="w">      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-13"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-14"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-15"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-16"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-17"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-18"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span>
-</span><span id="line-19"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-20"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-21"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-22"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-23"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-24"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-25"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-26"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-27"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-28"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-29"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-30"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Value stored at unique"</span><span class="p">,</span>
-</span><span id="line-31"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Value"</span>
-</span><span id="line-32"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-33"><span class="w">      </span><span class="nt">"value_unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-34"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-35"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-36"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-37"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-38"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-39"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-40"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-41"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-42"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-43"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-44"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unit for persist value"</span><span class="p">,</span>
-</span><span id="line-45"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Value Unit"</span>
-</span><span id="line-46"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-47"><span class="w">      </span><span class="nt">"value_label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-48"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-49"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-50"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-51"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-52"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-53"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-54"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-55"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-56"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-57"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-58"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Label for persist value"</span><span class="p">,</span>
-</span><span id="line-59"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Value Label"</span>
-</span><span id="line-60"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-61"><span class="w">      </span><span class="nt">"about"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-62"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-63"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-64"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-65"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-66"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-67"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-68"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-69"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-70"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-71"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-72"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"About the persist entry"</span><span class="p">,</span>
-</span><span id="line-73"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"About"</span>
-</span><span id="line-74"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-75"><span class="w">      </span><span class="nt">"about_label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-76"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-77"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-78"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-79"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-80"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-81"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-82"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-83"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-84"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-85"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-86"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Label for persist entry"</span><span class="p">,</span>
-</span><span id="line-87"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"About Label"</span>
-</span><span id="line-88"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-89"><span class="w">      </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-90"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-91"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-92"><span class="w">               </span><span class="nt">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-93"><span class="w">                  </span><span class="s2">"failure"</span><span class="p">,</span>
-</span><span id="line-94"><span class="w">                  </span><span class="s2">"information"</span><span class="p">,</span>
-</span><span id="line-95"><span class="w">                  </span><span class="s2">"success"</span><span class="p">,</span>
-</span><span id="line-96"><span class="w">                  </span><span class="s2">"warning"</span>
-</span><span id="line-97"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-98"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-99"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-100"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-101"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-102"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-103"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-104"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-105"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-106"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Severity of persist entry"</span><span class="p">,</span>
-</span><span id="line-107"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Level"</span>
-</span><span id="line-108"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-109"><span class="w">      </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-110"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-111"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-112"><span class="w">               </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-113"><span class="w">                  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-114"><span class="w">               </span><span class="p">},</span>
-</span><span id="line-115"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-116"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
-</span><span id="line-117"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-118"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-119"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-120"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-121"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-122"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-123"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tags for persist entry"</span><span class="p">,</span>
-</span><span id="line-124"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tags"</span>
-</span><span id="line-125"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-126"><span class="w">      </span><span class="nt">"expire"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-127"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-128"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-129"><span class="w">               </span><span class="nt">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span>
-</span><span id="line-130"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
-</span><span id="line-131"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-132"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-133"><span class="w">            </span><span class="p">{</span>
-</span><span id="line-134"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-135"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-136"><span class="w">         </span><span class="p">],</span>
-</span><span id="line-137"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-138"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"After when the key expires"</span><span class="p">,</span>
-</span><span id="line-139"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expire"</span>
-</span><span id="line-140"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-141"><span class="w">      </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-142"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When the value was updated"</span><span class="p">,</span>
-</span><span id="line-143"><span class="w">         </span><span class="nt">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span>
-</span><span id="line-144"><span class="w">         </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
-</span><span id="line-145"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Update"</span><span class="p">,</span>
-</span><span id="line-146"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-147"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-148"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-149"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-150"><span class="w">      </span><span class="s2">"unique"</span><span class="p">,</span>
-</span><span id="line-151"><span class="w">      </span><span class="s2">"value"</span><span class="p">,</span>
-</span><span id="line-152"><span class="w">      </span><span class="s2">"update"</span>
-</span><span id="line-153"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-154"><span class="p">}</span>
-</span></code></pre></div>
-</div>
-</details></p><dl class="field-list simple">
-<dt class="field-odd">Config<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>extra</strong>: <em>str = ignore</em></p></li>
-</ul>
-</dd>
-<dt class="field-even">Fields<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.about" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord.about"><code class="xref py py-obj docutils literal notranslate"><span class="pre">about</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
-<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.about_label" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord.about_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">about_label</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
-<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.expire" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord.expire"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expire</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
-<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.level" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord.level"><code class="xref py py-obj docutils literal notranslate"><span class="pre">level</span> <span class="pre">(Literal['failure',</span> <span class="pre">'information',</span> <span class="pre">'success',</span> <span class="pre">'warning']</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
-<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.tags" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord.tags"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tags</span> <span class="pre">(list[str]</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
-<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.unique" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span> <span class="pre">(str)</span></code></a></p></li>
-<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.update" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span> <span class="pre">(str)</span></code></a></p></li>
-<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span> <span class="pre">(int</span> <span class="pre">|</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
-<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value_label" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord.value_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_label</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
-<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value_unit" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord.value_unit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_unit</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py attribute pydantic_field">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersistRecord.about">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">about</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'About</span> <span class="pre">the</span> <span class="pre">persist</span> <span class="pre">entry'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.about" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.about'">¶</a></dt>
-<dd><p>About the persist entry</p>
-<dl class="field-list simple">
-<dt class="field-odd">Constraints<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>min_length</strong> = 1</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py attribute pydantic_field">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersistRecord.about_label">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">about_label</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Label</span> <span class="pre">for</span> <span class="pre">persist</span> <span class="pre">entry'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.about_label" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.about_label'">¶</a></dt>
-<dd><p>Label for persist entry</p>
-<dl class="field-list simple">
-<dt class="field-odd">Constraints<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>min_length</strong> = 1</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py attribute pydantic_field">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersistRecord.expire">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">expire</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'After</span> <span class="pre">when</span> <span class="pre">the</span> <span class="pre">key</span> <span class="pre">expires'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">20</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MaxLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">max_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">32</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.expire" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.expire'">¶</a></dt>
-<dd><p>After when the key expires</p>
-<dl class="field-list simple">
-<dt class="field-odd">Constraints<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>min_length</strong> = 20</p></li>
-<li><p><strong>max_length</strong> = 32</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py attribute pydantic_field">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersistRecord.level">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">level</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.13)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'failure'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'information'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'success'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'warning'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Severity</span> <span class="pre">of</span> <span class="pre">persist</span> <span class="pre">entry'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.level" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.level'">¶</a></dt>
-<dd><p>Severity of persist entry</p>
-<dl class="field-list simple">
-<dt class="field-odd">Constraints<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>min_length</strong> = 1</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py attribute pydantic_field">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersistRecord.tags">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Tags</span> <span class="pre">for</span> <span class="pre">persist</span> <span class="pre">entry'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.tags" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.tags'">¶</a></dt>
-<dd><p>Tags for persist entry</p>
-<dl class="field-list simple">
-<dt class="field-odd">Constraints<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>min_length</strong> = 1</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py attribute pydantic_field">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersistRecord.unique">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unique</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Unique</span> <span class="pre">key</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">value'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.unique" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.unique'">¶</a></dt>
-<dd><p>Unique key for the value</p>
-<dl class="field-list simple">
-<dt class="field-odd">Constraints<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>min_length</strong> = 1</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py attribute pydantic_field">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersistRecord.update">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'When</span> <span class="pre">the</span> <span class="pre">value</span> <span class="pre">was</span> <span class="pre">updated'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">20</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MaxLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">max_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">32</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.update" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.update'">¶</a></dt>
-<dd><p>When the value was updated</p>
-<dl class="field-list simple">
-<dt class="field-odd">Constraints<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>min_length</strong> = 20</p></li>
-<li><p><strong>max_length</strong> = 32</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py attribute pydantic_field">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersistRecord.value">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Value</span> <span class="pre">stored</span> <span class="pre">at</span> <span class="pre">unique'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value'">¶</a></dt>
-<dd><p>Value stored at unique</p>
-</dd></dl>
-<dl class="py attribute pydantic_field">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersistRecord.value_label">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value_label</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Label</span> <span class="pre">for</span> <span class="pre">persist</span> <span class="pre">value'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value_label" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value_label'">¶</a></dt>
-<dd><p>Label for persist value</p>
-<dl class="field-list simple">
-<dt class="field-odd">Constraints<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>min_length</strong> = 1</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py attribute pydantic_field">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.HomiePersistRecord.value_unit">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value_unit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Unit</span> <span class="pre">for</span> <span class="pre">persist</span> <span class="pre">value'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value_unit" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value_unit'">¶</a></dt>
-<dd><p>Unit for persist value</p>
-<dl class="field-list simple">
-<dt class="field-odd">Constraints<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>min_length</strong> = 1</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="enrobie.plugins.enhomie.helpers.composedsc">
 <span class="sig-prename descclassname"><span class="pre">enrobie.plugins.enhomie.helpers.</span></span><span class="sig-name descname"><span class="pre">composedsc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.HomiePlugin" title="enrobie.plugins.HomiePlugin"><span class="pre">HomiePlugin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mitem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage" title="enrobie.robie.models.message.RobieMessage"><span class="pre">RobieMessage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/helpers.html#composedsc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.helpers.composedsc" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.helpers.composedsc'">¶</a></dt>
@@ -945,6 +611,368 @@ is permitted, for more information consult the project license file.</p>
 </dd></dl>
 </dd></dl>
 </section>
+<section id="module-enrobie.plugins.enhomie.persist">
+<span id="enrobie-plugins-enhomie-persist-module"></span><h2>enrobie.plugins.enhomie.persist module<a class="headerlink" href="#module-enrobie.plugins.enhomie.persist" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.plugins.enhomie.persist'">¶</a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersist">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.enhomie.persist.</span></span><span class="sig-name descname"><span class="pre">HomiePersist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.HomiePlugin" title="enrobie.plugins.HomiePlugin"><span class="pre">HomiePlugin</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/persist.html#HomiePersist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersist" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersist'">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Collect the information using the upstream API endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>plugin</strong> – Plugin class instance for Chatting Robie.</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersist.client">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">client</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://enasisnetwork.github.io/enconnect/sphinx/enconnect.utils.html#enconnect.utils.http.HTTPClient" title="(in enconnect v0.17.12)"><span class="pre">HTTPClient</span></a></em><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersist.client" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersist.client'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersist.record">
+<span class="sig-name descname"><span class="pre">record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord" title="enrobie.plugins.enhomie.persist.HomiePersistRecord"><span class="pre">HomiePersistRecord</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/persist.html#HomiePersist.record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersist.record" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersist.record'">¶</a></dt>
+<dd><p>Return the response from upstream API endpoint request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unique</strong> – Unique identifier from within the table.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response from upstream API endpoint request.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersist.records">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">records</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord" title="enrobie.plugins.enhomie.persist.HomiePersistRecord"><span class="pre">HomiePersistRecord</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersist.records" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersist.records'">¶</a></dt>
+<dd><p>Return the response from upstream API endpoint request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Response from upstream API endpoint request.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersist.request">
+<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/persist.html#HomiePersist.request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersist.request" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersist.request'">¶</a></dt>
+<dd><p>Return the response from upstream API endpoint request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>item</strong> – Determine which items will be enumerated.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response from upstream API endpoint request.</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersistRecord">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.enhomie.persist.</span></span><span class="sig-name descname"><span class="pre">HomiePersistRecord</span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/persist.html#HomiePersistRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersistRecord'">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://enasisnetwork.github.io/encommon/sphinx/encommon.types.html#encommon.types.classes.BaseModel" title="(in encommon v0.22.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<p>Information relevant to Homie Automate persistent value.</p>
+<p><details class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="p">{</span>
+</span><span id="line-2"><span class="w">   </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HomiePersistRecord"</span><span class="p">,</span>
+</span><span id="line-3"><span class="w">   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Information relevant to Homie Automate persistent value."</span><span class="p">,</span>
+</span><span id="line-4"><span class="w">   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span>
+</span><span id="line-5"><span class="w">   </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-6"><span class="w">      </span><span class="nt">"unique"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-7"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unique key for the value"</span><span class="p">,</span>
+</span><span id="line-8"><span class="w">         </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-9"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unique"</span><span class="p">,</span>
+</span><span id="line-10"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-11"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-12"><span class="w">      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-13"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-14"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-15"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-16"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-17"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-18"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span>
+</span><span id="line-19"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-20"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-21"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-22"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-23"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-24"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-25"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-26"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-27"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-28"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-29"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-30"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Value stored at unique"</span><span class="p">,</span>
+</span><span id="line-31"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Value"</span>
+</span><span id="line-32"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-33"><span class="w">      </span><span class="nt">"value_unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-34"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-35"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-36"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-37"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-38"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-39"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-40"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-41"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-42"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-43"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-44"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unit for persist value"</span><span class="p">,</span>
+</span><span id="line-45"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Value Unit"</span>
+</span><span id="line-46"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-47"><span class="w">      </span><span class="nt">"value_label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-48"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-49"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-50"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-51"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-52"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-53"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-54"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-55"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-56"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-57"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-58"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Label for persist value"</span><span class="p">,</span>
+</span><span id="line-59"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Value Label"</span>
+</span><span id="line-60"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-61"><span class="w">      </span><span class="nt">"about"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-62"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-63"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-64"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-65"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-66"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-67"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-68"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-69"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-70"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-71"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-72"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"About the persist entry"</span><span class="p">,</span>
+</span><span id="line-73"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"About"</span>
+</span><span id="line-74"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-75"><span class="w">      </span><span class="nt">"about_label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-76"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-77"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-78"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-79"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-80"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-81"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-82"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-83"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-84"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-85"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-86"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Label for persist entry"</span><span class="p">,</span>
+</span><span id="line-87"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"About Label"</span>
+</span><span id="line-88"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-89"><span class="w">      </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-90"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-91"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-92"><span class="w">               </span><span class="nt">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-93"><span class="w">                  </span><span class="s2">"failure"</span><span class="p">,</span>
+</span><span id="line-94"><span class="w">                  </span><span class="s2">"information"</span><span class="p">,</span>
+</span><span id="line-95"><span class="w">                  </span><span class="s2">"success"</span><span class="p">,</span>
+</span><span id="line-96"><span class="w">                  </span><span class="s2">"warning"</span>
+</span><span id="line-97"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-98"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-99"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-100"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-101"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-102"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-103"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-104"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-105"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-106"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Severity of persist entry"</span><span class="p">,</span>
+</span><span id="line-107"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Level"</span>
+</span><span id="line-108"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-109"><span class="w">      </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-110"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-111"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-112"><span class="w">               </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-113"><span class="w">                  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-114"><span class="w">               </span><span class="p">},</span>
+</span><span id="line-115"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-116"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
+</span><span id="line-117"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-118"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-119"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-120"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-121"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-122"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-123"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tags for persist entry"</span><span class="p">,</span>
+</span><span id="line-124"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tags"</span>
+</span><span id="line-125"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-126"><span class="w">      </span><span class="nt">"expire"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-127"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-128"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-129"><span class="w">               </span><span class="nt">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span>
+</span><span id="line-130"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+</span><span id="line-131"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-132"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-133"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-134"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-135"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-136"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-137"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-138"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"After when the key expires"</span><span class="p">,</span>
+</span><span id="line-139"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expire"</span>
+</span><span id="line-140"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-141"><span class="w">      </span><span class="nt">"update"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-142"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When the value was updated"</span><span class="p">,</span>
+</span><span id="line-143"><span class="w">         </span><span class="nt">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span>
+</span><span id="line-144"><span class="w">         </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+</span><span id="line-145"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Update"</span><span class="p">,</span>
+</span><span id="line-146"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-147"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-148"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-149"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-150"><span class="w">      </span><span class="s2">"unique"</span><span class="p">,</span>
+</span><span id="line-151"><span class="w">      </span><span class="s2">"value"</span><span class="p">,</span>
+</span><span id="line-152"><span class="w">      </span><span class="s2">"update"</span>
+</span><span id="line-153"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-154"><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = ignore</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.about" title="enrobie.plugins.enhomie.persist.HomiePersistRecord.about"><code class="xref py py-obj docutils literal notranslate"><span class="pre">about</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.about_label" title="enrobie.plugins.enhomie.persist.HomiePersistRecord.about_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">about_label</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.expire" title="enrobie.plugins.enhomie.persist.HomiePersistRecord.expire"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expire</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.level" title="enrobie.plugins.enhomie.persist.HomiePersistRecord.level"><code class="xref py py-obj docutils literal notranslate"><span class="pre">level</span> <span class="pre">(Literal['failure',</span> <span class="pre">'information',</span> <span class="pre">'success',</span> <span class="pre">'warning']</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.tags" title="enrobie.plugins.enhomie.persist.HomiePersistRecord.tags"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tags</span> <span class="pre">(list[str]</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.unique" title="enrobie.plugins.enhomie.persist.HomiePersistRecord.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span> <span class="pre">(str)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.update" title="enrobie.plugins.enhomie.persist.HomiePersistRecord.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span> <span class="pre">(str)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.value" title="enrobie.plugins.enhomie.persist.HomiePersistRecord.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span> <span class="pre">(int</span> <span class="pre">|</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.value_label" title="enrobie.plugins.enhomie.persist.HomiePersistRecord.value_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_label</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.value_unit" title="enrobie.plugins.enhomie.persist.HomiePersistRecord.value_unit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_unit</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersistRecord.about">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">about</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'About</span> <span class="pre">the</span> <span class="pre">persist</span> <span class="pre">entry'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.about" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersistRecord.about'">¶</a></dt>
+<dd><p>About the persist entry</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersistRecord.about_label">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">about_label</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Label</span> <span class="pre">for</span> <span class="pre">persist</span> <span class="pre">entry'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.about_label" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersistRecord.about_label'">¶</a></dt>
+<dd><p>Label for persist entry</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersistRecord.expire">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">expire</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'After</span> <span class="pre">when</span> <span class="pre">the</span> <span class="pre">key</span> <span class="pre">expires'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">20</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MaxLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">max_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">32</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.expire" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersistRecord.expire'">¶</a></dt>
+<dd><p>After when the key expires</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 20</p></li>
+<li><p><strong>max_length</strong> = 32</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersistRecord.level">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">level</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.13)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'failure'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'information'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'success'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'warning'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Severity</span> <span class="pre">of</span> <span class="pre">persist</span> <span class="pre">entry'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.level" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersistRecord.level'">¶</a></dt>
+<dd><p>Severity of persist entry</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersistRecord.tags">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Tags</span> <span class="pre">for</span> <span class="pre">persist</span> <span class="pre">entry'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.tags" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersistRecord.tags'">¶</a></dt>
+<dd><p>Tags for persist entry</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersistRecord.unique">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unique</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Unique</span> <span class="pre">key</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">value'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.unique" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersistRecord.unique'">¶</a></dt>
+<dd><p>Unique key for the value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersistRecord.update">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'When</span> <span class="pre">the</span> <span class="pre">value</span> <span class="pre">was</span> <span class="pre">updated'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">20</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">MaxLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">max_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">32</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.update" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersistRecord.update'">¶</a></dt>
+<dd><p>When the value was updated</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 20</p></li>
+<li><p><strong>max_length</strong> = 32</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersistRecord.value">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">True</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Value</span> <span class="pre">stored</span> <span class="pre">at</span> <span class="pre">unique'</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.value" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersistRecord.value'">¶</a></dt>
+<dd><p>Value stored at unique</p>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersistRecord.value_label">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value_label</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Label</span> <span class="pre">for</span> <span class="pre">persist</span> <span class="pre">value'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.value_label" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersistRecord.value_label'">¶</a></dt>
+<dd><p>Label for persist value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.enhomie.persist.HomiePersistRecord.value_unit">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value_unit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Unit</span> <span class="pre">for</span> <span class="pre">persist</span> <span class="pre">value'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.value_unit" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.persist.HomiePersistRecord.value_unit'">¶</a></dt>
+<dd><p>Unit for persist value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
 <section id="module-enrobie.plugins.enhomie.plugin">
 <span id="enrobie-plugins-enhomie-plugin-module"></span><h2>enrobie.plugins.enhomie.plugin module<a class="headerlink" href="#module-enrobie.plugins.enhomie.plugin" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.plugins.enhomie.plugin'">¶</a></h2>
 <p>Functions and routines associated with Enasis Network Chatting Robie.</p>
@@ -991,7 +1019,7 @@ is permitted, for more information consult the project license file.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="enrobie.plugins.enhomie.plugin.HomiePlugin.persist">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">persist</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersist" title="enrobie.plugins.enhomie.helpers.HomiePersist"><span class="pre">HomiePersist</span></a></em><a class="headerlink" href="#enrobie.plugins.enhomie.plugin.HomiePlugin.persist" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.plugin.HomiePlugin.persist'">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">persist</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersist" title="enrobie.plugins.enhomie.persist.HomiePersist"><span class="pre">HomiePersist</span></a></em><a class="headerlink" href="#enrobie.plugins.enhomie.plugin.HomiePlugin.persist" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.plugin.HomiePlugin.persist'">¶</a></dt>
 <dd><p>Return the value for the attribute from class instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1014,28 +1042,6 @@ is permitted, for more information consult the project license file.</p>
 <span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/plugin.html#HomiePlugin.validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.plugin.HomiePlugin.validate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.plugin.HomiePlugin.validate'">¶</a></dt>
 <dd><p>Perform advanced validation on the parameters provided.</p>
 </dd></dl>
-</dd></dl>
-</section>
-<section id="module-enrobie.plugins.enhomie.toolset">
-<span id="enrobie-plugins-enhomie-toolset-module"></span><h2>enrobie.plugins.enhomie.toolset module<a class="headerlink" href="#module-enrobie.plugins.enhomie.toolset" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.plugins.enhomie.toolset'">¶</a></h2>
-<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
-<p>This file is part of Enasis Network software eco-system. Distribution
-is permitted, for more information consult the project license file.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="enrobie.plugins.enhomie.toolset.homie_persist">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.enhomie.toolset.</span></span><span class="sig-name descname"><span class="pre">homie_persist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RunContext</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.AinswerDepends" title="enrobie.plugins.ainswer.helpers.AinswerDepends"><span class="pre">AinswerDepends</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord" title="enrobie.plugins.enhomie.helpers.HomiePersistRecord"><span class="pre">HomiePersistRecord</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/plugins/enhomie/toolset.html#homie_persist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.enhomie.toolset.homie_persist" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.toolset.homie_persist'">¶</a></dt>
-<dd><p>Return the current values in Homie Automate persistence.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This tool will return values from the Homie Automate
-persistence store. They may include information about
-many things regarding the Robie owner home status.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Current values in Homie Automate persistence.</p>
-</dd>
-</dl>
 </dd></dl>
 </section>
 <section id="module-enrobie.plugins.enhomie">
@@ -1084,7 +1090,7 @@ is permitted, for more information consult the project license file.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="enrobie.plugins.enhomie.HomiePlugin.persist">
-<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">persist</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersist" title="enrobie.plugins.enhomie.helpers.HomiePersist"><span class="pre">HomiePersist</span></a></em><a class="headerlink" href="#enrobie.plugins.enhomie.HomiePlugin.persist" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.HomiePlugin.persist'">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">persist</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersist" title="enrobie.plugins.enhomie.persist.HomiePersist"><span class="pre">HomiePersist</span></a></em><a class="headerlink" href="#enrobie.plugins.enhomie.HomiePlugin.persist" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.enhomie.HomiePlugin.persist'">¶</a></dt>
 <dd><p>Return the value for the attribute from class instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1452,27 +1458,11 @@ is permitted, for more information consult the project license file.</p>
 <ul>
 <li><a :data-current="activeSection === '#subpackages'" class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a :data-current="activeSection === '#submodules'" class="reference internal" href="#submodules">Submodules</a></li>
+<li><a :data-current="activeSection === '#module-enrobie.plugins.enhomie.ainswer'" class="reference internal" href="#module-enrobie.plugins.enhomie.ainswer">enrobie.plugins.enhomie.ainswer module</a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.ainswer.homie_persist'" class="reference internal" href="#enrobie.plugins.enhomie.ainswer.homie_persist"><code class="docutils literal notranslate"><span class="pre">homie_persist()</span></code></a></li>
+</ul>
+</li>
 <li><a :data-current="activeSection === '#module-enrobie.plugins.enhomie.helpers'" class="reference internal" href="#module-enrobie.plugins.enhomie.helpers">enrobie.plugins.enhomie.helpers module</a><ul>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersist'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersist"><code class="docutils literal notranslate"><span class="pre">HomiePersist</span></code></a><ul>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersist.client'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersist.client"><code class="docutils literal notranslate"><span class="pre">HomiePersist.client</span></code></a></li>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersist.record'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersist.record"><code class="docutils literal notranslate"><span class="pre">HomiePersist.record()</span></code></a></li>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersist.records'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersist.records"><code class="docutils literal notranslate"><span class="pre">HomiePersist.records</span></code></a></li>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersist.request'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersist.request"><code class="docutils literal notranslate"><span class="pre">HomiePersist.request()</span></code></a></li>
-</ul>
-</li>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersistRecord'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord</span></code></a><ul>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.about'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.about"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.about</span></code></a></li>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.about_label'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.about_label"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.about_label</span></code></a></li>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.expire'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.expire"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.expire</span></code></a></li>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.level'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.level"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.level</span></code></a></li>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.tags'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.tags"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.tags</span></code></a></li>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.unique'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.unique"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.unique</span></code></a></li>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.update'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.update"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.update</span></code></a></li>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.value</span></code></a></li>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value_label'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value_label"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.value_label</span></code></a></li>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value_unit'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.HomiePersistRecord.value_unit"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.value_unit</span></code></a></li>
-</ul>
-</li>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.composedsc'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.composedsc"><code class="docutils literal notranslate"><span class="pre">composedsc()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.composeirc'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.composeirc"><code class="docutils literal notranslate"><span class="pre">composeirc()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.helpers.composemtm'" class="reference internal" href="#enrobie.plugins.enhomie.helpers.composemtm"><code class="docutils literal notranslate"><span class="pre">composemtm()</span></code></a></li>
@@ -1501,6 +1491,29 @@ is permitted, for more information consult the project license file.</p>
 </li>
 </ul>
 </li>
+<li><a :data-current="activeSection === '#module-enrobie.plugins.enhomie.persist'" class="reference internal" href="#module-enrobie.plugins.enhomie.persist">enrobie.plugins.enhomie.persist module</a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersist'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersist"><code class="docutils literal notranslate"><span class="pre">HomiePersist</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersist.client'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersist.client"><code class="docutils literal notranslate"><span class="pre">HomiePersist.client</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersist.record'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersist.record"><code class="docutils literal notranslate"><span class="pre">HomiePersist.record()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersist.records'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersist.records"><code class="docutils literal notranslate"><span class="pre">HomiePersist.records</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersist.request'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersist.request"><code class="docutils literal notranslate"><span class="pre">HomiePersist.request()</span></code></a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersistRecord'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersistRecord.about'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.about"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.about</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersistRecord.about_label'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.about_label"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.about_label</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersistRecord.expire'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.expire"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.expire</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersistRecord.level'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.level"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.level</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersistRecord.tags'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.tags"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.tags</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersistRecord.unique'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.unique"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.unique</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersistRecord.update'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.update"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.update</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersistRecord.value'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.value"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.value</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersistRecord.value_label'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.value_label"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.value_label</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.persist.HomiePersistRecord.value_unit'" class="reference internal" href="#enrobie.plugins.enhomie.persist.HomiePersistRecord.value_unit"><code class="docutils literal notranslate"><span class="pre">HomiePersistRecord.value_unit</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a :data-current="activeSection === '#module-enrobie.plugins.enhomie.plugin'" class="reference internal" href="#module-enrobie.plugins.enhomie.plugin">enrobie.plugins.enhomie.plugin module</a><ul>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.plugin.HomiePlugin'" class="reference internal" href="#enrobie.plugins.enhomie.plugin.HomiePlugin"><code class="docutils literal notranslate"><span class="pre">HomiePlugin</span></code></a><ul>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.plugin.HomiePlugin.ainswer'" class="reference internal" href="#enrobie.plugins.enhomie.plugin.HomiePlugin.ainswer"><code class="docutils literal notranslate"><span class="pre">HomiePlugin.ainswer()</span></code></a></li>
@@ -1511,10 +1524,6 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.plugins.enhomie.plugin.HomiePlugin.validate'" class="reference internal" href="#enrobie.plugins.enhomie.plugin.HomiePlugin.validate"><code class="docutils literal notranslate"><span class="pre">HomiePlugin.validate()</span></code></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a :data-current="activeSection === '#module-enrobie.plugins.enhomie.toolset'" class="reference internal" href="#module-enrobie.plugins.enhomie.toolset">enrobie.plugins.enhomie.toolset module</a><ul>
-<li><a :data-current="activeSection === '#enrobie.plugins.enhomie.toolset.homie_persist'" class="reference internal" href="#enrobie.plugins.enhomie.toolset.homie_persist"><code class="docutils literal notranslate"><span class="pre">homie_persist()</span></code></a></li>
 </ul>
 </li>
 <li><a :data-current="activeSection === '#module-enrobie.plugins.enhomie'" class="reference internal" href="#module-enrobie.plugins.enhomie">Module contents</a><ul>
