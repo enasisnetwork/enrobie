@@ -227,6 +227,12 @@ class AinswerPluginParams(RobiePluginParams, extra='forbid'):
               description='Logger for including recents',
               min_length=1)]
 
+    trusted: Annotated[
+        Optional[list[str]],
+        Field(None,
+              description='Users are trusted by the plugin',
+              min_length=1)]
+
     status: Annotated[
         StatusPluginIconParams,
         Field(default_factory=StatusPluginIconParams,

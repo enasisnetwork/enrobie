@@ -97,6 +97,12 @@ class NagiosPluginParams(RobiePluginParams, extra='forbid'):
               description='List of clients to enable plugin',
               min_length=1)]
 
+    trusted: Annotated[
+        Optional[list[str]],
+        Field(None,
+              description='Users are trusted by the plugin',
+              min_length=1)]
+
     status: Annotated[
         StatusPluginIconParams,
         Field(default_factory=StatusPluginIconParams,
