@@ -324,39 +324,45 @@
 </span><span id="line-167">        <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">StatusPluginIconsParams</span><span class="p">,</span>
 </span><span id="line-168">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per the chat platform&#39;</span><span class="p">)]</span>
 </span><span id="line-169">
-</span><span id="line-170">
-</span><span id="line-171">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
-</span><span id="line-172">        <span class="c1"># NOCVR</span>
-</span><span id="line-173">        <span class="bp">self</span><span class="p">,</span>
-</span><span id="line-174">        <span class="o">/</span><span class="p">,</span>
-</span><span id="line-175">        <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-176">        <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-</span><span id="line-177">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-178"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-179"><span class="sd">        Initialize instance for class using provided parameters.</span>
-</span><span id="line-180"><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-181">
-</span><span id="line-182">
-</span><span id="line-183">        <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-184">
-</span><span id="line-185">            <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="line-186">                <span class="s1">&#39;report&#39;</span><span class="p">,</span>
-</span><span id="line-187">                <span class="s1">&#39;command&#39;</span><span class="p">,</span>
-</span><span id="line-188">                <span class="s1">&#39;icons&#39;</span><span class="p">]</span>
-</span><span id="line-189">
-</span><span id="line-190">            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
-</span><span id="line-191">
-</span><span id="line-192">                <span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-</span><span id="line-193">
-</span><span id="line-194">                <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-195">                    <span class="k">continue</span>
-</span><span id="line-196">
-</span><span id="line-197">                <span class="n">value</span> <span class="o">=</span> <span class="n">_parse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-</span><span id="line-198">
-</span><span id="line-199">                <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
-</span><span id="line-200">
-</span><span id="line-201">
-</span><span id="line-202">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span></div>
+</span><span id="line-170">    <span class="n">trusted</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
+</span><span id="line-171">        <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+</span><span id="line-172">        <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-173">              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Users are trusted by the plugin&#39;</span><span class="p">,</span>
+</span><span id="line-174">              <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+</span><span id="line-175">
+</span><span id="line-176">
+</span><span id="line-177">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+</span><span id="line-178">        <span class="c1"># NOCVR</span>
+</span><span id="line-179">        <span class="bp">self</span><span class="p">,</span>
+</span><span id="line-180">        <span class="o">/</span><span class="p">,</span>
+</span><span id="line-181">        <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-182">        <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+</span><span id="line-183">    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-184"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-185"><span class="sd">        Initialize instance for class using provided parameters.</span>
+</span><span id="line-186"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-187">
+</span><span id="line-188">
+</span><span id="line-189">        <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-190">
+</span><span id="line-191">            <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="line-192">                <span class="s1">&#39;report&#39;</span><span class="p">,</span>
+</span><span id="line-193">                <span class="s1">&#39;command&#39;</span><span class="p">,</span>
+</span><span id="line-194">                <span class="s1">&#39;icons&#39;</span><span class="p">]</span>
+</span><span id="line-195">
+</span><span id="line-196">            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
+</span><span id="line-197">
+</span><span id="line-198">                <span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</span><span id="line-199">
+</span><span id="line-200">                <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-201">                    <span class="k">continue</span>
+</span><span id="line-202">
+</span><span id="line-203">                <span class="n">value</span> <span class="o">=</span> <span class="n">_parse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span><span id="line-204">
+</span><span id="line-205">                <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span><span id="line-206">
+</span><span id="line-207">
+</span><span id="line-208">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span></div>
 
 </span></code></pre></div>
     </div></div>

@@ -117,7 +117,7 @@
 is permitted, for more information consult the project license file.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="enrobie.plugins.nagios.ainswer.nagios_current">
-<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.nagios.ainswer.</span></span><span class="sig-name descname"><span class="pre">nagios_current</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RunContext</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.AinswerDepends" title="enrobie.plugins.ainswer.helpers.AinswerDepends"><span class="pre">AinswerDepends</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enrobie.plugins.nagios.current.NagiosCurrentRecords" title="enrobie.plugins.nagios.current.NagiosCurrentRecords"><span class="pre">NagiosCurrentRecords</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/plugins/nagios/ainswer.html#nagios_current"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.nagios.ainswer.nagios_current" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.nagios.ainswer.nagios_current'">¶</a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.nagios.ainswer.</span></span><span class="sig-name descname"><span class="pre">nagios_current</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RunContext</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.ainswer.AinswerDepends" title="enrobie.plugins.ainswer.ainswer.AinswerDepends"><span class="pre">AinswerDepends</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enrobie.plugins.nagios.current.NagiosCurrentRecords" title="enrobie.plugins.nagios.current.NagiosCurrentRecords"><span class="pre">NagiosCurrentRecords</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/plugins/nagios/ainswer.html#nagios_current"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.nagios.ainswer.nagios_current" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.nagios.ainswer.nagios_current'">¶</a></dt>
 <dd><p>Return the current status for infratstructure in Nagios.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -980,98 +980,115 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-107"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clients"</span><span class="p">,</span>
 </span><span id="line-108"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
 </span><span id="line-109"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-110"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-111"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-112"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
-</span><span id="line-113"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-114"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-115"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-116"><span class="w">      </span><span class="nt">"NagiosPluginCommandParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-117"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-118"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-119"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-120"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-121"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"!nagios"</span><span class="p">,</span>
-</span><span id="line-122"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command name for chat platform"</span><span class="p">,</span>
-</span><span id="line-123"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-</span><span id="line-124"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span><span class="p">,</span>
-</span><span id="line-125"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-126"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-127"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-128"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"!nagios"</span><span class="p">,</span>
-</span><span id="line-129"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command name for chat platform"</span><span class="p">,</span>
-</span><span id="line-130"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-</span><span id="line-131"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span><span class="p">,</span>
-</span><span id="line-132"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-133"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-134"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-135"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"!nagios"</span><span class="p">,</span>
-</span><span id="line-136"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command name for chat platform"</span><span class="p">,</span>
-</span><span id="line-137"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-</span><span id="line-138"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span><span class="p">,</span>
-</span><span id="line-139"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-140"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-141"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-142"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NagiosPluginCommandParams"</span><span class="p">,</span>
-</span><span id="line-143"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-144"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-145"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-146"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-147"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
-</span><span id="line-148"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-149"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-150"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-151"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-152"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-153"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-154"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-155"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-156"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-157"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-158"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-159"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-160"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-161"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
-</span><span id="line-162"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-163"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-164"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-165"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-166"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-167"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-168"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-169"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-170"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-171"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-172"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-173"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-174"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-175"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
-</span><span id="line-176"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-177"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-178"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-179"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-180"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-181"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-182"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-183"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-184"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-185"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-186"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-187"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-188"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-189"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
-</span><span id="line-190"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-191"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-192"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-193"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-194"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-195"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-196"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-197"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-198"><span class="w">      </span><span class="s2">"restful"</span><span class="p">,</span>
-</span><span id="line-199"><span class="w">      </span><span class="s2">"clients"</span>
-</span><span id="line-200"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-201"><span class="p">}</span>
+</span><span id="line-110"><span class="w">      </span><span class="nt">"trusted"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-111"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-112"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-113"><span class="w">               </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-114"><span class="w">                  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-115"><span class="w">               </span><span class="p">},</span>
+</span><span id="line-116"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-117"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
+</span><span id="line-118"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-119"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-120"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-121"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-122"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-123"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-124"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Users are trusted by the plugin"</span><span class="p">,</span>
+</span><span id="line-125"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trusted"</span>
+</span><span id="line-126"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-127"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-128"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-129"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
+</span><span id="line-130"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-131"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-132"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-133"><span class="w">      </span><span class="nt">"NagiosPluginCommandParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-134"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-135"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-136"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-137"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-138"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"!nagios"</span><span class="p">,</span>
+</span><span id="line-139"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command name for chat platform"</span><span class="p">,</span>
+</span><span id="line-140"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="line-141"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span><span class="p">,</span>
+</span><span id="line-142"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-143"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-144"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-145"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"!nagios"</span><span class="p">,</span>
+</span><span id="line-146"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command name for chat platform"</span><span class="p">,</span>
+</span><span id="line-147"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="line-148"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span><span class="p">,</span>
+</span><span id="line-149"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-150"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-151"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-152"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"!nagios"</span><span class="p">,</span>
+</span><span id="line-153"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command name for chat platform"</span><span class="p">,</span>
+</span><span id="line-154"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="line-155"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span><span class="p">,</span>
+</span><span id="line-156"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-157"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-158"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-159"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NagiosPluginCommandParams"</span><span class="p">,</span>
+</span><span id="line-160"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-161"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-162"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-163"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-164"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
+</span><span id="line-165"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-166"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-167"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-168"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-169"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-170"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-171"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-172"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-173"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-174"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-175"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-176"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-177"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-178"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
+</span><span id="line-179"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-180"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-181"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-182"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-183"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-184"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-185"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-186"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-187"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-188"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-189"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-190"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-191"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-192"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-193"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-194"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-195"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-196"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-197"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-198"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-199"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-200"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-201"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-202"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-203"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-204"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-205"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-206"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
+</span><span id="line-207"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-208"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-209"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-210"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-211"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-212"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-213"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-214"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-215"><span class="w">      </span><span class="s2">"restful"</span><span class="p">,</span>
+</span><span id="line-216"><span class="w">      </span><span class="s2">"clients"</span>
+</span><span id="line-217"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-218"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -1092,6 +1109,7 @@ is permitted, for more information consult the project license file.</p>
 <li><p><a class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.ssl_verify" title="enrobie.plugins.nagios.params.NagiosPluginParams.ssl_verify"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ssl_verify</span> <span class="pre">(Annotated[bool,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=True,</span> <span class="pre">description='Verify</span> <span class="pre">the</span> <span class="pre">ceritifcate</span> <span class="pre">valid')])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.status" title="enrobie.plugins.nagios.params.NagiosPluginParams.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span> <span class="pre">(Annotated[enrobie.plugins.status.params.StatusPluginIconParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=StatusPluginIconParams,</span> <span class="pre">description='Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform')])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.timeout" title="enrobie.plugins.nagios.params.NagiosPluginParams.timeout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">timeout</span> <span class="pre">(Annotated[int,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=30,</span> <span class="pre">description='Timeout</span> <span class="pre">connecting</span> <span class="pre">to</span> <span class="pre">server',</span> <span class="pre">metadata=[Ge(ge=1),</span> <span class="pre">Le(le=300)])])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.trusted" title="enrobie.plugins.nagios.params.NagiosPluginParams.trusted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trusted</span> <span class="pre">(Annotated[list[str]</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='Users</span> <span class="pre">are</span> <span class="pre">trusted</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">plugin',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.username" title="enrobie.plugins.nagios.params.NagiosPluginParams.username"><code class="xref py py-obj docutils literal notranslate"><span class="pre">username</span> <span class="pre">(Annotated[str</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='Authenticate</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">service',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
 </ul>
 </dd>
@@ -1190,6 +1208,18 @@ is permitted, for more information consult the project license file.</p>
 </dl>
 </dd></dl>
 <dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.nagios.params.NagiosPluginParams.trusted">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trusted</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Users</span> <span class="pre">are</span> <span class="pre">trusted</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">plugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.nagios.params.NagiosPluginParams.trusted" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.nagios.params.NagiosPluginParams.trusted'">¶</a></dt>
+<dd><p>Users are trusted by the plugin</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.plugins.nagios.params.NagiosPluginParams.username">
 <em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">username</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Authenticate</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">service'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.nagios.params.NagiosPluginParams.username" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.nagios.params.NagiosPluginParams.username'">¶</a></dt>
 <dd><p>Authenticate with the service</p>
@@ -1238,6 +1268,19 @@ is permitted, for more information consult the project license file.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.nagios.plugin.NagiosPlugin.notrust">
+<span class="sig-name descname"><span class="pre">notrust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.person.RobiePerson" title="enrobie.robie.childs.person.RobiePerson"><span class="pre">RobiePerson</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage" title="enrobie.robie.models.message.RobieMessage"><span class="pre">RobieMessage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/nagios/plugin.html#NagiosPlugin.notrust"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.nagios.plugin.NagiosPlugin.notrust" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.nagios.plugin.NagiosPlugin.notrust'">¶</a></dt>
+<dd><p>Return the boolean indicating whether person is trusted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>check</strong> – Validate the person is trusted by plugin.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Boolean indicating whether person is trusted.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="enrobie.plugins.nagios.plugin.NagiosPlugin.operate">
 <span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/nagios/plugin.html#NagiosPlugin.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.nagios.plugin.NagiosPlugin.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.nagios.plugin.NagiosPlugin.operate'">¶</a></dt>
 <dd><p>Perform the operation related to Robie service threads.</p>
@@ -1264,6 +1307,19 @@ is permitted, for more information consult the project license file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Configuration parameters relevant for class.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.nagios.plugin.NagiosPlugin.trusted">
+<span class="sig-name descname"><span class="pre">trusted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.person.RobiePerson" title="enrobie.robie.childs.person.RobiePerson"><span class="pre">RobiePerson</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage" title="enrobie.robie.models.message.RobieMessage"><span class="pre">RobieMessage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/nagios/plugin.html#NagiosPlugin.trusted"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.nagios.plugin.NagiosPlugin.trusted" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.nagios.plugin.NagiosPlugin.trusted'">¶</a></dt>
+<dd><p>Return the boolean indicating whether person is trusted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>check</strong> – Validate the person is trusted by plugin.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Boolean indicating whether person is trusted.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1309,6 +1365,19 @@ is permitted, for more information consult the project license file.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.nagios.NagiosPlugin.notrust">
+<span class="sig-name descname"><span class="pre">notrust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.person.RobiePerson" title="enrobie.robie.childs.person.RobiePerson"><span class="pre">RobiePerson</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage" title="enrobie.robie.models.message.RobieMessage"><span class="pre">RobieMessage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/nagios/plugin.html#NagiosPlugin.notrust"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.nagios.NagiosPlugin.notrust" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.nagios.NagiosPlugin.notrust'">¶</a></dt>
+<dd><p>Return the boolean indicating whether person is trusted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>check</strong> – Validate the person is trusted by plugin.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Boolean indicating whether person is trusted.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="enrobie.plugins.nagios.NagiosPlugin.operate">
 <span class="sig-name descname"><span class="pre">operate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/nagios/plugin.html#NagiosPlugin.operate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.nagios.NagiosPlugin.operate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.nagios.NagiosPlugin.operate'">¶</a></dt>
 <dd><p>Perform the operation related to Robie service threads.</p>
@@ -1335,6 +1404,19 @@ is permitted, for more information consult the project license file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Configuration parameters relevant for class.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.nagios.NagiosPlugin.trusted">
+<span class="sig-name descname"><span class="pre">trusted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.person.RobiePerson" title="enrobie.robie.childs.person.RobiePerson"><span class="pre">RobiePerson</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage" title="enrobie.robie.models.message.RobieMessage"><span class="pre">RobieMessage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/nagios/plugin.html#NagiosPlugin.trusted"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.nagios.NagiosPlugin.trusted" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.nagios.NagiosPlugin.trusted'">¶</a></dt>
+<dd><p>Return the boolean indicating whether person is trusted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>check</strong> – Validate the person is trusted by plugin.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Boolean indicating whether person is trusted.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1459,98 +1541,115 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-107"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clients"</span><span class="p">,</span>
 </span><span id="line-108"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
 </span><span id="line-109"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-110"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-111"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-112"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
-</span><span id="line-113"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-114"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-115"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-116"><span class="w">      </span><span class="nt">"NagiosPluginCommandParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-117"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-118"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-119"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-120"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-121"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"!nagios"</span><span class="p">,</span>
-</span><span id="line-122"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command name for chat platform"</span><span class="p">,</span>
-</span><span id="line-123"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-</span><span id="line-124"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span><span class="p">,</span>
-</span><span id="line-125"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-126"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-127"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-128"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"!nagios"</span><span class="p">,</span>
-</span><span id="line-129"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command name for chat platform"</span><span class="p">,</span>
-</span><span id="line-130"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-</span><span id="line-131"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span><span class="p">,</span>
-</span><span id="line-132"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-133"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-134"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-135"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"!nagios"</span><span class="p">,</span>
-</span><span id="line-136"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command name for chat platform"</span><span class="p">,</span>
-</span><span id="line-137"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-</span><span id="line-138"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span><span class="p">,</span>
-</span><span id="line-139"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-140"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-141"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-142"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NagiosPluginCommandParams"</span><span class="p">,</span>
-</span><span id="line-143"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-144"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-145"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-146"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-147"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
-</span><span id="line-148"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-149"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-150"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-151"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-152"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-153"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-154"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-155"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-156"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-157"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-158"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-159"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-160"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-161"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
-</span><span id="line-162"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-163"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-164"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-165"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-166"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-167"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-168"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-169"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-170"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-171"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-172"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-173"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-174"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-175"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
-</span><span id="line-176"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-177"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-178"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-179"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-180"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-181"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
-</span><span id="line-182"><span class="w">                  </span><span class="p">},</span>
-</span><span id="line-183"><span class="w">                  </span><span class="p">{</span>
-</span><span id="line-184"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
-</span><span id="line-185"><span class="w">                  </span><span class="p">}</span>
-</span><span id="line-186"><span class="w">               </span><span class="p">],</span>
-</span><span id="line-187"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="line-188"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
-</span><span id="line-189"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
-</span><span id="line-190"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-191"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-192"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
-</span><span id="line-193"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-194"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-195"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-196"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-197"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-198"><span class="w">      </span><span class="s2">"restful"</span><span class="p">,</span>
-</span><span id="line-199"><span class="w">      </span><span class="s2">"clients"</span>
-</span><span id="line-200"><span class="w">   </span><span class="p">]</span>
-</span><span id="line-201"><span class="p">}</span>
+</span><span id="line-110"><span class="w">      </span><span class="nt">"trusted"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-111"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-112"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-113"><span class="w">               </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-114"><span class="w">                  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-115"><span class="w">               </span><span class="p">},</span>
+</span><span id="line-116"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-117"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
+</span><span id="line-118"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-119"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-120"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-121"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-122"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-123"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-124"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Users are trusted by the plugin"</span><span class="p">,</span>
+</span><span id="line-125"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trusted"</span>
+</span><span id="line-126"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-127"><span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-128"><span class="w">         </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-129"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used per chat platform"</span>
+</span><span id="line-130"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-131"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-132"><span class="w">   </span><span class="nt">"$defs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-133"><span class="w">      </span><span class="nt">"NagiosPluginCommandParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-134"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-135"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-136"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-137"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-138"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"!nagios"</span><span class="p">,</span>
+</span><span id="line-139"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command name for chat platform"</span><span class="p">,</span>
+</span><span id="line-140"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="line-141"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span><span class="p">,</span>
+</span><span id="line-142"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-143"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-144"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-145"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"!nagios"</span><span class="p">,</span>
+</span><span id="line-146"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command name for chat platform"</span><span class="p">,</span>
+</span><span id="line-147"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="line-148"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span><span class="p">,</span>
+</span><span id="line-149"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-150"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-151"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-152"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"!nagios"</span><span class="p">,</span>
+</span><span id="line-153"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command name for chat platform"</span><span class="p">,</span>
+</span><span id="line-154"><span class="w">               </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="line-155"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span><span class="p">,</span>
+</span><span id="line-156"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-157"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-158"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-159"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NagiosPluginCommandParams"</span><span class="p">,</span>
+</span><span id="line-160"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-161"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-162"><span class="w">      </span><span class="nt">"StatusPluginIconParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-163"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-164"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contain information for constructing the chat messages."</span><span class="p">,</span>
+</span><span id="line-165"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-166"><span class="w">            </span><span class="nt">"irc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-167"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-168"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-169"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-170"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-171"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-172"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-173"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-174"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-175"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-176"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-177"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-178"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Irc"</span>
+</span><span id="line-179"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-180"><span class="w">            </span><span class="nt">"dsc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-181"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-182"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-183"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-184"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-185"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-186"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-187"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-188"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-189"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-190"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-191"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-192"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dsc"</span>
+</span><span id="line-193"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-194"><span class="w">            </span><span class="nt">"mtm"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-195"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-196"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-197"><span class="w">                     </span><span class="nt">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-198"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-199"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-200"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-201"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-202"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-203"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-204"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-205"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Icon used for the chat platform"</span><span class="p">,</span>
+</span><span id="line-206"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mtm"</span>
+</span><span id="line-207"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-208"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-209"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StatusPluginIconParams"</span><span class="p">,</span>
+</span><span id="line-210"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-211"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-212"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-213"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-214"><span class="w">   </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-215"><span class="w">      </span><span class="s2">"restful"</span><span class="p">,</span>
+</span><span id="line-216"><span class="w">      </span><span class="s2">"clients"</span>
+</span><span id="line-217"><span class="w">   </span><span class="p">]</span>
+</span><span id="line-218"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -1571,6 +1670,7 @@ is permitted, for more information consult the project license file.</p>
 <li><p><a class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.ssl_verify" title="enrobie.plugins.nagios.params.NagiosPluginParams.ssl_verify"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ssl_verify</span> <span class="pre">(Annotated[bool,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=True,</span> <span class="pre">description='Verify</span> <span class="pre">the</span> <span class="pre">ceritifcate</span> <span class="pre">valid')])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.status" title="enrobie.plugins.nagios.params.NagiosPluginParams.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span> <span class="pre">(Annotated[enrobie.plugins.status.params.StatusPluginIconParams,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default_factory=StatusPluginIconParams,</span> <span class="pre">description='Icon</span> <span class="pre">used</span> <span class="pre">per</span> <span class="pre">chat</span> <span class="pre">platform')])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.timeout" title="enrobie.plugins.nagios.params.NagiosPluginParams.timeout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">timeout</span> <span class="pre">(Annotated[int,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=30,</span> <span class="pre">description='Timeout</span> <span class="pre">connecting</span> <span class="pre">to</span> <span class="pre">server',</span> <span class="pre">metadata=[Ge(ge=1),</span> <span class="pre">Le(le=300)])])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.trusted" title="enrobie.plugins.nagios.params.NagiosPluginParams.trusted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trusted</span> <span class="pre">(Annotated[list[str]</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='Users</span> <span class="pre">are</span> <span class="pre">trusted</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">plugin',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.username" title="enrobie.plugins.nagios.params.NagiosPluginParams.username"><code class="xref py py-obj docutils literal notranslate"><span class="pre">username</span> <span class="pre">(Annotated[str</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='Authenticate</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">service',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
 </ul>
 </dd>
@@ -1669,6 +1769,18 @@ is permitted, for more information consult the project license file.</p>
 </dl>
 </dd></dl>
 <dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.plugins.nagios.NagiosPluginParams.trusted">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trusted</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Users</span> <span class="pre">are</span> <span class="pre">trusted</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">plugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.nagios.NagiosPluginParams.trusted" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.nagios.NagiosPluginParams.trusted'">¶</a></dt>
+<dd><p>Users are trusted by the plugin</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="enrobie.plugins.nagios.NagiosPluginParams.username">
 <em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">username</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Authenticate</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">service'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.plugins.nagios.NagiosPluginParams.username" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.nagios.NagiosPluginParams.username'">¶</a></dt>
 <dd><p>Authenticate with the service</p>
@@ -1752,6 +1864,7 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.params.NagiosPluginParams.ssl_verify'" class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.ssl_verify"><code class="docutils literal notranslate"><span class="pre">NagiosPluginParams.ssl_verify</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.params.NagiosPluginParams.status'" class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.status"><code class="docutils literal notranslate"><span class="pre">NagiosPluginParams.status</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.params.NagiosPluginParams.timeout'" class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.timeout"><code class="docutils literal notranslate"><span class="pre">NagiosPluginParams.timeout</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.nagios.params.NagiosPluginParams.trusted'" class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.trusted"><code class="docutils literal notranslate"><span class="pre">NagiosPluginParams.trusted</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.params.NagiosPluginParams.username'" class="reference internal" href="#enrobie.plugins.nagios.params.NagiosPluginParams.username"><code class="docutils literal notranslate"><span class="pre">NagiosPluginParams.username</span></code></a></li>
 </ul>
 </li>
@@ -1761,9 +1874,11 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.plugin.NagiosPlugin'" class="reference internal" href="#enrobie.plugins.nagios.plugin.NagiosPlugin"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin</span></code></a><ul>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.plugin.NagiosPlugin.ainswer'" class="reference internal" href="#enrobie.plugins.nagios.plugin.NagiosPlugin.ainswer"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.ainswer()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.plugin.NagiosPlugin.current'" class="reference internal" href="#enrobie.plugins.nagios.plugin.NagiosPlugin.current"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.current</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.nagios.plugin.NagiosPlugin.notrust'" class="reference internal" href="#enrobie.plugins.nagios.plugin.NagiosPlugin.notrust"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.notrust()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.plugin.NagiosPlugin.operate'" class="reference internal" href="#enrobie.plugins.nagios.plugin.NagiosPlugin.operate"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.operate()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.plugin.NagiosPlugin.params'" class="reference internal" href="#enrobie.plugins.nagios.plugin.NagiosPlugin.params"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.params</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.plugin.NagiosPlugin.schema'" class="reference internal" href="#enrobie.plugins.nagios.plugin.NagiosPlugin.schema"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.schema()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.nagios.plugin.NagiosPlugin.trusted'" class="reference internal" href="#enrobie.plugins.nagios.plugin.NagiosPlugin.trusted"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.trusted()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.plugin.NagiosPlugin.validate'" class="reference internal" href="#enrobie.plugins.nagios.plugin.NagiosPlugin.validate"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.validate()</span></code></a></li>
 </ul>
 </li>
@@ -1773,9 +1888,11 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.NagiosPlugin'" class="reference internal" href="#enrobie.plugins.nagios.NagiosPlugin"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin</span></code></a><ul>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.NagiosPlugin.ainswer'" class="reference internal" href="#enrobie.plugins.nagios.NagiosPlugin.ainswer"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.ainswer()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.NagiosPlugin.current'" class="reference internal" href="#enrobie.plugins.nagios.NagiosPlugin.current"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.current</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.nagios.NagiosPlugin.notrust'" class="reference internal" href="#enrobie.plugins.nagios.NagiosPlugin.notrust"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.notrust()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.NagiosPlugin.operate'" class="reference internal" href="#enrobie.plugins.nagios.NagiosPlugin.operate"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.operate()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.NagiosPlugin.params'" class="reference internal" href="#enrobie.plugins.nagios.NagiosPlugin.params"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.params</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.NagiosPlugin.schema'" class="reference internal" href="#enrobie.plugins.nagios.NagiosPlugin.schema"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.schema()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.nagios.NagiosPlugin.trusted'" class="reference internal" href="#enrobie.plugins.nagios.NagiosPlugin.trusted"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.trusted()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.NagiosPlugin.validate'" class="reference internal" href="#enrobie.plugins.nagios.NagiosPlugin.validate"><code class="docutils literal notranslate"><span class="pre">NagiosPlugin.validate()</span></code></a></li>
 </ul>
 </li>
@@ -1790,6 +1907,7 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.NagiosPluginParams.ssl_verify'" class="reference internal" href="#enrobie.plugins.nagios.NagiosPluginParams.ssl_verify"><code class="docutils literal notranslate"><span class="pre">NagiosPluginParams.ssl_verify</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.NagiosPluginParams.status'" class="reference internal" href="#enrobie.plugins.nagios.NagiosPluginParams.status"><code class="docutils literal notranslate"><span class="pre">NagiosPluginParams.status</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.NagiosPluginParams.timeout'" class="reference internal" href="#enrobie.plugins.nagios.NagiosPluginParams.timeout"><code class="docutils literal notranslate"><span class="pre">NagiosPluginParams.timeout</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.nagios.NagiosPluginParams.trusted'" class="reference internal" href="#enrobie.plugins.nagios.NagiosPluginParams.trusted"><code class="docutils literal notranslate"><span class="pre">NagiosPluginParams.trusted</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.nagios.NagiosPluginParams.username'" class="reference internal" href="#enrobie.plugins.nagios.NagiosPluginParams.username"><code class="docutils literal notranslate"><span class="pre">NagiosPluginParams.username</span></code></a></li>
 </ul>
 </li>

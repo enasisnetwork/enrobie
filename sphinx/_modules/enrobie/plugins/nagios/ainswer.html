@@ -208,18 +208,22 @@
 </span><span id="line-63">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
 </span><span id="line-64">            <span class="n">plugin</span><span class="p">,</span> <span class="n">NagiosPlugin</span><span class="p">)</span>
 </span><span id="line-65">
-</span><span id="line-66">        <span class="n">returned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-</span><span id="line-67">            <span class="n">plugin</span><span class="o">.</span><span class="n">current</span>
-</span><span id="line-68">            <span class="o">.</span><span class="n">records</span><span class="p">)</span>
+</span><span id="line-66">        <span class="c1"># Basic trust enforcement</span>
+</span><span id="line-67">        <span class="k">if</span> <span class="n">plugin</span><span class="o">.</span><span class="n">notrust</span><span class="p">(</span><span class="n">mitem</span><span class="p">):</span>
+</span><span id="line-68">            <span class="k">continue</span>
 </span><span id="line-69">
-</span><span id="line-70">
-</span><span id="line-71">    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span><span id="line-72">
-</span><span id="line-73">    <span class="n">ainswer</span><span class="o">.</span><span class="n">printer</span><span class="p">({</span>
-</span><span id="line-74">        <span class="s1">&#39;Function&#39;</span><span class="p">:</span> <span class="n">funcname</span><span class="p">(),</span>
-</span><span id="line-75">        <span class="s1">&#39;Returned&#39;</span><span class="p">:</span> <span class="n">returned</span><span class="p">})</span>
+</span><span id="line-70">        <span class="n">returned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+</span><span id="line-71">            <span class="n">plugin</span><span class="o">.</span><span class="n">current</span>
+</span><span id="line-72">            <span class="o">.</span><span class="n">records</span><span class="p">)</span>
+</span><span id="line-73">
+</span><span id="line-74">
+</span><span id="line-75">    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span><span id="line-76">
-</span><span id="line-77">    <span class="k">return</span> <span class="n">returned</span></div>
+</span><span id="line-77">    <span class="n">ainswer</span><span class="o">.</span><span class="n">printer</span><span class="p">({</span>
+</span><span id="line-78">        <span class="s1">&#39;Function&#39;</span><span class="p">:</span> <span class="n">funcname</span><span class="p">(),</span>
+</span><span id="line-79">        <span class="s1">&#39;Returned&#39;</span><span class="p">:</span> <span class="n">returned</span><span class="p">})</span>
+</span><span id="line-80">
+</span><span id="line-81">    <span class="k">return</span> <span class="n">returned</span></div>
 
 </span></code></pre></div>
     </div></div>
