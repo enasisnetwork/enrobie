@@ -21,7 +21,7 @@ from encommon.types.strings import COMMAS
 from encommon.types.strings import NEWLINE
 from encommon.types.strings import SEMPTY
 
-from .models import AinswerResponse
+from .common import AinswerResponse
 
 if TYPE_CHECKING:
     from .plugin import AinswerPlugin

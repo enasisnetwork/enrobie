@@ -13,10 +13,10 @@ from typing import get_args
 from encommon.types import NCNone
 
 from .ainswer import AinswerIgnored
+from .common import AinswerResponseDSC
+from .common import AinswerResponseIRC
+from .common import AinswerResponseMTM
 from .history import AinswerHistoryKinds
-from .models import AinswerResponseDSC
-from .models import AinswerResponseIRC
-from .models import AinswerResponseMTM
 
 if TYPE_CHECKING:
     from .plugin import AinswerPlugin
@@ -40,6 +40,7 @@ def composedsc(  # noqa: CFQ004
     """
 
     from ...clients import DSCClient
+    from ...clients.discord.message import DSCMessage
 
 
     assert plugin.thread
@@ -67,9 +68,18 @@ def composedsc(  # noqa: CFQ004
     assert message is not None
 
     firschar = (
-        message[1].strip())
+        message[0].strip())
 
     if firschar in '!%&/.':
+        return NCNone
+
+
+    assert isinstance(
+        mitem, DSCMessage)
+
+    type = mitem.event.type
+
+    if type == 'MESSAGE_UPDATE':
         return NCNone
 
 
@@ -141,7 +151,7 @@ def composeirc(  # noqa: CFQ004
     assert message is not None
 
     firschar = (
-        message[1].strip())
+        message[0].strip())
 
     if firschar in '!%&/.':
         return NCNone
@@ -188,6 +198,7 @@ def composemtm(  # noqa: CFQ004
     """
 
     from ...clients import MTMClient
+    from ...clients.mattermost.message import MTMMessage
 
 
     assert plugin.thread
@@ -215,9 +226,18 @@ def composemtm(  # noqa: CFQ004
     assert message is not None
 
     firschar = (
-        message[1].strip())
+        message[0].strip())
 
     if firschar in '!%&/.':
+        return NCNone
+
+
+    assert isinstance(
+        mitem, MTMMessage)
+
+    type = mitem.event.type
+
+    if type == 'post_edited':
         return NCNone
 
 

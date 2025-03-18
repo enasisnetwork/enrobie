@@ -36,7 +36,7 @@ class AinswerResponseDSC(AinswerResponse, extra='forbid'):
         str,
         Field(...,
               description='Format intended for Discord.',
-              max_length=2000)]
+              max_length=1900)]
 
 
 
@@ -49,7 +49,7 @@ class AinswerResponseIRC(AinswerResponse, extra='forbid'):
         str,
         Field(...,
               description='Format intended for IRCv2.',
-              max_length=400)]
+              max_length=350)]
 
 
 
@@ -62,4 +62,4 @@ class AinswerResponseMTM(AinswerResponse, extra='forbid'):
         str,
         Field(...,
               description='Format intended for Mattermost.',
-              max_length=2000)]
+              max_length=1900)]
