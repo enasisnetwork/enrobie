@@ -7,15 +7,34 @@ is permitted, for more information consult the project license file.
 
 
 
+from re import IGNORECASE
+from re import compile
+from re import match as re_match
+from typing import TYPE_CHECKING
 from typing import Type
 
 from encommon.times import Timer
+from encommon.types import NCFalse
 from encommon.types import NCNone
+from encommon.types.strings import SPACED
 
 from .params import AutoNickPluginParams
+from .params import AutoNickPluginServiceParams
 from ..status import StatusPlugin
 from ..status import StatusPluginStates
 from ...robie.childs import RobiePlugin
+
+if TYPE_CHECKING:
+    from ...clients.irc import IRCClient
+    from ...clients.irc.message import IRCMessage
+
+
+
+_IDENTIFY = compile(
+    r'this nick(name)? is registered',
+    IGNORECASE)
+
+_SERVICES = dict[str, AutoNickPluginServiceParams]
 
 
 
@@ -28,6 +47,8 @@ class AutoNickPlugin(RobiePlugin):
     """
 
     __started: bool
+
+    __nickserv: _SERVICES
 
     __timer: Timer
 
@@ -42,6 +63,22 @@ class AutoNickPlugin(RobiePlugin):
         self.__started = False
 
         params = self.params
+
+
+        nickserv: _SERVICES = {}
+
+        if params.services:
+
+            services = params.services
+
+            for service in services:
+
+                name = service.client
+
+                nickserv[name] = service
+
+        self.__nickserv = nickserv
+
 
         self.__timer = Timer(
             params.interval)
@@ -98,11 +135,17 @@ class AutoNickPlugin(RobiePlugin):
         Perform the operation related to Robie service threads.
         """
 
+        from ...clients.irc.message import IRCMessage
+
         assert self.thread
 
         thread = self.thread
         mqueue = thread.mqueue
         timer = self.__timer
+
+        clients = (
+            thread.service
+            .clients.childs)
 
 
         if not self.__started:
@@ -115,7 +158,24 @@ class AutoNickPlugin(RobiePlugin):
 
 
         while not mqueue.empty:
-            mqueue.get()
+
+            mitem = mqueue.get()
+
+            name = mitem.client
+            family = mitem.family
+
+            # Ignore unrelated clients
+            if family != 'irc':
+                continue
+
+            assert isinstance(
+                mitem, IRCMessage)
+
+            # Ignore disabled clients
+            if name not in clients:
+                continue  # NOCVR
+
+            self.__message(mitem)
 
 
     def __operate(
@@ -189,6 +249,115 @@ class AutoNickPlugin(RobiePlugin):
             'failure'
             if any(failure)
             else 'normal')
+
+
+    def __message(  # noqa: CFQ004
+        self,
+        mitem: 'IRCMessage',
+    ) -> None:
+        """
+        Process the provided message item from the Robie thread.
+
+        :param mitem: Item containing information for operation.
+        """
+
+        from ...clients import IRCClient
+
+        robie = self.robie
+        nickserv = self.__nickserv
+        childs = robie.childs
+
+        event = mitem.event
+        command = event.command
+
+        client = (
+            childs.clients
+            [mitem.client])
+
+        assert isinstance(
+            client, IRCClient)
+
+
+        name = client.name
+
+        if name not in nickserv:
+            return NCNone
+
+        service = (
+            nickserv[name]
+            .service)
+
+
+        def _requested() -> bool:
+
+            # Ignore when not NickServ
+            if command != 'NOTICE':
+                return False
+
+            assert event.prefix
+            assert event.params
+
+            author = (
+                event.prefix
+                .split('!', 1)[0])
+
+            message = (
+                event.params
+                .split(SPACED, 1)[1]
+                .lstrip(':'))
+
+            match = re_match(
+                _IDENTIFY, message)
+
+            # Ignore when not NickServ
+            if author != service:
+                return NCFalse
+
+            return match is not None
+
+
+        if (_requested()
+                or command == '376'):
+            self.__identify(client)
+
+
+    def __identify(
+        self,
+        client: 'IRCClient',
+    ) -> None:
+        """
+        Identify with the network nick services using password.
+
+        :param client: Class instance for connecting to service.
+        """
+
+        assert self.thread
+
+        thread = self.thread
+        nickserv = self.__nickserv
+        member = thread.member
+        cqueue = member.cqueue
+
+        name = client.name
+
+        if name not in nickserv:
+            return NCNone
+
+        service = (
+            nickserv[name]
+            .service)
+
+        password = (
+            nickserv[name]
+            .password)
+
+        rawcmd = (
+            f'PRIVMSG {service} '
+            f':identify {password}')
+
+        client.put_command(
+            cqueue, rawcmd)
+
 
 
     def __status(

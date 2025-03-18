@@ -16,6 +16,32 @@ from pydantic import Field
 
 from ..status import StatusPluginIconParams
 from ...robie.params import RobiePluginParams
+from ...robie.params.common import RobieParamsModel
+
+
+
+class AutoNickPluginServiceParams(RobieParamsModel, extra='forbid'):
+    """
+    Process and validate the Robie configuration parameters.
+    """
+
+    client: Annotated[
+        str,
+        Field(...,
+              description='Client where services exist',
+              min_length=1)]
+
+    password: Annotated[
+        str,
+        Field(...,
+              description='Identify with nick services',
+              min_length=1)]
+
+    service: Annotated[
+        str,
+        Field('NickServ',
+              description='Nickname of network service',
+              min_length=1)]
 
 
 
@@ -35,6 +61,11 @@ class AutoNickPluginParams(RobiePluginParams, extra='forbid'):
         Field(5,
               description='Interval when nick is validated',
               ge=5, le=300)]
+
+    services: Annotated[
+        Optional[list[AutoNickPluginServiceParams]],
+        Field(None,
+              description='How to identify with services')]
 
     status: Annotated[
         StatusPluginIconParams,
