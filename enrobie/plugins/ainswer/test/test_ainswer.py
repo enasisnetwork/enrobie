@@ -23,8 +23,8 @@ from pytest import mark
 
 from . import SAMPLES
 from .test_history import _ainswer_history
+from ..common import AinswerResponse
 from ..history import AinswerHistoryKinds
-from ..models import AinswerResponse
 from ..plugin import AinswerPlugin
 from ...logger import LoggerPlugin
 from ...logger.test.test_history import _logger_history

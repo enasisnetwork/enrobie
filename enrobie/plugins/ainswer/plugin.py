@@ -20,11 +20,11 @@ from encommon.types import NCNone
 from .ainswer import AinswerDepends
 from .ainswer import AinswerQuestion
 from .ainswer import AinswerToolset
+from .common import AinswerResponse
 from .helpers import composedsc
 from .helpers import composeirc
 from .helpers import composemtm
 from .history import AinswerHistory
-from .models import AinswerResponse
 from .params import AinswerPluginParams
 from ..status import StatusPlugin
 from ..status import StatusPluginStates

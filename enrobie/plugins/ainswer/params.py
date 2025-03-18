@@ -33,20 +33,20 @@ _DEFAULT_IGNORE = [
      ' user asking the quesiton.')]
 
 _DSC_PROMPT = (
-    'In 800 characters or less,'
+    'In 1875 characters or less,'
     ' answer the user question.'
     ' Format for Discord.'
     ' Markdown is encouraged.')
 
 _IRC_PROMPT = (
-    'In 200 characters or less,'
+    'In 325 characters or less,'
     ' answer the user question.'
     ' Format for IRCv2.'
     ' Do not use markdown.'
     ' Do not use colors.')
 
 _MTM_PROMPT = (
-    'In 800 characters or less,'
+    'In 1875 characters or less,'
     ' answer the user question.'
     ' Format for Mattermost.'
     ' Markdown is encouraged.')
@@ -144,7 +144,7 @@ class AinswerPluginPromptParams(RobieParamsModel, extra='forbid'):
     ignore: Annotated[
         list[str],
         Field(_DEFAULT_IGNORE,
-              description='Optional footer after question',
+              description='Reasons for LLM to decline response',
               min_length=1)]
 
 
