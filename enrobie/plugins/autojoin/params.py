@@ -20,7 +20,7 @@ from ...robie.params import RobiePluginParams
 
 
 
-class AutoJoinPluginChanParams(RobieParamsModel, extra='forbid'):
+class AutoJoinPluginChannelParams(RobieParamsModel, extra='forbid'):
     """
     Process and validate the Robie configuration parameters.
     """
@@ -45,7 +45,7 @@ class AutoJoinPluginParams(RobiePluginParams, extra='forbid'):
     """
 
     channels: Annotated[
-        list[AutoJoinPluginChanParams],
+        list[AutoJoinPluginChannelParams],
         Field(...,
               description='Which channels to maintain join',
               min_length=1)]

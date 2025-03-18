@@ -55,6 +55,7 @@ def test_AutoNickPlugin(
         '_RobieChild__name',
         '_RobieChild__params',
         '_AutoNickPlugin__started',
+        '_AutoNickPlugin__nickserv',
         '_AutoNickPlugin__timer',
         '_RobiePlugin__thread']
 
@@ -112,7 +113,14 @@ def test_AutoNickPlugin_cover(
         Timer(0))
 
 
-    client_ircsock(IRCEVENTS)
+    client_ircsock([
+
+        (':mocked 376 ircbot '
+         ':End of /MOTD command.'),
+
+        (':NickServ!a@b.c NOTICE '
+         ' ircbot :This nickname'
+         ' is registered.')])
 
 
     service.limit(

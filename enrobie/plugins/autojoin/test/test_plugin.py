@@ -55,9 +55,9 @@ def test_AutoJoinPlugin(
         '_RobieChild__name',
         '_RobieChild__params',
         '_AutoJoinPlugin__started',
-        '_AutoJoinPlugin__timer',
         '_AutoJoinPlugin__should',
         '_AutoJoinPlugin__joined',
+        '_AutoJoinPlugin__timer',
         '_RobiePlugin__thread']
 
 
@@ -126,10 +126,7 @@ def test_AutoJoinPlugin_cover(
 
         ':ircbot JOIN :#enrobie',
 
-        ':ircbot PART :#enrobie',
-
-        ('ERROR :Closing Link: ircbot'
-         '[mocked] (Quit: ircbot)')])
+        ':ircbot PART :#enrobie'])
 
 
     service.limit(

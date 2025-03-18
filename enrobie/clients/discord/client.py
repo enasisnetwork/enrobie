@@ -195,7 +195,7 @@ class DSCClient(RobieClient):
             event = source.get()
 
             try:
-                self.__events(event)
+                self.__event(event)
 
             except Exception as reason:
 
@@ -347,7 +347,7 @@ class DSCClient(RobieClient):
             _put_mqueue()  # NOCVR
 
 
-    def __events(
+    def __event(
         self,
         event: ClientEvent,
     ) -> None:

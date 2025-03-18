@@ -7,6 +7,7 @@ is permitted, for more information consult the project license file.
 
 
 
+from time import sleep as block_sleep
 from typing import TYPE_CHECKING
 from typing import Type
 
@@ -55,9 +56,6 @@ class AutoJoinPlugin(RobiePlugin):
 
         params = self.params
 
-        self.__timer = Timer(
-            params.interval)
-
 
         should: _CHANNELS = {}
         joined: _CHANNELS = {}
@@ -78,6 +76,9 @@ class AutoJoinPlugin(RobiePlugin):
         self.__should = should
         self.__joined = joined
 
+
+        self.__timer = Timer(
+            params.interval)
 
         self.__status('pending')
 
@@ -131,13 +132,11 @@ class AutoJoinPlugin(RobiePlugin):
         Perform the operation related to Robie service threads.
         """
 
-        from ...clients import IRCClient
         from ...clients.irc.message import IRCMessage
 
         assert self.thread
 
         thread = self.thread
-        joined = self.__joined
         mqueue = thread.mqueue
         timer = self.__timer
 
@@ -169,27 +168,11 @@ class AutoJoinPlugin(RobiePlugin):
             assert isinstance(
                 mitem, IRCMessage)
 
-            event = mitem.event
-            command = event.command
-
             # Ignore disabled clients
             if name not in clients:
                 continue  # NOCVR
 
-            client = clients[name]
-
-            assert isinstance(
-                client, IRCClient)
-
-
-            self.__process(mitem)
-
-
-            if command == '376':
-
-                joined[name] = set()
-
-                self.__operate()
+            self.__message(mitem)
 
 
     def __operate(
@@ -258,12 +241,12 @@ class AutoJoinPlugin(RobiePlugin):
             else 'normal')
 
 
-    def __process(
+    def __message(
         self,
         mitem: 'IRCMessage',
     ) -> None:
         """
-        Write the event out to the designated output file path.
+        Process the provided message item from the Robie thread.
 
         :param mitem: Item containing information for operation.
         """
@@ -303,7 +286,17 @@ class AutoJoinPlugin(RobiePlugin):
             .nickname)
 
 
-        if (command == 'JOIN'
+        if command == '376':
+
+            _joined.clear()
+
+            # Allow for identify
+            block_sleep(5)
+
+            self.__operate()
+
+
+        elif (command == 'JOIN'
                 and isme is True):
 
             channel = split[0][1:]
@@ -311,7 +304,7 @@ class AutoJoinPlugin(RobiePlugin):
             _joined.add(channel)
 
 
-        if command == 'KICK':
+        elif command == 'KICK':
 
             channel = split[0]
             target = split[1]
@@ -320,7 +313,7 @@ class AutoJoinPlugin(RobiePlugin):
                 _joined.remove(channel)
 
 
-        if (command == 'PART'
+        elif (command == 'PART'
                 and isme is True):
 
             channel = split[0]
