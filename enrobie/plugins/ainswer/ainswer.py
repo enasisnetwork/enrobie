@@ -339,7 +339,7 @@ class AinswerQuestion:
             '**Responding**\n'
             'There are reasons not to respond to the'
             ' user question. If you think you should'
-            f' not respond, reply with {response}.\n'
+            f' not respond, reply only {response}.\n'
             f'Reasons to reply with only {response}'
             f' include:{delim}{delim.join(ignore)}')
 
