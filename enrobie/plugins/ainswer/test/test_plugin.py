@@ -55,6 +55,7 @@ def test_AinswerPlugin(
         '_RobieChild__name',
         '_RobieChild__params',
         '_AinswerPlugin__started',
+        '_AinswerPlugin__models',
         '_AinswerPlugin__toolset',
         '_AinswerPlugin__question',
         '_AinswerPlugin__history',
@@ -92,6 +93,8 @@ def test_AinswerPlugin(
     assert plugin.thread
 
     assert plugin.dumped
+
+    assert plugin.models
 
     assert plugin.toolset
 

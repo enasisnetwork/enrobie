@@ -25,6 +25,7 @@ from .helpers import composedsc
 from .helpers import composeirc
 from .helpers import composemtm
 from .history import AinswerHistory
+from .models import AinswerModels
 from .params import AinswerPluginParams
 from ..status import StatusPlugin
 from ..status import StatusPluginStates
@@ -48,6 +49,7 @@ class AinswerPlugin(RobiePlugin):
 
     __started: bool
 
+    __models: AinswerModels
     __toolset: AinswerToolset
     __question: AinswerQuestion
     __history: AinswerHistory
@@ -68,9 +70,11 @@ class AinswerPlugin(RobiePlugin):
         params = self.params
 
         ainswer = params.ainswer
-        secret = ainswer.secret
         origin = ainswer.origin
 
+
+        self.__models = (
+            AinswerModels(self))
 
         self.__toolset = (
             AinswerToolset(self))
@@ -85,26 +89,14 @@ class AinswerPlugin(RobiePlugin):
         model: 'Model' | None = None
 
         if origin == 'anthropic':
-
-            from pydantic_ai.models import anthropic
-
-            _anthropic = (
-                anthropic.AnthropicModel)
-
-            model = _anthropic(
-                ainswer.model,
-                api_key=secret)
+            model = (
+                self.__models
+                .anthropic)
 
         elif origin == 'openai':
-
-            from pydantic_ai.models import openai
-
-            _openai = (
-                openai.OpenAIModel)
-
-            model = _openai(
-                ainswer.model,
-                api_key=secret)
+            model = (
+                self.__models
+                .openai)
 
         assert model is not None, (
             'Model not instantiated')
@@ -160,6 +152,19 @@ class AinswerPlugin(RobiePlugin):
 
 
     @property
+    def models(
+        self,
+    ) -> AinswerModels:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__models
+
+
+    @property
     def toolset(
         self,
     ) -> AinswerToolset:
@@ -208,10 +213,11 @@ class AinswerPlugin(RobiePlugin):
         :returns: Value for the attribute from class instance.
         """
 
-        from pydantic_ai import Agent
-        from pydantic_ai.settings import ModelSettings
-
+        models = self.__models
         agent = self.__agent
+
+        _agent = models.agent()
+        _settings = models.settings()
 
         if agent is not None:
             return agent
@@ -224,10 +230,10 @@ class AinswerPlugin(RobiePlugin):
         toolset = (
             self.__toolset.toolset)
 
-        settings = ModelSettings(
+        settings = _settings(
             timeout=ainswer.timeout)
 
-        self.__agent = Agent(
+        self.__agent = _agent(
             self.__model,
             system_prompt=system,
             model_settings=settings,
