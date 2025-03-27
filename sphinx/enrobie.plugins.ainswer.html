@@ -106,6 +106,10 @@
 <li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.ainswer.test.html#enrobie.plugins.ainswer.test.test_history.test_AinswerHistory_cover"><code class="docutils literal notranslate"><span class="pre">test_AinswerHistory_cover()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="enrobie.plugins.ainswer.test.html#module-enrobie.plugins.ainswer.test.test_models">enrobie.plugins.ainswer.test.test_models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.ainswer.test.html#enrobie.plugins.ainswer.test.test_models.test_AinswerModels"><code class="docutils literal notranslate"><span class="pre">test_AinswerModels()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="enrobie.plugins.ainswer.test.html#module-enrobie.plugins.ainswer.test.test_plugin">enrobie.plugins.ainswer.test.test_plugin module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.ainswer.test.html#enrobie.plugins.ainswer.test.test_plugin.test_AinswerPlugin"><code class="docutils literal notranslate"><span class="pre">test_AinswerPlugin()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="enrobie.plugins.ainswer.test.html#enrobie.plugins.ainswer.test.test_plugin.test_AinswerPlugin_cover"><code class="docutils literal notranslate"><span class="pre">test_AinswerPlugin_cover()</span></code></a></li>
@@ -877,6 +881,43 @@ for new <code class="xref py py-class docutils literal notranslate"><span class=
 <span class="sig-name descname"><span class="pre">registry</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">_RegistryType</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;sqlalchemy.orm.decl_api.registry</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#enrobie.plugins.ainswer.history.SQLBase.registry" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.ainswer.history.SQLBase.registry'">¶</a></dt>
 <dd><p>Refers to the <code class="xref py py-class docutils literal notranslate"><span class="pre">_orm.registry</span></code> in use where new
 <code class="xref py py-class docutils literal notranslate"><span class="pre">_orm.Mapper</span></code> objects will be associated.</p>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-enrobie.plugins.ainswer.models">
+<span id="enrobie-plugins-ainswer-models-module"></span><h2>enrobie.plugins.ainswer.models module<a class="headerlink" href="#module-enrobie.plugins.ainswer.models" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#module-enrobie.plugins.ainswer.models'">¶</a></h2>
+<p>Functions and routines associated with Enasis Network Chatting Robie.</p>
+<p>This file is part of Enasis Network software eco-system. Distribution
+is permitted, for more information consult the project license file.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="enrobie.plugins.ainswer.models.AinswerModels">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">enrobie.plugins.ainswer.models.</span></span><span class="sig-name descname"><span class="pre">AinswerModels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="enrobie.plugins.html#enrobie.plugins.AinswerPlugin" title="enrobie.plugins.AinswerPlugin"><span class="pre">AinswerPlugin</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/enrobie/plugins/ainswer/models.html#AinswerModels"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.ainswer.models.AinswerModels" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.ainswer.models.AinswerModels'">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Return the class object that was imported within method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>plugin</strong> – Plugin class instance for Chatting Robie.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.ainswer.models.AinswerModels.agent">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">agent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.13)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Agent</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#enrobie.plugins.ainswer.ainswer.AinswerDepends" title="enrobie.plugins.ainswer.ainswer.AinswerDepends"><span class="pre">AinswerDepends</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/plugins/ainswer/models.html#AinswerModels.agent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.ainswer.models.AinswerModels.agent" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.ainswer.models.AinswerModels.agent'">¶</a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.plugins.ainswer.models.AinswerModels.anthropic">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">anthropic</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AnthropicModel</span></em><a class="headerlink" href="#enrobie.plugins.ainswer.models.AinswerModels.anthropic" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.ainswer.models.AinswerModels.anthropic'">¶</a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.plugins.ainswer.models.AinswerModels.openai">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">openai</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">OpenAIModel</span></em><a class="headerlink" href="#enrobie.plugins.ainswer.models.AinswerModels.openai" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.ainswer.models.AinswerModels.openai'">¶</a></dt>
+<dd><p>Return the class object that was imported within method.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="enrobie.plugins.ainswer.models.AinswerModels.settings">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.13)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ModelSettings</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/enrobie/plugins/ainswer/models.html#AinswerModels.settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.ainswer.models.AinswerModels.settings" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.ainswer.models.AinswerModels.settings'">¶</a></dt>
+<dd><p>Return the class object that was imported within method.</p>
 </dd></dl>
 </dd></dl>
 </section>
@@ -1785,6 +1826,16 @@ is permitted, for more information consult the project license file.</p>
 </dd>
 </dl>
 </dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.plugins.ainswer.plugin.AinswerPlugin.models">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">models</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.plugins.ainswer.models.AinswerModels" title="enrobie.plugins.ainswer.models.AinswerModels"><span class="pre">AinswerModels</span></a></em><a class="headerlink" href="#enrobie.plugins.ainswer.plugin.AinswerPlugin.models" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.ainswer.plugin.AinswerPlugin.models'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="enrobie.plugins.ainswer.plugin.AinswerPlugin.notrust">
 <span class="sig-name descname"><span class="pre">notrust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.childs.html#enrobie.robie.childs.person.RobiePerson" title="enrobie.robie.childs.person.RobiePerson"><span class="pre">RobiePerson</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage" title="enrobie.robie.models.message.RobieMessage"><span class="pre">RobieMessage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="_modules/enrobie/plugins/ainswer/plugin.html#AinswerPlugin.notrust"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#enrobie.plugins.ainswer.plugin.AinswerPlugin.notrust" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.ainswer.plugin.AinswerPlugin.notrust'">¶</a></dt>
@@ -1934,6 +1985,16 @@ is permitted, for more information consult the project license file.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="enrobie.plugins.ainswer.AinswerPlugin.history">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">history</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.plugins.ainswer.history.AinswerHistory" title="enrobie.plugins.ainswer.history.AinswerHistory"><span class="pre">AinswerHistory</span></a></em><a class="headerlink" href="#enrobie.plugins.ainswer.AinswerPlugin.history" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.ainswer.AinswerPlugin.history'">¶</a></dt>
+<dd><p>Return the value for the attribute from class instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Value for the attribute from class instance.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="enrobie.plugins.ainswer.AinswerPlugin.models">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">models</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#enrobie.plugins.ainswer.models.AinswerModels" title="enrobie.plugins.ainswer.models.AinswerModels"><span class="pre">AinswerModels</span></a></em><a class="headerlink" href="#enrobie.plugins.ainswer.AinswerPlugin.models" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.plugins.ainswer.AinswerPlugin.models'">¶</a></dt>
 <dd><p>Return the value for the attribute from class instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -2584,6 +2645,16 @@ is permitted, for more information consult the project license file.</p>
 </li>
 </ul>
 </li>
+<li><a :data-current="activeSection === '#module-enrobie.plugins.ainswer.models'" class="reference internal" href="#module-enrobie.plugins.ainswer.models">enrobie.plugins.ainswer.models module</a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.ainswer.models.AinswerModels'" class="reference internal" href="#enrobie.plugins.ainswer.models.AinswerModels"><code class="docutils literal notranslate"><span class="pre">AinswerModels</span></code></a><ul>
+<li><a :data-current="activeSection === '#enrobie.plugins.ainswer.models.AinswerModels.agent'" class="reference internal" href="#enrobie.plugins.ainswer.models.AinswerModels.agent"><code class="docutils literal notranslate"><span class="pre">AinswerModels.agent()</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.ainswer.models.AinswerModels.anthropic'" class="reference internal" href="#enrobie.plugins.ainswer.models.AinswerModels.anthropic"><code class="docutils literal notranslate"><span class="pre">AinswerModels.anthropic</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.ainswer.models.AinswerModels.openai'" class="reference internal" href="#enrobie.plugins.ainswer.models.AinswerModels.openai"><code class="docutils literal notranslate"><span class="pre">AinswerModels.openai</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.ainswer.models.AinswerModels.settings'" class="reference internal" href="#enrobie.plugins.ainswer.models.AinswerModels.settings"><code class="docutils literal notranslate"><span class="pre">AinswerModels.settings()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a :data-current="activeSection === '#module-enrobie.plugins.ainswer.params'" class="reference internal" href="#module-enrobie.plugins.ainswer.params">enrobie.plugins.ainswer.params module</a><ul>
 <li><a :data-current="activeSection === '#enrobie.plugins.ainswer.params.AinswerPluginAinswerParams'" class="reference internal" href="#enrobie.plugins.ainswer.params.AinswerPluginAinswerParams"><code class="docutils literal notranslate"><span class="pre">AinswerPluginAinswerParams</span></code></a><ul>
 <li><a :data-current="activeSection === '#enrobie.plugins.ainswer.params.AinswerPluginAinswerParams.model'" class="reference internal" href="#enrobie.plugins.ainswer.params.AinswerPluginAinswerParams.model"><code class="docutils literal notranslate"><span class="pre">AinswerPluginAinswerParams.model</span></code></a></li>
@@ -2628,6 +2699,7 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.plugins.ainswer.plugin.AinswerPlugin.agent'" class="reference internal" href="#enrobie.plugins.ainswer.plugin.AinswerPlugin.agent"><code class="docutils literal notranslate"><span class="pre">AinswerPlugin.agent</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.ainswer.plugin.AinswerPlugin.ainswer'" class="reference internal" href="#enrobie.plugins.ainswer.plugin.AinswerPlugin.ainswer"><code class="docutils literal notranslate"><span class="pre">AinswerPlugin.ainswer()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.ainswer.plugin.AinswerPlugin.history'" class="reference internal" href="#enrobie.plugins.ainswer.plugin.AinswerPlugin.history"><code class="docutils literal notranslate"><span class="pre">AinswerPlugin.history</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.ainswer.plugin.AinswerPlugin.models'" class="reference internal" href="#enrobie.plugins.ainswer.plugin.AinswerPlugin.models"><code class="docutils literal notranslate"><span class="pre">AinswerPlugin.models</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.ainswer.plugin.AinswerPlugin.notrust'" class="reference internal" href="#enrobie.plugins.ainswer.plugin.AinswerPlugin.notrust"><code class="docutils literal notranslate"><span class="pre">AinswerPlugin.notrust()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.ainswer.plugin.AinswerPlugin.operate'" class="reference internal" href="#enrobie.plugins.ainswer.plugin.AinswerPlugin.operate"><code class="docutils literal notranslate"><span class="pre">AinswerPlugin.operate()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.ainswer.plugin.AinswerPlugin.params'" class="reference internal" href="#enrobie.plugins.ainswer.plugin.AinswerPlugin.params"><code class="docutils literal notranslate"><span class="pre">AinswerPlugin.params</span></code></a></li>
@@ -2651,6 +2723,7 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.plugins.ainswer.AinswerPlugin.agent'" class="reference internal" href="#enrobie.plugins.ainswer.AinswerPlugin.agent"><code class="docutils literal notranslate"><span class="pre">AinswerPlugin.agent</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.ainswer.AinswerPlugin.ainswer'" class="reference internal" href="#enrobie.plugins.ainswer.AinswerPlugin.ainswer"><code class="docutils literal notranslate"><span class="pre">AinswerPlugin.ainswer()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.ainswer.AinswerPlugin.history'" class="reference internal" href="#enrobie.plugins.ainswer.AinswerPlugin.history"><code class="docutils literal notranslate"><span class="pre">AinswerPlugin.history</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.plugins.ainswer.AinswerPlugin.models'" class="reference internal" href="#enrobie.plugins.ainswer.AinswerPlugin.models"><code class="docutils literal notranslate"><span class="pre">AinswerPlugin.models</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.ainswer.AinswerPlugin.notrust'" class="reference internal" href="#enrobie.plugins.ainswer.AinswerPlugin.notrust"><code class="docutils literal notranslate"><span class="pre">AinswerPlugin.notrust()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.ainswer.AinswerPlugin.operate'" class="reference internal" href="#enrobie.plugins.ainswer.AinswerPlugin.operate"><code class="docutils literal notranslate"><span class="pre">AinswerPlugin.operate()</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.plugins.ainswer.AinswerPlugin.params'" class="reference internal" href="#enrobie.plugins.ainswer.AinswerPlugin.params"><code class="docutils literal notranslate"><span class="pre">AinswerPlugin.params</span></code></a></li>
