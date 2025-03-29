@@ -23,6 +23,7 @@ from .helpers import composedsc
 from .helpers import composeirc
 from .helpers import composemtm
 from .history import AinswerHistory
+from .memory import AinswerMemory
 from .models import AinswerModels
 from .params import AinswerPluginParams
 from .question import AinswerQuestion
@@ -53,6 +54,7 @@ class AinswerPlugin(RobiePlugin):
     __toolset: AinswerToolset
     __question: AinswerQuestion
     __history: AinswerHistory
+    __memory: AinswerMemory
 
     __agent: Optional['Agent[AinswerDepends, str]']
 
@@ -78,6 +80,9 @@ class AinswerPlugin(RobiePlugin):
 
         self.__history = (
             AinswerHistory(self))
+
+        self.__memory = (
+            AinswerMemory(self))
 
 
         self.__agent = None
@@ -178,6 +183,19 @@ class AinswerPlugin(RobiePlugin):
         """
 
         return self.__history
+
+
+    @property
+    def memory(
+        self,
+    ) -> AinswerMemory:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.__memory
 
 
     @property
