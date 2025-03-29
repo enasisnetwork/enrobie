@@ -95,7 +95,7 @@ class LoggerHistoryTable(SQLBase):
         primary_key=True,
         nullable=False)
 
-    __tablename__ = 'logger'
+    __tablename__ = 'logger_history'
 
 
 

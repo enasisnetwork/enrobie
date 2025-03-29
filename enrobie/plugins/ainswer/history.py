@@ -99,7 +99,7 @@ class AinswerHistoryTable(SQLBase):
         primary_key=True,
         nullable=False)
 
-    __tablename__ = 'ainswer'
+    __tablename__ = 'ainswer_history'
 
 
 

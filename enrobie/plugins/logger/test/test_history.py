@@ -48,17 +48,17 @@ def _logger_history(
                 client=client.name,
                 person=None,
                 kind='chanmsg',
-                author=f'nickname{nick}',
+                author=f'nick{nick}',
                 anchor='#enrobie',
-                message=f'Message {count}')
+                message=str(count))
 
             history.insert(
                 client=client.name,
                 person=None,
                 kind='privmsg',
-                author=f'nickname{nick}',
-                anchor=f'nickname{nick}',
-                message=f'Message {count}')
+                author=f'nick{nick}',
+                anchor=f'nick{nick}',
+                message=str(count))
 
             block_sleep(0.001)
 
@@ -167,11 +167,11 @@ def test_LoggerHistory_cover(
 
     assert record == {
         'anchor': '#enrobie',
-        'author': 'nickname4',
+        'author': 'nick4',
         'client': 'ircbot',
         'create': record['create'],
         'kind': 'chanmsg',
-        'message': 'Message 2',
+        'message': '2',
         'person': None,
         'plugin': 'logger'}
 
@@ -179,18 +179,18 @@ def test_LoggerHistory_cover(
     records = (
         history.search(
             client=client.name,
-            anchor='nickname1'))
+            anchor='nick1'))
 
     record = (
         records[-1].endumped)
 
     assert record == {
-        'anchor': 'nickname1',
-        'author': 'nickname1',
+        'anchor': 'nick1',
+        'author': 'nick1',
         'client': 'ircbot',
         'create': record['create'],
         'kind': 'privmsg',
-        'message': 'Message 4',
+        'message': '4',
         'person': None,
         'plugin': 'logger'}
 
@@ -198,8 +198,8 @@ def test_LoggerHistory_cover(
     records = (
         history.search(
             client=client.name,
-            author='nickname1',
-            anchor='nickname1',
+            author='nick1',
+            anchor='nick1',
             limit=1))
 
     assert len(records) == 1
@@ -208,9 +208,9 @@ def test_LoggerHistory_cover(
     plaintext = (
         history.plaintext(
             client=client.name,
-            anchor='nickname1'))
+            anchor='nick1'))
 
     plain = plaintext[-1]
 
     assert plain[27:] == (
-        '<nickname1> Message 4')
+        '<nick1> 4')
