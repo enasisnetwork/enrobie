@@ -17,9 +17,7 @@ from typing import Union
 from encommon.types import DictStrAny
 from encommon.types import NCNone
 
-from .ainswer import AinswerDepends
-from .ainswer import AinswerQuestion
-from .ainswer import AinswerToolset
+from .common import AinswerDepends
 from .common import AinswerResponse
 from .helpers import composedsc
 from .helpers import composeirc
@@ -27,6 +25,8 @@ from .helpers import composemtm
 from .history import AinswerHistory
 from .models import AinswerModels
 from .params import AinswerPluginParams
+from .question import AinswerQuestion
+from .toolset import AinswerToolset
 from ..status import StatusPlugin
 from ..status import StatusPluginStates
 from ...robie.childs import RobiePerson
@@ -54,7 +54,6 @@ class AinswerPlugin(RobiePlugin):
     __question: AinswerQuestion
     __history: AinswerHistory
 
-    __model: 'Model'
     __agent: Optional['Agent[AinswerDepends, str]']
 
 
@@ -66,11 +65,6 @@ class AinswerPlugin(RobiePlugin):
         """
 
         self.__started = False
-
-        params = self.params
-
-        ainswer = params.ainswer
-        origin = ainswer.origin
 
 
         self.__models = (
@@ -85,23 +79,6 @@ class AinswerPlugin(RobiePlugin):
         self.__history = (
             AinswerHistory(self))
 
-
-        model: 'Model' | None = None
-
-        if origin == 'anthropic':
-            model = (
-                self.__models
-                .anthropic)
-
-        elif origin == 'openai':
-            model = (
-                self.__models
-                .openai)
-
-        assert model is not None, (
-            'Model not instantiated')
-
-        self.__model = model
 
         self.__agent = None
 
@@ -225,7 +202,21 @@ class AinswerPlugin(RobiePlugin):
         params = self.params
         prompt = params.prompt
         ainswer = params.ainswer
+        origin = ainswer.origin
         system = prompt.system
+
+
+        model: 'Model' | None = None
+
+        if origin == 'anthropic':
+            model = models.anthropic
+
+        elif origin == 'openai':
+            model = models.openai
+
+        assert model is not None, (
+            'Model not instantiated')
+
 
         toolset = (
             self.__toolset.toolset)
@@ -234,7 +225,7 @@ class AinswerPlugin(RobiePlugin):
             timeout=ainswer.timeout)
 
         self.__agent = _agent(
-            self.__model,
+            model,
             system_prompt=system,
             model_settings=settings,
             deps_type=AinswerDepends,

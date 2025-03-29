@@ -7,8 +7,8 @@ is permitted, for more information consult the project license file.
 
 
 
-from .ainswer import AinswerDepends
-from .ainswer import AinswerTool
+from .common import AinswerDepends
+from .common import AinswerTool
 from .params import AinswerPluginParams
 from .plugin import AinswerPlugin
 

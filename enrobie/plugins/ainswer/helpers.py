@@ -12,7 +12,7 @@ from typing import get_args
 
 from encommon.types import NCNone
 
-from .ainswer import AinswerIgnored
+from .common import AinswerIgnored
 from .common import AinswerResponseDSC
 from .common import AinswerResponseIRC
 from .common import AinswerResponseMTM

@@ -7,10 +7,7 @@ is permitted, for more information consult the project license file.
 
 
 
-from dataclasses import dataclass
 from json import dumps
-from typing import Any
-from typing import Callable
 from typing import Optional
 from typing import TYPE_CHECKING
 from typing import Type
@@ -21,6 +18,8 @@ from encommon.types.strings import COMMAS
 from encommon.types.strings import NEWLINE
 from encommon.types.strings import SEMPTY
 
+from .common import AinswerDepends
+from .common import AinswerIgnored
 from .common import AinswerResponse
 
 if TYPE_CHECKING:
@@ -28,109 +27,6 @@ if TYPE_CHECKING:
     from ...robie.childs import RobieClient
     from ...robie.childs import RobiePerson
     from ...robie.models import RobieMessage
-
-
-
-AinswerIgnored = 'no_response'
-
-AinswerTool = Callable[..., Any]
-
-
-
-@dataclass
-class AinswerDepends:
-    """
-    Dependencies related to operation with PydanticAI tools.
-    """
-
-    plugin: 'AinswerPlugin'
-    mitem: Optional['RobieMessage']
-
-
-
-class AinswerToolset:
-    """
-    Enumerate the plugins and return those that are related.
-
-    :param plugin: Plugin class instance for Chatting Robie.
-    """
-
-    __plugin: 'AinswerPlugin'
-
-
-    def __init__(
-        self,
-        plugin: 'AinswerPlugin',
-    ) -> None:
-        """
-        Initialize instance for class using provided parameters.
-        """
-
-        self.__plugin = plugin
-
-
-    @property
-    def toolset(
-        self,
-    ) -> list[AinswerTool]:
-        """
-        Return the related tools that were found in the plugins.
-
-        :returns: Related tools that were found in the plugins.
-        """
-
-        from .plugin import AinswerPlugin
-
-        plugin = self.__plugin
-
-        toolset: list[AinswerTool] = []
-
-        if not plugin.thread:
-            return toolset
-
-        assert plugin.thread
-
-        thread = plugin.thread
-        params = plugin.params
-
-        names = params.plugins
-
-        if names is None:
-            return toolset
-
-
-        plugins = (
-            thread.service
-            .plugins.childs
-            .values())
-
-        for helper in plugins:
-
-            name = helper.name
-
-            if name not in names:
-                continue
-
-            ignored = isinstance(
-                helper, AinswerPlugin)
-
-            if ignored is True:
-                continue
-
-            related = hasattr(
-                helper, 'ainswer')
-
-            if related is False:
-                continue
-
-            assert hasattr(
-                helper, 'ainswer')
-
-            toolset.extend(
-                helper.ainswer())
-
-
-        return toolset
 
 
 

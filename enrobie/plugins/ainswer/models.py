@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from pydantic_ai.settings import ModelSettings
     from pydantic_ai.models.anthropic import AnthropicModel
     from pydantic_ai.models.openai import OpenAIModel
-    from .ainswer import AinswerDepends
+    from .common import AinswerDepends
     from .plugin import AinswerPlugin
 
 
@@ -43,7 +43,7 @@ class AinswerModels:
 
     @classmethod
     def agent(
-        self,
+        cls,
     ) -> Type['Agent[AinswerDepends, str]']:
         """
         Return the class object that was imported within method.
@@ -56,7 +56,7 @@ class AinswerModels:
 
     @classmethod
     def settings(
-        self,
+        cls,
     ) -> Type['ModelSettings']:
         """
         Return the class object that was imported within method.
@@ -81,7 +81,6 @@ class AinswerModels:
         plugin = self.__plugin
 
         params = plugin.params
-
         ainswer = params.ainswer
         secret = ainswer.secret
 
@@ -108,7 +107,6 @@ class AinswerModels:
         plugin = self.__plugin
 
         params = plugin.params
-
         ainswer = params.ainswer
         secret = ainswer.secret
 

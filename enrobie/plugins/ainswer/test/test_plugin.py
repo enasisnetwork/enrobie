@@ -59,7 +59,6 @@ def test_AinswerPlugin(
         '_AinswerPlugin__toolset',
         '_AinswerPlugin__question',
         '_AinswerPlugin__history',
-        '_AinswerPlugin__model',
         '_AinswerPlugin__agent',
         '_RobiePlugin__thread']
 
