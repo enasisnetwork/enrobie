@@ -7,11 +7,37 @@ is permitted, for more information consult the project license file.
 
 
 
+from dataclasses import dataclass
 from typing import Annotated
+from typing import Any
+from typing import Callable
+from typing import Optional
+from typing import TYPE_CHECKING
 
 from encommon.types import BaseModel
 
 from pydantic import Field
+
+if TYPE_CHECKING:
+    from .plugin import AinswerPlugin
+    from ...robie.models import RobieMessage
+
+
+
+AinswerIgnored = 'no_response'
+
+AinswerTool = Callable[..., Any]
+
+
+
+@dataclass
+class AinswerDepends:
+    """
+    Dependencies related to operation with PydanticAI tools.
+    """
+
+    plugin: 'AinswerPlugin'
+    mitem: Optional['RobieMessage']
 
 
 
