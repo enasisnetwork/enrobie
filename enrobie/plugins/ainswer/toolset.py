@@ -9,9 +9,6 @@ is permitted, for more information consult the project license file.
 
 from typing import TYPE_CHECKING
 
-from .ainswer import ainswer_memory_delete
-from .ainswer import ainswer_memory_insert
-from .ainswer import ainswer_memory_records
 from .common import AinswerTool
 
 if TYPE_CHECKING:
@@ -51,6 +48,12 @@ class AinswerToolset:
         """
 
         from .plugin import AinswerPlugin
+
+
+        from .ainswer import (
+            ainswer_memory_delete,
+            ainswer_memory_insert,
+            ainswer_memory_records)
 
         toolset: list[AinswerTool] = [
             ainswer_memory_insert,
