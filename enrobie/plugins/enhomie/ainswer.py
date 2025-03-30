@@ -38,9 +38,9 @@ async def homie_persist(
     ainswer = deps.plugin
     mitem = deps.mitem
 
-    assert ainswer.thread
-
     assert mitem is not None
+
+    assert ainswer.thread
 
     thread = ainswer.thread
 
@@ -48,6 +48,8 @@ async def homie_persist(
         thread.service
         .plugins.childs
         .values())
+
+    await asyncio.sleep(0)
 
 
     returned: list[HomiePersistRecord] = []
@@ -72,8 +74,6 @@ async def homie_persist(
             plugin.persist
             .records)
 
-
-    await asyncio.sleep(0)
 
     ainswer.printer({
         'Function': funcname(),

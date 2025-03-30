@@ -41,6 +41,20 @@ if TYPE_CHECKING:
 AinswerMemoryKinds = Literal[
     'privmsg', 'chanmsg']
 
+AinswerMemoryMessageField = Annotated[
+    str,
+    Field(...,
+          description='Historical person memorable',
+          min_length=1,
+          max_length=400)]
+
+AinswerMemoryUniqueField = Annotated[
+    str,
+    Field(...,
+          description='Unique identifier for memory',
+          min_length=36,
+          max_length=36)]
+
 
 
 class SQLBase(DeclarativeBase):
@@ -66,14 +80,14 @@ class AinswerMemoryTable(SQLBase):
     person = Column(
         String,
         primary_key=True,
-        nullable=True)
+        nullable=False)
 
     unique = Column(
         String,
         primary_key=True,
-        nullable=True)
+        nullable=False)
 
-    memory = Column(
+    message = Column(
         String,
         nullable=False)
 
@@ -101,24 +115,14 @@ class AinswerMemoryRecord(BaseModel, extra='forbid'):
               min_length=1)]
 
     person: Annotated[
-        Optional[str],
+        str,
         Field(None,
               description='Person that author is matched',
               min_length=1)]
 
-    unique: Annotated[
-        str,
-        Field(...,
-              description='Unique identifier for memory',
-              min_length=36,
-              max_length=36)]
+    unique: AinswerMemoryUniqueField
 
-    memory: Annotated[
-        str,
-        Field(...,
-              description='Historical interaction content',
-              min_length=1,
-              max_length=400)]
+    message: AinswerMemoryMessageField
 
     create: Annotated[
         str,
@@ -143,7 +147,7 @@ class AinswerMemoryRecord(BaseModel, extra='forbid'):
             'plugin',
             'person',
             'unique',
-            'memory',
+            'message',
             'create']
 
 
@@ -177,7 +181,7 @@ class AinswerMemoryRecord(BaseModel, extra='forbid'):
 
 class AinswerMemory:
     """
-    Store the historical information for chat interactions.
+    Store the historical information for the person memory.
 
     :param plugin: Plugin class instance for Chatting Robie.
     """
@@ -238,11 +242,11 @@ class AinswerMemory:
     def insert(
         self,
         *,
-        person: str | None,
-        memory: str,
+        person: str,
+        message: str,
     ) -> None:
         """
-        Insert the record into the historical chat interactions.
+        Insert the record into the historical person memorables.
         """
 
         plugin = self.__plugin
@@ -267,7 +271,7 @@ class AinswerMemory:
             'plugin': plugin.name,
             'unique': unique,
             'person': person,
-            'memory': memory,
+            'message': message,
             'create': float(Time())}
 
         record = model(**inputs)
@@ -289,17 +293,17 @@ class AinswerMemory:
             session.commit()
 
 
-        self.expunge(
-            person=record.person)
+        self.expunge(record.person)
 
 
     def expunge(
         self,
-        *,
-        person: Optional[str] = None,
+        person: str,
     ) -> None:
         """
-        Remove the expired historical chat interaction records.
+        Remove the expired historical person memorable records.
+
+        :param person: Unique identifier for the person object.
         """
 
         plugin = self.__plugin
@@ -347,7 +351,46 @@ class AinswerMemory:
                  _plugin == plugin.name,
                  _person == person,
                  _create < cutoff)
-             .delete(synchronize_session=False))
+             .delete(
+                synchronize_session=False))
+
+            session.commit()
+
+
+    def delete(
+        self,
+        person: str,
+        unique: str,
+    ) -> None:
+        """
+        Delete the record from the historical person memorables.
+
+        :param person: Unique identifier for the person object.
+        :param unique: Unique identifier for person memorable.
+        """
+
+        plugin = self.__plugin
+
+
+        sess = self.__session()
+        lock = self.__locker
+
+        table = AinswerMemoryTable
+
+        _plugin = table.plugin
+        _person = table.person
+        _unique = table.unique
+
+
+        with lock, sess as session:
+
+            (session.query(table)
+             .filter(
+                 _plugin == plugin.name,
+                 _person == person,
+                 _unique == unique)
+             .delete(
+                synchronize_session=False))
 
             session.commit()
 
@@ -357,10 +400,10 @@ class AinswerMemory:
         mitem: 'RobieMessage',
     ) -> list[AinswerMemoryRecord]:
         """
-        Return all historical records for the chat interactions.
+        Return the historical records for the person memorables.
 
         :param mitem: Item containing information for operation.
-        :returns: Historical records for the chat interactions.
+        :returns: Historical records for the person memorables.
         """
 
         assert mitem.person
@@ -376,9 +419,9 @@ class AinswerMemory:
         unique: Optional[str] = None,
     ) -> list[AinswerMemoryRecord]:
         """
-        Return all historical records for the chat interactions.
+        Return the historical records for the person memorables.
 
-        :returns: Historical records for the chat interactions.
+        :returns: Historical records for the person memorables.
         """
 
         plugin = self.__plugin

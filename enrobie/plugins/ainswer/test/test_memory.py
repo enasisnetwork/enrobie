@@ -38,7 +38,7 @@ def _ainswer_memory(
 
         memory.insert(
             person='hubert',
-            memory=str(count))
+            message=str(count))
 
 
 
@@ -115,3 +115,27 @@ def test_AinswerMemory_cover(
             person='hubert'))
 
     assert len(records) == 10
+
+
+    record = (
+        records[0].endumped)
+
+    assert record == {
+        'create': record['create'],
+        'message': '3',
+        'person': 'hubert',
+        'plugin': 'ainswer',
+        'unique': record['unique']}
+
+
+    unique = records[0].unique
+
+    memory.delete(
+        'hubert', unique)
+
+
+    records = (
+        memory.search(
+            person='hubert'))
+
+    assert len(records) == 9

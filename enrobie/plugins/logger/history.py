@@ -319,9 +319,9 @@ class LoggerHistory:
 
 
         self.expunge(
-            client=record.client,
-            kind=record.kind,
-            anchor=record.anchor)
+            record.client,
+            record.kind,
+            record.anchor)
 
 
     def process(
@@ -372,13 +372,16 @@ class LoggerHistory:
 
     def expunge(
         self,
-        *,
-        client: Optional[str] = None,
-        kind: Optional[str] = None,
-        anchor: Optional[str] = None,
+        client: str,
+        kind: str,
+        anchor: str,
     ) -> None:
         """
         Remove the expired historical chat interaction records.
+
+        :param client: Unique identifier for the client object.
+        :param kind: What kind of Robie message we dealing with.
+        :param anchor: Unique identifier for the chat context.
         """
 
         plugin = self.__plugin
@@ -434,7 +437,8 @@ class LoggerHistory:
                  _kind == kind,
                  _anchor == anchor,
                  _create < cutoff)
-             .delete(synchronize_session=False))
+             .delete(
+                synchronize_session=False))
 
             session.commit()
 
@@ -445,7 +449,7 @@ class LoggerHistory:
         limit: Optional[int] = None,
     ) -> list[LoggerHistoryRecord]:
         """
-        Return all historical records for the chat interactions.
+        Return the historical records for the chat interactions.
 
         :param mitem: Item containing information for operation.
         :param limit: Optionally restrict the records returned.
@@ -482,7 +486,7 @@ class LoggerHistory:
         anchor: Optional[str] = None,
     ) -> list[str]:
         """
-        Return all historical records for the chat interactions.
+        Return the historical records for the chat interactions.
 
         .. note::
            Additional keyword arguments ignored when `mitem`.
@@ -521,7 +525,7 @@ class LoggerHistory:
         anchor: Optional[str] = None,
     ) -> list[LoggerHistoryRecord]:
         """
-        Return all historical records for the chat interactions.
+        Return the historical records for the chat interactions.
 
         :param limit: Optionally restrict the records returned.
         :returns: Historical records for the chat interactions.
