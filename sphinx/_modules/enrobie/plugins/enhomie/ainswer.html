@@ -183,9 +183,9 @@
 </span><span id="line-38">    <span class="n">ainswer</span> <span class="o">=</span> <span class="n">deps</span><span class="o">.</span><span class="n">plugin</span>
 </span><span id="line-39">    <span class="n">mitem</span> <span class="o">=</span> <span class="n">deps</span><span class="o">.</span><span class="n">mitem</span>
 </span><span id="line-40">
-</span><span id="line-41">    <span class="k">assert</span> <span class="n">ainswer</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-41">    <span class="k">assert</span> <span class="n">mitem</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 </span><span id="line-42">
-</span><span id="line-43">    <span class="k">assert</span> <span class="n">mitem</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="line-43">    <span class="k">assert</span> <span class="n">ainswer</span><span class="o">.</span><span class="n">thread</span>
 </span><span id="line-44">
 </span><span id="line-45">    <span class="n">thread</span> <span class="o">=</span> <span class="n">ainswer</span><span class="o">.</span><span class="n">thread</span>
 </span><span id="line-46">
@@ -194,31 +194,31 @@
 </span><span id="line-49">        <span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">childs</span>
 </span><span id="line-50">        <span class="o">.</span><span class="n">values</span><span class="p">())</span>
 </span><span id="line-51">
-</span><span id="line-52">
-</span><span id="line-53">    <span class="n">returned</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">HomiePersistRecord</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-52">    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="line-53">
 </span><span id="line-54">
-</span><span id="line-55">
-</span><span id="line-56">    <span class="k">for</span> <span class="n">plugin</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
+</span><span id="line-55">    <span class="n">returned</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">HomiePersistRecord</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-56">
 </span><span id="line-57">
-</span><span id="line-58">        <span class="n">related</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-59">            <span class="n">plugin</span><span class="p">,</span> <span class="n">HomiePlugin</span><span class="p">)</span>
-</span><span id="line-60">
-</span><span id="line-61">        <span class="k">if</span> <span class="n">related</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
-</span><span id="line-62">            <span class="k">continue</span>
-</span><span id="line-63">
-</span><span id="line-64">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-65">            <span class="n">plugin</span><span class="p">,</span> <span class="n">HomiePlugin</span><span class="p">)</span>
-</span><span id="line-66">
-</span><span id="line-67">        <span class="c1"># Basic trust enforcement</span>
-</span><span id="line-68">        <span class="k">if</span> <span class="n">plugin</span><span class="o">.</span><span class="n">notrust</span><span class="p">(</span><span class="n">mitem</span><span class="p">):</span>
-</span><span id="line-69">            <span class="k">continue</span>
-</span><span id="line-70">
-</span><span id="line-71">        <span class="n">returned</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
-</span><span id="line-72">            <span class="n">plugin</span><span class="o">.</span><span class="n">persist</span>
-</span><span id="line-73">            <span class="o">.</span><span class="n">records</span><span class="p">)</span>
-</span><span id="line-74">
-</span><span id="line-75">
-</span><span id="line-76">    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="line-58">    <span class="k">for</span> <span class="n">plugin</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
+</span><span id="line-59">
+</span><span id="line-60">        <span class="n">related</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-61">            <span class="n">plugin</span><span class="p">,</span> <span class="n">HomiePlugin</span><span class="p">)</span>
+</span><span id="line-62">
+</span><span id="line-63">        <span class="k">if</span> <span class="n">related</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+</span><span id="line-64">            <span class="k">continue</span>
+</span><span id="line-65">
+</span><span id="line-66">        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-67">            <span class="n">plugin</span><span class="p">,</span> <span class="n">HomiePlugin</span><span class="p">)</span>
+</span><span id="line-68">
+</span><span id="line-69">        <span class="c1"># Basic trust enforcement</span>
+</span><span id="line-70">        <span class="k">if</span> <span class="n">plugin</span><span class="o">.</span><span class="n">notrust</span><span class="p">(</span><span class="n">mitem</span><span class="p">):</span>
+</span><span id="line-71">            <span class="k">continue</span>
+</span><span id="line-72">
+</span><span id="line-73">        <span class="n">returned</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+</span><span id="line-74">            <span class="n">plugin</span><span class="o">.</span><span class="n">persist</span>
+</span><span id="line-75">            <span class="o">.</span><span class="n">records</span><span class="p">)</span>
+</span><span id="line-76">
 </span><span id="line-77">
 </span><span id="line-78">    <span class="n">ainswer</span><span class="o">.</span><span class="n">printer</span><span class="p">({</span>
 </span><span id="line-79">        <span class="s1">&#39;Function&#39;</span><span class="p">:</span> <span class="n">funcname</span><span class="p">(),</span>

@@ -191,19 +191,19 @@
 </span><span id="line-48">                <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
 </span><span id="line-49">                <span class="n">person</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 </span><span id="line-50">                <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;chanmsg&#39;</span><span class="p">,</span>
-</span><span id="line-51">                <span class="n">author</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;nickname</span><span class="si">{</span><span class="n">nick</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+</span><span id="line-51">                <span class="n">author</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;nick</span><span class="si">{</span><span class="n">nick</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
 </span><span id="line-52">                <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;#enrobie&#39;</span><span class="p">,</span>
-</span><span id="line-53">                <span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Message </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-</span><span id="line-54">                <span class="n">ainswer</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Ainswer </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="line-53">                <span class="n">message</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">),</span>
+</span><span id="line-54">                <span class="n">ainswer</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
 </span><span id="line-55">
 </span><span id="line-56">            <span class="n">history</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
 </span><span id="line-57">                <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
 </span><span id="line-58">                <span class="n">person</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 </span><span id="line-59">                <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;privmsg&#39;</span><span class="p">,</span>
-</span><span id="line-60">                <span class="n">author</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;nickname</span><span class="si">{</span><span class="n">nick</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-</span><span id="line-61">                <span class="n">anchor</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;nickname</span><span class="si">{</span><span class="n">nick</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-</span><span id="line-62">                <span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Message </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-</span><span id="line-63">                <span class="n">ainswer</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Ainswer </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="line-60">                <span class="n">author</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;nick</span><span class="si">{</span><span class="n">nick</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+</span><span id="line-61">                <span class="n">anchor</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;nick</span><span class="si">{</span><span class="n">nick</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+</span><span id="line-62">                <span class="n">message</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">),</span>
+</span><span id="line-63">                <span class="n">ainswer</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
 </span><span id="line-64">
 </span><span id="line-65">            <span class="n">block_sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
 </span><span id="line-66">
@@ -318,13 +318,13 @@
 </span><span id="line-170">        <span class="n">records</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">endumped</span><span class="p">)</span>
 </span><span id="line-171">
 </span><span id="line-172">    <span class="k">assert</span> <span class="n">record</span> <span class="o">==</span> <span class="p">{</span>
-</span><span id="line-173">        <span class="s1">&#39;ainswer&#39;</span><span class="p">:</span> <span class="s1">&#39;Ainswer 2&#39;</span><span class="p">,</span>
+</span><span id="line-173">        <span class="s1">&#39;ainswer&#39;</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span>
 </span><span id="line-174">        <span class="s1">&#39;anchor&#39;</span><span class="p">:</span> <span class="s1">&#39;#enrobie&#39;</span><span class="p">,</span>
-</span><span id="line-175">        <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;nickname4&#39;</span><span class="p">,</span>
+</span><span id="line-175">        <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;nick4&#39;</span><span class="p">,</span>
 </span><span id="line-176">        <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;ircbot&#39;</span><span class="p">,</span>
 </span><span id="line-177">        <span class="s1">&#39;create&#39;</span><span class="p">:</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;create&#39;</span><span class="p">],</span>
 </span><span id="line-178">        <span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="s1">&#39;chanmsg&#39;</span><span class="p">,</span>
-</span><span id="line-179">        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Message 2&#39;</span><span class="p">,</span>
+</span><span id="line-179">        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span>
 </span><span id="line-180">        <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-181">        <span class="s1">&#39;plugin&#39;</span><span class="p">:</span> <span class="s1">&#39;ainswer&#39;</span><span class="p">}</span>
 </span><span id="line-182">
@@ -332,19 +332,19 @@
 </span><span id="line-184">    <span class="n">records</span> <span class="o">=</span> <span class="p">(</span>
 </span><span id="line-185">        <span class="n">history</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
 </span><span id="line-186">            <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-</span><span id="line-187">            <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;nickname1&#39;</span><span class="p">))</span>
+</span><span id="line-187">            <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;nick1&#39;</span><span class="p">))</span>
 </span><span id="line-188">
 </span><span id="line-189">    <span class="n">record</span> <span class="o">=</span> <span class="p">(</span>
 </span><span id="line-190">        <span class="n">records</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">endumped</span><span class="p">)</span>
 </span><span id="line-191">
 </span><span id="line-192">    <span class="k">assert</span> <span class="n">record</span> <span class="o">==</span> <span class="p">{</span>
-</span><span id="line-193">        <span class="s1">&#39;ainswer&#39;</span><span class="p">:</span> <span class="s1">&#39;Ainswer 4&#39;</span><span class="p">,</span>
-</span><span id="line-194">        <span class="s1">&#39;anchor&#39;</span><span class="p">:</span> <span class="s1">&#39;nickname1&#39;</span><span class="p">,</span>
-</span><span id="line-195">        <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;nickname1&#39;</span><span class="p">,</span>
+</span><span id="line-193">        <span class="s1">&#39;ainswer&#39;</span><span class="p">:</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span>
+</span><span id="line-194">        <span class="s1">&#39;anchor&#39;</span><span class="p">:</span> <span class="s1">&#39;nick1&#39;</span><span class="p">,</span>
+</span><span id="line-195">        <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;nick1&#39;</span><span class="p">,</span>
 </span><span id="line-196">        <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;ircbot&#39;</span><span class="p">,</span>
 </span><span id="line-197">        <span class="s1">&#39;create&#39;</span><span class="p">:</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;create&#39;</span><span class="p">],</span>
 </span><span id="line-198">        <span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="s1">&#39;privmsg&#39;</span><span class="p">,</span>
-</span><span id="line-199">        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Message 4&#39;</span><span class="p">,</span>
+</span><span id="line-199">        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span>
 </span><span id="line-200">        <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-201">        <span class="s1">&#39;plugin&#39;</span><span class="p">:</span> <span class="s1">&#39;ainswer&#39;</span><span class="p">}</span>
 </span><span id="line-202">
@@ -352,8 +352,8 @@
 </span><span id="line-204">    <span class="n">records</span> <span class="o">=</span> <span class="p">(</span>
 </span><span id="line-205">        <span class="n">history</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
 </span><span id="line-206">            <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-</span><span id="line-207">            <span class="n">author</span><span class="o">=</span><span class="s1">&#39;nickname1&#39;</span><span class="p">,</span>
-</span><span id="line-208">            <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;nickname1&#39;</span><span class="p">,</span>
+</span><span id="line-207">            <span class="n">author</span><span class="o">=</span><span class="s1">&#39;nick1&#39;</span><span class="p">,</span>
+</span><span id="line-208">            <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;nick1&#39;</span><span class="p">,</span>
 </span><span id="line-209">            <span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </span><span id="line-210">
 </span><span id="line-211">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span></div>
