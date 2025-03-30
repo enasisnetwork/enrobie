@@ -48,19 +48,19 @@ def _ainswer_history(
                 client=client.name,
                 person=None,
                 kind='chanmsg',
-                author=f'nickname{nick}',
+                author=f'nick{nick}',
                 anchor='#enrobie',
-                message=f'Message {count}',
-                ainswer=f'Ainswer {count}')
+                message=str(count),
+                ainswer=str(count))
 
             history.insert(
                 client=client.name,
                 person=None,
                 kind='privmsg',
-                author=f'nickname{nick}',
-                anchor=f'nickname{nick}',
-                message=f'Message {count}',
-                ainswer=f'Ainswer {count}')
+                author=f'nick{nick}',
+                anchor=f'nick{nick}',
+                message=str(count),
+                ainswer=str(count))
 
             block_sleep(0.001)
 
@@ -170,13 +170,13 @@ def test_AinswerHistory_cover(
         records[0].endumped)
 
     assert record == {
-        'ainswer': 'Ainswer 2',
+        'ainswer': '2',
         'anchor': '#enrobie',
-        'author': 'nickname4',
+        'author': 'nick4',
         'client': 'ircbot',
         'create': record['create'],
         'kind': 'chanmsg',
-        'message': 'Message 2',
+        'message': '2',
         'person': None,
         'plugin': 'ainswer'}
 
@@ -184,19 +184,19 @@ def test_AinswerHistory_cover(
     records = (
         history.search(
             client=client.name,
-            anchor='nickname1'))
+            anchor='nick1'))
 
     record = (
         records[-1].endumped)
 
     assert record == {
-        'ainswer': 'Ainswer 4',
-        'anchor': 'nickname1',
-        'author': 'nickname1',
+        'ainswer': '4',
+        'anchor': 'nick1',
+        'author': 'nick1',
         'client': 'ircbot',
         'create': record['create'],
         'kind': 'privmsg',
-        'message': 'Message 4',
+        'message': '4',
         'person': None,
         'plugin': 'ainswer'}
 
@@ -204,8 +204,8 @@ def test_AinswerHistory_cover(
     records = (
         history.search(
             client=client.name,
-            author='nickname1',
-            anchor='nickname1',
+            author='nick1',
+            anchor='nick1',
             limit=1))
 
     assert len(records) == 1

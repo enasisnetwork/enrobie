@@ -59,6 +59,7 @@ def test_AinswerPlugin(
         '_AinswerPlugin__toolset',
         '_AinswerPlugin__question',
         '_AinswerPlugin__history',
+        '_AinswerPlugin__memory',
         '_AinswerPlugin__agent',
         '_RobiePlugin__thread']
 
@@ -100,6 +101,8 @@ def test_AinswerPlugin(
     assert plugin.question
 
     assert plugin.history
+
+    assert plugin.memory
 
 
 

@@ -199,6 +199,12 @@ class AinswerPluginParams(RobiePluginParams, extra='forbid'):
               description='Number of messages per anchor',
               ge=1, le=1000)]
 
+    memories: Annotated[
+        int,
+        Field(10,
+              description='Number of messages per person',
+              ge=1, le=1000)]
+
     clients: Annotated[
         list[str],
         Field(...,

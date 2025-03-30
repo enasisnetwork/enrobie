@@ -137,7 +137,7 @@ def test_AinswerQuestion_prompt(
         else ('nick', 'nick'))
 
     if 'hubert' not in file:
-        item.event.author = 'nickname1'
+        item.event.author = 'nick1'
         item.event.recipient = (
             '#enrobie'
             if kind == 'chanmsg'

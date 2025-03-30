@@ -99,26 +99,12 @@ class AinswerQuestion:
         footer = parsed['footer']
 
 
-        history = (
-            self.prompt_history(
-                mitem, prompt))
-
-        ignored = (
-            self.prompt_ignored(
-                mitem, prompt))
-
-        metadata = (
-            self.prompt_metadata(
-                mitem, prompt))
-
-        channel = (
-            self.prompt_channel(
-                mitem, prompt))
-
-        recents = (
-            self.prompt_recents(
-                mitem, prompt))
-
+        history = self.__history(mitem)
+        memory = self.__memory(mitem)
+        ignored = self.__ignored(mitem)
+        metadata = self.__metadata(mitem)
+        channel = self.__channel(mitem)
+        recents = self.__recents(mitem)
 
         returned = SEMPTY.join([
             '**Instructions**\n',
@@ -140,6 +126,9 @@ class AinswerQuestion:
             (f'{recents}\n\n'
              if recents
              else SEMPTY),
+            (f'{memory}\n\n'
+             if memory
+             else SEMPTY),
             (f'{header}\n\n'
              if header is not None
              and len(header) >= 1
@@ -155,16 +144,14 @@ class AinswerQuestion:
         return returned.strip()
 
 
-    def prompt_history(
+    def __history(
         self,
         mitem: 'RobieMessage',
-        prompt: str,
     ) -> str:
         """
         Return the message prefixed with runtime prompt values.
 
         :param mitem: Item containing information for operation.
-        :param prompt: Additional prompt insert before question.
         :returns: Message prefixed with runtime prompt values.
         """
 
@@ -209,24 +196,58 @@ class AinswerQuestion:
             f'{NEWLINE.join(dumped)}')
 
 
-    def prompt_ignored(
+    def __memory(
         self,
         mitem: 'RobieMessage',
-        prompt: str,
     ) -> str:
         """
         Return the message prefixed with runtime prompt values.
 
         :param mitem: Item containing information for operation.
-        :param prompt: Additional prompt insert before question.
+        :returns: Message prefixed with runtime prompt values.
+        """
+
+        plugin = self.__plugin
+        memory = plugin.memory
+
+        if not mitem.person:
+            return SEMPTY
+
+        records = (
+            memory.records(mitem))
+
+        items = [
+            x.message
+            for x in records]
+
+        if len(items) == 0:
+            return SEMPTY
+
+        delim = f'{NEWLINE} - '
+
+        return (
+            '**Memorable Information**\n'
+            'These are previous memories that were'
+            ' previously stored about the person.'
+            f'{delim}{delim.join(items)}')
+
+
+    def __ignored(
+        self,
+        mitem: 'RobieMessage',
+    ) -> str:
+        """
+        Return the message prefixed with runtime prompt values.
+
+        :param mitem: Item containing information for operation.
         :returns: Message prefixed with runtime prompt values.
         """
 
         plugin = self.__plugin
         params = plugin.params
 
-        _prompt = params.prompt
-        ignore = _prompt.ignore
+        prompt = params.prompt
+        ignore = prompt.ignore
 
         response = AinswerIgnored
         delim = f'{NEWLINE} - '
@@ -240,16 +261,14 @@ class AinswerQuestion:
             f' include:{delim}{delim.join(ignore)}')
 
 
-    def prompt_metadata(
+    def __metadata(
         self,
         mitem: 'RobieMessage',
-        prompt: str,
     ) -> str:
         """
         Return the message prefixed with runtime prompt values.
 
         :param mitem: Item containing information for operation.
-        :param prompt: Additional prompt insert before question.
         :returns: Message prefixed with runtime prompt values.
         """
 
@@ -303,16 +322,14 @@ class AinswerQuestion:
         return returned.strip()
 
 
-    def prompt_channel(
+    def __channel(
         self,
         mitem: 'RobieMessage',
-        prompt: str,
     ) -> str:
         """
         Return the message prefixed with runtime prompt values.
 
         :param mitem: Item containing information for operation.
-        :param prompt: Additional prompt insert before question.
         :returns: Message prefixed with runtime prompt values.
         """
 
@@ -357,16 +374,14 @@ class AinswerQuestion:
         return returned.strip()
 
 
-    def prompt_recents(  # noqa: CFQ004
+    def __recents(  # noqa: CFQ004
         self,
         mitem: 'RobieMessage',
-        prompt: str,
     ) -> str:
         """
         Return the message prefixed with runtime prompt values.
 
         :param mitem: Item containing information for operation.
-        :param prompt: Additional prompt insert before question.
         :returns: Message prefixed with runtime prompt values.
         """
 

@@ -37,9 +37,9 @@ async def nagios_current(
     ainswer = deps.plugin
     mitem = deps.mitem
 
-    assert ainswer.thread
-
     assert mitem is not None
+
+    assert ainswer.thread
 
     thread = ainswer.thread
 
@@ -47,6 +47,8 @@ async def nagios_current(
         thread.service
         .plugins.childs
         .values())
+
+    await asyncio.sleep(0)
 
 
     returned: list[NagiosCurrentRecords] = []
@@ -71,8 +73,6 @@ async def nagios_current(
             plugin.current
             .records)
 
-
-    await asyncio.sleep(0)
 
     ainswer.printer({
         'Function': funcname(),

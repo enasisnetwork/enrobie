@@ -7,6 +7,7 @@ is permitted, for more information consult the project license file.
 
 
 
+from random import randint
 from threading import Lock
 from typing import Annotated
 from typing import Any
@@ -14,6 +15,7 @@ from typing import Literal
 from typing import Optional
 from typing import TYPE_CHECKING
 
+from encommon.crypts import Hashes
 from encommon.times import Time
 from encommon.types import BaseModel
 from encommon.types import DictStrAny
@@ -36,8 +38,22 @@ if TYPE_CHECKING:
 
 
 
-AinswerHistoryKinds = Literal[
+AinswerMemoryKinds = Literal[
     'privmsg', 'chanmsg']
+
+AinswerMemoryMessageField = Annotated[
+    str,
+    Field(...,
+          description='Historical person memorable',
+          min_length=1,
+          max_length=400)]
+
+AinswerMemoryUniqueField = Annotated[
+    str,
+    Field(...,
+          description='Unique identifier for memory',
+          min_length=36,
+          max_length=36)]
 
 
 
@@ -48,7 +64,7 @@ class SQLBase(DeclarativeBase):
 
 
 
-class AinswerHistoryTable(SQLBase):
+class AinswerMemoryTable(SQLBase):
     """
     Schematic for the database operations using SQLAlchemy.
 
@@ -61,27 +77,12 @@ class AinswerHistoryTable(SQLBase):
         primary_key=True,
         nullable=False)
 
-    client = Column(
-        String,
-        primary_key=True,
-        nullable=False)
-
     person = Column(
         String,
         primary_key=True,
-        nullable=True)
-
-    kind = Column(
-        String,
-        primary_key=True,
         nullable=False)
 
-    author = Column(
-        String,
-        primary_key=True,
-        nullable=False)
-
-    anchor = Column(
+    unique = Column(
         String,
         primary_key=True,
         nullable=False)
@@ -90,20 +91,16 @@ class AinswerHistoryTable(SQLBase):
         String,
         nullable=False)
 
-    ainswer = Column(
-        String,
-        nullable=False)
-
     create = Column(
         Float,
         primary_key=True,
         nullable=False)
 
-    __tablename__ = 'ainswer_history'
+    __tablename__ = 'ainswer_memory'
 
 
 
-class AinswerHistoryRecord(BaseModel, extra='forbid'):
+class AinswerMemoryRecord(BaseModel, extra='forbid'):
     """
     Contain the information regarding the chatting history.
 
@@ -117,45 +114,15 @@ class AinswerHistoryRecord(BaseModel, extra='forbid'):
               description='Plugin name where originated',
               min_length=1)]
 
-    client: Annotated[
-        str,
-        Field(...,
-              description='Client name where originated',
-              min_length=1)]
-
     person: Annotated[
-        Optional[str],
+        str,
         Field(None,
               description='Person that author is matched',
               min_length=1)]
 
-    kind: Annotated[
-        AinswerHistoryKinds,
-        Field(...,
-              description='What kind of original message',
-              min_length=1)]
+    unique: AinswerMemoryUniqueField
 
-    author: Annotated[
-        str,
-        Field(...,
-              description='Nickname of message author',
-              min_length=1)]
-
-    anchor: Annotated[
-        str,
-        Field(None,
-              description='Channel or private context',
-              min_length=1)]
-
-    message: Annotated[
-        str,
-        Field(...,
-              description='Historical interaction content')]
-
-    ainswer: Annotated[
-        str,
-        Field(...,
-              description='Historical interaction content')]
+    message: AinswerMemoryMessageField
 
     create: Annotated[
         str,
@@ -167,7 +134,7 @@ class AinswerHistoryRecord(BaseModel, extra='forbid'):
 
     def __init__(
         self,
-        record: Optional[AinswerHistoryTable] = None,
+        record: Optional[AinswerMemoryTable] = None,
         **kwargs: Any,
     ) -> None:
         """
@@ -178,13 +145,9 @@ class AinswerHistoryRecord(BaseModel, extra='forbid'):
 
         fields = [
             'plugin',
-            'client',
             'person',
-            'kind',
-            'author',
-            'anchor',
+            'unique',
             'message',
-            'ainswer',
             'create']
 
 
@@ -216,9 +179,9 @@ class AinswerHistoryRecord(BaseModel, extra='forbid'):
 
 
 
-class AinswerHistory:
+class AinswerMemory:
     """
-    Store the historical information for chat interactions.
+    Store the historical information for the person memory.
 
     :param plugin: Plugin class instance for Chatting Robie.
     """
@@ -276,19 +239,14 @@ class AinswerHistory:
         self.__session = session
 
 
-    def insert(  # noqa: CFQ002
+    def insert(
         self,
         *,
-        client: str,
-        person: str | None,
-        kind: str,
-        author: str,
-        anchor: str,
+        person: str,
         message: str,
-        ainswer: str,
     ) -> None:
         """
-        Insert the record into the historical chat interactions.
+        Insert the record into the historical person memorables.
         """
 
         plugin = self.__plugin
@@ -296,19 +254,24 @@ class AinswerHistory:
         sess = self.__session()
         lock = self.__locker
 
-        table = AinswerHistoryTable
-        model = AinswerHistoryRecord
+        table = AinswerMemoryTable
+        model = AinswerMemoryRecord
+
+
+        seed = (
+            f'{Time().mpoch}'
+            f'::{randint(0, 100)}'
+            f'::{randint(0, 100)}'
+            f'::{randint(0, 100)}')
+
+        unique = Hashes(seed).uuid
 
 
         inputs: DictStrAny = {
             'plugin': plugin.name,
-            'client': client,
+            'unique': unique,
             'person': person,
-            'kind': kind,
-            'author': author,
-            'anchor': anchor,
             'message': message,
-            'ainswer': ainswer,
             'create': float(Time())}
 
         record = model(**inputs)
@@ -330,90 +293,32 @@ class AinswerHistory:
             session.commit()
 
 
-        self.expunge(
-            record.client,
-            record.kind,
-            record.anchor)
-
-
-    def process(
-        self,
-        mitem: 'RobieMessage',
-        ainswer: str,
-    ) -> None:
-        """
-        Insert the record into the historical chat interactions.
-
-        :param mitem: Item containing information for operation.
-        :param ainswer: Response from LLM relevant to question.
-        """
-
-        plugin = self.__plugin
-        robie = plugin.robie
-        childs = robie.childs
-        persons = childs.persons
-        clients = childs.clients
-
-        assert mitem.author
-        assert mitem.anchor
-        assert mitem.message
-
-        _person = mitem.person
-        _kind = mitem.kind
-        _author = mitem.author
-        _anchor = mitem.anchor
-        _message = mitem.message
-
-        client = clients[
-            mitem.client]
-
-        person = (
-            persons[_person]
-            if _person is not None
-            else None)
-
-        self.insert(
-            client=client.name,
-            person=(
-                person.name
-                if person is not None
-                else None),
-            kind=_kind,
-            author=_author[1],
-            anchor=_anchor,
-            message=_message,
-            ainswer=ainswer)
+        self.expunge(record.person)
 
 
     def expunge(
         self,
-        client: str,
-        kind: str,
-        anchor: str,
+        person: str,
     ) -> None:
         """
-        Remove the expired historical chat interaction records.
+        Remove the expired historical person memorable records.
 
-        :param client: Unique identifier for the client object.
-        :param kind: What kind of Robie message we dealing with.
-        :param anchor: Unique identifier for the chat context.
+        :param person: Unique identifier for the person object.
         """
 
         plugin = self.__plugin
         params = plugin.params
 
-        maximum = params.histories
+        maximum = params.memories
 
 
         sess = self.__session()
         lock = self.__locker
 
-        table = AinswerHistoryTable
+        table = AinswerMemoryTable
 
         _plugin = table.plugin
-        _client = table.client
-        _kind = table.kind
-        _anchor = table.anchor
+        _person = table.person
         _create = table.create
 
 
@@ -423,9 +328,7 @@ class AinswerHistory:
                 session.query(table)
                 .filter(
                     _plugin == plugin.name,
-                    _client == client,
-                    _kind == kind,
-                    _anchor == anchor)
+                    _person == person)
                 .count())
 
             if total <= maximum:
@@ -435,9 +338,7 @@ class AinswerHistory:
                 session.query(_create)
                 .filter(
                     _plugin == plugin.name,
-                    _client == client,
-                    _kind == kind,
-                    _anchor == anchor)
+                    _person == person)
                 .order_by(_create.desc())
                 .offset(maximum - 1)
                 .limit(1).scalar())
@@ -448,10 +349,46 @@ class AinswerHistory:
             (session.query(table)
              .filter(
                  _plugin == plugin.name,
-                 _client == client,
-                 _kind == kind,
-                 _anchor == anchor,
+                 _person == person,
                  _create < cutoff)
+             .delete(
+                synchronize_session=False))
+
+            session.commit()
+
+
+    def delete(
+        self,
+        person: str,
+        unique: str,
+    ) -> None:
+        """
+        Delete the record from the historical person memorables.
+
+        :param person: Unique identifier for the person object.
+        :param unique: Unique identifier for person memorable.
+        """
+
+        plugin = self.__plugin
+
+
+        sess = self.__session()
+        lock = self.__locker
+
+        table = AinswerMemoryTable
+
+        _plugin = table.plugin
+        _person = table.person
+        _unique = table.unique
+
+
+        with lock, sess as session:
+
+            (session.query(table)
+             .filter(
+                 _plugin == plugin.name,
+                 _person == person,
+                 _unique == unique)
              .delete(
                 synchronize_session=False))
 
@@ -461,49 +398,30 @@ class AinswerHistory:
     def records(
         self,
         mitem: 'RobieMessage',
-        limit: Optional[int] = None,
-    ) -> list[AinswerHistoryRecord]:
+    ) -> list[AinswerMemoryRecord]:
         """
-        Return the historical records for the chat interactions.
+        Return the historical records for the person memorables.
 
         :param mitem: Item containing information for operation.
-        :param limit: Optionally restrict the records returned.
-        :returns: Historical records for the chat interactions.
+        :returns: Historical records for the person memorables.
         """
 
-        plugin = self.__plugin
-        robie = plugin.robie
-        childs = robie.childs
-        clients = childs.clients
-
-        assert mitem.author
-
-        client = clients[
-            mitem.client]
-
+        assert mitem.person
 
         return self.search(
-            limit=limit,
-            client=client.name,
-            kind=mitem.kind,
-            anchor=mitem.anchor)
+            person=mitem.person)
 
 
-    def search(  # noqa: CFQ002
+    def search(
         self,
-        limit: Optional[int] = None,
         *,
-        client: Optional[str] = None,
         person: Optional[str] = None,
-        kind: Optional[str] = None,
-        author: Optional[str] = None,
-        anchor: Optional[str] = None,
-    ) -> list[AinswerHistoryRecord]:
+        unique: Optional[str] = None,
+    ) -> list[AinswerMemoryRecord]:
         """
-        Return the historical records for the chat interactions.
+        Return the historical records for the person memorables.
 
-        :param limit: Optionally restrict the records returned.
-        :returns: Historical records for the chat interactions.
+        :returns: Historical records for the person memorables.
         """
 
         plugin = self.__plugin
@@ -512,17 +430,14 @@ class AinswerHistory:
         sess = self.__session()
         lock = self.__locker
 
-        records: list[AinswerHistoryRecord]
+        records: list[AinswerMemoryRecord]
 
-        table = AinswerHistoryTable
-        model = AinswerHistoryRecord
+        table = AinswerMemoryTable
+        model = AinswerMemoryRecord
 
         _plugin = table.plugin
-        _client = table.client
         _person = table.person
-        _kind = table.kind
-        _author = table.author
-        _anchor = table.anchor
+        _unique = table.unique
         _create = table.create
 
 
@@ -536,28 +451,13 @@ class AinswerHistory:
                     _plugin == plugin.name)
                 .order_by(_create.desc()))
 
-            if client is not None:
-                query = query.filter(
-                    _client == client)
-
-            if person is not NCNone:
+            if person is not None:
                 query = query.filter(
                     _person == person)
 
-            if kind is not None:
+            if unique is not NCNone:
                 query = query.filter(
-                    _kind == kind)
-
-            if author is not None:
-                query = query.filter(
-                    _author == author)
-
-            if anchor is not None:
-                query = query.filter(
-                    _anchor == anchor)
-
-            if limit is not None:
-                query = query.limit(limit)
+                    _unique == unique)
 
 
             for record in query.all():
