@@ -34,6 +34,12 @@ class RobiePluginParams(RobieChildParams, extra='forbid'):
                   'enrobie.plugins.StatusPlugin'],
               min_length=1)]
 
+    trusted: Annotated[
+        Optional[list[str]],
+        Field(None,
+              description='Users are trusted by the plugin',
+              min_length=1)]
+
 
     def __init__(
         # NOCVR

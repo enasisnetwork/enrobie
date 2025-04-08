@@ -36,10 +36,10 @@ def test_RobieCommand(
     client = clients['ircbot']
 
 
-    item = RobieCommand(client)
+    citem = RobieCommand(client)
 
 
-    attrs = lattrs(item)
+    attrs = lattrs(citem)
 
     assert attrs == [
         'client',
@@ -48,16 +48,16 @@ def test_RobieCommand(
 
     assert inrepr(
         'RobieCommand',
-        item)
+        citem)
 
     with raises(TypeError):
-        hash(item)
+        hash(citem)
 
     assert instr(
         'RobieCommand',
-        item)
+        citem)
 
 
-    assert item.time.since > 0
+    assert citem.time.since > 0
 
-    assert item.client == client.name
+    assert citem.client == client.name
