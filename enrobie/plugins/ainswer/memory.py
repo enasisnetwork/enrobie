@@ -224,10 +224,9 @@ class AinswerMemory:
         Construct instances using the configuration parameters.
         """
 
-        path = self.__connect
-
-        sengine = (
-            create_engine(path))
+        sengine = create_engine(
+            self.__connect,
+            pool_pre_ping=True)
 
         (SQLBase.metadata
          .create_all(sengine))
