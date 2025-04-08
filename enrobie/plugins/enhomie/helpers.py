@@ -24,7 +24,6 @@ def composedsc(
 
     :param plugin: Plugin class instance for Chatting Robie.
     :param mitem: Item containing information for operation.
-    :param status: Object containing the status information.
     """
 
     from ...clients.discord.message import DSCMessage
@@ -67,7 +66,6 @@ def composeirc(
 
     :param plugin: Plugin class instance for Chatting Robie.
     :param mitem: Item containing information for operation.
-    :param status: Object containing the status information.
     """
 
     from ...clients.irc.message import IRCMessage
@@ -110,7 +108,6 @@ def composemtm(
 
     :param plugin: Plugin class instance for Chatting Robie.
     :param mitem: Item containing information for operation.
-    :param status: Object containing the status information.
     """
 
     from ...clients.mattermost.message import MTMMessage
