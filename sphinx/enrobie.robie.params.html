@@ -543,10 +543,27 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-28"><span class="w">            </span><span class="s2">"enrobie.plugins.StatusPlugin"</span>
 </span><span id="line-29"><span class="w">         </span><span class="p">],</span>
 </span><span id="line-30"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span>
-</span><span id="line-31"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-32"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-33"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-</span><span id="line-34"><span class="p">}</span>
+</span><span id="line-31"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-32"><span class="w">      </span><span class="nt">"trusted"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-33"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-34"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-35"><span class="w">               </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-36"><span class="w">                  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-37"><span class="w">               </span><span class="p">},</span>
+</span><span id="line-38"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-39"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
+</span><span id="line-40"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-41"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-42"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-43"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-44"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-45"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-46"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Users are trusted by the plugin"</span><span class="p">,</span>
+</span><span id="line-47"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trusted"</span>
+</span><span id="line-48"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-49"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-50"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="line-51"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -558,6 +575,7 @@ is permitted, for more information consult the project license file.</p>
 <dt class="field-even">Fields<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><a class="reference internal" href="#enrobie.robie.params.plugin.RobiePluginParams.locate" title="enrobie.robie.params.plugin.RobiePluginParams.locate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span> <span class="pre">(Annotated[str</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters',</span> <span class="pre">examples=['enrobie.plugins.AinswerPlugin',</span> <span class="pre">'enrobie.plugins.AutoJoinPlugin',</span> <span class="pre">'enrobie.plugins.AutoNickPlugin',</span> <span class="pre">'enrobie.plugins.StatusPlugin'],</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.robie.params.plugin.RobiePluginParams.trusted" title="enrobie.robie.params.plugin.RobiePluginParams.trusted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trusted</span> <span class="pre">(Annotated[list[str]</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='Users</span> <span class="pre">are</span> <span class="pre">trusted</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">plugin',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -565,6 +583,18 @@ is permitted, for more information consult the project license file.</p>
 <dt class="sig sig-object py" id="enrobie.robie.params.plugin.RobiePluginParams.locate">
 <em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">locate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">examples</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'enrobie.plugins.AinswerPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.AutoJoinPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.AutoNickPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.StatusPlugin'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.robie.params.plugin.RobiePluginParams.locate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.plugin.RobiePluginParams.locate'">¶</a></dt>
 <dd><p>For which plugin are parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.robie.params.plugin.RobiePluginParams.trusted">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trusted</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Users</span> <span class="pre">are</span> <span class="pre">trusted</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">plugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.robie.params.plugin.RobiePluginParams.trusted" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.plugin.RobiePluginParams.trusted'">¶</a></dt>
+<dd><p>Users are trusted by the plugin</p>
 <dl class="field-list simple">
 <dt class="field-odd">Constraints<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -985,62 +1015,79 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-397"><span class="w">                  </span><span class="s2">"enrobie.plugins.StatusPlugin"</span>
 </span><span id="line-398"><span class="w">               </span><span class="p">],</span>
 </span><span id="line-399"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span>
-</span><span id="line-400"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-401"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-402"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePluginParams"</span><span class="p">,</span>
-</span><span id="line-403"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-404"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-405"><span class="w">      </span><span class="nt">"RobiePrinterParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-406"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-407"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-408"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-409"><span class="w">            </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-410"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-411"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the messages to console"</span><span class="p">,</span>
-</span><span id="line-412"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span>
-</span><span id="line-413"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-414"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-415"><span class="w">            </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-416"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-417"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the commands to console"</span><span class="p">,</span>
-</span><span id="line-418"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command"</span><span class="p">,</span>
-</span><span id="line-419"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-420"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-421"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-422"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePrinterParams"</span><span class="p">,</span>
-</span><span id="line-423"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-424"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-425"><span class="w">      </span><span class="nt">"RobieServiceParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-426"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-427"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-428"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-429"><span class="w">            </span><span class="nt">"respite"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-430"><span class="w">               </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/RobieServiceRespiteParams"</span><span class="p">,</span>
-</span><span id="line-431"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When operates are performed"</span>
-</span><span id="line-432"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-433"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-434"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceParams"</span><span class="p">,</span>
-</span><span id="line-435"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-436"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-437"><span class="w">      </span><span class="nt">"RobieServiceRespiteParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-438"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-439"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-440"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-441"><span class="w">            </span><span class="nt">"health"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-442"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-</span><span id="line-443"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How often health is checked"</span><span class="p">,</span>
-</span><span id="line-444"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
-</span><span id="line-445"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-446"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health"</span><span class="p">,</span>
-</span><span id="line-447"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-448"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-449"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-450"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceRespiteParams"</span><span class="p">,</span>
-</span><span id="line-451"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-452"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-453"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-454"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-</span><span id="line-455"><span class="p">}</span>
+</span><span id="line-400"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-401"><span class="w">            </span><span class="nt">"trusted"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-402"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-403"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-404"><span class="w">                     </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-405"><span class="w">                        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-406"><span class="w">                     </span><span class="p">},</span>
+</span><span id="line-407"><span class="w">                     </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-408"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
+</span><span id="line-409"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-410"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-411"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-412"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-413"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-414"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-415"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Users are trusted by the plugin"</span><span class="p">,</span>
+</span><span id="line-416"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trusted"</span>
+</span><span id="line-417"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-418"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-419"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePluginParams"</span><span class="p">,</span>
+</span><span id="line-420"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-421"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-422"><span class="w">      </span><span class="nt">"RobiePrinterParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-423"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-424"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-425"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-426"><span class="w">            </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-427"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-428"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the messages to console"</span><span class="p">,</span>
+</span><span id="line-429"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span>
+</span><span id="line-430"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-431"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-432"><span class="w">            </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-433"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-434"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the commands to console"</span><span class="p">,</span>
+</span><span id="line-435"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command"</span><span class="p">,</span>
+</span><span id="line-436"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-437"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-438"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-439"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePrinterParams"</span><span class="p">,</span>
+</span><span id="line-440"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-441"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-442"><span class="w">      </span><span class="nt">"RobieServiceParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-443"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-444"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-445"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-446"><span class="w">            </span><span class="nt">"respite"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-447"><span class="w">               </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/RobieServiceRespiteParams"</span><span class="p">,</span>
+</span><span id="line-448"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When operates are performed"</span>
+</span><span id="line-449"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-450"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-451"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceParams"</span><span class="p">,</span>
+</span><span id="line-452"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-453"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-454"><span class="w">      </span><span class="nt">"RobieServiceRespiteParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-455"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-456"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-457"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-458"><span class="w">            </span><span class="nt">"health"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-459"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+</span><span id="line-460"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How often health is checked"</span><span class="p">,</span>
+</span><span id="line-461"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+</span><span id="line-462"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-463"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health"</span><span class="p">,</span>
+</span><span id="line-464"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-465"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-466"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-467"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceRespiteParams"</span><span class="p">,</span>
+</span><span id="line-468"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-469"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-470"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-471"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="line-472"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -1806,62 +1853,79 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-397"><span class="w">                  </span><span class="s2">"enrobie.plugins.StatusPlugin"</span>
 </span><span id="line-398"><span class="w">               </span><span class="p">],</span>
 </span><span id="line-399"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span>
-</span><span id="line-400"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-401"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-402"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePluginParams"</span><span class="p">,</span>
-</span><span id="line-403"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-404"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-405"><span class="w">      </span><span class="nt">"RobiePrinterParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-406"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-407"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-408"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-409"><span class="w">            </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-410"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-411"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the messages to console"</span><span class="p">,</span>
-</span><span id="line-412"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span>
-</span><span id="line-413"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-414"><span class="w">            </span><span class="p">},</span>
-</span><span id="line-415"><span class="w">            </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-416"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-417"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the commands to console"</span><span class="p">,</span>
-</span><span id="line-418"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command"</span><span class="p">,</span>
-</span><span id="line-419"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
-</span><span id="line-420"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-421"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-422"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePrinterParams"</span><span class="p">,</span>
-</span><span id="line-423"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-424"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-425"><span class="w">      </span><span class="nt">"RobieServiceParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-426"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-427"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-428"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-429"><span class="w">            </span><span class="nt">"respite"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-430"><span class="w">               </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/RobieServiceRespiteParams"</span><span class="p">,</span>
-</span><span id="line-431"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When operates are performed"</span>
-</span><span id="line-432"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-433"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-434"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceParams"</span><span class="p">,</span>
-</span><span id="line-435"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-436"><span class="w">      </span><span class="p">},</span>
-</span><span id="line-437"><span class="w">      </span><span class="nt">"RobieServiceRespiteParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-438"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="line-439"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
-</span><span id="line-440"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-441"><span class="w">            </span><span class="nt">"health"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-442"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-</span><span id="line-443"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How often health is checked"</span><span class="p">,</span>
-</span><span id="line-444"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
-</span><span id="line-445"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-446"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health"</span><span class="p">,</span>
-</span><span id="line-447"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
-</span><span id="line-448"><span class="w">            </span><span class="p">}</span>
-</span><span id="line-449"><span class="w">         </span><span class="p">},</span>
-</span><span id="line-450"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceRespiteParams"</span><span class="p">,</span>
-</span><span id="line-451"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
-</span><span id="line-452"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-453"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-454"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-</span><span id="line-455"><span class="p">}</span>
+</span><span id="line-400"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-401"><span class="w">            </span><span class="nt">"trusted"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-402"><span class="w">               </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-403"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-404"><span class="w">                     </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-405"><span class="w">                        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-406"><span class="w">                     </span><span class="p">},</span>
+</span><span id="line-407"><span class="w">                     </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-408"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
+</span><span id="line-409"><span class="w">                  </span><span class="p">},</span>
+</span><span id="line-410"><span class="w">                  </span><span class="p">{</span>
+</span><span id="line-411"><span class="w">                     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-412"><span class="w">                  </span><span class="p">}</span>
+</span><span id="line-413"><span class="w">               </span><span class="p">],</span>
+</span><span id="line-414"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-415"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Users are trusted by the plugin"</span><span class="p">,</span>
+</span><span id="line-416"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trusted"</span>
+</span><span id="line-417"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-418"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-419"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePluginParams"</span><span class="p">,</span>
+</span><span id="line-420"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-421"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-422"><span class="w">      </span><span class="nt">"RobiePrinterParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-423"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-424"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-425"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-426"><span class="w">            </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-427"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-428"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the messages to console"</span><span class="p">,</span>
+</span><span id="line-429"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span>
+</span><span id="line-430"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-431"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-432"><span class="w">            </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-433"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-434"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Print the commands to console"</span><span class="p">,</span>
+</span><span id="line-435"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command"</span><span class="p">,</span>
+</span><span id="line-436"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span>
+</span><span id="line-437"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-438"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-439"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobiePrinterParams"</span><span class="p">,</span>
+</span><span id="line-440"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-441"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-442"><span class="w">      </span><span class="nt">"RobieServiceParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-443"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-444"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-445"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-446"><span class="w">            </span><span class="nt">"respite"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-447"><span class="w">               </span><span class="nt">"$ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#/$defs/RobieServiceRespiteParams"</span><span class="p">,</span>
+</span><span id="line-448"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When operates are performed"</span>
+</span><span id="line-449"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-450"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-451"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceParams"</span><span class="p">,</span>
+</span><span id="line-452"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-453"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-454"><span class="w">      </span><span class="nt">"RobieServiceRespiteParams"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-455"><span class="w">         </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="line-456"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process and validate the Robie configuration parameters."</span><span class="p">,</span>
+</span><span id="line-457"><span class="w">         </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-458"><span class="w">            </span><span class="nt">"health"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-459"><span class="w">               </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+</span><span id="line-460"><span class="w">               </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How often health is checked"</span><span class="p">,</span>
+</span><span id="line-461"><span class="w">               </span><span class="nt">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+</span><span id="line-462"><span class="w">               </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-463"><span class="w">               </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health"</span><span class="p">,</span>
+</span><span id="line-464"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span>
+</span><span id="line-465"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-466"><span class="w">         </span><span class="p">},</span>
+</span><span id="line-467"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RobieServiceRespiteParams"</span><span class="p">,</span>
+</span><span id="line-468"><span class="w">         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span>
+</span><span id="line-469"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-470"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-471"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="line-472"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -2206,10 +2270,27 @@ is permitted, for more information consult the project license file.</p>
 </span><span id="line-28"><span class="w">            </span><span class="s2">"enrobie.plugins.StatusPlugin"</span>
 </span><span id="line-29"><span class="w">         </span><span class="p">],</span>
 </span><span id="line-30"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Locate"</span>
-</span><span id="line-31"><span class="w">      </span><span class="p">}</span>
-</span><span id="line-32"><span class="w">   </span><span class="p">},</span>
-</span><span id="line-33"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-</span><span id="line-34"><span class="p">}</span>
+</span><span id="line-31"><span class="w">      </span><span class="p">},</span>
+</span><span id="line-32"><span class="w">      </span><span class="nt">"trusted"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-33"><span class="w">         </span><span class="nt">"anyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-34"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-35"><span class="w">               </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-36"><span class="w">                  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span>
+</span><span id="line-37"><span class="w">               </span><span class="p">},</span>
+</span><span id="line-38"><span class="w">               </span><span class="nt">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-39"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span>
+</span><span id="line-40"><span class="w">            </span><span class="p">},</span>
+</span><span id="line-41"><span class="w">            </span><span class="p">{</span>
+</span><span id="line-42"><span class="w">               </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span>
+</span><span id="line-43"><span class="w">            </span><span class="p">}</span>
+</span><span id="line-44"><span class="w">         </span><span class="p">],</span>
+</span><span id="line-45"><span class="w">         </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="line-46"><span class="w">         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Users are trusted by the plugin"</span><span class="p">,</span>
+</span><span id="line-47"><span class="w">         </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trusted"</span>
+</span><span id="line-48"><span class="w">      </span><span class="p">}</span>
+</span><span id="line-49"><span class="w">   </span><span class="p">},</span>
+</span><span id="line-50"><span class="w">   </span><span class="nt">"additionalProperties"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="line-51"><span class="p">}</span>
 </span></code></pre></div>
 </div>
 </details></p><dl class="field-list simple">
@@ -2222,6 +2303,7 @@ is permitted, for more information consult the project license file.</p>
 <dd class="field-even"><ul class="simple">
 <li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">enable</span> <span class="pre">(Annotated[bool,</span> <span class="pre">Field(False,</span> <span class="pre">description='Determine</span> <span class="pre">whether</span> <span class="pre">child</span> <span class="pre">enabled')])</span></code></p></li>
 <li><p><a class="reference internal" href="#enrobie.robie.params.plugin.RobiePluginParams.locate" title="enrobie.robie.params.plugin.RobiePluginParams.locate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">locate</span> <span class="pre">(Annotated[str</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters',</span> <span class="pre">examples=['enrobie.plugins.AinswerPlugin',</span> <span class="pre">'enrobie.plugins.AutoJoinPlugin',</span> <span class="pre">'enrobie.plugins.AutoNickPlugin',</span> <span class="pre">'enrobie.plugins.StatusPlugin'],</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#enrobie.robie.params.plugin.RobiePluginParams.trusted" title="enrobie.robie.params.plugin.RobiePluginParams.trusted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trusted</span> <span class="pre">(Annotated[list[str]</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">FieldInfo(annotation=NoneType,</span> <span class="pre">required=False,</span> <span class="pre">default=None,</span> <span class="pre">description='Users</span> <span class="pre">are</span> <span class="pre">trusted</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">plugin',</span> <span class="pre">metadata=[MinLen(min_length=1)])])</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -2234,6 +2316,18 @@ is permitted, for more information consult the project license file.</p>
 <dt class="sig sig-object py" id="enrobie.robie.params.RobiePluginParams.locate">
 <em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">locate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'For</span> <span class="pre">which</span> <span class="pre">plugin</span> <span class="pre">are</span> <span class="pre">parameters'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">examples</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'enrobie.plugins.AinswerPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.AutoJoinPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.AutoNickPlugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'enrobie.plugins.StatusPlugin'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.robie.params.RobiePluginParams.locate" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.RobiePluginParams.locate'">¶</a></dt>
 <dd><p>For which plugin are parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Constraints<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_length</strong> = 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="enrobie.robie.params.RobiePluginParams.trusted">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trusted</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Annotated" title="(in Python v3.13)"><span class="pre">Annotated</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="pre">NoneType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="k"><span class="pre">False</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="s"><span class="pre">'Users</span> <span class="pre">are</span> <span class="pre">trusted</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">plugin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="p"><span class="pre">[</span></span><span class="pre">MinLen</span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">min_length</span></span><span class="o"><span class="pre">=</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#enrobie.robie.params.RobiePluginParams.trusted" title="Link to this definition" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#enrobie.robie.params.RobiePluginParams.trusted'">¶</a></dt>
+<dd><p>Users are trusted by the plugin</p>
 <dl class="field-list simple">
 <dt class="field-odd">Constraints<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -2394,6 +2488,7 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#module-enrobie.robie.params.plugin'" class="reference internal" href="#module-enrobie.robie.params.plugin">enrobie.robie.params.plugin module</a><ul>
 <li><a :data-current="activeSection === '#enrobie.robie.params.plugin.RobiePluginParams'" class="reference internal" href="#enrobie.robie.params.plugin.RobiePluginParams"><code class="docutils literal notranslate"><span class="pre">RobiePluginParams</span></code></a><ul>
 <li><a :data-current="activeSection === '#enrobie.robie.params.plugin.RobiePluginParams.locate'" class="reference internal" href="#enrobie.robie.params.plugin.RobiePluginParams.locate"><code class="docutils literal notranslate"><span class="pre">RobiePluginParams.locate</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.params.plugin.RobiePluginParams.trusted'" class="reference internal" href="#enrobie.robie.params.plugin.RobiePluginParams.trusted"><code class="docutils literal notranslate"><span class="pre">RobiePluginParams.trusted</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -2461,6 +2556,7 @@ is permitted, for more information consult the project license file.</p>
 <li><a :data-current="activeSection === '#enrobie.robie.params.RobiePluginParams'" class="reference internal" href="#enrobie.robie.params.RobiePluginParams"><code class="docutils literal notranslate"><span class="pre">RobiePluginParams</span></code></a><ul>
 <li><a :data-current="activeSection === '#enrobie.robie.params.RobiePluginParams.enable'" class="reference internal" href="#enrobie.robie.params.RobiePluginParams.enable"><code class="docutils literal notranslate"><span class="pre">RobiePluginParams.enable</span></code></a></li>
 <li><a :data-current="activeSection === '#enrobie.robie.params.RobiePluginParams.locate'" class="reference internal" href="#enrobie.robie.params.RobiePluginParams.locate"><code class="docutils literal notranslate"><span class="pre">RobiePluginParams.locate</span></code></a></li>
+<li><a :data-current="activeSection === '#enrobie.robie.params.RobiePluginParams.trusted'" class="reference internal" href="#enrobie.robie.params.RobiePluginParams.trusted"><code class="docutils literal notranslate"><span class="pre">RobiePluginParams.trusted</span></code></a></li>
 </ul>
 </li>
 <li><a :data-current="activeSection === '#enrobie.robie.params.RobiePrinterParams'" class="reference internal" href="#enrobie.robie.params.RobiePrinterParams"><code class="docutils literal notranslate"><span class="pre">RobiePrinterParams</span></code></a><ul>

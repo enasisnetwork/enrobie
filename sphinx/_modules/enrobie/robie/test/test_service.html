@@ -287,11 +287,11 @@
 </span><span id="line-139">    <span class="n">thread</span> <span class="o">=</span> <span class="n">threads</span><span class="p">[</span><span class="s1">&#39;ircbot&#39;</span><span class="p">]</span>
 </span><span id="line-140">    <span class="n">mqueue</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">mqueue</span>
 </span><span id="line-141">
-</span><span id="line-142">    <span class="n">item</span> <span class="o">=</span> <span class="n">RobieMessage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</span><span id="line-142">    <span class="n">mitem</span> <span class="o">=</span> <span class="n">RobieMessage</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
 </span><span id="line-143">
 </span><span id="line-144">
 </span><span id="line-145">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
-</span><span id="line-146">        <span class="n">mqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span><span id="line-146">        <span class="n">mqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">mitem</span><span class="p">)</span>
 </span><span id="line-147">
 </span><span id="line-148">
 </span><span id="line-149">    <span class="k">assert</span> <span class="n">service</span><span class="o">.</span><span class="n">congest</span>

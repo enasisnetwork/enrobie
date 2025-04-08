@@ -169,129 +169,126 @@
 </span><span id="line-24">
 </span><span id="line-25"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
 </span><span id="line-26"><span class="sd">    :param mitem: Item containing information for operation.</span>
-</span><span id="line-27"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-28"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-29">
-</span><span id="line-30">    <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.discord.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">DSCMessage</span>
+</span><span id="line-27"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-28">
+</span><span id="line-29">    <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.discord.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">DSCMessage</span>
+</span><span id="line-30">
 </span><span id="line-31">
-</span><span id="line-32">
-</span><span id="line-33">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-34">
-</span><span id="line-35">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-36">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-37">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
-</span><span id="line-38">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
-</span><span id="line-39">    <span class="n">persist</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">persist</span>
-</span><span id="line-40">
-</span><span id="line-41">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-42">        <span class="n">mitem</span><span class="p">,</span> <span class="n">DSCMessage</span><span class="p">)</span>
-</span><span id="line-43">
-</span><span id="line-44">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
-</span><span id="line-45">
-</span><span id="line-46">    <span class="n">unique</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-47">        <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
-</span><span id="line-48">        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
-</span><span id="line-49">
-</span><span id="line-50">    <span class="n">current</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-51">        <span class="n">persist</span>
-</span><span id="line-52">        <span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">unique</span><span class="p">))</span>
-</span><span id="line-53">
-</span><span id="line-54">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-55">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">current</span><span class="p">))</span>
-</span><span id="line-56">
-</span><span id="line-57">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
+</span><span id="line-32">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-33">
+</span><span id="line-34">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-35">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-36">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
+</span><span id="line-37">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
+</span><span id="line-38">    <span class="n">persist</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">persist</span>
+</span><span id="line-39">
+</span><span id="line-40">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-41">        <span class="n">mitem</span><span class="p">,</span> <span class="n">DSCMessage</span><span class="p">)</span>
+</span><span id="line-42">
+</span><span id="line-43">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
+</span><span id="line-44">
+</span><span id="line-45">    <span class="n">unique</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-46">        <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
+</span><span id="line-47">        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="line-48">
+</span><span id="line-49">    <span class="n">current</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-50">        <span class="n">persist</span>
+</span><span id="line-51">        <span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">unique</span><span class="p">))</span>
+</span><span id="line-52">
+</span><span id="line-53">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-54">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">current</span><span class="p">))</span>
+</span><span id="line-55">
+</span><span id="line-56">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
 
+</span><span id="line-57">
 </span><span id="line-58">
 </span><span id="line-59">
-</span><span id="line-60">
 <div class="viewcode-block" id="composeirc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.helpers.composeirc">[docs]</a>
-</span><span id="line-61"><span class="k">def</span><span class="w"> </span><span class="nf">composeirc</span><span class="p">(</span>
-</span><span id="line-62">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;HomiePlugin&#39;</span><span class="p">,</span>
-</span><span id="line-63">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
-</span><span id="line-64"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-65"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-66"><span class="sd">    Construct and format message for related chat platform.</span>
-</span><span id="line-67">
-</span><span id="line-68"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-69"><span class="sd">    :param mitem: Item containing information for operation.</span>
-</span><span id="line-70"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-71"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-60"><span class="k">def</span><span class="w"> </span><span class="nf">composeirc</span><span class="p">(</span>
+</span><span id="line-61">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;HomiePlugin&#39;</span><span class="p">,</span>
+</span><span id="line-62">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+</span><span id="line-63"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-64"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-65"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-66">
+</span><span id="line-67"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-68"><span class="sd">    :param mitem: Item containing information for operation.</span>
+</span><span id="line-69"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-70">
+</span><span id="line-71">    <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.irc.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCMessage</span>
 </span><span id="line-72">
-</span><span id="line-73">    <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.irc.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCMessage</span>
-</span><span id="line-74">
+</span><span id="line-73">
+</span><span id="line-74">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
 </span><span id="line-75">
-</span><span id="line-76">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-77">
-</span><span id="line-78">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-79">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-80">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
-</span><span id="line-81">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
-</span><span id="line-82">    <span class="n">persist</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">persist</span>
-</span><span id="line-83">
-</span><span id="line-84">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-85">        <span class="n">mitem</span><span class="p">,</span> <span class="n">IRCMessage</span><span class="p">)</span>
+</span><span id="line-76">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-77">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-78">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
+</span><span id="line-79">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
+</span><span id="line-80">    <span class="n">persist</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">persist</span>
+</span><span id="line-81">
+</span><span id="line-82">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-83">        <span class="n">mitem</span><span class="p">,</span> <span class="n">IRCMessage</span><span class="p">)</span>
+</span><span id="line-84">
+</span><span id="line-85">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
 </span><span id="line-86">
-</span><span id="line-87">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
-</span><span id="line-88">
-</span><span id="line-89">    <span class="n">unique</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-90">        <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
-</span><span id="line-91">        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
-</span><span id="line-92">
-</span><span id="line-93">    <span class="n">current</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-94">        <span class="n">persist</span>
-</span><span id="line-95">        <span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">unique</span><span class="p">))</span>
-</span><span id="line-96">
-</span><span id="line-97">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-98">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">current</span><span class="p">))</span>
-</span><span id="line-99">
-</span><span id="line-100">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
+</span><span id="line-87">    <span class="n">unique</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-88">        <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
+</span><span id="line-89">        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="line-90">
+</span><span id="line-91">    <span class="n">current</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-92">        <span class="n">persist</span>
+</span><span id="line-93">        <span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">unique</span><span class="p">))</span>
+</span><span id="line-94">
+</span><span id="line-95">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-96">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">current</span><span class="p">))</span>
+</span><span id="line-97">
+</span><span id="line-98">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
 
+</span><span id="line-99">
+</span><span id="line-100">
 </span><span id="line-101">
-</span><span id="line-102">
-</span><span id="line-103">
 <div class="viewcode-block" id="composemtm">
 <a class="viewcode-back" href="../../../../enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.helpers.composemtm">[docs]</a>
-</span><span id="line-104"><span class="k">def</span><span class="w"> </span><span class="nf">composemtm</span><span class="p">(</span>
-</span><span id="line-105">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;HomiePlugin&#39;</span><span class="p">,</span>
-</span><span id="line-106">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
-</span><span id="line-107"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-108"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-109"><span class="sd">    Construct and format message for related chat platform.</span>
-</span><span id="line-110">
-</span><span id="line-111"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-112"><span class="sd">    :param mitem: Item containing information for operation.</span>
-</span><span id="line-113"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-114"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-102"><span class="k">def</span><span class="w"> </span><span class="nf">composemtm</span><span class="p">(</span>
+</span><span id="line-103">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;HomiePlugin&#39;</span><span class="p">,</span>
+</span><span id="line-104">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+</span><span id="line-105"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-106"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-107"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-108">
+</span><span id="line-109"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-110"><span class="sd">    :param mitem: Item containing information for operation.</span>
+</span><span id="line-111"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-112">
+</span><span id="line-113">    <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.mattermost.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">MTMMessage</span>
+</span><span id="line-114">
 </span><span id="line-115">
-</span><span id="line-116">    <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.mattermost.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">MTMMessage</span>
+</span><span id="line-116">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
 </span><span id="line-117">
-</span><span id="line-118">
-</span><span id="line-119">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-120">
-</span><span id="line-121">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-122">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-123">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
-</span><span id="line-124">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
-</span><span id="line-125">    <span class="n">persist</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">persist</span>
+</span><span id="line-118">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-119">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-120">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
+</span><span id="line-121">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
+</span><span id="line-122">    <span class="n">persist</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">persist</span>
+</span><span id="line-123">
+</span><span id="line-124">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+</span><span id="line-125">        <span class="n">mitem</span><span class="p">,</span> <span class="n">MTMMessage</span><span class="p">)</span>
 </span><span id="line-126">
-</span><span id="line-127">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-</span><span id="line-128">        <span class="n">mitem</span><span class="p">,</span> <span class="n">MTMMessage</span><span class="p">)</span>
-</span><span id="line-129">
-</span><span id="line-130">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
-</span><span id="line-131">
-</span><span id="line-132">    <span class="n">unique</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-133">        <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
-</span><span id="line-134">        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
-</span><span id="line-135">
-</span><span id="line-136">    <span class="n">current</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="line-137">        <span class="n">persist</span>
-</span><span id="line-138">        <span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">unique</span><span class="p">))</span>
+</span><span id="line-127">    <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
+</span><span id="line-128">
+</span><span id="line-129">    <span class="n">unique</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-130">        <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
+</span><span id="line-131">        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="line-132">
+</span><span id="line-133">    <span class="n">current</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="line-134">        <span class="n">persist</span>
+</span><span id="line-135">        <span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">unique</span><span class="p">))</span>
+</span><span id="line-136">
+</span><span id="line-137">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-138">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">current</span><span class="p">))</span>
 </span><span id="line-139">
-</span><span id="line-140">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-141">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">current</span><span class="p">))</span>
-</span><span id="line-142">
-</span><span id="line-143">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
+</span><span id="line-140">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
 
 </span></code></pre></div>
     </div></div>

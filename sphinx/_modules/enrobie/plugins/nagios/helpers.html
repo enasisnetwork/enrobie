@@ -169,87 +169,84 @@
 </span><span id="line-24">
 </span><span id="line-25"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
 </span><span id="line-26"><span class="sd">    :param mitem: Item containing information for operation.</span>
-</span><span id="line-27"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-28"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-29">
-</span><span id="line-30">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-31">
-</span><span id="line-32">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-33">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-34">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
-</span><span id="line-35">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
-</span><span id="line-36">    <span class="n">current</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">current</span>
-</span><span id="line-37">
-</span><span id="line-38">    <span class="n">summary</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">summary</span>
-</span><span id="line-39">
-</span><span id="line-40">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-41">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">summary</span><span class="p">))</span>
-</span><span id="line-42">
-</span><span id="line-43">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
+</span><span id="line-27"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-28">
+</span><span id="line-29">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-30">
+</span><span id="line-31">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-32">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-33">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
+</span><span id="line-34">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
+</span><span id="line-35">    <span class="n">current</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">current</span>
+</span><span id="line-36">
+</span><span id="line-37">    <span class="n">summary</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">summary</span>
+</span><span id="line-38">
+</span><span id="line-39">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-40">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">summary</span><span class="p">))</span>
+</span><span id="line-41">
+</span><span id="line-42">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
 
+</span><span id="line-43">
 </span><span id="line-44">
 </span><span id="line-45">
-</span><span id="line-46">
 <div class="viewcode-block" id="composeirc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.helpers.composeirc">[docs]</a>
-</span><span id="line-47"><span class="k">def</span><span class="w"> </span><span class="nf">composeirc</span><span class="p">(</span>
-</span><span id="line-48">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span><span class="p">,</span>
-</span><span id="line-49">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
-</span><span id="line-50"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-51"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-52"><span class="sd">    Construct and format message for related chat platform.</span>
-</span><span id="line-53">
-</span><span id="line-54"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-55"><span class="sd">    :param mitem: Item containing information for operation.</span>
-</span><span id="line-56"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-57"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-46"><span class="k">def</span><span class="w"> </span><span class="nf">composeirc</span><span class="p">(</span>
+</span><span id="line-47">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span><span class="p">,</span>
+</span><span id="line-48">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+</span><span id="line-49"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-50"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-51"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-52">
+</span><span id="line-53"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-54"><span class="sd">    :param mitem: Item containing information for operation.</span>
+</span><span id="line-55"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-56">
+</span><span id="line-57">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
 </span><span id="line-58">
-</span><span id="line-59">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-60">
-</span><span id="line-61">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-62">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-63">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
-</span><span id="line-64">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
-</span><span id="line-65">    <span class="n">current</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">current</span>
+</span><span id="line-59">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-60">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-61">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
+</span><span id="line-62">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
+</span><span id="line-63">    <span class="n">current</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">current</span>
+</span><span id="line-64">
+</span><span id="line-65">    <span class="n">summary</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">summary</span>
 </span><span id="line-66">
-</span><span id="line-67">    <span class="n">summary</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">summary</span>
-</span><span id="line-68">
-</span><span id="line-69">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-70">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">summary</span><span class="p">))</span>
-</span><span id="line-71">
-</span><span id="line-72">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
+</span><span id="line-67">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-68">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">summary</span><span class="p">))</span>
+</span><span id="line-69">
+</span><span id="line-70">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
 
+</span><span id="line-71">
+</span><span id="line-72">
 </span><span id="line-73">
-</span><span id="line-74">
-</span><span id="line-75">
 <div class="viewcode-block" id="composemtm">
 <a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.helpers.composemtm">[docs]</a>
-</span><span id="line-76"><span class="k">def</span><span class="w"> </span><span class="nf">composemtm</span><span class="p">(</span>
-</span><span id="line-77">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span><span class="p">,</span>
-</span><span id="line-78">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
-</span><span id="line-79"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-80"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-81"><span class="sd">    Construct and format message for related chat platform.</span>
-</span><span id="line-82">
-</span><span id="line-83"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-</span><span id="line-84"><span class="sd">    :param mitem: Item containing information for operation.</span>
-</span><span id="line-85"><span class="sd">    :param status: Object containing the status information.</span>
-</span><span id="line-86"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-87">
-</span><span id="line-88">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-89">
-</span><span id="line-90">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
-</span><span id="line-91">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
-</span><span id="line-92">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
-</span><span id="line-93">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
-</span><span id="line-94">    <span class="n">current</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">current</span>
-</span><span id="line-95">
-</span><span id="line-96">    <span class="n">summary</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">summary</span>
+</span><span id="line-74"><span class="k">def</span><span class="w"> </span><span class="nf">composemtm</span><span class="p">(</span>
+</span><span id="line-75">    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span><span class="p">,</span>
+</span><span id="line-76">    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+</span><span id="line-77"><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-78"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-79"><span class="sd">    Construct and format message for related chat platform.</span>
+</span><span id="line-80">
+</span><span id="line-81"><span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
+</span><span id="line-82"><span class="sd">    :param mitem: Item containing information for operation.</span>
+</span><span id="line-83"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-84">
+</span><span id="line-85">    <span class="k">assert</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-86">
+</span><span id="line-87">    <span class="n">thread</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">thread</span>
+</span><span id="line-88">    <span class="n">robie</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">robie</span>
+</span><span id="line-89">    <span class="n">member</span> <span class="o">=</span> <span class="n">thread</span><span class="o">.</span><span class="n">member</span>
+</span><span id="line-90">    <span class="n">cqueue</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">cqueue</span>
+</span><span id="line-91">    <span class="n">current</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">current</span>
+</span><span id="line-92">
+</span><span id="line-93">    <span class="n">summary</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">summary</span>
+</span><span id="line-94">
+</span><span id="line-95">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
+</span><span id="line-96">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">summary</span><span class="p">))</span>
 </span><span id="line-97">
-</span><span id="line-98">    <span class="n">citem</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span>
-</span><span id="line-99">        <span class="n">robie</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">summary</span><span class="p">))</span>
-</span><span id="line-100">
-</span><span id="line-101">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
+</span><span id="line-98">    <span class="n">cqueue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">citem</span><span class="p">)</span></div>
 
 </span></code></pre></div>
     </div></div>
