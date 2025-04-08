@@ -97,9 +97,9 @@ def test_Robie_printer(
 
     client = clients['ircbot']
 
-    item = RobieMessage(client)
+    mitem = RobieMessage(client)
 
-    robie.printer(item)
+    robie.printer(mitem)
 
 
 

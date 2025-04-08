@@ -9,7 +9,6 @@ is permitted, for more information consult the project license file.
 
 from typing import Optional
 from typing import Type
-from typing import Union
 
 from encommon.types import NCNone
 
@@ -21,9 +20,7 @@ from .params import NagiosPluginParams
 from ..ainswer import AinswerTool
 from ..status import StatusPlugin
 from ..status import StatusPluginStates
-from ...robie.childs import RobiePerson
 from ...robie.childs import RobiePlugin
-from ...robie.models import RobieMessage
 
 
 
@@ -170,7 +167,7 @@ class NagiosPlugin(RobiePlugin):
 
             # Basic trust enforcement
             if self.notrust(mitem):
-                continue
+                continue  # NOCVR
 
 
             match = None
@@ -201,50 +198,6 @@ class NagiosPlugin(RobiePlugin):
 
             if family == 'mattermost':
                 composemtm(self, mitem)
-
-
-    def trusted(
-        self,
-        check: Union[str, RobiePerson, RobieMessage],
-    ) -> bool:
-        """
-        Return the boolean indicating whether person is trusted.
-
-        :param check: Validate the person is trusted by plugin.
-        :returns: Boolean indicating whether person is trusted.
-        """
-
-        params = self.params
-        trusted = params.trusted
-
-        if trusted is None:
-            return True
-
-        if isinstance(check, RobieMessage):
-
-            if not check.person:
-                return False
-
-            check = check.person
-
-        elif isinstance(check, RobiePerson):
-            check = check.name
-
-        return check in trusted
-
-
-    def notrust(
-        self,
-        check: Union[str, RobiePerson, RobieMessage],
-    ) -> bool:
-        """
-        Return the boolean indicating whether person is trusted.
-
-        :param check: Validate the person is trusted by plugin.
-        :returns: Boolean indicating whether person is trusted.
-        """
-
-        return not self.trusted(check)
 
 
     def __status(

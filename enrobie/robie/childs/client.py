@@ -17,6 +17,7 @@ from encommon.types import NCNone
 
 from .child import RobieChild
 from ..addons import RobieQueue
+from ..models import RobieModels
 from ...utils import ClientChannels
 
 if TYPE_CHECKING:
@@ -85,6 +86,28 @@ class RobieClient(RobieChild):
         """
 
         raise NotImplementedError
+
+
+    @property
+    def params(
+        self,
+    ) -> 'RobieClientParams':
+        """
+        Return the Pydantic model containing the configuration.
+
+        :returns: Pydantic model containing the configuration.
+        """
+
+        model = (
+            RobieModels
+            .client())
+
+        params = super().params
+
+        assert isinstance(
+            params, model)
+
+        return params
 
 
     @property

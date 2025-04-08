@@ -139,11 +139,11 @@ def test_RobieService_healths(
     thread = threads['ircbot']
     mqueue = thread.mqueue
 
-    item = RobieMessage(client)
+    mitem = RobieMessage(client)
 
 
     for _ in range(6):
-        mqueue.put(item)
+        mqueue.put(mitem)
 
 
     assert service.congest

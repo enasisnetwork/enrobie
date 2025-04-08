@@ -29,6 +29,7 @@
         "enable": true,
         "locate": "enrobie.clients.DSCClient",
         "client": {
+          "appid": null,
           "token": "mocked",
           "timeout": 30,
           "ssl_verify": true,
@@ -108,6 +109,7 @@
       "params": {
         "enable": true,
         "locate": "enrobie.plugins.AinswerPlugin",
+        "trusted": null,
         "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
         "histories": 10,
         "memories": 10,
@@ -144,7 +146,6 @@
           "nagios"
         ],
         "logger": "logger",
-        "trusted": null,
         "status": {
           "irc": "\ud83e\udd16",
           "dsc": ":robot:",
@@ -158,6 +159,7 @@
       "params": {
         "enable": true,
         "locate": "enrobie.plugins.AutoJoinPlugin",
+        "trusted": null,
         "channels": [
           {
             "client": "ircbot",
@@ -178,6 +180,7 @@
       "params": {
         "enable": true,
         "locate": "enrobie.plugins.AutoNickPlugin",
+        "trusted": null,
         "clients": [
           "ircbot"
         ],
@@ -202,6 +205,7 @@
       "params": {
         "enable": true,
         "locate": "enrobie.plugins.HomiePlugin",
+        "trusted": null,
         "command": {
           "irc": "!persist",
           "dsc": "!persist",
@@ -218,7 +222,6 @@
           "ircbot",
           "mtmbot"
         ],
-        "trusted": null,
         "status": {
           "irc": "\ud83d\udca1",
           "dsc": ":bulb:",
@@ -232,6 +235,7 @@
       "params": {
         "enable": true,
         "locate": "enrobie.plugins.LoggerPlugin",
+        "trusted": null,
         "database": "sqlite:///_/encommon_sample/TMPPATH/_/db",
         "histories": 10,
         "clients": [
@@ -253,6 +257,7 @@
       "params": {
         "enable": true,
         "locate": "enrobie.plugins.NagiosPlugin",
+        "trusted": null,
         "command": {
           "irc": "!nagios",
           "dsc": "!nagios",
@@ -269,7 +274,6 @@
           "ircbot",
           "mtmbot"
         ],
-        "trusted": null,
         "status": {
           "irc": "\ud83d\udd0d",
           "dsc": ":mag:",
@@ -283,6 +287,7 @@
       "params": {
         "enable": true,
         "locate": "enrobie.plugins.StatusPlugin",
+        "trusted": null,
         "reports": [
           {
             "client": "dscbot",
@@ -329,8 +334,7 @@
             "dsc": ":white_circle:",
             "mtm": ":white_circle:"
           }
-        },
-        "trusted": null
+        }
       }
     }
   },

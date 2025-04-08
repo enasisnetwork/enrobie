@@ -11,8 +11,12 @@ from typing import Literal
 from typing import Optional
 from typing import TYPE_CHECKING
 from typing import Type
+from typing import Union
 
 from .child import RobieChild
+from .person import RobiePerson
+from ..models import RobieMessage
+from ..models import RobieModels
 
 if TYPE_CHECKING:
     from ..params import RobiePluginParams
@@ -52,6 +56,28 @@ class RobiePlugin(RobieChild):
         """
 
         raise NotImplementedError
+
+
+    @property
+    def params(
+        self,
+    ) -> 'RobiePluginParams':
+        """
+        Return the Pydantic model containing the configuration.
+
+        :returns: Pydantic model containing the configuration.
+        """
+
+        model = (
+            RobieModels
+            .plugin())
+
+        params = super().params
+
+        assert isinstance(
+            params, model)
+
+        return params
 
 
     @property
@@ -110,3 +136,47 @@ class RobiePlugin(RobieChild):
         """
 
         raise NotImplementedError
+
+
+    def trusted(
+        self,
+        check: Union[str, RobiePerson, RobieMessage],
+    ) -> bool:
+        """
+        Return the boolean indicating whether person is trusted.
+
+        :param check: Validate the person is trusted by plugin.
+        :returns: Boolean indicating whether person is trusted.
+        """
+
+        params = self.params
+        trusted = params.trusted
+
+        if trusted is None:
+            return True
+
+        if isinstance(check, RobieMessage):
+
+            if not check.person:
+                return False
+
+            check = check.person
+
+        elif isinstance(check, RobiePerson):
+            check = check.name
+
+        return check in trusted
+
+
+    def notrust(
+        self,
+        check: Union[str, RobiePerson, RobieMessage],
+    ) -> bool:
+        """
+        Return the boolean indicating whether person is trusted.
+
+        :param check: Validate the person is trusted by plugin.
+        :returns: Boolean indicating whether person is trusted.
+        """
+
+        return not self.trusted(check)
