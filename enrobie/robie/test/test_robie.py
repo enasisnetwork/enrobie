@@ -166,7 +166,9 @@ def test_Robie_jinja2(
     :param robie: Primary class instance for Chatting Robie.
     """
 
-    parsed = robie.j2parse(
+    j2parse = robie.j2parse
+
+    parsed = j2parse(
         '{{ foo }}',
         {'foo': 'bar'})
 
