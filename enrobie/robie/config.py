@@ -281,6 +281,9 @@ class RobieConfig(Config):
         assert isinstance(
             params, RobieParams)
 
+        (jinja2
+         .set_static('source'))
+
 
         self.__params = params
 
