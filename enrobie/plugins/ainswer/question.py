@@ -497,7 +497,7 @@ class AinswerQuestion:
 
         runsync = request(
             user_prompt=prompt,
-            result_type=respond,
+            output_type=respond,
             deps=depends)
 
         return runsync.data
