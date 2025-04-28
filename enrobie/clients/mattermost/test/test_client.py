@@ -13,7 +13,7 @@ from threading import Thread
 from time import sleep as block_sleep
 from typing import TYPE_CHECKING
 
-from encommon.types import DictStrAny
+from encommon.types import LDictStrAny
 from encommon.types import expate
 from encommon.types import inrepr
 from encommon.types import instr
@@ -86,7 +86,7 @@ MTMEVENT_HUBERT_PRIV = expate({
         '"message":"mtmbot"}'),
     'data/sender_name': '@hubert'})
 
-_MTMEVENTS: list[DictStrAny] = [
+_MTMEVENTS: LDictStrAny = [
 
     {'event': 'hello',
      'broadcast/user_id': 'mtmunq'},

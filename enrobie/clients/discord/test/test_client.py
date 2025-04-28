@@ -11,7 +11,7 @@ from threading import Thread
 from time import sleep as block_sleep
 from typing import TYPE_CHECKING
 
-from encommon.types import DictStrAny
+from encommon.types import LDictStrAny
 from encommon.types import expate
 from encommon.types import inrepr
 from encommon.types import instr
@@ -71,7 +71,7 @@ DSCEVENT_HUBERT_PRIV = expate({
     'd/author/username': 'hubert',
     'd/content': 'dscbot'})
 
-DSCEVENTS: list[DictStrAny] = [
+DSCEVENTS: LDictStrAny = [
 
     {'t': 'GUILD_CREATE',
      's': 2,

@@ -13,7 +13,7 @@ from typing import TYPE_CHECKING
 from typing import Type
 
 from encommon.times import Time
-from encommon.types import DictStrAny
+from encommon.types import LDictStrAny
 from encommon.types.strings import COMMAS
 from encommon.types.strings import NEWLINE
 from encommon.types.strings import SEMPTY
@@ -158,7 +158,7 @@ class AinswerQuestion:
         plugin = self.__plugin
         history = plugin.history
 
-        items: list[DictStrAny] = []
+        items: LDictStrAny = []
 
         records = (
             history.records(mitem))
