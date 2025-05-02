@@ -29,7 +29,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinxcontrib.autodoc_pydantic']
 
-html_theme = 'sphinxawesome_theme'
+html_theme = 'pydata_sphinx_theme'
 
 always_document_param_types = True
 
