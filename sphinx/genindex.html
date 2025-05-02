@@ -1,150 +1,284 @@
+
 <!DOCTYPE html>
-<html lang="en"
-      data-content_root="./"
-      x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }"
-      x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))"
-      class="scroll-smooth"
-      :class="{'dark': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}"
->
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="utf-8" />
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
-  
-    <title>Index | enrobie  documentation</title>
-    <meta property="og:title" content="Index | enrobie  documentation" />
-    <meta name="twitter:title" content="Index | enrobie  documentation" />
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=e72c8e07" />
-      <link rel="stylesheet" type="text/css" href="_static/theme.css?v=42baaae4" />
-      <link rel="stylesheet" type="text/css" href="_static/autodoc_pydantic.css" />
-        <link rel="search" title="Search" href="search.html" />
-        <link rel="index" title="Index" href="#" />
 
-    <script>
-    <!-- Prevent Flash of wrong theme -->
-      const userPreference = localStorage.getItem('darkMode');
-      let mode;
-      if (userPreference === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        mode = 'dark';
-        document.documentElement.classList.add('dark');
-      } else {
-        mode = 'light';
-      }
-      if (!userPreference) {localStorage.setItem('darkMode', mode)}
-    </script>
-</head>
-  <body x-data="{ showSidebar: false, showScrollTop: false }" class="min-h-screen font-sans antialiased bg-background text-foreground" :class="{ 'overflow-hidden': showSidebar }">
-    <div x-cloak x-show="showSidebar" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" @click.self="showSidebar = false"></div><div id="page" class="relative flex flex-col min-h-screen"><a href="#content" class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100">
-      Skip to content
-    </a><header
-  class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
-    <div class="hidden mr-4 md:flex">
-      <a href="index.html" class="flex items-center mr-6"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">enrobie  documentation</span>
-      </a></div><button
-      class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden"
-      type="button" @click="showSidebar = true">
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" aria-hidden="true"
-        fill="currentColor">
-        <path
-          d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z" />
-      </svg>
-      <span class="sr-only">Toggle navigation menu</span>
-    </button>
-    <div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
-      <div class="flex-1 w-full md:w-auto md:flex-none"><form id="searchbox"
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; enrobie  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/autodoc_pydantic.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.14.6" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
       action="search.html"
-      method="get"
-      class="relative flex items-center group"
-      @keydown.k.window.meta="$refs.search.focus()">
-  <input x-ref="search"
-          name="q"
-          id="search-input"
-          type="search"
-          aria-label="Search the docs"
-          placeholder="Search ..."
-          class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" />
-  <kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
-    <span class="text-xs">⌘</span>
-    K
-  </kbd>
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
-      </div>
-      <nav class="flex items-center space-x-1">
-        <button @click="darkMode = darkMode === 'light' ? 'dark' : 'light'"
-          class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9"
-          type="button"
-          aria-label="Color theme switcher">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" fill="currentColor"
-            class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0">
-            <path
-              d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" fill="currentColor"
-            class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100">
-            <path
-              d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z" />
-          </svg>
-        </button>
-      </nav>
-    </div>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">enrobie  documentation</p>
+  
+</a></div>
+    
   </div>
-</header>
-
-    <div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside id="left-sidebar"
-  class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky"
-  :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }">
-
-    <a href="index.html" class="!justify-start text-sm md:!hidden bg-background"><span class="font-bold text-clip whitespace-nowrap">enrobie  documentation</span>
-    </a>
-
-    <div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
-      <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
   
-</nav>
-      </div>
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+      
     </div>
-    <button type="button" @click="showSidebar = false"
-      class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100">
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" fill="currentColor"
-        stroke="none" class="h-4 w-4">
-        <path
-          d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z" />
-      </svg>
-    </button>
-  </aside>
-        <main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
-<div class="w-full min-w-0 mx-auto">
-<nav aria-label="breadcrumbs"
-     class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
-  <a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground"
-     href="index.html">
-    <span class="hidden md:inline">enrobie  documentation</span>
-    <svg xmlns="http://www.w3.org/2000/svg"
-         height="18"
-         width="18"
-         viewBox="0 96 960 960"
-         aria-label="Home"
-         fill="currentColor"
-         stroke="none"
-         class="md:hidden">
-      <path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z" />
-    </svg>
-  </a>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
   
-<div class="mr-1">/</div><span aria-current="page"
-        class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Index</span>
-</nav>
+  
+    <div class="navbar-persistent--mobile">
 
-<div id="content" role="main">
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
 
-  <h1 id="index">Index</h1>
-  <h2 id="A">A</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#J"><strong>J</strong></a>
+ | <a href="#K"><strong>K</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#Q"><strong>Q</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#Z"><strong>Z</strong></a>
+ 
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.persist.HomiePersistRecord.about">about (enrobie.plugins.enhomie.persist.HomiePersistRecord attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.person.RobiePerson.about">(enrobie.robie.childs.person.RobiePerson property)</a>
 </li>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobiePerson.about">(enrobie.robie.childs.RobiePerson property)</a>
@@ -170,13 +304,13 @@
 </li>
       <li><a href="enrobie.utils.html#enrobie.utils.ClientChannels.add_member">add_member() (enrobie.utils.ClientChannels method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientChannels.add_member">(enrobie.utils.states.ClientChannels method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPlugin.agent">agent (enrobie.plugins.ainswer.AinswerPlugin property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.plugin.AinswerPlugin.agent">(enrobie.plugins.ainswer.plugin.AinswerPlugin property)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPlugin.agent">(enrobie.plugins.AinswerPlugin property)</a>
@@ -186,7 +320,7 @@
 </li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.ainswer">ainswer (enrobie.plugins.ainswer.AinswerPluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.AinswerHistoryRecord.ainswer">(enrobie.plugins.ainswer.history.AinswerHistoryRecord attribute)</a>
 </li>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.AinswerHistoryTable.ainswer">(enrobie.plugins.ainswer.history.AinswerHistoryTable attribute)</a>
@@ -198,7 +332,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPlugin.ainswer">ainswer() (enrobie.plugins.ainswer.AinswerPlugin method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.plugin.AinswerPlugin.ainswer">(enrobie.plugins.ainswer.plugin.AinswerPlugin method)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPlugin.ainswer">(enrobie.plugins.AinswerPlugin method)</a>
@@ -224,12 +358,12 @@
 </li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerDepends">AinswerDepends (class in enrobie.plugins.ainswer)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.common.AinswerDepends">(class in enrobie.plugins.ainswer.common)</a>
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.AinswerHistory">AinswerHistory (class in enrobie.plugins.ainswer.history)</a>
 </li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.AinswerHistoryTable">AinswerHistoryTable (class in enrobie.plugins.ainswer.history)</a>
@@ -242,7 +376,7 @@
 </li>
       <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPlugin">AinswerPlugin (class in enrobie.plugins)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPlugin">(class in enrobie.plugins.ainswer)</a>
 </li>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.plugin.AinswerPlugin">(class in enrobie.plugins.ainswer.plugin)</a>
@@ -254,7 +388,7 @@
 </li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.anchor">anchor (enrobie.clients.discord.message.DSCMessage property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage.anchor">(enrobie.clients.irc.message.IRCMessage property)</a>
 </li>
         <li><a href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage.anchor">(enrobie.clients.mattermost.message.MTMMessage property)</a>
@@ -276,7 +410,7 @@
 </li>
       <li><a href="enrobie.execution.html#enrobie.execution.config.arguments">arguments() (in module enrobie.execution.config)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.execution.html#enrobie.execution.crypts.arguments">(in module enrobie.execution.crypts)</a>
 </li>
         <li><a href="enrobie.execution.html#enrobie.execution.service.arguments">(in module enrobie.execution.service)</a>
@@ -284,7 +418,7 @@
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.author">author (enrobie.clients.discord.message.DSCMessage property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage.author">(enrobie.clients.irc.message.IRCMessage property)</a>
 </li>
         <li><a href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage.author">(enrobie.clients.mattermost.message.MTMMessage property)</a>
@@ -304,7 +438,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.html#enrobie.plugins.AutoJoinPlugin">AutoJoinPlugin (class in enrobie.plugins)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.autojoin.html#enrobie.plugins.autojoin.AutoJoinPlugin">(class in enrobie.plugins.autojoin)</a>
 </li>
         <li><a href="enrobie.plugins.autojoin.html#enrobie.plugins.autojoin.plugin.AutoJoinPlugin">(class in enrobie.plugins.autojoin.plugin)</a>
@@ -312,28 +446,27 @@
       </ul></li>
       <li><a href="enrobie.plugins.html#enrobie.plugins.AutoNickPlugin">AutoNickPlugin (class in enrobie.plugins)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.autonick.html#enrobie.plugins.autonick.AutoNickPlugin">(class in enrobie.plugins.autonick)</a>
 </li>
         <li><a href="enrobie.plugins.autonick.html#enrobie.plugins.autonick.plugin.AutoNickPlugin">(class in enrobie.plugins.autonick.plugin)</a>
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="B">B</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.build_objects">build_objects() (enrobie.robie.childs.robie.RobieChilds method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChilds.build_objects">(enrobie.robie.childs.RobieChilds method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.clients.RobieClients.build_threads">build_threads() (enrobie.robie.members.clients.RobieClients method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.build_threads">(enrobie.robie.members.member.RobieMember method)</a>
 </li>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.plugins.RobiePlugins.build_threads">(enrobie.robie.members.plugins.RobiePlugins method)</a>
@@ -346,15 +479,14 @@
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="C">C</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.cancel">cancel (enrobie.robie.members.member.RobieMember property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.cancel">(enrobie.robie.members.RobieMember property)</a>
 </li>
       </ul></li>
@@ -362,7 +494,7 @@
 </li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.channels">channels (enrobie.clients.discord.client.DSCClient property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.channels">(enrobie.clients.discord.DSCClient property)</a>
 </li>
         <li><a href="enrobie.clients.html#enrobie.clients.DSCClient.channels">(enrobie.clients.DSCClient property)</a>
@@ -392,19 +524,19 @@
       </ul></li>
       <li><a href="enrobie.robie.html#enrobie.robie.RobieService.check_congest">check_congest() (enrobie.robie.RobieService method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#enrobie.robie.service.RobieService.check_congest">(enrobie.robie.service.RobieService method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.html#enrobie.robie.RobieService.check_zombies">check_zombies() (enrobie.robie.RobieService method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#enrobie.robie.service.RobieService.check_zombies">(enrobie.robie.service.RobieService method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.client.RobieClientThread.child">child (enrobie.robie.threads.client.RobieClientThread property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.plugin.RobiePluginThread.child">(enrobie.robie.threads.plugin.RobiePluginThread property)</a>
 </li>
         <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.RobieClientThread.child">(enrobie.robie.threads.RobieClientThread property)</a>
@@ -426,13 +558,13 @@
       </ul></li>
       <li><a href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.child">child() (enrobie.robie.models.robie.RobieModels class method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.child">(enrobie.robie.models.RobieModels class method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.clients.RobieClients.childs">childs (enrobie.robie.members.clients.RobieClients property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.plugins.RobiePlugins.childs">(enrobie.robie.members.plugins.RobiePlugins property)</a>
 </li>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieClients.childs">(enrobie.robie.members.RobieClients property)</a>
@@ -446,13 +578,13 @@
       </ul></li>
       <li><a href="enrobie.utils.html#enrobie.utils.ClientChannels.clear_members">clear_members() (enrobie.utils.ClientChannels method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientChannels.clear_members">(enrobie.utils.states.ClientChannels method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.client">client (enrobie.clients.discord.client.DSCClient property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.client">(enrobie.clients.discord.DSCClient property)</a>
 </li>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClientParams.client">(enrobie.clients.discord.DSCClientParams attribute)</a>
@@ -522,7 +654,7 @@
       </ul></li>
       <li><a href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.client">client() (enrobie.robie.models.robie.RobieModels class method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.client">(enrobie.robie.models.RobieModels class method)</a>
 </li>
       </ul></li>
@@ -534,7 +666,7 @@
 </li>
       <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.states.ClientChannels">ClientChannels (class in enrobie.clients.irc.states)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.ClientChannels">(class in enrobie.utils)</a>
 </li>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientChannels">(class in enrobie.utils.states)</a>
@@ -542,15 +674,15 @@
       </ul></li>
       <li><a href="enrobie.utils.html#enrobie.utils.ClientPublish">ClientPublish (class in enrobie.utils)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientPublish">(class in enrobie.utils.states)</a>
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.clients">clients (enrobie.plugins.ainswer.AinswerPluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.clients">(enrobie.plugins.ainswer.params.AinswerPluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPluginParams.clients">(enrobie.plugins.AinswerPluginParams attribute)</a>
@@ -594,7 +726,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.HomiePluginParams.command">command (enrobie.plugins.enhomie.HomiePluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.params.HomiePluginParams.command">(enrobie.plugins.enhomie.params.HomiePluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.HomiePluginParams.command">(enrobie.plugins.HomiePluginParams attribute)</a>
@@ -618,13 +750,13 @@
       </ul></li>
       <li><a href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.command">command() (enrobie.robie.models.robie.RobieModels class method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.command">(enrobie.robie.models.RobieModels class method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.compose">compose() (enrobie.clients.discord.client.DSCClient method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.compose">(enrobie.clients.discord.DSCClient method)</a>
 </li>
         <li><a href="enrobie.clients.html#enrobie.clients.DSCClient.compose">(enrobie.clients.DSCClient method)</a>
@@ -648,7 +780,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.composedsc">composedsc() (in module enrobie.plugins.ainswer.helpers)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.helpers.composedsc">(in module enrobie.plugins.enhomie.helpers)</a>
 </li>
         <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.helpers.composedsc">(in module enrobie.plugins.nagios.helpers)</a>
@@ -658,7 +790,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.composeirc">composeirc() (in module enrobie.plugins.ainswer.helpers)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.helpers.composeirc">(in module enrobie.plugins.enhomie.helpers)</a>
 </li>
         <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.helpers.composeirc">(in module enrobie.plugins.nagios.helpers)</a>
@@ -668,7 +800,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.composemtm">composemtm() (in module enrobie.plugins.ainswer.helpers)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.helpers.composemtm">(in module enrobie.plugins.enhomie.helpers)</a>
 </li>
         <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.helpers.composemtm">(in module enrobie.plugins.nagios.helpers)</a>
@@ -678,7 +810,7 @@
       </ul></li>
       <li><a href="enrobie.robie.html#enrobie.robie.config.RobieConfig.config">config (enrobie.robie.config.RobieConfig property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#enrobie.robie.Robie.config">(enrobie.robie.Robie property)</a>
 </li>
         <li><a href="enrobie.robie.html#enrobie.robie.robie.Robie.config">(enrobie.robie.robie.Robie property)</a>
@@ -688,7 +820,7 @@
       </ul></li>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.congest">congest (enrobie.robie.members.member.RobieMember property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.congest">(enrobie.robie.members.RobieMember property)</a>
 </li>
         <li><a href="enrobie.robie.html#enrobie.robie.RobieService.congest">(enrobie.robie.RobieService property)</a>
@@ -702,7 +834,7 @@
       </ul></li>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.cqueue">cqueue (enrobie.robie.members.member.RobieMember property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.cqueue">(enrobie.robie.members.RobieMember property)</a>
 </li>
         <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.cqueue">(enrobie.robie.threads.RobieThread property)</a>
@@ -712,7 +844,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.AinswerHistoryRecord.create">create (enrobie.plugins.ainswer.history.AinswerHistoryRecord attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.AinswerHistoryTable.create">(enrobie.plugins.ainswer.history.AinswerHistoryTable attribute)</a>
 </li>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.AinswerMemoryRecord.create">(enrobie.plugins.ainswer.memory.AinswerMemoryRecord attribute)</a>
@@ -726,7 +858,7 @@
       </ul></li>
       <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.states.ClientChannels.create">create() (enrobie.clients.irc.states.ClientChannels method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.ClientChannels.create">(enrobie.utils.ClientChannels method)</a>
 </li>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientChannels.create">(enrobie.utils.states.ClientChannels method)</a>
@@ -734,22 +866,21 @@
       </ul></li>
       <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.NagiosPlugin.current">current (enrobie.plugins.nagios.NagiosPlugin property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.plugin.NagiosPlugin.current">(enrobie.plugins.nagios.plugin.NagiosPlugin property)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.NagiosPlugin.current">(enrobie.plugins.NagiosPlugin property)</a>
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="D">D</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.database">database (enrobie.plugins.ainswer.AinswerPluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.database">(enrobie.plugins.ainswer.params.AinswerPluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPluginParams.database">(enrobie.plugins.AinswerPluginParams attribute)</a>
@@ -767,13 +898,13 @@
       </ul></li>
       <li><a href="enrobie.utils.html#enrobie.utils.ClientChannels.del_member">del_member() (enrobie.utils.ClientChannels method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientChannels.del_member">(enrobie.utils.states.ClientChannels method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClientParams.delay">delay (enrobie.clients.discord.DSCClientParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.params.DSCClientParams.delay">(enrobie.clients.discord.params.DSCClientParams attribute)</a>
 </li>
         <li><a href="enrobie.clients.html#enrobie.clients.DSCClientParams.delay">(enrobie.clients.DSCClientParams attribute)</a>
@@ -795,19 +926,19 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.AinswerMemory.delete">delete() (enrobie.plugins.ainswer.memory.AinswerMemory method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.ClientChannels.delete">(enrobie.utils.ClientChannels method)</a>
 </li>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientChannels.delete">(enrobie.utils.states.ClientChannels method)</a>
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrentObject.downtime">downtime (enrobie.plugins.nagios.current.NagiosCurrentObject attribute)</a>
 </li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginPromptClientParams.dsc">dsc (enrobie.plugins.ainswer.params.AinswerPluginPromptClientParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.params.HomiePluginCommandParams.dsc">(enrobie.plugins.enhomie.params.HomiePluginCommandParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.params.NagiosPluginCommandParams.dsc">(enrobie.plugins.nagios.params.NagiosPluginCommandParams attribute)</a>
@@ -823,7 +954,7 @@
       </ul></li>
       <li><a href="enrobie.clients.html#enrobie.clients.DSCClient">DSCClient (class in enrobie.clients)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient">(class in enrobie.clients.discord)</a>
 </li>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient">(class in enrobie.clients.discord.client)</a>
@@ -835,7 +966,7 @@
 </li>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.child.RobieChild.dumped">dumped (enrobie.robie.childs.child.RobieChild property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.dumped">(enrobie.robie.childs.client.RobieClient property)</a>
 </li>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.dumped">(enrobie.robie.childs.robie.RobieChilds property)</a>
@@ -854,21 +985,20 @@
       <li><a href="enrobie.utils.html#enrobie.utils.DupliThread">DupliThread</a>, <a href="enrobie.utils.html#enrobie.utils.thread.DupliThread">[1]</a>
 </li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="E">E</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue.empty">empty (enrobie.robie.addons.queue.RobieQueue property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieQueue.empty">(enrobie.robie.addons.RobieQueue property)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClientParams.enable">enable (enrobie.clients.discord.DSCClientParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.params.DSCClientParams.enable">(enrobie.clients.discord.params.DSCClientParams attribute)</a>
 </li>
         <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClientParams.enable">(enrobie.clients.irc.IRCClientParams attribute)</a>
@@ -930,7 +1060,7 @@
 </li>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.enqueue">enqueue (enrobie.robie.members.member.RobieMember property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.enqueue">(enrobie.robie.members.RobieMember property)</a>
 </li>
         <li><a href="enrobie.robie.html#enrobie.robie.RobieService.enqueue">(enrobie.robie.RobieService property)</a>
@@ -945,1197 +1075,1197 @@
       <li>
     enrobie
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.html#module-enrobie">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.html#module-enrobie.clients">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.discord
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#module-enrobie.clients.discord">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.discord.client
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#module-enrobie.clients.discord.client">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.discord.command
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#module-enrobie.clients.discord.command">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.discord.message
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#module-enrobie.clients.discord.message">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.discord.params
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#module-enrobie.clients.discord.params">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.discord.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.test.html#module-enrobie.clients.discord.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.discord.test.test_client
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.test.html#module-enrobie.clients.discord.test.test_client">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.discord.test.test_command
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.test.html#module-enrobie.clients.discord.test.test_command">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.discord.test.test_message
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.test.html#module-enrobie.clients.discord.test.test_message">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.irc
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#module-enrobie.clients.irc">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.irc.client
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#module-enrobie.clients.irc.client">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.irc.command
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#module-enrobie.clients.irc.command">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.irc.message
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#module-enrobie.clients.irc.message">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.irc.params
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#module-enrobie.clients.irc.params">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.irc.states
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#module-enrobie.clients.irc.states">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.irc.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.test.html#module-enrobie.clients.irc.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.irc.test.test_client
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.test.html#module-enrobie.clients.irc.test.test_client">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.irc.test.test_command
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.test.html#module-enrobie.clients.irc.test.test_command">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.irc.test.test_message
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.test.html#module-enrobie.clients.irc.test.test_message">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.mattermost
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.mattermost.client
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost.client">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.mattermost.command
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost.command">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.mattermost.message
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost.message">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.mattermost.params
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.mattermost.html#module-enrobie.clients.mattermost.params">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.mattermost.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.mattermost.test.html#module-enrobie.clients.mattermost.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.mattermost.test.test_client
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.mattermost.test.html#module-enrobie.clients.mattermost.test.test_client">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.mattermost.test.test_command
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.mattermost.test.html#module-enrobie.clients.mattermost.test.test_command">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.clients.mattermost.test.test_message
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.mattermost.test.html#module-enrobie.clients.mattermost.test.test_message">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.conftest
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.html#module-enrobie.conftest">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.execution
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.execution.html#module-enrobie.execution">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.execution.config
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.execution.html#module-enrobie.execution.config">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.execution.crypts
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.execution.html#module-enrobie.execution.crypts">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.execution.service
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.execution.html#module-enrobie.execution.service">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.execution.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.execution.test.html#module-enrobie.execution.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.execution.test.test_config
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.execution.test.html#module-enrobie.execution.test.test_config">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.execution.test.test_crypts
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.execution.test.html#module-enrobie.execution.test.test_crypts">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.execution.test.test_service
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.execution.test.html#module-enrobie.execution.test.test_service">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.html#module-enrobie.plugins">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#module-enrobie.plugins.ainswer">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.ainswer
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#module-enrobie.plugins.ainswer.ainswer">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.common
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#module-enrobie.plugins.ainswer.common">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.helpers
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#module-enrobie.plugins.ainswer.helpers">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.history
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#module-enrobie.plugins.ainswer.history">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.memory
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#module-enrobie.plugins.ainswer.memory">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.models
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#module-enrobie.plugins.ainswer.models">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.params
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#module-enrobie.plugins.ainswer.params">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#module-enrobie.plugins.ainswer.plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.question
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#module-enrobie.plugins.ainswer.question">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.test.html#module-enrobie.plugins.ainswer.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.test.test_history
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.test.html#module-enrobie.plugins.ainswer.test.test_history">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.test.test_memory
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.test.html#module-enrobie.plugins.ainswer.test.test_memory">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.test.test_models
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.test.html#module-enrobie.plugins.ainswer.test.test_models">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.test.test_plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.test.html#module-enrobie.plugins.ainswer.test.test_plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.test.test_question
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.test.html#module-enrobie.plugins.ainswer.test.test_question">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.ainswer.toolset
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#module-enrobie.plugins.ainswer.toolset">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.autojoin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.autojoin.html#module-enrobie.plugins.autojoin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.autojoin.params
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.autojoin.html#module-enrobie.plugins.autojoin.params">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.autojoin.plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.autojoin.html#module-enrobie.plugins.autojoin.plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.autojoin.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.autojoin.test.html#module-enrobie.plugins.autojoin.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.autojoin.test.test_plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.autojoin.test.html#module-enrobie.plugins.autojoin.test.test_plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.autonick
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.autonick.html#module-enrobie.plugins.autonick">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.autonick.params
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.autonick.html#module-enrobie.plugins.autonick.params">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.autonick.plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.autonick.html#module-enrobie.plugins.autonick.plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.autonick.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.autonick.test.html#module-enrobie.plugins.autonick.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.autonick.test.test_plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.autonick.test.html#module-enrobie.plugins.autonick.test.test_plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.enhomie
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#module-enrobie.plugins.enhomie">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.enhomie.ainswer
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#module-enrobie.plugins.enhomie.ainswer">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.enhomie.helpers
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#module-enrobie.plugins.enhomie.helpers">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.enhomie.params
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#module-enrobie.plugins.enhomie.params">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.enhomie.persist
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#module-enrobie.plugins.enhomie.persist">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.enhomie.plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#module-enrobie.plugins.enhomie.plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.enhomie.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.test.html#module-enrobie.plugins.enhomie.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.enhomie.test.test_plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.test.html#module-enrobie.plugins.enhomie.test.test_plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.logger
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.logger.html#module-enrobie.plugins.logger">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.logger.history
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.logger.html#module-enrobie.plugins.logger.history">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.logger.params
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.logger.html#module-enrobie.plugins.logger.params">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.logger.plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.logger.html#module-enrobie.plugins.logger.plugin">module</a>
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     enrobie.plugins.logger.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.logger.test.html#module-enrobie.plugins.logger.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.logger.test.test_history
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.logger.test.html#module-enrobie.plugins.logger.test.test_history">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.logger.test.test_plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.logger.test.html#module-enrobie.plugins.logger.test.test_plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.nagios
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.nagios.html#module-enrobie.plugins.nagios">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.nagios.ainswer
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.nagios.html#module-enrobie.plugins.nagios.ainswer">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.nagios.current
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.nagios.html#module-enrobie.plugins.nagios.current">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.nagios.helpers
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.nagios.html#module-enrobie.plugins.nagios.helpers">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.nagios.params
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.nagios.html#module-enrobie.plugins.nagios.params">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.nagios.plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.nagios.html#module-enrobie.plugins.nagios.plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.nagios.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.nagios.test.html#module-enrobie.plugins.nagios.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.nagios.test.test_plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.nagios.test.html#module-enrobie.plugins.nagios.test.test_plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.status
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#module-enrobie.plugins.status">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.status.common
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#module-enrobie.plugins.status.common">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.status.helpers
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#module-enrobie.plugins.status.helpers">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.status.params
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#module-enrobie.plugins.status.params">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.status.plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#module-enrobie.plugins.status.plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.status.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.test.html#module-enrobie.plugins.status.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.plugins.status.test.test_plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.test.html#module-enrobie.plugins.status.test.test_plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#module-enrobie.robie">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.addons
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#module-enrobie.robie.addons">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.addons.jinja2
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#module-enrobie.robie.addons.jinja2">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.addons.logger
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#module-enrobie.robie.addons.logger">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.addons.queue
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#module-enrobie.robie.addons.queue">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.addons.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.test.html#module-enrobie.robie.addons.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.addons.test.test_logger
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.test.html#module-enrobie.robie.addons.test.test_logger">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.addons.test.test_queue
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.test.html#module-enrobie.robie.addons.test.test_queue">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.childs
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#module-enrobie.robie.childs">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.childs.child
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#module-enrobie.robie.childs.child">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.childs.client
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#module-enrobie.robie.childs.client">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.childs.person
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#module-enrobie.robie.childs.person">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.childs.plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#module-enrobie.robie.childs.plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.childs.robie
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#module-enrobie.robie.childs.robie">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.childs.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.test.html#module-enrobie.robie.childs.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.childs.test.test_child
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.test.html#module-enrobie.robie.childs.test.test_child">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.childs.test.test_client
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.test.html#module-enrobie.robie.childs.test.test_client">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.childs.test.test_person
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.test.html#module-enrobie.robie.childs.test.test_person">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.childs.test.test_plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.test.html#module-enrobie.robie.childs.test.test_plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.childs.test.test_robie
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.test.html#module-enrobie.robie.childs.test.test_robie">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.common
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#module-enrobie.robie.common">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.config
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#module-enrobie.robie.config">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.members
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#module-enrobie.robie.members">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.members.clients
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#module-enrobie.robie.members.clients">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.members.member
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#module-enrobie.robie.members.member">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.members.plugins
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#module-enrobie.robie.members.plugins">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.members.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.test.html#module-enrobie.robie.members.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.members.test.test_clients
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.test.html#module-enrobie.robie.members.test.test_clients">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.members.test.test_member
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.test.html#module-enrobie.robie.members.test.test_member">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.members.test.test_plugins
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.test.html#module-enrobie.robie.members.test.test_plugins">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.models
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#module-enrobie.robie.models">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.models.command
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#module-enrobie.robie.models.command">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.models.message
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#module-enrobie.robie.models.message">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.models.robie
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#module-enrobie.robie.models.robie">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.models.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.test.html#module-enrobie.robie.models.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.models.test.test_command
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.test.html#module-enrobie.robie.models.test.test_command">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.models.test.test_message
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.test.html#module-enrobie.robie.models.test.test_message">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.models.test.test_models
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.test.html#module-enrobie.robie.models.test.test_models">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.params
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.params.html#module-enrobie.robie.params">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.params.child
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.params.html#module-enrobie.robie.params.child">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.params.client
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.params.html#module-enrobie.robie.params.client">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.params.common
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.params.html#module-enrobie.robie.params.common">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.params.person
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.params.html#module-enrobie.robie.params.person">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.params.plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.params.html#module-enrobie.robie.params.plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.params.robie
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.params.html#module-enrobie.robie.params.robie">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.params.service
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.params.html#module-enrobie.robie.params.service">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.robie
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#module-enrobie.robie.robie">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.service
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#module-enrobie.robie.service">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.test.html#module-enrobie.robie.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.test.test_config
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.test.html#module-enrobie.robie.test.test_config">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.test.test_robie
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.test.html#module-enrobie.robie.test.test_robie">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.test.test_service
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.test.html#module-enrobie.robie.test.test_service">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.threads
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.html#module-enrobie.robie.threads">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.threads.client
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.html#module-enrobie.robie.threads.client">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.threads.plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.html#module-enrobie.robie.threads.plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.threads.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.test.html#module-enrobie.robie.threads.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.threads.test.test_client
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.test.html#module-enrobie.robie.threads.test.test_client">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.threads.test.test_plugin
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.test.html#module-enrobie.robie.threads.test.test_plugin">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.threads.test.test_thread
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.test.html#module-enrobie.robie.threads.test.test_thread">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.robie.threads.thread
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.html#module-enrobie.robie.threads.thread">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.utils
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#module-enrobie.utils">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.utils.child
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#module-enrobie.utils.child">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.utils.importer
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#module-enrobie.utils.importer">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.utils.param
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#module-enrobie.utils.param">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.utils.states
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#module-enrobie.utils.states">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.utils.test
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.test.html#module-enrobie.utils.test">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.utils.test.test_child
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.test.html#module-enrobie.utils.test.test_child">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.utils.test.test_importer
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.test.html#module-enrobie.utils.test.test_importer">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.utils.test.test_param
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.test.html#module-enrobie.utils.test.test_param">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.utils.test.test_states
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.test.html#module-enrobie.utils.test.test_states">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.utils.test.test_thread
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.test.html#module-enrobie.utils.test.test_thread">module</a>
 </li>
       </ul></li>
       <li>
     enrobie.utils.thread
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#module-enrobie.utils.thread">module</a>
 </li>
       </ul></li>
       <li><a href="enrobie.utils.html#enrobie.utils.InvalidParam.error">error (enrobie.utils.InvalidParam attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.param.InvalidParam.error">(enrobie.utils.param.InvalidParam attribute)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.event">event (enrobie.clients.discord.message.DSCMessage attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.command.IRCCommand.event">(enrobie.clients.irc.command.IRCCommand attribute)</a>
 </li>
         <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage.event">(enrobie.clients.irc.message.IRCMessage attribute)</a>
@@ -2145,7 +2275,7 @@
       </ul></li>
       <li><a href="enrobie.execution.html#enrobie.execution.config.execution">execution() (in module enrobie.execution.config)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.execution.html#enrobie.execution.crypts.execution">(in module enrobie.execution.crypts)</a>
 </li>
         <li><a href="enrobie.execution.html#enrobie.execution.service.execution">(in module enrobie.execution.service)</a>
@@ -2155,30 +2285,29 @@
 </li>
       <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.expired">expired() (enrobie.robie.threads.RobieThread method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread.expired">(enrobie.robie.threads.thread.RobieThread method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.AinswerHistory.expunge">expunge() (enrobie.plugins.ainswer.history.AinswerHistory method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.AinswerMemory.expunge">(enrobie.plugins.ainswer.memory.AinswerMemory method)</a>
 </li>
         <li><a href="enrobie.plugins.logger.html#enrobie.plugins.logger.history.LoggerHistory.expunge">(enrobie.plugins.logger.history.LoggerHistory method)</a>
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="F">F</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.params.StatusPluginIconsParams.failure">failure (enrobie.plugins.status.params.StatusPluginIconsParams attribute)</a>
 </li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.family">family (enrobie.clients.discord.client.DSCClient property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.command.DSCCommand.family">(enrobie.clients.discord.command.DSCCommand property)</a>
 </li>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.family">(enrobie.clients.discord.DSCClient property)</a>
@@ -2221,10 +2350,10 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.person.RobiePerson.first">first (enrobie.robie.childs.person.RobiePerson property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobiePerson.first">(enrobie.robie.childs.RobiePerson property)</a>
 </li>
         <li><a href="enrobie.robie.params.html#enrobie.robie.params.person.RobiePersonParams.first">(enrobie.robie.params.person.RobiePersonParams attribute)</a>
@@ -2235,21 +2364,20 @@
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginPromptParams.footer">footer (enrobie.plugins.ainswer.params.AinswerPluginPromptParams attribute)</a>
 </li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="G">G</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue.get">get() (enrobie.robie.addons.queue.RobieQueue method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieQueue.get">(enrobie.robie.addons.RobieQueue method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.get_command">get_command() (enrobie.clients.discord.client.DSCClient method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.get_command">(enrobie.clients.discord.DSCClient method)</a>
 </li>
         <li><a href="enrobie.clients.html#enrobie.clients.DSCClient.get_command">(enrobie.clients.DSCClient method)</a>
@@ -2273,7 +2401,7 @@
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.get_message">get_message() (enrobie.clients.discord.client.DSCClient method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.get_message">(enrobie.clients.discord.DSCClient method)</a>
 </li>
         <li><a href="enrobie.clients.html#enrobie.clients.DSCClient.get_message">(enrobie.clients.DSCClient method)</a>
@@ -2296,10 +2424,10 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.common.StatusPluginItem.group">group (enrobie.plugins.status.common.StatusPluginItem attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.StatusPluginItem.group">(enrobie.plugins.status.StatusPluginItem attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.StatusPluginItem.group">(enrobie.plugins.StatusPluginItem attribute)</a>
@@ -2308,17 +2436,16 @@
       <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.helpers.grouped">grouped() (in module enrobie.plugins.status.helpers)</a>
 </li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="H">H</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrentObject.handled">handled (enrobie.plugins.nagios.current.NagiosCurrentObject attribute)</a>
 </li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.hasme">hasme (enrobie.clients.discord.message.DSCMessage property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage.hasme">(enrobie.clients.irc.message.IRCMessage property)</a>
 </li>
         <li><a href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage.hasme">(enrobie.clients.mattermost.message.MTMMessage property)</a>
@@ -2334,7 +2461,7 @@
 </li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.histories">histories (enrobie.plugins.ainswer.AinswerPluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.histories">(enrobie.plugins.ainswer.params.AinswerPluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPluginParams.histories">(enrobie.plugins.AinswerPluginParams attribute)</a>
@@ -2348,7 +2475,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPlugin.history">history (enrobie.plugins.ainswer.AinswerPlugin property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.plugin.AinswerPlugin.history">(enrobie.plugins.ainswer.plugin.AinswerPlugin property)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPlugin.history">(enrobie.plugins.AinswerPlugin property)</a>
@@ -2361,14 +2488,14 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.ainswer.homie_persist">homie_persist() (in module enrobie.plugins.enhomie.ainswer)</a>
 </li>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.persist.HomiePersist">HomiePersist (class in enrobie.plugins.enhomie.persist)</a>
 </li>
       <li><a href="enrobie.plugins.html#enrobie.plugins.HomiePlugin">HomiePlugin (class in enrobie.plugins)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.HomiePlugin">(class in enrobie.plugins.enhomie)</a>
 </li>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.plugin.HomiePlugin">(class in enrobie.plugins.enhomie.plugin)</a>
@@ -2382,20 +2509,19 @@
 </li>
       <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrent.hosts">hosts (enrobie.plugins.nagios.current.NagiosCurrent property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrentRecords.hosts">(enrobie.plugins.nagios.current.NagiosCurrentRecords attribute)</a>
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="I">I</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.common.StatusPluginItem.icon">icon (enrobie.plugins.status.common.StatusPluginItem attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.StatusPluginItem.icon">(enrobie.plugins.status.StatusPluginItem attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.StatusPluginItem.icon">(enrobie.plugins.StatusPluginItem attribute)</a>
@@ -2403,7 +2529,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.params.StatusPluginParams.icons">icons (enrobie.plugins.status.params.StatusPluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.StatusPluginParams.icons">(enrobie.plugins.status.StatusPluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.StatusPluginParams.icons">(enrobie.plugins.StatusPluginParams attribute)</a>
@@ -2413,13 +2539,13 @@
 </li>
       <li><a href="enrobie.utils.html#enrobie.utils.importer">importer() (in module enrobie.utils)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.importer.importer">(in module enrobie.utils.importer)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.AinswerHistory.insert">insert() (enrobie.plugins.ainswer.history.AinswerHistory method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.AinswerMemory.insert">(enrobie.plugins.ainswer.memory.AinswerMemory method)</a>
 </li>
         <li><a href="enrobie.plugins.logger.html#enrobie.plugins.logger.history.LoggerHistory.insert">(enrobie.plugins.logger.history.LoggerHistory method)</a>
@@ -2427,13 +2553,13 @@
       </ul></li>
       <li><a href="enrobie.robie.html#enrobie.robie.config.RobieConfig.inserts">inserts (enrobie.robie.config.RobieConfig property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#enrobie.robie.RobieConfig.inserts">(enrobie.robie.RobieConfig property)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClientParams.intents">intents (enrobie.clients.discord.DSCClientParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.params.DSCClientParams.intents">(enrobie.clients.discord.params.DSCClientParams attribute)</a>
 </li>
         <li><a href="enrobie.clients.html#enrobie.clients.DSCClientParams.intents">(enrobie.clients.DSCClientParams attribute)</a>
@@ -2441,7 +2567,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.autojoin.html#enrobie.plugins.autojoin.AutoJoinPluginParams.interval">interval (enrobie.plugins.autojoin.AutoJoinPluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.autojoin.html#enrobie.plugins.autojoin.params.AutoJoinPluginParams.interval">(enrobie.plugins.autojoin.params.AutoJoinPluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AutoJoinPluginParams.interval">(enrobie.plugins.AutoJoinPluginParams attribute)</a>
@@ -2454,14 +2580,14 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.utils.html#enrobie.utils.InvalidChild">InvalidChild</a>, <a href="enrobie.utils.html#enrobie.utils.child.InvalidChild">[1]</a>
 </li>
       <li><a href="enrobie.utils.html#enrobie.utils.InvalidParam">InvalidParam</a>, <a href="enrobie.utils.html#enrobie.utils.param.InvalidParam">[1]</a>
 </li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginPromptClientParams.irc">irc (enrobie.plugins.ainswer.params.AinswerPluginPromptClientParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.params.HomiePluginCommandParams.irc">(enrobie.plugins.enhomie.params.HomiePluginCommandParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.params.NagiosPluginCommandParams.irc">(enrobie.plugins.nagios.params.NagiosPluginCommandParams attribute)</a>
@@ -2477,7 +2603,7 @@
       </ul></li>
       <li><a href="enrobie.clients.html#enrobie.clients.IRCClient">IRCClient (class in enrobie.clients)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClient">(class in enrobie.clients.irc)</a>
 </li>
         <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.client.IRCClient">(class in enrobie.clients.irc.client)</a>
@@ -2489,7 +2615,7 @@
 </li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.isme">isme (enrobie.clients.discord.message.DSCMessage property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage.isme">(enrobie.clients.irc.message.IRCMessage property)</a>
 </li>
         <li><a href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage.isme">(enrobie.clients.mattermost.message.MTMMessage property)</a>
@@ -2500,42 +2626,40 @@
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="J">J</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="J">J</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.html#enrobie.robie.Robie.j2parse">j2parse() (enrobie.robie.Robie method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#enrobie.robie.robie.Robie.j2parse">(enrobie.robie.robie.Robie method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.html#enrobie.robie.Robie.jinja2">jinja2 (enrobie.robie.Robie property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#enrobie.robie.robie.Robie.jinja2">(enrobie.robie.robie.Robie property)</a>
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.command.DSCCommand.json">json (enrobie.clients.discord.command.DSCCommand attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.command.MTMCommand.json">(enrobie.clients.mattermost.command.MTMCommand attribute)</a>
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="K">K</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.kind">kind (enrobie.clients.discord.message.DSCMessage property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage.kind">(enrobie.clients.irc.message.IRCMessage property)</a>
 </li>
         <li><a href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage.kind">(enrobie.clients.mattermost.message.MTMMessage property)</a>
@@ -2570,15 +2694,14 @@
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="L">L</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.person.RobiePerson.last">last (enrobie.robie.childs.person.RobiePerson property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobiePerson.last">(enrobie.robie.childs.RobiePerson property)</a>
 </li>
         <li><a href="enrobie.robie.params.html#enrobie.robie.params.person.RobiePersonParams.last">(enrobie.robie.params.person.RobiePersonParams attribute)</a>
@@ -2592,7 +2715,7 @@
 </li>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.limit">limit() (enrobie.robie.members.member.RobieMember method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.limit">(enrobie.robie.members.RobieMember method)</a>
 </li>
         <li><a href="enrobie.robie.html#enrobie.robie.RobieService.limit">(enrobie.robie.RobieService method)</a>
@@ -2602,7 +2725,7 @@
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClientParams.locate">locate (enrobie.clients.discord.DSCClientParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.params.DSCClientParams.locate">(enrobie.clients.discord.params.DSCClientParams attribute)</a>
 </li>
         <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.IRCClientParams.locate">(enrobie.clients.irc.IRCClientParams attribute)</a>
@@ -2651,46 +2774,46 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log">log() (enrobie.robie.addons.logger.RobieLogger method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.log">(enrobie.robie.addons.RobieLogger method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_c">log_c() (enrobie.robie.addons.logger.RobieLogger method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.log_c">(enrobie.robie.addons.RobieLogger method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_d">log_d() (enrobie.robie.addons.logger.RobieLogger method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.log_d">(enrobie.robie.addons.RobieLogger method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_e">log_e() (enrobie.robie.addons.logger.RobieLogger method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.log_e">(enrobie.robie.addons.RobieLogger method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_i">log_i() (enrobie.robie.addons.logger.RobieLogger method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.log_i">(enrobie.robie.addons.RobieLogger method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.log_w">log_w() (enrobie.robie.addons.logger.RobieLogger method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.log_w">(enrobie.robie.addons.RobieLogger method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.logger">logger (enrobie.plugins.ainswer.AinswerPluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.logger">(enrobie.plugins.ainswer.params.AinswerPluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPluginParams.logger">(enrobie.plugins.AinswerPluginParams attribute)</a>
@@ -2706,36 +2829,35 @@
 </li>
       <li><a href="enrobie.plugins.html#enrobie.plugins.LoggerPlugin">LoggerPlugin (class in enrobie.plugins)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.logger.html#enrobie.plugins.logger.LoggerPlugin">(class in enrobie.plugins.logger)</a>
 </li>
         <li><a href="enrobie.plugins.logger.html#enrobie.plugins.logger.plugin.LoggerPlugin">(class in enrobie.plugins.logger.plugin)</a>
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="M">M</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.params.html#enrobie.robie.params.person.RobiePersonMatchParams.match">match (enrobie.robie.params.person.RobiePersonMatchParams attribute)</a>
 </li>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.person.RobiePerson.match">match() (enrobie.robie.childs.person.RobiePerson method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobiePerson.match">(enrobie.robie.childs.RobiePerson method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.params.html#enrobie.robie.params.person.RobiePersonParams.matches">matches (enrobie.robie.params.person.RobiePersonParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.params.html#enrobie.robie.params.RobiePersonParams.matches">(enrobie.robie.params.RobiePersonParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.client.RobieClientThread.member">member (enrobie.robie.threads.client.RobieClientThread property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.plugin.RobiePluginThread.member">(enrobie.robie.threads.plugin.RobiePluginThread property)</a>
 </li>
         <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.RobieClientThread.member">(enrobie.robie.threads.RobieClientThread property)</a>
@@ -2749,13 +2871,13 @@
       </ul></li>
       <li><a href="enrobie.utils.html#enrobie.utils.ClientChannel.members">members (enrobie.utils.ClientChannel attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientChannel.members">(enrobie.utils.states.ClientChannel attribute)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.memories">memories (enrobie.plugins.ainswer.AinswerPluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.memories">(enrobie.plugins.ainswer.params.AinswerPluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPluginParams.memories">(enrobie.plugins.AinswerPluginParams attribute)</a>
@@ -2763,7 +2885,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPlugin.memory">memory (enrobie.plugins.ainswer.AinswerPlugin property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.plugin.AinswerPlugin.memory">(enrobie.plugins.ainswer.plugin.AinswerPlugin property)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPlugin.memory">(enrobie.plugins.AinswerPlugin property)</a>
@@ -2771,13 +2893,13 @@
       </ul></li>
       <li><a href="enrobie.robie.html#enrobie.robie.config.RobieConfig.merge_params">merge_params() (enrobie.robie.config.RobieConfig method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#enrobie.robie.RobieConfig.merge_params">(enrobie.robie.RobieConfig method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.message">message (enrobie.clients.discord.message.DSCMessage property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage.message">(enrobie.clients.irc.message.IRCMessage property)</a>
 </li>
         <li><a href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage.message">(enrobie.clients.mattermost.message.MTMMessage property)</a>
@@ -2805,13 +2927,13 @@
       </ul></li>
       <li><a href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.message">message() (enrobie.robie.models.robie.RobieModels class method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.message">(enrobie.robie.models.RobieModels class method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.SQLBase.metadata">metadata (enrobie.plugins.ainswer.history.SQLBase attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.SQLBase.metadata">(enrobie.plugins.ainswer.memory.SQLBase attribute)</a>
 </li>
         <li><a href="enrobie.plugins.logger.html#enrobie.plugins.logger.history.SQLBase.metadata">(enrobie.plugins.logger.history.SQLBase attribute)</a>
@@ -2819,13 +2941,13 @@
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.command.DSCCommand.method">method (enrobie.clients.discord.command.DSCCommand attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.command.MTMCommand.method">(enrobie.clients.mattermost.command.MTMCommand attribute)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerDepends.mitem">mitem (enrobie.plugins.ainswer.AinswerDepends attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.common.AinswerDepends.mitem">(enrobie.plugins.ainswer.common.AinswerDepends attribute)</a>
 </li>
       </ul></li>
@@ -2833,7 +2955,7 @@
 </li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPlugin.models">models (enrobie.plugins.ainswer.AinswerPlugin property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.plugin.AinswerPlugin.models">(enrobie.plugins.ainswer.plugin.AinswerPlugin property)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPlugin.models">(enrobie.plugins.AinswerPlugin property)</a>
@@ -2842,7 +2964,7 @@
       <li>
     module
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.html#module-enrobie">enrobie</a>
 </li>
         <li><a href="enrobie.clients.html#module-enrobie.clients">enrobie.clients</a>
@@ -3183,10 +3305,10 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.mqueue">mqueue (enrobie.robie.members.member.RobieMember property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.mqueue">(enrobie.robie.members.RobieMember property)</a>
 </li>
         <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.mqueue">(enrobie.robie.threads.RobieThread property)</a>
@@ -3196,7 +3318,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginPromptClientParams.mtm">mtm (enrobie.plugins.ainswer.params.AinswerPluginPromptClientParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.params.HomiePluginCommandParams.mtm">(enrobie.plugins.enhomie.params.HomiePluginCommandParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.params.NagiosPluginCommandParams.mtm">(enrobie.plugins.nagios.params.NagiosPluginCommandParams attribute)</a>
@@ -3212,7 +3334,7 @@
       </ul></li>
       <li><a href="enrobie.clients.html#enrobie.clients.MTMClient">MTMClient (class in enrobie.clients)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.MTMClient">(class in enrobie.clients.mattermost)</a>
 </li>
         <li><a href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.client.MTMClient">(class in enrobie.clients.mattermost.client)</a>
@@ -3223,29 +3345,28 @@
       <li><a href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage">MTMMessage (class in enrobie.clients.mattermost.message)</a>
 </li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="N">N</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.ainswer.nagios_current">nagios_current() (in module enrobie.plugins.nagios.ainswer)</a>
 </li>
       <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrent">NagiosCurrent (class in enrobie.plugins.nagios.current)</a>
 </li>
       <li><a href="enrobie.plugins.html#enrobie.plugins.NagiosPlugin">NagiosPlugin (class in enrobie.plugins)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.NagiosPlugin">(class in enrobie.plugins.nagios)</a>
 </li>
         <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.plugin.NagiosPlugin">(class in enrobie.plugins.nagios.plugin)</a>
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrentObject.name">name (enrobie.plugins.nagios.current.NagiosCurrentObject attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.child.RobieChild.name">(enrobie.robie.childs.child.RobieChild property)</a>
 </li>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChild.name">(enrobie.robie.childs.RobieChild property)</a>
@@ -3255,22 +3376,21 @@
 </li>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin.notrust">notrust() (enrobie.robie.childs.plugin.RobiePlugin method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobiePlugin.notrust">(enrobie.robie.childs.RobiePlugin method)</a>
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="O">O</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.models.AinswerModels.openai">openai (enrobie.plugins.ainswer.models.AinswerModels property)</a>
 </li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.operate">operate() (enrobie.clients.discord.client.DSCClient method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.operate">(enrobie.clients.discord.DSCClient method)</a>
 </li>
         <li><a href="enrobie.clients.html#enrobie.clients.DSCClient.operate">(enrobie.clients.DSCClient method)</a>
@@ -3359,28 +3479,28 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.html#enrobie.robie.RobieService.operate_clients">operate_clients() (enrobie.robie.RobieService method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#enrobie.robie.service.RobieService.operate_clients">(enrobie.robie.service.RobieService method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.html#enrobie.robie.RobieService.operate_healths">operate_healths() (enrobie.robie.RobieService method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#enrobie.robie.service.RobieService.operate_healths">(enrobie.robie.service.RobieService method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.html#enrobie.robie.RobieService.operate_plugins">operate_plugins() (enrobie.robie.RobieService method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#enrobie.robie.service.RobieService.operate_plugins">(enrobie.robie.service.RobieService method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.execution.html#enrobie.execution.config.operation">operation() (in module enrobie.execution.config)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.execution.html#enrobie.execution.crypts.operation">(in module enrobie.execution.crypts)</a>
 </li>
         <li><a href="enrobie.execution.html#enrobie.execution.service.operation">(in module enrobie.execution.service)</a>
@@ -3390,28 +3510,27 @@
 </li>
       <li><a href="enrobie.plugins.logger.html#enrobie.plugins.logger.LoggerPluginParams.output">output (enrobie.plugins.logger.LoggerPluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.logger.html#enrobie.plugins.logger.params.LoggerPluginParams.output">(enrobie.plugins.logger.params.LoggerPluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.LoggerPluginParams.output">(enrobie.plugins.LoggerPluginParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="P">P</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.utils.html#enrobie.utils.InvalidParam.param">param (enrobie.utils.InvalidParam attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.param.InvalidParam.param">(enrobie.utils.param.InvalidParam attribute)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.params">params (enrobie.clients.discord.client.DSCClient property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.command.DSCCommand.params">(enrobie.clients.discord.command.DSCCommand attribute)</a>
 </li>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.params">(enrobie.clients.discord.DSCClient property)</a>
@@ -3505,7 +3624,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.autonick.html#enrobie.plugins.autonick.params.AutoNickPluginServiceParams.password">password (enrobie.plugins.autonick.params.AutoNickPluginServiceParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.HomiePluginParams.password">(enrobie.plugins.enhomie.HomiePluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.params.HomiePluginParams.password">(enrobie.plugins.enhomie.params.HomiePluginParams attribute)</a>
@@ -3521,7 +3640,7 @@
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.command.DSCCommand.path">path (enrobie.clients.discord.command.DSCCommand attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.command.MTMCommand.path">(enrobie.clients.mattermost.command.MTMCommand attribute)</a>
 </li>
       </ul></li>
@@ -3529,7 +3648,7 @@
 </li>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.HomiePlugin.persist">persist (enrobie.plugins.enhomie.HomiePlugin property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.plugin.HomiePlugin.persist">(enrobie.plugins.enhomie.plugin.HomiePlugin property)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.HomiePlugin.persist">(enrobie.plugins.HomiePlugin property)</a>
@@ -3537,7 +3656,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.AinswerHistoryRecord.person">person (enrobie.plugins.ainswer.history.AinswerHistoryRecord attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.AinswerHistoryTable.person">(enrobie.plugins.ainswer.history.AinswerHistoryTable attribute)</a>
 </li>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.AinswerMemoryRecord.person">(enrobie.plugins.ainswer.memory.AinswerMemoryRecord attribute)</a>
@@ -3555,7 +3674,7 @@
       </ul></li>
       <li><a href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.person">person() (enrobie.robie.models.robie.RobieModels class method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.person">(enrobie.robie.models.RobieModels class method)</a>
 </li>
         <li><a href="enrobie.robie.html#enrobie.robie.Robie.person">(enrobie.robie.Robie method)</a>
@@ -3565,7 +3684,7 @@
       </ul></li>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.persons">persons (enrobie.robie.childs.robie.RobieChilds property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChilds.persons">(enrobie.robie.childs.RobieChilds property)</a>
 </li>
         <li><a href="enrobie.robie.params.html#enrobie.robie.params.robie.RobieParams.persons">(enrobie.robie.params.robie.RobieParams attribute)</a>
@@ -3574,10 +3693,10 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.utils.html#enrobie.utils.child.InvalidChild.phase">phase (enrobie.utils.child.InvalidChild attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.InvalidChild.phase">(enrobie.utils.InvalidChild attribute)</a>
 </li>
       </ul></li>
@@ -3585,7 +3704,7 @@
 </li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerDepends.plugin">plugin (enrobie.plugins.ainswer.AinswerDepends attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.common.AinswerDepends.plugin">(enrobie.plugins.ainswer.common.AinswerDepends attribute)</a>
 </li>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.AinswerHistoryRecord.plugin">(enrobie.plugins.ainswer.history.AinswerHistoryRecord attribute)</a>
@@ -3607,13 +3726,13 @@
       </ul></li>
       <li><a href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.plugin">plugin() (enrobie.robie.models.robie.RobieModels class method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.plugin">(enrobie.robie.models.RobieModels class method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.plugins">plugins (enrobie.plugins.ainswer.AinswerPluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.plugins">(enrobie.plugins.ainswer.params.AinswerPluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPluginParams.plugins">(enrobie.plugins.AinswerPluginParams attribute)</a>
@@ -3633,13 +3752,13 @@
       </ul></li>
       <li><a href="enrobie.robie.params.html#enrobie.robie.params.robie.RobieParams.printer">printer (enrobie.robie.params.robie.RobieParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.params.html#enrobie.robie.params.RobieParams.printer">(enrobie.robie.params.RobieParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPlugin.printer">printer() (enrobie.plugins.ainswer.AinswerPlugin method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.plugin.AinswerPlugin.printer">(enrobie.plugins.ainswer.plugin.AinswerPlugin method)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPlugin.printer">(enrobie.plugins.AinswerPlugin method)</a>
@@ -3655,13 +3774,13 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.AinswerHistory.process">process() (enrobie.plugins.ainswer.history.AinswerHistory method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.logger.html#enrobie.plugins.logger.history.LoggerHistory.process">(enrobie.plugins.logger.history.LoggerHistory method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.prompt">prompt (enrobie.plugins.ainswer.AinswerPluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.prompt">(enrobie.plugins.ainswer.params.AinswerPluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPluginParams.prompt">(enrobie.plugins.AinswerPluginParams attribute)</a>
@@ -3671,7 +3790,7 @@
 </li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.publish">publish (enrobie.clients.discord.client.DSCClient property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.publish">(enrobie.clients.discord.DSCClient property)</a>
 </li>
         <li><a href="enrobie.clients.html#enrobie.clients.DSCClient.publish">(enrobie.clients.DSCClient property)</a>
@@ -3691,19 +3810,19 @@
       </ul></li>
       <li><a href="enrobie.utils.html#enrobie.utils.ClientPublish.publish">publish() (enrobie.utils.ClientPublish method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientPublish.publish">(enrobie.utils.states.ClientPublish method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue.put">put() (enrobie.robie.addons.queue.RobieQueue method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieQueue.put">(enrobie.robie.addons.RobieQueue method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.put_command">put_command() (enrobie.clients.discord.client.DSCClient method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.put_command">(enrobie.clients.discord.DSCClient method)</a>
 </li>
         <li><a href="enrobie.clients.html#enrobie.clients.DSCClient.put_command">(enrobie.clients.DSCClient method)</a>
@@ -3727,7 +3846,7 @@
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.put_message">put_message() (enrobie.clients.discord.client.DSCClient method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.put_message">(enrobie.clients.discord.DSCClient method)</a>
 </li>
         <li><a href="enrobie.clients.html#enrobie.clients.DSCClient.put_message">(enrobie.clients.DSCClient method)</a>
@@ -3750,52 +3869,50 @@
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="Q">Q</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="Q">Q</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue.qsize">qsize (enrobie.robie.addons.queue.RobieQueue property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieQueue.qsize">(enrobie.robie.addons.RobieQueue property)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPlugin.question">question (enrobie.plugins.ainswer.AinswerPlugin property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.plugin.AinswerPlugin.question">(enrobie.plugins.ainswer.plugin.AinswerPlugin property)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AinswerPlugin.question">(enrobie.plugins.AinswerPlugin property)</a>
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.queue">queue() (enrobie.robie.models.robie.RobieModels class method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.queue">(enrobie.robie.models.RobieModels class method)</a>
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="R">R</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.persist.HomiePersist.record">record() (enrobie.plugins.enhomie.persist.HomiePersist method)</a>
 </li>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.persist.HomiePersist.records">records (enrobie.plugins.enhomie.persist.HomiePersist property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrent.records">(enrobie.plugins.nagios.current.NagiosCurrent property)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.AinswerHistory.records">records() (enrobie.plugins.ainswer.history.AinswerHistory method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.AinswerMemory.records">(enrobie.plugins.ainswer.memory.AinswerMemory method)</a>
 </li>
         <li><a href="enrobie.plugins.logger.html#enrobie.plugins.logger.history.LoggerHistory.records">(enrobie.plugins.logger.history.LoggerHistory method)</a>
@@ -3803,7 +3920,7 @@
       </ul></li>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds.register">register() (enrobie.robie.childs.robie.RobieChilds method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChilds.register">(enrobie.robie.childs.RobieChilds method)</a>
 </li>
         <li><a href="enrobie.robie.html#enrobie.robie.config.RobieConfig.register">(enrobie.robie.config.RobieConfig method)</a>
@@ -3817,7 +3934,7 @@
       </ul></li>
       <li><a href="enrobie.robie.html#enrobie.robie.config.RobieConfig.register_locate">register_locate() (enrobie.robie.config.RobieConfig method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#enrobie.robie.Robie.register_locate">(enrobie.robie.Robie method)</a>
 </li>
         <li><a href="enrobie.robie.html#enrobie.robie.robie.Robie.register_locate">(enrobie.robie.robie.Robie method)</a>
@@ -3827,7 +3944,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.SQLBase.registry">registry (enrobie.plugins.ainswer.history.SQLBase attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.SQLBase.registry">(enrobie.plugins.ainswer.memory.SQLBase attribute)</a>
 </li>
         <li><a href="enrobie.plugins.logger.html#enrobie.plugins.logger.history.SQLBase.registry">(enrobie.plugins.logger.history.SQLBase attribute)</a>
@@ -3835,13 +3952,13 @@
       </ul></li>
       <li><a href="enrobie.utils.html#enrobie.utils.ClientChannels.rename_member">rename_member() (enrobie.utils.ClientChannels method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientChannels.rename_member">(enrobie.utils.states.ClientChannels method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.reply">reply() (enrobie.clients.discord.message.DSCMessage method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage.reply">(enrobie.clients.irc.message.IRCMessage method)</a>
 </li>
         <li><a href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage.reply">(enrobie.clients.mattermost.message.MTMMessage method)</a>
@@ -3853,7 +3970,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.plugin.StatusPlugin.report">report() (enrobie.plugins.status.plugin.StatusPlugin method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.StatusPlugin.report">(enrobie.plugins.status.StatusPlugin method)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.StatusPlugin.report">(enrobie.plugins.StatusPlugin method)</a>
@@ -3867,7 +3984,7 @@
 </li>
       <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.params.StatusPluginParams.reports">reports (enrobie.plugins.status.params.StatusPluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.StatusPluginParams.reports">(enrobie.plugins.status.StatusPluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.StatusPluginParams.reports">(enrobie.plugins.StatusPluginParams attribute)</a>
@@ -3875,19 +3992,19 @@
       </ul></li>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.persist.HomiePersist.request">request() (enrobie.plugins.enhomie.persist.HomiePersist method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrent.request">(enrobie.plugins.nagios.current.NagiosCurrent method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.params.html#enrobie.robie.params.RobieServiceParams.respite">respite (enrobie.robie.params.RobieServiceParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.params.html#enrobie.robie.params.service.RobieServiceParams.respite">(enrobie.robie.params.service.RobieServiceParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.HomiePluginParams.restful">restful (enrobie.plugins.enhomie.HomiePluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.params.HomiePluginParams.restful">(enrobie.plugins.enhomie.params.HomiePluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.HomiePluginParams.restful">(enrobie.plugins.HomiePluginParams attribute)</a>
@@ -3901,13 +4018,13 @@
       </ul></li>
       <li><a href="enrobie.robie.html#enrobie.robie.Robie">Robie (class in enrobie.robie)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#enrobie.robie.robie.Robie">(class in enrobie.robie.robie)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.child.RobieChild.robie">robie (enrobie.robie.childs.child.RobieChild property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChild.robie">(enrobie.robie.childs.RobieChild property)</a>
 </li>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.robie">(enrobie.robie.members.member.RobieMember property)</a>
@@ -3924,142 +4041,142 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.robie">robie() (enrobie.robie.models.robie.RobieModels class method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.robie">(enrobie.robie.models.RobieModels class method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChild">RobieChild (class in enrobie.robie.childs)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.child.RobieChild">(class in enrobie.robie.childs.child)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobieChilds">RobieChilds (class in enrobie.robie.childs)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.robie.RobieChilds">(class in enrobie.robie.childs.robie)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobieClient">RobieClient (class in enrobie.robie.childs)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient">(class in enrobie.robie.childs.client)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieClients">RobieClients (class in enrobie.robie.members)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.clients.RobieClients">(class in enrobie.robie.members.clients)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.RobieClientThread">RobieClientThread (class in enrobie.robie.threads)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.client.RobieClientThread">(class in enrobie.robie.threads.client)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.models.html#enrobie.robie.models.RobieCommand">RobieCommand (class in enrobie.robie.models)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#enrobie.robie.models.command.RobieCommand">(class in enrobie.robie.models.command)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.html#enrobie.robie.RobieConfig">RobieConfig (class in enrobie.robie)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#enrobie.robie.config.RobieConfig">(class in enrobie.robie.config)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieJinja2">RobieJinja2 (class in enrobie.robie.addons)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.jinja2.RobieJinja2">(class in enrobie.robie.addons.jinja2)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger">RobieLogger (class in enrobie.robie.addons)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger">(class in enrobie.robie.addons.logger)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieMember">RobieMember (class in enrobie.robie.members)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember">(class in enrobie.robie.members.member)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.models.html#enrobie.robie.models.RobieMessage">RobieMessage (class in enrobie.robie.models)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#enrobie.robie.models.message.RobieMessage">(class in enrobie.robie.models.message)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.models.html#enrobie.robie.models.RobieModels">RobieModels (class in enrobie.robie.models)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels">(class in enrobie.robie.models.robie)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobiePerson">RobiePerson (class in enrobie.robie.childs)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.person.RobiePerson">(class in enrobie.robie.childs.person)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobiePlugin">RobiePlugin (class in enrobie.robie.childs)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin">(class in enrobie.robie.childs.plugin)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobiePlugins">RobiePlugins (class in enrobie.robie.members)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.plugins.RobiePlugins">(class in enrobie.robie.members.plugins)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.RobiePluginThread">RobiePluginThread (class in enrobie.robie.threads)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.plugin.RobiePluginThread">(class in enrobie.robie.threads.plugin)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieQueue">RobieQueue (class in enrobie.robie.addons)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueue">(class in enrobie.robie.addons.queue)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieQueueItem">RobieQueueItem (class in enrobie.robie.addons)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.queue.RobieQueueItem">(class in enrobie.robie.addons.queue)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.html#enrobie.robie.RobieService">RobieService (class in enrobie.robie)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.html#enrobie.robie.service.RobieService">(class in enrobie.robie.service)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread">RobieThread (class in enrobie.robie.threads)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread">(class in enrobie.robie.threads.thread)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.RobieThread.run">run() (enrobie.robie.threads.RobieThread method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.threads.html#enrobie.robie.threads.thread.RobieThread.run">(enrobie.robie.threads.thread.RobieThread method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.running">running (enrobie.robie.members.member.RobieMember property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.running">(enrobie.robie.members.RobieMember property)</a>
 </li>
         <li><a href="enrobie.robie.html#enrobie.robie.RobieService.running">(enrobie.robie.RobieService property)</a>
@@ -4068,15 +4185,14 @@
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="S">S</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.schema">schema() (enrobie.clients.discord.client.DSCClient class method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.schema">(enrobie.clients.discord.DSCClient class method)</a>
 </li>
         <li><a href="enrobie.clients.html#enrobie.clients.DSCClient.schema">(enrobie.clients.DSCClient class method)</a>
@@ -4146,7 +4262,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.AinswerHistory.search">search() (enrobie.plugins.ainswer.history.AinswerHistory method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.AinswerMemory.search">(enrobie.plugins.ainswer.memory.AinswerMemory method)</a>
 </li>
         <li><a href="enrobie.plugins.logger.html#enrobie.plugins.logger.history.LoggerHistory.search">(enrobie.plugins.logger.history.LoggerHistory method)</a>
@@ -4156,13 +4272,13 @@
 </li>
       <li><a href="enrobie.utils.html#enrobie.utils.ClientChannels.select">select() (enrobie.utils.ClientChannels method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientChannels.select">(enrobie.utils.states.ClientChannels method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.autonick.html#enrobie.plugins.autonick.params.AutoNickPluginServiceParams.service">service (enrobie.plugins.autonick.params.AutoNickPluginServiceParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.service">(enrobie.robie.members.member.RobieMember property)</a>
 </li>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.service">(enrobie.robie.members.RobieMember property)</a>
@@ -4178,7 +4294,7 @@
       </ul></li>
       <li><a href="enrobie.robie.models.html#enrobie.robie.models.robie.RobieModels.service">service() (enrobie.robie.models.robie.RobieModels class method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.models.html#enrobie.robie.models.RobieModels.service">(enrobie.robie.models.RobieModels class method)</a>
 </li>
       </ul></li>
@@ -4188,7 +4304,7 @@
 </li>
       <li><a href="enrobie.plugins.autonick.html#enrobie.plugins.autonick.AutoNickPluginParams.services">services (enrobie.plugins.autonick.AutoNickPluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.autonick.html#enrobie.plugins.autonick.params.AutoNickPluginParams.services">(enrobie.plugins.autonick.params.AutoNickPluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.AutoNickPluginParams.services">(enrobie.plugins.AutoNickPluginParams attribute)</a>
@@ -4200,13 +4316,13 @@
       </ul></li>
       <li><a href="enrobie.utils.html#enrobie.utils.ClientChannels.set_title">set_title() (enrobie.utils.ClientChannels method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientChannels.set_title">(enrobie.utils.states.ClientChannels method)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.utils.html#enrobie.utils.ClientChannels.set_topic">set_topic() (enrobie.utils.ClientChannels method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientChannels.set_topic">(enrobie.utils.states.ClientChannels method)</a>
 </li>
       </ul></li>
@@ -4216,7 +4332,7 @@
 </li>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.soft">soft() (enrobie.robie.members.member.RobieMember method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.soft">(enrobie.robie.members.RobieMember method)</a>
 </li>
         <li><a href="enrobie.robie.html#enrobie.robie.RobieService.soft">(enrobie.robie.RobieService method)</a>
@@ -4226,7 +4342,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.history.SQLBase">SQLBase (class in enrobie.plugins.ainswer.history)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.SQLBase">(class in enrobie.plugins.ainswer.memory)</a>
 </li>
         <li><a href="enrobie.plugins.logger.html#enrobie.plugins.logger.history.SQLBase">(class in enrobie.plugins.logger.history)</a>
@@ -4234,7 +4350,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.HomiePluginParams.ssl_capem">ssl_capem (enrobie.plugins.enhomie.HomiePluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.params.HomiePluginParams.ssl_capem">(enrobie.plugins.enhomie.params.HomiePluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.HomiePluginParams.ssl_capem">(enrobie.plugins.HomiePluginParams attribute)</a>
@@ -4247,10 +4363,10 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.HomiePluginParams.ssl_verify">ssl_verify (enrobie.plugins.enhomie.HomiePluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.params.HomiePluginParams.ssl_verify">(enrobie.plugins.enhomie.params.HomiePluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.HomiePluginParams.ssl_verify">(enrobie.plugins.HomiePluginParams attribute)</a>
@@ -4264,7 +4380,7 @@
       </ul></li>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.start">start() (enrobie.robie.addons.logger.RobieLogger method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.start">(enrobie.robie.addons.RobieLogger method)</a>
 </li>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.start">(enrobie.robie.members.member.RobieMember method)</a>
@@ -4278,7 +4394,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.common.StatusPluginItem.state">state (enrobie.plugins.status.common.StatusPluginItem attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.StatusPluginItem.state">(enrobie.plugins.status.StatusPluginItem attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.StatusPluginItem.state">(enrobie.plugins.StatusPluginItem attribute)</a>
@@ -4288,7 +4404,7 @@
 </li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClientParams.status">status (enrobie.clients.discord.DSCClientParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.params.DSCClientParams.status">(enrobie.clients.discord.params.DSCClientParams attribute)</a>
 </li>
         <li><a href="enrobie.clients.html#enrobie.clients.DSCClientParams.status">(enrobie.clients.DSCClientParams attribute)</a>
@@ -4352,7 +4468,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.html#enrobie.plugins.StatusPlugin">StatusPlugin (class in enrobie.plugins)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.StatusPlugin">(class in enrobie.plugins.status)</a>
 </li>
         <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.plugin.StatusPlugin">(class in enrobie.plugins.status.plugin)</a>
@@ -4360,7 +4476,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.html#enrobie.plugins.StatusPluginItem">StatusPluginItem (class in enrobie.plugins)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.StatusPluginItem">(class in enrobie.plugins.status)</a>
 </li>
         <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.common.StatusPluginItem">(class in enrobie.plugins.status.common)</a>
@@ -4368,7 +4484,7 @@
       </ul></li>
       <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.logger.RobieLogger.stop">stop() (enrobie.robie.addons.logger.RobieLogger method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.addons.html#enrobie.robie.addons.RobieLogger.stop">(enrobie.robie.addons.RobieLogger method)</a>
 </li>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.stop">(enrobie.robie.members.member.RobieMember method)</a>
@@ -4388,7 +4504,7 @@
 </li>
       <li><a href="enrobie.utils.html#enrobie.utils.ClientPublish.subscribe">subscribe() (enrobie.utils.ClientPublish method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientPublish.subscribe">(enrobie.utils.states.ClientPublish method)</a>
 </li>
       </ul></li>
@@ -4397,12 +4513,11 @@
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginPromptParams.system">system (enrobie.plugins.ainswer.params.AinswerPluginPromptParams attribute)</a>
 </li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="T">T</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.persist.HomiePersistRecord.tags">tags (enrobie.plugins.enhomie.persist.HomiePersistRecord attribute)</a>
 </li>
       <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.params.StatusPluginReportParams.target">target (enrobie.plugins.status.params.StatusPluginReportParams attribute)</a>
@@ -4427,7 +4542,7 @@
 </li>
       <li><a href="enrobie.execution.test.html#enrobie.execution.test.test_config.test_arguments">test_arguments() (in module enrobie.execution.test.test_config)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.execution.test.html#enrobie.execution.test.test_crypts.test_arguments">(in module enrobie.execution.test.test_crypts)</a>
 </li>
         <li><a href="enrobie.execution.test.html#enrobie.execution.test.test_service.test_arguments">(in module enrobie.execution.test.test_service)</a>
@@ -4556,7 +4671,7 @@
       <li><a href="enrobie.robie.models.test.html#enrobie.robie.models.test.test_command.test_RobieCommand">test_RobieCommand() (in module enrobie.robie.models.test.test_command)</a>
 </li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.test.html#enrobie.robie.test.test_config.test_RobieConfig">test_RobieConfig() (in module enrobie.robie.test.test_config)</a>
 </li>
       <li><a href="enrobie.robie.addons.test.html#enrobie.robie.addons.test.test_logger.test_RobieLogger">test_RobieLogger() (in module enrobie.robie.addons.test.test_logger)</a>
@@ -4599,7 +4714,7 @@
 </li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.common.AinswerResponse.text">text (enrobie.plugins.ainswer.common.AinswerResponse attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.common.AinswerResponseDSC.text">(enrobie.plugins.ainswer.common.AinswerResponseDSC attribute)</a>
 </li>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.common.AinswerResponseIRC.text">(enrobie.plugins.ainswer.common.AinswerResponseIRC attribute)</a>
@@ -4609,7 +4724,7 @@
       </ul></li>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.client.RobieClient.thread">thread (enrobie.robie.childs.client.RobieClient property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin.thread">(enrobie.robie.childs.plugin.RobiePlugin property)</a>
 </li>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobieClient.thread">(enrobie.robie.childs.RobieClient property)</a>
@@ -4623,13 +4738,13 @@
       </ul></li>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.threads">threads (enrobie.robie.members.member.RobieMember property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.threads">(enrobie.robie.members.RobieMember property)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.common.StatusPluginItem.time">time (enrobie.plugins.status.common.StatusPluginItem attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.StatusPluginItem.time">(enrobie.plugins.status.StatusPluginItem attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.StatusPluginItem.time">(enrobie.plugins.StatusPluginItem attribute)</a>
@@ -4645,7 +4760,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginAinswerParams.timeout">timeout (enrobie.plugins.ainswer.params.AinswerPluginAinswerParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.HomiePluginParams.timeout">(enrobie.plugins.enhomie.HomiePluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.params.HomiePluginParams.timeout">(enrobie.plugins.enhomie.params.HomiePluginParams attribute)</a>
@@ -4661,7 +4776,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.common.StatusPluginItem.title">title (enrobie.plugins.status.common.StatusPluginItem attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.StatusPluginItem.title">(enrobie.plugins.status.StatusPluginItem attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.StatusPluginItem.title">(enrobie.plugins.StatusPluginItem attribute)</a>
@@ -4673,7 +4788,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPlugin.toolset">toolset (enrobie.plugins.ainswer.AinswerPlugin property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.plugin.AinswerPlugin.toolset">(enrobie.plugins.ainswer.plugin.AinswerPlugin property)</a>
 </li>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.toolset.AinswerToolset.toolset">(enrobie.plugins.ainswer.toolset.AinswerToolset property)</a>
@@ -4683,13 +4798,13 @@
       </ul></li>
       <li><a href="enrobie.utils.html#enrobie.utils.ClientChannel.topic">topic (enrobie.utils.ClientChannel attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.states.ClientChannel.topic">(enrobie.utils.states.ClientChannel attribute)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.AinswerPluginParams.trusted">trusted (enrobie.plugins.ainswer.AinswerPluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.params.AinswerPluginParams.trusted">(enrobie.plugins.ainswer.params.AinswerPluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.autojoin.html#enrobie.plugins.autojoin.AutoJoinPluginParams.trusted">(enrobie.plugins.autojoin.AutoJoinPluginParams attribute)</a>
@@ -4723,20 +4838,19 @@
       </ul></li>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.plugin.RobiePlugin.trusted">trusted() (enrobie.robie.childs.plugin.RobiePlugin method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobiePlugin.trusted">(enrobie.robie.childs.RobiePlugin method)</a>
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="U">U</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.AinswerMemoryRecord.unique">unique (enrobie.plugins.ainswer.memory.AinswerMemoryRecord attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.AinswerMemoryTable.unique">(enrobie.plugins.ainswer.memory.AinswerMemoryTable attribute)</a>
 </li>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.persist.HomiePersistRecord.unique">(enrobie.plugins.enhomie.persist.HomiePersistRecord attribute)</a>
@@ -4755,12 +4869,12 @@
       <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.params.StatusPluginIconsParams.unknown">unknown (enrobie.plugins.status.params.StatusPluginIconsParams attribute)</a>
 </li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.persist.HomiePersistRecord.update">update (enrobie.plugins.enhomie.persist.HomiePersistRecord attribute)</a>
 </li>
       <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.plugin.StatusPlugin.update">update() (enrobie.plugins.status.plugin.StatusPlugin method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.status.html#enrobie.plugins.status.StatusPlugin.update">(enrobie.plugins.status.StatusPlugin method)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.StatusPlugin.update">(enrobie.plugins.StatusPlugin method)</a>
@@ -4768,7 +4882,7 @@
       </ul></li>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.HomiePluginParams.username">username (enrobie.plugins.enhomie.HomiePluginParams attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.params.HomiePluginParams.username">(enrobie.plugins.enhomie.params.HomiePluginParams attribute)</a>
 </li>
         <li><a href="enrobie.plugins.html#enrobie.plugins.HomiePluginParams.username">(enrobie.plugins.HomiePluginParams attribute)</a>
@@ -4781,21 +4895,20 @@
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="V">V</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.vacate">vacate (enrobie.robie.members.member.RobieMember property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.vacate">(enrobie.robie.members.RobieMember property)</a>
 </li>
       </ul></li>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.client.DSCClient.validate">validate() (enrobie.clients.discord.client.DSCClient method)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.DSCClient.validate">(enrobie.clients.discord.DSCClient method)</a>
 </li>
         <li><a href="enrobie.clients.html#enrobie.clients.DSCClient.validate">(enrobie.clients.DSCClient method)</a>
@@ -4868,10 +4981,10 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.persist.HomiePersistRecord.value">value (enrobie.plugins.enhomie.persist.HomiePersistRecord attribute)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.utils.html#enrobie.utils.InvalidParam.value">(enrobie.utils.InvalidParam attribute)</a>
 </li>
         <li><a href="enrobie.utils.html#enrobie.utils.param.InvalidParam.value">(enrobie.utils.param.InvalidParam attribute)</a>
@@ -4882,15 +4995,14 @@
       <li><a href="enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.persist.HomiePersistRecord.value_unit">value_unit (enrobie.plugins.enhomie.persist.HomiePersistRecord attribute)</a>
 </li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="W">W</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.person.RobiePerson.weight">weight (enrobie.robie.childs.person.RobiePerson property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.childs.html#enrobie.robie.childs.RobiePerson.weight">(enrobie.robie.childs.RobiePerson property)</a>
 </li>
         <li><a href="enrobie.robie.params.html#enrobie.robie.params.person.RobiePersonParams.weight">(enrobie.robie.params.person.RobiePersonParams attribute)</a>
@@ -4899,10 +5011,10 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.whome">whome (enrobie.clients.discord.message.DSCMessage property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.clients.irc.html#enrobie.clients.irc.message.IRCMessage.whome">(enrobie.clients.irc.message.IRCMessage property)</a>
 </li>
         <li><a href="enrobie.clients.mattermost.html#enrobie.clients.mattermost.message.MTMMessage.whome">(enrobie.clients.mattermost.message.MTMMessage property)</a>
@@ -4913,15 +5025,14 @@
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
-  <h2 id="Z">Z</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul style="margin-left:0;list-style-type:none">
+</tr></table>
+
+<h2 id="Z">Z</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="enrobie.robie.members.html#enrobie.robie.members.member.RobieMember.zombies">zombies (enrobie.robie.members.member.RobieMember property)</a>
 
-      <ul style="list-style-type:none">
+      <ul>
         <li><a href="enrobie.robie.members.html#enrobie.robie.members.RobieMember.zombies">(enrobie.robie.members.RobieMember property)</a>
 </li>
         <li><a href="enrobie.robie.html#enrobie.robie.RobieService.zombies">(enrobie.robie.RobieService property)</a>
@@ -4930,33 +5041,79 @@
 </li>
       </ul></li>
   </ul></td>
-  </tr>
-      </table>
-  
+</tr></table>
 
-</div></div>
-<aside id="right-sidebar" class="hidden text-sm xl:block">
-<div class="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-6 space-y-2">
-<a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#A">A</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#B">B</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#C">C</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#D">D</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#E">E</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#F">F</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#G">G</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#H">H</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#I">I</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#J">J</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#K">K</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#L">L</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#M">M</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#N">N</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#O">O</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#P">P</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#Q">Q</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#R">R</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#S">S</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#T">T</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#U">U</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#V">V</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#W">W</a><a class="pt-2 block text-muted-foreground no-underline transition-colors hover:text-foreground focus-visible:outline-offset-[-1px]" href="#Z">Z</a>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
 </div>
-</aside>
-        </main>
-      </div>
-    </div><footer class="py-6 border-t border-border md:py-0">
-    <div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-      <div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-        <p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2024, Enasis Network&nbsp;Built with <a class="font-medium underline underline-offset-4"
-    href="https://www.sphinx-doc.org"
-    rel="noreferrer">Sphinx 8.2.3</a></p>
-</div>
-</div>
-</footer>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
   </div>
   
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="defer" src="_static/theme.js?v=073f68d9"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
   
-</body>
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Enasis Network.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
 </html>
