@@ -3,7 +3,7 @@
 ============================= test session starts ==============================
 platform linux -- Python 3.12.10, pytest-8.3.5, pluggy-1.6.0 -- /home/runner/work/enrobie/enrobie/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=3723098831
+Using --randomly-seed=2721604039
 rootdir: /home/runner/work/enrobie/enrobie/main
 configfile: pyproject.toml
 plugins: sphinx-0.6.3, clarity-1.0.1, xdist-3.7.0, mock-3.14.1, anyio-4.9.0, respx-0.22.0, mypy-1.0.1, cov-6.1.1, randomly-3.16.0
@@ -12,548 +12,548 @@ created: 4/4 workers
 
 scheduling tests via LoadScheduling
 
-enrobie/robie/members/test/test_member.py::test_RobieMember_cover 
-enrobie/clients/discord/test/__init__.py::mypy 
-enrobie/clients/discord/test/test_command.py::test_DSCCommand 
-enrobie/clients/mattermost/params.py::mypy 
-[gw1] [  0%] PASSED enrobie/clients/discord/test/test_command.py::test_DSCCommand 
-enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin_cover 
-[gw0] [  0%] PASSED enrobie/robie/members/test/test_member.py::test_RobieMember_cover 
-enrobie/clients/irc/test/test_message.py::test_IRCMessage_samples 
-[gw2] [  1%] PASSED enrobie/clients/discord/test/__init__.py::mypy 
-enrobie/clients/discord/test/test_command.py::mypy 
-[gw2] [  1%] PASSED enrobie/clients/discord/test/test_command.py::mypy 
-enrobie/clients/discord/test/test_message.py::mypy 
-[gw2] [  1%] PASSED enrobie/clients/discord/test/test_message.py::mypy 
+enrobie/clients/discord/test/test_client.py::test_DSCClient_message 
+enrobie/__init__.py::mypy-status 
+enrobie/clients/discord/test/test_message.py::test_DSCMessage 
 enrobie/clients/irc/command.py::mypy 
-[gw2] [  2%] PASSED enrobie/clients/irc/command.py::mypy 
-enrobie/clients/irc/__init__.py::mypy 
-[gw2] [  2%] PASSED enrobie/clients/irc/__init__.py::mypy 
+[gw0] [  0%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage 
+enrobie/clients/discord/test/test_message.py::test_DSCMessage_samples 
+[gw1] [  0%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_message 
+enrobie/clients/discord/test/test_client.py::test_DSCClient_channels 
+[gw2] [  1%] PASSED enrobie/__init__.py::mypy-status 
+enrobie/clients/discord/test/test_client.py::mypy 
+[gw2] [  1%] PASSED enrobie/clients/discord/test/test_client.py::mypy 
+enrobie/clients/discord/__init__.py::mypy 
+[gw2] [  1%] PASSED enrobie/clients/discord/__init__.py::mypy 
+enrobie/__init__.py::mypy 
+[gw2] [  2%] PASSED enrobie/__init__.py::mypy 
+enrobie/clients/discord/test/__init__.py::mypy 
+[gw2] [  2%] PASSED enrobie/clients/discord/test/__init__.py::mypy 
+enrobie/clients/discord/command.py::mypy 
+[gw2] [  3%] PASSED enrobie/clients/discord/command.py::mypy 
+enrobie/clients/__init__.py::mypy 
+[gw2] [  3%] PASSED enrobie/clients/__init__.py::mypy 
+enrobie/clients/discord/params.py::mypy 
+[gw3] [  3%] PASSED enrobie/clients/irc/command.py::mypy 
 enrobie/clients/irc/params.py::mypy 
-[gw2] [  3%] PASSED enrobie/clients/irc/params.py::mypy 
-enrobie/clients/irc/test/__init__.py::mypy 
-[gw2] [  3%] PASSED enrobie/clients/irc/test/__init__.py::mypy 
+[gw3] [  4%] PASSED enrobie/clients/irc/params.py::mypy 
+enrobie/clients/irc/__init__.py::mypy 
+[gw3] [  4%] PASSED enrobie/clients/irc/__init__.py::mypy 
 enrobie/clients/irc/message.py::mypy 
-[gw2] [  3%] PASSED enrobie/clients/irc/message.py::mypy 
-enrobie/clients/irc/states.py::mypy 
-[gw2] [  4%] PASSED enrobie/clients/irc/states.py::mypy 
-enrobie/clients/irc/client.py::mypy 
-[gw2] [  4%] PASSED enrobie/clients/irc/client.py::mypy 
-enrobie/clients/irc/test/test_client.py::mypy 
-[gw2] [  4%] PASSED enrobie/clients/irc/test/test_client.py::mypy 
+[gw3] [  4%] PASSED enrobie/clients/irc/message.py::mypy 
 enrobie/clients/irc/test/test_command.py::mypy 
-[gw2] [  5%] PASSED enrobie/clients/irc/test/test_command.py::mypy 
+[gw3] [  5%] PASSED enrobie/clients/irc/test/test_command.py::mypy 
 enrobie/clients/irc/test/test_message.py::mypy 
-[gw2] [  5%] PASSED enrobie/clients/irc/test/test_message.py::mypy 
-enrobie/clients/mattermost/message.py::mypy 
-[gw2] [  6%] PASSED enrobie/clients/mattermost/message.py::mypy 
-enrobie/clients/mattermost/test/test_client.py::mypy 
-[gw2] [  6%] PASSED enrobie/clients/mattermost/test/test_client.py::mypy 
+[gw3] [  5%] PASSED enrobie/clients/irc/test/test_message.py::mypy 
 enrobie/clients/mattermost/client.py::mypy 
-[gw2] [  6%] PASSED enrobie/clients/mattermost/client.py::mypy 
-enrobie/plugins/ainswer/question.py::mypy 
-[gw2] [  7%] PASSED enrobie/plugins/ainswer/question.py::mypy 
-enrobie/plugins/ainswer/params.py::mypy 
-[gw2] [  7%] PASSED enrobie/plugins/ainswer/params.py::mypy 
-enrobie/plugins/ainswer/test/__init__.py::mypy 
-[gw2] [  7%] PASSED enrobie/plugins/ainswer/test/__init__.py::mypy 
-enrobie/plugins/ainswer/common.py::mypy 
-[gw2] [  8%] PASSED enrobie/plugins/ainswer/common.py::mypy 
-enrobie/plugins/ainswer/memory.py::mypy 
-[gw2] [  8%] PASSED enrobie/plugins/ainswer/memory.py::mypy 
-enrobie/plugins/ainswer/test/test_history.py::mypy 
-[gw2] [  9%] PASSED enrobie/plugins/ainswer/test/test_history.py::mypy 
-enrobie/plugins/ainswer/__init__.py::mypy 
-[gw2] [  9%] PASSED enrobie/plugins/ainswer/__init__.py::mypy 
-enrobie/plugins/ainswer/history.py::mypy 
-[gw2] [  9%] PASSED enrobie/plugins/ainswer/history.py::mypy 
-enrobie/plugins/ainswer/models.py::mypy 
-[gw2] [ 10%] PASSED enrobie/plugins/ainswer/models.py::mypy 
-enrobie/plugins/ainswer/ainswer.py::mypy 
-[gw2] [ 10%] PASSED enrobie/plugins/ainswer/ainswer.py::mypy 
-enrobie/plugins/__init__.py::mypy 
-[gw2] [ 10%] PASSED enrobie/plugins/__init__.py::mypy 
-enrobie/plugins/ainswer/plugin.py::mypy 
-[gw2] [ 11%] PASSED enrobie/plugins/ainswer/plugin.py::mypy 
-enrobie/plugins/ainswer/test/test_memory.py::mypy 
-[gw2] [ 11%] PASSED enrobie/plugins/ainswer/test/test_memory.py::mypy 
-enrobie/plugins/ainswer/test/test_models.py::mypy 
-[gw2] [ 12%] PASSED enrobie/plugins/ainswer/test/test_models.py::mypy 
-enrobie/plugins/ainswer/test/test_plugin.py::mypy 
-[gw2] [ 12%] PASSED enrobie/plugins/ainswer/test/test_plugin.py::mypy 
-enrobie/plugins/ainswer/test/test_question.py::mypy 
-[gw2] [ 12%] PASSED enrobie/plugins/ainswer/test/test_question.py::mypy 
-enrobie/plugins/autojoin/test/__init__.py::mypy 
-[gw2] [ 13%] PASSED enrobie/plugins/autojoin/test/__init__.py::mypy 
-enrobie/plugins/autojoin/__init__.py::mypy 
-[gw2] [ 13%] PASSED enrobie/plugins/autojoin/__init__.py::mypy 
-enrobie/plugins/autojoin/params.py::mypy 
-[gw2] [ 13%] PASSED enrobie/plugins/autojoin/params.py::mypy 
-enrobie/plugins/autojoin/plugin.py::mypy 
-[gw2] [ 14%] PASSED enrobie/plugins/autojoin/plugin.py::mypy 
-enrobie/plugins/autojoin/test/test_plugin.py::mypy 
-[gw2] [ 14%] PASSED enrobie/plugins/autojoin/test/test_plugin.py::mypy 
-enrobie/plugins/ainswer/toolset.py::mypy 
-[gw2] [ 15%] PASSED enrobie/plugins/ainswer/toolset.py::mypy 
-enrobie/plugins/autonick/plugin.py::mypy 
-[gw2] [ 15%] PASSED enrobie/plugins/autonick/plugin.py::mypy 
-enrobie/plugins/autonick/test/test_plugin.py::mypy 
-[gw2] [ 15%] PASSED enrobie/plugins/autonick/test/test_plugin.py::mypy 
-enrobie/plugins/autonick/params.py::mypy 
-[gw2] [ 16%] PASSED enrobie/plugins/autonick/params.py::mypy 
-enrobie/plugins/autonick/__init__.py::mypy 
-[gw2] [ 16%] PASSED enrobie/plugins/autonick/__init__.py::mypy 
-enrobie/plugins/autonick/test/__init__.py::mypy 
-[gw2] [ 16%] PASSED enrobie/plugins/autonick/test/__init__.py::mypy 
-enrobie/plugins/enhomie/__init__.py::mypy 
-[gw2] [ 17%] PASSED enrobie/plugins/enhomie/__init__.py::mypy 
-enrobie/plugins/enhomie/helpers.py::mypy 
-[gw2] [ 17%] PASSED enrobie/plugins/enhomie/helpers.py::mypy 
-enrobie/plugins/enhomie/ainswer.py::mypy 
-[gw2] [ 18%] PASSED enrobie/plugins/enhomie/ainswer.py::mypy 
-enrobie/plugins/enhomie/test/test_plugin.py::mypy 
-[gw2] [ 18%] PASSED enrobie/plugins/enhomie/test/test_plugin.py::mypy 
-enrobie/plugins/enhomie/test/__init__.py::mypy 
-[gw2] [ 18%] PASSED enrobie/plugins/enhomie/test/__init__.py::mypy 
-enrobie/plugins/enhomie/persist.py::mypy 
-[gw2] [ 19%] PASSED enrobie/plugins/enhomie/persist.py::mypy 
-enrobie/plugins/enhomie/plugin.py::mypy 
-[gw2] [ 19%] PASSED enrobie/plugins/enhomie/plugin.py::mypy 
-enrobie/plugins/enhomie/params.py::mypy 
-[gw3] [ 19%] PASSED enrobie/clients/mattermost/params.py::mypy 
-enrobie/clients/mattermost/__init__.py::mypy 
-[gw3] [ 20%] PASSED enrobie/clients/mattermost/__init__.py::mypy 
+[gw3] [  6%] PASSED enrobie/clients/mattermost/client.py::mypy 
+enrobie/clients/mattermost/params.py::mypy 
+[gw3] [  6%] PASSED enrobie/clients/mattermost/params.py::mypy 
 enrobie/clients/mattermost/test/__init__.py::mypy 
-[gw3] [ 20%] PASSED enrobie/clients/mattermost/test/__init__.py::mypy 
+[gw3] [  6%] PASSED enrobie/clients/mattermost/test/__init__.py::mypy 
+enrobie/clients/mattermost/message.py::mypy 
+[gw3] [  7%] PASSED enrobie/clients/mattermost/message.py::mypy 
+enrobie/clients/mattermost/test/test_client.py::mypy 
+[gw3] [  7%] PASSED enrobie/clients/mattermost/test/test_client.py::mypy 
+enrobie/clients/mattermost/__init__.py::mypy 
+[gw3] [  7%] PASSED enrobie/clients/mattermost/__init__.py::mypy 
 enrobie/clients/mattermost/command.py::mypy 
-[gw3] [ 21%] PASSED enrobie/clients/mattermost/command.py::mypy 
+[gw3] [  8%] PASSED enrobie/clients/mattermost/command.py::mypy 
 enrobie/clients/mattermost/test/test_command.py::mypy 
-[gw3] [ 21%] PASSED enrobie/clients/mattermost/test/test_command.py::mypy 
+[gw3] [  8%] PASSED enrobie/clients/mattermost/test/test_command.py::mypy 
 enrobie/clients/mattermost/test/test_message.py::mypy 
-[gw3] [ 21%] PASSED enrobie/clients/mattermost/test/test_message.py::mypy 
-enrobie/execution/config.py::mypy 
-[gw3] [ 22%] PASSED enrobie/execution/config.py::mypy 
-enrobie/execution/test/__init__.py::mypy 
-[gw3] [ 22%] PASSED enrobie/execution/test/__init__.py::mypy 
-enrobie/execution/__init__.py::mypy 
-[gw3] [ 22%] PASSED enrobie/execution/__init__.py::mypy 
+[gw3] [  9%] PASSED enrobie/clients/mattermost/test/test_message.py::mypy 
 enrobie/execution/test/test_config.py::mypy 
-[gw3] [ 23%] PASSED enrobie/execution/test/test_config.py::mypy 
+[gw3] [  9%] PASSED enrobie/execution/test/test_config.py::mypy 
+enrobie/plugins/ainswer/common.py::mypy 
+[gw3] [  9%] PASSED enrobie/plugins/ainswer/common.py::mypy 
+enrobie/plugins/ainswer/params.py::mypy 
+[gw3] [ 10%] PASSED enrobie/plugins/ainswer/params.py::mypy 
+enrobie/plugins/__init__.py::mypy 
+[gw2] [ 10%] PASSED enrobie/clients/discord/params.py::mypy 
+enrobie/clients/discord/client.py::mypy 
+[gw2] [ 10%] PASSED enrobie/clients/discord/client.py::mypy 
+enrobie/clients/discord/message.py::mypy 
+[gw2] [ 11%] PASSED enrobie/clients/discord/message.py::mypy 
+enrobie/clients/discord/test/test_command.py::mypy 
+[gw2] [ 11%] PASSED enrobie/clients/discord/test/test_command.py::mypy 
+enrobie/clients/discord/test/test_message.py::mypy 
+[gw2] [ 12%] PASSED enrobie/clients/discord/test/test_message.py::mypy 
+enrobie/clients/irc/states.py::mypy 
+[gw2] [ 12%] PASSED enrobie/clients/irc/states.py::mypy 
+enrobie/clients/irc/test/__init__.py::mypy 
+[gw2] [ 12%] PASSED enrobie/clients/irc/test/__init__.py::mypy 
+enrobie/clients/irc/test/test_client.py::mypy 
+[gw2] [ 13%] PASSED enrobie/clients/irc/test/test_client.py::mypy 
+enrobie/clients/irc/client.py::mypy 
+[gw2] [ 13%] PASSED enrobie/clients/irc/client.py::mypy 
 enrobie/execution/crypts.py::mypy 
-[gw3] [ 23%] PASSED enrobie/execution/crypts.py::mypy 
-enrobie/conftest.py::mypy 
-[gw3] [ 24%] PASSED enrobie/conftest.py::mypy 
-enrobie/execution/service.py::mypy 
-[gw3] [ 24%] PASSED enrobie/execution/service.py::mypy 
-enrobie/execution/test/test_crypts.py::mypy 
-[gw3] [ 24%] PASSED enrobie/execution/test/test_crypts.py::mypy 
-enrobie/execution/test/test_service.py::mypy 
-[gw3] [ 25%] PASSED enrobie/execution/test/test_service.py::mypy 
+[gw3] [ 13%] PASSED enrobie/plugins/__init__.py::mypy 
+enrobie/plugins/ainswer/test/__init__.py::mypy 
+[gw3] [ 14%] PASSED enrobie/plugins/ainswer/test/__init__.py::mypy 
 enrobie/plugins/ainswer/helpers.py::mypy 
-[gw3] [ 25%] PASSED enrobie/plugins/ainswer/helpers.py::mypy 
-enrobie/plugins/status/test/__init__.py::mypy 
-[gw3] [ 25%] PASSED enrobie/plugins/status/test/__init__.py::mypy 
-enrobie/plugins/status/plugin.py::mypy 
+[gw3] [ 14%] PASSED enrobie/plugins/ainswer/helpers.py::mypy 
+enrobie/plugins/ainswer/memory.py::mypy 
+[gw3] [ 15%] PASSED enrobie/plugins/ainswer/memory.py::mypy 
+enrobie/plugins/ainswer/ainswer.py::mypy 
+[gw3] [ 15%] PASSED enrobie/plugins/ainswer/ainswer.py::mypy 
+enrobie/plugins/ainswer/test/test_memory.py::mypy 
+[gw3] [ 15%] PASSED enrobie/plugins/ainswer/test/test_memory.py::mypy 
+enrobie/plugins/ainswer/test/test_models.py::mypy 
+[gw3] [ 16%] PASSED enrobie/plugins/ainswer/test/test_models.py::mypy 
+enrobie/plugins/ainswer/test/test_plugin.py::mypy 
+[gw3] [ 16%] PASSED enrobie/plugins/ainswer/test/test_plugin.py::mypy 
+enrobie/plugins/ainswer/test/test_question.py::mypy 
+[gw3] [ 16%] PASSED enrobie/plugins/ainswer/test/test_question.py::mypy 
+enrobie/plugins/autojoin/test/test_plugin.py::mypy 
+[gw2] [ 17%] PASSED enrobie/execution/crypts.py::mypy 
+enrobie/execution/__init__.py::mypy 
+[gw2] [ 17%] PASSED enrobie/execution/__init__.py::mypy 
+enrobie/execution/test/__init__.py::mypy 
+[gw2] [ 18%] PASSED enrobie/execution/test/__init__.py::mypy 
+enrobie/execution/service.py::mypy 
+[gw2] [ 18%] PASSED enrobie/execution/service.py::mypy 
+enrobie/conftest.py::mypy 
+[gw2] [ 18%] PASSED enrobie/conftest.py::mypy 
+enrobie/execution/config.py::mypy 
+[gw2] [ 19%] PASSED enrobie/execution/config.py::mypy 
+enrobie/execution/test/test_crypts.py::mypy 
+[gw2] [ 19%] PASSED enrobie/execution/test/test_crypts.py::mypy 
+enrobie/execution/test/test_service.py::mypy 
+[gw2] [ 19%] PASSED enrobie/execution/test/test_service.py::mypy 
+enrobie/plugins/ainswer/models.py::mypy 
+[gw3] [ 20%] PASSED enrobie/plugins/autojoin/test/test_plugin.py::mypy 
+enrobie/plugins/ainswer/toolset.py::mypy 
+[gw3] [ 20%] PASSED enrobie/plugins/ainswer/toolset.py::mypy 
+enrobie/plugins/autojoin/test/__init__.py::mypy 
+[gw3] [ 21%] PASSED enrobie/plugins/autojoin/test/__init__.py::mypy 
+enrobie/plugins/autojoin/plugin.py::mypy 
+[gw3] [ 21%] PASSED enrobie/plugins/autojoin/plugin.py::mypy 
+enrobie/plugins/autojoin/__init__.py::mypy 
+[gw3] [ 21%] PASSED enrobie/plugins/autojoin/__init__.py::mypy 
+enrobie/plugins/autojoin/params.py::mypy 
+[gw3] [ 22%] PASSED enrobie/plugins/autojoin/params.py::mypy 
+enrobie/plugins/autonick/params.py::mypy 
+[gw3] [ 22%] PASSED enrobie/plugins/autonick/params.py::mypy 
+enrobie/plugins/autonick/test/test_plugin.py::mypy 
+[gw3] [ 22%] PASSED enrobie/plugins/autonick/test/test_plugin.py::mypy 
+enrobie/plugins/autonick/__init__.py::mypy 
+[gw3] [ 23%] PASSED enrobie/plugins/autonick/__init__.py::mypy 
+enrobie/plugins/autonick/test/__init__.py::mypy 
+[gw2] [ 23%] PASSED enrobie/plugins/ainswer/models.py::mypy 
+enrobie/plugins/ainswer/question.py::mypy 
+[gw2] [ 24%] PASSED enrobie/plugins/ainswer/question.py::mypy 
+enrobie/plugins/ainswer/plugin.py::mypy 
+[gw2] [ 24%] PASSED enrobie/plugins/ainswer/plugin.py::mypy 
+enrobie/plugins/ainswer/history.py::mypy 
+[gw2] [ 24%] PASSED enrobie/plugins/ainswer/history.py::mypy 
+enrobie/plugins/ainswer/__init__.py::mypy 
+[gw2] [ 25%] PASSED enrobie/plugins/ainswer/__init__.py::mypy 
+enrobie/plugins/ainswer/test/test_history.py::mypy 
+[gw2] [ 25%] PASSED enrobie/plugins/ainswer/test/test_history.py::mypy 
+enrobie/plugins/enhomie/plugin.py::mypy 
+[gw2] [ 25%] PASSED enrobie/plugins/enhomie/plugin.py::mypy 
+enrobie/plugins/enhomie/params.py::mypy 
 [gw2] [ 26%] PASSED enrobie/plugins/enhomie/params.py::mypy 
-enrobie/plugins/logger/history.py::mypy 
-[gw2] [ 26%] PASSED enrobie/plugins/logger/history.py::mypy 
-enrobie/plugins/logger/test/test_history.py::mypy 
-[gw2] [ 27%] PASSED enrobie/plugins/logger/test/test_history.py::mypy 
-enrobie/plugins/logger/plugin.py::mypy 
-[gw2] [ 27%] PASSED enrobie/plugins/logger/plugin.py::mypy 
-enrobie/plugins/logger/test/__init__.py::mypy 
-[gw2] [ 27%] PASSED enrobie/plugins/logger/test/__init__.py::mypy 
-enrobie/plugins/logger/params.py::mypy 
-[gw2] [ 28%] PASSED enrobie/plugins/logger/params.py::mypy 
-enrobie/plugins/logger/__init__.py::mypy 
-[gw2] [ 28%] PASSED enrobie/plugins/logger/__init__.py::mypy 
+enrobie/plugins/enhomie/__init__.py::mypy 
+[gw2] [ 26%] PASSED enrobie/plugins/enhomie/__init__.py::mypy 
+enrobie/plugins/enhomie/persist.py::mypy 
+[gw3] [ 27%] PASSED enrobie/plugins/autonick/test/__init__.py::mypy 
+enrobie/plugins/autonick/plugin.py::mypy 
+[gw3] [ 27%] PASSED enrobie/plugins/autonick/plugin.py::mypy 
+enrobie/plugins/enhomie/helpers.py::mypy 
+[gw3] [ 27%] PASSED enrobie/plugins/enhomie/helpers.py::mypy 
+enrobie/plugins/enhomie/test/test_plugin.py::mypy 
+[gw3] [ 28%] PASSED enrobie/plugins/enhomie/test/test_plugin.py::mypy 
+enrobie/plugins/enhomie/test/__init__.py::mypy 
+[gw3] [ 28%] PASSED enrobie/plugins/enhomie/test/__init__.py::mypy 
 enrobie/plugins/logger/test/test_plugin.py::mypy 
-[gw2] [ 28%] PASSED enrobie/plugins/logger/test/test_plugin.py::mypy 
-enrobie/plugins/nagios/test/__init__.py::mypy 
-[gw2] [ 29%] PASSED enrobie/plugins/nagios/test/__init__.py::mypy 
-enrobie/plugins/nagios/helpers.py::mypy 
-[gw3] [ 29%] PASSED enrobie/plugins/status/plugin.py::mypy 
-enrobie/plugins/status/params.py::mypy 
-[gw3] [ 30%] PASSED enrobie/plugins/status/params.py::mypy 
-enrobie/plugins/status/test/test_plugin.py::mypy 
-[gw3] [ 30%] PASSED enrobie/plugins/status/test/test_plugin.py::mypy 
-enrobie/plugins/status/helpers.py::mypy 
-[gw3] [ 30%] PASSED enrobie/plugins/status/helpers.py::mypy 
-enrobie/plugins/status/common.py::mypy 
-[gw3] [ 31%] PASSED enrobie/plugins/status/common.py::mypy 
-enrobie/plugins/status/__init__.py::mypy 
-[gw3] [ 31%] PASSED enrobie/plugins/status/__init__.py::mypy 
-enrobie/robie/addons/__init__.py::mypy 
-[gw3] [ 31%] PASSED enrobie/robie/addons/__init__.py::mypy 
-enrobie/robie/addons/test/__init__.py::mypy 
-[gw3] [ 32%] PASSED enrobie/robie/addons/test/__init__.py::mypy 
-enrobie/robie/__init__.py::mypy 
-[gw3] [ 32%] PASSED enrobie/robie/__init__.py::mypy 
-enrobie/robie/addons/logger.py::mypy 
-[gw2] [ 33%] PASSED enrobie/plugins/nagios/helpers.py::mypy 
-enrobie/plugins/nagios/plugin.py::mypy 
-[gw2] [ 33%] PASSED enrobie/plugins/nagios/plugin.py::mypy 
+[gw3] [ 28%] PASSED enrobie/plugins/logger/test/test_plugin.py::mypy 
 enrobie/plugins/nagios/current.py::mypy 
-[gw2] [ 33%] PASSED enrobie/plugins/nagios/current.py::mypy 
-enrobie/plugins/nagios/test/test_plugin.py::mypy 
-[gw2] [ 34%] PASSED enrobie/plugins/nagios/test/test_plugin.py::mypy 
-enrobie/plugins/nagios/params.py::mypy 
-[gw2] [ 34%] PASSED enrobie/plugins/nagios/params.py::mypy 
-enrobie/plugins/nagios/__init__.py::mypy 
-[gw2] [ 34%] PASSED enrobie/plugins/nagios/__init__.py::mypy 
+[gw3] [ 29%] PASSED enrobie/plugins/nagios/current.py::mypy 
 enrobie/plugins/nagios/ainswer.py::mypy 
-[gw2] [ 35%] PASSED enrobie/plugins/nagios/ainswer.py::mypy 
-enrobie/robie/addons/test/test_logger.py::mypy 
-[gw2] [ 35%] PASSED enrobie/robie/addons/test/test_logger.py::mypy 
-enrobie/robie/addons/jinja2.py::mypy 
-[gw2] [ 36%] PASSED enrobie/robie/addons/jinja2.py::mypy 
+[gw3] [ 29%] PASSED enrobie/plugins/nagios/ainswer.py::mypy 
+enrobie/plugins/nagios/plugin.py::mypy 
+[gw3] [ 30%] PASSED enrobie/plugins/nagios/plugin.py::mypy 
+enrobie/plugins/nagios/test/test_plugin.py::mypy 
+[gw3] [ 30%] PASSED enrobie/plugins/nagios/test/test_plugin.py::mypy 
+enrobie/plugins/nagios/test/__init__.py::mypy 
+[gw3] [ 30%] PASSED enrobie/plugins/nagios/test/__init__.py::mypy 
+enrobie/plugins/nagios/helpers.py::mypy 
+[gw3] [ 31%] PASSED enrobie/plugins/nagios/helpers.py::mypy 
+enrobie/plugins/nagios/__init__.py::mypy 
+[gw3] [ 31%] PASSED enrobie/plugins/nagios/__init__.py::mypy 
+enrobie/plugins/nagios/params.py::mypy 
+[gw3] [ 31%] PASSED enrobie/plugins/nagios/params.py::mypy 
+enrobie/plugins/status/plugin.py::mypy 
+[gw3] [ 32%] PASSED enrobie/plugins/status/plugin.py::mypy 
+enrobie/plugins/status/params.py::mypy 
+[gw3] [ 32%] PASSED enrobie/plugins/status/params.py::mypy 
+enrobie/plugins/status/test/__init__.py::mypy 
+[gw3] [ 33%] PASSED enrobie/plugins/status/test/__init__.py::mypy 
+enrobie/plugins/status/helpers.py::mypy 
+[gw3] [ 33%] PASSED enrobie/plugins/status/helpers.py::mypy 
+enrobie/plugins/status/common.py::mypy 
+[gw3] [ 33%] PASSED enrobie/plugins/status/common.py::mypy 
+enrobie/plugins/status/test/test_plugin.py::mypy 
+[gw3] [ 34%] PASSED enrobie/plugins/status/test/test_plugin.py::mypy 
+enrobie/plugins/status/__init__.py::mypy 
+[gw3] [ 34%] PASSED enrobie/plugins/status/__init__.py::mypy 
 enrobie/robie/addons/queue.py::mypy 
-[gw2] [ 36%] PASSED enrobie/robie/addons/queue.py::mypy 
+[gw3] [ 34%] PASSED enrobie/robie/addons/queue.py::mypy 
+enrobie/robie/__init__.py::mypy 
+[gw3] [ 35%] PASSED enrobie/robie/__init__.py::mypy 
+enrobie/robie/addons/logger.py::mypy 
+[gw3] [ 35%] PASSED enrobie/robie/addons/logger.py::mypy 
+enrobie/robie/addons/test/test_logger.py::mypy 
+[gw3] [ 36%] PASSED enrobie/robie/addons/test/test_logger.py::mypy 
+enrobie/robie/addons/test/__init__.py::mypy 
+[gw3] [ 36%] PASSED enrobie/robie/addons/test/__init__.py::mypy 
+enrobie/robie/addons/jinja2.py::mypy 
+[gw3] [ 36%] PASSED enrobie/robie/addons/jinja2.py::mypy 
+enrobie/robie/addons/__init__.py::mypy 
+[gw3] [ 37%] PASSED enrobie/robie/addons/__init__.py::mypy 
 enrobie/robie/addons/test/test_queue.py::mypy 
-[gw2] [ 36%] PASSED enrobie/robie/addons/test/test_queue.py::mypy 
+[gw3] [ 37%] PASSED enrobie/robie/addons/test/test_queue.py::mypy 
 enrobie/robie/childs/robie.py::mypy 
-[gw2] [ 37%] PASSED enrobie/robie/childs/robie.py::mypy 
+[gw3] [ 37%] PASSED enrobie/robie/childs/robie.py::mypy 
 enrobie/robie/childs/person.py::mypy 
-[gw2] [ 37%] PASSED enrobie/robie/childs/person.py::mypy 
-enrobie/robie/childs/test/__init__.py::mypy 
-[gw2] [ 37%] PASSED enrobie/robie/childs/test/__init__.py::mypy 
-enrobie/robie/childs/child.py::mypy 
-[gw2] [ 38%] PASSED enrobie/robie/childs/child.py::mypy 
+[gw3] [ 38%] PASSED enrobie/robie/childs/person.py::mypy 
 enrobie/robie/childs/client.py::mypy 
-[gw2] [ 38%] PASSED enrobie/robie/childs/client.py::mypy 
+[gw3] [ 38%] PASSED enrobie/robie/childs/client.py::mypy 
 enrobie/robie/childs/test/test_child.py::mypy 
-[gw2] [ 39%] PASSED enrobie/robie/childs/test/test_child.py::mypy 
-enrobie/robie/config.py::mypy 
-[gw2] [ 39%] PASSED enrobie/robie/config.py::mypy 
-enrobie/robie/members/test/__init__.py::mypy 
-[gw2] [ 39%] PASSED enrobie/robie/members/test/__init__.py::mypy 
-enrobie/robie/members/test/test_clients.py::mypy 
-[gw2] [ 40%] PASSED enrobie/robie/members/test/test_clients.py::mypy 
-enrobie/robie/members/clients.py::mypy 
-[gw2] [ 40%] PASSED enrobie/robie/members/clients.py::mypy 
-enrobie/robie/common.py::mypy 
-[gw2] [ 40%] PASSED enrobie/robie/common.py::mypy 
-enrobie/robie/members/test/test_member.py::mypy 
-[gw2] [ 41%] PASSED enrobie/robie/members/test/test_member.py::mypy 
-enrobie/robie/members/test/test_plugins.py::mypy 
-[gw2] [ 41%] PASSED enrobie/robie/members/test/test_plugins.py::mypy 
-enrobie/robie/models/test/__init__.py::mypy 
-[gw2] [ 42%] PASSED enrobie/robie/models/test/__init__.py::mypy 
-enrobie/robie/models/command.py::mypy 
-[gw2] [ 42%] PASSED enrobie/robie/models/command.py::mypy 
-enrobie/robie/models/__init__.py::mypy 
-[gw2] [ 42%] PASSED enrobie/robie/models/__init__.py::mypy 
-enrobie/robie/models/test/test_command.py::mypy 
-[gw3] [ 43%] PASSED enrobie/robie/addons/logger.py::mypy 
-enrobie/robie/childs/plugin.py::mypy 
-[gw3] [ 43%] PASSED enrobie/robie/childs/plugin.py::mypy 
+[gw3] [ 39%] PASSED enrobie/robie/childs/test/test_child.py::mypy 
 enrobie/robie/childs/__init__.py::mypy 
-[gw3] [ 43%] PASSED enrobie/robie/childs/__init__.py::mypy 
+[gw3] [ 39%] PASSED enrobie/robie/childs/__init__.py::mypy 
+enrobie/robie/childs/child.py::mypy 
+[gw3] [ 39%] PASSED enrobie/robie/childs/child.py::mypy 
+enrobie/robie/childs/test/__init__.py::mypy 
+[gw3] [ 40%] PASSED enrobie/robie/childs/test/__init__.py::mypy 
+enrobie/robie/childs/plugin.py::mypy 
+[gw3] [ 40%] PASSED enrobie/robie/childs/plugin.py::mypy 
 enrobie/robie/childs/test/test_client.py::mypy 
-[gw3] [ 44%] PASSED enrobie/robie/childs/test/test_client.py::mypy 
+[gw3] [ 40%] PASSED enrobie/robie/childs/test/test_client.py::mypy 
 enrobie/robie/childs/test/test_person.py::mypy 
-[gw3] [ 44%] PASSED enrobie/robie/childs/test/test_person.py::mypy 
+[gw3] [ 41%] PASSED enrobie/robie/childs/test/test_person.py::mypy 
 enrobie/robie/childs/test/test_plugin.py::mypy 
-[gw3] [ 45%] PASSED enrobie/robie/childs/test/test_plugin.py::mypy 
+[gw3] [ 41%] PASSED enrobie/robie/childs/test/test_plugin.py::mypy 
 enrobie/robie/childs/test/test_robie.py::mypy 
-[gw3] [ 45%] PASSED enrobie/robie/childs/test/test_robie.py::mypy 
-enrobie/robie/members/__init__.py::mypy 
-[gw3] [ 45%] PASSED enrobie/robie/members/__init__.py::mypy 
+[gw3] [ 42%] PASSED enrobie/robie/childs/test/test_robie.py::mypy 
+enrobie/robie/members/test/__init__.py::mypy 
+[gw3] [ 42%] PASSED enrobie/robie/members/test/__init__.py::mypy 
 enrobie/robie/members/member.py::mypy 
-[gw3] [ 46%] PASSED enrobie/robie/members/member.py::mypy 
+[gw3] [ 42%] PASSED enrobie/robie/members/member.py::mypy 
+enrobie/robie/common.py::mypy 
+[gw3] [ 43%] PASSED enrobie/robie/common.py::mypy 
+enrobie/robie/members/test/test_clients.py::mypy 
+[gw2] [ 43%] PASSED enrobie/plugins/enhomie/persist.py::mypy 
+enrobie/plugins/enhomie/ainswer.py::mypy 
+[gw2] [ 43%] PASSED enrobie/plugins/enhomie/ainswer.py::mypy 
+enrobie/plugins/logger/test/test_history.py::mypy 
+[gw2] [ 44%] PASSED enrobie/plugins/logger/test/test_history.py::mypy 
+enrobie/plugins/logger/params.py::mypy 
+[gw2] [ 44%] PASSED enrobie/plugins/logger/params.py::mypy 
+enrobie/plugins/logger/plugin.py::mypy 
+[gw2] [ 45%] PASSED enrobie/plugins/logger/plugin.py::mypy 
+enrobie/plugins/logger/__init__.py::mypy 
+[gw2] [ 45%] PASSED enrobie/plugins/logger/__init__.py::mypy 
+enrobie/plugins/logger/history.py::mypy 
+[gw2] [ 45%] PASSED enrobie/plugins/logger/history.py::mypy 
+enrobie/plugins/logger/test/__init__.py::mypy 
+[gw2] [ 46%] PASSED enrobie/plugins/logger/test/__init__.py::mypy 
+enrobie/robie/models/command.py::mypy 
+[gw2] [ 46%] PASSED enrobie/robie/models/command.py::mypy 
+enrobie/robie/models/__init__.py::mypy 
+[gw3] [ 46%] PASSED enrobie/robie/members/test/test_clients.py::mypy 
+enrobie/robie/config.py::mypy 
+[gw3] [ 47%] PASSED enrobie/robie/config.py::mypy 
 enrobie/robie/members/plugins.py::mypy 
-[gw3] [ 46%] PASSED enrobie/robie/members/plugins.py::mypy 
-enrobie/robie/params/__init__.py::mypy 
-[gw3] [ 46%] PASSED enrobie/robie/params/__init__.py::mypy 
-enrobie/robie/robie.py::mypy 
-[gw3] [ 47%] PASSED enrobie/robie/robie.py::mypy 
-enrobie/robie/test/test_config.py::mypy 
-[gw3] [ 47%] PASSED enrobie/robie/test/test_config.py::mypy 
-enrobie/robie/params/service.py::mypy 
-[gw3] [ 48%] PASSED enrobie/robie/params/service.py::mypy 
+[gw3] [ 47%] PASSED enrobie/robie/members/plugins.py::mypy 
+enrobie/robie/members/clients.py::mypy 
+[gw3] [ 48%] PASSED enrobie/robie/members/clients.py::mypy 
+enrobie/robie/members/__init__.py::mypy 
+[gw3] [ 48%] PASSED enrobie/robie/members/__init__.py::mypy 
+enrobie/robie/members/test/test_member.py::mypy 
+[gw3] [ 48%] PASSED enrobie/robie/members/test/test_member.py::mypy 
+enrobie/robie/members/test/test_plugins.py::mypy 
+[gw3] [ 49%] PASSED enrobie/robie/members/test/test_plugins.py::mypy 
+enrobie/robie/models/test/test_command.py::mypy 
+[gw3] [ 49%] PASSED enrobie/robie/models/test/test_command.py::mypy 
 enrobie/robie/params/person.py::mypy 
-[gw3] [ 48%] PASSED enrobie/robie/params/person.py::mypy 
-enrobie/robie/params/child.py::mypy 
-[gw3] [ 48%] PASSED enrobie/robie/params/child.py::mypy 
-enrobie/robie/params/common.py::mypy 
-[gw3] [ 49%] PASSED enrobie/robie/params/common.py::mypy 
-enrobie/robie/params/client.py::mypy 
-[gw3] [ 49%] PASSED enrobie/robie/params/client.py::mypy 
-enrobie/robie/test/__init__.py::mypy 
-[gw3] [ 50%] PASSED enrobie/robie/test/__init__.py::mypy 
+[gw3] [ 50%] PASSED enrobie/robie/params/person.py::mypy 
 enrobie/robie/service.py::mypy 
 [gw3] [ 50%] PASSED enrobie/robie/service.py::mypy 
-enrobie/robie/test/test_robie.py::mypy 
-[gw3] [ 50%] PASSED enrobie/robie/test/test_robie.py::mypy 
-enrobie/robie/test/test_service.py::mypy 
-[gw3] [ 51%] PASSED enrobie/robie/test/test_service.py::mypy 
-enrobie/robie/threads/test/__init__.py::mypy 
-[gw3] [ 51%] PASSED enrobie/robie/threads/test/__init__.py::mypy 
-enrobie/robie/threads/client.py::mypy 
-[gw3] [ 51%] PASSED enrobie/robie/threads/client.py::mypy 
-enrobie/robie/threads/plugin.py::mypy 
-[gw3] [ 52%] PASSED enrobie/robie/threads/plugin.py::mypy 
-enrobie/robie/threads/__init__.py::mypy 
-[gw2] [ 52%] PASSED enrobie/robie/models/test/test_command.py::mypy 
-enrobie/robie/models/message.py::mypy 
-[gw2] [ 53%] PASSED enrobie/robie/models/message.py::mypy 
-enrobie/robie/models/robie.py::mypy 
-[gw2] [ 53%] PASSED enrobie/robie/models/robie.py::mypy 
-enrobie/robie/models/test/test_message.py::mypy 
-[gw2] [ 53%] PASSED enrobie/robie/models/test/test_message.py::mypy 
-enrobie/robie/models/test/test_models.py::mypy 
-[gw2] [ 54%] PASSED enrobie/robie/models/test/test_models.py::mypy 
-enrobie/robie/params/robie.py::mypy 
-[gw2] [ 54%] PASSED enrobie/robie/params/robie.py::mypy 
+enrobie/robie/robie.py::mypy 
+[gw3] [ 50%] PASSED enrobie/robie/robie.py::mypy 
+enrobie/robie/params/service.py::mypy 
+[gw3] [ 51%] PASSED enrobie/robie/params/service.py::mypy 
 enrobie/robie/params/plugin.py::mypy 
-[gw2] [ 54%] PASSED enrobie/robie/params/plugin.py::mypy 
-enrobie/utils/param.py::mypy 
-[gw2] [ 55%] PASSED enrobie/utils/param.py::mypy 
-enrobie/utils/__init__.py::mypy 
-[gw2] [ 55%] PASSED enrobie/utils/__init__.py::mypy 
-enrobie/utils/child.py::mypy 
-[gw3] [ 56%] PASSED enrobie/robie/threads/__init__.py::mypy 
+[gw3] [ 51%] PASSED enrobie/robie/params/plugin.py::mypy 
+enrobie/robie/params/child.py::mypy 
+[gw3] [ 51%] PASSED enrobie/robie/params/child.py::mypy 
+enrobie/robie/params/__init__.py::mypy 
+[gw3] [ 52%] PASSED enrobie/robie/params/__init__.py::mypy 
+enrobie/robie/test/test_config.py::mypy 
+[gw3] [ 52%] PASSED enrobie/robie/test/test_config.py::mypy 
+enrobie/robie/test/__init__.py::mypy 
+[gw3] [ 53%] PASSED enrobie/robie/test/__init__.py::mypy 
+enrobie/robie/params/robie.py::mypy 
+[gw3] [ 53%] PASSED enrobie/robie/params/robie.py::mypy 
+enrobie/robie/params/common.py::mypy 
+[gw3] [ 53%] PASSED enrobie/robie/params/common.py::mypy 
+enrobie/robie/test/test_robie.py::mypy 
+[gw3] [ 54%] PASSED enrobie/robie/test/test_robie.py::mypy 
+enrobie/robie/test/test_service.py::mypy 
+[gw3] [ 54%] PASSED enrobie/robie/test/test_service.py::mypy 
 enrobie/robie/threads/test/test_client.py::mypy 
-[gw3] [ 56%] PASSED enrobie/robie/threads/test/test_client.py::mypy 
+[gw3] [ 54%] PASSED enrobie/robie/threads/test/test_client.py::mypy 
+enrobie/robie/threads/__init__.py::mypy 
+[gw3] [ 55%] PASSED enrobie/robie/threads/__init__.py::mypy 
+enrobie/robie/threads/client.py::mypy 
+[gw3] [ 55%] PASSED enrobie/robie/threads/client.py::mypy 
+enrobie/robie/threads/test/__init__.py::mypy 
+[gw3] [ 56%] PASSED enrobie/robie/threads/test/__init__.py::mypy 
+enrobie/robie/threads/plugin.py::mypy 
+[gw3] [ 56%] PASSED enrobie/robie/threads/plugin.py::mypy 
 enrobie/robie/threads/test/test_plugin.py::mypy 
 [gw3] [ 56%] PASSED enrobie/robie/threads/test/test_plugin.py::mypy 
 enrobie/robie/threads/test/test_thread.py::mypy 
-[gw3] [ 57%] PASSED enrobie/robie/threads/test/test_thread.py::mypy 
+[gw2] [ 57%] PASSED enrobie/robie/models/__init__.py::mypy 
+enrobie/robie/models/robie.py::mypy 
+[gw2] [ 57%] PASSED enrobie/robie/models/robie.py::mypy 
+enrobie/robie/models/message.py::mypy 
+[gw2] [ 57%] PASSED enrobie/robie/models/message.py::mypy 
+enrobie/robie/models/test/__init__.py::mypy 
+[gw2] [ 58%] PASSED enrobie/robie/models/test/__init__.py::mypy 
+enrobie/robie/models/test/test_message.py::mypy 
+[gw2] [ 58%] PASSED enrobie/robie/models/test/test_message.py::mypy 
+enrobie/robie/models/test/test_models.py::mypy 
+[gw2] [ 59%] PASSED enrobie/robie/models/test/test_models.py::mypy 
+enrobie/robie/params/client.py::mypy 
+[gw2] [ 59%] PASSED enrobie/robie/params/client.py::mypy 
 enrobie/utils/states.py::mypy 
-[gw3] [ 57%] PASSED enrobie/utils/states.py::mypy 
-enrobie/robie/threads/thread.py::mypy 
-[gw3] [ 57%] PASSED enrobie/robie/threads/thread.py::mypy 
+[gw2] [ 59%] PASSED enrobie/utils/states.py::mypy 
 enrobie/utils/importer.py::mypy 
-[gw3] [ 58%] PASSED enrobie/utils/importer.py::mypy 
-enrobie/utils/test/test_param.py::mypy 
-[gw3] [ 58%] PASSED enrobie/utils/test/test_param.py::mypy 
-enrobie/utils/test/test_states.py::mypy 
-[gw3] [ 59%] PASSED enrobie/utils/test/test_states.py::mypy 
-enrobie/utils/test/test_thread.py::mypy 
-[gw2] [ 59%] PASSED enrobie/utils/child.py::mypy 
-enrobie/utils/test/test_child.py::mypy 
-[gw2] [ 59%] PASSED enrobie/utils/test/test_child.py::mypy 
-enrobie/utils/test/__init__.py::mypy 
-[gw2] [ 60%] PASSED enrobie/utils/test/__init__.py::mypy 
+[gw2] [ 60%] PASSED enrobie/utils/importer.py::mypy 
 enrobie/utils/test/test_importer.py::mypy 
-[gw2] [ 60%] PASSED enrobie/utils/test/test_importer.py::mypy 
-enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin 
-[gw3] [ 60%] PASSED enrobie/utils/test/test_thread.py::mypy 
-enrobie/utils/thread.py::mypy 
-[gw3] [ 61%] PASSED enrobie/utils/thread.py::mypy 
-enrobie/execution/test/test_config.py::test_arguments 
-[gw3] [ 61%] PASSED enrobie/execution/test/test_config.py::test_arguments 
-enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin_cover 
-[gw2] [ 62%] PASSED enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin 
-enrobie/robie/threads/test/test_thread.py::test_RobieThread_cover 
-[gw2] [ 62%] PASSED enrobie/robie/threads/test/test_thread.py::test_RobieThread_cover 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient 
-[gw2] [ 62%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient_channels 
-[gw1] [ 63%] PASSED enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin_cover 
-enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin 
-[gw1] [ 63%] PASSED enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin 
-enrobie/clients/irc/test/test_command.py::test_IRCCommand 
-[gw1] [ 63%] PASSED enrobie/clients/irc/test/test_command.py::test_IRCCommand 
-enrobie/clients/mattermost/test/test_message.py::test_MTMMessage 
-[gw1] [ 64%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage 
-enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_samples 
-[gw0] [ 64%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage_samples 
-enrobie/clients/irc/test/test_message.py::test_IRCMessage_reply 
-[gw0] [ 65%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage_reply 
-enrobie/clients/irc/test/test_message.py::test_IRCMessage 
-[gw0] [ 65%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage 
-enrobie/execution/test/test_crypts.py::test_arguments 
-[gw0] [ 65%] PASSED enrobie/execution/test/test_crypts.py::test_arguments 
-enrobie/robie/addons/test/test_queue.py::test_RobieQueueItem 
-[gw0] [ 66%] PASSED enrobie/robie/addons/test/test_queue.py::test_RobieQueueItem 
-enrobie/robie/addons/test/test_queue.py::test_RobieQueue 
-[gw0] [ 66%] PASSED enrobie/robie/addons/test/test_queue.py::test_RobieQueue 
-enrobie/robie/members/test/test_plugins.py::test_RobiePlugins 
-[gw0] [ 66%] PASSED enrobie/robie/members/test/test_plugins.py::test_RobiePlugins 
-enrobie/robie/members/test/test_plugins.py::test_RobiePlugins_cover 
-[gw0] [ 67%] PASSED enrobie/robie/members/test/test_plugins.py::test_RobiePlugins_cover 
-enrobie/execution/test/test_service.py::test_arguments 
-[gw0] [ 67%] PASSED enrobie/execution/test/test_service.py::test_arguments 
-enrobie/clients/discord/test/test_client.py::test_DSCClient 
-[gw0] [ 68%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient 
-enrobie/clients/discord/test/test_client.py::test_DSCClient_compose 
-[gw0] [ 68%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_compose 
-enrobie/clients/discord/test/test_client.py::test_DSCClient_command 
-[gw0] [ 68%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_command 
-enrobie/clients/discord/test/test_client.py::test_DSCClient_message 
-[gw0] [ 69%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_message 
-enrobie/clients/discord/test/test_client.py::test_DSCClient_channels 
-[gw2] [ 69%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_channels 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient_message 
-[gw2] [ 69%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_message 
-enrobie/clients/discord/test/test_message.py::test_DSCMessage_reply 
-[gw2] [ 70%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage_reply 
-enrobie/clients/discord/test/test_message.py::test_DSCMessage 
-[gw2] [ 70%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage 
-enrobie/clients/discord/test/test_message.py::test_DSCMessage_samples 
-[gw3] [ 71%] PASSED enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin_cover 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient_command 
-[gw3] [ 71%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_command 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient_compose 
-[gw3] [ 71%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_compose 
-enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin 
-[gw3] [ 72%] PASSED enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin 
-enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin_cover 
-[gw1] [ 72%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_samples 
-enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_reply 
-[gw1] [ 72%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_reply 
-enrobie/clients/discord/__init__.py::mypy 
-[gw1] [ 73%] PASSED enrobie/clients/discord/__init__.py::mypy 
-enrobie/clients/discord/client.py::mypy 
-[gw1] [ 73%] PASSED enrobie/clients/discord/client.py::mypy 
-enrobie/__init__.py::mypy 
-[gw1] [ 74%] PASSED enrobie/__init__.py::mypy 
-enrobie/clients/discord/test/test_client.py::mypy 
-[gw1] [ 74%] PASSED enrobie/clients/discord/test/test_client.py::mypy 
-enrobie/clients/discord/command.py::mypy 
-[gw1] [ 74%] PASSED enrobie/clients/discord/command.py::mypy 
-enrobie/clients/__init__.py::mypy 
-[gw1] [ 75%] PASSED enrobie/clients/__init__.py::mypy 
-enrobie/__init__.py::mypy-status 
-[gw1] [ 75%] PASSED enrobie/__init__.py::mypy-status 
-enrobie/clients/discord/params.py::mypy 
-[gw1] [ 75%] PASSED enrobie/clients/discord/params.py::mypy 
-enrobie/clients/discord/message.py::mypy 
-[gw1] [ 76%] PASSED enrobie/clients/discord/message.py::mypy 
-enrobie/clients/irc/test/test_client.py::test_IRCClient 
-[gw1] [ 76%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient 
-enrobie/clients/irc/test/test_client.py::test_IRCClient_message 
-[gw1] [ 77%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_message 
-enrobie/clients/irc/test/test_client.py::test_IRCClient_compose 
-[gw1] [ 77%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_compose 
-enrobie/clients/irc/test/test_client.py::test_IRCClient_command 
-[gw1] [ 77%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_command 
-enrobie/clients/irc/test/test_client.py::test_IRCClient_channels 
-[gw0] [ 78%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_channels 
-enrobie/plugins/ainswer/test/test_models.py::test_AinswerModels 
-[gw0] [ 78%] PASSED enrobie/plugins/ainswer/test/test_models.py::test_AinswerModels 
-enrobie/robie/addons/test/test_logger.py::test_RobieLogger_message 
-[gw0] [ 78%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger_message 
-enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin_cover 
-[gw3] [ 79%] PASSED enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin_cover 
-enrobie/robie/threads/test/test_client.py::test_RobieClientThread 
-[gw3] [ 79%] PASSED enrobie/robie/threads/test/test_client.py::test_RobieClientThread 
-enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin 
-[gw3] [ 80%] PASSED enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin 
-enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin_cover 
-[gw2] [ 80%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage_samples 
-enrobie/clients/mattermost/test/test_command.py::test_MTMCommand 
-[gw2] [ 80%] PASSED enrobie/clients/mattermost/test/test_command.py::test_MTMCommand 
-enrobie/robie/members/test/test_clients.py::test_RobieClients 
-[gw2] [ 81%] PASSED enrobie/robie/members/test/test_clients.py::test_RobieClients 
-enrobie/robie/members/test/test_clients.py::test_RobieClients_cover 
-[gw2] [ 81%] PASSED enrobie/robie/members/test/test_clients.py::test_RobieClients_cover 
-enrobie/plugins/logger/test/test_history.py::test_LoggerHistory_cover 
-[gw2] [ 81%] PASSED enrobie/plugins/logger/test/test_history.py::test_LoggerHistory_cover 
-enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin_cover 
-[gw1] [ 82%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_channels 
-enrobie/robie/models/test/test_message.py::test_RobieMessage 
-[gw1] [ 82%] PASSED enrobie/robie/models/test/test_message.py::test_RobieMessage 
-enrobie/robie/childs/test/test_person.py::test_RobiePerson 
-[gw1] [ 83%] PASSED enrobie/robie/childs/test/test_person.py::test_RobiePerson 
-enrobie/robie/addons/test/test_logger.py::test_RobieLogger 
-[gw1] [ 83%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger 
-enrobie/robie/addons/test/test_logger.py::test_RobieLogger_cover 
-[gw1] [ 83%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger_cover 
-enrobie/robie/models/test/test_command.py::test_RobieCommand 
-[gw1] [ 84%] PASSED enrobie/robie/models/test/test_command.py::test_RobieCommand 
-enrobie/robie/childs/test/test_child.py::test_RobieChild_cover 
-[gw1] [ 84%] PASSED enrobie/robie/childs/test/test_child.py::test_RobieChild_cover 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_engage 
-[gw1] [ 84%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_engage 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_privmsg-privmsg-:nick!user@host PRIVMSG ircbot :Hello ircbot] 
-[gw1] [ 85%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_privmsg-privmsg-:nick!user@host PRIVMSG ircbot :Hello ircbot] 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_privmsg-privmsg-:hubert!hubert@science.com PRIVMSG ircbot :ircbot] 
-[gw1] [ 85%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_privmsg-privmsg-:hubert!hubert@science.com PRIVMSG ircbot :ircbot] 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_chanmsg-chanmsg-:hubert!hubert@science.com PRIVMSG #enrobie :ircbot] 
-[gw1] [ 86%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_chanmsg-chanmsg-:hubert!hubert@science.com PRIVMSG #enrobie :ircbot] 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_chanmsg-chanmsg-:nick!user@host PRIVMSG #enrobie :Hello ircbot] 
-[gw0] [ 86%] PASSED enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin_cover 
-enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin 
-[gw1] [ 86%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_chanmsg-chanmsg-:nick!user@host PRIVMSG #enrobie :Hello ircbot] 
+[gw3] [ 60%] PASSED enrobie/robie/threads/test/test_thread.py::mypy 
+enrobie/utils/test/test_child.py::mypy 
+[gw3] [ 60%] PASSED enrobie/utils/test/test_child.py::mypy 
+enrobie/utils/__init__.py::mypy 
+[gw3] [ 61%] PASSED enrobie/utils/__init__.py::mypy 
+enrobie/utils/test/__init__.py::mypy 
+[gw3] [ 61%] PASSED enrobie/utils/test/__init__.py::mypy 
+enrobie/utils/child.py::mypy 
+[gw3] [ 62%] PASSED enrobie/utils/child.py::mypy 
+enrobie/utils/param.py::mypy 
+[gw3] [ 62%] PASSED enrobie/utils/param.py::mypy 
+enrobie/robie/threads/thread.py::mypy 
+[gw3] [ 62%] PASSED enrobie/robie/threads/thread.py::mypy 
 enrobie/robie/test/test_robie.py::test_Robie_person 
-[gw0] [ 87%] PASSED enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin 
-enrobie/utils/test/test_param.py::test_InvalidParam 
-[gw1] [ 87%] PASSED enrobie/robie/test/test_robie.py::test_Robie_person 
-enrobie/robie/test/test_robie.py::test_Robie_jinja2 
-[gw0] [ 87%] PASSED enrobie/utils/test/test_param.py::test_InvalidParam 
+[gw2] [ 63%] PASSED enrobie/utils/test/test_importer.py::mypy 
+enrobie/utils/test/test_param.py::mypy 
+[gw2] [ 63%] PASSED enrobie/utils/test/test_param.py::mypy 
+enrobie/utils/test/test_states.py::mypy 
+[gw2] [ 63%] PASSED enrobie/utils/test/test_states.py::mypy 
+enrobie/utils/test/test_thread.py::mypy 
+[gw2] [ 64%] PASSED enrobie/utils/test/test_thread.py::mypy 
+enrobie/utils/thread.py::mypy 
+[gw2] [ 64%] PASSED enrobie/utils/thread.py::mypy 
 enrobie/robie/test/test_robie.py::test_Robie_printer 
-[gw1] [ 88%] PASSED enrobie/robie/test/test_robie.py::test_Robie_jinja2 
+[gw3] [ 65%] PASSED enrobie/robie/test/test_robie.py::test_Robie_person 
+enrobie/robie/test/test_robie.py::test_Robie_jinja2 
+[gw2] [ 65%] PASSED enrobie/robie/test/test_robie.py::test_Robie_printer 
 enrobie/robie/test/test_robie.py::test_Robie_cover 
-[gw1] [ 88%] PASSED enrobie/robie/test/test_robie.py::test_Robie_cover 
-enrobie/robie/childs/test/test_plugin.py::test_RobiePlugin_cover 
-[gw0] [ 89%] PASSED enrobie/robie/test/test_robie.py::test_Robie_printer 
+[gw2] [ 65%] PASSED enrobie/robie/test/test_robie.py::test_Robie_cover 
 enrobie/robie/test/test_robie.py::test_Robie 
-[gw1] [ 89%] PASSED enrobie/robie/childs/test/test_plugin.py::test_RobiePlugin_cover 
-enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin 
-[gw1] [ 89%] PASSED enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin 
-enrobie/robie/test/test_service.py::test_RobieService 
-[gw0] [ 90%] PASSED enrobie/robie/test/test_robie.py::test_Robie 
-enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin_cover 
-[gw3] [ 90%] PASSED enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin_cover 
-enrobie/utils/test/test_importer.py::test_importer 
-[gw3] [ 90%] PASSED enrobie/utils/test/test_importer.py::test_importer 
-enrobie/plugins/logger/test/test_history.py::test_LoggerHistory 
-[gw3] [ 91%] PASSED enrobie/plugins/logger/test/test_history.py::test_LoggerHistory 
-enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory_cover 
-[gw3] [ 91%] PASSED enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory_cover 
-enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory 
-[gw3] [ 92%] PASSED enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory 
-enrobie/utils/test/test_thread.py::test_DupliThread 
-[gw3] [ 92%] PASSED enrobie/utils/test/test_thread.py::test_DupliThread 
-enrobie/utils/test/test_thread.py::test_DupliThread_cover 
-[gw3] [ 92%] PASSED enrobie/utils/test/test_thread.py::test_DupliThread_cover 
-enrobie/robie/test/test_config.py::test_RobieConfig 
-[gw3] [ 93%] PASSED enrobie/robie/test/test_config.py::test_RobieConfig 
-enrobie/robie/childs/test/test_client.py::test_RobieClient_cover 
-[gw3] [ 93%] PASSED enrobie/robie/childs/test/test_client.py::test_RobieClient_cover 
-enrobie/robie/childs/test/test_robie.py::test_RobieChilds 
-[gw3] [ 93%] PASSED enrobie/robie/childs/test/test_robie.py::test_RobieChilds 
-enrobie/robie/models/test/test_models.py::test_RobieModels_cover 
-[gw3] [ 94%] PASSED enrobie/robie/models/test/test_models.py::test_RobieModels_cover 
-enrobie/utils/test/test_child.py::test_InvalidChild 
-[gw3] [ 94%] PASSED enrobie/utils/test/test_child.py::test_InvalidChild 
-enrobie/utils/test/test_child.py::test_InvalidChild_cover 
-[gw2] [ 95%] PASSED enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin_cover 
-enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin 
-[gw3] [ 95%] PASSED enrobie/utils/test/test_child.py::test_InvalidChild_cover 
-enrobie/robie/threads/test/test_plugin.py::test_RobiePluginThread 
-[gw2] [ 95%] PASSED enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin 
-enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory_cover 
-[gw3] [ 96%] PASSED enrobie/robie/threads/test/test_plugin.py::test_RobiePluginThread 
-enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory 
-[gw3] [ 96%] PASSED enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory 
-enrobie/utils/test/test_states.py::test_ClientChannels 
-[gw3] [ 96%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels 
-enrobie/utils/test/test_states.py::test_ClientChannels_cover 
-[gw3] [ 97%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels_cover 
+[gw3] [ 66%] PASSED enrobie/robie/test/test_robie.py::test_Robie_jinja2 
+enrobie/robie/members/test/test_member.py::test_RobieMember_cover 
+[gw2] [ 66%] PASSED enrobie/robie/test/test_robie.py::test_Robie 
+enrobie/clients/irc/test/test_message.py::test_IRCMessage 
+[gw3] [ 66%] PASSED enrobie/robie/members/test/test_member.py::test_RobieMember_cover 
+enrobie/clients/irc/test/test_message.py::test_IRCMessage_reply 
+[gw2] [ 67%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage 
+enrobie/robie/addons/test/test_queue.py::test_RobieQueue 
+[gw2] [ 67%] PASSED enrobie/robie/addons/test/test_queue.py::test_RobieQueue 
+enrobie/robie/addons/test/test_queue.py::test_RobieQueueItem 
+[gw2] [ 68%] PASSED enrobie/robie/addons/test/test_queue.py::test_RobieQueueItem 
+enrobie/robie/threads/test/test_client.py::test_RobieClientThread 
+[gw3] [ 68%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage_reply 
+enrobie/clients/irc/test/test_message.py::test_IRCMessage_samples 
+[gw2] [ 68%] PASSED enrobie/robie/threads/test/test_client.py::test_RobieClientThread 
+enrobie/robie/addons/test/test_logger.py::test_RobieLogger 
+[gw2] [ 69%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger 
+enrobie/robie/addons/test/test_logger.py::test_RobieLogger_message 
+[gw2] [ 69%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger_message 
+enrobie/clients/irc/test/test_command.py::test_IRCCommand 
+[gw2] [ 69%] PASSED enrobie/clients/irc/test/test_command.py::test_IRCCommand 
 enrobie/utils/test/test_states.py::test_ClientPublish 
-[gw3] [ 97%] PASSED enrobie/utils/test/test_states.py::test_ClientPublish 
-[gw2] [ 98%] PASSED enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory_cover 
+[gw2] [ 70%] PASSED enrobie/utils/test/test_states.py::test_ClientPublish 
+enrobie/utils/test/test_states.py::test_ClientChannels 
+[gw2] [ 70%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels 
+enrobie/utils/test/test_states.py::test_ClientChannels_cover 
+[gw2] [ 71%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels_cover 
 enrobie/utils/test/test_states.py::test_ClientChannels_basics 
-[gw2] [ 98%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels_basics 
-[gw1] [ 98%] PASSED enrobie/robie/test/test_service.py::test_RobieService 
+[gw2] [ 71%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels_basics 
+enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin_cover 
+[gw0] [ 71%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage_samples 
+enrobie/clients/discord/test/test_message.py::test_DSCMessage_reply 
+[gw1] [ 72%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_channels 
+enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin_cover 
+[gw0] [ 72%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage_reply 
+enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_samples 
+[gw3] [ 72%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage_samples 
+enrobie/robie/addons/test/test_logger.py::test_RobieLogger_cover 
+[gw3] [ 73%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger_cover 
+enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin 
+[gw3] [ 73%] PASSED enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin 
+enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin_cover 
+[gw2] [ 74%] PASSED enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin_cover 
+enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin 
+[gw0] [ 74%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_samples 
+enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_reply 
+[gw2] [ 74%] PASSED enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin 
+enrobie/robie/threads/test/test_plugin.py::test_RobiePluginThread 
+[gw0] [ 75%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_reply 
+enrobie/clients/mattermost/test/test_message.py::test_MTMMessage 
+[gw2] [ 75%] PASSED enrobie/robie/threads/test/test_plugin.py::test_RobiePluginThread 
+enrobie/clients/discord/test/test_command.py::test_DSCCommand 
+[gw0] [ 75%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage 
+enrobie/robie/childs/test/test_person.py::test_RobiePerson 
+[gw2] [ 76%] PASSED enrobie/clients/discord/test/test_command.py::test_DSCCommand 
+enrobie/robie/members/test/test_plugins.py::test_RobiePlugins_cover 
+[gw0] [ 76%] PASSED enrobie/robie/childs/test/test_person.py::test_RobiePerson 
+enrobie/utils/test/test_thread.py::test_DupliThread_cover 
+[gw2] [ 77%] PASSED enrobie/robie/members/test/test_plugins.py::test_RobiePlugins_cover 
+enrobie/robie/members/test/test_plugins.py::test_RobiePlugins 
+[gw0] [ 77%] PASSED enrobie/utils/test/test_thread.py::test_DupliThread_cover 
+enrobie/utils/test/test_thread.py::test_DupliThread 
+[gw0] [ 77%] PASSED enrobie/utils/test/test_thread.py::test_DupliThread 
+enrobie/utils/test/test_importer.py::test_importer 
+[gw0] [ 78%] PASSED enrobie/utils/test/test_importer.py::test_importer 
+enrobie/robie/threads/test/test_thread.py::test_RobieThread_cover 
+[gw2] [ 78%] PASSED enrobie/robie/members/test/test_plugins.py::test_RobiePlugins 
+enrobie/utils/test/test_child.py::test_InvalidChild 
+[gw2] [ 78%] PASSED enrobie/utils/test/test_child.py::test_InvalidChild 
+enrobie/utils/test/test_child.py::test_InvalidChild_cover 
+[gw0] [ 79%] PASSED enrobie/robie/threads/test/test_thread.py::test_RobieThread_cover 
+enrobie/robie/models/test/test_message.py::test_RobieMessage 
+[gw2] [ 79%] PASSED enrobie/utils/test/test_child.py::test_InvalidChild_cover 
+enrobie/robie/childs/test/test_robie.py::test_RobieChilds 
+[gw0] [ 80%] PASSED enrobie/robie/models/test/test_message.py::test_RobieMessage 
+enrobie/execution/test/test_crypts.py::test_arguments 
+[gw0] [ 80%] PASSED enrobie/execution/test/test_crypts.py::test_arguments 
+enrobie/clients/discord/test/test_client.py::test_DSCClient_compose 
+[gw2] [ 80%] PASSED enrobie/robie/childs/test/test_robie.py::test_RobieChilds 
+enrobie/robie/childs/test/test_plugin.py::test_RobiePlugin_cover 
+[gw0] [ 81%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_compose 
+enrobie/clients/discord/test/test_client.py::test_DSCClient_command 
+[gw1] [ 81%] PASSED enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin_cover 
+enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin 
+[gw0] [ 81%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_command 
+enrobie/clients/discord/test/test_client.py::test_DSCClient 
+[gw2] [ 82%] PASSED enrobie/robie/childs/test/test_plugin.py::test_RobiePlugin_cover 
+enrobie/clients/irc/test/test_client.py::test_IRCClient_channels 
+[gw1] [ 82%] PASSED enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin 
+enrobie/robie/models/test/test_command.py::test_RobieCommand 
+[gw0] [ 83%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient 
+enrobie/clients/irc/test/test_client.py::test_IRCClient_message 
+[gw0] [ 83%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_message 
+enrobie/clients/irc/test/test_client.py::test_IRCClient_compose 
+[gw1] [ 83%] PASSED enrobie/robie/models/test/test_command.py::test_RobieCommand 
+enrobie/robie/test/test_config.py::test_RobieConfig 
+[gw1] [ 84%] PASSED enrobie/robie/test/test_config.py::test_RobieConfig 
+enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin 
+[gw0] [ 84%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_compose 
+enrobie/robie/members/test/test_clients.py::test_RobieClients_cover 
+[gw1] [ 84%] PASSED enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin 
+enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin_cover 
+[gw0] [ 85%] PASSED enrobie/robie/members/test/test_clients.py::test_RobieClients_cover 
+enrobie/robie/members/test/test_clients.py::test_RobieClients 
+[gw0] [ 85%] PASSED enrobie/robie/members/test/test_clients.py::test_RobieClients 
+enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin_cover 
+[gw3] [ 86%] PASSED enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin_cover 
+enrobie/plugins/logger/test/test_history.py::test_LoggerHistory_cover 
+[gw3] [ 86%] PASSED enrobie/plugins/logger/test/test_history.py::test_LoggerHistory_cover 
+enrobie/plugins/logger/test/test_history.py::test_LoggerHistory 
+[gw3] [ 86%] PASSED enrobie/plugins/logger/test/test_history.py::test_LoggerHistory 
+enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin 
+[gw3] [ 87%] PASSED enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin 
+enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin_cover 
+[gw0] [ 87%] PASSED enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin_cover 
+enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin 
+[gw0] [ 87%] PASSED enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin 
+enrobie/clients/mattermost/test/test_command.py::test_MTMCommand 
+[gw0] [ 88%] PASSED enrobie/clients/mattermost/test/test_command.py::test_MTMCommand 
+enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin 
+[gw2] [ 88%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_channels 
+enrobie/clients/irc/test/test_client.py::test_IRCClient 
+[gw0] [ 89%] PASSED enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin 
+enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin_cover 
+[gw2] [ 89%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient 
+enrobie/clients/irc/test/test_client.py::test_IRCClient_command 
+[gw2] [ 89%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_command 
 enrobie/robie/test/test_service.py::test_RobieService_cover 
-[gw0] [ 99%] PASSED enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin_cover 
+[gw2] [ 90%] PASSED enrobie/robie/test/test_service.py::test_RobieService_cover 
+enrobie/robie/test/test_service.py::test_RobieService 
+[gw1] [ 90%] PASSED enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin_cover 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient_compose 
+[gw1] [ 90%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_compose 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient_command 
+[gw1] [ 91%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_command 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient_message 
+[gw1] [ 91%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_message 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient 
+[gw1] [ 92%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient_channels 
+[gw0] [ 92%] PASSED enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin_cover 
 enrobie/robie/test/test_service.py::test_RobieService_healths 
-[gw0] [ 99%] PASSED enrobie/robie/test/test_service.py::test_RobieService_healths 
-[gw1] [100%] PASSED enrobie/robie/test/test_service.py::test_RobieService_cover 
+[gw0] [ 92%] PASSED enrobie/robie/test/test_service.py::test_RobieService_healths 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_privmsg-privmsg-:nick!user@host PRIVMSG ircbot :Hello ircbot] 
+[gw3] [ 93%] PASSED enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin_cover 
+enrobie/execution/test/test_config.py::test_arguments 
+[gw3] [ 93%] PASSED enrobie/execution/test/test_config.py::test_arguments 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_chanmsg-chanmsg-:nick!user@host PRIVMSG #enrobie :Hello ircbot] 
+[gw0] [ 93%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_privmsg-privmsg-:nick!user@host PRIVMSG ircbot :Hello ircbot] 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_chanmsg-chanmsg-:hubert!hubert@science.com PRIVMSG #enrobie :ircbot] 
+[gw3] [ 94%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_chanmsg-chanmsg-:nick!user@host PRIVMSG #enrobie :Hello ircbot] 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_privmsg-privmsg-:hubert!hubert@science.com PRIVMSG ircbot :ircbot] 
+[gw0] [ 94%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_chanmsg-chanmsg-:hubert!hubert@science.com PRIVMSG #enrobie :ircbot] 
+enrobie/utils/test/test_param.py::test_InvalidParam 
+[gw2] [ 95%] PASSED enrobie/robie/test/test_service.py::test_RobieService 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_engage 
+[gw3] [ 95%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_privmsg-privmsg-:hubert!hubert@science.com PRIVMSG ircbot :ircbot] 
+enrobie/plugins/ainswer/test/test_models.py::test_AinswerModels 
+[gw0] [ 95%] PASSED enrobie/utils/test/test_param.py::test_InvalidParam 
+enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory_cover 
+[gw0] [ 96%] PASSED enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory_cover 
+enrobie/execution/test/test_service.py::test_arguments 
+[gw0] [ 96%] PASSED enrobie/execution/test/test_service.py::test_arguments 
+enrobie/robie/models/test/test_models.py::test_RobieModels_cover 
+[gw0] [ 96%] PASSED enrobie/robie/models/test/test_models.py::test_RobieModels_cover 
+[gw3] [ 97%] PASSED enrobie/plugins/ainswer/test/test_models.py::test_AinswerModels 
+enrobie/robie/childs/test/test_child.py::test_RobieChild_cover 
+[gw1] [ 97%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_channels 
+enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory_cover 
+[gw2] [ 98%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_engage 
+enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory 
+[gw2] [ 98%] PASSED enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory 
+[gw3] [ 98%] PASSED enrobie/robie/childs/test/test_child.py::test_RobieChild_cover 
+[gw1] [ 99%] PASSED enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory_cover 
+enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory 
+[gw1] [ 99%] PASSED enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory 
+enrobie/robie/childs/test/test_client.py::test_RobieClient_cover 
+[gw1] [100%] PASSED enrobie/robie/childs/test/test_client.py::test_RobieClient_cover 
 
 =============================== warnings summary ===============================
+enrobie/plugins/ainswer/test/test_plugin.py: 18 warnings
+enrobie/plugins/ainswer/test/test_question.py: 1 warning
+  /home/runner/work/enrobie/enrobie/main/enrobie/plugins/ainswer/question.py:503: DeprecationWarning: `result.data` is deprecated, use `result.output` instead.
+    return runsync.data
+
 enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_engage
   /home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/pydantic_graph/_utils.py:50: DeprecationWarning: There is no current event loop
     event_loop = asyncio.get_event_loop()
-
-enrobie/plugins/ainswer/test/test_question.py: 1 warning
-enrobie/plugins/ainswer/test/test_plugin.py: 18 warnings
-  /home/runner/work/enrobie/enrobie/main/enrobie/plugins/ainswer/question.py:503: DeprecationWarning: `result.data` is deprecated, use `result.output` instead.
-    return runsync.data
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 ===================================== mypy =====================================
@@ -734,7 +734,7 @@ enrobie/utils/test/test_thread.py                    18      0   100%
 enrobie/utils/thread.py                              14      0   100%
 ---------------------------------------------------------------------
 TOTAL                                              6658     76    99%
-================= 266 passed, 20 warnings in 107.67s (0:01:47) =================
+================= 266 passed, 20 warnings in 91.76s (0:01:31) ==================
     DONE
   ● Write coveragepy output to htmlcov..
     DONE
