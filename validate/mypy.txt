@@ -1,9 +1,7 @@
 >>> make mypy
   ● Executing mypy in enrobie..
-    DONE
-  ● Executing mypy in sphinx..
-    DONE
-  ● Executing mypy on makefile.py..
-    DONE
-  ● Executing mypy on makebadge.py..
-    DONE
+enrobie/robie/config.py:181: error: Incompatible return value type (got "Params | None", expected "RobieParams")  [return-value]
+enrobie/robie/config.py:304: error: Incompatible override of a setter type  [override]
+enrobie/robie/config.py:304: note:  (base class "Config" defined the type as "Params | None",
+enrobie/robie/config.py:304: note:  override has type "Params")
+enrobie/robie/config.py:304: note:  Setter types should behave contravariantly
