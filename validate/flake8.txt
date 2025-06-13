@@ -1,9 +1,10 @@
 >>> make flake8
   ● Executing flake8 in enrobie..
-    DONE
-  ● Executing flake8 in sphinx..
-    DONE
-  ● Executing flake8 on makefile.py..
-    DONE
-  ● Executing flake8 on makebadge.py..
-    DONE
+enrobie/plugins/ainswer/models.py:16:1: I100 Import statements are in the wrong order. 'from pydantic_ai.models.anthropic import AnthropicModel' should be before 'from pydantic_ai.settings import ModelSettings'
+enrobie/plugins/ainswer/models.py:18:1: I201 Missing newline between import groups. 'from .common import AinswerDepends' is identified as Application Relative and 'from pydantic_ai.models.openai import OpenAIModel' is identified as Third Party.
+enrobie/plugins/enhomie/helpers.py:14:1: I100 Import statements are in the wrong order. 'from .plugin import HomiePlugin' should be before 'from ...robie.models import RobieMessage'
+enrobie/plugins/nagios/helpers.py:14:1: I100 Import statements are in the wrong order. 'from .plugin import NagiosPlugin' should be before 'from ...robie.models import RobieMessage'
+enrobie/plugins/status/helpers.py:21:1: I100 Import statements are in the wrong order. 'from .common import StatusPluginItem' should be before 'from ...robie.models import RobieMessage'
+enrobie/robie/models/robie.py:20:1: I100 Import statements are in the wrong order. 'from ..params import RobieChildParams' should be before 'from ..params import RobieServiceParams'
+enrobie/robie/robie.py:34:1: I100 Import statements are in the wrong order. 'from .childs import RobiePerson' should be before 'from .params import RobieParams'
+enrobie/robie/service.py:23:1: I100 Import statements are in the wrong order. 'from .params import RobieServiceParams' should be before 'from .robie import Robie'
