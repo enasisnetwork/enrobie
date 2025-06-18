@@ -236,6 +236,9 @@ def execution(
 
     _value = strplwr(value)
 
+    if _value == 'unknown%':
+        _value = 'unknown'
+
 
     _count = (
         ''
