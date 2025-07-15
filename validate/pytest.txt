@@ -3,7 +3,7 @@
 ============================= test session starts ==============================
 platform linux -- Python 3.12.11, pytest-8.4.1, pluggy-1.6.0 -- /home/runner/work/enrobie/enrobie/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=3046117994
+Using --randomly-seed=42772369
 rootdir: /home/runner/work/enrobie/enrobie/main
 configfile: pyproject.toml
 plugins: cov-6.2.1, mypy-1.0.1, xdist-3.8.0, sphinx-0.6.3, randomly-3.16.0, anyio-4.9.0, mock-3.14.1, clarity-1.0.1, respx-0.22.0
@@ -12,207 +12,207 @@ created: 4/4 workers
 
 scheduling tests via LoadScheduling
 
-enrobie/robie/childs/test/test_plugin.py::test_RobiePlugin_cover 
-enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin 
-enrobie/robie/childs/test/test_child.py::test_RobieChild_cover 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient_message 
-[gw3] [  1%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_message 
-[gw2] [  2%] PASSED enrobie/robie/childs/test/test_plugin.py::test_RobiePlugin_cover 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient_compose 
-[gw1] [  3%] PASSED enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin 
-enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin_cover 
-[gw0] [  4%] PASSED enrobie/robie/childs/test/test_child.py::test_RobieChild_cover 
 enrobie/robie/childs/test/test_robie.py::test_RobieChilds 
-enrobie/robie/members/test/test_plugins.py::test_RobiePlugins_cover 
-[gw3] [  5%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_compose 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient_channels 
-[gw2] [  6%] PASSED enrobie/robie/childs/test/test_robie.py::test_RobieChilds 
-enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin_cover 
-[gw0] [  7%] PASSED enrobie/robie/members/test/test_plugins.py::test_RobiePlugins_cover 
-enrobie/robie/members/test/test_plugins.py::test_RobiePlugins 
-[gw0] [  8%] PASSED enrobie/robie/members/test/test_plugins.py::test_RobiePlugins 
-enrobie/utils/test/test_param.py::test_InvalidParam 
-[gw0] [  9%] PASSED enrobie/utils/test/test_param.py::test_InvalidParam 
-enrobie/robie/models/test/test_message.py::test_RobieMessage 
-[gw0] [ 10%] PASSED enrobie/robie/models/test/test_message.py::test_RobieMessage 
-enrobie/robie/models/test/test_command.py::test_RobieCommand 
-[gw0] [ 11%] PASSED enrobie/robie/models/test/test_command.py::test_RobieCommand 
-enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory_cover 
-[gw0] [ 12%] PASSED enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory_cover 
-enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory 
-[gw0] [ 13%] PASSED enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory 
-enrobie/utils/test/test_thread.py::test_DupliThread_cover 
-[gw0] [ 14%] PASSED enrobie/utils/test/test_thread.py::test_DupliThread_cover 
-enrobie/utils/test/test_thread.py::test_DupliThread 
-[gw0] [ 15%] PASSED enrobie/utils/test/test_thread.py::test_DupliThread 
-enrobie/robie/members/test/test_clients.py::test_RobieClients 
-[gw0] [ 16%] PASSED enrobie/robie/members/test/test_clients.py::test_RobieClients 
-enrobie/robie/members/test/test_clients.py::test_RobieClients_cover 
-[gw0] [ 17%] PASSED enrobie/robie/members/test/test_clients.py::test_RobieClients_cover 
-enrobie/utils/test/test_states.py::test_ClientChannels 
-[gw0] [ 18%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels 
-enrobie/utils/test/test_states.py::test_ClientChannels_cover 
-[gw0] [ 19%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels_cover 
-enrobie/utils/test/test_states.py::test_ClientPublish 
-[gw0] [ 20%] PASSED enrobie/utils/test/test_states.py::test_ClientPublish 
 enrobie/utils/test/test_states.py::test_ClientChannels_basics 
-[gw0] [ 21%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels_basics 
-enrobie/execution/test/test_service.py::test_arguments 
-[gw0] [ 22%] PASSED enrobie/execution/test/test_service.py::test_arguments 
-enrobie/utils/test/test_child.py::test_InvalidChild 
-[gw0] [ 23%] PASSED enrobie/utils/test/test_child.py::test_InvalidChild 
-enrobie/utils/test/test_child.py::test_InvalidChild_cover 
-[gw0] [ 25%] PASSED enrobie/utils/test/test_child.py::test_InvalidChild_cover 
-enrobie/robie/childs/test/test_person.py::test_RobiePerson 
-[gw0] [ 26%] PASSED enrobie/robie/childs/test/test_person.py::test_RobiePerson 
-enrobie/clients/discord/test/test_client.py::test_DSCClient 
-[gw0] [ 27%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient 
-enrobie/clients/discord/test/test_client.py::test_DSCClient_message 
-[gw0] [ 28%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_message 
-enrobie/clients/discord/test/test_client.py::test_DSCClient_channels 
-[gw1] [ 29%] PASSED enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin_cover 
-enrobie/clients/discord/test/test_message.py::test_DSCMessage_samples 
-[gw2] [ 30%] PASSED enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin_cover 
-enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin 
-[gw2] [ 31%] PASSED enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient 
-[gw2] [ 32%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient_command 
-[gw2] [ 33%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_command 
-enrobie/robie/test/test_robie.py::test_Robie_person 
-[gw3] [ 34%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_channels 
-enrobie/clients/irc/test/test_command.py::test_IRCCommand 
-[gw2] [ 35%] PASSED enrobie/robie/test/test_robie.py::test_Robie_person 
-enrobie/robie/test/test_robie.py::test_Robie_cover 
-[gw2] [ 36%] PASSED enrobie/robie/test/test_robie.py::test_Robie_cover 
-enrobie/robie/test/test_robie.py::test_Robie_printer 
-[gw3] [ 37%] PASSED enrobie/clients/irc/test/test_command.py::test_IRCCommand 
-enrobie/execution/test/test_config.py::test_arguments 
-[gw3] [ 38%] PASSED enrobie/execution/test/test_config.py::test_arguments 
-enrobie/robie/models/test/test_models.py::test_RobieModels_cover 
-[gw3] [ 39%] PASSED enrobie/robie/models/test/test_models.py::test_RobieModels_cover 
-enrobie/robie/test/test_service.py::test_RobieService_healths 
-[gw2] [ 40%] PASSED enrobie/robie/test/test_robie.py::test_Robie_printer 
-enrobie/robie/test/test_robie.py::test_Robie 
-[gw3] [ 41%] PASSED enrobie/robie/test/test_service.py::test_RobieService_healths 
-enrobie/robie/test/test_service.py::test_RobieService 
-[gw2] [ 42%] PASSED enrobie/robie/test/test_robie.py::test_Robie 
-enrobie/robie/test/test_robie.py::test_Robie_jinja2 
-[gw2] [ 43%] PASSED enrobie/robie/test/test_robie.py::test_Robie_jinja2 
-enrobie/clients/irc/test/test_client.py::test_IRCClient_channels 
-[gw0] [ 44%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_channels 
 enrobie/clients/discord/test/test_client.py::test_DSCClient_command 
-[gw0] [ 45%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_command 
-enrobie/clients/discord/test/test_client.py::test_DSCClient_compose 
-[gw0] [ 46%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_compose 
-enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin_cover 
-[gw1] [ 47%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage_samples 
-enrobie/clients/discord/test/test_message.py::test_DSCMessage 
-[gw1] [ 48%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage 
-enrobie/clients/discord/test/test_message.py::test_DSCMessage_reply 
-[gw3] [ 50%] PASSED enrobie/robie/test/test_service.py::test_RobieService 
-enrobie/robie/test/test_service.py::test_RobieService_cover 
-[gw1] [ 51%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage_reply 
-enrobie/robie/threads/test/test_plugin.py::test_RobiePluginThread 
-[gw1] [ 52%] PASSED enrobie/robie/threads/test/test_plugin.py::test_RobiePluginThread 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_chanmsg-chanmsg-:nick!user@host PRIVMSG #enrobie :Hello ircbot] 
-[gw1] [ 53%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_chanmsg-chanmsg-:nick!user@host PRIVMSG #enrobie :Hello ircbot] 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_engage 
-[gw2] [ 54%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_channels 
-enrobie/clients/irc/test/test_client.py::test_IRCClient 
-[gw1] [ 55%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_engage 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_privmsg-privmsg-:nick!user@host PRIVMSG ircbot :Hello ircbot] 
-[gw2] [ 56%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient 
-enrobie/clients/irc/test/test_client.py::test_IRCClient_message 
-[gw2] [ 57%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_message 
-enrobie/clients/irc/test/test_client.py::test_IRCClient_compose 
-[gw2] [ 58%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_compose 
-enrobie/robie/addons/test/test_queue.py::test_RobieQueueItem 
-[gw2] [ 59%] PASSED enrobie/robie/addons/test/test_queue.py::test_RobieQueueItem 
-enrobie/robie/addons/test/test_queue.py::test_RobieQueue 
-[gw1] [ 60%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_privmsg-privmsg-:nick!user@host PRIVMSG ircbot :Hello ircbot] 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_privmsg-privmsg-:hubert!hubert@science.com PRIVMSG ircbot :ircbot] 
-[gw2] [ 61%] PASSED enrobie/robie/addons/test/test_queue.py::test_RobieQueue 
-enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin_cover 
-[gw1] [ 62%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_privmsg-privmsg-:hubert!hubert@science.com PRIVMSG ircbot :ircbot] 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_chanmsg-chanmsg-:hubert!hubert@science.com PRIVMSG #enrobie :ircbot] 
-[gw1] [ 63%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_chanmsg-chanmsg-:hubert!hubert@science.com PRIVMSG #enrobie :ircbot] 
-enrobie/robie/threads/test/test_thread.py::test_RobieThread_cover 
-[gw1] [ 64%] PASSED enrobie/robie/threads/test/test_thread.py::test_RobieThread_cover 
-enrobie/execution/test/test_crypts.py::test_arguments 
-[gw1] [ 65%] PASSED enrobie/execution/test/test_crypts.py::test_arguments 
-enrobie/clients/irc/test/test_message.py::test_IRCMessage_samples 
-[gw0] [ 66%] PASSED enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin_cover 
-enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin 
-[gw0] [ 67%] PASSED enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin 
-enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory 
-[gw0] [ 68%] PASSED enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory 
-enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory_cover 
-[gw0] [ 69%] PASSED enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory_cover 
-enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin 
-[gw0] [ 70%] PASSED enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin 
-enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin_cover 
-[gw3] [ 71%] PASSED enrobie/robie/test/test_service.py::test_RobieService_cover 
-enrobie/clients/irc/test/test_client.py::test_IRCClient_command 
-[gw3] [ 72%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_command 
-enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin 
-[gw3] [ 73%] PASSED enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin 
-enrobie/clients/mattermost/test/test_command.py::test_MTMCommand 
-[gw3] [ 75%] PASSED enrobie/clients/mattermost/test/test_command.py::test_MTMCommand 
-enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_reply 
-[gw3] [ 76%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_reply 
-enrobie/clients/mattermost/test/test_message.py::test_MTMMessage 
-[gw3] [ 77%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage 
-enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_samples 
-[gw2] [ 78%] PASSED enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin_cover 
-enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin 
-[gw2] [ 79%] PASSED enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin 
-enrobie/robie/childs/test/test_client.py::test_RobieClient_cover 
-[gw2] [ 80%] PASSED enrobie/robie/childs/test/test_client.py::test_RobieClient_cover 
-enrobie/plugins/logger/test/test_history.py::test_LoggerHistory_cover 
-[gw2] [ 81%] PASSED enrobie/plugins/logger/test/test_history.py::test_LoggerHistory_cover 
-enrobie/plugins/logger/test/test_history.py::test_LoggerHistory 
-[gw2] [ 82%] PASSED enrobie/plugins/logger/test/test_history.py::test_LoggerHistory 
-enrobie/robie/members/test/test_member.py::test_RobieMember_cover 
-[gw1] [ 83%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage_samples 
-enrobie/clients/irc/test/test_message.py::test_IRCMessage_reply 
-[gw2] [ 84%] PASSED enrobie/robie/members/test/test_member.py::test_RobieMember_cover 
 enrobie/utils/test/test_importer.py::test_importer 
-[gw2] [ 85%] PASSED enrobie/utils/test/test_importer.py::test_importer 
-enrobie/robie/addons/test/test_logger.py::test_RobieLogger_cover 
-[gw1] [ 86%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage_reply 
-enrobie/clients/irc/test/test_message.py::test_IRCMessage 
-[gw2] [ 87%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger_cover 
-enrobie/robie/addons/test/test_logger.py::test_RobieLogger 
-[gw1] [ 88%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage 
-enrobie/robie/addons/test/test_logger.py::test_RobieLogger_message 
-[gw2] [ 89%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger 
+[gw2] [  1%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels_basics 
+[gw3] [  2%] PASSED enrobie/utils/test/test_importer.py::test_importer 
+enrobie/plugins/logger/test/test_history.py::test_LoggerHistory_cover 
+enrobie/clients/irc/test/test_message.py::test_IRCMessage_samples 
+[gw1] [  3%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_command 
+[gw0] [  4%] PASSED enrobie/robie/childs/test/test_robie.py::test_RobieChilds 
+enrobie/clients/discord/test/test_client.py::test_DSCClient 
+enrobie/clients/mattermost/test/test_command.py::test_MTMCommand 
+[gw0] [  5%] PASSED enrobie/clients/mattermost/test/test_command.py::test_MTMCommand 
 enrobie/robie/test/test_config.py::test_RobieConfig 
-[gw1] [ 90%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger_message 
-enrobie/clients/discord/test/test_command.py::test_DSCCommand 
-[gw2] [ 91%] PASSED enrobie/robie/test/test_config.py::test_RobieConfig 
+[gw1] [  6%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient 
+enrobie/clients/discord/test/test_client.py::test_DSCClient_compose 
+[gw2] [  7%] PASSED enrobie/plugins/logger/test/test_history.py::test_LoggerHistory_cover 
+enrobie/plugins/logger/test/test_history.py::test_LoggerHistory 
+[gw0] [  8%] PASSED enrobie/robie/test/test_config.py::test_RobieConfig 
 enrobie/robie/threads/test/test_client.py::test_RobieClientThread 
-[gw1] [ 92%] PASSED enrobie/clients/discord/test/test_command.py::test_DSCCommand 
-enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin_cover 
-[gw2] [ 93%] PASSED enrobie/robie/threads/test/test_client.py::test_RobieClientThread 
+[gw1] [  9%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_compose 
+enrobie/utils/test/test_states.py::test_ClientChannels 
+[gw1] [ 10%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels 
+enrobie/utils/test/test_states.py::test_ClientChannels_cover 
+[gw1] [ 11%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels_cover 
+enrobie/utils/test/test_states.py::test_ClientPublish 
+[gw1] [ 12%] PASSED enrobie/utils/test/test_states.py::test_ClientPublish 
 enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin 
-[gw2] [ 94%] PASSED enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin 
-[gw0] [ 95%] PASSED enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin_cover 
-enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin_cover 
-[gw0] [ 96%] FAILED enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin_cover 
-[gw3] [ 97%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_samples 
+[gw2] [ 13%] PASSED enrobie/plugins/logger/test/test_history.py::test_LoggerHistory 
+enrobie/robie/childs/test/test_person.py::test_RobiePerson 
+[gw0] [ 14%] PASSED enrobie/robie/threads/test/test_client.py::test_RobieClientThread 
+enrobie/clients/discord/test/test_client.py::test_DSCClient_channels 
+[gw1] [ 15%] PASSED enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin 
+enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin_cover 
+[gw2] [ 16%] PASSED enrobie/robie/childs/test/test_person.py::test_RobiePerson 
+enrobie/robie/addons/test/test_queue.py::test_RobieQueueItem 
+[gw2] [ 17%] PASSED enrobie/robie/addons/test/test_queue.py::test_RobieQueueItem 
+enrobie/robie/addons/test/test_queue.py::test_RobieQueue 
+[gw2] [ 18%] PASSED enrobie/robie/addons/test/test_queue.py::test_RobieQueue 
+enrobie/robie/members/test/test_plugins.py::test_RobiePlugins_cover 
+[gw2] [ 19%] PASSED enrobie/robie/members/test/test_plugins.py::test_RobiePlugins_cover 
+enrobie/execution/test/test_crypts.py::test_arguments 
+[gw2] [ 20%] PASSED enrobie/execution/test/test_crypts.py::test_arguments 
+enrobie/robie/test/test_service.py::test_RobieService 
+[gw3] [ 21%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage_samples 
+enrobie/clients/irc/test/test_message.py::test_IRCMessage 
+[gw3] [ 22%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage 
+enrobie/clients/irc/test/test_message.py::test_IRCMessage_reply 
+[gw3] [ 23%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage_reply 
+enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory 
+[gw2] [ 25%] PASSED enrobie/robie/test/test_service.py::test_RobieService 
+enrobie/robie/test/test_service.py::test_RobieService_healths 
+[gw3] [ 26%] PASSED enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory 
+enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory_cover 
+[gw2] [ 27%] PASSED enrobie/robie/test/test_service.py::test_RobieService_healths 
+enrobie/robie/test/test_service.py::test_RobieService_cover 
+[gw0] [ 28%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_channels 
+enrobie/clients/discord/test/test_client.py::test_DSCClient_message 
+[gw3] [ 29%] PASSED enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory_cover 
+enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin_cover 
+[gw0] [ 30%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_message 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient_channels 
+[gw1] [ 31%] PASSED enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin_cover 
+enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin_cover 
+[gw2] [ 32%] PASSED enrobie/robie/test/test_service.py::test_RobieService_cover 
+enrobie/utils/test/test_param.py::test_InvalidParam 
+[gw2] [ 33%] PASSED enrobie/utils/test/test_param.py::test_InvalidParam 
+enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin 
+[gw2] [ 34%] PASSED enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin 
+enrobie/robie/threads/test/test_plugin.py::test_RobiePluginThread 
+[gw2] [ 35%] PASSED enrobie/robie/threads/test/test_plugin.py::test_RobiePluginThread 
+enrobie/execution/test/test_config.py::test_arguments 
+[gw2] [ 36%] PASSED enrobie/execution/test/test_config.py::test_arguments 
+enrobie/robie/addons/test/test_logger.py::test_RobieLogger_message 
+[gw2] [ 37%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger_message 
+enrobie/robie/addons/test/test_logger.py::test_RobieLogger_cover 
+[gw2] [ 38%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger_cover 
+enrobie/robie/addons/test/test_logger.py::test_RobieLogger 
+[gw2] [ 39%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger 
+enrobie/robie/members/test/test_clients.py::test_RobieClients_cover 
+[gw2] [ 40%] PASSED enrobie/robie/members/test/test_clients.py::test_RobieClients_cover 
+enrobie/robie/members/test/test_clients.py::test_RobieClients 
+[gw3] [ 41%] PASSED enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin_cover 
+enrobie/robie/members/test/test_member.py::test_RobieMember_cover 
+[gw2] [ 42%] PASSED enrobie/robie/members/test/test_clients.py::test_RobieClients 
+enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin_cover 
+[gw3] [ 43%] PASSED enrobie/robie/members/test/test_member.py::test_RobieMember_cover 
+enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory_cover 
+[gw3] [ 44%] PASSED enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory_cover 
+enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory 
+[gw3] [ 45%] PASSED enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory 
+enrobie/robie/childs/test/test_plugin.py::test_RobiePlugin_cover 
+[gw0] [ 46%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_channels 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient_command 
+[gw3] [ 47%] PASSED enrobie/robie/childs/test/test_plugin.py::test_RobiePlugin_cover 
+enrobie/robie/threads/test/test_thread.py::test_RobieThread_cover 
+[gw0] [ 48%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_command 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient_message 
+[gw3] [ 50%] PASSED enrobie/robie/threads/test/test_thread.py::test_RobieThread_cover 
+enrobie/robie/childs/test/test_child.py::test_RobieChild_cover 
+[gw0] [ 51%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_message 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient 
+[gw3] [ 52%] PASSED enrobie/robie/childs/test/test_child.py::test_RobieChild_cover 
+enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin 
+[gw0] [ 53%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient_compose 
+[gw3] [ 54%] PASSED enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin 
+enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin_cover 
+[gw0] [ 55%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_compose 
+enrobie/clients/mattermost/test/test_message.py::test_MTMMessage 
+[gw0] [ 56%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage 
+enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_samples 
+[gw1] [ 57%] PASSED enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin_cover 
+enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin 
+[gw1] [ 58%] PASSED enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin 
+enrobie/robie/models/test/test_models.py::test_RobieModels_cover 
+[gw1] [ 59%] PASSED enrobie/robie/models/test/test_models.py::test_RobieModels_cover 
+enrobie/execution/test/test_service.py::test_arguments 
+[gw1] [ 60%] PASSED enrobie/execution/test/test_service.py::test_arguments 
+enrobie/robie/members/test/test_plugins.py::test_RobiePlugins 
+[gw1] [ 61%] PASSED enrobie/robie/members/test/test_plugins.py::test_RobiePlugins 
 enrobie/plugins/ainswer/test/test_models.py::test_AinswerModels 
-[gw3] [ 98%] PASSED enrobie/plugins/ainswer/test/test_models.py::test_AinswerModels 
-[gw1] [100%] PASSED enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin_cover 
+[gw1] [ 62%] PASSED enrobie/plugins/ainswer/test/test_models.py::test_AinswerModels 
+enrobie/clients/irc/test/test_command.py::test_IRCCommand 
+[gw1] [ 63%] PASSED enrobie/clients/irc/test/test_command.py::test_IRCCommand 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_privmsg-privmsg-:hubert!hubert@science.com PRIVMSG ircbot :ircbot] 
+[gw1] [ 64%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_privmsg-privmsg-:hubert!hubert@science.com PRIVMSG ircbot :ircbot] 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_chanmsg-chanmsg-:nick!user@host PRIVMSG #enrobie :Hello ircbot] 
+[gw1] [ 65%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_chanmsg-chanmsg-:nick!user@host PRIVMSG #enrobie :Hello ircbot] 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_privmsg-privmsg-:nick!user@host PRIVMSG ircbot :Hello ircbot] 
+[gw1] [ 66%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_privmsg-privmsg-:nick!user@host PRIVMSG ircbot :Hello ircbot] 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_engage 
+[gw1] [ 67%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_engage 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_chanmsg-chanmsg-:hubert!hubert@science.com PRIVMSG #enrobie :ircbot] 
+[gw1] [ 68%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_chanmsg-chanmsg-:hubert!hubert@science.com PRIVMSG #enrobie :ircbot] 
+enrobie/clients/discord/test/test_message.py::test_DSCMessage_samples 
+[gw3] [ 69%] PASSED enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin_cover 
+enrobie/utils/test/test_child.py::test_InvalidChild 
+[gw3] [ 70%] PASSED enrobie/utils/test/test_child.py::test_InvalidChild 
+enrobie/utils/test/test_child.py::test_InvalidChild_cover 
+[gw2] [ 71%] PASSED enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin_cover 
+enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin 
+[gw3] [ 72%] PASSED enrobie/utils/test/test_child.py::test_InvalidChild_cover 
+enrobie/clients/discord/test/test_message.py::test_DSCMessage 
+[gw2] [ 73%] PASSED enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin 
+enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin_cover 
+[gw3] [ 75%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage 
+enrobie/robie/childs/test/test_client.py::test_RobieClient_cover 
+[gw3] [ 76%] PASSED enrobie/robie/childs/test/test_client.py::test_RobieClient_cover 
+enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin_cover 
+[gw0] [ 77%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_samples 
+enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_reply 
+[gw0] [ 78%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_reply 
+enrobie/robie/models/test/test_command.py::test_RobieCommand 
+[gw0] [ 79%] PASSED enrobie/robie/models/test/test_command.py::test_RobieCommand 
+enrobie/robie/models/test/test_message.py::test_RobieMessage 
+[gw0] [ 80%] PASSED enrobie/robie/models/test/test_message.py::test_RobieMessage 
+enrobie/robie/test/test_robie.py::test_Robie_cover 
+[gw0] [ 81%] PASSED enrobie/robie/test/test_robie.py::test_Robie_cover 
+enrobie/robie/test/test_robie.py::test_Robie_person 
+[gw0] [ 82%] PASSED enrobie/robie/test/test_robie.py::test_Robie_person 
+enrobie/robie/test/test_robie.py::test_Robie_printer 
+[gw0] [ 83%] PASSED enrobie/robie/test/test_robie.py::test_Robie_printer 
+enrobie/robie/test/test_robie.py::test_Robie_jinja2 
+[gw0] [ 84%] PASSED enrobie/robie/test/test_robie.py::test_Robie_jinja2 
+enrobie/robie/test/test_robie.py::test_Robie 
+[gw0] [ 85%] PASSED enrobie/robie/test/test_robie.py::test_Robie 
+enrobie/clients/discord/test/test_command.py::test_DSCCommand 
+[gw0] [ 86%] PASSED enrobie/clients/discord/test/test_command.py::test_DSCCommand 
+enrobie/utils/test/test_thread.py::test_DupliThread 
+[gw0] [ 87%] PASSED enrobie/utils/test/test_thread.py::test_DupliThread 
+enrobie/utils/test/test_thread.py::test_DupliThread_cover 
+[gw0] [ 88%] PASSED enrobie/utils/test/test_thread.py::test_DupliThread_cover 
+enrobie/clients/irc/test/test_client.py::test_IRCClient_message 
+[gw0] [ 89%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_message 
+enrobie/clients/irc/test/test_client.py::test_IRCClient_command 
+[gw0] [ 90%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_command 
+enrobie/clients/irc/test/test_client.py::test_IRCClient_channels 
+[gw2] [ 91%] FAILED enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin_cover 
+enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin 
+[gw2] [ 92%] PASSED enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin 
+enrobie/clients/irc/test/test_client.py::test_IRCClient_compose 
+[gw2] [ 93%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_compose 
+[gw1] [ 94%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage_samples 
+enrobie/clients/discord/test/test_message.py::test_DSCMessage_reply 
+[gw1] [ 95%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage_reply 
+[gw3] [ 96%] PASSED enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin_cover 
+enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin 
+[gw3] [ 97%] PASSED enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin 
+[gw0] [ 98%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_channels 
+enrobie/clients/irc/test/test_client.py::test_IRCClient 
+[gw0] [100%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient 
 
 =================================== FAILURES ===================================
 ___________________________ test_AinswerPlugin_cover ___________________________
-[gw0] linux -- Python 3.12.11 /home/runner/work/enrobie/enrobie/main/.venv-package/bin/python3
+[gw2] linux -- Python 3.12.11 /home/runner/work/enrobie/enrobie/main/.venv-package/bin/python3
 
-service = <enrobie.robie.service.RobieService object at 0x7f41aca14cb0>
-client_dscsock = <function client_dscsock.<locals>._fixture at 0x7f41adf185e0>
-client_ircsock = <function client_ircsock.<locals>._fixture at 0x7f41adf19580>
-client_mtmsock = <function client_mtmsock.<locals>._fixture at 0x7f41ae0bcd60>
+service = <enrobie.robie.service.RobieService object at 0x7f9da9257ef0>
+client_dscsock = <function client_dscsock.<locals>._fixture at 0x7f9da85bd1c0>
+client_ircsock = <function client_ircsock.<locals>._fixture at 0x7f9dac7e7240>
+client_mtmsock = <function client_mtmsock.<locals>._fixture at 0x7f9dac7e62a0>
 
     def test_AinswerPlugin_cover(
         service: 'RobieService',
@@ -297,33 +297,33 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.547261+0000
+  time: 2025-07-15T02:45:27.526214+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':robot: Ainswer/`ainswer`: :green_circle: `normal` <t:1752461200:R>'
+    content: ':robot: Ainswer/`ainswer`: :green_circle: `normal` <t:1752547527:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.547325+0000
+  time: 2025-07-15T02:45:27.526281+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':wood: Logger/`logger`: :green_circle: `normal` <t:1752461200:R>'
+    content: ':wood: Logger/`logger`: :green_circle: `normal` <t:1752547527:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.547421+0000
+  time: 2025-07-15T02:45:27.526374+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :🤖 Ainswer/ainswer: 🟢 normal for 0s'
 
@@ -332,7 +332,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.547492+0000
+  time: 2025-07-15T02:45:27.526446+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :🪵 Logger/logger: 🟢 normal for 0s'
 
@@ -341,7 +341,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.547573+0000
+  time: 2025-07-15T02:45:27.526527+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -355,7 +355,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.547636+0000
+  time: 2025-07-15T02:45:27.526593+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -369,46 +369,46 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.647934+0000
+  time: 2025-07-15T02:45:27.627044+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':speech_balloon: Discord/`dscbot`: :hourglass: `pending` <t:1752461200:R>'
+    content: ':speech_balloon: Discord/`dscbot`: :hourglass: `pending` <t:1752547527:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.648006+0000
+  time: 2025-07-15T02:45:27.627159+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':speech_balloon: IRC/`ircbot`: :hourglass: `pending` <t:1752461200:R>'
+    content: ':speech_balloon: IRC/`ircbot`: :hourglass: `pending` <t:1752547527:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.648061+0000
+  time: 2025-07-15T02:45:27.627262+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':speech_balloon: Mattermost/`mtmbot`: :green_circle: `normal` <t:1752461200:R>'
+    content: ':speech_balloon: Mattermost/`mtmbot`: :green_circle: `normal` <t:1752547527:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.648173+0000
+  time: 2025-07-15T02:45:27.627443+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 Discord/dscbot: ⏳ pending for 0s'
 
@@ -417,7 +417,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.648244+0000
+  time: 2025-07-15T02:45:27.627571+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 IRC/ircbot: ⏳ pending for 0s'
 
@@ -426,7 +426,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.648308+0000
+  time: 2025-07-15T02:45:27.627717+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 Mattermost/mtmbot: 🟢 normal for 0s'
 
@@ -435,7 +435,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.648402+0000
+  time: 2025-07-15T02:45:27.627883+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -449,7 +449,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.648468+0000
+  time: 2025-07-15T02:45:27.628026+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -463,7 +463,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.648532+0000
+  time: 2025-07-15T02:45:27.628165+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -477,7 +477,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.680296+0000
+  time: 2025-07-15T02:45:27.656038+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -517,28 +517,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.680474+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'mocked'
-    command: '001'
-    params: 'ircbot :Welcome to network'
-    original: ':mocked 001 ircbot :Welcome to network'
-    kind: 'event'
-    isme: False
-    hasme: False
-    whome: 'ircbot'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-14T02:46:40.681263+0000
+  time: 2025-07-15T02:45:27.661070+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -567,33 +546,54 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.748845+0000
-  client: 'dscbot'
-  method: 'post'
-  path: 'channels/mocked/messages'
-  params: None
-  json: dict
-    content: ':speech_balloon: Discord/`dscbot`: :green_circle: `normal` <t:1752461200:R>'
+  time: 2025-07-15T02:45:27.661302+0000
+  client: 'ircbot'
+  person: None
+  event: ClientEvent
+    prefix: 'mocked'
+    command: '001'
+    params: 'ircbot :Welcome to network'
+    original: ':mocked 001 ircbot :Welcome to network'
+    kind: 'event'
+    isme: False
+    hasme: False
+    whome: 'ircbot'
+    author: None
+    recipient: None
+    message: None
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.748909+0000
+  time: 2025-07-15T02:45:27.728580+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':speech_balloon: IRC/`ircbot`: :green_circle: `normal` <t:1752461200:R>'
+    content: ':speech_balloon: Discord/`dscbot`: :green_circle: `normal` <t:1752547527:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.749026+0000
+  time: 2025-07-15T02:45:27.728684+0000
+  client: 'dscbot'
+  method: 'post'
+  path: 'channels/mocked/messages'
+  params: None
+  json: dict
+    content: ':speech_balloon: IRC/`ircbot`: :green_circle: `normal` <t:1752547527:R>'
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-15T02:45:27.728875+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 Discord/dscbot: 🟢 normal for 0s'
 
@@ -602,7 +602,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.749096+0000
+  time: 2025-07-15T02:45:27.729021+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 IRC/ircbot: 🟢 normal for 0s'
 
@@ -611,7 +611,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.749197+0000
+  time: 2025-07-15T02:45:27.729225+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -625,7 +625,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.749286+0000
+  time: 2025-07-15T02:45:27.729347+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -639,7 +639,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.782574+0000
+  time: 2025-07-15T02:45:27.758305+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -665,28 +665,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.782704+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'mocked'
-    command: '376'
-    params: 'ircbot :End of /MOTD command.'
-    original: ':mocked 376 ircbot :End of /MOTD command.'
-    kind: 'event'
-    isme: False
-    hasme: False
-    whome: 'ircbot'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-14T02:46:40.783479+0000
+  time: 2025-07-15T02:45:27.763479+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -715,7 +694,28 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.885638+0000
+  time: 2025-07-15T02:45:27.763568+0000
+  client: 'ircbot'
+  person: None
+  event: ClientEvent
+    prefix: 'mocked'
+    command: '376'
+    params: 'ircbot :End of /MOTD command.'
+    original: ':mocked 376 ircbot :End of /MOTD command.'
+    kind: 'event'
+    isme: False
+    hasme: False
+    whome: 'ircbot'
+    author: None
+    recipient: None
+    message: None
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-15T02:45:27.865913+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -752,28 +752,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:40.986236+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'mocked'
-    command: '376'
-    params: 'ircbot :End of /MOTD command.'
-    original: ':mocked 376 ircbot :End of /MOTD command.'
-    kind: 'event'
-    isme: False
-    hasme: False
-    whome: 'ircbot'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-14T02:46:40.986913+0000
+  time: 2025-07-15T02:45:27.967430+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -802,7 +781,28 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.087335+0000
+  time: 2025-07-15T02:45:27.967594+0000
+  client: 'ircbot'
+  person: None
+  event: ClientEvent
+    prefix: 'mocked'
+    command: '376'
+    params: 'ircbot :End of /MOTD command.'
+    original: ':mocked 376 ircbot :End of /MOTD command.'
+    kind: 'event'
+    isme: False
+    hasme: False
+    whome: 'ircbot'
+    author: None
+    recipient: None
+    message: None
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-15T02:45:28.067866+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -831,28 +831,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.187151+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'mocked'
-    command: '376'
-    params: 'ircbot :End of /MOTD command.'
-    original: ':mocked 376 ircbot :End of /MOTD command.'
-    kind: 'event'
-    isme: False
-    hasme: False
-    whome: 'ircbot'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-14T02:46:41.187933+0000
+  time: 2025-07-15T02:45:28.168529+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -893,6 +872,27 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+  time: 2025-07-15T02:45:28.168628+0000
+  client: 'ircbot'
+  person: None
+  event: ClientEvent
+    prefix: 'mocked'
+    command: '376'
+    params: 'ircbot :End of /MOTD command.'
+    original: ':mocked 376 ircbot :End of /MOTD command.'
+    kind: 'event'
+    isme: False
+    hasme: False
+    whome: 'ircbot'
+    author: None
+    recipient: None
+    message: None
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
   system: 'You are Bender from Futurama.'
   prompt: '**Instructions**
 Your nickname is mtmbot. Use some markdown and emojis.
@@ -905,7 +905,7 @@ Reasons to reply with only no_response include:
 **Message Metadata**
 Client family: mattermost
 Message kind: privmsg
-Message time: 2025-07-14T02:46:41.187933+0000
+Message time: 2025-07-15T02:45:28.168529+0000
 
 **User Metadata**
 User nickname: user
@@ -924,7 +924,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.294738+0000
+  time: 2025-07-15T02:45:28.270791+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -945,7 +945,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.294927+0000
+  time: 2025-07-15T02:45:28.271005+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -986,7 +986,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.407853+0000
+  time: 2025-07-15T02:45:28.383379+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -1027,7 +1027,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.408045+0000
+  time: 2025-07-15T02:45:28.384771+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -1048,7 +1048,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.515639+0000
+  time: 2025-07-15T02:45:28.490700+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -1079,7 +1079,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.515986+0000
+  time: 2025-07-15T02:45:28.490953+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -1100,7 +1100,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.571417+0000
+  time: 2025-07-15T02:45:28.594005+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -1135,7 +1135,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.571514+0000
+  time: 2025-07-15T02:45:28.597935+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -1156,28 +1156,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.703353+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'botirc!user@host'
-    command: 'PRIVMSG'
-    params: '# :Hello nick'
-    original: ':botirc!user@host PRIVMSG # :Hello nick'
-    kind: 'chanmsg'
-    isme: True
-    hasme: False
-    whome: 'botirc'
-    author: 'botirc'
-    recipient: '#'
-    message: 'Hello nick'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-14T02:46:41.707966+0000
+  time: 2025-07-15T02:45:28.701625+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -1218,7 +1197,28 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.847120+0000
+  time: 2025-07-15T02:45:28.733374+0000
+  client: 'ircbot'
+  person: None
+  event: ClientEvent
+    prefix: 'botirc!user@host'
+    command: 'PRIVMSG'
+    params: '# :Hello nick'
+    original: ':botirc!user@host PRIVMSG # :Hello nick'
+    kind: 'chanmsg'
+    isme: True
+    hasme: False
+    whome: 'botirc'
+    author: 'botirc'
+    recipient: '#'
+    message: 'Hello nick'
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-15T02:45:28.783661+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -1239,7 +1239,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.847342+0000
+  time: 2025-07-15T02:45:28.811300+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -1280,28 +1280,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.897405+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'ircbot'
-    command: 'JOIN'
-    params: ':#enrobie'
-    original: ':ircbot JOIN :#enrobie'
-    kind: 'event'
-    isme: True
-    hasme: False
-    whome: 'ircbot'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-14T02:46:41.897499+0000
+  time: 2025-07-15T02:45:28.861583+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1335,7 +1314,28 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.897709+0000
+  time: 2025-07-15T02:45:28.885663+0000
+  client: 'ircbot'
+  person: None
+  event: ClientEvent
+    prefix: 'ircbot'
+    command: 'JOIN'
+    params: ':#enrobie'
+    original: ':ircbot JOIN :#enrobie'
+    kind: 'event'
+    isme: True
+    hasme: False
+    whome: 'ircbot'
+    author: None
+    recipient: None
+    message: None
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-15T02:45:28.911950+0000
   client: 'mtmbot'
   person: 'hubert'
   event: ClientEvent
@@ -1376,28 +1376,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.998321+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'mocked'
-    command: '353'
-    params: 'ircbot = #enrobie :ircbot robert trebor sirrah'
-    original: ':mocked 353 ircbot = #enrobie :ircbot robert trebor sirrah'
-    kind: 'event'
-    isme: False
-    hasme: False
-    whome: 'ircbot'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-14T02:46:41.998401+0000
+  time: 2025-07-15T02:45:28.962255+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1429,7 +1408,28 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:41.998589+0000
+  time: 2025-07-15T02:45:28.986180+0000
+  client: 'ircbot'
+  person: None
+  event: ClientEvent
+    prefix: 'mocked'
+    command: '353'
+    params: 'ircbot = #enrobie :ircbot robert trebor sirrah'
+    original: ':mocked 353 ircbot = #enrobie :ircbot robert trebor sirrah'
+    kind: 'event'
+    isme: False
+    hasme: False
+    whome: 'ircbot'
+    author: None
+    recipient: None
+    message: None
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-15T02:45:29.012610+0000
   client: 'mtmbot'
   person: 'hubert'
   event: ClientEvent
@@ -1470,7 +1470,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.098886+0000
+  time: 2025-07-15T02:45:29.087668+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -1491,7 +1491,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.099139+0000
+  time: 2025-07-15T02:45:29.113923+0000
   client: 'mtmbot'
   person: 'hubert'
   event: ClientEvent
@@ -1532,63 +1532,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.199505+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'nick!user@host'
-    command: 'TOPIC'
-    params: '#enrobie :Test topic is changed'
-    original: ':nick!user@host TOPIC #enrobie :Test topic is changed'
-    kind: 'event'
-    isme: False
-    hasme: False
-    whome: 'ircbot'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-14T02:46:42.199653+0000
-  client: 'mtmbot'
-  person: None
-  event: ClientEvent
-    type: 'channel_updated'
-    data: dict
-      channel: '{"id":"enrobie","name":"enrobie","header":"Test topic"}'
-    broadcast: dict
-      channel_id: 'enrobie'
-    seqno: 8
-    status: None
-    error: None
-    seqre: None
-    original: dict
-      broadcast: dict
-        channel_id: 'enrobie'
-      data: dict
-        channel: '{"id":"enrobie","name":"enrobie","header":"Test topic"}'
-      event: 'channel_updated'
-      seq: 8
-    kind: 'event'
-    isme: False
-    hasme: False
-    whome: tuple
-      - 'mtmbot'
-      - 'mtmunq'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-14T02:46:42.199874+0000
+  time: 2025-07-15T02:45:29.165366+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1630,14 +1574,14 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.300146+0000
+  time: 2025-07-15T02:45:29.188248+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
     prefix: 'nick!user@host'
-    command: 'KICK'
-    params: '#enrobie ircbot :foo'
-    original: ':nick!user@host KICK #enrobie ircbot :foo'
+    command: 'TOPIC'
+    params: '#enrobie :Test topic is changed'
+    original: ':nick!user@host TOPIC #enrobie :Test topic is changed'
     kind: 'event'
     isme: False
     hasme: False
@@ -1651,23 +1595,26 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.300245+0000
+  time: 2025-07-15T02:45:29.215501+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
-    type: 'discon'
-    data: None
-    broadcast: None
-    seqno: 69420
+    type: 'channel_updated'
+    data: dict
+      channel: '{"id":"enrobie","name":"enrobie","header":"Test topic"}'
+    broadcast: dict
+      channel_id: 'enrobie'
+    seqno: 8
     status: None
-    error: dict
-      reason: 'EOF'
+    error: None
     seqre: None
     original: dict
-      error: dict
-        reason: 'EOF'
-      event: 'discon'
-      seq: 69420
+      broadcast: dict
+        channel_id: 'enrobie'
+      data: dict
+        channel: '{"id":"enrobie","name":"enrobie","header":"Test topic"}'
+      event: 'channel_updated'
+      seq: 8
     kind: 'event'
     isme: False
     hasme: False
@@ -1683,7 +1630,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.300434+0000
+  time: 2025-07-15T02:45:29.267677+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1727,20 +1674,73 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.379901+0000
-  client: 'dscbot'
-  method: 'post'
-  path: 'channels/mocked/messages'
-  params: None
-  json: dict
-    content: ':speech_balloon: Mattermost/`mtmbot`: :red_circle: `failure` <t:1752461202:R>'
+  time: 2025-07-15T02:45:29.288727+0000
+  client: 'ircbot'
+  person: None
+  event: ClientEvent
+    prefix: 'nick!user@host'
+    command: 'KICK'
+    params: '#enrobie ircbot :foo'
+    original: ':nick!user@host KICK #enrobie ircbot :foo'
+    kind: 'event'
+    isme: False
+    hasme: False
+    whome: 'ircbot'
+    author: None
+    recipient: None
+    message: None
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.380067+0000
+  time: 2025-07-15T02:45:29.316012+0000
+  client: 'mtmbot'
+  person: None
+  event: ClientEvent
+    type: 'discon'
+    data: None
+    broadcast: None
+    seqno: 69420
+    status: None
+    error: dict
+      reason: 'EOF'
+    seqre: None
+    original: dict
+      error: dict
+        reason: 'EOF'
+      event: 'discon'
+      seq: 69420
+    kind: 'event'
+    isme: False
+    hasme: False
+    whome: tuple
+      - 'mtmbot'
+      - 'mtmunq'
+    author: None
+    recipient: None
+    message: None
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-15T02:45:29.352405+0000
+  client: 'dscbot'
+  method: 'post'
+  path: 'channels/mocked/messages'
+  params: None
+  json: dict
+    content: ':speech_balloon: Mattermost/`mtmbot`: :red_circle: `failure` <t:1752547529:R>'
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-15T02:45:29.352565+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 Mattermost/mtmbot: 🔴 failure for 0s'
 
@@ -1749,7 +1749,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.380209+0000
+  time: 2025-07-15T02:45:29.352704+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -1763,28 +1763,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.400775+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'ircbot'
-    command: 'JOIN'
-    params: ':#enrobie'
-    original: ':ircbot JOIN :#enrobie'
-    kind: 'event'
-    isme: True
-    hasme: False
-    whome: 'ircbot'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-14T02:46:42.401050+0000
+  time: 2025-07-15T02:45:29.368248+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1828,16 +1807,16 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.502050+0000
+  time: 2025-07-15T02:45:29.389180+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
-    prefix: 'mocked'
-    command: '353'
-    params: 'ircbot = #enrobie :ircbot robert trebor sirrah'
-    original: ':mocked 353 ircbot = #enrobie :ircbot robert trebor sirrah'
+    prefix: 'ircbot'
+    command: 'JOIN'
+    params: ':#enrobie'
+    original: ':ircbot JOIN :#enrobie'
     kind: 'event'
-    isme: False
+    isme: True
     hasme: False
     whome: 'ircbot'
     author: None
@@ -1849,7 +1828,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.502790+0000
+  time: 2025-07-15T02:45:29.469506+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1887,14 +1866,14 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.602643+0000
+  time: 2025-07-15T02:45:29.490051+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
     prefix: 'mocked'
-    command: '332'
-    params: 'ircbot #enrobie :Test topic is changed'
-    original: ':mocked 332 ircbot #enrobie :Test topic is changed'
+    command: '353'
+    params: 'ircbot = #enrobie :ircbot robert trebor sirrah'
+    original: ':mocked 353 ircbot = #enrobie :ircbot robert trebor sirrah'
     kind: 'event'
     isme: False
     hasme: False
@@ -1908,7 +1887,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.603175+0000
+  time: 2025-07-15T02:45:29.570022+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1942,28 +1921,28 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.704802+0000
+  time: 2025-07-15T02:45:29.590489+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
-    prefix: 'nick!user@host'
-    command: 'PRIVMSG'
-    params: '#enrobie :Hello ircbot'
-    original: ':nick!user@host PRIVMSG #enrobie :Hello ircbot'
-    kind: 'chanmsg'
+    prefix: 'mocked'
+    command: '332'
+    params: 'ircbot #enrobie :Test topic is changed'
+    original: ':mocked 332 ircbot #enrobie :Test topic is changed'
+    kind: 'event'
     isme: False
-    hasme: True
+    hasme: False
     whome: 'ircbot'
-    author: 'nick'
-    recipient: '#enrobie'
-    message: 'Hello ircbot'
+    author: None
+    recipient: None
+    message: None
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.704951+0000
+  time: 2025-07-15T02:45:29.670605+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -2007,20 +1986,20 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.806646+0000
+  time: 2025-07-15T02:45:29.691049+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
     prefix: 'nick!user@host'
     command: 'PRIVMSG'
-    params: 'ircbot :Hello ircbot'
-    original: ':nick!user@host PRIVMSG ircbot :Hello ircbot'
-    kind: 'privmsg'
+    params: '#enrobie :Hello ircbot'
+    original: ':nick!user@host PRIVMSG #enrobie :Hello ircbot'
+    kind: 'chanmsg'
     isme: False
     hasme: True
     whome: 'ircbot'
     author: 'nick'
-    recipient: 'ircbot'
+    recipient: '#enrobie'
     message: 'Hello ircbot'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -2028,7 +2007,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.806825+0000
+  time: 2025-07-15T02:45:29.771734+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -2070,28 +2049,28 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.908568+0000
+  time: 2025-07-15T02:45:29.791575+0000
   client: 'ircbot'
-  person: 'hubert'
+  person: None
   event: ClientEvent
-    prefix: 'hubert!hubert@science.com'
+    prefix: 'nick!user@host'
     command: 'PRIVMSG'
-    params: '#enrobie :ircbot'
-    original: ':hubert!hubert@science.com PRIVMSG #enrobie :ircbot'
-    kind: 'chanmsg'
+    params: 'ircbot :Hello ircbot'
+    original: ':nick!user@host PRIVMSG ircbot :Hello ircbot'
+    kind: 'privmsg'
     isme: False
     hasme: True
     whome: 'ircbot'
-    author: 'hubert'
-    recipient: '#enrobie'
-    message: 'ircbot'
+    author: 'nick'
+    recipient: 'ircbot'
+    message: 'Hello ircbot'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:42.908779+0000
+  time: 2025-07-15T02:45:29.872365+0000
   client: 'dscbot'
   person: 'hubert'
   event: ClientEvent
@@ -2135,7 +2114,28 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.011474+0000
+  time: 2025-07-15T02:45:29.892108+0000
+  client: 'ircbot'
+  person: 'hubert'
+  event: ClientEvent
+    prefix: 'hubert!hubert@science.com'
+    command: 'PRIVMSG'
+    params: '#enrobie :ircbot'
+    original: ':hubert!hubert@science.com PRIVMSG #enrobie :ircbot'
+    kind: 'chanmsg'
+    isme: False
+    hasme: True
+    whome: 'ircbot'
+    author: 'hubert'
+    recipient: '#enrobie'
+    message: 'ircbot'
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-15T02:45:29.972941+0000
   client: 'dscbot'
   person: 'hubert'
   event: ClientEvent
@@ -2179,7 +2179,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.011646+0000
+  time: 2025-07-15T02:45:29.992632+0000
   client: 'ircbot'
   person: 'hubert'
   event: ClientEvent
@@ -2200,7 +2200,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.113613+0000
+  time: 2025-07-15T02:45:30.073483+0000
   client: 'dscbot'
   person: 'hubert'
   event: ClientEvent
@@ -2242,7 +2242,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.113806+0000
+  time: 2025-07-15T02:45:30.095423+0000
   client: 'ircbot'
   person: 'hubert'
   event: ClientEvent
@@ -2275,7 +2275,7 @@ Reasons to reply with only no_response include:
 **Message Metadata**
 Client family: irc
 Message kind: privmsg
-Message time: 2025-07-14T02:46:41.294738+0000
+Message time: 2025-07-15T02:45:28.270791+0000
 
 **User Metadata**
 User nickname: nick
@@ -2294,7 +2294,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.175013+0000
+  time: 2025-07-15T02:45:30.148686+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -2308,20 +2308,20 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.184559+0000
+  time: 2025-07-15T02:45:30.158294+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':robot: Ainswer/`ainswer`: :red_circle: `failure` <t:1752461203:R>'
+    content: ':robot: Ainswer/`ainswer`: :red_circle: `failure` <t:1752547530:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.184725+0000
+  time: 2025-07-15T02:45:30.158431+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :🤖 Ainswer/ainswer: 🔴 failure for 0s'
 
@@ -2330,7 +2330,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.184848+0000
+  time: 2025-07-15T02:45:30.158545+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -2344,7 +2344,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.215388+0000
+  time: 2025-07-15T02:45:30.176416+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -2378,7 +2378,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.215505+0000
+  time: 2025-07-15T02:45:30.199411+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -2399,20 +2399,20 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.285464+0000
+  time: 2025-07-15T02:45:30.259006+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':speech_balloon: Discord/`dscbot`: :red_circle: `failure` <t:1752461203:R>'
+    content: ':speech_balloon: Discord/`dscbot`: :red_circle: `failure` <t:1752547530:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.285606+0000
+  time: 2025-07-15T02:45:30.259170+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 Discord/dscbot: 🔴 failure for 0s'
 
@@ -2421,7 +2421,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.285750+0000
+  time: 2025-07-15T02:45:30.259310+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -2435,7 +2435,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.316922+0000
+  time: 2025-07-15T02:45:30.278299+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -2460,7 +2460,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.317036+0000
+  time: 2025-07-15T02:45:30.300037+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -2481,7 +2481,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.418438+0000
+  time: 2025-07-15T02:45:30.400608+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -2502,7 +2502,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.520998+0000
+  time: 2025-07-15T02:45:30.502031+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -2523,20 +2523,20 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.688071+0000
+  time: 2025-07-15T02:45:30.661008+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':speech_balloon: IRC/`ircbot`: :red_circle: `failure` <t:1752461203:R>'
+    content: ':speech_balloon: IRC/`ircbot`: :red_circle: `failure` <t:1752547530:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.688244+0000
+  time: 2025-07-15T02:45:30.661184+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 IRC/ircbot: 🔴 failure for 0s'
 
@@ -2545,7 +2545,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:43.688389+0000
+  time: 2025-07-15T02:45:30.661333+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -2571,7 +2571,7 @@ Reasons to reply with only no_response include:
 **Message Metadata**
 Client family: mattermost
 Message kind: chanmsg
-Message time: 2025-07-14T02:46:41.707966+0000
+Message time: 2025-07-15T02:45:28.701625+0000
 
 **User Metadata**
 User nickname: user
@@ -2587,9 +2587,9 @@ Topic: Test topic
 
 **Channel Recents**
 These are the most recent messages from the current channel or direct message. When client family is IRC or Mattermost, you do not see your messages below.
-[2025-07-14T02:46:41+0000] <userid> Hello mtmbot
-[2025-07-14T02:46:42+0000] <kjf9al2klaiietalkw> mtmbot
-[2025-07-14T02:46:42+0000] <kjf9al2klaiietalkw> mtmbot
+[2025-07-15T02:45:28+0000] <userid> Hello mtmbot
+[2025-07-15T02:45:29+0000] <kjf9al2klaiietalkw> mtmbot
+[2025-07-15T02:45:29+0000] <kjf9al2klaiietalkw> mtmbot
 
 **Question**
 Hello mtmbot'
@@ -2600,12 +2600,394 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-14T02:46:44.570348+0000
+  time: 2025-07-15T02:45:31.535724+0000
   client: 'ircbot'
   event: 'PRIVMSG nick :I'm sorry nick, I'm afraid I can't do that.'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://discord.com/api/v10/gateway "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1025 HTTP Request: GET https://mocked/api/v4/users/me "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1025 HTTP Request: POST https://mocked/api/v4/posts "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1025 HTTP Request: POST https://mocked/api/v4/posts "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1025 HTTP Request: POST https://mocked/api/v4/posts "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1025 HTTP Request: POST https://mocked/api/v4/posts "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1025 HTTP Request: POST https://mocked/api/v4/posts "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1025 HTTP Request: POST https://mocked/api/v4/posts "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1025 HTTP Request: POST https://mocked/api/v4/posts "HTTP/1.1 200 OK"
+DEBUG    asyncio:selector_events.py:64 Using selector: EpollSelector
+DEBUG    openai._base_client:_base_client.py:482 Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'User-Agent': 'pydantic-ai/0.4.2'}, 'timeout': 30, 'files': None, 'idempotency_key': 'stainless-python-retry-75a33c3e-e425-431e-a585-49cbf27a8cff', 'json_data': {'messages': [{'role': 'system', 'content': 'You are Bender from Futurama.'}, {'role': 'user', 'content': '**Instructions**\nYour nickname is mtmbot. Use some markdown and emojis.\n\n**Responding**\nThere are reasons not to respond to the user question. If you think you should not respond, reply only no_response.\nReasons to reply with only no_response include:\n - If you believe that you are being abused by the user asking the quesiton.\n\n**Message Metadata**\nClient family: mattermost\nMessage kind: privmsg\nMessage time: 2025-07-15T02:45:28.168529+0000\n\n**User Metadata**\nUser nickname: user\nUser serverID: userid\n\n**Additional Metadata**\nYour nickname: mtmbot\nYour serverID: mtmunq\n\n**Question**\nHello mtmbot'}], 'model': 'gpt-4o', 'stream': False, 'tool_choice': 'required', 'tools': [{'type': 'function', 'function': {'name': 'ainswer_memory_insert', 'description': 'Insert the memory into the historical person memorables.\n\nDo not add memories of previous questions or discussion.\nDo not add new memories without confirmation as there is\nlimited storage that the person may have for memorables.\nOnly add the memory one time after ensuring it does not\nalready exist, using the `ainswer_memory_records` tool.\nAlways confirm with the person before inserting message.\nBe very cautious and conservative with use of this tool,\nthe bot is configured by default to remove older entries\nonce the limit for the person memories has been reached!\n\n.. note::\n   This tool will allow for inserting new memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'message': {'description': 'Historical person memorable', 'maxLength': 400, 'minLength': 1, 'type': 'string'}}, 'required': ['message'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_records', 'description': 'Return the historical records for the person memorables.\n\n.. note::\n   This tool will return historical memorable items for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_delete', 'description': 'Delete the record from the historical person memorables.\n\n.. note::\n   This tool will allow for deleting the memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'unique': {'description': 'Unique identifier for memory', 'maxLength': 36, 'minLength': 36, 'type': 'string'}}, 'required': ['unique'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'homie_persist', 'description': '<summary>Return the current values in Homie Automate persistence.\n\n.. note::\n   This tool will return values from the Homie Automate\n   persistence store. They may include information about\n   many things regarding the Robie owner home status.</summary>\n<returns>\n<description>Current values in Homie Automate persistence.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'nagios_current', 'description': '<summary>Return the current status for infratstructure in Nagios.\n\n.. note::\n   This tool will return status values from Nagios Core.\n   Nagios is a network and system monitoring platform.</summary>\n<returns>\n<description>Current status for infratstructure in Nagios.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'final_result', 'description': 'Contains the response for question for the client type.', 'parameters': {'additionalProperties': False, 'properties': {'text': {'description': 'Format intended for Mattermost.', 'maxLength': 1900, 'type': 'string'}}, 'required': ['text'], 'type': 'object'}}}]}}
+DEBUG    openai._base_client:_base_client.py:1522 Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+DEBUG    openai._base_client:_base_client.py:1546 Encountered Exception
+Traceback (most recent call last):
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/openai/_base_client.py", line 1526, in request
+    response = await self._client.send(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 190, in amock
+    response = await cls._send_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 224, in _send_async_request
+    httpx_response = await cls.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 136, in async_handler
+    raise assertion_error
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 129, in async_handler
+    httpx_response = await router.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 318, in async_handler
+    resolved = await self.aresolve(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 291, in aresolve
+    with self.resolver(request) as resolved:
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 250, in resolver
+    raise AllMockedAssertionError(f"RESPX: {request!r} not mocked!")
+respx.models.AllMockedAssertionError: RESPX: <Request('POST', 'https://api.openai.com/v1/chat/completions')> not mocked!
+DEBUG    openai._base_client:_base_client.py:1612 2 retries left
+INFO     openai._base_client:_base_client.py:1615 Retrying request to /chat/completions in 0.459566 seconds
+DEBUG    openai._base_client:_base_client.py:482 Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'User-Agent': 'pydantic-ai/0.4.2'}, 'timeout': 30, 'files': None, 'idempotency_key': 'stainless-python-retry-75a33c3e-e425-431e-a585-49cbf27a8cff', 'json_data': {'messages': [{'role': 'system', 'content': 'You are Bender from Futurama.'}, {'role': 'user', 'content': '**Instructions**\nYour nickname is mtmbot. Use some markdown and emojis.\n\n**Responding**\nThere are reasons not to respond to the user question. If you think you should not respond, reply only no_response.\nReasons to reply with only no_response include:\n - If you believe that you are being abused by the user asking the quesiton.\n\n**Message Metadata**\nClient family: mattermost\nMessage kind: privmsg\nMessage time: 2025-07-15T02:45:28.168529+0000\n\n**User Metadata**\nUser nickname: user\nUser serverID: userid\n\n**Additional Metadata**\nYour nickname: mtmbot\nYour serverID: mtmunq\n\n**Question**\nHello mtmbot'}], 'model': 'gpt-4o', 'stream': False, 'tool_choice': 'required', 'tools': [{'type': 'function', 'function': {'name': 'ainswer_memory_insert', 'description': 'Insert the memory into the historical person memorables.\n\nDo not add memories of previous questions or discussion.\nDo not add new memories without confirmation as there is\nlimited storage that the person may have for memorables.\nOnly add the memory one time after ensuring it does not\nalready exist, using the `ainswer_memory_records` tool.\nAlways confirm with the person before inserting message.\nBe very cautious and conservative with use of this tool,\nthe bot is configured by default to remove older entries\nonce the limit for the person memories has been reached!\n\n.. note::\n   This tool will allow for inserting new memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'message': {'description': 'Historical person memorable', 'maxLength': 400, 'minLength': 1, 'type': 'string'}}, 'required': ['message'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_records', 'description': 'Return the historical records for the person memorables.\n\n.. note::\n   This tool will return historical memorable items for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_delete', 'description': 'Delete the record from the historical person memorables.\n\n.. note::\n   This tool will allow for deleting the memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'unique': {'description': 'Unique identifier for memory', 'maxLength': 36, 'minLength': 36, 'type': 'string'}}, 'required': ['unique'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'homie_persist', 'description': '<summary>Return the current values in Homie Automate persistence.\n\n.. note::\n   This tool will return values from the Homie Automate\n   persistence store. They may include information about\n   many things regarding the Robie owner home status.</summary>\n<returns>\n<description>Current values in Homie Automate persistence.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'nagios_current', 'description': '<summary>Return the current status for infratstructure in Nagios.\n\n.. note::\n   This tool will return status values from Nagios Core.\n   Nagios is a network and system monitoring platform.</summary>\n<returns>\n<description>Current status for infratstructure in Nagios.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'final_result', 'description': 'Contains the response for question for the client type.', 'parameters': {'additionalProperties': False, 'properties': {'text': {'description': 'Format intended for Mattermost.', 'maxLength': 1900, 'type': 'string'}}, 'required': ['text'], 'type': 'object'}}}]}}
+DEBUG    openai._base_client:_base_client.py:1522 Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+DEBUG    openai._base_client:_base_client.py:1546 Encountered Exception
+Traceback (most recent call last):
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/openai/_base_client.py", line 1526, in request
+    response = await self._client.send(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 190, in amock
+    response = await cls._send_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 224, in _send_async_request
+    httpx_response = await cls.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 136, in async_handler
+    raise assertion_error
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 129, in async_handler
+    httpx_response = await router.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 318, in async_handler
+    resolved = await self.aresolve(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 291, in aresolve
+    with self.resolver(request) as resolved:
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 250, in resolver
+    raise AllMockedAssertionError(f"RESPX: {request!r} not mocked!")
+respx.models.AllMockedAssertionError: RESPX: <Request('POST', 'https://api.openai.com/v1/chat/completions')> not mocked!
+DEBUG    openai._base_client:_base_client.py:1610 1 retry left
+INFO     openai._base_client:_base_client.py:1615 Retrying request to /chat/completions in 0.941933 seconds
+INFO     httpx:_client.py:1025 HTTP Request: POST https://mocked/api/v4/posts "HTTP/1.1 200 OK"
+DEBUG    openai._base_client:_base_client.py:482 Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'User-Agent': 'pydantic-ai/0.4.2'}, 'timeout': 30, 'files': None, 'idempotency_key': 'stainless-python-retry-75a33c3e-e425-431e-a585-49cbf27a8cff', 'json_data': {'messages': [{'role': 'system', 'content': 'You are Bender from Futurama.'}, {'role': 'user', 'content': '**Instructions**\nYour nickname is mtmbot. Use some markdown and emojis.\n\n**Responding**\nThere are reasons not to respond to the user question. If you think you should not respond, reply only no_response.\nReasons to reply with only no_response include:\n - If you believe that you are being abused by the user asking the quesiton.\n\n**Message Metadata**\nClient family: mattermost\nMessage kind: privmsg\nMessage time: 2025-07-15T02:45:28.168529+0000\n\n**User Metadata**\nUser nickname: user\nUser serverID: userid\n\n**Additional Metadata**\nYour nickname: mtmbot\nYour serverID: mtmunq\n\n**Question**\nHello mtmbot'}], 'model': 'gpt-4o', 'stream': False, 'tool_choice': 'required', 'tools': [{'type': 'function', 'function': {'name': 'ainswer_memory_insert', 'description': 'Insert the memory into the historical person memorables.\n\nDo not add memories of previous questions or discussion.\nDo not add new memories without confirmation as there is\nlimited storage that the person may have for memorables.\nOnly add the memory one time after ensuring it does not\nalready exist, using the `ainswer_memory_records` tool.\nAlways confirm with the person before inserting message.\nBe very cautious and conservative with use of this tool,\nthe bot is configured by default to remove older entries\nonce the limit for the person memories has been reached!\n\n.. note::\n   This tool will allow for inserting new memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'message': {'description': 'Historical person memorable', 'maxLength': 400, 'minLength': 1, 'type': 'string'}}, 'required': ['message'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_records', 'description': 'Return the historical records for the person memorables.\n\n.. note::\n   This tool will return historical memorable items for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_delete', 'description': 'Delete the record from the historical person memorables.\n\n.. note::\n   This tool will allow for deleting the memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'unique': {'description': 'Unique identifier for memory', 'maxLength': 36, 'minLength': 36, 'type': 'string'}}, 'required': ['unique'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'homie_persist', 'description': '<summary>Return the current values in Homie Automate persistence.\n\n.. note::\n   This tool will return values from the Homie Automate\n   persistence store. They may include information about\n   many things regarding the Robie owner home status.</summary>\n<returns>\n<description>Current values in Homie Automate persistence.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'nagios_current', 'description': '<summary>Return the current status for infratstructure in Nagios.\n\n.. note::\n   This tool will return status values from Nagios Core.\n   Nagios is a network and system monitoring platform.</summary>\n<returns>\n<description>Current status for infratstructure in Nagios.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'final_result', 'description': 'Contains the response for question for the client type.', 'parameters': {'additionalProperties': False, 'properties': {'text': {'description': 'Format intended for Mattermost.', 'maxLength': 1900, 'type': 'string'}}, 'required': ['text'], 'type': 'object'}}}]}}
+DEBUG    openai._base_client:_base_client.py:1522 Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+DEBUG    openai._base_client:_base_client.py:1546 Encountered Exception
+Traceback (most recent call last):
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/openai/_base_client.py", line 1526, in request
+    response = await self._client.send(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 190, in amock
+    response = await cls._send_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 224, in _send_async_request
+    httpx_response = await cls.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 136, in async_handler
+    raise assertion_error
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 129, in async_handler
+    httpx_response = await router.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 318, in async_handler
+    resolved = await self.aresolve(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 291, in aresolve
+    with self.resolver(request) as resolved:
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 250, in resolver
+    raise AllMockedAssertionError(f"RESPX: {request!r} not mocked!")
+respx.models.AllMockedAssertionError: RESPX: <Request('POST', 'https://api.openai.com/v1/chat/completions')> not mocked!
+DEBUG    openai._base_client:_base_client.py:1557 Raising connection error
+DEBUG    openai._base_client:_base_client.py:482 Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'User-Agent': 'pydantic-ai/0.4.2'}, 'timeout': 30, 'files': None, 'idempotency_key': 'stainless-python-retry-43ad5282-d168-4a49-8619-9529a1a99545', 'json_data': {'messages': [{'role': 'system', 'content': 'You are Bender from Futurama.'}, {'role': 'user', 'content': '**Instructions**\nYour nickname is ircbot. Keep it short and use colors.\n\n**Responding**\nThere are reasons not to respond to the user question. If you think you should not respond, reply only no_response.\nReasons to reply with only no_response include:\n - If you believe that you are being abused by the user asking the quesiton.\n\n**Message Metadata**\nClient family: irc\nMessage kind: privmsg\nMessage time: 2025-07-15T02:45:28.270791+0000\n\n**User Metadata**\nUser nickname: nick\nUser serverID: nick\n\n**Additional Metadata**\nYour nickname: ircbot\nYour serverID: ircbot\n\n**Question**\nHello ircbot'}], 'model': 'gpt-4o', 'stream': False, 'tool_choice': 'required', 'tools': [{'type': 'function', 'function': {'name': 'ainswer_memory_insert', 'description': 'Insert the memory into the historical person memorables.\n\nDo not add memories of previous questions or discussion.\nDo not add new memories without confirmation as there is\nlimited storage that the person may have for memorables.\nOnly add the memory one time after ensuring it does not\nalready exist, using the `ainswer_memory_records` tool.\nAlways confirm with the person before inserting message.\nBe very cautious and conservative with use of this tool,\nthe bot is configured by default to remove older entries\nonce the limit for the person memories has been reached!\n\n.. note::\n   This tool will allow for inserting new memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'message': {'description': 'Historical person memorable', 'maxLength': 400, 'minLength': 1, 'type': 'string'}}, 'required': ['message'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_records', 'description': 'Return the historical records for the person memorables.\n\n.. note::\n   This tool will return historical memorable items for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_delete', 'description': 'Delete the record from the historical person memorables.\n\n.. note::\n   This tool will allow for deleting the memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'unique': {'description': 'Unique identifier for memory', 'maxLength': 36, 'minLength': 36, 'type': 'string'}}, 'required': ['unique'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'homie_persist', 'description': '<summary>Return the current values in Homie Automate persistence.\n\n.. note::\n   This tool will return values from the Homie Automate\n   persistence store. They may include information about\n   many things regarding the Robie owner home status.</summary>\n<returns>\n<description>Current values in Homie Automate persistence.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'nagios_current', 'description': '<summary>Return the current status for infratstructure in Nagios.\n\n.. note::\n   This tool will return status values from Nagios Core.\n   Nagios is a network and system monitoring platform.</summary>\n<returns>\n<description>Current status for infratstructure in Nagios.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'final_result', 'description': 'Contains the response for question for the client type.', 'parameters': {'additionalProperties': False, 'properties': {'text': {'description': 'Format intended for IRCv2.', 'maxLength': 350, 'type': 'string'}}, 'required': ['text'], 'type': 'object'}}}]}}
+DEBUG    openai._base_client:_base_client.py:1522 Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+DEBUG    openai._base_client:_base_client.py:1546 Encountered Exception
+Traceback (most recent call last):
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/openai/_base_client.py", line 1526, in request
+    response = await self._client.send(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 190, in amock
+    response = await cls._send_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 224, in _send_async_request
+    httpx_response = await cls.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 136, in async_handler
+    raise assertion_error
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 129, in async_handler
+    httpx_response = await router.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 318, in async_handler
+    resolved = await self.aresolve(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 291, in aresolve
+    with self.resolver(request) as resolved:
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 250, in resolver
+    raise AllMockedAssertionError(f"RESPX: {request!r} not mocked!")
+respx.models.AllMockedAssertionError: RESPX: <Request('POST', 'https://api.openai.com/v1/chat/completions')> not mocked!
+DEBUG    openai._base_client:_base_client.py:1612 2 retries left
+INFO     openai._base_client:_base_client.py:1615 Retrying request to /chat/completions in 0.440435 seconds
+INFO     httpx:_client.py:1025 HTTP Request: POST https://mocked/api/v4/posts "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1025 HTTP Request: POST https://mocked/api/v4/posts "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1025 HTTP Request: POST https://mocked/api/v4/posts "HTTP/1.1 200 OK"
+DEBUG    openai._base_client:_base_client.py:482 Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'User-Agent': 'pydantic-ai/0.4.2'}, 'timeout': 30, 'files': None, 'idempotency_key': 'stainless-python-retry-43ad5282-d168-4a49-8619-9529a1a99545', 'json_data': {'messages': [{'role': 'system', 'content': 'You are Bender from Futurama.'}, {'role': 'user', 'content': '**Instructions**\nYour nickname is ircbot. Keep it short and use colors.\n\n**Responding**\nThere are reasons not to respond to the user question. If you think you should not respond, reply only no_response.\nReasons to reply with only no_response include:\n - If you believe that you are being abused by the user asking the quesiton.\n\n**Message Metadata**\nClient family: irc\nMessage kind: privmsg\nMessage time: 2025-07-15T02:45:28.270791+0000\n\n**User Metadata**\nUser nickname: nick\nUser serverID: nick\n\n**Additional Metadata**\nYour nickname: ircbot\nYour serverID: ircbot\n\n**Question**\nHello ircbot'}], 'model': 'gpt-4o', 'stream': False, 'tool_choice': 'required', 'tools': [{'type': 'function', 'function': {'name': 'ainswer_memory_insert', 'description': 'Insert the memory into the historical person memorables.\n\nDo not add memories of previous questions or discussion.\nDo not add new memories without confirmation as there is\nlimited storage that the person may have for memorables.\nOnly add the memory one time after ensuring it does not\nalready exist, using the `ainswer_memory_records` tool.\nAlways confirm with the person before inserting message.\nBe very cautious and conservative with use of this tool,\nthe bot is configured by default to remove older entries\nonce the limit for the person memories has been reached!\n\n.. note::\n   This tool will allow for inserting new memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'message': {'description': 'Historical person memorable', 'maxLength': 400, 'minLength': 1, 'type': 'string'}}, 'required': ['message'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_records', 'description': 'Return the historical records for the person memorables.\n\n.. note::\n   This tool will return historical memorable items for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_delete', 'description': 'Delete the record from the historical person memorables.\n\n.. note::\n   This tool will allow for deleting the memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'unique': {'description': 'Unique identifier for memory', 'maxLength': 36, 'minLength': 36, 'type': 'string'}}, 'required': ['unique'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'homie_persist', 'description': '<summary>Return the current values in Homie Automate persistence.\n\n.. note::\n   This tool will return values from the Homie Automate\n   persistence store. They may include information about\n   many things regarding the Robie owner home status.</summary>\n<returns>\n<description>Current values in Homie Automate persistence.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'nagios_current', 'description': '<summary>Return the current status for infratstructure in Nagios.\n\n.. note::\n   This tool will return status values from Nagios Core.\n   Nagios is a network and system monitoring platform.</summary>\n<returns>\n<description>Current status for infratstructure in Nagios.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'final_result', 'description': 'Contains the response for question for the client type.', 'parameters': {'additionalProperties': False, 'properties': {'text': {'description': 'Format intended for IRCv2.', 'maxLength': 350, 'type': 'string'}}, 'required': ['text'], 'type': 'object'}}}]}}
+DEBUG    openai._base_client:_base_client.py:1522 Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+DEBUG    openai._base_client:_base_client.py:1546 Encountered Exception
+Traceback (most recent call last):
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/openai/_base_client.py", line 1526, in request
+    response = await self._client.send(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 190, in amock
+    response = await cls._send_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 224, in _send_async_request
+    httpx_response = await cls.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 136, in async_handler
+    raise assertion_error
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 129, in async_handler
+    httpx_response = await router.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 318, in async_handler
+    resolved = await self.aresolve(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 291, in aresolve
+    with self.resolver(request) as resolved:
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 250, in resolver
+    raise AllMockedAssertionError(f"RESPX: {request!r} not mocked!")
+respx.models.AllMockedAssertionError: RESPX: <Request('POST', 'https://api.openai.com/v1/chat/completions')> not mocked!
+DEBUG    openai._base_client:_base_client.py:1610 1 retry left
+INFO     openai._base_client:_base_client.py:1615 Retrying request to /chat/completions in 0.926786 seconds
+INFO     httpx:_client.py:1025 HTTP Request: POST https://mocked/api/v4/posts "HTTP/1.1 200 OK"
+DEBUG    openai._base_client:_base_client.py:482 Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'User-Agent': 'pydantic-ai/0.4.2'}, 'timeout': 30, 'files': None, 'idempotency_key': 'stainless-python-retry-43ad5282-d168-4a49-8619-9529a1a99545', 'json_data': {'messages': [{'role': 'system', 'content': 'You are Bender from Futurama.'}, {'role': 'user', 'content': '**Instructions**\nYour nickname is ircbot. Keep it short and use colors.\n\n**Responding**\nThere are reasons not to respond to the user question. If you think you should not respond, reply only no_response.\nReasons to reply with only no_response include:\n - If you believe that you are being abused by the user asking the quesiton.\n\n**Message Metadata**\nClient family: irc\nMessage kind: privmsg\nMessage time: 2025-07-15T02:45:28.270791+0000\n\n**User Metadata**\nUser nickname: nick\nUser serverID: nick\n\n**Additional Metadata**\nYour nickname: ircbot\nYour serverID: ircbot\n\n**Question**\nHello ircbot'}], 'model': 'gpt-4o', 'stream': False, 'tool_choice': 'required', 'tools': [{'type': 'function', 'function': {'name': 'ainswer_memory_insert', 'description': 'Insert the memory into the historical person memorables.\n\nDo not add memories of previous questions or discussion.\nDo not add new memories without confirmation as there is\nlimited storage that the person may have for memorables.\nOnly add the memory one time after ensuring it does not\nalready exist, using the `ainswer_memory_records` tool.\nAlways confirm with the person before inserting message.\nBe very cautious and conservative with use of this tool,\nthe bot is configured by default to remove older entries\nonce the limit for the person memories has been reached!\n\n.. note::\n   This tool will allow for inserting new memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'message': {'description': 'Historical person memorable', 'maxLength': 400, 'minLength': 1, 'type': 'string'}}, 'required': ['message'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_records', 'description': 'Return the historical records for the person memorables.\n\n.. note::\n   This tool will return historical memorable items for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_delete', 'description': 'Delete the record from the historical person memorables.\n\n.. note::\n   This tool will allow for deleting the memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'unique': {'description': 'Unique identifier for memory', 'maxLength': 36, 'minLength': 36, 'type': 'string'}}, 'required': ['unique'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'homie_persist', 'description': '<summary>Return the current values in Homie Automate persistence.\n\n.. note::\n   This tool will return values from the Homie Automate\n   persistence store. They may include information about\n   many things regarding the Robie owner home status.</summary>\n<returns>\n<description>Current values in Homie Automate persistence.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'nagios_current', 'description': '<summary>Return the current status for infratstructure in Nagios.\n\n.. note::\n   This tool will return status values from Nagios Core.\n   Nagios is a network and system monitoring platform.</summary>\n<returns>\n<description>Current status for infratstructure in Nagios.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'final_result', 'description': 'Contains the response for question for the client type.', 'parameters': {'additionalProperties': False, 'properties': {'text': {'description': 'Format intended for IRCv2.', 'maxLength': 350, 'type': 'string'}}, 'required': ['text'], 'type': 'object'}}}]}}
+DEBUG    openai._base_client:_base_client.py:1522 Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+DEBUG    openai._base_client:_base_client.py:1546 Encountered Exception
+Traceback (most recent call last):
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/openai/_base_client.py", line 1526, in request
+    response = await self._client.send(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 190, in amock
+    response = await cls._send_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 224, in _send_async_request
+    httpx_response = await cls.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 136, in async_handler
+    raise assertion_error
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 129, in async_handler
+    httpx_response = await router.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 318, in async_handler
+    resolved = await self.aresolve(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 291, in aresolve
+    with self.resolver(request) as resolved:
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 250, in resolver
+    raise AllMockedAssertionError(f"RESPX: {request!r} not mocked!")
+respx.models.AllMockedAssertionError: RESPX: <Request('POST', 'https://api.openai.com/v1/chat/completions')> not mocked!
+DEBUG    openai._base_client:_base_client.py:1557 Raising connection error
+DEBUG    openai._base_client:_base_client.py:482 Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'User-Agent': 'pydantic-ai/0.4.2'}, 'timeout': 30, 'files': None, 'idempotency_key': 'stainless-python-retry-0c2de3f1-7ca0-4ff2-94b4-ae27bafeb3f1', 'json_data': {'messages': [{'role': 'system', 'content': 'You are Bender from Futurama.'}, {'role': 'user', 'content': '**Instructions**\nYour nickname is mtmbot. Use some markdown and emojis.\n\n**Responding**\nThere are reasons not to respond to the user question. If you think you should not respond, reply only no_response.\nReasons to reply with only no_response include:\n - If you believe that you are being abused by the user asking the quesiton.\n\n**Message Metadata**\nClient family: mattermost\nMessage kind: chanmsg\nMessage time: 2025-07-15T02:45:28.701625+0000\n\n**User Metadata**\nUser nickname: user\nUser serverID: userid\n\n**Additional Metadata**\nYour nickname: mtmbot\nYour serverID: mtmunq\n\n**Channel Metadata**\nUnique: enrobie\nTopic: Test topic\n\n**Channel Recents**\nThese are the most recent messages from the current channel or direct message. When client family is IRC or Mattermost, you do not see your messages below.\n[2025-07-15T02:45:28+0000] <userid> Hello mtmbot\n[2025-07-15T02:45:29+0000] <kjf9al2klaiietalkw> mtmbot\n[2025-07-15T02:45:29+0000] <kjf9al2klaiietalkw> mtmbot\n\n**Question**\nHello mtmbot'}], 'model': 'gpt-4o', 'stream': False, 'tool_choice': 'required', 'tools': [{'type': 'function', 'function': {'name': 'ainswer_memory_insert', 'description': 'Insert the memory into the historical person memorables.\n\nDo not add memories of previous questions or discussion.\nDo not add new memories without confirmation as there is\nlimited storage that the person may have for memorables.\nOnly add the memory one time after ensuring it does not\nalready exist, using the `ainswer_memory_records` tool.\nAlways confirm with the person before inserting message.\nBe very cautious and conservative with use of this tool,\nthe bot is configured by default to remove older entries\nonce the limit for the person memories has been reached!\n\n.. note::\n   This tool will allow for inserting new memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'message': {'description': 'Historical person memorable', 'maxLength': 400, 'minLength': 1, 'type': 'string'}}, 'required': ['message'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_records', 'description': 'Return the historical records for the person memorables.\n\n.. note::\n   This tool will return historical memorable items for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_delete', 'description': 'Delete the record from the historical person memorables.\n\n.. note::\n   This tool will allow for deleting the memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'unique': {'description': 'Unique identifier for memory', 'maxLength': 36, 'minLength': 36, 'type': 'string'}}, 'required': ['unique'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'homie_persist', 'description': '<summary>Return the current values in Homie Automate persistence.\n\n.. note::\n   This tool will return values from the Homie Automate\n   persistence store. They may include information about\n   many things regarding the Robie owner home status.</summary>\n<returns>\n<description>Current values in Homie Automate persistence.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'nagios_current', 'description': '<summary>Return the current status for infratstructure in Nagios.\n\n.. note::\n   This tool will return status values from Nagios Core.\n   Nagios is a network and system monitoring platform.</summary>\n<returns>\n<description>Current status for infratstructure in Nagios.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'final_result', 'description': 'Contains the response for question for the client type.', 'parameters': {'additionalProperties': False, 'properties': {'text': {'description': 'Format intended for Mattermost.', 'maxLength': 1900, 'type': 'string'}}, 'required': ['text'], 'type': 'object'}}}]}}
+DEBUG    openai._base_client:_base_client.py:1522 Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+DEBUG    openai._base_client:_base_client.py:1546 Encountered Exception
+Traceback (most recent call last):
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/openai/_base_client.py", line 1526, in request
+    response = await self._client.send(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 190, in amock
+    response = await cls._send_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 224, in _send_async_request
+    httpx_response = await cls.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 136, in async_handler
+    raise assertion_error
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 129, in async_handler
+    httpx_response = await router.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 318, in async_handler
+    resolved = await self.aresolve(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 291, in aresolve
+    with self.resolver(request) as resolved:
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 250, in resolver
+    raise AllMockedAssertionError(f"RESPX: {request!r} not mocked!")
+respx.models.AllMockedAssertionError: RESPX: <Request('POST', 'https://api.openai.com/v1/chat/completions')> not mocked!
+DEBUG    openai._base_client:_base_client.py:1612 2 retries left
+INFO     openai._base_client:_base_client.py:1615 Retrying request to /chat/completions in 0.462514 seconds
+DEBUG    openai._base_client:_base_client.py:482 Request options: {'method': 'post', 'url': '/chat/completions', 'headers': {'User-Agent': 'pydantic-ai/0.4.2'}, 'timeout': 30, 'files': None, 'idempotency_key': 'stainless-python-retry-0c2de3f1-7ca0-4ff2-94b4-ae27bafeb3f1', 'json_data': {'messages': [{'role': 'system', 'content': 'You are Bender from Futurama.'}, {'role': 'user', 'content': '**Instructions**\nYour nickname is mtmbot. Use some markdown and emojis.\n\n**Responding**\nThere are reasons not to respond to the user question. If you think you should not respond, reply only no_response.\nReasons to reply with only no_response include:\n - If you believe that you are being abused by the user asking the quesiton.\n\n**Message Metadata**\nClient family: mattermost\nMessage kind: chanmsg\nMessage time: 2025-07-15T02:45:28.701625+0000\n\n**User Metadata**\nUser nickname: user\nUser serverID: userid\n\n**Additional Metadata**\nYour nickname: mtmbot\nYour serverID: mtmunq\n\n**Channel Metadata**\nUnique: enrobie\nTopic: Test topic\n\n**Channel Recents**\nThese are the most recent messages from the current channel or direct message. When client family is IRC or Mattermost, you do not see your messages below.\n[2025-07-15T02:45:28+0000] <userid> Hello mtmbot\n[2025-07-15T02:45:29+0000] <kjf9al2klaiietalkw> mtmbot\n[2025-07-15T02:45:29+0000] <kjf9al2klaiietalkw> mtmbot\n\n**Question**\nHello mtmbot'}], 'model': 'gpt-4o', 'stream': False, 'tool_choice': 'required', 'tools': [{'type': 'function', 'function': {'name': 'ainswer_memory_insert', 'description': 'Insert the memory into the historical person memorables.\n\nDo not add memories of previous questions or discussion.\nDo not add new memories without confirmation as there is\nlimited storage that the person may have for memorables.\nOnly add the memory one time after ensuring it does not\nalready exist, using the `ainswer_memory_records` tool.\nAlways confirm with the person before inserting message.\nBe very cautious and conservative with use of this tool,\nthe bot is configured by default to remove older entries\nonce the limit for the person memories has been reached!\n\n.. note::\n   This tool will allow for inserting new memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'message': {'description': 'Historical person memorable', 'maxLength': 400, 'minLength': 1, 'type': 'string'}}, 'required': ['message'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_records', 'description': 'Return the historical records for the person memorables.\n\n.. note::\n   This tool will return historical memorable items for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'ainswer_memory_delete', 'description': 'Delete the record from the historical person memorables.\n\n.. note::\n   This tool will allow for deleting the memories for\n   the provided username, also known as a Robie person.', 'parameters': {'additionalProperties': False, 'properties': {'unique': {'description': 'Unique identifier for memory', 'maxLength': 36, 'minLength': 36, 'type': 'string'}}, 'required': ['unique'], 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'homie_persist', 'description': '<summary>Return the current values in Homie Automate persistence.\n\n.. note::\n   This tool will return values from the Homie Automate\n   persistence store. They may include information about\n   many things regarding the Robie owner home status.</summary>\n<returns>\n<description>Current values in Homie Automate persistence.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'nagios_current', 'description': '<summary>Return the current status for infratstructure in Nagios.\n\n.. note::\n   This tool will return status values from Nagios Core.\n   Nagios is a network and system monitoring platform.</summary>\n<returns>\n<description>Current status for infratstructure in Nagios.</description>\n</returns>', 'parameters': {'additionalProperties': False, 'properties': {}, 'type': 'object'}}}, {'type': 'function', 'function': {'name': 'final_result', 'description': 'Contains the response for question for the client type.', 'parameters': {'additionalProperties': False, 'properties': {'text': {'description': 'Format intended for Mattermost.', 'maxLength': 1900, 'type': 'string'}}, 'required': ['text'], 'type': 'object'}}}]}}
+DEBUG    openai._base_client:_base_client.py:1522 Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+DEBUG    openai._base_client:_base_client.py:1546 Encountered Exception
+Traceback (most recent call last):
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/openai/_base_client.py", line 1526, in request
+    response = await self._client.send(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 190, in amock
+    response = await cls._send_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 224, in _send_async_request
+    httpx_response = await cls.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 136, in async_handler
+    raise assertion_error
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/mocks.py", line 129, in async_handler
+    httpx_response = await router.async_handler(httpx_request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 318, in async_handler
+    resolved = await self.aresolve(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 291, in aresolve
+    with self.resolver(request) as resolved:
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/respx/router.py", line 250, in resolver
+    raise AllMockedAssertionError(f"RESPX: {request!r} not mocked!")
+respx.models.AllMockedAssertionError: RESPX: <Request('POST', 'https://api.openai.com/v1/chat/completions')> not mocked!
+DEBUG    openai._base_client:_base_client.py:1610 1 retry left
+INFO     openai._base_client:_base_client.py:1615 Retrying request to /chat/completions in 0.890437 seconds
 =============================== warnings summary ===============================
 enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_engage
   /home/runner/work/enrobie/enrobie/main/.venv-package/lib/python3.12/site-packages/pydantic_graph/_utils.py:50: DeprecationWarning: There is no current event loop
@@ -2795,4 +3177,4 @@ TOTAL                                              6658    174    97%
 =========================== short test summary info ============================
 FAILED enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin_cover - assert 0 >= 1
  +  where 0 = len([])
-============= 1 failed, 95 passed, 2 warnings in 99.47s (0:01:39) ==============
+============= 1 failed, 95 passed, 2 warnings in 97.98s (0:01:37) ==============
