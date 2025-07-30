@@ -3,7 +3,7 @@
 ============================= test session starts ==============================
 platform linux -- Python 3.12.11, pytest-8.4.1, pluggy-1.6.0 -- /home/runner/work/enrobie/enrobie/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=3528926282
+Using --randomly-seed=2348465722
 rootdir: /home/runner/work/enrobie/enrobie/main
 configfile: pyproject.toml
 plugins: cov-6.2.1, mypy-1.0.1, xdist-3.8.0, sphinx-0.6.3, randomly-3.16.0, anyio-4.9.0, mock-3.14.1, clarity-1.0.1, respx-0.22.0
@@ -12,207 +12,207 @@ created: 4/4 workers
 
 scheduling tests via LoadScheduling
 
-enrobie/robie/childs/test/test_plugin.py::test_RobiePlugin_cover 
-enrobie/robie/test/test_config.py::test_RobieConfig 
-enrobie/clients/irc/test/test_client.py::test_IRCClient_channels 
-enrobie/robie/test/test_robie.py::test_Robie_jinja2 
-[gw2] [  1%] PASSED enrobie/robie/test/test_config.py::test_RobieConfig 
-enrobie/clients/mattermost/test/test_command.py::test_MTMCommand 
-[gw0] [  2%] PASSED enrobie/robie/childs/test/test_plugin.py::test_RobiePlugin_cover 
-enrobie/execution/test/test_config.py::test_arguments 
-[gw3] [  3%] PASSED enrobie/robie/test/test_robie.py::test_Robie_jinja2 
-enrobie/robie/test/test_robie.py::test_Robie_person 
-[gw0] [  4%] PASSED enrobie/execution/test/test_config.py::test_arguments 
-enrobie/clients/irc/test/test_client.py::test_IRCClient 
-[gw2] [  5%] PASSED enrobie/clients/mattermost/test/test_command.py::test_MTMCommand 
-enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin_cover 
-[gw0] [  6%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient 
-enrobie/clients/irc/test/test_client.py::test_IRCClient_command 
-[gw3] [  7%] PASSED enrobie/robie/test/test_robie.py::test_Robie_person 
-enrobie/robie/test/test_robie.py::test_Robie 
-[gw0] [  8%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_command 
-enrobie/clients/irc/test/test_client.py::test_IRCClient_compose 
-[gw3] [  9%] PASSED enrobie/robie/test/test_robie.py::test_Robie 
-enrobie/robie/test/test_robie.py::test_Robie_printer 
-[gw0] [ 10%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_compose 
-enrobie/clients/irc/test/test_client.py::test_IRCClient_message 
-[gw3] [ 11%] PASSED enrobie/robie/test/test_robie.py::test_Robie_printer 
-enrobie/utils/test/test_states.py::test_ClientChannels 
-[gw3] [ 12%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels 
-enrobie/utils/test/test_states.py::test_ClientChannels_basics 
-[gw3] [ 13%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels_basics 
-enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin_cover 
-[gw0] [ 14%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_message 
-enrobie/utils/test/test_states.py::test_ClientChannels_cover 
-[gw0] [ 15%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels_cover 
-enrobie/utils/test/test_states.py::test_ClientPublish 
-[gw0] [ 16%] PASSED enrobie/utils/test/test_states.py::test_ClientPublish 
-enrobie/robie/childs/test/test_client.py::test_RobieClient_cover 
-[gw0] [ 17%] PASSED enrobie/robie/childs/test/test_client.py::test_RobieClient_cover 
-enrobie/robie/threads/test/test_thread.py::test_RobieThread_cover 
-[gw0] [ 18%] PASSED enrobie/robie/threads/test/test_thread.py::test_RobieThread_cover 
-enrobie/clients/discord/test/test_command.py::test_DSCCommand 
-[gw0] [ 19%] PASSED enrobie/clients/discord/test/test_command.py::test_DSCCommand 
-enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory_cover 
-[gw0] [ 20%] PASSED enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory_cover 
-enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory 
-[gw0] [ 21%] PASSED enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory 
-enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin 
-[gw0] [ 22%] PASSED enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin 
-enrobie/utils/test/test_child.py::test_InvalidChild 
-[gw0] [ 23%] PASSED enrobie/utils/test/test_child.py::test_InvalidChild 
-enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_reply 
-[gw0] [ 25%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_reply 
-enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_samples 
-[gw3] [ 26%] FAILED enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin_cover 
-enrobie/plugins/logger/test/test_history.py::test_LoggerHistory 
-[gw3] [ 27%] PASSED enrobie/plugins/logger/test/test_history.py::test_LoggerHistory 
-enrobie/plugins/logger/test/test_history.py::test_LoggerHistory_cover 
-[gw3] [ 28%] PASSED enrobie/plugins/logger/test/test_history.py::test_LoggerHistory_cover 
-enrobie/clients/irc/test/test_message.py::test_IRCMessage_reply 
-[gw3] [ 29%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage_reply 
-enrobie/clients/irc/test/test_message.py::test_IRCMessage_samples 
-[gw3] [ 30%] FAILED enrobie/clients/irc/test/test_message.py::test_IRCMessage_samples 
-enrobie/clients/irc/test/test_message.py::test_IRCMessage 
-[gw3] [ 31%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage 
-enrobie/utils/test/test_child.py::test_InvalidChild_cover 
-[gw3] [ 32%] PASSED enrobie/utils/test/test_child.py::test_InvalidChild_cover 
-enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin 
-[gw3] [ 33%] PASSED enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin 
-enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin_cover 
-[gw1] [ 34%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_channels 
-enrobie/clients/discord/test/test_client.py::test_DSCClient_command 
-[gw1] [ 35%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_command 
-enrobie/clients/discord/test/test_client.py::test_DSCClient 
-[gw1] [ 36%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient 
-enrobie/clients/discord/test/test_client.py::test_DSCClient_message 
-[gw1] [ 37%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_message 
-enrobie/clients/discord/test/test_client.py::test_DSCClient_compose 
-[gw2] [ 38%] PASSED enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin_cover 
-enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin 
-[gw1] [ 39%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_compose 
-enrobie/clients/discord/test/test_client.py::test_DSCClient_channels 
-[gw2] [ 40%] PASSED enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin 
-enrobie/robie/childs/test/test_person.py::test_RobiePerson 
-[gw2] [ 41%] PASSED enrobie/robie/childs/test/test_person.py::test_RobiePerson 
-enrobie/robie/test/test_robie.py::test_Robie_cover 
-[gw2] [ 42%] PASSED enrobie/robie/test/test_robie.py::test_Robie_cover 
-enrobie/plugins/ainswer/test/test_models.py::test_AinswerModels 
-[gw0] [ 43%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_samples 
-enrobie/clients/mattermost/test/test_message.py::test_MTMMessage 
-[gw0] [ 44%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage 
-enrobie/robie/members/test/test_plugins.py::test_RobiePlugins 
-[gw0] [ 45%] PASSED enrobie/robie/members/test/test_plugins.py::test_RobiePlugins 
-enrobie/robie/members/test/test_plugins.py::test_RobiePlugins_cover 
-[gw2] [ 46%] PASSED enrobie/plugins/ainswer/test/test_models.py::test_AinswerModels 
-enrobie/execution/test/test_crypts.py::test_arguments 
-[gw2] [ 47%] PASSED enrobie/execution/test/test_crypts.py::test_arguments 
-enrobie/utils/test/test_param.py::test_InvalidParam 
-[gw0] [ 48%] PASSED enrobie/robie/members/test/test_plugins.py::test_RobiePlugins_cover 
-enrobie/clients/discord/test/test_message.py::test_DSCMessage 
-[gw2] [ 50%] PASSED enrobie/utils/test/test_param.py::test_InvalidParam 
-enrobie/clients/discord/test/test_message.py::test_DSCMessage_samples 
-[gw0] [ 51%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage 
-enrobie/clients/discord/test/test_message.py::test_DSCMessage_reply 
-[gw0] [ 52%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage_reply 
-enrobie/robie/addons/test/test_logger.py::test_RobieLogger 
-[gw0] [ 53%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_privmsg-privmsg-:hubert!hubert@science.com PRIVMSG ircbot :ircbot] 
-[gw0] [ 54%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_privmsg-privmsg-:hubert!hubert@science.com PRIVMSG ircbot :ircbot] 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_chanmsg-chanmsg-:nick!user@host PRIVMSG #enrobie :Hello ircbot] 
-[gw0] [ 55%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_chanmsg-chanmsg-:nick!user@host PRIVMSG #enrobie :Hello ircbot] 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_chanmsg-chanmsg-:hubert!hubert@science.com PRIVMSG #enrobie :ircbot] 
-[gw0] [ 56%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_chanmsg-chanmsg-:hubert!hubert@science.com PRIVMSG #enrobie :ircbot] 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_privmsg-privmsg-:nick!user@host PRIVMSG ircbot :Hello ircbot] 
-[gw0] [ 57%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_privmsg-privmsg-:nick!user@host PRIVMSG ircbot :Hello ircbot] 
-enrobie/robie/test/test_service.py::test_RobieService 
-[gw3] [ 58%] PASSED enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin_cover 
-enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory 
-[gw3] [ 59%] PASSED enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory 
-enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory_cover 
-[gw3] [ 60%] PASSED enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory_cover 
-enrobie/clients/irc/test/test_command.py::test_IRCCommand 
-[gw3] [ 61%] PASSED enrobie/clients/irc/test/test_command.py::test_IRCCommand 
-enrobie/utils/test/test_importer.py::test_importer 
-[gw3] [ 62%] PASSED enrobie/utils/test/test_importer.py::test_importer 
-enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin 
-[gw3] [ 63%] PASSED enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin 
-enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin_cover 
-[gw1] [ 64%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_channels 
-enrobie/robie/addons/test/test_queue.py::test_RobieQueueItem 
-[gw1] [ 65%] PASSED enrobie/robie/addons/test/test_queue.py::test_RobieQueueItem 
-enrobie/robie/addons/test/test_queue.py::test_RobieQueue 
-[gw1] [ 66%] PASSED enrobie/robie/addons/test/test_queue.py::test_RobieQueue 
-enrobie/robie/members/test/test_clients.py::test_RobieClients 
-[gw1] [ 67%] PASSED enrobie/robie/members/test/test_clients.py::test_RobieClients 
-enrobie/robie/members/test/test_clients.py::test_RobieClients_cover 
-[gw1] [ 68%] PASSED enrobie/robie/members/test/test_clients.py::test_RobieClients_cover 
-enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin_cover 
-[gw2] [ 69%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage_samples 
-enrobie/robie/addons/test/test_logger.py::test_RobieLogger_message 
-[gw2] [ 70%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger_message 
-enrobie/robie/addons/test/test_logger.py::test_RobieLogger_cover 
-[gw2] [ 71%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger_cover 
-enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_engage 
-[gw2] [ 72%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_engage 
-enrobie/utils/test/test_thread.py::test_DupliThread_cover 
-[gw2] [ 73%] PASSED enrobie/utils/test/test_thread.py::test_DupliThread_cover 
-enrobie/robie/models/test/test_models.py::test_RobieModels_cover 
-[gw2] [ 75%] PASSED enrobie/robie/models/test/test_models.py::test_RobieModels_cover 
 enrobie/robie/threads/test/test_plugin.py::test_RobiePluginThread 
-[gw2] [ 76%] PASSED enrobie/robie/threads/test/test_plugin.py::test_RobiePluginThread 
-enrobie/robie/threads/test/test_client.py::test_RobieClientThread 
-[gw2] [ 77%] PASSED enrobie/robie/threads/test/test_client.py::test_RobieClientThread 
+enrobie/utils/test/test_states.py::test_ClientChannels_basics 
+enrobie/clients/irc/test/test_command.py::test_IRCCommand 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_chanmsg-chanmsg-:hubert!hubert@science.com PRIVMSG #enrobie :ircbot] 
+[gw2] [  1%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels_basics 
+enrobie/utils/test/test_states.py::test_ClientChannels_cover 
+[gw2] [  2%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels_cover 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_chanmsg-chanmsg-:nick!user@host PRIVMSG #enrobie :Hello ircbot] 
+[gw0] [  3%] PASSED enrobie/robie/threads/test/test_plugin.py::test_RobiePluginThread 
+enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin_cover 
+[gw1] [  4%] PASSED enrobie/clients/irc/test/test_command.py::test_IRCCommand 
+enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin 
+[gw1] [  5%] PASSED enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin 
+enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin_cover 
+[gw2] [  6%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_chanmsg-chanmsg-:nick!user@host PRIVMSG #enrobie :Hello ircbot] 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_engage 
+[gw3] [  7%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_chanmsg-chanmsg-:hubert!hubert@science.com PRIVMSG #enrobie :ircbot] 
+enrobie/robie/addons/test/test_logger.py::test_RobieLogger 
+[gw3] [  8%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger 
+enrobie/robie/addons/test/test_logger.py::test_RobieLogger_cover 
+[gw3] [  9%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger_cover 
+enrobie/robie/addons/test/test_logger.py::test_RobieLogger_message 
+[gw3] [ 10%] PASSED enrobie/robie/addons/test/test_logger.py::test_RobieLogger_message 
+enrobie/robie/members/test/test_plugins.py::test_RobiePlugins_cover 
+[gw2] [ 11%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_engage 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_privmsg-privmsg-:hubert!hubert@science.com PRIVMSG ircbot :ircbot] 
+[gw3] [ 12%] PASSED enrobie/robie/members/test/test_plugins.py::test_RobiePlugins_cover 
+enrobie/robie/members/test/test_plugins.py::test_RobiePlugins 
+[gw3] [ 13%] PASSED enrobie/robie/members/test/test_plugins.py::test_RobiePlugins 
+enrobie/utils/test/test_importer.py::test_importer 
+[gw3] [ 14%] PASSED enrobie/utils/test/test_importer.py::test_importer 
+enrobie/robie/childs/test/test_client.py::test_RobieClient_cover 
+[gw2] [ 15%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[hubert_privmsg-privmsg-:hubert!hubert@science.com PRIVMSG ircbot :ircbot] 
+enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_privmsg-privmsg-:nick!user@host PRIVMSG ircbot :Hello ircbot] 
+[gw3] [ 16%] PASSED enrobie/robie/childs/test/test_client.py::test_RobieClient_cover 
+enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin_cover 
+[gw2] [ 17%] PASSED enrobie/plugins/ainswer/test/test_question.py::test_AinswerQuestion_prompt[random_privmsg-privmsg-:nick!user@host PRIVMSG ircbot :Hello ircbot] 
 enrobie/robie/childs/test/test_child.py::test_RobieChild_cover 
-[gw2] [ 78%] PASSED enrobie/robie/childs/test/test_child.py::test_RobieChild_cover 
-enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin_cover 
-[gw0] [ 79%] PASSED enrobie/robie/test/test_service.py::test_RobieService 
-enrobie/robie/test/test_service.py::test_RobieService_cover 
-[gw3] [ 80%] PASSED enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin_cover 
-enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin 
-[gw3] [ 81%] PASSED enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient_command 
-[gw3] [ 82%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_command 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient_compose 
-[gw3] [ 83%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_compose 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient_channels 
-[gw3] [ 84%] FAILED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_channels 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient_message 
-[gw3] [ 85%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_message 
-enrobie/clients/mattermost/test/test_client.py::test_MTMClient 
-[gw3] [ 86%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient 
-enrobie/robie/models/test/test_command.py::test_RobieCommand 
-[gw3] [ 87%] PASSED enrobie/robie/models/test/test_command.py::test_RobieCommand 
-enrobie/robie/members/test/test_member.py::test_RobieMember_cover 
-[gw3] [ 88%] PASSED enrobie/robie/members/test/test_member.py::test_RobieMember_cover 
-enrobie/robie/childs/test/test_robie.py::test_RobieChilds 
-[gw3] [ 89%] PASSED enrobie/robie/childs/test/test_robie.py::test_RobieChilds 
-enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin_cover 
-[gw0] [ 90%] PASSED enrobie/robie/test/test_service.py::test_RobieService_cover 
-enrobie/robie/test/test_service.py::test_RobieService_healths 
-[gw0] [ 91%] PASSED enrobie/robie/test/test_service.py::test_RobieService_healths 
-enrobie/robie/models/test/test_message.py::test_RobieMessage 
-[gw0] [ 92%] PASSED enrobie/robie/models/test/test_message.py::test_RobieMessage 
-enrobie/execution/test/test_service.py::test_arguments 
-[gw0] [ 93%] PASSED enrobie/execution/test/test_service.py::test_arguments 
-[gw1] [ 94%] PASSED enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin_cover 
+[gw2] [ 18%] PASSED enrobie/robie/childs/test/test_child.py::test_RobieChild_cover 
+enrobie/clients/discord/test/test_command.py::test_DSCCommand 
+[gw2] [ 19%] PASSED enrobie/clients/discord/test/test_command.py::test_DSCCommand 
+enrobie/robie/addons/test/test_queue.py::test_RobieQueue 
+[gw2] [ 20%] PASSED enrobie/robie/addons/test/test_queue.py::test_RobieQueue 
+enrobie/robie/addons/test/test_queue.py::test_RobieQueueItem 
+[gw2] [ 21%] PASSED enrobie/robie/addons/test/test_queue.py::test_RobieQueueItem 
+enrobie/utils/test/test_thread.py::test_DupliThread_cover 
+[gw2] [ 22%] PASSED enrobie/utils/test/test_thread.py::test_DupliThread_cover 
 enrobie/utils/test/test_thread.py::test_DupliThread 
-[gw1] [ 95%] PASSED enrobie/utils/test/test_thread.py::test_DupliThread 
-[gw2] [ 96%] PASSED enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin_cover 
-enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin 
-[gw2] [ 97%] PASSED enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin 
-[gw3] [ 98%] PASSED enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin_cover 
+[gw2] [ 23%] PASSED enrobie/utils/test/test_thread.py::test_DupliThread 
+enrobie/robie/models/test/test_command.py::test_RobieCommand 
+[gw2] [ 25%] PASSED enrobie/robie/models/test/test_command.py::test_RobieCommand 
+enrobie/robie/test/test_service.py::test_RobieService_healths 
+[gw2] [ 26%] PASSED enrobie/robie/test/test_service.py::test_RobieService_healths 
+enrobie/robie/test/test_service.py::test_RobieService 
+[gw0] [ 27%] PASSED enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin_cover 
+enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin 
+[gw3] [ 28%] PASSED enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin_cover 
+enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin 
+[gw0] [ 29%] PASSED enrobie/plugins/enhomie/test/test_plugin.py::test_HomiePlugin 
+enrobie/robie/childs/test/test_plugin.py::test_RobiePlugin_cover 
+[gw3] [ 30%] PASSED enrobie/plugins/autojoin/test/test_plugin.py::test_AutoJoinPlugin 
+enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory_cover 
+[gw1] [ 31%] PASSED enrobie/plugins/nagios/test/test_plugin.py::test_NagiosPlugin_cover 
+enrobie/plugins/ainswer/test/test_models.py::test_AinswerModels 
+[gw0] [ 32%] PASSED enrobie/robie/childs/test/test_plugin.py::test_RobiePlugin_cover 
+enrobie/robie/test/test_config.py::test_RobieConfig 
+[gw0] [ 33%] PASSED enrobie/robie/test/test_config.py::test_RobieConfig 
+enrobie/robie/models/test/test_message.py::test_RobieMessage 
+[gw3] [ 34%] PASSED enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory_cover 
+enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory 
+[gw0] [ 35%] PASSED enrobie/robie/models/test/test_message.py::test_RobieMessage 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient_message 
+[gw3] [ 36%] PASSED enrobie/plugins/ainswer/test/test_memory.py::test_AinswerMemory 
+enrobie/utils/test/test_child.py::test_InvalidChild 
+[gw3] [ 37%] PASSED enrobie/utils/test/test_child.py::test_InvalidChild 
+enrobie/utils/test/test_child.py::test_InvalidChild_cover 
+[gw0] [ 38%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_message 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient_compose 
+[gw0] [ 39%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_compose 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient_command 
+[gw3] [ 40%] PASSED enrobie/utils/test/test_child.py::test_InvalidChild_cover 
+enrobie/clients/discord/test/test_client.py::test_DSCClient 
+[gw1] [ 41%] PASSED enrobie/plugins/ainswer/test/test_models.py::test_AinswerModels 
+enrobie/utils/test/test_states.py::test_ClientChannels 
+[gw1] [ 42%] PASSED enrobie/utils/test/test_states.py::test_ClientChannels 
+enrobie/utils/test/test_states.py::test_ClientPublish 
+[gw1] [ 43%] PASSED enrobie/utils/test/test_states.py::test_ClientPublish 
+enrobie/clients/discord/test/test_message.py::test_DSCMessage_samples 
+[gw0] [ 44%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_command 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient 
+[gw0] [ 45%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient 
+enrobie/clients/discord/test/test_client.py::test_DSCClient_compose 
+[gw3] [ 46%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient 
+enrobie/clients/discord/test/test_client.py::test_DSCClient_message 
+[gw0] [ 47%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_compose 
+enrobie/execution/test/test_service.py::test_arguments 
+[gw0] [ 48%] PASSED enrobie/execution/test/test_service.py::test_arguments 
+enrobie/clients/irc/test/test_message.py::test_IRCMessage 
+[gw3] [ 50%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_message 
+enrobie/clients/discord/test/test_client.py::test_DSCClient_command 
+[gw0] [ 51%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage 
+enrobie/clients/irc/test/test_message.py::test_IRCMessage_samples 
+[gw3] [ 52%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_command 
+enrobie/clients/discord/test/test_client.py::test_DSCClient_channels 
+[gw2] [ 53%] PASSED enrobie/robie/test/test_service.py::test_RobieService 
+enrobie/robie/test/test_service.py::test_RobieService_cover 
+[gw2] [ 54%] PASSED enrobie/robie/test/test_service.py::test_RobieService_cover 
+enrobie/robie/childs/test/test_person.py::test_RobiePerson 
+[gw2] [ 55%] PASSED enrobie/robie/childs/test/test_person.py::test_RobiePerson 
+enrobie/utils/test/test_param.py::test_InvalidParam 
+[gw2] [ 56%] PASSED enrobie/utils/test/test_param.py::test_InvalidParam 
+enrobie/clients/mattermost/test/test_client.py::test_MTMClient_channels 
+[gw1] [ 57%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage_samples 
+enrobie/clients/discord/test/test_message.py::test_DSCMessage_reply 
+[gw1] [ 58%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage_reply 
+enrobie/clients/discord/test/test_message.py::test_DSCMessage 
+[gw1] [ 59%] PASSED enrobie/clients/discord/test/test_message.py::test_DSCMessage 
+enrobie/execution/test/test_config.py::test_arguments 
+[gw1] [ 60%] PASSED enrobie/execution/test/test_config.py::test_arguments 
+enrobie/robie/childs/test/test_robie.py::test_RobieChilds 
+[gw3] [ 61%] PASSED enrobie/clients/discord/test/test_client.py::test_DSCClient_channels 
+enrobie/clients/mattermost/test/test_message.py::test_MTMMessage 
+[gw1] [ 62%] PASSED enrobie/robie/childs/test/test_robie.py::test_RobieChilds 
+enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin_cover 
+[gw3] [ 63%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage 
+enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_reply 
+[gw0] [ 64%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage_samples 
+enrobie/clients/irc/test/test_message.py::test_IRCMessage_reply 
+[gw3] [ 65%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_reply 
+enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_samples 
+[gw0] [ 66%] PASSED enrobie/clients/irc/test/test_message.py::test_IRCMessage_reply 
+enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin_cover 
+[gw2] [ 67%] PASSED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_channels 
+enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin 
+[gw2] [ 68%] PASSED enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin 
+enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin_cover 
+[gw1] [ 69%] PASSED enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin_cover 
+enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin 
+[gw1] [ 70%] PASSED enrobie/plugins/autonick/test/test_plugin.py::test_AutoNickPlugin 
+enrobie/clients/irc/test/test_client.py::test_IRCClient_command 
+[gw1] [ 71%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_command 
+enrobie/clients/irc/test/test_client.py::test_IRCClient_message 
+[gw1] [ 72%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_message 
+enrobie/clients/irc/test/test_client.py::test_IRCClient_channels 
+[gw3] [ 73%] PASSED enrobie/clients/mattermost/test/test_message.py::test_MTMMessage_samples 
+enrobie/clients/irc/test/test_client.py::test_IRCClient 
+[gw3] [ 75%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient 
+enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin_cover 
+[gw0] [ 76%] PASSED enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin_cover 
 enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin 
-[gw3] [100%] PASSED enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin 
+[gw0] [ 77%] PASSED enrobie/plugins/status/test/test_plugin.py::test_StatusPlugin 
+enrobie/robie/test/test_robie.py::test_Robie_cover 
+[gw0] [ 78%] PASSED enrobie/robie/test/test_robie.py::test_Robie_cover 
+enrobie/robie/test/test_robie.py::test_Robie 
+[gw2] [ 79%] FAILED enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin_cover 
+enrobie/clients/irc/test/test_client.py::test_IRCClient_compose 
+[gw0] [ 80%] PASSED enrobie/robie/test/test_robie.py::test_Robie 
+enrobie/robie/test/test_robie.py::test_Robie_printer 
+[gw2] [ 81%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_compose 
+enrobie/robie/test/test_robie.py::test_Robie_person 
+[gw0] [ 82%] PASSED enrobie/robie/test/test_robie.py::test_Robie_printer 
+enrobie/robie/test/test_robie.py::test_Robie_jinja2 
+[gw2] [ 83%] PASSED enrobie/robie/test/test_robie.py::test_Robie_person 
+enrobie/robie/members/test/test_clients.py::test_RobieClients_cover 
+[gw0] [ 84%] PASSED enrobie/robie/test/test_robie.py::test_Robie_jinja2 
+enrobie/robie/members/test/test_clients.py::test_RobieClients 
+[gw2] [ 85%] PASSED enrobie/robie/members/test/test_clients.py::test_RobieClients_cover 
+enrobie/clients/mattermost/test/test_command.py::test_MTMCommand 
+[gw0] [ 86%] PASSED enrobie/robie/members/test/test_clients.py::test_RobieClients 
+enrobie/plugins/logger/test/test_history.py::test_LoggerHistory 
+[gw0] [ 87%] PASSED enrobie/plugins/logger/test/test_history.py::test_LoggerHistory 
+enrobie/robie/threads/test/test_client.py::test_RobieClientThread 
+[gw2] [ 88%] PASSED enrobie/clients/mattermost/test/test_command.py::test_MTMCommand 
+enrobie/plugins/logger/test/test_history.py::test_LoggerHistory_cover 
+[gw0] [ 89%] PASSED enrobie/robie/threads/test/test_client.py::test_RobieClientThread 
+enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory 
+[gw0] [ 90%] PASSED enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory 
+enrobie/robie/models/test/test_models.py::test_RobieModels_cover 
+[gw0] [ 91%] PASSED enrobie/robie/models/test/test_models.py::test_RobieModels_cover 
+enrobie/robie/members/test/test_member.py::test_RobieMember_cover 
+[gw2] [ 92%] PASSED enrobie/plugins/logger/test/test_history.py::test_LoggerHistory_cover 
+enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory_cover 
+[gw0] [ 93%] PASSED enrobie/robie/members/test/test_member.py::test_RobieMember_cover 
+enrobie/robie/threads/test/test_thread.py::test_RobieThread_cover 
+[gw0] [ 94%] PASSED enrobie/robie/threads/test/test_thread.py::test_RobieThread_cover 
+[gw2] [ 95%] PASSED enrobie/plugins/ainswer/test/test_history.py::test_AinswerHistory_cover 
+[gw1] [ 96%] PASSED enrobie/clients/irc/test/test_client.py::test_IRCClient_channels 
+enrobie/execution/test/test_crypts.py::test_arguments 
+[gw1] [ 97%] PASSED enrobie/execution/test/test_crypts.py::test_arguments 
+[gw3] [ 98%] PASSED enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin_cover 
+enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin 
+[gw3] [100%] PASSED enrobie/plugins/logger/test/test_plugin.py::test_LoggerPlugin 
 
 =================================== FAILURES ===================================
 ___________________________ test_AinswerPlugin_cover ___________________________
-[gw3] linux -- Python 3.12.11 /home/runner/work/enrobie/enrobie/main/.venv-package/bin/python3
+[gw2] linux -- Python 3.12.11 /home/runner/work/enrobie/enrobie/main/.venv-package/bin/python3
 
-service = <enrobie.robie.service.RobieService object at 0x7f1207dcb0e0>
-client_dscsock = <function client_dscsock.<locals>._fixture at 0x7f1207d81bc0>
-client_ircsock = <function client_ircsock.<locals>._fixture at 0x7f1207dfa5c0>
-client_mtmsock = <function client_mtmsock.<locals>._fixture at 0x7f1207dfa980>
+service = <enrobie.robie.service.RobieService object at 0x7f1f496462a0>
+client_dscsock = <function client_dscsock.<locals>._fixture at 0x7f1f485ee980>
+client_ircsock = <function client_ircsock.<locals>._fixture at 0x7f1f498c3a60>
+client_mtmsock = <function client_mtmsock.<locals>._fixture at 0x7f1f49f67ce0>
 
     def test_AinswerPlugin_cover(
         service: 'RobieService',
@@ -297,33 +297,33 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.226391+0000
+  time: 2025-07-30T02:47:25.622747+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':robot: Ainswer/`ainswer`: :green_circle: `normal` <t:1753757461:R>'
+    content: ':robot: Ainswer/`ainswer`: :green_circle: `normal` <t:1753843645:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.226534+0000
+  time: 2025-07-30T02:47:25.622824+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':wood: Logger/`logger`: :green_circle: `normal` <t:1753757461:R>'
+    content: ':wood: Logger/`logger`: :green_circle: `normal` <t:1753843645:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.227021+0000
+  time: 2025-07-30T02:47:25.622938+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :🤖 Ainswer/ainswer: 🟢 normal for 0s'
 
@@ -332,7 +332,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.227169+0000
+  time: 2025-07-30T02:47:25.623013+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :🪵 Logger/logger: 🟢 normal for 0s'
 
@@ -341,7 +341,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.227346+0000
+  time: 2025-07-30T02:47:25.623094+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -355,7 +355,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.227491+0000
+  time: 2025-07-30T02:47:25.623159+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -369,46 +369,46 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.327865+0000
+  time: 2025-07-30T02:47:25.723510+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':speech_balloon: Discord/`dscbot`: :hourglass: `pending` <t:1753757461:R>'
+    content: ':speech_balloon: Discord/`dscbot`: :hourglass: `pending` <t:1753843645:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.327968+0000
+  time: 2025-07-30T02:47:25.723579+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':speech_balloon: IRC/`ircbot`: :hourglass: `pending` <t:1753757461:R>'
+    content: ':speech_balloon: IRC/`ircbot`: :hourglass: `pending` <t:1753843645:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.328064+0000
+  time: 2025-07-30T02:47:25.723639+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':speech_balloon: Mattermost/`mtmbot`: :green_circle: `normal` <t:1753757461:R>'
+    content: ':speech_balloon: Mattermost/`mtmbot`: :green_circle: `normal` <t:1753843645:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.328227+0000
+  time: 2025-07-30T02:47:25.723742+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 Discord/dscbot: ⏳ pending for 0s'
 
@@ -417,7 +417,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.328356+0000
+  time: 2025-07-30T02:47:25.723811+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 IRC/ircbot: ⏳ pending for 0s'
 
@@ -426,7 +426,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.328505+0000
+  time: 2025-07-30T02:47:25.723897+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 Mattermost/mtmbot: 🟢 normal for 0s'
 
@@ -435,7 +435,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.328669+0000
+  time: 2025-07-30T02:47:25.723998+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -449,7 +449,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.328787+0000
+  time: 2025-07-30T02:47:25.724062+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -463,7 +463,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.328904+0000
+  time: 2025-07-30T02:47:25.724124+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -477,7 +477,28 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.356136+0000
+  time: 2025-07-30T02:47:25.753347+0000
+  client: 'ircbot'
+  person: None
+  event: ClientEvent
+    prefix: 'mocked'
+    command: '001'
+    params: 'ircbot :Welcome to network'
+    original: ':mocked 001 ircbot :Welcome to network'
+    kind: 'event'
+    isme: False
+    hasme: False
+    whome: 'ircbot'
+    author: None
+    recipient: None
+    message: None
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:25.754373+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -517,28 +538,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.359241+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'mocked'
-    command: '001'
-    params: 'ircbot :Welcome to network'
-    original: ':mocked 001 ircbot :Welcome to network'
-    kind: 'event'
-    isme: False
-    hasme: False
-    whome: 'ircbot'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:01.365311+0000
+  time: 2025-07-30T02:47:25.755658+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -567,33 +567,33 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.429184+0000
+  time: 2025-07-30T02:47:25.824427+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':speech_balloon: Discord/`dscbot`: :green_circle: `normal` <t:1753757461:R>'
+    content: ':speech_balloon: Discord/`dscbot`: :green_circle: `normal` <t:1753843645:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.429249+0000
+  time: 2025-07-30T02:47:25.824502+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':speech_balloon: IRC/`ircbot`: :green_circle: `normal` <t:1753757461:R>'
+    content: ':speech_balloon: IRC/`ircbot`: :green_circle: `normal` <t:1753843645:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.429448+0000
+  time: 2025-07-30T02:47:25.824637+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 Discord/dscbot: 🟢 normal for 0s'
 
@@ -602,7 +602,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.429620+0000
+  time: 2025-07-30T02:47:25.824724+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 IRC/ircbot: 🟢 normal for 0s'
 
@@ -611,7 +611,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.429820+0000
+  time: 2025-07-30T02:47:25.824845+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -625,7 +625,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.429965+0000
+  time: 2025-07-30T02:47:25.824951+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -639,7 +639,28 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.458201+0000
+  time: 2025-07-30T02:47:25.855230+0000
+  client: 'ircbot'
+  person: None
+  event: ClientEvent
+    prefix: 'mocked'
+    command: '376'
+    params: 'ircbot :End of /MOTD command.'
+    original: ':mocked 376 ircbot :End of /MOTD command.'
+    kind: 'event'
+    isme: False
+    hasme: False
+    whome: 'ircbot'
+    author: None
+    recipient: None
+    message: None
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:25.856102+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -665,28 +686,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.462711+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'mocked'
-    command: '376'
-    params: 'ircbot :End of /MOTD command.'
-    original: ':mocked 376 ircbot :End of /MOTD command.'
-    kind: 'event'
-    isme: False
-    hasme: False
-    whome: 'ircbot'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:01.467062+0000
+  time: 2025-07-30T02:47:25.857902+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -715,7 +715,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.568921+0000
+  time: 2025-07-30T02:47:25.960153+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -752,7 +752,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.667804+0000
+  time: 2025-07-30T02:47:26.057980+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -773,7 +773,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.669931+0000
+  time: 2025-07-30T02:47:26.061693+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -802,7 +802,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.770329+0000
+  time: 2025-07-30T02:47:26.162220+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -831,7 +831,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.871744+0000
+  time: 2025-07-30T02:47:26.260985+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -852,7 +852,7 @@ enrobie/plugins/ainswer/test/test_plugin.py:183: AssertionError
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.871954+0000
+  time: 2025-07-30T02:47:26.262851+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -905,7 +905,7 @@ Reasons to reply with only no_response include:
 **Message Metadata**
 Client family: mattermost
 Message kind: privmsg
-Message time: 2025-07-29T02:51:01.871954+0000
+Message time: 2025-07-30T02:47:26.262851+0000
 
 **User Metadata**
 User nickname: user
@@ -924,7 +924,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.979726+0000
+  time: 2025-07-30T02:47:26.372480+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -945,7 +945,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:01.980726+0000
+  time: 2025-07-30T02:47:26.372657+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -986,7 +986,28 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.090431+0000
+  time: 2025-07-30T02:47:26.483950+0000
+  client: 'ircbot'
+  person: None
+  event: ClientEvent
+    prefix: 'nick!user@host'
+    command: 'PRIVMSG'
+    params: '# :Hello world'
+    original: ':nick!user@host PRIVMSG # :Hello world'
+    kind: 'chanmsg'
+    isme: False
+    hasme: False
+    whome: 'ircbot'
+    author: 'nick'
+    recipient: '#'
+    message: 'Hello world'
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:26.484109+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -1027,28 +1048,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.090679+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'nick!user@host'
-    command: 'PRIVMSG'
-    params: '# :Hello world'
-    original: ':nick!user@host PRIVMSG # :Hello world'
-    kind: 'chanmsg'
-    isme: False
-    hasme: False
-    whome: 'ircbot'
-    author: 'nick'
-    recipient: '#'
-    message: 'Hello world'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:02.192575+0000
+  time: 2025-07-30T02:47:26.591752+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -1069,7 +1069,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.193262+0000
+  time: 2025-07-30T02:47:26.593361+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -1100,7 +1100,28 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.296872+0000
+  time: 2025-07-30T02:47:26.645297+0000
+  client: 'ircbot'
+  person: None
+  event: ClientEvent
+    prefix: 'ircbot!user@host'
+    command: 'NICK'
+    params: ':botirc'
+    original: ':ircbot!user@host NICK :botirc'
+    kind: 'event'
+    isme: False
+    hasme: False
+    whome: 'botirc'
+    author: None
+    recipient: None
+    message: None
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:26.696647+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -1135,28 +1156,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.297043+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'ircbot!user@host'
-    command: 'NICK'
-    params: ':botirc'
-    original: ':ircbot!user@host NICK :botirc'
-    kind: 'event'
-    isme: False
-    hasme: False
-    whome: 'botirc'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:02.422063+0000
+  time: 2025-07-30T02:47:26.751665+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -1177,7 +1177,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.422210+0000
+  time: 2025-07-30T02:47:26.820208+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -1218,7 +1218,28 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.486816+0000
+  time: 2025-07-30T02:47:26.869823+0000
+  client: 'ircbot'
+  person: None
+  event: ClientEvent
+    prefix: 'botirc!user@host'
+    command: 'NICK'
+    params: ':ircbot'
+    original: ':botirc!user@host NICK :ircbot'
+    kind: 'event'
+    isme: False
+    hasme: False
+    whome: 'ircbot'
+    author: None
+    recipient: None
+    message: None
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:26.870568+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -1259,28 +1280,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.486928+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'botirc!user@host'
-    command: 'NICK'
-    params: ':ircbot'
-    original: ':botirc!user@host NICK :ircbot'
-    kind: 'event'
-    isme: False
-    hasme: False
-    whome: 'ircbot'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:02.561510+0000
+  time: 2025-07-30T02:47:26.969089+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1314,7 +1314,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.587386+0000
+  time: 2025-07-30T02:47:26.970272+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -1335,7 +1335,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.590521+0000
+  time: 2025-07-30T02:47:26.973552+0000
   client: 'mtmbot'
   person: 'hubert'
   event: ClientEvent
@@ -1376,7 +1376,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.662555+0000
+  time: 2025-07-30T02:47:27.069548+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1408,7 +1408,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.688056+0000
+  time: 2025-07-30T02:47:27.070694+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -1429,7 +1429,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.691617+0000
+  time: 2025-07-30T02:47:27.074118+0000
   client: 'mtmbot'
   person: 'hubert'
   event: ClientEvent
@@ -1470,7 +1470,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.788481+0000
+  time: 2025-07-30T02:47:27.171213+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -1491,7 +1491,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.792250+0000
+  time: 2025-07-30T02:47:27.174663+0000
   client: 'mtmbot'
   person: 'hubert'
   event: ClientEvent
@@ -1532,7 +1532,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.863400+0000
+  time: 2025-07-30T02:47:27.272363+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1574,7 +1574,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.888975+0000
+  time: 2025-07-30T02:47:27.272468+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -1595,7 +1595,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.892648+0000
+  time: 2025-07-30T02:47:27.276505+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -1630,7 +1630,43 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.963848+0000
+  time: 2025-07-30T02:47:27.364931+0000
+  client: 'dscbot'
+  method: 'post'
+  path: 'channels/mocked/messages'
+  params: None
+  json: dict
+    content: ':speech_balloon: Mattermost/`mtmbot`: :red_circle: `failure` <t:1753843647:R>'
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:27.365065+0000
+  client: 'ircbot'
+  event: 'PRIVMSG mocked :💬 Mattermost/mtmbot: 🔴 failure for 0s'
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:27.365178+0000
+  client: 'mtmbot'
+  method: 'post'
+  path: 'posts'
+  params: None
+  json: dict
+    channel_id: 'mocked'
+    message: ':speech_balloon: Mattermost/`mtmbot`: :red_circle: `failure` for `0s`'
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:27.372976+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1674,7 +1710,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.989418+0000
+  time: 2025-07-30T02:47:27.373105+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -1695,7 +1731,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:02.993049+0000
+  time: 2025-07-30T02:47:27.376908+0000
   client: 'mtmbot'
   person: None
   event: ClientEvent
@@ -1727,43 +1763,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.064588+0000
-  client: 'dscbot'
-  method: 'post'
-  path: 'channels/mocked/messages'
-  params: None
-  json: dict
-    content: ':speech_balloon: Mattermost/`mtmbot`: :red_circle: `failure` <t:1753757462:R>'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:03.064715+0000
-  client: 'ircbot'
-  event: 'PRIVMSG mocked :💬 Mattermost/mtmbot: 🔴 failure for 0s'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:03.064829+0000
-  client: 'mtmbot'
-  method: 'post'
-  path: 'posts'
-  params: None
-  json: dict
-    channel_id: 'mocked'
-    message: ':speech_balloon: Mattermost/`mtmbot`: :red_circle: `failure` for `0s`'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:03.064324+0000
+  time: 2025-07-30T02:47:27.474451+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1807,7 +1807,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.090843+0000
+  time: 2025-07-30T02:47:27.474556+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -1828,7 +1828,28 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.166079+0000
+  time: 2025-07-30T02:47:27.576785+0000
+  client: 'ircbot'
+  person: None
+  event: ClientEvent
+    prefix: 'mocked'
+    command: '353'
+    params: 'ircbot = #enrobie :ircbot robert trebor sirrah'
+    original: ':mocked 353 ircbot = #enrobie :ircbot robert trebor sirrah'
+    kind: 'event'
+    isme: False
+    hasme: False
+    whome: 'ircbot'
+    author: None
+    recipient: None
+    message: None
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:27.576962+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1866,28 +1887,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.191392+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'mocked'
-    command: '353'
-    params: 'ircbot = #enrobie :ircbot robert trebor sirrah'
-    original: ':mocked 353 ircbot = #enrobie :ircbot robert trebor sirrah'
-    kind: 'event'
-    isme: False
-    hasme: False
-    whome: 'ircbot'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:03.266499+0000
+  time: 2025-07-30T02:47:27.677518+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1921,7 +1921,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.291903+0000
+  time: 2025-07-30T02:47:27.678439+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -1942,7 +1942,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.367035+0000
+  time: 2025-07-30T02:47:27.778145+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -1986,7 +1986,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.392534+0000
+  time: 2025-07-30T02:47:27.779047+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -2007,7 +2007,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.467520+0000
+  time: 2025-07-30T02:47:27.878652+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -2049,51 +2049,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.571590+0000
-  client: 'dscbot'
-  person: 'hubert'
-  event: ClientEvent
-    type: 'MESSAGE_CREATE'
-    opcode: 0
-    data: dict
-      channel_id: 'enrobie'
-      guild_id: 'guildid'
-      author: dict
-        id: '823039201390230492'
-        username: 'hubert'
-      content: 'dscbot'
-    seqno: 7
-    original: dict
-      d: dict
-        channel_id: 'enrobie'
-        guild_id: 'guildid'
-        author: dict
-          id: '823039201390230492'
-          username: 'hubert'
-        content: 'dscbot'
-      op: 0
-      s: 7
-      t: 'MESSAGE_CREATE'
-    kind: 'chanmsg'
-    isme: False
-    hasme: True
-    whome: tuple
-      - 'dscbot'
-      - 'dscunq'
-    author: tuple
-      - 'hubert'
-      - '823039201390230492'
-    recipient: tuple
-      - 'guildid'
-      - 'enrobie'
-    message: 'dscbot'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:03.596875+0000
+  time: 2025-07-30T02:47:27.879640+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -2114,7 +2070,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.672070+0000
+  time: 2025-07-30T02:47:27.979157+0000
   client: 'dscbot'
   person: 'hubert'
   event: ClientEvent
@@ -2158,7 +2114,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.697356+0000
+  time: 2025-07-30T02:47:27.980268+0000
   client: 'ircbot'
   person: 'hubert'
   event: ClientEvent
@@ -2179,7 +2135,153 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.774444+0000
+  system: 'You are Bender from Futurama.'
+  prompt: '**Instructions**
+Your nickname is ircbot. Keep it short and use colors.
+
+**Responding**
+There are reasons not to respond to the user question. If you think you should not respond, reply only no_response.
+Reasons to reply with only no_response include:
+ - If you believe that you are being abused by the user asking the quesiton.
+
+**Message Metadata**
+Client family: irc
+Message kind: privmsg
+Message time: 2025-07-30T02:47:26.372480+0000
+
+**User Metadata**
+User nickname: nick
+User serverID: nick
+
+**Additional Metadata**
+Your nickname: ircbot
+Your serverID: ircbot
+
+**Question**
+Hello ircbot'
+  sleep: 0
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:28.009605+0000
+  client: 'mtmbot'
+  method: 'post'
+  path: 'posts'
+  params: None
+  json: dict
+    channel_id: 'privid'
+    message: 'I'm sorry user, I'm afraid I can't do that.'
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:28.076708+0000
+  client: 'dscbot'
+  method: 'post'
+  path: 'channels/mocked/messages'
+  params: None
+  json: dict
+    content: ':robot: Ainswer/`ainswer`: :red_circle: `failure` <t:1753843648:R>'
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:28.076858+0000
+  client: 'ircbot'
+  event: 'PRIVMSG mocked :🤖 Ainswer/ainswer: 🔴 failure for 0s'
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:28.077025+0000
+  client: 'mtmbot'
+  method: 'post'
+  path: 'posts'
+  params: None
+  json: dict
+    channel_id: 'mocked'
+    message: ':robot: Ainswer/`ainswer`: :red_circle: `failure` for `0s`'
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:28.080917+0000
+  client: 'dscbot'
+  person: 'hubert'
+  event: ClientEvent
+    type: 'MESSAGE_CREATE'
+    opcode: 0
+    data: dict
+      channel_id: 'enrobie'
+      guild_id: 'guildid'
+      author: dict
+        id: '823039201390230492'
+        username: 'hubert'
+      content: 'dscbot'
+    seqno: 7
+    original: dict
+      d: dict
+        channel_id: 'enrobie'
+        guild_id: 'guildid'
+        author: dict
+          id: '823039201390230492'
+          username: 'hubert'
+        content: 'dscbot'
+      op: 0
+      s: 7
+      t: 'MESSAGE_CREATE'
+    kind: 'chanmsg'
+    isme: False
+    hasme: True
+    whome: tuple
+      - 'dscbot'
+      - 'dscunq'
+    author: tuple
+      - 'hubert'
+      - '823039201390230492'
+    recipient: tuple
+      - 'guildid'
+      - 'enrobie'
+    message: 'dscbot'
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:28.081847+0000
+  client: 'ircbot'
+  person: 'hubert'
+  event: ClientEvent
+    prefix: 'hubert!hubert@science.com'
+    command: 'PRIVMSG'
+    params: '#enrobie :ircbot'
+    original: ':hubert!hubert@science.com PRIVMSG #enrobie :ircbot'
+    kind: 'chanmsg'
+    isme: False
+    hasme: True
+    whome: 'ircbot'
+    author: 'hubert'
+    recipient: '#enrobie'
+    message: 'ircbot'
+
+┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  time: 2025-07-30T02:47:28.182328+0000
   client: 'dscbot'
   person: 'hubert'
   event: ClientEvent
@@ -2221,20 +2323,20 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.798980+0000
+  time: 2025-07-30T02:47:28.182841+0000
   client: 'ircbot'
   person: 'hubert'
   event: ClientEvent
     prefix: 'hubert!hubert@science.com'
     command: 'PRIVMSG'
-    params: '#enrobie :ircbot'
-    original: ':hubert!hubert@science.com PRIVMSG #enrobie :ircbot'
-    kind: 'chanmsg'
+    params: 'ircbot :ircbot'
+    original: ':hubert!hubert@science.com PRIVMSG ircbot :ircbot'
+    kind: 'privmsg'
     isme: False
     hasme: True
     whome: 'ircbot'
     author: 'hubert'
-    recipient: '#enrobie'
+    recipient: 'ircbot'
     message: 'ircbot'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -2242,52 +2344,7 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  system: 'You are Bender from Futurama.'
-  prompt: '**Instructions**
-Your nickname is ircbot. Keep it short and use colors.
-
-**Responding**
-There are reasons not to respond to the user question. If you think you should not respond, reply only no_response.
-Reasons to reply with only no_response include:
- - If you believe that you are being abused by the user asking the quesiton.
-
-**Message Metadata**
-Client family: irc
-Message kind: privmsg
-Message time: 2025-07-29T02:51:01.979726+0000
-
-**User Metadata**
-User nickname: nick
-User serverID: nick
-
-**Additional Metadata**
-Your nickname: ircbot
-Your serverID: ircbot
-
-**Question**
-Hello ircbot'
-  sleep: 0
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:03.884752+0000
-  client: 'mtmbot'
-  method: 'post'
-  path: 'posts'
-  params: None
-  json: dict
-    channel_id: 'privid'
-    message: 'I'm sorry user, I'm afraid I can't do that.'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:03.874862+0000
+  time: 2025-07-30T02:47:28.282796+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -2321,63 +2378,41 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.899499+0000
+  time: 2025-07-30T02:47:28.283255+0000
   client: 'ircbot'
-  person: 'hubert'
+  person: None
   event: ClientEvent
-    prefix: 'hubert!hubert@science.com'
-    command: 'PRIVMSG'
-    params: 'ircbot :ircbot'
-    original: ':hubert!hubert@science.com PRIVMSG ircbot :ircbot'
-    kind: 'privmsg'
+    prefix: 'nick!user@host'
+    command: 'TOPIC'
+    params: '#enrobie :Test topic'
+    original: ':nick!user@host TOPIC #enrobie :Test topic'
+    kind: 'event'
     isme: False
-    hasme: True
+    hasme: False
     whome: 'ircbot'
-    author: 'hubert'
-    recipient: 'ircbot'
-    message: 'ircbot'
+    author: None
+    recipient: None
+    message: None
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.968915+0000
+  time: 2025-07-30T02:47:28.382074+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':robot: Ainswer/`ainswer`: :red_circle: `failure` <t:1753757463:R>'
+    content: ':speech_balloon: Discord/`dscbot`: :red_circle: `failure` <t:1753843648:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.969015+0000
-  client: 'dscbot'
-  method: 'post'
-  path: 'channels/mocked/messages'
-  params: None
-  json: dict
-    content: ':speech_balloon: Discord/`dscbot`: :red_circle: `failure` <t:1753757463:R>'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:03.969151+0000
-  client: 'ircbot'
-  event: 'PRIVMSG mocked :🤖 Ainswer/ainswer: 🔴 failure for 0s'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:03.969256+0000
+  time: 2025-07-30T02:47:28.382224+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 Discord/dscbot: 🔴 failure for 0s'
 
@@ -2386,21 +2421,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.969374+0000
-  client: 'mtmbot'
-  method: 'post'
-  path: 'posts'
-  params: None
-  json: dict
-    channel_id: 'mocked'
-    message: ':robot: Ainswer/`ainswer`: :red_circle: `failure` for `0s`'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:03.969500+0000
+  time: 2025-07-30T02:47:28.382351+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -2414,7 +2435,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.975215+0000
+  time: 2025-07-30T02:47:28.383245+0000
   client: 'dscbot'
   person: None
   event: ClientEvent
@@ -2439,28 +2460,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:03.999961+0000
-  client: 'ircbot'
-  person: None
-  event: ClientEvent
-    prefix: 'nick!user@host'
-    command: 'TOPIC'
-    params: '#enrobie :Test topic'
-    original: ':nick!user@host TOPIC #enrobie :Test topic'
-    kind: 'event'
-    isme: False
-    hasme: False
-    whome: 'ircbot'
-    author: None
-    recipient: None
-    message: None
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:04.101377+0000
+  time: 2025-07-30T02:47:28.383668+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -2481,7 +2481,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:04.201893+0000
+  time: 2025-07-30T02:47:28.484572+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -2502,7 +2502,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:04.302430+0000
+  time: 2025-07-30T02:47:28.584991+0000
   client: 'ircbot'
   person: None
   event: ClientEvent
@@ -2523,20 +2523,20 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:04.371282+0000
+  time: 2025-07-30T02:47:28.685422+0000
   client: 'dscbot'
   method: 'post'
   path: 'channels/mocked/messages'
   params: None
   json: dict
-    content: ':speech_balloon: IRC/`ircbot`: :red_circle: `failure` <t:1753757464:R>'
+    content: ':speech_balloon: IRC/`ircbot`: :red_circle: `failure` <t:1753843648:R>'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:04.371577+0000
+  time: 2025-07-30T02:47:28.685587+0000
   client: 'ircbot'
   event: 'PRIVMSG mocked :💬 IRC/ircbot: 🔴 failure for 0s'
 
@@ -2545,7 +2545,7 @@ Hello ircbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:04.371788+0000
+  time: 2025-07-30T02:47:28.685707+0000
   client: 'mtmbot'
   method: 'post'
   path: 'posts'
@@ -2571,7 +2571,7 @@ Reasons to reply with only no_response include:
 **Message Metadata**
 Client family: mattermost
 Message kind: chanmsg
-Message time: 2025-07-29T02:51:02.422210+0000
+Message time: 2025-07-30T02:47:26.820208+0000
 
 **User Metadata**
 User nickname: user
@@ -2587,9 +2587,9 @@ Topic: Test topic
 
 **Channel Recents**
 These are the most recent messages from the current channel or direct message. When client family is IRC or Mattermost, you do not see your messages below.
-[2025-07-29T02:51:02+0000] <userid> Hello mtmbot
-[2025-07-29T02:51:02+0000] <kjf9al2klaiietalkw> mtmbot
-[2025-07-29T02:51:02+0000] <kjf9al2klaiietalkw> mtmbot
+[2025-07-30T02:47:26+0000] <userid> Hello mtmbot
+[2025-07-30T02:47:27+0000] <kjf9al2klaiietalkw> mtmbot
+[2025-07-30T02:47:27+0000] <kjf9al2klaiietalkw> mtmbot
 
 **Question**
 Hello mtmbot'
@@ -2600,1004 +2600,13 @@ Hello mtmbot'
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  time: 2025-07-29T02:51:05.254088+0000
+  time: 2025-07-30T02:47:29.275941+0000
   client: 'ircbot'
   event: 'PRIVMSG nick :I'm sorry nick, I'm afraid I can't do that.'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-___________________________ test_IRCMessage_samples ____________________________
-[gw3] linux -- Python 3.12.11 /home/runner/work/enrobie/enrobie/main/.venv-package/bin/python3
-
-tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-0/popen-gw3/test_IRCMessage_samples0')
-service = <enrobie.robie.service.RobieService object at 0x7f11f4b709e0>
-client_ircsock = <function client_ircsock.<locals>._fixture at 0x7f11f4b68540>
-
-    def test_IRCMessage_samples(
-        tmp_path: Path,
-        service: 'RobieService',
-        client_ircsock: IRCClientSocket,
-    ) -> None:
-        """
-        Perform various tests associated with relevant routines.
-    
-        :param tmp_path: pytest object for temporal filesystem.
-        :param service: Ancilary Chatting Robie class instance.
-        :param client_ircsock: Object to mock client connection.
-        """
-    
-        robie = service.robie
-        childs = robie.childs
-        clients = childs.clients
-    
-        client = clients['ircbot']
-    
-        assert isinstance(
-            client, IRCClient)
-    
-    
-        messages: list[IRCMessage] = []
-    
-    
-        def _callback(
-            mitem: 'RobieMessage',
-        ) -> None:
-    
-            assert isinstance(
-                mitem, IRCMessage)
-    
-            messages.append(mitem)
-    
-    
-        (client.publish
-         .subscribe(_callback))
-    
-    
-        client_ircsock(IRCEVENTS)
-    
-        service.limit(
-            clients=['ircbot'],
-            plugins=['status'])
-    
-        service.start()
-    
-    
-        thread = Thread(
-            target=service.operate)
-    
-        thread.start()
-    
-    
-        block_sleep(5)
-    
-    
-        sample_path = (
-            SAMPLES / 'messages.json')
-    
-        # Because of ones in helper
-        maximum = len(IRCEVENTS) + 4
-    
-        _messages = [
-            {'client': x.client,
-             'family': x.family,
-             'kind': x.kind,
-             'person': x.person,
-             'isme': x.isme,
-             'hasme': x.hasme,
-             'whome': x.whome,
-             'author': x.author,
-             'anchor': x.anchor,
-             'message': x.message,
-             'event': x.event}
-            for x in
-            messages[:maximum]]
-    
-        sample = load_sample(
-            path=sample_path,
-            update=ENPYRWS,
-            content=_messages)
-    
-        expect = prep_sample(
-            content=_messages)
-    
->       assert expect == sample
-E       assert '[]' == '[\n  {\n    ...    }\n  }\n]'
-E         
-E         + []
-E         - [
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "mocked",
-E         -       "command": "001",
-E         -       "params": "ircbot :Welcome to network",
-E         -       "original": ":mocked 001 ircbot :Welcome to network",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "mocked",
-E         -       "command": "376",
-E         -       "params": "ircbot :End of /MOTD command.",
-E         -       "original": ":mocked 376 ircbot :End of /MOTD command.",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "mocked",
-E         -       "command": "376",
-E         -       "params": "ircbot :End of /MOTD command.",
-E         -       "original": ":mocked 376 ircbot :End of /MOTD command.",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "mocked",
-E         -       "command": "376",
-E         -       "params": "ircbot :End of /MOTD command.",
-E         -       "original": ":mocked 376 ircbot :End of /MOTD command.",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "privmsg",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": true,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": [
-E         -       "nick",
-E         -       "nick"
-E         -     ],
-E         -     "anchor": "nick",
-E         -     "message": "Hello ircbot",
-E         -     "event": {
-E         -       "prefix": "nick!user@host",
-E         -       "command": "PRIVMSG",
-E         -       "params": "ircbot :Hello ircbot",
-E         -       "original": ":nick!user@host PRIVMSG ircbot :Hello ircbot",
-E         -       "kind": "privmsg",
-E         -       "isme": false,
-E         -       "hasme": true,
-E         -       "whome": "ircbot",
-E         -       "author": "nick",
-E         -       "recipient": "ircbot",
-E         -       "message": "Hello ircbot"
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "chanmsg",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": [
-E         -       "nick",
-E         -       "nick"
-E         -     ],
-E         -     "anchor": "#",
-E         -     "message": "Hello world",
-E         -     "event": {
-E         -       "prefix": "nick!user@host",
-E         -       "command": "PRIVMSG",
-E         -       "params": "# :Hello world",
-E         -       "original": ":nick!user@host PRIVMSG # :Hello world",
-E         -       "kind": "chanmsg",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": "nick",
-E         -       "recipient": "#",
-E         -       "message": "Hello world"
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "chanmsg",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": [
-E         -       "nick",
-E         -       "nick"
-E         -     ],
-E         -     "anchor": "#funchat",
-E         -     "message": "Hello world",
-E         -     "event": {
-E         -       "prefix": "nick!user@host",
-E         -       "command": "PRIVMSG",
-E         -       "params": "#funchat :Hello world",
-E         -       "original": ":nick!user@host PRIVMSG #funchat :Hello world",
-E         -       "kind": "chanmsg",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": "nick",
-E         -       "recipient": "#funchat",
-E         -       "message": "Hello world"
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "botirc",
-E         -       "botirc"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "ircbot!user@host",
-E         -       "command": "NICK",
-E         -       "params": ":botirc",
-E         -       "original": ":ircbot!user@host NICK :botirc",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "botirc",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "chanmsg",
-E         -     "person": null,
-E         -     "isme": true,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "botirc",
-E         -       "botirc"
-E         -     ],
-E         -     "author": [
-E         -       "botirc",
-E         -       "botirc"
-E         -     ],
-E         -     "anchor": "#",
-E         -     "message": "Hello nick",
-E         -     "event": {
-E         -       "prefix": "botirc!user@host",
-E         -       "command": "PRIVMSG",
-E         -       "params": "# :Hello nick",
-E         -       "original": ":botirc!user@host PRIVMSG # :Hello nick",
-E         -       "kind": "chanmsg",
-E         -       "isme": true,
-E         -       "hasme": false,
-E         -       "whome": "botirc",
-E         -       "author": "botirc",
-E         -       "recipient": "#",
-E         -       "message": "Hello nick"
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "botirc!user@host",
-E         -       "command": "NICK",
-E         -       "params": ":ircbot",
-E         -       "original": ":botirc!user@host NICK :ircbot",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": true,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "ircbot",
-E         -       "command": "JOIN",
-E         -       "params": ":#enrobie",
-E         -       "original": ":ircbot JOIN :#enrobie",
-E         -       "kind": "event",
-E         -       "isme": true,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "mocked",
-E         -       "command": "353",
-E         -       "params": "ircbot = #enrobie :ircbot robert trebor sirrah",
-E         -       "original": ":mocked 353 ircbot = #enrobie :ircbot robert trebor sirrah",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "mocked",
-E         -       "command": "332",
-E         -       "params": "ircbot #enrobie :Test topic already set",
-E         -       "original": ":mocked 332 ircbot #enrobie :Test topic already set",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "nick!user@host",
-E         -       "command": "TOPIC",
-E         -       "params": "#enrobie :Test topic is changed",
-E         -       "original": ":nick!user@host TOPIC #enrobie :Test topic is changed",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "nick!user@host",
-E         -       "command": "KICK",
-E         -       "params": "#enrobie ircbot :foo",
-E         -       "original": ":nick!user@host KICK #enrobie ircbot :foo",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": true,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "ircbot",
-E         -       "command": "JOIN",
-E         -       "params": ":#enrobie",
-E         -       "original": ":ircbot JOIN :#enrobie",
-E         -       "kind": "event",
-E         -       "isme": true,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "mocked",
-E         -       "command": "353",
-E         -       "params": "ircbot = #enrobie :ircbot robert trebor sirrah",
-E         -       "original": ":mocked 353 ircbot = #enrobie :ircbot robert trebor sirrah",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "mocked",
-E         -       "command": "332",
-E         -       "params": "ircbot #enrobie :Test topic is changed",
-E         -       "original": ":mocked 332 ircbot #enrobie :Test topic is changed",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "chanmsg",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": true,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": [
-E         -       "nick",
-E         -       "nick"
-E         -     ],
-E         -     "anchor": "#enrobie",
-E         -     "message": "Hello ircbot",
-E         -     "event": {
-E         -       "prefix": "nick!user@host",
-E         -       "command": "PRIVMSG",
-E         -       "params": "#enrobie :Hello ircbot",
-E         -       "original": ":nick!user@host PRIVMSG #enrobie :Hello ircbot",
-E         -       "kind": "chanmsg",
-E         -       "isme": false,
-E         -       "hasme": true,
-E         -       "whome": "ircbot",
-E         -       "author": "nick",
-E         -       "recipient": "#enrobie",
-E         -       "message": "Hello ircbot"
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "privmsg",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": true,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": [
-E         -       "nick",
-E         -       "nick"
-E         -     ],
-E         -     "anchor": "nick",
-E         -     "message": "Hello ircbot",
-E         -     "event": {
-E         -       "prefix": "nick!user@host",
-E         -       "command": "PRIVMSG",
-E         -       "params": "ircbot :Hello ircbot",
-E         -       "original": ":nick!user@host PRIVMSG ircbot :Hello ircbot",
-E         -       "kind": "privmsg",
-E         -       "isme": false,
-E         -       "hasme": true,
-E         -       "whome": "ircbot",
-E         -       "author": "nick",
-E         -       "recipient": "ircbot",
-E         -       "message": "Hello ircbot"
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "chanmsg",
-E         -     "person": "hubert",
-E         -     "isme": false,
-E         -     "hasme": true,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": [
-E         -       "hubert",
-E         -       "hubert"
-E         -     ],
-E         -     "anchor": "#enrobie",
-E         -     "message": "ircbot",
-E         -     "event": {
-E         -       "prefix": "hubert!hubert@science.com",
-E         -       "command": "PRIVMSG",
-E         -       "params": "#enrobie :ircbot",
-E         -       "original": ":hubert!hubert@science.com PRIVMSG #enrobie :ircbot",
-E         -       "kind": "chanmsg",
-E         -       "isme": false,
-E         -       "hasme": true,
-E         -       "whome": "ircbot",
-E         -       "author": "hubert",
-E         -       "recipient": "#enrobie",
-E         -       "message": "ircbot"
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "chanmsg",
-E         -     "person": "hubert",
-E         -     "isme": false,
-E         -     "hasme": true,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": [
-E         -       "hubert",
-E         -       "hubert"
-E         -     ],
-E         -     "anchor": "#enrobie",
-E         -     "message": "ircbot",
-E         -     "event": {
-E         -       "prefix": "hubert!hubert@science.com",
-E         -       "command": "PRIVMSG",
-E         -       "params": "#enrobie :ircbot",
-E         -       "original": ":hubert!hubert@science.com PRIVMSG #enrobie :ircbot",
-E         -       "kind": "chanmsg",
-E         -       "isme": false,
-E         -       "hasme": true,
-E         -       "whome": "ircbot",
-E         -       "author": "hubert",
-E         -       "recipient": "#enrobie",
-E         -       "message": "ircbot"
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "privmsg",
-E         -     "person": "hubert",
-E         -     "isme": false,
-E         -     "hasme": true,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": [
-E         -       "hubert",
-E         -       "hubert"
-E         -     ],
-E         -     "anchor": "hubert",
-E         -     "message": "ircbot",
-E         -     "event": {
-E         -       "prefix": "hubert!hubert@science.com",
-E         -       "command": "PRIVMSG",
-E         -       "params": "ircbot :ircbot",
-E         -       "original": ":hubert!hubert@science.com PRIVMSG ircbot :ircbot",
-E         -       "kind": "privmsg",
-E         -       "isme": false,
-E         -       "hasme": true,
-E         -       "whome": "ircbot",
-E         -       "author": "hubert",
-E         -       "recipient": "ircbot",
-E         -       "message": "ircbot"
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "nick!user@host",
-E         -       "command": "TOPIC",
-E         -       "params": "#enrobie :Test topic",
-E         -       "original": ":nick!user@host TOPIC #enrobie :Test topic",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "trebor!user@host",
-E         -       "command": "NICK",
-E         -       "params": "treb0r",
-E         -       "original": ":trebor!user@host NICK treb0r",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": false,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "nick!user@host",
-E         -       "command": "NICK",
-E         -       "params": "n1ck",
-E         -       "original": ":nick!user@host NICK n1ck",
-E         -       "kind": "event",
-E         -       "isme": false,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   },
-E         -   {
-E         -     "client": "ircbot",
-E         -     "family": "irc",
-E         -     "kind": "event",
-E         -     "person": null,
-E         -     "isme": true,
-E         -     "hasme": false,
-E         -     "whome": [
-E         -       "ircbot",
-E         -       "ircbot"
-E         -     ],
-E         -     "author": null,
-E         -     "anchor": null,
-E         -     "message": null,
-E         -     "event": {
-E         -       "prefix": "ircbot",
-E         -       "command": "PART",
-E         -       "params": ":#enrobie",
-E         -       "original": ":ircbot PART :#enrobie",
-E         -       "kind": "event",
-E         -       "isme": true,
-E         -       "hasme": false,
-E         -       "whome": "ircbot",
-E         -       "author": null,
-E         -       "recipient": null,
-E         -       "message": null
-E         -     }
-E         -   }
-E         - ]
-
-enrobie/clients/irc/test/test_message.py:270: AssertionError
----------------------------- Captured stdout setup -----------------------------
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  system: 'You are Bender from Futurama.'
-  prompt: '**Instructions**
-Your nickname is dscbot. Use some markdown and emojis.
-
-**Responding**
-There are reasons not to respond to the user question. If you think you should not respond, reply only no_response.
-Reasons to reply with only no_response include:
- - If you believe that you are being abused by the user asking the quesiton.
-
-**Message Metadata**
-Client family: discord
-Message kind: chanmsg
-Message time: 2025-07-29T02:51:03.367035+0000
-
-**User Metadata**
-User nickname: user
-User serverID: userid
-
-**Additional Metadata**
-Your nickname: dscbot
-Your serverID: dscunq
-
-**Channel Recents**
-These are the most recent messages from the current channel or direct message. When client family is IRC or Mattermost, you do not see your messages below.
-[2025-07-29T02:51:03+0000] <userid> Hello dscbot
-[2025-07-29T02:51:03+0000] <823039201390230492> dscbot
-[2025-07-29T02:51:03+0000] <823039201390230492> dscbot
-
-**Question**
-Hello dscbot'
-  sleep: 0
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:07.384349+0000
-  client: 'dscbot'
-  method: 'post'
-  path: 'channels/privid/messages'
-  params: None
-  json: dict
-    content: 'I'm sorry user, I'm afraid I can't do that.'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  system: 'You are Bender from Futurama.'
-  prompt: '**Instructions**
-Your nickname is ircbot. Keep it short and use colors.
-
-**Responding**
-There are reasons not to respond to the user question. If you think you should not respond, reply only no_response.
-Reasons to reply with only no_response include:
- - If you believe that you are being abused by the user asking the quesiton.
-
-**Message Metadata**
-Client family: irc
-Message kind: chanmsg
-Message time: 2025-07-29T02:51:03.392534+0000
-
-**User Metadata**
-User nickname: nick
-User serverID: nick
-
-**Additional Metadata**
-Your nickname: ircbot
-Your serverID: ircbot
-
-**Channel Metadata**
-Unique: #enrobie
-Topic: Test topic
-Users: robert, sirrah, treb0r
-
-**Channel Recents**
-These are the most recent messages from the current channel or direct message. When client family is IRC or Mattermost, you do not see your messages below.
-[2025-07-29T02:51:03+0000] <nick> Hello ircbot
-[2025-07-29T02:51:03+0000] <hubert> ircbot
-[2025-07-29T02:51:03+0000] <hubert> ircbot
-
-**Question**
-Hello ircbot'
-  sleep: 0
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:07.511775+0000
-  client: 'dscbot'
-  method: 'post'
-  path: 'channels/enrobie/messages'
-  params: None
-  json: dict
-    content: 'I'm sorry user, I'm afraid I can't do that.'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
------------------------------ Captured stdout call -----------------------------
+--------------------------- Captured stdout teardown ---------------------------
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -3605,475 +2614,6 @@ Hello ircbot'
 
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:07.637765+0000
-  client: 'ircbot'
-  event: 'PRIVMSG #enrobie :I'm sorry nick, I'm afraid I can't do that.'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:07.748796+0000
-  client: 'ircbot'
-  event: 'PRIVMSG mocked :💬 IRC/ircbot: ⏳ pending for 0s'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:07.753375+0000
-  client: 'dscbot'
-  method: 'post'
-  path: 'channels/privid/messages'
-  params: None
-  json: dict
-    content: 'I'm sorry user, I'm afraid I can't do that.'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  system: 'You are Bender from Futurama.'
-  prompt: '**Instructions**
-Your nickname is dscbot. Use some markdown and emojis.
-
-**Responding**
-There are reasons not to respond to the user question. If you think you should not respond, reply only no_response.
-Reasons to reply with only no_response include:
- - If you believe that you are being abused by the user asking the quesiton.
-
-**Message Metadata**
-Client family: discord
-Message kind: chanmsg
-Message time: 2025-07-29T02:51:03.571590+0000
-
-**User Metadata**
-User nickname: hubert
-User serverID: 823039201390230492
-Robie username: hubert
-First name: Hubert
-Last name: Farnsworth
-Description: Chief Executive Officer of Planet Express.
-
-**Additional Metadata**
-Your nickname: dscbot
-Your serverID: dscunq
-
-**Channel Recents**
-These are the most recent messages from the current channel or direct message. When client family is IRC or Mattermost, you do not see your messages below.
-[2025-07-29T02:51:03+0000] <userid> Hello dscbot
-[2025-07-29T02:51:03+0000] <823039201390230492> dscbot
-[2025-07-29T02:51:03+0000] <823039201390230492> dscbot
-
-**Question**
-dscbot'
-  sleep: 0
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  system: 'You are Bender from Futurama.'
-  prompt: '**Instructions**
-Your nickname is ircbot. Keep it short and use colors.
-
-**Responding**
-There are reasons not to respond to the user question. If you think you should not respond, reply only no_response.
-Reasons to reply with only no_response include:
- - If you believe that you are being abused by the user asking the quesiton.
-
-**Message Metadata**
-Client family: irc
-Message kind: privmsg
-Message time: 2025-07-29T02:51:03.596875+0000
-
-**User Metadata**
-User nickname: nick
-User serverID: nick
-
-**Additional Metadata**
-Your nickname: ircbot
-Your serverID: ircbot
-
-**Question**
-Hello ircbot'
-  sleep: 0
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:07.832007+0000
-  client: 'dscbot'
-  method: 'post'
-  path: 'channels/enrobie/messages'
-  params: None
-  json: dict
-    content: 'I'm sorry hubert, I'm afraid I can't do that.'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  system: 'You are Bender from Futurama.'
-  prompt: '**Instructions**
-Your nickname is dscbot. Use some markdown and emojis.
-
-**Responding**
-There are reasons not to respond to the user question. If you think you should not respond, reply only no_response.
-Reasons to reply with only no_response include:
- - If you believe that you are being abused by the user asking the quesiton.
-
-**Message Metadata**
-Client family: discord
-Message kind: chanmsg
-Message time: 2025-07-29T02:51:03.672070+0000
-
-**User Metadata**
-User nickname: hubert
-User serverID: 823039201390230492
-Robie username: hubert
-First name: Hubert
-Last name: Farnsworth
-Description: Chief Executive Officer of Planet Express.
-
-**Additional Metadata**
-Your nickname: dscbot
-Your serverID: dscunq
-
-**Channel Recents**
-These are the most recent messages from the current channel or direct message. When client family is IRC or Mattermost, you do not see your messages below.
-[2025-07-29T02:51:03+0000] <userid> Hello dscbot
-[2025-07-29T02:51:03+0000] <823039201390230492> dscbot
-[2025-07-29T02:51:03+0000] <823039201390230492> dscbot
-
-**Question**
-dscbot'
-  sleep: 0
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:07.902513+0000
-  client: 'ircbot'
-  event: 'PRIVMSG nick :I'm sorry nick, I'm afraid I can't do that.'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:08.013004+0000
-  client: 'dscbot'
-  method: 'post'
-  path: 'channels/enrobie/messages'
-  params: None
-  json: dict
-    content: 'I'm sorry hubert, I'm afraid I can't do that.'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  system: 'You are Bender from Futurama.'
-  prompt: '**Instructions**
-Your nickname is ircbot. Keep it short and use colors.
-
-**Responding**
-There are reasons not to respond to the user question. If you think you should not respond, reply only no_response.
-Reasons to reply with only no_response include:
- - If you believe that you are being abused by the user asking the quesiton.
-
-**Message Metadata**
-Client family: irc
-Message kind: chanmsg
-Message time: 2025-07-29T02:51:03.697356+0000
-
-**User Metadata**
-User nickname: hubert
-User serverID: hubert
-Robie username: hubert
-First name: Hubert
-Last name: Farnsworth
-Description: Chief Executive Officer of Planet Express.
-
-**Additional Metadata**
-Your nickname: ircbot
-Your serverID: ircbot
-
-**Channel Metadata**
-Unique: #enrobie
-Topic: Test topic
-Users: robert, sirrah, treb0r
-
-**Channel Recents**
-These are the most recent messages from the current channel or direct message. When client family is IRC or Mattermost, you do not see your messages below.
-[2025-07-29T02:51:03+0000] <nick> Hello ircbot
-[2025-07-29T02:51:03+0000] <hubert> ircbot
-[2025-07-29T02:51:03+0000] <hubert> ircbot
-
-**Question**
-ircbot'
-  sleep: 0
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  system: 'You are Bender from Futurama.'
-  prompt: '**Instructions**
-Your nickname is dscbot. Use some markdown and emojis.
-
-**Responding**
-There are reasons not to respond to the user question. If you think you should not respond, reply only no_response.
-Reasons to reply with only no_response include:
- - If you believe that you are being abused by the user asking the quesiton.
-
-**Message Metadata**
-Client family: discord
-Message kind: privmsg
-Message time: 2025-07-29T02:51:03.774444+0000
-
-**User Metadata**
-User nickname: hubert
-User serverID: 823039201390230492
-Robie username: hubert
-First name: Hubert
-Last name: Farnsworth
-Description: Chief Executive Officer of Planet Express.
-
-**Additional Metadata**
-Your nickname: dscbot
-Your serverID: dscunq
-
-**Question**
-dscbot'
-  sleep: 0
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:08.142548+0000
-  client: 'ircbot'
-  event: 'PRIVMSG #enrobie :I'm sorry hubert, I'm afraid I can't do that.'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  system: 'You are Bender from Futurama.'
-  prompt: '**Instructions**
-Your nickname is ircbot. Keep it short and use colors.
-
-**Responding**
-There are reasons not to respond to the user question. If you think you should not respond, reply only no_response.
-Reasons to reply with only no_response include:
- - If you believe that you are being abused by the user asking the quesiton.
-
-**Message Metadata**
-Client family: irc
-Message kind: chanmsg
-Message time: 2025-07-29T02:51:03.798980+0000
-
-**User Metadata**
-User nickname: hubert
-User serverID: hubert
-Robie username: hubert
-First name: Hubert
-Last name: Farnsworth
-Description: Chief Executive Officer of Planet Express.
-
-**Additional Metadata**
-Your nickname: ircbot
-Your serverID: ircbot
-
-**Channel Metadata**
-Unique: #enrobie
-Topic: Test topic
-Users: robert, sirrah, treb0r
-
-**Channel Recents**
-These are the most recent messages from the current channel or direct message. When client family is IRC or Mattermost, you do not see your messages below.
-[2025-07-29T02:51:03+0000] <nick> Hello ircbot
-[2025-07-29T02:51:03+0000] <hubert> ircbot
-[2025-07-29T02:51:03+0000] <hubert> ircbot
-
-**Question**
-ircbot'
-  sleep: 0
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:08.257555+0000
-  client: 'dscbot'
-  method: 'post'
-  path: 'channels/privid/messages'
-  params: None
-  json: dict
-    content: 'I'm sorry hubert, I'm afraid I can't do that.'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  system: 'You are Bender from Futurama.'
-  prompt: '**Instructions**
-Your nickname is ircbot. Keep it short and use colors.
-
-**Responding**
-There are reasons not to respond to the user question. If you think you should not respond, reply only no_response.
-Reasons to reply with only no_response include:
- - If you believe that you are being abused by the user asking the quesiton.
-
-**Message Metadata**
-Client family: irc
-Message kind: privmsg
-Message time: 2025-07-29T02:51:03.899499+0000
-
-**User Metadata**
-User nickname: hubert
-User serverID: hubert
-Robie username: hubert
-First name: Hubert
-Last name: Farnsworth
-Description: Chief Executive Officer of Planet Express.
-
-**Additional Metadata**
-Your nickname: ircbot
-Your serverID: ircbot
-
-**Question**
-ircbot'
-  sleep: 0
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:08.372060+0000
-  client: 'ircbot'
-  event: 'PRIVMSG #enrobie :I'm sorry hubert, I'm afraid I can't do that.'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:08.475669+0000
-  client: 'ircbot'
-  event: 'PRIVMSG hubert :I'm sorry hubert, I'm afraid I can't do that.'
-
-┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-___________________________ test_MTMClient_channels ____________________________
-[gw3] linux -- Python 3.12.11 /home/runner/work/enrobie/enrobie/main/.venv-package/bin/python3
-
-tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-0/popen-gw3/test_MTMClient_channels0')
-client_mtmsock = <function client_mtmsock.<locals>._fixture at 0x7f11f45da8e0>
-respx_mock = <respx.router.MockRouter object at 0x7f12111dec90>
-
-    def test_MTMClient_channels(
-        tmp_path: Path,
-        client_mtmsock: MTMClientSocket,
-        respx_mock: MockRouter,
-    ) -> None:
-        """
-        Perform various tests associated with relevant routines.
-    
-        :param tmp_path: pytest object for temporal filesystem.
-        :param client_mtmsock: Object to mock client connection.
-        :param respx_mock: Object for mocking request operation.
-        """
-    
-        robie = robie_factory(
-            config_factory(tmp_path))
-    
-        service = (
-            service_factory(robie))
-    
-    
-        childs = robie.childs
-        clients = childs.clients
-    
-        client = clients['mtmbot']
-    
-        assert isinstance(
-            client, MTMClient)
-    
-    
-        mocked = dumps([
-            {'header': 'Testing',
-             'id': 'enrobie',
-             'name': 'enrobie'}])
-    
-        (respx_mock
-         .get(
-             'https://mocked:443'
-             '/api/v4/users/mtmunq/'
-             'teams/mocked/channels')
-         .mock(Response(
-             status_code=200,
-             content=mocked)))
-    
-    
-        client_mtmsock(MTMEVENTS)
-    
-    
-        service.limit(
-            clients=['mtmbot'],
-            plugins=['status'])
-    
-        service.start()
-    
-    
-        thread = Thread(
-            target=service.operate)
-    
-        thread.start()
-    
-    
-        block_sleep(5)
-    
-    
-        select = (
-            client.channels
-            .select('enrobie'))
-    
->       assert select is not None
-E       assert None is not None
-
-enrobie/clients/mattermost/test/test_client.py:373: AssertionError
------------------------------ Captured stdout call -----------------------------
-
-┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  time: 2025-07-29T02:51:48.219876+0000
-  client: 'mtmbot'
-  method: 'post'
-  path: 'posts'
-  params: None
-  json: dict
-    channel_id: 'mocked'
-    message: ':speech_balloon: Mattermost/`mtmbot`: :hourglass: `pending` for `0s`'
 
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -4106,20 +2646,20 @@ enrobie/clients/discord/test/test_message.py        100      0   100%
 enrobie/clients/irc/__init__.py                       3      0   100%
 enrobie/clients/irc/client.py                       189      0   100%
 enrobie/clients/irc/command.py                       13      0   100%
-enrobie/clients/irc/message.py                       60      1    98%
+enrobie/clients/irc/message.py                       60      0   100%
 enrobie/clients/irc/params.py                        12      0   100%
 enrobie/clients/irc/states.py                         7      0   100%
 enrobie/clients/irc/test/__init__.py                  8      0   100%
 enrobie/clients/irc/test/test_client.py              84      0   100%
 enrobie/clients/irc/test/test_command.py             21      0   100%
-enrobie/clients/irc/test/test_message.py             99      7    93%
+enrobie/clients/irc/test/test_message.py             99      0   100%
 enrobie/clients/mattermost/__init__.py                3      0   100%
-enrobie/clients/mattermost/client.py                173      8    95%
+enrobie/clients/mattermost/client.py                173      0   100%
 enrobie/clients/mattermost/command.py                22      0   100%
 enrobie/clients/mattermost/message.py                51      0   100%
 enrobie/clients/mattermost/params.py                 12      0   100%
 enrobie/clients/mattermost/test/__init__.py           8      0   100%
-enrobie/clients/mattermost/test/test_client.py      100      6    94%
+enrobie/clients/mattermost/test/test_client.py      100      0   100%
 enrobie/clients/mattermost/test/test_command.py      24      0   100%
 enrobie/clients/mattermost/test/test_message.py     103      0   100%
 enrobie/conftest.py                                  35      0   100%
@@ -4151,12 +2691,12 @@ enrobie/plugins/ainswer/test/test_question.py        60      0   100%
 enrobie/plugins/ainswer/toolset.py                   34      3    91%
 enrobie/plugins/autojoin/__init__.py                  3      0   100%
 enrobie/plugins/autojoin/params.py                   15      0   100%
-enrobie/plugins/autojoin/plugin.py                  129     48    63%
+enrobie/plugins/autojoin/plugin.py                  129      0   100%
 enrobie/plugins/autojoin/test/__init__.py             0      0   100%
 enrobie/plugins/autojoin/test/test_plugin.py         43      0   100%
 enrobie/plugins/autonick/__init__.py                  3      0   100%
 enrobie/plugins/autonick/params.py                   17      0   100%
-enrobie/plugins/autonick/plugin.py                  132     50    62%
+enrobie/plugins/autonick/plugin.py                  132      0   100%
 enrobie/plugins/autonick/test/__init__.py             0      0   100%
 enrobie/plugins/autonick/test/test_plugin.py         43      0   100%
 enrobie/plugins/enhomie/__init__.py                   3      0   100%
@@ -4262,797 +2802,8 @@ enrobie/utils/test/test_states.py                    53      0   100%
 enrobie/utils/test/test_thread.py                    18      0   100%
 enrobie/utils/thread.py                              14      0   100%
 ---------------------------------------------------------------------
-TOTAL                                              6658    277    96%
+TOTAL                                              6658    157    98%
 =========================== short test summary info ============================
 FAILED enrobie/plugins/ainswer/test/test_plugin.py::test_AinswerPlugin_cover - assert 0 >= 1
  +  where 0 = len([])
-FAILED enrobie/clients/irc/test/test_message.py::test_IRCMessage_samples - assert '[]' == '[\n  {\n    ...    }\n  }\n]'
-  
-  + []
-  - [
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "mocked",
-  -       "command": "001",
-  -       "params": "ircbot :Welcome to network",
-  -       "original": ":mocked 001 ircbot :Welcome to network",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "mocked",
-  -       "command": "376",
-  -       "params": "ircbot :End of /MOTD command.",
-  -       "original": ":mocked 376 ircbot :End of /MOTD command.",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "mocked",
-  -       "command": "376",
-  -       "params": "ircbot :End of /MOTD command.",
-  -       "original": ":mocked 376 ircbot :End of /MOTD command.",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "mocked",
-  -       "command": "376",
-  -       "params": "ircbot :End of /MOTD command.",
-  -       "original": ":mocked 376 ircbot :End of /MOTD command.",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "privmsg",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": true,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": [
-  -       "nick",
-  -       "nick"
-  -     ],
-  -     "anchor": "nick",
-  -     "message": "Hello ircbot",
-  -     "event": {
-  -       "prefix": "nick!user@host",
-  -       "command": "PRIVMSG",
-  -       "params": "ircbot :Hello ircbot",
-  -       "original": ":nick!user@host PRIVMSG ircbot :Hello ircbot",
-  -       "kind": "privmsg",
-  -       "isme": false,
-  -       "hasme": true,
-  -       "whome": "ircbot",
-  -       "author": "nick",
-  -       "recipient": "ircbot",
-  -       "message": "Hello ircbot"
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "chanmsg",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": [
-  -       "nick",
-  -       "nick"
-  -     ],
-  -     "anchor": "#",
-  -     "message": "Hello world",
-  -     "event": {
-  -       "prefix": "nick!user@host",
-  -       "command": "PRIVMSG",
-  -       "params": "# :Hello world",
-  -       "original": ":nick!user@host PRIVMSG # :Hello world",
-  -       "kind": "chanmsg",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": "nick",
-  -       "recipient": "#",
-  -       "message": "Hello world"
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "chanmsg",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": [
-  -       "nick",
-  -       "nick"
-  -     ],
-  -     "anchor": "#funchat",
-  -     "message": "Hello world",
-  -     "event": {
-  -       "prefix": "nick!user@host",
-  -       "command": "PRIVMSG",
-  -       "params": "#funchat :Hello world",
-  -       "original": ":nick!user@host PRIVMSG #funchat :Hello world",
-  -       "kind": "chanmsg",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": "nick",
-  -       "recipient": "#funchat",
-  -       "message": "Hello world"
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "botirc",
-  -       "botirc"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "ircbot!user@host",
-  -       "command": "NICK",
-  -       "params": ":botirc",
-  -       "original": ":ircbot!user@host NICK :botirc",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "botirc",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "chanmsg",
-  -     "person": null,
-  -     "isme": true,
-  -     "hasme": false,
-  -     "whome": [
-  -       "botirc",
-  -       "botirc"
-  -     ],
-  -     "author": [
-  -       "botirc",
-  -       "botirc"
-  -     ],
-  -     "anchor": "#",
-  -     "message": "Hello nick",
-  -     "event": {
-  -       "prefix": "botirc!user@host",
-  -       "command": "PRIVMSG",
-  -       "params": "# :Hello nick",
-  -       "original": ":botirc!user@host PRIVMSG # :Hello nick",
-  -       "kind": "chanmsg",
-  -       "isme": true,
-  -       "hasme": false,
-  -       "whome": "botirc",
-  -       "author": "botirc",
-  -       "recipient": "#",
-  -       "message": "Hello nick"
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "botirc!user@host",
-  -       "command": "NICK",
-  -       "params": ":ircbot",
-  -       "original": ":botirc!user@host NICK :ircbot",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": true,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "ircbot",
-  -       "command": "JOIN",
-  -       "params": ":#enrobie",
-  -       "original": ":ircbot JOIN :#enrobie",
-  -       "kind": "event",
-  -       "isme": true,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "mocked",
-  -       "command": "353",
-  -       "params": "ircbot = #enrobie :ircbot robert trebor sirrah",
-  -       "original": ":mocked 353 ircbot = #enrobie :ircbot robert trebor sirrah",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "mocked",
-  -       "command": "332",
-  -       "params": "ircbot #enrobie :Test topic already set",
-  -       "original": ":mocked 332 ircbot #enrobie :Test topic already set",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "nick!user@host",
-  -       "command": "TOPIC",
-  -       "params": "#enrobie :Test topic is changed",
-  -       "original": ":nick!user@host TOPIC #enrobie :Test topic is changed",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "nick!user@host",
-  -       "command": "KICK",
-  -       "params": "#enrobie ircbot :foo",
-  -       "original": ":nick!user@host KICK #enrobie ircbot :foo",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": true,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "ircbot",
-  -       "command": "JOIN",
-  -       "params": ":#enrobie",
-  -       "original": ":ircbot JOIN :#enrobie",
-  -       "kind": "event",
-  -       "isme": true,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "mocked",
-  -       "command": "353",
-  -       "params": "ircbot = #enrobie :ircbot robert trebor sirrah",
-  -       "original": ":mocked 353 ircbot = #enrobie :ircbot robert trebor sirrah",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "mocked",
-  -       "command": "332",
-  -       "params": "ircbot #enrobie :Test topic is changed",
-  -       "original": ":mocked 332 ircbot #enrobie :Test topic is changed",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "chanmsg",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": true,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": [
-  -       "nick",
-  -       "nick"
-  -     ],
-  -     "anchor": "#enrobie",
-  -     "message": "Hello ircbot",
-  -     "event": {
-  -       "prefix": "nick!user@host",
-  -       "command": "PRIVMSG",
-  -       "params": "#enrobie :Hello ircbot",
-  -       "original": ":nick!user@host PRIVMSG #enrobie :Hello ircbot",
-  -       "kind": "chanmsg",
-  -       "isme": false,
-  -       "hasme": true,
-  -       "whome": "ircbot",
-  -       "author": "nick",
-  -       "recipient": "#enrobie",
-  -       "message": "Hello ircbot"
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "privmsg",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": true,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": [
-  -       "nick",
-  -       "nick"
-  -     ],
-  -     "anchor": "nick",
-  -     "message": "Hello ircbot",
-  -     "event": {
-  -       "prefix": "nick!user@host",
-  -       "command": "PRIVMSG",
-  -       "params": "ircbot :Hello ircbot",
-  -       "original": ":nick!user@host PRIVMSG ircbot :Hello ircbot",
-  -       "kind": "privmsg",
-  -       "isme": false,
-  -       "hasme": true,
-  -       "whome": "ircbot",
-  -       "author": "nick",
-  -       "recipient": "ircbot",
-  -       "message": "Hello ircbot"
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "chanmsg",
-  -     "person": "hubert",
-  -     "isme": false,
-  -     "hasme": true,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": [
-  -       "hubert",
-  -       "hubert"
-  -     ],
-  -     "anchor": "#enrobie",
-  -     "message": "ircbot",
-  -     "event": {
-  -       "prefix": "hubert!hubert@science.com",
-  -       "command": "PRIVMSG",
-  -       "params": "#enrobie :ircbot",
-  -       "original": ":hubert!hubert@science.com PRIVMSG #enrobie :ircbot",
-  -       "kind": "chanmsg",
-  -       "isme": false,
-  -       "hasme": true,
-  -       "whome": "ircbot",
-  -       "author": "hubert",
-  -       "recipient": "#enrobie",
-  -       "message": "ircbot"
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "chanmsg",
-  -     "person": "hubert",
-  -     "isme": false,
-  -     "hasme": true,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": [
-  -       "hubert",
-  -       "hubert"
-  -     ],
-  -     "anchor": "#enrobie",
-  -     "message": "ircbot",
-  -     "event": {
-  -       "prefix": "hubert!hubert@science.com",
-  -       "command": "PRIVMSG",
-  -       "params": "#enrobie :ircbot",
-  -       "original": ":hubert!hubert@science.com PRIVMSG #enrobie :ircbot",
-  -       "kind": "chanmsg",
-  -       "isme": false,
-  -       "hasme": true,
-  -       "whome": "ircbot",
-  -       "author": "hubert",
-  -       "recipient": "#enrobie",
-  -       "message": "ircbot"
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "privmsg",
-  -     "person": "hubert",
-  -     "isme": false,
-  -     "hasme": true,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": [
-  -       "hubert",
-  -       "hubert"
-  -     ],
-  -     "anchor": "hubert",
-  -     "message": "ircbot",
-  -     "event": {
-  -       "prefix": "hubert!hubert@science.com",
-  -       "command": "PRIVMSG",
-  -       "params": "ircbot :ircbot",
-  -       "original": ":hubert!hubert@science.com PRIVMSG ircbot :ircbot",
-  -       "kind": "privmsg",
-  -       "isme": false,
-  -       "hasme": true,
-  -       "whome": "ircbot",
-  -       "author": "hubert",
-  -       "recipient": "ircbot",
-  -       "message": "ircbot"
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "nick!user@host",
-  -       "command": "TOPIC",
-  -       "params": "#enrobie :Test topic",
-  -       "original": ":nick!user@host TOPIC #enrobie :Test topic",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "trebor!user@host",
-  -       "command": "NICK",
-  -       "params": "treb0r",
-  -       "original": ":trebor!user@host NICK treb0r",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": false,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "nick!user@host",
-  -       "command": "NICK",
-  -       "params": "n1ck",
-  -       "original": ":nick!user@host NICK n1ck",
-  -       "kind": "event",
-  -       "isme": false,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   },
-  -   {
-  -     "client": "ircbot",
-  -     "family": "irc",
-  -     "kind": "event",
-  -     "person": null,
-  -     "isme": true,
-  -     "hasme": false,
-  -     "whome": [
-  -       "ircbot",
-  -       "ircbot"
-  -     ],
-  -     "author": null,
-  -     "anchor": null,
-  -     "message": null,
-  -     "event": {
-  -       "prefix": "ircbot",
-  -       "command": "PART",
-  -       "params": ":#enrobie",
-  -       "original": ":ircbot PART :#enrobie",
-  -       "kind": "event",
-  -       "isme": true,
-  -       "hasme": false,
-  -       "whome": "ircbot",
-  -       "author": null,
-  -       "recipient": null,
-  -       "message": null
-  -     }
-  -   }
-  - ]
-FAILED enrobie/clients/mattermost/test/test_client.py::test_MTMClient_channels - assert None is not None
-============= 3 failed, 93 passed, 2 warnings in 88.92s (0:01:28) ==============
+============= 1 failed, 95 passed, 2 warnings in 97.91s (0:01:37) ==============
