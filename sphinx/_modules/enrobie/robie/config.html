@@ -453,7 +453,7 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__params</span> <span class="o">=</span> <span class="n">params</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__params</span>
+        <span class="k">return</span> <span class="n">params</span>
 
 
 <div class="viewcode-block" id="RobieConfig.merge_params">
@@ -582,7 +582,7 @@
     <span class="nd">@__params</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">__params</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">value</span><span class="p">:</span> <span class="n">Params</span><span class="p">,</span>
+        <span class="n">value</span><span class="p">:</span> <span class="n">Params</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update the value for the attribute from class instance.</span>

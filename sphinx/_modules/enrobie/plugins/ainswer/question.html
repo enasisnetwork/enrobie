@@ -384,12 +384,11 @@
         <span class="n">recents</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__recents</span><span class="p">(</span><span class="n">mitem</span><span class="p">)</span>
 
         <span class="n">returned</span> <span class="o">=</span> <span class="n">SEMPTY</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
-            <span class="s1">&#39;**Instructions**</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
-            <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="se">\n\n</span><span class="s1">&#39;</span>
-             <span class="k">if</span> <span class="n">prompt</span>
-             <span class="k">else</span> <span class="n">SEMPTY</span><span class="p">),</span>
             <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">history</span><span class="si">}</span><span class="se">\n\n</span><span class="s1">&#39;</span>
              <span class="k">if</span> <span class="n">history</span>
+             <span class="k">else</span> <span class="n">SEMPTY</span><span class="p">),</span>
+            <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">memory</span><span class="si">}</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+             <span class="k">if</span> <span class="n">memory</span>
              <span class="k">else</span> <span class="n">SEMPTY</span><span class="p">),</span>
             <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ignored</span><span class="si">}</span><span class="se">\n\n</span><span class="s1">&#39;</span>
              <span class="k">if</span> <span class="n">ignored</span>
@@ -403,8 +402,9 @@
             <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">recents</span><span class="si">}</span><span class="se">\n\n</span><span class="s1">&#39;</span>
              <span class="k">if</span> <span class="n">recents</span>
              <span class="k">else</span> <span class="n">SEMPTY</span><span class="p">),</span>
-            <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">memory</span><span class="si">}</span><span class="se">\n\n</span><span class="s1">&#39;</span>
-             <span class="k">if</span> <span class="n">memory</span>
+            <span class="p">((</span><span class="s1">&#39;**Instructions**</span><span class="se">\n</span><span class="s1">&#39;</span>
+              <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+             <span class="k">if</span> <span class="n">prompt</span>
              <span class="k">else</span> <span class="n">SEMPTY</span><span class="p">),</span>
             <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">header</span><span class="si">}</span><span class="se">\n\n</span><span class="s1">&#39;</span>
              <span class="k">if</span> <span class="n">header</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
@@ -780,7 +780,7 @@
             <span class="n">output_type</span><span class="o">=</span><span class="n">respond</span><span class="p">,</span>
             <span class="n">deps</span><span class="o">=</span><span class="n">depends</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">runsync</span><span class="o">.</span><span class="n">data</span></div>
+        <span class="k">return</span> <span class="n">runsync</span><span class="o">.</span><span class="n">output</span></div>
 </div>
 
 </pre></div>
