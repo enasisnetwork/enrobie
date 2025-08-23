@@ -1,6 +1,6 @@
 # Enasis Network Chatting Robie
 
-> :warning: This project has not released its first major version.
+> This project has not released its first major version.
 
 Barebones service for connecting to multiple upstream chat networks.
 
@@ -28,32 +28,6 @@ pip install enrobie
 Installing latest from GitHub repository
 ```
 pip install git+https://github.com/enasisnetwork/enrobie
-```
-
-## Quick start for local development
-Start by cloning the repository to your local machine.
-```
-git clone https://github.com/enasisnetwork/enrobie.git
-```
-Set up the Python virtual environments expected by the Makefile.
-```
-make -s venv-create
-```
-
-### Execute the linters and tests
-The comprehensive approach is to use the `check` recipe. This will stop on
-any failure that is encountered.
-```
-make -s check
-```
-However you can run the linters in a non-blocking mode.
-```
-make -s linters-pass
-```
-And finally run the various tests to validate the code and produce coverage
-information found in the `htmlcov` folder in the root of the project.
-```
-make -s pytest
 ```
 
 ## Running the service
@@ -86,10 +60,38 @@ is an example of what you might run from that project to deploy this one.
 However there is a bit to consider here as this requires some configuration.
 ```
 make -s \
-  limit=all \
-  orche_files=../../Persistent/orchestro-prod.yml \
+  stage=prod limit=all \
   ansible_args=" --diff" \
   enrobie-install
+```
+Or you may use the Ansible collection directly!
+[GitHub](https://github.com/enasisnetwork/ansible-projects),
+[Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/projects)
+
+## Quick start for local development
+Start by cloning the repository to your local machine.
+```
+git clone https://github.com/enasisnetwork/enrobie.git
+```
+Set up the Python virtual environments expected by the Makefile.
+```
+make -s venv-create
+```
+
+### Execute the linters and tests
+The comprehensive approach is to use the `check` recipe. This will stop on
+any failure that is encountered.
+```
+make -s check
+```
+However you can run the linters in a non-blocking mode.
+```
+make -s linters-pass
+```
+And finally run the various tests to validate the code and produce coverage
+information found in the `htmlcov` folder in the root of the project.
+```
+make -s pytest
 ```
 
 ## Version management
