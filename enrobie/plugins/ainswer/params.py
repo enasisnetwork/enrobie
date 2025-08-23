@@ -30,7 +30,7 @@ _DEFAULT_PROMPT = (
 _DEFAULT_IGNORE = [
     ('If you believe that you'
      ' are being abused by the'
-     ' user asking the quesiton.')]
+     ' user asking the question.')]
 
 _DSC_PROMPT = (
     'In 1875 characters or less,'

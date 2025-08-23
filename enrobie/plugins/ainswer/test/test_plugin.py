@@ -21,6 +21,8 @@ from enconnect.fixtures import MTMClientSocket
 
 from pydantic_ai.models.test import TestModel
 
+from pytest import MonkeyPatch
+
 from ..plugin import AinswerPlugin
 from ....clients.discord.test import DSCEVENTS
 from ....clients.irc.test import IRCEVENTS
@@ -111,6 +113,7 @@ def test_AinswerPlugin_cover(
     client_dscsock: DSCClientSocket,
     client_ircsock: IRCClientSocket,
     client_mtmsock: MTMClientSocket,
+    monkeypatch: MonkeyPatch,
 ) -> None:
     """
     Perform various tests associated with relevant routines.
@@ -119,6 +122,7 @@ def test_AinswerPlugin_cover(
     :param client_dscsock: Object to mock client connection.
     :param client_ircsock: Object to mock client connection.
     :param client_mtmsock: Object to mock client connection.
+    :param monkeypatch: Object to patch isntances for tests.
     """
 
     robie = service.robie
@@ -142,52 +146,50 @@ def test_AinswerPlugin_cover(
 
     testing = TestModel()
 
-    override_agent = (
-        plugin.agent
-        .override(
-            model=testing))
-
-    with override_agent:
+    monkeypatch.setattr(
+        plugin.agent,
+        name='model',
+        value=testing)
 
 
-        service.limit(
-            plugins=[
-                'ainswer',
-                'logger',
-                'status'])
+    service.limit(
+        plugins=[
+            'ainswer',
+            'logger',
+            'status'])
 
-        service.start()
-
-
-        thread = Thread(
-            target=service.operate)
-
-        thread.start()
+    service.start()
 
 
-        block_sleep(5)
+    thread = Thread(
+        target=service.operate)
+
+    thread.start()
 
 
-        select = (
-            clients['ircbot']
-            .channels
-            .select('#enrobie'))
-
-        assert select is not None
-
-        records = (
-            history.search(
-                client='ircbot',
-                anchor='#enrobie'))
-
-        assert len(records) >= 1
+    block_sleep(5)
 
 
-        service.soft()
+    select = (
+        clients['ircbot']
+        .channels
+        .select('#enrobie'))
 
-        while service.running:
-            block_sleep(1)
+    assert select is not None
 
-        service.stop()
+    records = (
+        history.search(
+            client='ircbot',
+            anchor='#enrobie'))
 
-        thread.join()
+    assert len(records) >= 1
+
+
+    service.soft()
+
+    while service.running:
+        block_sleep(1)
+
+    service.stop()
+
+    thread.join()

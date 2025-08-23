@@ -60,7 +60,8 @@ def test_AinswerQuestion_engage(
     question = plugin.question
 
 
-    testing = TestModel()
+    testing = TestModel(
+        call_tools=[])
 
     override_agent = (
         plugin.agent

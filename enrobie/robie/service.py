@@ -19,8 +19,8 @@ from .members import RobieClients
 from .members import RobiePlugins
 
 if TYPE_CHECKING:
-    from .robie import Robie
     from .params import RobieServiceParams
+    from .robie import Robie
 
 
 

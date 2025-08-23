@@ -28,10 +28,10 @@ from .models import RobieModels
 from ..utils import importer
 
 if TYPE_CHECKING:
+    from .childs import RobiePerson
     from .common import RobiePrint
     from .config import RobieConfig
     from .params import RobieParams
-    from .childs import RobiePerson
 
 
 

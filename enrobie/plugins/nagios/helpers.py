@@ -10,8 +10,8 @@ is permitted, for more information consult the project license file.
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from ...robie.models import RobieMessage
     from .plugin import NagiosPlugin
+    from ...robie.models import RobieMessage
 
 
 

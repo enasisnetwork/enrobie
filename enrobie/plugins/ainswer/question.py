@@ -107,12 +107,11 @@ class AinswerQuestion:
         recents = self.__recents(mitem)
 
         returned = SEMPTY.join([
-            '**Instructions**\n',
-            (f'{prompt}\n\n'
-             if prompt
-             else SEMPTY),
             (f'{history}\n\n'
              if history
+             else SEMPTY),
+            (f'{memory}\n\n'
+             if memory
              else SEMPTY),
             (f'{ignored}\n\n'
              if ignored
@@ -126,8 +125,9 @@ class AinswerQuestion:
             (f'{recents}\n\n'
              if recents
              else SEMPTY),
-            (f'{memory}\n\n'
-             if memory
+            (('**Instructions**\n'
+              f'{prompt}\n\n')
+             if prompt
              else SEMPTY),
             (f'{header}\n\n'
              if header is not None
@@ -500,4 +500,4 @@ class AinswerQuestion:
             output_type=respond,
             deps=depends)
 
-        return runsync.data
+        return runsync.output
