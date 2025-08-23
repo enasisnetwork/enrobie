@@ -14,13 +14,13 @@ if TYPE_CHECKING:
     from ..addons import RobieQueueItem
     from ..models import RobieCommand
     from ..models import RobieMessage
-    from ..params import RobieParams
-    from ..params import RobiePrinterParams
-    from ..params import RobieServiceParams
     from ..params import RobieChildParams
     from ..params import RobieClientParams
+    from ..params import RobieParams
     from ..params import RobiePersonParams
     from ..params import RobiePluginParams
+    from ..params import RobiePrinterParams
+    from ..params import RobieServiceParams
 
 
 
