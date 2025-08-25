@@ -129,7 +129,8 @@ def makefile(
         r'\s+\@##\s([^\n]+)?\n')
 
     matches = re_findall(
-        pattern, contents, MULTILINE)
+        pattern, contents,
+        MULTILINE)
 
     if len(matches) == 0:
         return
