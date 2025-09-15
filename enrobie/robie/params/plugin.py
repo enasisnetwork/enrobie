@@ -52,4 +52,5 @@ class RobiePluginParams(RobieChildParams, extra='forbid'):
         Initialize instance for class using provided parameters.
         """
 
-        super().__init__(**data)
+        super().__init__(
+            _parse, **data)
