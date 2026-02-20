@@ -36,16 +36,16 @@ STYLES = (
     """
     :root {
 
-      --background: 0, 0, 0;             /* 000000 */
-      --foreground: 250, 250, 250;       /* fafafa */
+      --background: 9, 9, 9;             /* 090909 */
+      --foreground: 249, 249, 249;       /* f9f9f9 */
 
-      --color-gray: 136, 136, 136;       /* 888888 */
+      --color-gray: 139, 139, 139;       /* 8b8b8b */
       --color-red: 255, 102, 102;        /* ff6666 */
       --color-yellow: 255, 255, 102;     /* ffff66 */
       --color-green: 102, 255, 102;      /* 66ff66 */
       --color-pink: 255, 0, 204;         /* ff00cc */
       --color-teal: 102, 255, 255;       /* 66ffff */
-      --color-blue: 8, 155, 216; }       /* 089bd8 */
+      --color-blue: 102, 204, 255; }     /* 66ccff */
 
 
     * {
