@@ -7,6 +7,7 @@ is permitted, for more information consult the project license file.
 
 
 
+import asyncio
 from json import dumps
 from typing import Optional
 from typing import TYPE_CHECKING
@@ -485,19 +486,29 @@ class AinswerQuestion:
         :returns: Response adhering to provided specifications.
         """
 
-        plugin = self.__plugin
 
-        agent = plugin.agent
-        request = agent.run_sync
-        model = AinswerDepends
+        async def _run(
+        ) -> AinswerResponse:
 
-        depends = model(
-            plugin=plugin,
-            mitem=mitem)
+            plugin = self.__plugin
+            agent = plugin.agent
+            model = AinswerDepends
+            request = agent.run_stream
 
-        runsync = request(
-            user_prompt=prompt,
-            output_type=respond,
-            deps=depends)
+            depends = model(
+                plugin=plugin,
+                mitem=mitem)
 
-        return runsync.output
+            stream = request(
+                user_prompt=prompt,
+                output_type=respond,
+                deps=depends)
+
+            async with stream as result:
+                await asyncio.sleep(0)
+
+            return await (
+                result.get_output())
+
+
+        return asyncio.run(_run())

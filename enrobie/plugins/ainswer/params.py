@@ -56,7 +56,7 @@ class AinswerPluginAinswerParams(RobieParamsModel, extra='forbid'):
     """
 
     origin: Annotated[
-        Literal['anthropic', 'openai'],
+        Literal['anthropic', 'openai', 'ollama'],
         Field(...,
               description='Which platform hosts the model')]
 
@@ -66,10 +66,16 @@ class AinswerPluginAinswerParams(RobieParamsModel, extra='forbid'):
               description='Platform model that will be used',
               min_length=1)]
 
+    baseurl: Annotated[
+        Optional[str],
+        Field(None,
+              description='URL for connecting to platform',
+              min_length=1)]
+
     secret: Annotated[
-        str,
-        Field(...,
-              description='Model in platform that is used',
+        Optional[str],
+        Field(None,
+              description='Secret for platform authorization',
               min_length=1)]
 
     timeout: Annotated[

@@ -230,6 +230,9 @@ class AinswerPlugin(RobiePlugin):
         elif origin == 'openai':
             model = models.openai
 
+        elif origin == 'ollama':
+            model = models.ollama
+
         assert model is not None, (
             'Model not instantiated')
 
@@ -245,7 +248,8 @@ class AinswerPlugin(RobiePlugin):
             system_prompt=system,
             model_settings=settings,
             deps_type=AinswerDepends,
-            tools=toolset)
+            tools=toolset,
+            retries=2)
 
         return self.__agent
 
