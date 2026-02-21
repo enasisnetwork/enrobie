@@ -46,7 +46,7 @@
     <link rel="search" title="Search" href="../../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.14.8" />
+  <meta name="docsearch:version" content="0.14.9" />
   </head>
   
   
@@ -280,6 +280,7 @@
 
 
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">json</span><span class="w"> </span><span class="kn">import</span> <span class="n">dumps</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
@@ -765,22 +766,32 @@
 <span class="sd">        :returns: Response adhering to provided specifications.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span>
 
-        <span class="n">agent</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">agent</span>
-        <span class="n">request</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run_sync</span>
-        <span class="n">model</span> <span class="o">=</span> <span class="n">AinswerDepends</span>
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_run</span><span class="p">(</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AinswerResponse</span><span class="p">:</span>
 
-        <span class="n">depends</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
-            <span class="n">plugin</span><span class="o">=</span><span class="n">plugin</span><span class="p">,</span>
-            <span class="n">mitem</span><span class="o">=</span><span class="n">mitem</span><span class="p">)</span>
+            <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span>
+            <span class="n">agent</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">agent</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">AinswerDepends</span>
+            <span class="n">request</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run_stream</span>
 
-        <span class="n">runsync</span> <span class="o">=</span> <span class="n">request</span><span class="p">(</span>
-            <span class="n">user_prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">,</span>
-            <span class="n">output_type</span><span class="o">=</span><span class="n">respond</span><span class="p">,</span>
-            <span class="n">deps</span><span class="o">=</span><span class="n">depends</span><span class="p">)</span>
+            <span class="n">depends</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
+                <span class="n">plugin</span><span class="o">=</span><span class="n">plugin</span><span class="p">,</span>
+                <span class="n">mitem</span><span class="o">=</span><span class="n">mitem</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">runsync</span><span class="o">.</span><span class="n">output</span></div>
+            <span class="n">stream</span> <span class="o">=</span> <span class="n">request</span><span class="p">(</span>
+                <span class="n">user_prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">,</span>
+                <span class="n">output_type</span><span class="o">=</span><span class="n">respond</span><span class="p">,</span>
+                <span class="n">deps</span><span class="o">=</span><span class="n">depends</span><span class="p">)</span>
+
+            <span class="k">async</span> <span class="k">with</span> <span class="n">stream</span> <span class="k">as</span> <span class="n">result</span><span class="p">:</span>
+                <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="k">await</span> <span class="p">(</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">get_output</span><span class="p">())</span>
+
+
+        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">_run</span><span class="p">())</span></div>
 </div>
 
 </pre></div>

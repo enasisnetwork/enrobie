@@ -46,7 +46,7 @@
     <link rel="search" title="Search" href="../../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.14.8" />
+  <meta name="docsearch:version" content="0.14.9" />
   </head>
   
   
@@ -283,10 +283,12 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Type</span>
 
+<span class="kn">from</span><span class="w"> </span><span class="nn">httpx</span><span class="w"> </span><span class="kn">import</span> <span class="n">AsyncClient</span>
+
 <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_ai</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_ai.models.anthropic</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnthropicModel</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_ai.models.openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAIModel</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_ai.models.openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAIChatModel</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_ai.settings</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelSettings</span>
 
     <span class="kn">from</span><span class="w"> </span><span class="nn">.common</span><span class="w"> </span><span class="kn">import</span> <span class="n">AinswerDepends</span>
@@ -378,12 +380,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">openai</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;OpenAIModel&#39;</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;OpenAIChatModel&#39;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the class object that was imported within method.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_ai.models.openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAIModel</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_ai.models.openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAIChatModel</span>
         <span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_ai.providers.openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAIProvider</span>
 
         <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span>
@@ -396,7 +398,45 @@
             <span class="n">OpenAIProvider</span><span class="p">(</span>
                 <span class="n">api_key</span><span class="o">=</span><span class="n">secret</span><span class="p">))</span>
 
-        <span class="k">return</span> <span class="n">OpenAIModel</span><span class="p">(</span>
+        <span class="k">return</span> <span class="n">OpenAIChatModel</span><span class="p">(</span>
+            <span class="n">ainswer</span><span class="o">.</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">provider</span><span class="o">=</span><span class="n">provider</span><span class="p">)</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ollama</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;OpenAIChatModel&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the class object that was imported within method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">AsyncOpenAI</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_ai.models.openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAIChatModel</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_ai.providers.ollama</span><span class="w"> </span><span class="kn">import</span> <span class="n">OllamaProvider</span>
+
+        <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
+        <span class="n">ainswer</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">ainswer</span>
+        <span class="n">baseurl</span> <span class="o">=</span> <span class="n">ainswer</span><span class="o">.</span><span class="n">baseurl</span>
+        <span class="n">secret</span> <span class="o">=</span> <span class="n">ainswer</span><span class="o">.</span><span class="n">secret</span>
+
+        <span class="n">client_async</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">AsyncClient</span><span class="p">(</span>
+                <span class="n">timeout</span><span class="o">=</span><span class="mi">300</span><span class="p">))</span>
+
+        <span class="n">client</span> <span class="o">=</span> <span class="n">AsyncOpenAI</span><span class="p">(</span>
+            <span class="n">base_url</span><span class="o">=</span><span class="n">baseurl</span><span class="p">,</span>
+            <span class="n">api_key</span><span class="o">=</span><span class="n">secret</span><span class="p">,</span>
+            <span class="n">timeout</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+            <span class="n">http_client</span><span class="o">=</span><span class="n">client_async</span><span class="p">)</span>
+
+        <span class="n">provider</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">OllamaProvider</span><span class="p">(</span>
+                <span class="n">openai_client</span><span class="o">=</span><span class="n">client</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">OpenAIChatModel</span><span class="p">(</span>
             <span class="n">ainswer</span><span class="o">.</span><span class="n">model</span><span class="p">,</span>
             <span class="n">provider</span><span class="o">=</span><span class="n">provider</span><span class="p">)</span></div>
 
