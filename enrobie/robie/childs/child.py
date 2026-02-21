@@ -178,5 +178,6 @@ class RobieChild:
 
         return {
             'name': self.name,
+            'enable': self.enable,
             'kind': self.kind,
             'params': dumped}
