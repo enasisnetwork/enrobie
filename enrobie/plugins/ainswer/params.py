@@ -35,20 +35,17 @@ _DEFAULT_IGNORE = [
 _DSC_PROMPT = (
     'In 1875 characters or less,'
     ' answer the user question.'
-    ' Format for Discord.'
     ' Markdown is encouraged.')
 
 _IRC_PROMPT = (
     'In 325 characters or less,'
     ' answer the user question.'
-    ' Format for IRCv2.'
     ' Do not use markdown.'
     ' Do not use colors.')
 
 _MTM_PROMPT = (
     'In 1875 characters or less,'
     ' answer the user question.'
-    ' Format for Mattermost.'
     ' Markdown is encouraged.')
 
 

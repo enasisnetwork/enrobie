@@ -24,6 +24,8 @@ if TYPE_CHECKING:
 class RobieLogger:
     """
     Methods for extending use of underlying logging library.
+
+    :param robie: Primary class instance for Chatting Robie.
     """
 
     __robie: 'Robie'
