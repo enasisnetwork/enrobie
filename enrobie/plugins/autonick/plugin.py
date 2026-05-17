@@ -20,12 +20,12 @@ from encommon.types.strings import SPACED
 
 from .params import AutoNickPluginParams
 from .params import AutoNickPluginServiceParams
-from ..status import StatusPlugin
-from ..status import StatusPluginStates
-from ...robie.childs import RobiePlugin
+from ..status.common import StatusPluginStates
+from ..status.plugin import StatusPlugin
+from ...robie.childs.plugin import RobiePlugin
 
 if TYPE_CHECKING:
-    from ...clients.irc import IRCClient
+    from ...clients.irc.client import IRCClient
     from ...clients.irc.message import IRCMessage
 
 
@@ -185,7 +185,7 @@ class AutoNickPlugin(RobiePlugin):
         Perform the operation related to Robie service threads.
         """
 
-        from ...clients import IRCClient
+        from ...clients.irc.client import IRCClient
 
         assert self.thread
 
@@ -261,7 +261,7 @@ class AutoNickPlugin(RobiePlugin):
         :param mitem: Item containing information for operation.
         """
 
-        from ...clients import IRCClient
+        from ...clients.irc.client import IRCClient
 
         robie = self.robie
         nickserv = self.__nickserv

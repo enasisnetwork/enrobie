@@ -58,7 +58,11 @@ def test_ClientChannels_basics() -> None:
 
     assert select is not None
 
-    assert select.endumped == {
+    dumped = (
+        select
+        .model_dump())
+
+    assert dumped == {
         'members': None,
         'title': None,
         'topic': None,
@@ -79,7 +83,11 @@ def test_ClientChannels_basics() -> None:
 
     assert select is not None
 
-    assert select.endumped == {
+    dumped = (
+        select
+        .model_dump())
+
+    assert dumped == {
         'members': {'mtmbot'},
         'title': 'Test',
         'topic': 'Test',
@@ -116,7 +124,11 @@ def test_ClientChannels_cover() -> None:
 
     assert select is not None
 
-    assert select.endumped == {
+    dumped = (
+        select
+        .model_dump())
+
+    assert dumped == {
         'members': None,
         'title': None,
         'topic': None,
@@ -131,7 +143,11 @@ def test_ClientChannels_cover() -> None:
 
     assert select is not None
 
-    assert select.endumped == {
+    dumped = (
+        select
+        .model_dump())
+
+    assert dumped == {
         'members': None,
         'title': None,
         'topic': None,
@@ -156,7 +172,11 @@ def test_ClientChannels_cover() -> None:
 
     assert select is not None
 
-    assert select.endumped == {
+    dumped = (
+        select
+        .model_dump())
+
+    assert dumped == {
         'members': {'test'},
         'title': None,
         'topic': None,

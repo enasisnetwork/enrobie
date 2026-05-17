@@ -27,10 +27,10 @@ from .models import AinswerModels
 from .params import AinswerPluginParams
 from .question import AinswerQuestion
 from .toolset import AinswerToolset
-from ..status import StatusPlugin
-from ..status import StatusPluginStates
-from ...robie.childs import RobiePlugin
-from ...robie.models import RobieMessage
+from ..status.common import StatusPluginStates
+from ..status.plugin import StatusPlugin
+from ...robie.childs.plugin import RobiePlugin
+from ...robie.models.message import RobieMessage
 
 if TYPE_CHECKING:
     from pydantic_ai import Agent

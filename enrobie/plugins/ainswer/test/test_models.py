@@ -16,7 +16,7 @@ from encommon.types import lattrs
 from ..plugin import AinswerPlugin
 
 if TYPE_CHECKING:
-    from ....robie import RobieService
+    from ....robie.service import RobieService
 
 
 

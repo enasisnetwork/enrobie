@@ -16,7 +16,7 @@ from encommon.types import lattrs
 from ..param import InvalidParam
 
 if TYPE_CHECKING:
-    from ...robie import Robie
+    from ...robie.robie import Robie
 
 
 
@@ -33,6 +33,8 @@ def test_InvalidParam(
     clients = childs.clients
 
     client = clients['ircbot']
+
+    name = client.name
 
 
     raises = InvalidParam(
@@ -69,5 +71,5 @@ def test_InvalidParam(
         'Error (invalid) '
         'param (param) '
         'value (value) child '
-        '(IRCClient/ircbot)'
+        f'(IRCClient/{name})'
         ' (about)')

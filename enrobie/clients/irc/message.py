@@ -16,13 +16,13 @@ from encommon.types import NCNone
 
 from enconnect.irc import ClientEvent
 
-from ...robie.models import RobieMessage
+from ...robie.models.message import RobieMessage
 
 if TYPE_CHECKING:
-    from ...robie import Robie
-    from ...robie.childs import RobieClient
-    from ...robie.models import RobieCommand
-    from ...robie.models import RobieMessageKinds
+    from ...robie.childs.client import RobieClient
+    from ...robie.models.command import RobieCommand
+    from ...robie.models.message import RobieMessageKinds
+    from ...robie.robie import Robie
 
 
 

@@ -9,7 +9,7 @@ is permitted, for more information consult the project license file.
 
 from typing import TYPE_CHECKING
 
-from ...models import RobieModels
+from ...models.robie import RobieModels
 
 if TYPE_CHECKING:
     from ...robie import Robie

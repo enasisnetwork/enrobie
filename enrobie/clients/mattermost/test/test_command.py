@@ -18,7 +18,7 @@ from pytest import raises
 from ..command import MTMCommand
 
 if TYPE_CHECKING:
-    from ....robie import Robie
+    from ....robie.robie import Robie
 
 
 

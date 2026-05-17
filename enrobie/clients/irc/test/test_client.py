@@ -21,13 +21,13 @@ from enconnect.irc.test import EVENTS
 
 from ..client import IRCClient
 from ..command import IRCCommand
-from ....robie.addons import RobieQueue
+from ....robie.addons.queue import RobieQueue
 
 if TYPE_CHECKING:
-    from ....robie import Robie
-    from ....robie import RobieService
-    from ....robie.models import RobieCommand  # noqa: F401
-    from ....robie.models import RobieMessage  # noqa: F401
+    from ....robie.models.command import RobieCommand  # noqa: F401
+    from ....robie.models.message import RobieMessage  # noqa: F401
+    from ....robie.robie import Robie
+    from ....robie.service import RobieService
 
 
 
@@ -317,7 +317,11 @@ def test_IRCClient_channels(
 
     assert select is not None
 
-    assert select.endumped == {
+    dumped = (
+        select
+        .model_dump())
+
+    assert dumped == {
         'members': {
             'robert',
             'sirrah',

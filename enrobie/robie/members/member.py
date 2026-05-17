@@ -12,12 +12,12 @@ from typing import TYPE_CHECKING
 
 from encommon.types import clsname
 
-from ..addons import RobieQueue
-from ..threads import RobieThread  # noqa: F401
+from ..addons.queue import RobieQueue
+from ..threads.thread import RobieThread  # noqa: F401
 
 if TYPE_CHECKING:
-    from ..models import RobieCommand
-    from ..models import RobieMessage
+    from ..models.command import RobieCommand
+    from ..models.message import RobieMessage
     from ..robie import Robie
     from ..service import RobieService
 

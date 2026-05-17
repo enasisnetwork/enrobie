@@ -42,7 +42,7 @@ from ....conftest import robie_factory
 from ....conftest import service_factory
 
 if TYPE_CHECKING:
-    from ....robie import RobieService
+    from ....robie.service import RobieService
 
 
 

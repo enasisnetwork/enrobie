@@ -25,9 +25,9 @@ from .common import AinswerResponse
 
 if TYPE_CHECKING:
     from .plugin import AinswerPlugin
-    from ...robie.childs import RobieClient
-    from ...robie.childs import RobiePerson
-    from ...robie.models import RobieMessage
+    from ...robie.childs.client import RobieClient
+    from ...robie.childs.person import RobiePerson
+    from ...robie.models.message import RobieMessage
 
 
 

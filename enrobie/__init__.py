@@ -8,6 +8,7 @@ is permitted, for more information consult the project license file.
 
 
 from pathlib import Path
+from sys import flags
 
 
 
@@ -20,6 +21,20 @@ VERSION = (
     .read_text(encoding='utf-8')
     .splitlines()[0].strip())
 
+BOILER = (
+    Path(__file__)
+    .read_text(encoding='utf-8')
+    .splitlines()[1:5])
+
 
 
 __version__ = VERSION
+
+
+
+if flags.optimize:  # NOCVR
+
+    raise RuntimeError(
+        'This library must not be'
+        ' run in optimized mode,'
+        ' assertions are required.')

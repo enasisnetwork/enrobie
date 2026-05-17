@@ -12,12 +12,12 @@ from typing import Literal
 from typing import Optional
 from typing import TYPE_CHECKING
 
-from ..addons import RobieQueueItem
+from ..addons.queue import RobieQueueItem
 
 if TYPE_CHECKING:
-    from ..childs import RobieClient
-    from ..childs import RobiePerson
-    from ..models import RobieCommand
+    from ..childs.client import RobieClient
+    from ..childs.person import RobiePerson
+    from ..models.command import RobieCommand
     from ..robie import Robie
 
 

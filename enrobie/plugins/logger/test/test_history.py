@@ -15,10 +15,10 @@ from encommon.types import instr
 from encommon.types import lattrs
 
 from ..plugin import LoggerPlugin
-from ....clients import IRCClient
+from ....clients.irc.client import IRCClient
 
 if TYPE_CHECKING:
-    from ....robie import Robie
+    from ....robie.robie import Robie
 
 
 
@@ -163,7 +163,8 @@ def test_LoggerHistory_cover(
 
 
     record = (
-        records[0].endumped)
+        records[0]
+        .model_dump())
 
     assert record == {
         'anchor': '#enrobie',
@@ -182,7 +183,8 @@ def test_LoggerHistory_cover(
             anchor='nick1'))
 
     record = (
-        records[-1].endumped)
+        records[-1]
+        .model_dump())
 
     assert record == {
         'anchor': 'nick1',

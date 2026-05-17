@@ -23,7 +23,7 @@ from ..plugin import AutoNickPlugin
 from ....clients.irc.test import IRCEVENTS
 
 if TYPE_CHECKING:
-    from ....robie import RobieService
+    from ....robie.service import RobieService
 
 
 

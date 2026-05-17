@@ -15,11 +15,11 @@ from typing import TYPE_CHECKING
 
 from encommon.times import Timer
 
-from .members import RobieClients
-from .members import RobiePlugins
+from .members.clients import RobieClients
+from .members.plugins import RobiePlugins
 
 if TYPE_CHECKING:
-    from .params import RobieServiceParams
+    from .params.service import RobieServiceParams
     from .robie import Robie
 
 

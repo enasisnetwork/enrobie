@@ -20,10 +20,10 @@ from encommon.types import setate
 from encommon.types import sort_dict
 from encommon.utils.common import PATHABLE
 
-from .params import RobieClientParams
-from .params import RobieParams
-from .params import RobiePluginParams
-from ..utils import importer
+from .params.client import RobieClientParams
+from .params.plugin import RobiePluginParams
+from .params.robie import RobieParams
+from ..utils.importer import importer
 
 
 
@@ -80,9 +80,11 @@ class RobieConfig(Config):
 
         if _console is True:
             cargs[key] = 'info'
+            cargs['console'] = True
 
         if _debug is True:
             cargs[key] = 'debug'
+            cargs['debug'] = True
 
 
         if 'config' in sargs:
@@ -108,7 +110,7 @@ class RobieConfig(Config):
             files=files,
             cargs=cargs,
             sargs=sargs,
-            model=RobieParams)
+            valid=RobieParams)
 
         self.merge_params()
 
@@ -170,7 +172,7 @@ class RobieConfig(Config):
             'encrypts': encrypts}
 
         params = (
-            self.model(**basic))
+            self.valid(**basic))
 
         assert isinstance(
             params, RobieParams)
@@ -275,7 +277,7 @@ class RobieConfig(Config):
             merge['plugins'] = fplugins
 
 
-        params = self.model(
+        params = self.valid(
             parse, **merge)
 
         assert isinstance(
@@ -333,7 +335,9 @@ class RobieConfig(Config):
         _clients = params.clients
         _plugins = params.plugins
 
-        config = params.endumped
+        config = (
+            params
+            .model_dump())
 
 
         def _get_clients() -> None:
@@ -347,7 +351,8 @@ class RobieConfig(Config):
             for name, client in items:
 
                 target[name] = (
-                    client.endumped)
+                    client
+                    .model_dump())
 
 
         if _clients is not None:
@@ -365,7 +370,8 @@ class RobieConfig(Config):
             for name, plugin in items:
 
                 target[name] = (
-                    plugin.endumped)
+                    plugin
+                    .model_dump())
 
 
         if _plugins is not None:

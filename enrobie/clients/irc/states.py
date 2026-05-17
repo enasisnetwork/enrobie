@@ -7,8 +7,8 @@ is permitted, for more information consult the project license file.
 
 
 
-from ...utils import ClientChannel
-from ...utils import ClientChannels as _ClientChannels
+from ...utils.states import ClientChannel
+from ...utils.states import ClientChannels as _ClientChannels
 
 
 

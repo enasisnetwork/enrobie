@@ -14,8 +14,8 @@ from typing import Optional
 
 from pydantic import Field
 
-from ..status import StatusPluginIconParams
-from ...robie.params import RobiePluginParams
+from ..status.params import StatusPluginIconParams
+from ...robie.params.plugin import RobiePluginParams
 
 
 

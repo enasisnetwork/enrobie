@@ -15,12 +15,12 @@ from typing import Union
 
 from .child import RobieChild
 from .person import RobiePerson
-from ..models import RobieMessage
-from ..models import RobieModels
+from ..models.message import RobieMessage
+from ..models.robie import RobieModels
 
 if TYPE_CHECKING:
-    from ..params import RobiePluginParams
-    from ..threads import RobiePluginThread
+    from ..params.plugin import RobiePluginParams
+    from ..threads.plugin import RobiePluginThread
 
 
 

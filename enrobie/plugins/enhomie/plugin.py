@@ -17,10 +17,10 @@ from .helpers import composeirc
 from .helpers import composemtm
 from .params import HomiePluginParams
 from .persist import HomiePersist
-from ..ainswer import AinswerTool
-from ..status import StatusPlugin
-from ..status import StatusPluginStates
-from ...robie.childs import RobiePlugin
+from ..ainswer.common import AinswerTool
+from ..status.common import StatusPluginStates
+from ..status.plugin import StatusPlugin
+from ...robie.childs.plugin import RobiePlugin
 
 
 

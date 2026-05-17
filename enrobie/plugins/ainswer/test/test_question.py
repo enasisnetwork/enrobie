@@ -26,9 +26,9 @@ from .test_history import _ainswer_history
 from ..common import AinswerResponse
 from ..history import AinswerHistoryKinds
 from ..plugin import AinswerPlugin
-from ...logger import LoggerPlugin
+from ...logger.plugin import LoggerPlugin
 from ...logger.test.test_history import _logger_history
-from ....clients.irc import IRCClient
+from ....clients.irc.client import IRCClient
 from ....clients.irc.message import IRCMessage
 from ....clients.irc.test import IRCEVENT_HUBERT_CHAN
 from ....clients.irc.test import IRCEVENT_HUBERT_PRIV
@@ -36,7 +36,7 @@ from ....clients.irc.test import IRCEVENT_RANDOM_CHAN
 from ....clients.irc.test import IRCEVENT_RANDOM_PRIV
 
 if TYPE_CHECKING:
-    from ....robie import Robie
+    from ....robie.robie import Robie
 
 
 

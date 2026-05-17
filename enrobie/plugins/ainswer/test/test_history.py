@@ -15,10 +15,10 @@ from encommon.types import instr
 from encommon.types import lattrs
 
 from ..plugin import AinswerPlugin
-from ....clients import IRCClient
+from ....clients.irc.client import IRCClient
 
 if TYPE_CHECKING:
-    from ....robie import Robie
+    from ....robie.robie import Robie
 
 
 
@@ -167,7 +167,8 @@ def test_AinswerHistory_cover(
 
 
     record = (
-        records[0].endumped)
+        records[0]
+        .model_dump())
 
     assert record == {
         'ainswer': '2',
@@ -187,7 +188,8 @@ def test_AinswerHistory_cover(
             anchor='nick1'))
 
     record = (
-        records[-1].endumped)
+        records[-1]
+        .model_dump())
 
     assert record == {
         'ainswer': '4',

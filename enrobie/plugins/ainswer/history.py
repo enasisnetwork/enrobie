@@ -32,7 +32,7 @@ from sqlalchemy.orm import sessionmaker
 
 if TYPE_CHECKING:
     from .plugin import AinswerPlugin
-    from ...robie.models import RobieMessage
+    from ...robie.models.message import RobieMessage
 
 
 
@@ -312,7 +312,9 @@ class AinswerHistory:
 
         record = model(**inputs)
 
-        insert = record.endumped
+        insert = (
+            record
+            .model_dump())
 
 
         create = insert['create']

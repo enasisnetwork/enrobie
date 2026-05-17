@@ -16,8 +16,8 @@ from enconnect.mattermost import ClientParams
 
 from pydantic import Field
 
-from ...plugins import StatusPluginIconParams
-from ...robie.params import RobieClientParams
+from ...plugins.status.params import StatusPluginIconParams
+from ...robie.params.client import RobieClientParams
 
 
 

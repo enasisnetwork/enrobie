@@ -20,7 +20,7 @@ from .history import AinswerHistoryKinds
 
 if TYPE_CHECKING:
     from .plugin import AinswerPlugin
-    from ...robie.models import RobieMessage
+    from ...robie.models.message import RobieMessage
 
 
 
@@ -123,7 +123,7 @@ def composeirc(  # noqa: CFQ004
     :param mitem: Item containing information for operation.
     """
 
-    from ...clients import IRCClient
+    from ...clients.irc.client import IRCClient
 
 
     assert plugin.thread

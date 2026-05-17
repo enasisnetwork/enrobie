@@ -14,11 +14,11 @@ from typing import TYPE_CHECKING
 from encommon.utils import fuzz_match
 
 from .child import RobieChild
-from ..models import RobieModels
+from ..models.robie import RobieModels
 
 if TYPE_CHECKING:
     from .client import RobieClient
-    from ..params import RobiePersonParams
+    from ..params.person import RobiePersonParams
 
 
 

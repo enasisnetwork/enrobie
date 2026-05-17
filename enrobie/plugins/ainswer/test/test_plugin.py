@@ -29,7 +29,7 @@ from ....clients.irc.test import IRCEVENTS
 from ....clients.mattermost.test import MTMEVENTS
 
 if TYPE_CHECKING:
-    from ....robie import RobieService
+    from ....robie.service import RobieService
 
 
 
