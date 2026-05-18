@@ -65,6 +65,10 @@ def test_Robie(
 
     assert robie.params
 
+    assert robie.console
+
+    assert robie.debug
+
 
     sample_path = (
         SAMPLES / 'dumped.json')
