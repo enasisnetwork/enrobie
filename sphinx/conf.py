@@ -46,6 +46,7 @@ extensions = [
     'sphinxcontrib.pydantic']
 
 html_theme = 'pydata_sphinx_theme'
+html_favicon = 'icon.png'
 
 autodoc_member_order = 'bysource'
 

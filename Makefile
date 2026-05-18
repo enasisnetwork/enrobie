@@ -229,6 +229,7 @@ cleanup-sphinx:
 	@find ./sphinx/ -type f \
 		! -name conf.py \
 		! -name index.rst \
+		! -name icon.png \
 		! -name style.css \
 		-delete 2>/dev/null || true
 	@mkdir ./sphinx/makefiletmp
