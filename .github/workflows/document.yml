@@ -44,30 +44,15 @@ jobs:
         with: {python-version: '3.12'}
 
       # Additional workflow dependency
-      - name: Compile ImageMagick
+      - name: Install ImageMagick
         run: |
 
           sudo apt-get update
 
           sudo apt-get install -y \
-            build-essential \
             ghostscript \
-            libjpeg-dev \
-            libpng-dev \
-            libtiff-dev \
-            libgif-dev
-
-          wget https://download.imagemagick.org/ImageMagick/download/ImageMagick.tar.gz
-
-          tar xvzf ImageMagick.tar.gz
-
-          cd ImageMagick-*
-
-          ./configure
-          make
-          sudo make install
-
-          sudo ldconfig /usr/local/lib
+            imagemagick \
+            libmagickwand-dev
 
 
       # Standard project construction
