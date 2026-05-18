@@ -7,23 +7,23 @@ is permitted, for more information consult the project license file.
 
 
 
-from .ainswer import AinswerPlugin
-from .ainswer import AinswerPluginParams
-from .autojoin import AutoJoinPlugin
-from .autojoin import AutoJoinPluginParams
-from .autonick import AutoNickPlugin
-from .autonick import AutoNickPluginParams
-from .enhomie import HomiePlugin
-from .enhomie import HomiePluginParams
-from .logger import LoggerPlugin
-from .logger import LoggerPluginParams
-from .nagios import NagiosPlugin
-from .nagios import NagiosPluginParams
-from .status import StatusPlugin
-from .status import StatusPluginIconParams
-from .status import StatusPluginItem
-from .status import StatusPluginParams
-from .status import StatusPluginStates
+from .ainswer.params import AinswerPluginParams
+from .ainswer.plugin import AinswerPlugin
+from .autojoin.params import AutoJoinPluginParams
+from .autojoin.plugin import AutoJoinPlugin
+from .autonick.params import AutoNickPluginParams
+from .autonick.plugin import AutoNickPlugin
+from .enhomie.params import HomiePluginParams
+from .enhomie.plugin import HomiePlugin
+from .logger.params import LoggerPluginParams
+from .logger.plugin import LoggerPlugin
+from .nagios.params import NagiosPluginParams
+from .nagios.plugin import NagiosPlugin
+from .status.common import StatusPluginItem
+from .status.common import StatusPluginStates
+from .status.params import StatusPluginIconParams
+from .status.params import StatusPluginParams
+from .status.plugin import StatusPlugin
 
 
 

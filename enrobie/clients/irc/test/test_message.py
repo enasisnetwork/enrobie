@@ -34,9 +34,9 @@ from ..command import IRCCommand
 from ..message import IRCMessage
 
 if TYPE_CHECKING:
-    from ....robie import Robie
-    from ....robie import RobieService
-    from ....robie.models import RobieMessage
+    from ....robie.models.message import RobieMessage
+    from ....robie.robie import Robie
+    from ....robie.service import RobieService
 
 
 

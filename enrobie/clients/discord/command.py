@@ -15,10 +15,10 @@ from typing import TYPE_CHECKING
 from enconnect.utils.http import _METHODS
 from enconnect.utils.http import _PAYLOAD
 
-from ...robie.models import RobieCommand
+from ...robie.models.command import RobieCommand
 
 if TYPE_CHECKING:
-    from ...robie.childs import RobieClient
+    from ...robie.childs.client import RobieClient
 
 
 

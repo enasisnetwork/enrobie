@@ -10,11 +10,11 @@ is permitted, for more information consult the project license file.
 from typing import TYPE_CHECKING
 
 from .member import RobieMember
-from ..threads import RobieClientThread
+from ..threads.client import RobieClientThread
 
 if TYPE_CHECKING:
     from .member import RobieThreads
-    from ..childs import RobieClient  # noqa: F401
+    from ..childs.client import RobieClient  # noqa: F401
 
 
 

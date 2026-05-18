@@ -13,7 +13,7 @@ from encommon.types import DictStrAny
 
 if TYPE_CHECKING:
     from ..common import RobieKinds
-    from ..params import RobieChildParams
+    from ..params.child import RobieChildParams
     from ..robie import Robie
 
 
@@ -174,7 +174,10 @@ class RobieChild:
         """
 
         params = self.__params
-        dumped = params.endumped
+
+        dumped = (
+            params
+            .model_dump())
 
         return {
             'name': self.name,

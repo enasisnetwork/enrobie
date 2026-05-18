@@ -14,9 +14,9 @@ from typing import Union
 from encommon.utils.stdout import ANSIARRAY
 
 if TYPE_CHECKING:
-    from .childs import RobieClient
-    from .childs import RobiePlugin
-    from .threads import RobieThreadItems
+    from .childs.client import RobieClient
+    from .childs.plugin import RobiePlugin
+    from .threads.thread import RobieThreadItems
 
 
 

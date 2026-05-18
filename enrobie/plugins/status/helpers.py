@@ -19,8 +19,8 @@ if TYPE_CHECKING:
     from .common import StatusPluginItem
     from .params import StatusPluginReportParams
     from .plugin import StatusPlugin
-    from ...robie.childs import RobieClient
-    from ...robie.models import RobieMessage
+    from ...robie.childs.client import RobieClient
+    from ...robie.models.message import RobieMessage
 
 
 

@@ -17,7 +17,7 @@ from encommon.utils.sample import ENPYRWS
 
 from . import SAMPLES
 from ..config import RobieConfig
-from ..models import RobieMessage
+from ..models.message import RobieMessage
 from ..robie import Robie
 
 

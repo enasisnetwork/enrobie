@@ -19,7 +19,7 @@ from encommon.types import NCNone
 from pydantic import Field
 
 if TYPE_CHECKING:
-    from ..robie.models import RobieMessage
+    from ..robie.models.message import RobieMessage
 
 
 

@@ -10,10 +10,10 @@ is permitted, for more information consult the project license file.
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from ..addons import RobieQueueItem
+from ..addons.queue import RobieQueueItem
 
 if TYPE_CHECKING:
-    from ..childs import RobieClient
+    from ..childs.client import RobieClient
 
 
 

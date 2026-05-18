@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 from .thread import RobieThread
 
 if TYPE_CHECKING:
-    from ..childs import RobiePlugin
-    from ..members import RobiePlugins
+    from ..childs.plugin import RobiePlugin
+    from ..members.plugins import RobiePlugins
 
 
 

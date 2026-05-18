@@ -8,10 +8,10 @@ is permitted, for more information consult the project license file.
 
 
 from .child import RobieChild
+from .childs import RobieChilds
 from .client import RobieClient
 from .person import RobiePerson
 from .plugin import RobiePlugin
-from .robie import RobieChilds
 
 
 

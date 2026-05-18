@@ -20,7 +20,7 @@ from pydantic import Field
 
 if TYPE_CHECKING:
     from .plugin import AinswerPlugin
-    from ...robie.models import RobieMessage
+    from ...robie.models.message import RobieMessage
 
 
 

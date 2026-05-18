@@ -7,12 +7,12 @@ is permitted, for more information consult the project license file.
 
 
 
-from .discord import DSCClient
-from .discord import DSCClientParams
-from .irc import IRCClient
-from .irc import IRCClientParams
-from .mattermost import MTMClient
-from .mattermost import MTMClientParams
+from .discord.client import DSCClient
+from .discord.params import DSCClientParams
+from .irc.client import IRCClient
+from .irc.params import IRCClientParams
+from .mattermost.client import MTMClient
+from .mattermost.params import MTMClientParams
 
 
 

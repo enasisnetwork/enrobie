@@ -14,14 +14,14 @@ from typing import Union
 
 from encommon.types import clsname
 
-from ..addons import RobieQueue
-from ...utils import DupliThread
+from ..addons.queue import RobieQueue
+from ...utils.thread import DupliThread
 
 if TYPE_CHECKING:
     from ..common import RobieOperate
-    from ..members import RobieMember
-    from ..models import RobieCommand
-    from ..models import RobieMessage
+    from ..members.member import RobieMember
+    from ..models.command import RobieCommand
+    from ..models.message import RobieMessage
     from ..robie import Robie
     from ..service import RobieService
 

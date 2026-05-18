@@ -11,16 +11,16 @@ from typing import TYPE_CHECKING
 from typing import Type
 
 if TYPE_CHECKING:
-    from ..addons import RobieQueueItem
-    from ..models import RobieCommand
-    from ..models import RobieMessage
-    from ..params import RobieChildParams
-    from ..params import RobieClientParams
-    from ..params import RobieParams
-    from ..params import RobiePersonParams
-    from ..params import RobiePluginParams
-    from ..params import RobiePrinterParams
-    from ..params import RobieServiceParams
+    from ..addons.queue import RobieQueueItem
+    from ..models.command import RobieCommand
+    from ..models.message import RobieMessage
+    from ..params.child import RobieChildParams
+    from ..params.client import RobieClientParams
+    from ..params.person import RobiePersonParams
+    from ..params.plugin import RobiePluginParams
+    from ..params.robie import RobieParams
+    from ..params.robie import RobiePrinterParams
+    from ..params.service import RobieServiceParams
 
 
 

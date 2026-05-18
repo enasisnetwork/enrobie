@@ -16,7 +16,7 @@ from encommon.types import lattrs
 from ..plugin import AinswerPlugin
 
 if TYPE_CHECKING:
-    from ....robie import Robie
+    from ....robie.robie import Robie
 
 
 
@@ -118,7 +118,8 @@ def test_AinswerMemory_cover(
 
 
     record = (
-        records[0].endumped)
+        records[0]
+        .model_dump())
 
     assert record == {
         'create': record['create'],

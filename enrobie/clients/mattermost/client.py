@@ -28,17 +28,17 @@ from enconnect.utils.http import _PAYLOAD
 from .command import MTMCommand
 from .message import MTMMessage
 from .params import MTMClientParams
-from ...plugins import StatusPlugin
-from ...plugins import StatusPluginStates
-from ...robie.addons import RobieQueue
-from ...robie.childs import RobieClient
-from ...utils import ClientChannels
-from ...utils import ClientPublish
-from ...utils import DupliThread
+from ...plugins.status.common import StatusPluginStates
+from ...plugins.status.plugin import StatusPlugin
+from ...robie.addons.queue import RobieQueue
+from ...robie.childs.client import RobieClient
+from ...utils.states import ClientChannels
+from ...utils.states import ClientPublish
+from ...utils.thread import DupliThread
 
 if TYPE_CHECKING:
-    from ...robie.models import RobieCommand
-    from ...robie.models import RobieMessage
+    from ...robie.models.command import RobieCommand
+    from ...robie.models.message import RobieMessage
 
 
 

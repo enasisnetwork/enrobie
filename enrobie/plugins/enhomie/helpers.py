@@ -11,7 +11,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from .plugin import HomiePlugin
-    from ...robie.models import RobieMessage
+    from ...robie.models.message import RobieMessage
 
 
 

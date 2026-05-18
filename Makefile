@@ -229,6 +229,7 @@ cleanup-sphinx:
 	@find ./sphinx/ -type f \
 		! -name conf.py \
 		! -name index.rst \
+		! -name style.css \
 		-delete 2>/dev/null || true
 	@mkdir ./sphinx/makefiletmp
 	@find ./sphinx/*/ -type d \
@@ -550,7 +551,8 @@ sphinx: \
 		<c37>Building <c90>Sphinx<c37>\
 		documentation..<c0>)
 	@$(VENVD)/bin/sphinx-apidoc \
-		-o sphinx $(PROJECT)
+		-o sphinx $(PROJECT) \
+		"$(PROJECT)/*/test"
 	@$(VENVD)/bin/sphinx-build \
 		-b html sphinx/ sphinx/html
 	$(call MAKE_PR1NT,<cD>DONE<c0>)

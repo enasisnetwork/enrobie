@@ -17,7 +17,7 @@ from encommon.types import lattrs
 from ..thread import DupliThread
 
 if TYPE_CHECKING:
-    from ...robie import Robie
+    from ...robie.robie import Robie
 
 
 

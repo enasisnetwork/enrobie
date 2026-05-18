@@ -16,15 +16,15 @@ from encommon.types import DictStrAny
 from encommon.types import NCNone
 
 from .child import RobieChild
-from ..addons import RobieQueue
-from ..models import RobieModels
-from ...utils import ClientChannels
+from ..addons.queue import RobieQueue
+from ..models.robie import RobieModels
+from ...utils.states import ClientChannels
 
 if TYPE_CHECKING:
-    from ..models import RobieCommand
-    from ..models import RobieMessage
-    from ..params import RobieClientParams
-    from ..threads import RobieClientThread
+    from ..models.command import RobieCommand
+    from ..models.message import RobieMessage
+    from ..params.client import RobieClientParams
+    from ..threads.client import RobieClientThread
 
 
 

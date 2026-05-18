@@ -11,9 +11,9 @@ from typing import TYPE_CHECKING
 
 from encommon.times import Time
 
-from ...childs import RobieClient
-from ...models import RobieCommand
-from ...models import RobieMessage
+from ...childs.client import RobieClient
+from ...models.command import RobieCommand
+from ...models.message import RobieMessage
 
 if TYPE_CHECKING:
     from ...service import RobieService

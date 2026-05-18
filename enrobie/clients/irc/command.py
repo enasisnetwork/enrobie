@@ -11,10 +11,10 @@ from dataclasses import dataclass
 from typing import Literal
 from typing import TYPE_CHECKING
 
-from ...robie.models import RobieCommand
+from ...robie.models.command import RobieCommand
 
 if TYPE_CHECKING:
-    from ...robie.childs import RobieClient
+    from ...robie.childs.client import RobieClient
 
 
 

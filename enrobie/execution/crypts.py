@@ -16,7 +16,7 @@ from encommon.types import DictStrAny
 from encommon.types.strings import SEMPTY
 from encommon.utils import print_ansi
 
-from ..robie import RobieConfig
+from ..robie.config import RobieConfig
 
 
 

@@ -19,19 +19,19 @@ from encommon.types import clsname
 from encommon.utils import array_ansi
 from encommon.utils import print_ansi
 
-from .addons import RobieJinja2
-from .addons import RobieLogger
-from .childs import RobieChilds
-from .childs import RobieClient
-from .childs import RobiePlugin
-from .models import RobieModels
-from ..utils import importer
+from .addons.jinja2 import RobieJinja2
+from .addons.logger import RobieLogger
+from .childs.childs import RobieChilds
+from .childs.client import RobieClient
+from .childs.plugin import RobiePlugin
+from .models.robie import RobieModels
+from ..utils.importer import importer
 
 if TYPE_CHECKING:
-    from .childs import RobiePerson
+    from .childs.person import RobiePerson
     from .common import RobiePrint
     from .config import RobieConfig
-    from .params import RobieParams
+    from .params.robie import RobieParams
 
 
 
@@ -148,6 +148,32 @@ class Robie:
 
 
     @property
+    def console(
+        self,
+    ) -> bool:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.params.console
+
+
+    @property
+    def debug(
+        self,
+    ) -> bool:
+        """
+        Return the value for the attribute from class instance.
+
+        :returns: Value for the attribute from class instance.
+        """
+
+        return self.params.debug
+
+
+    @property
     def dumped(
         self,
     ) -> DictStrAny:
@@ -158,7 +184,8 @@ class Robie:
         """
 
         params = deepcopy(
-            self.params.endumped)
+            self.params
+            .model_dump())
 
         childs = deepcopy(
             self.childs.dumped)

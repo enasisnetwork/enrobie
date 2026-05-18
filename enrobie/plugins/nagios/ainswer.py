@@ -14,7 +14,7 @@ from encommon.types import funcname
 from pydantic_ai import RunContext
 
 from .current import NagiosCurrentRecords
-from ..ainswer import AinswerDepends
+from ..ainswer.common import AinswerDepends
 
 
 

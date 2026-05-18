@@ -20,9 +20,9 @@ from pytest import fixture
 
 from . import EXAMPLES
 from . import PROJECT
-from .robie import Robie
-from .robie import RobieConfig
-from .robie import RobieService
+from .robie.config import RobieConfig
+from .robie.robie import Robie
+from .robie.service import RobieService
 
 
 

@@ -16,9 +16,9 @@ from encommon.types import NCNone
 from encommon.types.strings import SPACED
 
 from .params import AutoJoinPluginParams
-from ..status import StatusPlugin
-from ..status import StatusPluginStates
-from ...robie.childs import RobiePlugin
+from ..status.common import StatusPluginStates
+from ..status.plugin import StatusPlugin
+from ...robie.childs.plugin import RobiePlugin
 
 if TYPE_CHECKING:
     from ...clients.irc.message import IRCMessage
@@ -182,7 +182,7 @@ class AutoJoinPlugin(RobiePlugin):
         Perform the operation related to Robie service threads.
         """
 
-        from ...clients import IRCClient
+        from ...clients.irc.client import IRCClient
 
         assert self.thread
 
@@ -251,7 +251,7 @@ class AutoJoinPlugin(RobiePlugin):
         :param mitem: Item containing information for operation.
         """
 
-        from ...clients import IRCClient
+        from ...clients.irc.client import IRCClient
 
         robie = self.robie
         childs = robie.childs

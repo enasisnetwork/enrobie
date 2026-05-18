@@ -1,82 +1,78 @@
 Enasis Network Chatting Robie
 =============================
 
-Configuration Container
------------------------
+Documentation Welcome
+---------------------
 
-.. autoclass:: enrobie.robie.RobieConfig
+.. raw:: html
+
+   Welcome to the project documentation. Below you will find the most common
+   functions and classes within the library, but you may click your way further
+   into the project from there. You can also view the source code.
+
+Robie Configuration
+-------------------
+
+.. automodule:: enrobie.robie
    :members:
+   :undoc-members:
    :show-inheritance:
-   :noindex:
+   :exclude-members: RobieModels
 
-Parameters Container
---------------------
+Robie Parameters
+----------------
 
-.. autopydantic_model:: enrobie.robie.params.RobieParams
+.. automodule:: enrobie.robie.params
    :members:
+   :undoc-members:
    :show-inheritance:
-   :noindex:
+   :exclude-members: RobieChildParams,
+                     RobieParamsModel
 
-Homie Persons
+Robie Children
+--------------
+
+.. automodule:: enrobie.robie.childs
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Robie Add-ons
 -------------
 
-.. autopydantic_model:: enrobie.robie.params.RobiePersonParams
+.. automodule:: enrobie.robie.addons
    :members:
+   :undoc-members:
    :show-inheritance:
-   :noindex:
 
-Robie Clients
+Robie Members
 -------------
 
-.. autopydantic_model:: enrobie.clients.discord.params.DSCClientParams
+.. automodule:: enrobie.robie.members
    :members:
+   :undoc-members:
    :show-inheritance:
-   :noindex:
 
-.. autopydantic_model:: enrobie.clients.irc.params.IRCClientParams
-   :members:
-   :show-inheritance:
-   :noindex:
+Robie Threads
+-------------
 
-.. autopydantic_model:: enrobie.clients.mattermost.params.MTMClientParams
+.. automodule:: enrobie.robie.threads
    :members:
+   :undoc-members:
    :show-inheritance:
-   :noindex:
 
 Robie Plugins
 -------------
 
-.. autopydantic_model:: enrobie.plugins.ainswer.params.AinswerPluginParams
+.. automodule:: enrobie.plugins
    :members:
+   :undoc-members:
    :show-inheritance:
-   :noindex:
 
-.. autopydantic_model:: enrobie.plugins.enhomie.params.HomiePluginParams
-   :members:
-   :show-inheritance:
-   :noindex:
+Robie Clients
+-------------
 
-.. autopydantic_model:: enrobie.plugins.nagios.params.NagiosPluginParams
+.. automodule:: enrobie.clients
    :members:
+   :undoc-members:
    :show-inheritance:
-   :noindex:
-
-.. autopydantic_model:: enrobie.plugins.autojoin.params.AutoJoinPluginParams
-   :members:
-   :show-inheritance:
-   :noindex:
-
-.. autopydantic_model:: enrobie.plugins.autonick.params.AutoNickPluginParams
-   :members:
-   :show-inheritance:
-   :noindex:
-
-.. autopydantic_model:: enrobie.plugins.logger.params.LoggerPluginParams
-   :members:
-   :show-inheritance:
-   :noindex:
-
-.. autopydantic_model:: enrobie.plugins.status.params.StatusPluginParams
-   :members:
-   :show-inheritance:
-   :noindex:

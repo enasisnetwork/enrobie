@@ -34,7 +34,7 @@ from ....clients.mattermost.test import MTMEVENT_HUBERT_CHAN
 from ....clients.mattermost.test import MTMEVENT_HUBERT_PRIV
 
 if TYPE_CHECKING:
-    from ....robie import RobieService
+    from ....robie.service import RobieService
 
 
 

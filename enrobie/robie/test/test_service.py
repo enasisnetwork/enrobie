@@ -19,7 +19,7 @@ from enconnect.fixtures import DSCClientSocket
 from enconnect.fixtures import IRCClientSocket
 from enconnect.fixtures import MTMClientSocket
 
-from ..models import RobieMessage
+from ..models.message import RobieMessage
 
 if TYPE_CHECKING:
     from ..service import RobieService

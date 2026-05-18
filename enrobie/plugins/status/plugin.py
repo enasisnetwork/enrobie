@@ -25,7 +25,7 @@ from .helpers import reportirc
 from .helpers import reportmtm
 from .params import StatusPluginIconParams
 from .params import StatusPluginParams
-from ...robie.childs import RobiePlugin
+from ...robie.childs.plugin import RobiePlugin
 
 if TYPE_CHECKING:
     from .common import StatusPluginItems

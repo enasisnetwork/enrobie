@@ -16,18 +16,31 @@ from encommon.types import lattrs
 from ..child import InvalidChild
 
 if TYPE_CHECKING:
-    from ...robie import Robie
+    from ...robie.robie import Robie
 
 
 
-def test_InvalidChild() -> None:
+def test_InvalidChild(
+    robie: 'Robie',
+) -> None:
     """
     Perform various tests associated with relevant routines.
+
+    :param robie: Primary class instance for Chatting Robie.
     """
 
+    childs = robie.childs
+    clients = childs.clients
+
+    client = clients['ircbot']
+
+    name = client.name
+
+
     raises = InvalidChild(
-        child='invalid',
-        phase='initial')
+        child=client,
+        phase='runtime',
+        about='about')
 
 
     attrs = lattrs(raises)
@@ -45,40 +58,27 @@ def test_InvalidChild() -> None:
         hash(raises), int)
 
     assert instr(
-        'Child (invalid)',
+        f'Child ({name})',
         raises)
 
-
-    assert str(raises) == (
-        'Child (invalid) '
-        'invalid within '
-        'phase (initial)')
-
-
-
-def test_InvalidChild_cover(
-    robie: 'Robie',
-) -> None:
-    """
-    Perform various tests associated with relevant routines.
-
-    :param robie: Primary class instance for Chatting Robie.
-    """
-
-    childs = robie.childs
-    clients = childs.clients
-
-    client = clients['ircbot']
-
-
-    raises = InvalidChild(
-        child=client,
-        phase='runtime',
-        about='about')
-
-    name = client.name
 
     assert str(raises) == (
         f'Child ({name}) '
         'invalid within phase '
         '(runtime) (about)')
+
+
+
+def test_InvalidChild_cover() -> None:
+    """
+    Perform various tests associated with relevant routines.
+    """
+
+    raises = InvalidChild(
+        child='invalid',
+        phase='initial')
+
+    assert str(raises) == (
+        'Child (invalid) '
+        'invalid within '
+        'phase (initial)')
