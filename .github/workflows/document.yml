@@ -73,12 +73,8 @@ jobs:
       - name: Build environment
         working-directory: main
         run: |
-
+          pip install enbasics[badges]
           make -s venv-create
-
-          pip install \
-            encommon \
-            weasyprint wand
 
       # Build the test environment
       - name: Build environment
@@ -87,7 +83,7 @@ jobs:
 
 
       # Construct additional content
-      - name: Build documentaiton
+      - name: Build documentation
         id: sphinx
         working-directory: main
         run: make -s sphinx
@@ -134,8 +130,8 @@ jobs:
 
           STATUS="${{ env.flake8 }}"
 
-          python makebadge.py \
-            --file "../static/badges/flake8.png" \
+          python -m enbasics.execution.badges \
+            --output "../static/badges/flake8.png" \
             --label "Flake8" \
             --value "$STATUS"
 
@@ -146,8 +142,8 @@ jobs:
 
           STATUS="${{ env.pylint }}"
 
-          python makebadge.py \
-            --file "../static/badges/pylint.png" \
+          python -m enbasics.execution.badges \
+            --output "../static/badges/pylint.png" \
             --label "Pylint" \
             --value "$STATUS"
 
@@ -158,8 +154,8 @@ jobs:
 
           STATUS="${{ env.ruff }}"
 
-          python makebadge.py \
-            --file "../static/badges/ruff.png" \
+          python -m enbasics.execution.badges \
+            --output "../static/badges/ruff.png" \
             --label "Ruff" \
             --value "$STATUS"
 
@@ -170,8 +166,8 @@ jobs:
 
           STATUS="${{ env.mypy }}"
 
-          python makebadge.py \
-            --file "../static/badges/mypy.png" \
+          python -m enbasics.execution.badges \
+            --output "../static/badges/mypy.png" \
             --label "Mypy" \
             --value "$STATUS"
 
@@ -182,8 +178,8 @@ jobs:
 
           STATUS="${{ env.yamllint }}"
 
-          python makebadge.py \
-            --file "../static/badges/yamllint.png" \
+          python -m enbasics.execution.badges \
+            --output "../static/badges/yamllint.png" \
             --label "YAMLlint" \
             --value "$STATUS"
 
@@ -194,8 +190,8 @@ jobs:
 
           STATUS="${{ env.pytest }}"
 
-          python makebadge.py \
-            --file "../static/badges/pytest.png" \
+          python -m enbasics.execution.badges \
+            --output "../static/badges/pytest.png" \
             --label "Pytest" \
             --value "$STATUS"
 
@@ -206,8 +202,8 @@ jobs:
 
           STATUS="${{ env.coverage }}"
 
-          python makebadge.py \
-            --file "../static/badges/coverage.png" \
+          python -m enbasics.execution.badges \
+            --output "../static/badges/coverage.png" \
             --label "Coverage.py" \
             --value "${STATUS}%"
 
@@ -218,8 +214,8 @@ jobs:
 
           STATUS="${{ env.sphinx }}"
 
-          python makebadge.py \
-            --file "../static/badges/sphinx.png" \
+          python -m enbasics.execution.badges \
+            --output "../static/badges/sphinx.png" \
             --label "Sphinx" \
             --value "$STATUS"
 
@@ -240,8 +236,8 @@ jobs:
             | jq -r --arg VERSION "$VERSION" \
             '.releases[$VERSION][0].upload_time // "unknown"')
 
-          python makebadge.py \
-            --file "../static/badges/pypi.png" \
+          python -m enbasics.execution.badges \
+            --output "../static/badges/pypi.png" \
             --label "PyPi" \
             --value "$VERSION" \
             --color "teal" \
