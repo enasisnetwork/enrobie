@@ -14,12 +14,15 @@ VENVD ?= .venv-develop
 
 
 
-MAKE_COLOR ?= 6
+MAKE_COLOR = 6
 
-MAKE_PRINT = @COLOR=$(MAKE_COLOR) \
-	$(PYTHON) -Bc 'if 1: \
-		from makefile import makeout; \
-		makeout("$(1)", "$(2)");'
+MAKE_PRINT = \
+	@$(PYTHON) -Bc 'if 1: \
+		from enbasics import makeout; \
+		makeout( \
+			color=$(MAKE_COLOR), \
+			string="$(1)", \
+			prefix="$(2)");'
 
 MAKE_PR1NT = $(call MAKE_PRINT,$(1),text)
 MAKE_PR2NT = $(call MAKE_PRINT,$(1),base)
@@ -29,7 +32,7 @@ MAKE_PR3NT = $(call MAKE_PRINT,$(1),more)
 
 PROJECT := $(shell \
 	$(PYTHON) -Bc 'if 1: \
-		from makefile import PROJECT; \
+		from enrobie import PROJECT; \
 		print(PROJECT.name);')
 
 
@@ -38,8 +41,15 @@ PROJECT := $(shell \
 help: .check-python
 	@## Construct this helpful menu of recipes
 	$(call MAKE_PRINT)
-	@COLOR=$(MAKE_COLOR) \
-		$(PYTHON) -B makefile.py
+	@$(PYTHON) -Bc 'if 1: \
+		from enbasics import makefile; \
+		from enrobie import PROJECT; \
+		from enrobie import VERSION; \
+		makefile( \
+			color=$(MAKE_COLOR), \
+			path="Makefile", \
+			name=PROJECT.name, \
+			version=VERSION);'
 	$(call MAKE_PRINT)
 
 
@@ -186,7 +196,7 @@ cleanup-ruff:
 		<cD>make <cL>cleanup-ruff<c0>)
 	@#
 	$(call MAKE_PR3NT,\
-		<c37>Removing <c90>mypy<c37> \
+		<c37>Removing <c90>ruff<c37> \
 		cache files..<c0>)
 	@find . \
 		-maxdepth 1 \
@@ -370,22 +380,6 @@ mypy: \
 		--no-error-summary \
 		$(mypy_args) sphinx
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>mypy<c37> \
-		on <c90>makefile.py<c37>..<c0>)
-	@$(VENVD)/bin/mypy \
-		--no-error-summary \
-		$(mypy_args) makefile.py
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>mypy<c37> \
-		on <c90>makebadge.py<c37>..<c0>)
-	@$(VENVD)/bin/mypy \
-		--no-error-summary \
-		$(mypy_args) makebadge.py
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
 
@@ -408,18 +402,6 @@ flake8: \
 		<c37>Executing <c90>flake8<c37> \
 		in <c90>sphinx<c37>..<c0>)
 	@$(VENVD)/bin/flake8 sphinx
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>flake8<c37> \
-		on <c90>makefile.py<c37>..<c0>)
-	@$(VENVD)/bin/flake8 ./makefile.py
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>flake8<c37> \
-		on <c90>makebadge.py<c37>..<c0>)
-	@$(VENVD)/bin/flake8 ./makebadge.py
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
@@ -449,24 +431,6 @@ pylint: \
 		--persistent=n \
 		-d duplicate-code
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>pylint<c37> \
-		on <c90>makefile.py<c37>..<c0>)
-	@$(VENVD)/bin/pylint \
-		-E makefile.py \
-		--persistent=n \
-		-d duplicate-code
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>pylint<c37> \
-		on <c90>makebadge.py<c37>..<c0>)
-	@$(VENVD)/bin/pylint \
-		-E makebadge.py \
-		--persistent=n \
-		-d duplicate-code
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 
 
@@ -490,20 +454,6 @@ ruff: \
 		in <c90>sphinx<c37>..<c0>)
 	@$(VENVD)/bin/ruff \
 		check -q sphinx/*.py
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>ruff<c37> \
-		on <c90>makefile.py<c37>..<c0>)
-	@$(VENVD)/bin/ruff \
-		check -q makefile.py
-	$(call MAKE_PR1NT,<cD>DONE<c0>)
-	@#
-	$(call MAKE_PR3NT,\
-		<c37>Executing <c90>ruff<c37> \
-		on <c90>makebadge.py<c37>..<c0>)
-	@$(VENVD)/bin/ruff \
-		check -q makebadge.py
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 

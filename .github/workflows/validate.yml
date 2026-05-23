@@ -50,7 +50,9 @@ jobs:
 
       # Standard project construction
       - name: Build environment
-        run: make -s venv-create
+        run: |
+          pip install enbasics
+          make -s venv-create
 
 
       # Validate the Python project
@@ -94,6 +96,7 @@ jobs:
       - name: Build environment
         working-directory: main
         run: |
+          pip install enbasics
           make -s venv-create
           pip install ansi2txt
 
