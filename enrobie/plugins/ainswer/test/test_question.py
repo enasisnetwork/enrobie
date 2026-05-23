@@ -157,9 +157,6 @@ def test_AinswerQuestion_prompt(
         logger, client)
 
 
-    sample_path = (
-        SAMPLES / f'{file}.txt')
-
     prompt = (
         question.prompt(
             item,
@@ -171,6 +168,10 @@ def test_AinswerQuestion_prompt(
          r'(\.\d+)?\+0000'),
         '1980-01-01T00:00:00Z',
         prompt)
+
+
+    sample_path = (
+        SAMPLES / f'{file}.txt')
 
     if ENPYRWS is NCTrue:
         save_text(

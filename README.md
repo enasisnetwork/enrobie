@@ -46,12 +46,8 @@ python -m enrobie.execution.service \
 ```
 Replace `../../Persistent/enrobie-prod.yml` with your configuration file.
 
-## Using the Ainswer plugin
-These dependencies are not automatically installed but are required when
-using the new `AinswerPlugin`. Install the following when using that.
-- `pydantic-ai-slim`
-- `pydantic-ai-slim[anthropic]`
-- `pydantic-ai-slim[openai]`
+## Additional package dependencies
+- `enrobie[ainswer]` for using the new `AinswerPlugin`.
 
 ## Deploying the service
 It is possible to deploy the project with the Ansible roles located within

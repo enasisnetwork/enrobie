@@ -13,8 +13,6 @@ from sys import flags
 
 
 PROJECT = Path(__file__).parent
-WORKSPACE = PROJECT.parents[2]
-EXAMPLES = PROJECT / 'examples'
 
 VERSION = (
     (PROJECT / 'version.txt')
@@ -25,6 +23,9 @@ BOILER = (
     Path(__file__)
     .read_text(encoding='utf-8')
     .splitlines()[1:5])
+
+WORKSPACE = PROJECT.parents[2]
+EXAMPLES = PROJECT / 'examples'
 
 
 

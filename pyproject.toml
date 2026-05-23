@@ -45,3 +45,12 @@ include = ["enrobie", "enrobie.*"]
 [tool.ruff.lint.per-file-ignores]
 
 "sphinx/conf.py" = ["E402"]
+
+
+
+[project.optional-dependencies]
+
+ainswer = [
+  "pydantic-ai-slim",
+  "pydantic-ai-slim[anthropic]",
+  "pydantic-ai-slim[openai]"]
