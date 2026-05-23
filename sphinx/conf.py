@@ -33,7 +33,7 @@ from enrobie import VERSION
 
 
 project = 'enrobie'
-copyright = '2024, Enasis Network'
+copyright = '2026, Enasis Network'
 author = 'Enasis Network'
 nitpicky = True
 version = VERSION
