@@ -236,15 +236,13 @@ cleanup-sphinx:
 	$(call MAKE_PR3NT,\
 		<c37>Removing <c90>Sphinx<c37> \
 		cache files..<c0>)
-	@find ./sphinx/ -type f \
+	@find ./sphinx/ \
+		-maxdepth 1 \
+		-type f \
 		! -name conf.py \
 		! -name index.rst \
-		! -name icon.png \
-		! -name style.css \
 		-delete 2>/dev/null || true
-	@mkdir ./sphinx/makefiletmp
-	@find ./sphinx/*/ -type d \
-		-exec rm -r {} + 2>/dev/null || true
+	@rm -rf ./sphinx/html
 	$(call MAKE_PR1NT,<cD>DONE<c0>)
 
 

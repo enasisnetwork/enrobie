@@ -45,8 +45,9 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinxcontrib.pydantic']
 
+html_static_path = ['_static']
 html_theme = 'pydata_sphinx_theme'
-html_favicon = 'icon.png'
+html_favicon = '_static/icon.png'
 
 autodoc_member_order = 'bysource'
 
@@ -55,12 +56,11 @@ always_document_param_types = True
 intersphinx_mapping = {
     'encommon': ('https://enasisnetwork.github.io/encommon/sphinx', None),
     'enconnect': ('https://enasisnetwork.github.io/enconnect/sphinx', None),
-    'jinja2': ('https://jinja.palletsprojects.com/en/latest', None),
-    'netaddr': ('https://netaddr.readthedocs.io/en/latest', None),
+    'enhomie': ('https://enasisnetwork.github.io/enhomie/sphinx', None),
     'pydantic': ('https://docs.pydantic.dev/latest', None),
     'pytest': ('https://docs.pytest.org/latest', None),
     'python': ('https://docs.python.org/3', None),
-    'sqlalchemy': ('https://docs.sqlalchemy.org/en/20', None)}
+    'sphinx': ('https://www.sphinx-doc.org/en/master', None)}
 
 
 
@@ -95,9 +95,7 @@ def setup(
     Perform extra setup when called on by Sphinx processes.
     """
 
-    app.add_css_file(
-        (SPHINX / 'style.css')
-        .as_posix())
+    app.add_css_file('style.css')
 
     app.connect(
         'autodoc-process-docstring',
