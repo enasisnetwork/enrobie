@@ -86,7 +86,13 @@ jobs:
       - name: Build documentation
         id: sphinx
         working-directory: main
-        run: make -s sphinx
+        run: |
+
+          make -s sphinx
+
+          rsync -ltr --delete \
+            sphinx/html/ \
+            ../static/sphinx/
 
 
       # Construct additional content
@@ -254,10 +260,6 @@ jobs:
 
           git config --global \
             user.name "GitHub Workflows"
-
-          rm -rf static/sphinx
-          mkdir static/sphinx
-          cp -r main/sphinx/html/* static/sphinx/
 
           cd static
           git add badges
