@@ -6,7 +6,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from pathlib import Path
 11 | | from sys import flags
    | |_____________________^
-   |
 help: Organize imports
    |
 12 |
@@ -25,7 +24,6 @@ I001 [*] Import block is un-sorted or un-formatted
 14 | | from .mattermost.client import MTMClient
 15 | | from .mattermost.params import MTMClientParams
    | |______________________________________________^
-   |
 help: Organize imports
    |
 16 |
@@ -46,7 +44,6 @@ RUF022 [*] `__all__` is not sorted
 24 | |     'MTMClient',
 25 | |     'MTMClientParams']
    | |______________________^
-   |
 help: Apply an isort-style sorting to `__all__`
    |
 19 | __all__ = [
@@ -68,7 +65,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from .client import DSCClient
 11 | | from .params import DSCClientParams
    | |___________________________________^
-   |
 help: Organize imports
    |
 12 |
@@ -448,7 +444,6 @@ UP045 [*] Use `X | None` for type annotations
 33 |     params: Optional[_PAYLOAD]
 34 |     json: Optional[_PAYLOAD]
    |           ^^^^^^^^^^^^^^^^^^
-   |
 help: Convert to `X | None`
    |
 33 |     params: Optional[_PAYLOAD]
@@ -531,7 +526,6 @@ I001 [*] Import block is un-sorted or un-formatted
 19 | | from ...plugins.status.params import StatusPluginIconParams
 20 | | from ...robie.params.client import RobieClientParams
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -597,7 +591,6 @@ I001 [*] Import block is un-sorted or un-formatted
 15 | | from .test_client import DSCEVENT_RANDOM_CHAN
 16 | | from .test_client import DSCEVENT_RANDOM_PRIV
    | |_____________________________________________^
-   |
 help: Organize imports
    |
 11 |
@@ -763,7 +756,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from .client import IRCClient
 11 | | from .params import IRCClientParams
    | |___________________________________^
-   |
 help: Organize imports
    |
 12 |
@@ -1073,7 +1065,6 @@ I001 [*] Import block is un-sorted or un-formatted
 19 | | from ...plugins.status.params import StatusPluginIconParams
 20 | | from ...robie.params.client import RobieClientParams
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -1134,7 +1125,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from ...utils.states import ClientChannel
 11 | | from ...utils.states import ClientChannels as _ClientChannels
    | |_____________________________________________________________^
-   |
 help: Organize imports
    |
 13 |
@@ -1153,7 +1143,6 @@ I001 [*] Import block is un-sorted or un-formatted
 15 | | from .test_client import IRCEVENT_RANDOM_CHAN
 16 | | from .test_client import IRCEVENT_RANDOM_PRIV
    | |_____________________________________________^
-   |
 help: Organize imports
    |
 11 |
@@ -1315,7 +1304,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from .client import MTMClient
 11 | | from .params import MTMClientParams
    | |___________________________________^
-   |
 help: Organize imports
    |
 12 |
@@ -1696,7 +1684,6 @@ UP045 [*] Use `X | None` for type annotations
 33 |     params: Optional[_PAYLOAD]
 34 |     json: Optional[_PAYLOAD]
    |           ^^^^^^^^^^^^^^^^^^
-   |
 help: Convert to `X | None`
    |
 33 |     params: Optional[_PAYLOAD]
@@ -1779,7 +1766,6 @@ I001 [*] Import block is un-sorted or un-formatted
 19 | | from ...plugins.status.params import StatusPluginIconParams
 20 | | from ...robie.params.client import RobieClientParams
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -1845,7 +1831,6 @@ I001 [*] Import block is un-sorted or un-formatted
 15 | | from .test_client import MTMEVENT_RANDOM_CHAN
 16 | | from .test_client import MTMEVENT_RANDOM_PRIV
    | |_____________________________________________^
-   |
 help: Organize imports
    |
 11 |
@@ -2042,7 +2027,6 @@ I001 [*] Import block is un-sorted or un-formatted
 24 | | from .robie.robie import Robie
 25 | | from .robie.service import RobieService
    | |_______________________________________^
-   |
 help: Organize imports
    |
 13 | from encommon.utils import save_text
@@ -2078,7 +2062,6 @@ I001 [*] Import block is un-sorted or un-formatted
 17 | |
 18 | | from ..robie.config import RobieConfig
    | |______________________________________^
-   |
 help: Organize imports
    |
 14 | from encommon.types import DictStrAny
@@ -2140,7 +2123,6 @@ I001 [*] Import block is un-sorted or un-formatted
 18 | |
 19 | | from ..robie.config import RobieConfig
    | |______________________________________^
-   |
 help: Organize imports
    |
 21 |
@@ -2172,7 +2154,6 @@ UP045 [*] Use `X | None` for type annotations
 105 |
 106 |     value: Optional[str] = None
     |            ^^^^^^^^^^^^^
-    |
 help: Convert to `X | None`
     |
 105 |
@@ -2216,7 +2197,6 @@ I001 [*] Import block is un-sorted or un-formatted
 21 | | from ..robie.robie import Robie
 22 | | from ..robie.service import RobieService
    | |________________________________________^
-   |
 help: Organize imports
    |
 10 | from argparse import ArgumentParser
@@ -2272,7 +2252,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from ..config import arguments
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 12 |
@@ -2285,7 +2264,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from ..crypts import arguments
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 12 |
@@ -2298,7 +2276,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from ..service import arguments
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 12 |
@@ -2327,7 +2304,6 @@ I001 [*] Import block is un-sorted or un-formatted
 25 | | from .status.params import StatusPluginParams
 26 | | from .status.plugin import StatusPlugin
    | |_______________________________________^
-   |
 help: Organize imports
    |
 21 | from .nagios.plugin import NagiosPlugin
@@ -2366,7 +2342,6 @@ RUF022 [*] `__all__` is not sorted
 46 | |     'StatusPluginItem',
 47 | |     'StatusPluginStates']
    | |_________________________^
-   |
 help: Apply an isort-style sorting to `__all__`
    |
 30 | __all__ = [
@@ -2404,7 +2379,6 @@ I001 [*] Import block is un-sorted or un-formatted
 12 | | from .params import AinswerPluginParams
 13 | | from .plugin import AinswerPlugin
    | |_________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -2428,7 +2402,6 @@ RUF022 [*] `__all__` is not sorted
 20 | |     'AinswerDepends',
 21 | |     'AinswerTool']
    | |__________________^
-   |
 help: Apply an isort-style sorting to `__all__`
    |
 17 | __all__ = [
@@ -2456,7 +2429,6 @@ I001 [*] Import block is un-sorted or un-formatted
 19 | | from .memory import AinswerMemoryRecord
 20 | | from .memory import AinswerMemoryUniqueField
    | |____________________________________________^
-   |
 help: Organize imports
    |
 13 | from encommon.types import funcname
@@ -2484,7 +2456,6 @@ RET501 [*] Do not explicitly `return None` in function if it is the only possibl
 63 |     if mitem is None:
 64 |         return None
    |         ^^^^^^^^^^^
-   |
 help: Remove explicit `return None`
    |
 63 |     if mitem is None:
@@ -2535,7 +2506,6 @@ RET501 [*] Do not explicitly `return None` in function if it is the only possibl
 148 |     if mitem is None:
 149 |         return None
     |         ^^^^^^^^^^^
-    |
 help: Remove explicit `return None`
     |
 148 |     if mitem is None:
@@ -2618,7 +2588,6 @@ I001 [*] Import block is un-sorted or un-formatted
 22 | /     from .plugin import AinswerPlugin
 23 | |     from ...robie.models.message import RobieMessage
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 21 | if TYPE_CHECKING:
@@ -2674,7 +2643,6 @@ I001 [*] Import block is un-sorted or un-formatted
 22 | /     from .plugin import AinswerPlugin
 23 | |     from ...robie.models.message import RobieMessage
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 21 | if TYPE_CHECKING:
@@ -2751,7 +2719,6 @@ I001 [*] Import block is un-sorted or un-formatted
 34 | /     from .plugin import AinswerPlugin
 35 | |     from ...robie.models.message import RobieMessage
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 33 | if TYPE_CHECKING:
@@ -2992,7 +2959,6 @@ I001 [*] Import block is un-sorted or un-formatted
 36 | /     from .plugin import AinswerPlugin
 37 | |     from ...robie.models.message import RobieMessage
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 35 | if TYPE_CHECKING:
@@ -3137,7 +3103,6 @@ I001 [*] Import block is un-sorted or un-formatted
 19 | | from ...robie.params.common import RobieParamsModel
 20 | | from ...robie.params.plugin import RobiePluginParams
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -3532,7 +3497,6 @@ I001 [*] Import block is un-sorted or un-formatted
 29 | |     from ...robie.childs.person import RobiePerson
 30 | |     from ...robie.models.message import RobieMessage
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 26 | if TYPE_CHECKING:
@@ -3567,7 +3531,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from pathlib import Path
    | ^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 11 |
@@ -3820,7 +3783,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from .params import AutoJoinPluginParams
 11 | | from .plugin import AutoJoinPlugin
    | |__________________________________^
-   |
 help: Organize imports
    |
 12 |
@@ -3843,7 +3805,6 @@ I001 [*] Import block is un-sorted or un-formatted
 18 | | from ...robie.params.common import RobieParamsModel
 19 | | from ...robie.params.plugin import RobiePluginParams
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -4011,7 +3972,6 @@ B010 [*] Do not call `setattr` with a constant attribute value. It is not any sa
 113 | |         '_AutoJoinPlugin__timer',
 114 | |         Timer(0))
     | |_________________^
-    |
 help: Replace `setattr` with assignment
     |
 110 |
@@ -4029,7 +3989,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from .params import AutoNickPluginParams
 11 | | from .plugin import AutoNickPlugin
    | |__________________________________^
-   |
 help: Organize imports
    |
 12 |
@@ -4052,7 +4011,6 @@ I001 [*] Import block is un-sorted or un-formatted
 18 | | from ...robie.params.common import RobieParamsModel
 19 | | from ...robie.params.plugin import RobiePluginParams
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -4210,7 +4168,6 @@ RET501 [*] Do not explicitly `return None` in function if it is the only possibl
 224 |                 failure.add(True)
 225 |                 return None
     |                 ^^^^^^^^^^^
-    |
 help: Remove explicit `return None`
     |
 224 |                 failure.add(True)
@@ -4225,7 +4182,6 @@ RET501 [*] Do not explicitly `return None` in function if it is the only possibl
 236 |             if current == should:
 237 |                 return None
     |                 ^^^^^^^^^^^
-    |
 help: Remove explicit `return None`
     |
 236 |             if current == should:
@@ -4281,7 +4237,6 @@ B010 [*] Do not call `setattr` with a constant attribute value. It is not any sa
 112 | |         '_AutoNickPlugin__timer',
 113 | |         Timer(0))
     | |_________________^
-    |
 help: Replace `setattr` with assignment
     |
 109 |
@@ -4299,7 +4254,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from .params import HomiePluginParams
 11 | | from .plugin import HomiePlugin
    | |_______________________________^
-   |
 help: Organize imports
    |
 12 |
@@ -4320,7 +4274,6 @@ I001 [*] Import block is un-sorted or un-formatted
 16 | | from .persist import HomiePersistRecord
 17 | | from ..ainswer.common import AinswerDepends
    | |___________________________________________^
-   |
 help: Organize imports
    |
 12 | from encommon.types import funcname
@@ -4341,7 +4294,6 @@ I001 [*] Import block is un-sorted or un-formatted
 13 | /     from .plugin import HomiePlugin
 14 | |     from ...robie.models.message import RobieMessage
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 12 | if TYPE_CHECKING:
@@ -4365,7 +4317,6 @@ I001 [*] Import block is un-sorted or un-formatted
 18 | | from ...robie.params.common import RobieParamsModel
 19 | | from ...robie.params.plugin import RobiePluginParams
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -4552,7 +4503,6 @@ I001 [*] Import block is un-sorted or un-formatted
 22 | | from ..status.plugin import StatusPlugin
 23 | | from ...robie.childs.plugin import RobiePlugin
    | |______________________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -4716,7 +4666,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from .params import LoggerPluginParams
 11 | | from .plugin import LoggerPlugin
    | |________________________________^
-   |
 help: Organize imports
    |
 12 |
@@ -4792,7 +4741,6 @@ I001 [*] Import block is un-sorted or un-formatted
 34 | /     from .plugin import LoggerPlugin
 35 | |     from ...robie.models.message import RobieMessage
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 33 | if TYPE_CHECKING:
@@ -5084,7 +5032,6 @@ I001 [*] Import block is un-sorted or un-formatted
 17 | | from ..status.params import StatusPluginIconParams
 18 | | from ...robie.params.plugin import RobiePluginParams
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -5318,7 +5265,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from .params import NagiosPluginParams
 11 | | from .plugin import NagiosPlugin
    | |________________________________^
-   |
 help: Organize imports
    |
 12 |
@@ -5339,7 +5285,6 @@ I001 [*] Import block is un-sorted or un-formatted
 16 | | from .current import NagiosCurrentRecords
 17 | | from ..ainswer.common import AinswerDepends
    | |___________________________________________^
-   |
 help: Organize imports
    |
 12 | from encommon.types import funcname
@@ -5397,7 +5342,6 @@ I001 [*] Import block is un-sorted or un-formatted
 13 | /     from .plugin import NagiosPlugin
 14 | |     from ...robie.models.message import RobieMessage
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 12 | if TYPE_CHECKING:
@@ -5421,7 +5365,6 @@ I001 [*] Import block is un-sorted or un-formatted
 18 | | from ...robie.params.common import RobieParamsModel
 19 | | from ...robie.params.plugin import RobiePluginParams
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -5545,7 +5488,6 @@ I001 [*] Import block is un-sorted or un-formatted
 22 | | from ..status.plugin import StatusPlugin
 23 | | from ...robie.childs.plugin import RobiePlugin
    | |______________________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -5712,7 +5654,6 @@ I001 [*] Import block is un-sorted or un-formatted
 13 | | from .params import StatusPluginParams
 14 | | from .plugin import StatusPlugin
    | |________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -5739,7 +5680,6 @@ RUF022 [*] `__all__` is not sorted
 22 | |     'StatusPluginStates',
 23 | |     'StatusPluginItem']
    | |_______________________^
-   |
 help: Apply an isort-style sorting to `__all__`
    |
 19 |     'StatusPlugin',
@@ -5809,7 +5749,6 @@ I001 [*] Import block is un-sorted or un-formatted
 22 | |     from ...robie.childs.client import RobieClient
 23 | |     from ...robie.models.message import RobieMessage
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 18 | if TYPE_CHECKING:
@@ -5837,7 +5776,6 @@ I001 [*] Import block is un-sorted or un-formatted
 18 | | from ...robie.params.common import RobieParamsModel
 19 | | from ...robie.params.plugin import RobiePluginParams
    | |____________________________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -6155,7 +6093,6 @@ I001 [*] Import block is un-sorted or un-formatted
 12 | | from .robie import Robie
 13 | | from .service import RobieService
    | |_________________________________^
-   |
 help: Organize imports
    |
 14 |
@@ -6172,7 +6109,6 @@ I001 [*] Import block is un-sorted or un-formatted
 12 | | from .queue import RobieQueue
 13 | | from .queue import RobieQueueItem
    | |_________________________________^
-   |
 help: Organize imports
    |
 11 | from .logger import RobieLogger
@@ -6194,7 +6130,6 @@ RUF022 [*] `__all__` is not sorted
 20 | |     'RobieQueue',
 21 | |     'RobieQueueItem']
    | |_____________________^
-   |
 help: Apply an isort-style sorting to `__all__`
    |
 17 | __all__ = [
@@ -6246,7 +6181,6 @@ SIM114 [*] Combine `if` branches using logical `or` operator
  99 | |             kwargs['base'] = (
 100 | |                 clsname(base))
     | |______________________________^
-    |
 help: Combine `if` branches
    |
 93 |
@@ -6270,7 +6204,6 @@ SIM114 [*] Combine `if` branches using logical `or` operator
 108 | |             kwargs['item'] = (
 109 | |                 clsname(item))
     | |______________________________^
-    |
 help: Combine `if` branches
     |
 102 |
@@ -6382,7 +6315,6 @@ I001 [*] Import block is un-sorted or un-formatted
 13 | | from .person import RobiePerson
 14 | | from .plugin import RobiePlugin
    | |_______________________________^
-   |
 help: Organize imports
    |
 15 |
@@ -6402,7 +6334,6 @@ RUF022 [*] `__all__` is not sorted
 22 | |     'RobiePlugin',
 23 | |     'RobiePerson']
    | |__________________^
-   |
 help: Apply an isort-style sorting to `__all__`
    |
 21 |     'RobieClient',
@@ -6692,7 +6623,6 @@ I001 [*] Import block is un-sorted or un-formatted
 20 | /     from .client import RobieClient
 21 | |     from ..params.person import RobiePersonParams
    | |_________________________________________________^
-   |
 help: Organize imports
    |
 19 | if TYPE_CHECKING:
@@ -6983,7 +6913,6 @@ I001 [*] Import block is un-sorted or un-formatted
 25 | | from .params.robie import RobieParams
 26 | | from ..utils.importer import importer
    | |_____________________________________^
-   |
 help: Organize imports
    |
 10 | from copy import deepcopy
@@ -7243,7 +7172,6 @@ I001 [*] Import block is un-sorted or un-formatted
 11 | | from .member import RobieMember
 12 | | from .plugins import RobiePlugins
    | |_________________________________^
-   |
 help: Organize imports
    |
 13 |
@@ -7261,7 +7189,6 @@ RUF022 [*] `__all__` is not sorted
 18 | |     'RobieClients',
 19 | |     'RobiePlugins']
    | |___________________^
-   |
 help: Apply an isort-style sorting to `__all__`
    |
 16 | __all__ = [
@@ -7300,7 +7227,6 @@ I001 [*] Import block is un-sorted or un-formatted
 16 | /     from .member import RobieThreads
 17 | |     from ..childs.client import RobieClient  # noqa: F401
    | |___________________________________________^
-   |
 help: Organize imports
    |
 15 | if TYPE_CHECKING:
@@ -7317,7 +7243,6 @@ RUF100 [*] Unused `noqa` directive (unused: `F401`)
 16 |     from .member import RobieThreads
 17 |     from ..childs.client import RobieClient  # noqa: F401
    |                                              ^^^^^^^^^^^^
-   |
 help: Remove unused `noqa` directive
    |
 16 |     from .member import RobieThreads
@@ -7348,7 +7273,6 @@ UP037 [*] Remove quotes from type annotation
     |
 135 |         threads: 'RobieThreads' = {}
     |                  ^^^^^^^^^^^^^^
-    |
 help: Remove quotes
     |
 134 |
@@ -7401,7 +7325,6 @@ I001 [*] Import block is un-sorted or un-formatted
 16 | /     from .member import RobieThreads
 17 | |     from ..childs.plugin import RobiePlugin  # noqa: F401
    | |___________________________________________^
-   |
 help: Organize imports
    |
 15 | if TYPE_CHECKING:
@@ -7418,7 +7341,6 @@ RUF100 [*] Unused `noqa` directive (unused: `F401`)
 16 |     from .member import RobieThreads
 17 |     from ..childs.plugin import RobiePlugin  # noqa: F401
    |                                              ^^^^^^^^^^^^
-   |
 help: Remove unused `noqa` directive
    |
 16 |     from .member import RobieThreads
@@ -7432,7 +7354,6 @@ UP037 [*] Remove quotes from type annotation
     |
 119 |         threads: 'RobieThreads' = {}
     |                  ^^^^^^^^^^^^^^
-    |
 help: Remove quotes
     |
 118 |
@@ -7493,7 +7414,6 @@ I001 [*] Import block is un-sorted or un-formatted
 12 | | from .message import RobieMessageKinds
 13 | | from .robie import RobieModels
    | |______________________________^
-   |
 help: Organize imports
    |
 10 | from .command import RobieCommand
@@ -7516,7 +7436,6 @@ RUF022 [*] `__all__` is not sorted
 20 | |     'RobieMessageKinds',
 21 | |     'RobieCommand']
    | |___________________^
-   |
 help: Apply an isort-style sorting to `__all__`
    |
 17 | __all__ = [
@@ -7558,7 +7477,6 @@ UP045 [*] Use `X | None` for type annotations
 38 |     client: str
 39 |     person: Optional[str]
    |             ^^^^^^^^^^^^^
-   |
 help: Convert to `X | None`
    |
 38 |     client: str
@@ -7610,7 +7528,6 @@ I001 [*] Import block is un-sorted or un-formatted
 22 | |     from ..params.robie import RobiePrinterParams
 23 | |     from ..params.service import RobieServiceParams
    | |___________________________________________________^
-   |
 help: Organize imports
    |
 20 |     from ..params.plugin import RobiePluginParams
@@ -8059,7 +7976,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from ..robie import RobieModels
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 12 |
@@ -8079,7 +7995,6 @@ I001 [*] Import block is un-sorted or un-formatted
 16 | | from .robie import RobiePrinterParams
 17 | | from .service import RobieServiceParams
    | |_______________________________________^
-   |
 help: Organize imports
    |
 14 | from .plugin import RobiePluginParams
@@ -8106,7 +8021,6 @@ RUF022 [*] `__all__` is not sorted
 28 | |     'RobiePersonParams',
 29 | |     'RobieServiceParams']
    | |_________________________^
-   |
 help: Apply an isort-style sorting to `__all__`
    |
 21 | __all__ = [
@@ -8138,7 +8052,6 @@ I001 [*] Import block is un-sorted or un-formatted
 16 | |
 17 | | from .common import RobieParamsModel
    | |____________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -8202,7 +8115,6 @@ I001 [*] Import block is un-sorted or un-formatted
 16 | |
 17 | | from .child import RobieChildParams
    | |___________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -8276,7 +8188,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from encommon.types import BaseModel
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 12 |
@@ -8297,7 +8208,6 @@ I001 [*] Import block is un-sorted or un-formatted
 17 | | from .child import RobieChildParams
 18 | | from .common import RobieParamsModel
    | |____________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -8411,7 +8321,6 @@ I001 [*] Import block is un-sorted or un-formatted
 16 | |
 17 | | from .child import RobieChildParams
    | |___________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -8515,7 +8424,6 @@ I001 [*] Import block is un-sorted or un-formatted
 22 | | from .plugin import RobiePluginParams
 23 | | from .service import RobieServiceParams
    | |_______________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -8629,7 +8537,6 @@ I001 [*] Import block is un-sorted or un-formatted
 13 | |
 14 | | from .common import RobieParamsModel
    | |____________________________________^
-   |
 help: Organize imports
    |
 16 |
@@ -8793,7 +8700,6 @@ UP037 [*] Remove quotes from type annotation
     |
 366 |         matched: set['RobiePerson'] = set()
     |                      ^^^^^^^^^^^^^
-    |
 help: Remove quotes
     |
 365 |
@@ -9026,7 +8932,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from pathlib import Path
    | ^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 11 |
@@ -9046,7 +8951,6 @@ I001 [*] Import block is un-sorted or un-formatted
 15 | | from . import SAMPLES
 16 | | from ..config import RobieConfig
    | |________________________________^
-   |
 help: Organize imports
    |
 10 | from encommon.types import DictStrAny
@@ -9078,7 +8982,6 @@ I001 [*] Import block is un-sorted or un-formatted
 20 | | from ..models.message import RobieMessage
 21 | | from ..robie import Robie
    | |_________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -9144,7 +9047,6 @@ I001 [*] Import block is un-sorted or un-formatted
 12 | | from .thread import RobieThread
 13 | | from .thread import RobieThreadItems
    | |____________________________________^
-   |
 help: Organize imports
    |
 11 | from .plugin import RobiePluginThread
@@ -9166,7 +9068,6 @@ RUF022 [*] `__all__` is not sorted
 20 | |     'RobieClientThread',
 21 | |     'RobiePluginThread']
    | |________________________^
-   |
 help: Apply an isort-style sorting to `__all__`
    |
 17 | __all__ = [
@@ -9364,7 +9265,6 @@ I001 [*] Import block is un-sorted or un-formatted
 15 | | from .states import ClientPublish
 16 | | from .thread import DupliThread
    | |_______________________________^
-   |
 help: Organize imports
    |
 12 | from .param import InvalidParam
@@ -9391,7 +9291,6 @@ RUF022 [*] `__all__` is not sorted
 26 | |     'ClientPublish',
 27 | |     'importer']
    | |_______________^
-   |
 help: Apply an isort-style sorting to `__all__`
    |
 20 | __all__ = [
@@ -9438,7 +9337,6 @@ UP045 [*] Use `X | None` for type annotations
 39 |     phase: _PHASE
 40 |     about: Optional[str] = None
    |            ^^^^^^^^^^^^^
-   |
 help: Convert to `X | None`
    |
 39 |     phase: _PHASE
@@ -9471,7 +9369,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from importlib import import_module
 11 | | from typing import Any
    | |______________________^
-   |
 help: Organize imports
    |
 13 |
@@ -9562,7 +9459,6 @@ UP045 [*] Use `X | None` for type annotations
 47 |     param: Optional[str] = None
 48 |     value: Optional[Any] = None
    |            ^^^^^^^^^^^^^
-   |
 help: Convert to `X | None`
    |
 47 |     param: Optional[str] = None
@@ -9775,7 +9671,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from ..importer import importer
    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 12 |
@@ -9817,7 +9712,6 @@ I001 [*] Import block is un-sorted or un-formatted
 14 | | from ..states import ClientChannels
 15 | | from ..states import ClientPublish
    | |__________________________________^
-   |
 help: Organize imports
    |
 9  |
@@ -9864,7 +9758,6 @@ I001 [*] Import block is un-sorted or un-formatted
 10 | / from threading import Thread
 11 | | from typing import Optional
    | |___________________________^
-   |
 help: Organize imports
    |
 13 |
@@ -9878,7 +9771,6 @@ UP045 [*] Use `X | None` for type annotations
 23 |     thread: str
 24 |     about: Optional[str] = None
    |            ^^^^^^^^^^^^^
-   |
 help: Convert to `X | None`
    |
 23 |     thread: str
