@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.robie.childs.plugin</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -322,24 +322,24 @@
 <div class="viewcode-block" id="RobiePlugin">
 <a class="viewcode-back" href="../../../../index.html#enrobie.robie.childs.plugin.RobiePlugin">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">RobiePlugin</span><span class="p">(</span><span class="n">RobieChild</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Integrate with the Robie routine and perform operations.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">__thread</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s1">&#39;RobiePluginThread&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">__thread</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s1">'RobiePluginThread'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">kind</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;plugin&#39;</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">'plugin'</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
-        <span class="k">return</span> <span class="s1">&#39;plugin&#39;</span>
+        <span class="k">return</span> <span class="s1">'plugin'</span>
 
 
 <div class="viewcode-block" id="RobiePlugin.schema">
@@ -347,12 +347,12 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">schema</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="s1">&#39;RobiePluginParams&#39;</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="s1">'RobiePluginParams'</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the configuration parameters relevant for class.</span>
 
 <span class="sd">        :returns: Configuration parameters relevant for class.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
@@ -361,12 +361,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">params</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobiePluginParams&#39;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'RobiePluginParams'</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Pydantic model containing the configuration.</span>
 
 <span class="sd">        :returns: Pydantic model containing the configuration.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">model</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">RobieModels</span>
@@ -383,12 +383,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">thread</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="s1">&#39;RobiePluginThread&#39;</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="s1">'RobiePluginThread'</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="kn">from</span><span class="w"> </span><span class="nn">..threads</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
             <span class="n">RobiePluginThread</span><span class="p">)</span>
@@ -408,11 +408,11 @@
     <span class="nd">@thread</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">thread</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">value</span><span class="p">:</span> <span class="s1">&#39;RobiePluginThread&#39;</span><span class="p">,</span>
+        <span class="n">value</span><span class="p">:</span> <span class="s1">'RobiePluginThread'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Update the value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="kn">from</span><span class="w"> </span><span class="nn">..threads</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
             <span class="n">RobiePluginThread</span><span class="p">)</span>
@@ -429,13 +429,13 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform the operation related to Robie service threads.</span>
 
 <span class="sd">        .. note::</span>
 <span class="sd">           Deviates from enhomie in children have operations,</span>
 <span class="sd">           and are more isolated from internal core routines.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
@@ -447,12 +447,12 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">check</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">RobiePerson</span><span class="p">,</span> <span class="n">RobieMessage</span><span class="p">],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the boolean indicating whether person is trusted.</span>
 
 <span class="sd">        :param check: Validate the person is trusted by plugin.</span>
 <span class="sd">        :returns: Boolean indicating whether person is trusted.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
         <span class="n">trusted</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">trusted</span>
@@ -480,12 +480,12 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">check</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">RobiePerson</span><span class="p">,</span> <span class="n">RobieMessage</span><span class="p">],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the boolean indicating whether person is trusted.</span>
 
 <span class="sd">        :param check: Validate the person is trusted by plugin.</span>
 <span class="sd">        :returns: Boolean indicating whether person is trusted.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">trusted</span><span class="p">(</span><span class="n">check</span><span class="p">)</span></div>
 </div>

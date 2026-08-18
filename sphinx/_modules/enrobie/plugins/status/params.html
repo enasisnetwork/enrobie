@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.status.params</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -317,33 +317,33 @@
 
 <div class="viewcode-block" id="StatusPluginReportParams">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.StatusPluginReportParams">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginReportParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginReportParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Contain information for constructing the chat messages.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">client</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Client where channel exists&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Client where channel exists'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">target</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Where the message will be sent&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Where the message will be sent'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">states</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">StatusPluginStates</span><span class="p">]],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Which status value are related&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Which status value are related'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">delay</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">int</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Period between status reports&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Period between status reports'</span><span class="p">,</span>
               <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">le</span><span class="o">=</span><span class="mi">86400</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)]</span>
 
 
@@ -353,14 +353,14 @@
         <span class="o">/</span><span class="p">,</span>
         <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
-        <span class="n">states</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;states&#39;</span><span class="p">)</span>
+        <span class="n">states</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'states'</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-            <span class="n">data</span><span class="p">[</span><span class="s1">&#39;states&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">states</span><span class="p">]</span>
+            <span class="n">data</span><span class="p">[</span><span class="s1">'states'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">states</span><span class="p">]</span>
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span></div>
 
@@ -369,27 +369,27 @@
 
 <div class="viewcode-block" id="StatusPluginCommandParams">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.StatusPluginCommandParams">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginCommandParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginCommandParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Process and validate the Robie configuration parameters.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">irc</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
-        <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;!status&#39;</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Command name for chat platform&#39;</span><span class="p">,</span>
+        <span class="n">Field</span><span class="p">(</span><span class="s1">'!status'</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Command name for chat platform'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 
     <span class="n">dsc</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
-        <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;!status&#39;</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Command name for chat platform&#39;</span><span class="p">,</span>
+        <span class="n">Field</span><span class="p">(</span><span class="s1">'!status'</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Command name for chat platform'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 
     <span class="n">mtm</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
-        <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;!status&#39;</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Command name for chat platform&#39;</span><span class="p">,</span>
+        <span class="n">Field</span><span class="p">(</span><span class="s1">'!status'</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Command name for chat platform'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span></div>
 
 
@@ -397,27 +397,27 @@
 
 <div class="viewcode-block" id="StatusPluginIconParams">
 <a class="viewcode-back" href="../../../../index.html#enrobie.plugins.StatusPluginIconParams">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginIconParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginIconParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Contain information for constructing the chat messages.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">irc</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used for the chat platform&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Icon used for the chat platform'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">dsc</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used for the chat platform&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Icon used for the chat platform'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">mtm</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used for the chat platform&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Icon used for the chat platform'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span></div>
 
 
@@ -425,56 +425,56 @@
 
 <div class="viewcode-block" id="StatusPluginIconsParams">
 <a class="viewcode-back" href="../../../../enrobie.plugins.status.html#enrobie.plugins.StatusPluginIconsParams">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginIconsParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginIconsParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Contain information for constructing the chat messages.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">pending</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">StatusPluginIconParams</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">StatusPluginIconParams</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per the chat platform&#39;</span><span class="p">)]</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Icon used per the chat platform'</span><span class="p">)]</span>
 
     <span class="n">normal</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">StatusPluginIconParams</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">StatusPluginIconParams</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per the chat platform&#39;</span><span class="p">)]</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Icon used per the chat platform'</span><span class="p">)]</span>
 
     <span class="n">failure</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">StatusPluginIconParams</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">StatusPluginIconParams</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per the chat platform&#39;</span><span class="p">)]</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Icon used per the chat platform'</span><span class="p">)]</span>
 
     <span class="n">unknown</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">StatusPluginIconParams</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">StatusPluginIconParams</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per the chat platform&#39;</span><span class="p">)]</span></div>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Icon used per the chat platform'</span><span class="p">)]</span></div>
 
 
 
 
 <div class="viewcode-block" id="StatusPluginParams">
 <a class="viewcode-back" href="../../../../index.html#enrobie.plugins.StatusPluginParams">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginParams</span><span class="p">(</span><span class="n">RobiePluginParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginParams</span><span class="p">(</span><span class="n">RobiePluginParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Process and validate the Robie configuration parameters.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">reports</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">StatusPluginReportParams</span><span class="p">]],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Where to send status updates&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Where to send status updates'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">command</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">StatusPluginCommandParams</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">StatusPluginCommandParams</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Command name per chat platform&#39;</span><span class="p">)]</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Command name per chat platform'</span><span class="p">)]</span>
 
     <span class="n">icons</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">StatusPluginIconsParams</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">StatusPluginIconsParams</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per the chat platform&#39;</span><span class="p">)]</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Icon used per the chat platform'</span><span class="p">)]</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
@@ -484,17 +484,17 @@
         <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
 
         <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
             <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="s1">&#39;report&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;command&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;icons&#39;</span><span class="p">]</span>
+                <span class="s1">'report'</span><span class="p">,</span>
+                <span class="s1">'command'</span><span class="p">,</span>
+                <span class="s1">'icons'</span><span class="p">]</span>
 
             <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
 

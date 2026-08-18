@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.logger.params</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -316,39 +316,39 @@
 
 <div class="viewcode-block" id="LoggerPluginParams">
 <a class="viewcode-back" href="../../../../index.html#enrobie.plugins.LoggerPluginParams">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">LoggerPluginParams</span><span class="p">(</span><span class="n">RobiePluginParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">LoggerPluginParams</span><span class="p">(</span><span class="n">RobiePluginParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Process and validate the Robie configuration parameters.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">database</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
-        <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;sqlite:///:memory:&#39;</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Database connection string&#39;</span><span class="p">,</span>
+        <span class="n">Field</span><span class="p">(</span><span class="s1">'sqlite:///:memory:'</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Database connection string'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">histories</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">int</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Number of messages per anchor&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Number of messages per anchor'</span><span class="p">,</span>
               <span class="n">ge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">le</span><span class="o">=</span><span class="mi">10000</span><span class="p">)]</span>
 
     <span class="n">clients</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;List of clients to enable plugin&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'List of clients to enable plugin'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">output</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Optional path where logs append&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Optional path where logs append'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">4</span><span class="p">)]</span>
 
     <span class="n">status</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">StatusPluginIconParams</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">StatusPluginIconParams</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per chat platform&#39;</span><span class="p">)]</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Icon used per chat platform'</span><span class="p">)]</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
@@ -358,19 +358,19 @@
         <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
 
         <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
             <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="s1">&#39;database&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;histories&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;clients&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;output&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;status&#39;</span><span class="p">]</span>
+                <span class="s1">'database'</span><span class="p">,</span>
+                <span class="s1">'histories'</span><span class="p">,</span>
+                <span class="s1">'clients'</span><span class="p">,</span>
+                <span class="s1">'output'</span><span class="p">,</span>
+                <span class="s1">'status'</span><span class="p">]</span>
 
             <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
 

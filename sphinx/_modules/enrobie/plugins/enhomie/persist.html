@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.enhomie.persist</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -329,10 +329,10 @@
 
 <div class="viewcode-block" id="HomiePersistRecord">
 <a class="viewcode-back" href="../../../../enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.persist.HomiePersistRecord">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">HomiePersistRecord</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">HomiePersistRecord</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Information relevant to Homie Automate persistent value.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">unique</span><span class="p">:</span> <span class="n">_FIELD_UNIQUE</span>
 
@@ -360,9 +360,9 @@
         <span class="o">/</span><span class="p">,</span>
         <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span></div>
 
@@ -372,13 +372,13 @@
 <div class="viewcode-block" id="HomiePersist">
 <a class="viewcode-back" href="../../../../enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.persist.HomiePersist">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">HomiePersist</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Collect the information using the upstream API endpoint.</span>
 
 <span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">__plugin</span><span class="p">:</span> <span class="s1">&#39;HomiePlugin&#39;</span>
+    <span class="n">__plugin</span><span class="p">:</span> <span class="s1">'HomiePlugin'</span>
 
     <span class="n">__client</span><span class="p">:</span> <span class="n">HTTPClient</span>
 
@@ -387,11 +387,11 @@
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;HomiePlugin&#39;</span><span class="p">,</span>
+        <span class="n">plugin</span><span class="p">:</span> <span class="s1">'HomiePlugin'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span> <span class="o">=</span> <span class="n">plugin</span>
 
@@ -405,19 +405,19 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">__client</span> <span class="o">=</span> <span class="n">client</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__location</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">params</span><span class="o">.</span><span class="n">restful</span><span class="si">}</span><span class="s1">&#39;</span>
-            <span class="s1">&#39;/api/persists&#39;</span><span class="p">)</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">params</span><span class="o">.</span><span class="n">restful</span><span class="si">}</span><span class="s1">'</span>
+            <span class="s1">'/api/persists'</span><span class="p">)</span>
 
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">client</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HTTPClient</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__client</span>
 
@@ -427,12 +427,12 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">request</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the response from upstream API endpoint request.</span>
 
 <span class="sd">        :param item: Determine which items will be enumerated.</span>
 <span class="sd">        :returns: Response from upstream API endpoint request.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span>
         <span class="n">client</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__client</span>
@@ -442,7 +442,7 @@
         <span class="n">request</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">request_block</span>
 
         <span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="p">(</span>
-            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;get&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">'get'</span><span class="p">,</span>
             <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
             <span class="n">httpauth</span><span class="o">=</span><span class="p">(</span>
                 <span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">username</span><span class="p">,</span>
@@ -464,11 +464,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">records</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">HomiePersistRecord</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the response from upstream API endpoint request.</span>
 
 <span class="sd">        :returns: Response from upstream API endpoint request.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">returned</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">HomiePersistRecord</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -480,7 +480,7 @@
 
         <span class="n">items</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-            <span class="p">[</span><span class="s1">&#39;entries&#39;</span><span class="p">])</span>
+            <span class="p">[</span><span class="s1">'entries'</span><span class="p">])</span>
 
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
 
@@ -498,12 +498,12 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">unique</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HomiePersistRecord</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the response from upstream API endpoint request.</span>
 
 <span class="sd">        :param unique: Unique identifier from within the table.</span>
 <span class="sd">        :returns: Response from upstream API endpoint request.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">records</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">records</span>
 
@@ -518,7 +518,7 @@
             <span class="k">return</span> <span class="n">record</span>
 
 
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;unique&#39;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'unique'</span><span class="p">)</span></div>
 </div>
 
 </pre></div>

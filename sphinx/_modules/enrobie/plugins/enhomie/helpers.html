@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.enhomie.helpers</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -313,15 +313,15 @@
 <div class="viewcode-block" id="composedsc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.helpers.composedsc">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">composedsc</span><span class="p">(</span>
-    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;HomiePlugin&#39;</span><span class="p">,</span>
-    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+    <span class="n">plugin</span><span class="p">:</span> <span class="s1">'HomiePlugin'</span><span class="p">,</span>
+    <span class="n">mitem</span><span class="p">:</span> <span class="s1">'RobieMessage'</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Construct and format message for related chat platform.</span>
 
 <span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
 <span class="sd">    :param mitem: Item containing information for operation.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.discord.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">DSCMessage</span>
 
@@ -341,7 +341,7 @@
 
     <span class="n">unique</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
-        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
 
     <span class="n">current</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">persist</span>
@@ -358,15 +358,15 @@
 <div class="viewcode-block" id="composeirc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.helpers.composeirc">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">composeirc</span><span class="p">(</span>
-    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;HomiePlugin&#39;</span><span class="p">,</span>
-    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+    <span class="n">plugin</span><span class="p">:</span> <span class="s1">'HomiePlugin'</span><span class="p">,</span>
+    <span class="n">mitem</span><span class="p">:</span> <span class="s1">'RobieMessage'</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Construct and format message for related chat platform.</span>
 
 <span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
 <span class="sd">    :param mitem: Item containing information for operation.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.irc.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCMessage</span>
 
@@ -386,7 +386,7 @@
 
     <span class="n">unique</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
-        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
 
     <span class="n">current</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">persist</span>
@@ -403,15 +403,15 @@
 <div class="viewcode-block" id="composemtm">
 <a class="viewcode-back" href="../../../../enrobie.plugins.enhomie.html#enrobie.plugins.enhomie.helpers.composemtm">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">composemtm</span><span class="p">(</span>
-    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;HomiePlugin&#39;</span><span class="p">,</span>
-    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+    <span class="n">plugin</span><span class="p">:</span> <span class="s1">'HomiePlugin'</span><span class="p">,</span>
+    <span class="n">mitem</span><span class="p">:</span> <span class="s1">'RobieMessage'</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Construct and format message for related chat platform.</span>
 
 <span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
 <span class="sd">    :param mitem: Item containing information for operation.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.mattermost.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">MTMMessage</span>
 
@@ -431,7 +431,7 @@
 
     <span class="n">unique</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">mitem</span><span class="o">.</span><span class="n">message</span>
-        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
 
     <span class="n">current</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">persist</span>

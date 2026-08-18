@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.autojoin.plugin</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -327,12 +327,12 @@
 <div class="viewcode-block" id="AutoJoinPlugin">
 <a class="viewcode-back" href="../../../../index.html#enrobie.plugins.AutoJoinPlugin">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">AutoJoinPlugin</span><span class="p">(</span><span class="n">RobiePlugin</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Integrate with the Robie routine and perform operations.</span>
 
 <span class="sd">    .. note::</span>
 <span class="sd">       This plugin maintains joined for configured channels.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">__started</span><span class="p">:</span> <span class="nb">bool</span>
 
@@ -345,9 +345,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">__post__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__started</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -377,7 +377,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">__timer</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span>
             <span class="n">params</span><span class="o">.</span><span class="n">interval</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;pending&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">'pending'</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="AutoJoinPlugin.validate">
@@ -385,9 +385,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform advanced validation on the parameters provided.</span>
-<span class="sd">        &quot;&quot;&quot;</span></div>
+<span class="sd">        """</span></div>
 
 
         <span class="c1"># Review the parameters</span>
@@ -399,11 +399,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">schema</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">AutoJoinPluginParams</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the configuration parameters relevant for class.</span>
 
 <span class="sd">        :returns: Configuration parameters relevant for class.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="n">AutoJoinPluginParams</span></div>
 
@@ -413,11 +413,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">params</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AutoJoinPluginParams</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Pydantic model containing the configuration.</span>
 
 <span class="sd">        :returns: Pydantic model containing the configuration.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">params</span>
 
@@ -433,9 +433,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform the operation related to Robie service threads.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.irc.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCMessage</span>
 
@@ -452,7 +452,7 @@
 
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__started</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">__started</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">'normal'</span><span class="p">)</span>
 
 
         <span class="k">if</span> <span class="n">timer</span><span class="o">.</span><span class="n">ready</span><span class="p">():</span>
@@ -467,7 +467,7 @@
             <span class="n">family</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">family</span>
 
             <span class="c1"># Ignore unrelated clients</span>
-            <span class="k">if</span> <span class="n">family</span> <span class="o">!=</span> <span class="s1">&#39;irc&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">!=</span> <span class="s1">'irc'</span><span class="p">:</span>
                 <span class="k">continue</span>
 
             <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
@@ -484,9 +484,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">__operate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform the operation related to Robie service threads.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.irc.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClient</span>
 
@@ -535,27 +535,27 @@
 
                 <span class="n">failure</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
-                <span class="n">rawcmd</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;JOIN :</span><span class="si">{</span><span class="n">join</span><span class="si">}</span><span class="s1">&#39;</span>
+                <span class="n">rawcmd</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'JOIN :</span><span class="si">{</span><span class="n">join</span><span class="si">}</span><span class="s1">'</span>
 
                 <span class="n">client</span><span class="o">.</span><span class="n">put_command</span><span class="p">(</span>
                     <span class="n">cqueue</span><span class="p">,</span> <span class="n">rawcmd</span><span class="p">)</span>
 
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span>
-            <span class="s1">&#39;failure&#39;</span>
+            <span class="s1">'failure'</span>
             <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">failure</span><span class="p">)</span>
-            <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+            <span class="k">else</span> <span class="s1">'normal'</span><span class="p">)</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="nf">__message</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;IRCMessage&#39;</span><span class="p">,</span>
+        <span class="n">mitem</span><span class="p">:</span> <span class="s1">'IRCMessage'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Process the provided message item from the Robie thread.</span>
 
 <span class="sd">        :param mitem: Item containing information for operation.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.irc.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClient</span>
 
@@ -592,7 +592,7 @@
             <span class="o">.</span><span class="n">nickname</span><span class="p">)</span>
 
 
-        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;376&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">'376'</span><span class="p">:</span>
 
             <span class="n">_joined</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 
@@ -602,7 +602,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">__operate</span><span class="p">()</span>
 
 
-        <span class="k">elif</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;JOIN&#39;</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="s1">'JOIN'</span>
                 <span class="ow">and</span> <span class="n">isme</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">):</span>
 
             <span class="n">channel</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
@@ -610,7 +610,7 @@
             <span class="n">_joined</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
 
 
-        <span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;KICK&#39;</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">'KICK'</span><span class="p">:</span>
 
             <span class="n">channel</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">target</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -619,7 +619,7 @@
                 <span class="n">_joined</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
 
 
-        <span class="k">elif</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;PART&#39;</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">command</span> <span class="o">==</span> <span class="s1">'PART'</span>
                 <span class="ow">and</span> <span class="n">isme</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">):</span>
 
             <span class="n">channel</span> <span class="o">=</span> <span class="n">split</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -631,11 +631,11 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">status</span><span class="p">:</span> <span class="n">StatusPluginStates</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Update or insert the status of the Robie child instance.</span>
 
 <span class="sd">        :param status: One of several possible value for status.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">thread</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">thread</span>
         <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
@@ -647,18 +647,18 @@
             <span class="n">thread</span><span class="o">.</span><span class="n">service</span>
             <span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">childs</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="s1">&#39;status&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">'status'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">NCNone</span>
 
-        <span class="n">plugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span>
+        <span class="n">plugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span>
 
         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
             <span class="n">plugin</span><span class="p">,</span> <span class="n">StatusPlugin</span><span class="p">)</span>
 
         <span class="p">(</span><span class="n">plugin</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
             <span class="n">unique</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-            <span class="n">group</span><span class="o">=</span><span class="s1">&#39;Management&#39;</span><span class="p">,</span>
-            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;IRC&#39;</span><span class="p">,</span>
+            <span class="n">group</span><span class="o">=</span><span class="s1">'Management'</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s1">'IRC'</span><span class="p">,</span>
             <span class="n">icon</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
             <span class="n">state</span><span class="o">=</span><span class="n">status</span><span class="p">))</span></div>
 

@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.ainswer.memory</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -334,19 +334,19 @@
 
 
 <span class="n">AinswerMemoryKinds</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span>
-    <span class="s1">&#39;privmsg&#39;</span><span class="p">,</span> <span class="s1">&#39;chanmsg&#39;</span><span class="p">]</span>
+    <span class="s1">'privmsg'</span><span class="p">,</span> <span class="s1">'chanmsg'</span><span class="p">]</span>
 
 <span class="n">AinswerMemoryMessageField</span> <span class="o">=</span> <span class="n">Annotated</span><span class="p">[</span>
     <span class="nb">str</span><span class="p">,</span>
     <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-          <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Historical person memorable&#39;</span><span class="p">,</span>
+          <span class="n">description</span><span class="o">=</span><span class="s1">'Historical person memorable'</span><span class="p">,</span>
           <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
           <span class="n">max_length</span><span class="o">=</span><span class="mi">400</span><span class="p">)]</span>
 
 <span class="n">AinswerMemoryUniqueField</span> <span class="o">=</span> <span class="n">Annotated</span><span class="p">[</span>
     <span class="nb">str</span><span class="p">,</span>
     <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-          <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Unique identifier for memory&#39;</span><span class="p">,</span>
+          <span class="n">description</span><span class="o">=</span><span class="s1">'Unique identifier for memory'</span><span class="p">,</span>
           <span class="n">min_length</span><span class="o">=</span><span class="mi">36</span><span class="p">,</span>
           <span class="n">max_length</span><span class="o">=</span><span class="mi">36</span><span class="p">)]</span>
 
@@ -355,9 +355,9 @@
 <div class="viewcode-block" id="SQLBase">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.SQLBase">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">SQLBase</span><span class="p">(</span><span class="n">DeclarativeBase</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Some additional class that SQLAlchemy requires to work.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    """</span></div>
 
 
 
@@ -365,12 +365,12 @@
 <div class="viewcode-block" id="AinswerMemoryTable">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.AinswerMemoryTable">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">AinswerMemoryTable</span><span class="p">(</span><span class="n">SQLBase</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Schematic for the database operations using SQLAlchemy.</span>
 
 <span class="sd">    .. note::</span>
 <span class="sd">       Fields are not completely documented for this model.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">plugin</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span>
         <span class="n">String</span><span class="p">,</span>
@@ -396,31 +396,31 @@
         <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;ainswer_memory&#39;</span></div>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">'ainswer_memory'</span></div>
 
 
 
 
 <div class="viewcode-block" id="AinswerMemoryRecord">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.AinswerMemoryRecord">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">AinswerMemoryRecord</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AinswerMemoryRecord</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Contain the information regarding the chatting history.</span>
 
 <span class="sd">    :param record: Record from the SQLAlchemy query routine.</span>
 <span class="sd">    :param kwargs: Keyword arguments passed for downstream.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">plugin</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Plugin name where originated&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Plugin name where originated'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">person</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Person that author is matched&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Person that author is matched'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">unique</span><span class="p">:</span> <span class="n">AinswerMemoryUniqueField</span>
@@ -430,7 +430,7 @@
     <span class="n">create</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;When the record was created&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'When the record was created'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
               <span class="n">max_length</span><span class="o">=</span><span class="mi">32</span><span class="p">)]</span>
 
@@ -440,18 +440,18 @@
         <span class="n">record</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AinswerMemoryTable</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">params</span><span class="p">:</span> <span class="n">DictStrAny</span>
 
         <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s1">&#39;plugin&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;person&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;unique&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;message&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;create&#39;</span><span class="p">]</span>
+            <span class="s1">'plugin'</span><span class="p">,</span>
+            <span class="s1">'person'</span><span class="p">,</span>
+            <span class="s1">'unique'</span><span class="p">,</span>
+            <span class="s1">'message'</span><span class="p">,</span>
+            <span class="s1">'create'</span><span class="p">]</span>
 
 
         <span class="k">if</span> <span class="n">record</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -469,12 +469,12 @@
 
 
         <span class="k">else</span><span class="p">:</span>  <span class="c1"># NOCVR</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;record&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'record'</span><span class="p">)</span>
 
 
-        <span class="n">create</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;create&#39;</span><span class="p">]</span>
+        <span class="n">create</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">'create'</span><span class="p">]</span>
 
-        <span class="n">params</span><span class="p">[</span><span class="s1">&#39;create&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">params</span><span class="p">[</span><span class="s1">'create'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
             <span class="nb">str</span><span class="p">(</span><span class="n">Time</span><span class="p">(</span><span class="n">create</span><span class="p">)))</span>
 
 
@@ -486,13 +486,13 @@
 <div class="viewcode-block" id="AinswerMemory">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.AinswerMemory">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">AinswerMemory</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Store the historical information for the person memory.</span>
 
 <span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">__plugin</span><span class="p">:</span> <span class="s1">&#39;AinswerPlugin&#39;</span>
+    <span class="n">__plugin</span><span class="p">:</span> <span class="s1">'AinswerPlugin'</span>
 
     <span class="n">__connect</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">__locker</span><span class="p">:</span> <span class="n">Lock</span>
@@ -505,11 +505,11 @@
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;AinswerPlugin&#39;</span><span class="p">,</span>
+        <span class="n">plugin</span><span class="p">:</span> <span class="s1">'AinswerPlugin'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span> <span class="o">=</span> <span class="n">plugin</span>
 
@@ -526,9 +526,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">__build_engine</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Construct instances using the configuration parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">sengine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">__connect</span><span class="p">,</span>
@@ -552,9 +552,9 @@
         <span class="n">person</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Insert the record into the historical person memorables.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span>
 
@@ -566,20 +566,20 @@
 
 
         <span class="n">seed</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">Time</span><span class="p">()</span><span class="o">.</span><span class="n">mpoch</span><span class="si">}</span><span class="s1">&#39;</span>
-            <span class="sa">f</span><span class="s1">&#39;::</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span>
-            <span class="sa">f</span><span class="s1">&#39;::</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span>
-            <span class="sa">f</span><span class="s1">&#39;::</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">Time</span><span class="p">()</span><span class="o">.</span><span class="n">mpoch</span><span class="si">}</span><span class="s1">'</span>
+            <span class="sa">f</span><span class="s1">'::</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span>
+            <span class="sa">f</span><span class="s1">'::</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span>
+            <span class="sa">f</span><span class="s1">'::</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 
         <span class="n">unique</span> <span class="o">=</span> <span class="n">Hashes</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span><span class="o">.</span><span class="n">uuid</span>
 
 
         <span class="n">inputs</span><span class="p">:</span> <span class="n">DictStrAny</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;plugin&#39;</span><span class="p">:</span> <span class="n">plugin</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-            <span class="s1">&#39;unique&#39;</span><span class="p">:</span> <span class="n">unique</span><span class="p">,</span>
-            <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="n">person</span><span class="p">,</span>
-            <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span>
-            <span class="s1">&#39;create&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">Time</span><span class="p">())}</span>
+            <span class="s1">'plugin'</span><span class="p">:</span> <span class="n">plugin</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s1">'unique'</span><span class="p">:</span> <span class="n">unique</span><span class="p">,</span>
+            <span class="s1">'person'</span><span class="p">:</span> <span class="n">person</span><span class="p">,</span>
+            <span class="s1">'message'</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span>
+            <span class="s1">'create'</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">Time</span><span class="p">())}</span>
 
         <span class="n">record</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
 
@@ -588,9 +588,9 @@
             <span class="o">.</span><span class="n">model_dump</span><span class="p">())</span>
 
 
-        <span class="n">create</span> <span class="o">=</span> <span class="n">insert</span><span class="p">[</span><span class="s1">&#39;create&#39;</span><span class="p">]</span>
+        <span class="n">create</span> <span class="o">=</span> <span class="n">insert</span><span class="p">[</span><span class="s1">'create'</span><span class="p">]</span>
 
-        <span class="n">insert</span><span class="p">[</span><span class="s1">&#39;create&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">insert</span><span class="p">[</span><span class="s1">'create'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
             <span class="nb">float</span><span class="p">(</span><span class="n">Time</span><span class="p">(</span><span class="n">create</span><span class="p">)))</span>
 
 
@@ -612,11 +612,11 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">person</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Remove the expired historical person memorable records.</span>
 
 <span class="sd">        :param person: Unique identifier for the person object.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span>
         <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
@@ -677,12 +677,12 @@
         <span class="n">person</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">unique</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Delete the record from the historical person memorables.</span>
 
 <span class="sd">        :param person: Unique identifier for the person object.</span>
 <span class="sd">        :param unique: Unique identifier for person memorable.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span>
 
@@ -715,14 +715,14 @@
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.memory.AinswerMemory.records">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">records</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+        <span class="n">mitem</span><span class="p">:</span> <span class="s1">'RobieMessage'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">AinswerMemoryRecord</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the historical records for the person memorables.</span>
 
 <span class="sd">        :param mitem: Item containing information for operation.</span>
 <span class="sd">        :returns: Historical records for the person memorables.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">assert</span> <span class="n">mitem</span><span class="o">.</span><span class="n">person</span>
 
@@ -739,11 +739,11 @@
         <span class="n">person</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">unique</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">AinswerMemoryRecord</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the historical records for the person memorables.</span>
 
 <span class="sd">        :returns: Historical records for the person memorables.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span>
 

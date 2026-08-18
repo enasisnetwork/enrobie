@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.status.plugin</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -335,12 +335,12 @@
 <div class="viewcode-block" id="StatusPlugin">
 <a class="viewcode-back" href="../../../../index.html#enrobie.plugins.StatusPlugin">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">StatusPlugin</span><span class="p">(</span><span class="n">RobiePlugin</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Integrate with the Robie routine and perform operations.</span>
 
 <span class="sd">    .. note::</span>
 <span class="sd">       This plugin responds to inquiries about Robie status.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">__status</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">StatusPluginItem</span><span class="p">]</span>
     <span class="n">__stated</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span>
@@ -349,9 +349,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">__post__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__status</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__stated</span> <span class="o">=</span> <span class="p">{}</span>
@@ -362,9 +362,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform advanced validation on the parameters provided.</span>
-<span class="sd">        &quot;&quot;&quot;</span></div>
+<span class="sd">        """</span></div>
 
 
         <span class="c1"># Nothing to do for plugin</span>
@@ -376,11 +376,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">schema</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">StatusPluginParams</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the configuration parameters relevant for class.</span>
 
 <span class="sd">        :returns: Configuration parameters relevant for class.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="n">StatusPluginParams</span></div>
 
@@ -390,11 +390,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">params</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StatusPluginParams</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Pydantic model containing the configuration.</span>
 
 <span class="sd">        :returns: Pydantic model containing the configuration.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">params</span>
 
@@ -408,12 +408,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">status</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;StatusPluginItems&#39;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'StatusPluginItems'</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">)</span>
 
@@ -423,9 +423,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform the operation related to Robie service threads.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">thread</span>
 
@@ -438,7 +438,7 @@
 
         <span class="n">match</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 
-        <span class="n">kinds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;privmsg&#39;</span><span class="p">,</span> <span class="s1">&#39;chanmsg&#39;</span><span class="p">]</span>
+        <span class="n">kinds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'privmsg'</span><span class="p">,</span> <span class="s1">'chanmsg'</span><span class="p">]</span>
 
 
         <span class="bp">self</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
@@ -473,13 +473,13 @@
 
             <span class="n">match</span> <span class="o">=</span> <span class="kc">None</span>
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;discord&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'discord'</span><span class="p">:</span>
                 <span class="n">match</span> <span class="o">=</span> <span class="n">command</span><span class="o">.</span><span class="n">dsc</span>
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;irc&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'irc'</span><span class="p">:</span>
                 <span class="n">match</span> <span class="o">=</span> <span class="n">command</span><span class="o">.</span><span class="n">irc</span>
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;mattermost&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'mattermost'</span><span class="p">:</span>
                 <span class="n">match</span> <span class="o">=</span> <span class="n">command</span><span class="o">.</span><span class="n">mtm</span>
 
             <span class="c1"># Ignore unrelated clients</span>
@@ -491,13 +491,13 @@
                 <span class="k">continue</span>
 
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;discord&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'discord'</span><span class="p">:</span>
                 <span class="n">composedsc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitem</span><span class="p">)</span>
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;irc&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'irc'</span><span class="p">:</span>
                 <span class="n">composeirc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitem</span><span class="p">)</span>
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;mattermost&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'mattermost'</span><span class="p">:</span>
                 <span class="n">composemtm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitem</span><span class="p">)</span></div>
 
 
@@ -507,9 +507,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">report</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform the operation related to Robie service threads.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">thread</span>
 
@@ -528,17 +528,17 @@
 
         <span class="k">def</span><span class="w"> </span><span class="nf">_send_report</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;discord&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'discord'</span><span class="p">:</span>
                 <span class="n">reportdsc</span><span class="p">(</span>
                     <span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span>
                     <span class="n">_status</span><span class="p">,</span> <span class="n">report</span><span class="p">)</span>
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;irc&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'irc'</span><span class="p">:</span>
                 <span class="n">reportirc</span><span class="p">(</span>
                     <span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span>
                     <span class="n">_status</span><span class="p">,</span> <span class="n">report</span><span class="p">)</span>
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;mattermost&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'mattermost'</span><span class="p">:</span>
                 <span class="n">reportmtm</span><span class="p">(</span>
                     <span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span>
                     <span class="n">_status</span><span class="p">,</span> <span class="n">report</span><span class="p">)</span>
@@ -557,7 +557,7 @@
                 <span class="ow">or</span> <span class="n">_STATES</span><span class="p">)</span>
 
             <span class="n">unique</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 
             <span class="c1"># Ignore disabled clients</span>
             <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">clients</span><span class="p">:</span>
@@ -611,7 +611,7 @@
         <span class="n">icon</span><span class="p">:</span> <span class="n">StatusPluginIconParams</span><span class="p">,</span>
         <span class="n">state</span><span class="p">:</span> <span class="n">StatusPluginStates</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Update or insert the status of the Robie child instance.</span>
 
 <span class="sd">        :param unique: Unique identifier to use for the status.</span>
@@ -619,7 +619,7 @@
 <span class="sd">        :param title: Friendly name of the related unique entry.</span>
 <span class="sd">        :param icon: Optional icon object if supported platform.</span>
 <span class="sd">        :param state: One of several possible value for status.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robie</span>
         <span class="n">status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__status</span>
@@ -643,7 +643,7 @@
         <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-            <span class="n">item</span><span class="o">=</span><span class="s1">&#39;status&#39;</span><span class="p">,</span>
+            <span class="n">item</span><span class="o">=</span><span class="s1">'status'</span><span class="p">,</span>
             <span class="n">unique</span><span class="o">=</span><span class="n">unique</span><span class="p">,</span>
             <span class="n">state</span><span class="o">=</span><span class="n">state</span><span class="p">)</span>
 

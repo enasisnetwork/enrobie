@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.nagios.plugin</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -322,12 +322,12 @@
 <div class="viewcode-block" id="NagiosPlugin">
 <a class="viewcode-back" href="../../../../index.html#enrobie.plugins.NagiosPlugin">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">NagiosPlugin</span><span class="p">(</span><span class="n">RobiePlugin</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Integrate with the Robie routine and perform operations.</span>
 
 <span class="sd">    .. note::</span>
 <span class="sd">       This plugin allows for connecting to Nagios Console.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">__started</span><span class="p">:</span> <span class="nb">bool</span>
 
@@ -337,16 +337,16 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">__post__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__started</span> <span class="o">=</span> <span class="kc">False</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__current</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">NagiosCurrent</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;pending&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">'pending'</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="NagiosPlugin.validate">
@@ -354,9 +354,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform advanced validation on the parameters provided.</span>
-<span class="sd">        &quot;&quot;&quot;</span></div>
+<span class="sd">        """</span></div>
 
 
         <span class="c1"># Review the parameters</span>
@@ -368,11 +368,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">schema</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">NagiosPluginParams</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the configuration parameters relevant for class.</span>
 
 <span class="sd">        :returns: Configuration parameters relevant for class.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="n">NagiosPluginParams</span></div>
 
@@ -382,11 +382,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">params</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NagiosPluginParams</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Pydantic model containing the configuration.</span>
 
 <span class="sd">        :returns: Pydantic model containing the configuration.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">params</span>
 
@@ -401,11 +401,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">current</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NagiosCurrent</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__current</span>
 
@@ -415,11 +415,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform the operation related to Robie service threads.</span>
 
 <span class="sd">        :param thread: Child class instance for Chatting Robie.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">thread</span>
 
@@ -435,12 +435,12 @@
 
         <span class="n">match</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 
-        <span class="n">kinds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;privmsg&#39;</span><span class="p">,</span> <span class="s1">&#39;chanmsg&#39;</span><span class="p">]</span>
+        <span class="n">kinds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'privmsg'</span><span class="p">,</span> <span class="s1">'chanmsg'</span><span class="p">]</span>
 
 
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__started</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">__started</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">'normal'</span><span class="p">)</span>
 
 
         <span class="k">while</span> <span class="ow">not</span> <span class="n">mqueue</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
@@ -477,13 +477,13 @@
 
             <span class="n">match</span> <span class="o">=</span> <span class="kc">None</span>
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;discord&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'discord'</span><span class="p">:</span>
                 <span class="n">match</span> <span class="o">=</span> <span class="n">command</span><span class="o">.</span><span class="n">dsc</span>
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;irc&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'irc'</span><span class="p">:</span>
                 <span class="n">match</span> <span class="o">=</span> <span class="n">command</span><span class="o">.</span><span class="n">irc</span>
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;mattermost&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'mattermost'</span><span class="p">:</span>
                 <span class="n">match</span> <span class="o">=</span> <span class="n">command</span><span class="o">.</span><span class="n">mtm</span>
 
             <span class="c1"># Ignore unrelated clients</span>
@@ -495,13 +495,13 @@
                 <span class="k">continue</span>
 
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;discord&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'discord'</span><span class="p">:</span>
                 <span class="n">composedsc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitem</span><span class="p">)</span>
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;irc&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'irc'</span><span class="p">:</span>
                 <span class="n">composeirc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitem</span><span class="p">)</span>
 
-            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;mattermost&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">'mattermost'</span><span class="p">:</span>
                 <span class="n">composemtm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitem</span><span class="p">)</span></div>
 
 
@@ -510,11 +510,11 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">status</span><span class="p">:</span> <span class="n">StatusPluginStates</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Update or insert the status of the Robie child instance.</span>
 
 <span class="sd">        :param status: One of several possible value for status.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">thread</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">thread</span>
         <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
@@ -526,18 +526,18 @@
             <span class="n">thread</span><span class="o">.</span><span class="n">service</span>
             <span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">childs</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="s1">&#39;status&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">'status'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">NCNone</span>
 
-        <span class="n">plugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span>
+        <span class="n">plugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span>
 
         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
             <span class="n">plugin</span><span class="p">,</span> <span class="n">StatusPlugin</span><span class="p">)</span>
 
         <span class="p">(</span><span class="n">plugin</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
             <span class="n">unique</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-            <span class="n">group</span><span class="o">=</span><span class="s1">&#39;Extensions&#39;</span><span class="p">,</span>
-            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Nagios Monitor&#39;</span><span class="p">,</span>
+            <span class="n">group</span><span class="o">=</span><span class="s1">'Extensions'</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s1">'Nagios Monitor'</span><span class="p">,</span>
             <span class="n">icon</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
             <span class="n">state</span><span class="o">=</span><span class="n">status</span><span class="p">))</span>
 
@@ -547,11 +547,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">ainswer</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">AinswerTool</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Ainswer tools that are related to the plugin.</span>
 
 <span class="sd">        :returns: Ainswer tools that are related to the plugin.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="kn">from</span><span class="w"> </span><span class="nn">.ainswer</span><span class="w"> </span><span class="kn">import</span> <span class="n">nagios_current</span>
 

@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.robie.childs.child</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -316,34 +316,34 @@
 <div class="viewcode-block" id="RobieChild">
 <a class="viewcode-back" href="../../../../index.html#enrobie.robie.childs.child.RobieChild">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">RobieChild</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Parent object for child objects within the project base.</span>
 
 <span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
 <span class="sd">    :param name: Name of the object within the Robie config.</span>
 <span class="sd">    :param params: Parameters used to instantiate the class.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">__robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span>
+    <span class="n">__robie</span><span class="p">:</span> <span class="s1">'Robie'</span>
 
     <span class="n">__name</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">__params</span><span class="p">:</span> <span class="s1">&#39;RobieChildParams&#39;</span>
+    <span class="n">__params</span><span class="p">:</span> <span class="s1">'RobieChildParams'</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
+        <span class="n">robie</span><span class="p">:</span> <span class="s1">'Robie'</span><span class="p">,</span>
         <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-        <span class="n">params</span><span class="p">:</span> <span class="s1">&#39;RobieChildParams&#39;</span><span class="p">,</span>
+        <span class="n">params</span><span class="p">:</span> <span class="s1">'RobieChildParams'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_d</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;initial&#39;</span><span class="p">)</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'initial'</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span> <span class="o">=</span> <span class="n">robie</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__name</span> <span class="o">=</span> <span class="n">name</span>
@@ -354,15 +354,15 @@
         <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_d</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;created&#39;</span><span class="p">)</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'created'</span><span class="p">)</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="nf">__post__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
 
 <div class="viewcode-block" id="RobieChild.validate">
@@ -370,9 +370,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform advanced validation on the parameters provided.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
@@ -380,9 +380,9 @@
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__lt__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">other</span><span class="p">:</span> <span class="s1">&#39;RobieChild&#39;</span><span class="p">,</span>
+        <span class="n">other</span><span class="p">:</span> <span class="s1">'RobieChild'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Built-in method for comparing this instance with another.</span>
 
 <span class="sd">        .. note::</span>
@@ -390,7 +390,7 @@
 
 <span class="sd">        :param other: Other value being compared with instance.</span>
 <span class="sd">        :returns: Boolean indicating outcome from the operation.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
         <span class="n">_name</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span>
@@ -401,12 +401,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">robie</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Robie&#39;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'Robie'</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Robie instance to which the instance belongs.</span>
 
 <span class="sd">        :returns: Robie instance to which the instance belongs.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
 
@@ -415,11 +415,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">enable</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">enable</span>
 
@@ -428,11 +428,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__name</span>
 
@@ -440,12 +440,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">kind</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieKinds&#39;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'RobieKinds'</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
@@ -453,12 +453,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">params</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieChildParams&#39;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'RobieChildParams'</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Pydantic model containing the configuration.</span>
 
 <span class="sd">        :returns: Pydantic model containing the configuration.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__params</span>
 
@@ -467,11 +467,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the facts about the attributes from the instance.</span>
 
 <span class="sd">        :returns: Facts about the attributes from the instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__params</span>
 
@@ -480,10 +480,10 @@
             <span class="o">.</span><span class="n">model_dump</span><span class="p">())</span>
 
         <span class="k">return</span> <span class="p">{</span>
-            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-            <span class="s1">&#39;enable&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">enable</span><span class="p">,</span>
-            <span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span>
-            <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="n">dumped</span><span class="p">}</span></div>
+            <span class="s1">'name'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s1">'enable'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">enable</span><span class="p">,</span>
+            <span class="s1">'kind'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span>
+            <span class="s1">'params'</span><span class="p">:</span> <span class="n">dumped</span><span class="p">}</span></div>
 
 </pre></div>
 

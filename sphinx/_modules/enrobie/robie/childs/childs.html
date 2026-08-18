@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.robie.childs.childs</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -328,13 +328,13 @@
 <div class="viewcode-block" id="RobieChilds">
 <a class="viewcode-back" href="../../../../index.html#enrobie.robie.childs.childs.RobieChilds">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">RobieChilds</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Contain the object instances for related Robie children.</span>
 
 <span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">__robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span>
+    <span class="n">__robie</span><span class="p">:</span> <span class="s1">'Robie'</span>
 
     <span class="n">__clients</span><span class="p">:</span> <span class="n">RobieClients</span>
     <span class="n">__plugins</span><span class="p">:</span> <span class="n">RobiePlugins</span>
@@ -343,15 +343,15 @@
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
+        <span class="n">robie</span><span class="p">:</span> <span class="s1">'Robie'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_d</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;initial&#39;</span><span class="p">)</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'initial'</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span> <span class="o">=</span> <span class="n">robie</span>
 
@@ -363,7 +363,7 @@
 
         <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;created&#39;</span><span class="p">)</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'created'</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="RobieChilds.build_objects">
@@ -371,9 +371,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">build_objects</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Construct instances using the configuration parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__build_persons</span><span class="p">()</span></div>
 
@@ -382,9 +382,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">__build_persons</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Construct instances using the configuration parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
         <span class="n">params</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">params</span>
@@ -417,9 +417,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform advanced validation on the parameters provided.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
 
         <span class="n">clients</span> <span class="o">=</span> <span class="p">(</span>
@@ -451,11 +451,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">clients</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieClients</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">clients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__clients</span>
 
@@ -466,11 +466,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">plugins</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobiePlugins</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">plugins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugins</span>
 
@@ -481,11 +481,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">persons</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobiePersons</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">persons</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__persons</span>
 
@@ -496,22 +496,22 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the facts about the attributes from the instance.</span>
 
 <span class="sd">        :returns: Facts about the attributes from the instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">clients</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clients</span>
         <span class="n">plugins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plugins</span>
 
         <span class="n">dumped</span><span class="p">:</span> <span class="n">DictStrAny</span> <span class="o">=</span> <span class="p">{</span>
 
-            <span class="s1">&#39;clients&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'clients'</span><span class="p">:</span> <span class="p">{</span>
                 <span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">dumped</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
                 <span class="ow">in</span> <span class="n">clients</span><span class="o">.</span><span class="n">items</span><span class="p">()},</span>
 
-            <span class="s1">&#39;plugins&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'plugins'</span><span class="p">:</span> <span class="p">{</span>
                 <span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">dumped</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
                 <span class="ow">in</span> <span class="n">plugins</span><span class="o">.</span><span class="n">items</span><span class="p">()}}</span>
 
@@ -527,13 +527,13 @@
         <span class="n">client</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">RobieClient</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">plugin</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">RobiePlugin</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Register the plugin with the internal operation routine.</span>
 
 <span class="sd">        :param name: Name of the object within the Robie config.</span>
 <span class="sd">        :param client: Class definition for the instantiation.</span>
 <span class="sd">        :param plugin: Class definition for the instantiation.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
         <span class="n">params</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">params</span>

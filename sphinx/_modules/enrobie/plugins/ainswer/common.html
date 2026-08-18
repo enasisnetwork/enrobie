@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.ainswer.common</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -319,7 +319,7 @@
 
 
 
-<span class="n">AinswerIgnored</span> <span class="o">=</span> <span class="s1">&#39;no_response&#39;</span>
+<span class="n">AinswerIgnored</span> <span class="o">=</span> <span class="s1">'no_response'</span>
 
 <span class="n">AinswerTool</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
 
@@ -329,42 +329,42 @@
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.common.AinswerDepends">[docs]</a>
 <span class="nd">@dataclass</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">AinswerDepends</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Dependencies related to operation with PydanticAI tools.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;AinswerPlugin&#39;</span>
-    <span class="n">mitem</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s1">&#39;RobieMessage&#39;</span><span class="p">]</span></div>
+    <span class="n">plugin</span><span class="p">:</span> <span class="s1">'AinswerPlugin'</span>
+    <span class="n">mitem</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s1">'RobieMessage'</span><span class="p">]</span></div>
 
 
 
 
 <div class="viewcode-block" id="AinswerResponse">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.common.AinswerResponse">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">AinswerResponse</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AinswerResponse</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Contains the response for question for the client type.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">text</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Simple and concise format.&#39;</span><span class="p">)]</span></div>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Simple and concise format.'</span><span class="p">)]</span></div>
 
 
 
 
 <div class="viewcode-block" id="AinswerResponseDSC">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.common.AinswerResponseDSC">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">AinswerResponseDSC</span><span class="p">(</span><span class="n">AinswerResponse</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AinswerResponseDSC</span><span class="p">(</span><span class="n">AinswerResponse</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Contains the response for question for the client type.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">text</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Format intended for Discord.&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Format intended for Discord.'</span><span class="p">,</span>
               <span class="n">max_length</span><span class="o">=</span><span class="mi">1900</span><span class="p">)]</span></div>
 
 
@@ -372,15 +372,15 @@
 
 <div class="viewcode-block" id="AinswerResponseIRC">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.common.AinswerResponseIRC">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">AinswerResponseIRC</span><span class="p">(</span><span class="n">AinswerResponse</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AinswerResponseIRC</span><span class="p">(</span><span class="n">AinswerResponse</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Contains the response for question for the client type.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">text</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Format intended for IRCv2.&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Format intended for IRCv2.'</span><span class="p">,</span>
               <span class="n">max_length</span><span class="o">=</span><span class="mi">350</span><span class="p">)]</span></div>
 
 
@@ -388,15 +388,15 @@
 
 <div class="viewcode-block" id="AinswerResponseMTM">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.common.AinswerResponseMTM">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">AinswerResponseMTM</span><span class="p">(</span><span class="n">AinswerResponse</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AinswerResponseMTM</span><span class="p">(</span><span class="n">AinswerResponse</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Contains the response for question for the client type.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">text</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Format intended for Mattermost.&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Format intended for Mattermost.'</span><span class="p">,</span>
               <span class="n">max_length</span><span class="o">=</span><span class="mi">1900</span><span class="p">)]</span></div>
 
 </pre></div>

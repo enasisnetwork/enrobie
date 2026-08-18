@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.robie.addons.logger</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -319,22 +319,22 @@
 <div class="viewcode-block" id="RobieLogger">
 <a class="viewcode-back" href="../../../../index.html#enrobie.robie.addons.logger.RobieLogger">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">RobieLogger</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Methods for extending use of underlying logging library.</span>
 
 <span class="sd">    :param robie: Primary class instance for Chatting Robie.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">__robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span>
+    <span class="n">__robie</span><span class="p">:</span> <span class="s1">'Robie'</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
+        <span class="n">robie</span><span class="p">:</span> <span class="s1">'Robie'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span> <span class="o">=</span> <span class="n">robie</span>
 
@@ -344,9 +344,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize the Python logging library using parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
         <span class="n">config</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">config</span>
@@ -361,9 +361,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Deinitialize the Python logging library using parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
         <span class="n">config</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">config</span>
@@ -377,44 +377,44 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">kwargs</span><span class="p">:</span> <span class="n">DictStrAny</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Process the keyword arguments handling relevant values.</span>
 
 <span class="sd">        :param kwargs: Keyword arguments for populating message.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
-        <span class="n">base</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;base&#39;</span><span class="p">)</span>
-        <span class="n">item</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">)</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'base'</span><span class="p">)</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'item'</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'name'</span><span class="p">)</span>
 
         <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">RobieQueueItem</span><span class="p">,</span>
             <span class="n">Thread</span><span class="p">)</span>
 
-        <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;&lt;enrobie.&#39;</span>
+        <span class="n">prefix</span> <span class="o">=</span> <span class="s1">'&lt;enrobie.'</span>
 
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">threads</span><span class="p">):</span>
-            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;base&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">'base'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="n">clsname</span><span class="p">(</span><span class="n">base</span><span class="p">))</span>
 
         <span class="k">elif</span> <span class="nb">str</span><span class="p">(</span><span class="n">base</span><span class="p">)[:</span><span class="mi">9</span><span class="p">]</span> <span class="o">==</span> <span class="n">prefix</span><span class="p">:</span>
-            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;base&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">'base'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="n">clsname</span><span class="p">(</span><span class="n">base</span><span class="p">))</span>
 
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">threads</span><span class="p">):</span>
-            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">'item'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="n">clsname</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
 
         <span class="k">elif</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)[:</span><span class="mi">9</span><span class="p">]</span> <span class="o">==</span> <span class="n">prefix</span><span class="p">:</span>
-            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">'item'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="n">clsname</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
 
 
-        <span class="k">if</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">)</span>
                 <span class="ow">and</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
-            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">name</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">name</span>
 
 
 <div class="viewcode-block" id="RobieLogger.log">
@@ -423,14 +423,14 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Pass the provided keyword arguments into logger object.</span>
 
 <span class="sd">        .. note::</span>
 <span class="sd">           Uses method :py:meth:`encommon.config.Logger.log`.</span>
 
 <span class="sd">        :param kwargs: Keyword arguments for populating message.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
         <span class="n">config</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">config</span>
@@ -448,14 +448,14 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Pass the provided keyword arguments into logger object.</span>
 
 <span class="sd">        .. note::</span>
 <span class="sd">           Uses method :py:meth:`encommon.config.Logger.log_c`.</span>
 
 <span class="sd">        :param kwargs: Keyword arguments for populating message.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
         <span class="n">config</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">config</span>
@@ -473,14 +473,14 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Pass the provided keyword arguments into logger object.</span>
 
 <span class="sd">        .. note::</span>
 <span class="sd">           Uses method :py:meth:`encommon.config.Logger.log_d`.</span>
 
 <span class="sd">        :param kwargs: Keyword arguments for populating message.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
         <span class="n">config</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">config</span>
@@ -498,14 +498,14 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Pass the provided keyword arguments into logger object.</span>
 
 <span class="sd">        .. note::</span>
 <span class="sd">           Uses method :py:meth:`encommon.config.Logger.log_e`.</span>
 
 <span class="sd">        :param kwargs: Keyword arguments for populating message.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
         <span class="n">config</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">config</span>
@@ -523,14 +523,14 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Pass the provided keyword arguments into logger object.</span>
 
 <span class="sd">        .. note::</span>
 <span class="sd">           Uses method :py:meth:`encommon.config.Logger.log_i`.</span>
 
 <span class="sd">        :param kwargs: Keyword arguments for populating message.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
         <span class="n">config</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">config</span>
@@ -548,14 +548,14 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Pass the provided keyword arguments into logger object.</span>
 
 <span class="sd">        .. note::</span>
 <span class="sd">           Uses method :py:meth:`encommon.config.Logger.log_w`.</span>
 
 <span class="sd">        :param kwargs: Keyword arguments for populating message.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__robie</span>
         <span class="n">config</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">config</span>

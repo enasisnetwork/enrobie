@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.clients.discord.message</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -322,21 +322,21 @@
 <a class="viewcode-back" href="../../../../enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage">[docs]</a>
 <span class="nd">@dataclass</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">DSCMessage</span><span class="p">(</span><span class="n">RobieMessage</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Contain information for sharing using the Python queue.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">event</span><span class="p">:</span> <span class="n">ClientEvent</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;RobieClient&#39;</span><span class="p">,</span>
+        <span class="n">client</span><span class="p">:</span> <span class="s1">'RobieClient'</span><span class="p">,</span>
         <span class="n">event</span><span class="p">:</span> <span class="n">ClientEvent</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">robie</span>
 
@@ -357,25 +357,25 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">family</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;discord&#39;</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">'discord'</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
-        <span class="k">return</span> <span class="s1">&#39;discord&#39;</span>
+        <span class="k">return</span> <span class="s1">'discord'</span>
 
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">kind</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieMessageKinds&#39;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'RobieMessageKinds'</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">kind</span>
 
@@ -384,11 +384,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">isme</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the boolean indicating message origin from client.</span>
 
 <span class="sd">        :returns: Boolean indicating message origin from client.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">isme</span>
 
@@ -397,11 +397,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">hasme</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the boolean indicating message mention the client.</span>
 
 <span class="sd">        :returns: Boolean indicating message mention the client.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">hasme</span>
 
@@ -410,11 +410,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">whome</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the current nickname of the client on the server.</span>
 
 <span class="sd">        :returns: Current nickname of the client on the server.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">whome</span>
 
@@ -423,11 +423,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">author</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the current nickname of the client on the server.</span>
 
 <span class="sd">        :returns: Current nickname of the client on the server.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">author</span>
 
@@ -436,11 +436,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">anchor</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the unique value for the context with the client.</span>
 
 <span class="sd">        :returns: Unique value for the context with the client.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">kind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span>
         <span class="n">author</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">author</span>
@@ -454,10 +454,10 @@
             <span class="k">return</span> <span class="kc">None</span>
 
         <span class="k">return</span> <span class="p">(</span>
-            <span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+            <span class="s1">':'</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
                 <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span>
                 <span class="ow">in</span> <span class="n">recipient</span><span class="p">])</span>
-            <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;chanmsg&#39;</span>
+            <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s1">'chanmsg'</span>
             <span class="k">else</span> <span class="n">author</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
 
@@ -465,11 +465,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">message</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the string containing the content of the message.</span>
 
 <span class="sd">        :returns: String containing the content of the message.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">message</span>
 
@@ -478,15 +478,15 @@
 <a class="viewcode-back" href="../../../../enrobie.clients.discord.html#enrobie.clients.discord.message.DSCMessage.reply">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">reply</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">robie</span><span class="p">:</span> <span class="s1">&#39;Robie&#39;</span><span class="p">,</span>
+        <span class="n">robie</span><span class="p">:</span> <span class="s1">'Robie'</span><span class="p">,</span>
         <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieCommand&#39;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'RobieCommand'</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Compose the message and transmit using the chat client.</span>
 
 <span class="sd">        :param robie: Primary class instance for Chatting Robie.</span>
 <span class="sd">        :param content: Content that will be source of message.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
         <span class="n">clients</span> <span class="o">=</span> <span class="n">childs</span><span class="o">.</span><span class="n">clients</span>

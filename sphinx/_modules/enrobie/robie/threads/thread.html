@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.robie.threads.thread</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -327,49 +327,49 @@
 
 
 <span class="n">RobieThreadItems</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span>
-    <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;RobieCommand&#39;</span><span class="p">]</span>
+    <span class="s1">'RobieMessage'</span><span class="p">,</span>
+    <span class="s1">'RobieCommand'</span><span class="p">]</span>
 
 
 
 <div class="viewcode-block" id="RobieThread">
 <a class="viewcode-back" href="../../../../index.html#enrobie.robie.threads.thread.RobieThread">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">RobieThread</span><span class="p">(</span><span class="n">Thread</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Common methods and routines for Chatting Robie threads.</span>
 
 <span class="sd">    :param member: Child class instance for Chatting Robie.</span>
 <span class="sd">    :param child: Child class instance for Chatting Robie.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">__member</span><span class="p">:</span> <span class="s1">&#39;RobieMember&#39;</span>
-    <span class="n">__child</span><span class="p">:</span> <span class="s1">&#39;RobieOperate&#39;</span>
+    <span class="n">__member</span><span class="p">:</span> <span class="s1">'RobieMember'</span>
+    <span class="n">__child</span><span class="p">:</span> <span class="s1">'RobieOperate'</span>
 
-    <span class="n">__mqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieMessage&#39;</span><span class="p">]</span>
-    <span class="n">__cqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieCommand&#39;</span><span class="p">]</span>
+    <span class="n">__mqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">'RobieMessage'</span><span class="p">]</span>
+    <span class="n">__cqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">'RobieCommand'</span><span class="p">]</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">member</span><span class="p">:</span> <span class="s1">&#39;RobieMember&#39;</span><span class="p">,</span>
-        <span class="n">child</span><span class="p">:</span> <span class="s1">&#39;RobieOperate&#39;</span><span class="p">,</span>
+        <span class="n">member</span><span class="p">:</span> <span class="s1">'RobieMember'</span><span class="p">,</span>
+        <span class="n">child</span><span class="p">:</span> <span class="s1">'RobieOperate'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">robie</span>
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">clsname</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span>
-            <span class="sa">f</span><span class="s1">&#39;/</span><span class="si">{</span><span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">clsname</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span>
+            <span class="sa">f</span><span class="s1">'/</span><span class="si">{</span><span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 
         <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_d</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="n">child</span><span class="p">,</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;initial&#39;</span><span class="p">)</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'initial'</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__member</span> <span class="o">=</span> <span class="n">member</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__child</span> <span class="o">=</span> <span class="n">child</span>
@@ -379,15 +379,15 @@
         <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="n">child</span><span class="p">,</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;created&#39;</span><span class="p">)</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'created'</span><span class="p">)</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="nf">__build_objects</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Construct instances using the configuration parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">member</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__member</span>
         <span class="n">robie</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">robie</span>
@@ -402,12 +402,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">robie</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Robie&#39;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'Robie'</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Robie instance to which the instance belongs.</span>
 
 <span class="sd">        :returns: Robie instance to which the instance belongs.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">member</span><span class="o">.</span><span class="n">robie</span>
 
@@ -415,12 +415,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">service</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieService&#39;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'RobieService'</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Robie instance to which the instance belongs.</span>
 
 <span class="sd">        :returns: Robie instance to which the instance belongs.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__member</span><span class="o">.</span><span class="n">service</span>
 
@@ -428,12 +428,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">member</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieMember&#39;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'RobieMember'</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__member</span>
 
@@ -441,12 +441,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">child</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieOperate&#39;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'RobieOperate'</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__child</span>
 
@@ -454,12 +454,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">mqueue</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieMessage&#39;</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">'RobieMessage'</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__mqueue</span>
 
@@ -467,12 +467,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">cqueue</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieCommand&#39;</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">'RobieCommand'</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cqueue</span>
 
@@ -483,12 +483,12 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">item</span><span class="p">:</span> <span class="n">RobieThreadItems</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the boolean indicating whether the item expired.</span>
 
 <span class="sd">        :param item: Item containing information for operation.</span>
 <span class="sd">        :returns: Boolean indicating whether the item expired.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">member</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">member</span>
         <span class="n">robie</span> <span class="o">=</span> <span class="n">member</span><span class="o">.</span><span class="n">robie</span>
@@ -503,7 +503,7 @@
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
             <span class="n">item</span><span class="o">=</span><span class="n">item</span><span class="p">,</span>
             <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;expired&#39;</span><span class="p">,</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'expired'</span><span class="p">,</span>
             <span class="n">age</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">since</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="kc">True</span></div>
@@ -514,11 +514,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">congest</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_CONGEST</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the list of congested threads and members queues.</span>
 
 <span class="sd">        :returns: List of congested threads and members queues.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">congest</span><span class="p">:</span> <span class="n">_CONGEST</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -531,7 +531,7 @@
         <span class="k">if</span> <span class="n">mqueue</span><span class="o">.</span><span class="n">qsize</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
 
             <span class="n">append</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/mqueue&#39;</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/mqueue'</span><span class="p">,</span>
                 <span class="n">mqueue</span><span class="o">.</span><span class="n">qsize</span><span class="p">)</span>
 
             <span class="n">congest</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">append</span><span class="p">)</span>
@@ -539,7 +539,7 @@
         <span class="k">if</span> <span class="n">cqueue</span><span class="o">.</span><span class="n">qsize</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
 
             <span class="n">append</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/cqueue&#39;</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/cqueue'</span><span class="p">,</span>
                 <span class="n">cqueue</span><span class="o">.</span><span class="n">qsize</span><span class="p">)</span>
 
             <span class="n">congest</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">append</span><span class="p">)</span>
@@ -552,11 +552,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">enqueue</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_CONGEST</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the list of congested threads and members queues.</span>
 
 <span class="sd">        :returns: List of congested threads and members queues.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">enqueue</span><span class="p">:</span> <span class="n">_CONGEST</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -569,7 +569,7 @@
         <span class="k">if</span> <span class="n">mqueue</span><span class="o">.</span><span class="n">qsize</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 
             <span class="n">append</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/mqueue&#39;</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/mqueue'</span><span class="p">,</span>
                 <span class="n">mqueue</span><span class="o">.</span><span class="n">qsize</span><span class="p">)</span>
 
             <span class="n">enqueue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">append</span><span class="p">)</span>
@@ -577,7 +577,7 @@
         <span class="k">if</span> <span class="n">cqueue</span><span class="o">.</span><span class="n">qsize</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 
             <span class="n">append</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/cqueue&#39;</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">/cqueue'</span><span class="p">,</span>
                 <span class="n">cqueue</span><span class="o">.</span><span class="n">qsize</span><span class="p">)</span>
 
             <span class="n">enqueue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">append</span><span class="p">)</span>
@@ -591,9 +591,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform whatever operation is associated with the class.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">member</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__member</span>
         <span class="n">child</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__child</span>
@@ -604,7 +604,7 @@
         <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="n">child</span><span class="p">,</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;started&#39;</span><span class="p">)</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'started'</span><span class="p">)</span>
 
 
         <span class="k">def</span><span class="w"> </span><span class="nf">_continue</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
@@ -631,7 +631,7 @@
         <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="n">child</span><span class="p">,</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;stopped&#39;</span><span class="p">)</span></div>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'stopped'</span><span class="p">)</span></div>
 
 
 
@@ -640,9 +640,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform the operation related to Robie service threads.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">member</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__member</span>
         <span class="n">child</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__child</span>
@@ -659,7 +659,7 @@
             <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_e</span><span class="p">(</span>
                 <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
                 <span class="n">name</span><span class="o">=</span><span class="n">child</span><span class="p">,</span>
-                <span class="n">status</span><span class="o">=</span><span class="s1">&#39;exception&#39;</span><span class="p">,</span>
+                <span class="n">status</span><span class="o">=</span><span class="s1">'exception'</span><span class="p">,</span>
                 <span class="n">exc_info</span><span class="o">=</span><span class="n">reason</span><span class="p">)</span>
 
             <span class="n">block_sleep</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
@@ -669,7 +669,7 @@
             <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_e</span><span class="p">(</span>
                 <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
                 <span class="n">name</span><span class="o">=</span><span class="n">child</span><span class="p">,</span>
-                <span class="n">status</span><span class="o">=</span><span class="s1">&#39;exception&#39;</span><span class="p">,</span>
+                <span class="n">status</span><span class="o">=</span><span class="s1">'exception'</span><span class="p">,</span>
                 <span class="n">exc_info</span><span class="o">=</span><span class="n">reason</span><span class="p">)</span>
 
             <span class="n">block_sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
@@ -681,9 +681,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Wait for the thread object to complete routine and exit.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">member</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__member</span>
         <span class="n">child</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__child</span>
@@ -692,14 +692,14 @@
         <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_d</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="n">child</span><span class="p">,</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;waiting&#39;</span><span class="p">)</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'waiting'</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 
         <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_d</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="n">child</span><span class="p">,</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;awaited&#39;</span><span class="p">)</span></div>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'awaited'</span><span class="p">)</span></div>
 </div>
 
 </pre></div>

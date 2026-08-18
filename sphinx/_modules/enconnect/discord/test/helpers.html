@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enconnect.discord.test.helpers</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Remote Connect.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -334,77 +334,77 @@
 
 <span class="n">EVENTS</span><span class="p">:</span> <span class="n">LDictStrAny</span> <span class="o">=</span> <span class="p">[</span>
 
-    <span class="p">{</span><span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="s1">&#39;MESSAGE_CREATE&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-     <span class="s1">&#39;op&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-     <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="s1">&#39;channel_id&#39;</span><span class="p">:</span> <span class="s1">&#39;privid&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="p">{</span>
-             <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;userid&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">},</span>
-         <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;Hello dscbot&#39;</span><span class="p">}},</span>
+    <span class="p">{</span><span class="s1">'t'</span><span class="p">:</span> <span class="s1">'MESSAGE_CREATE'</span><span class="p">,</span>
+     <span class="s1">'s'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+     <span class="s1">'op'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s1">'d'</span><span class="p">:</span> <span class="p">{</span>
+         <span class="s1">'channel_id'</span><span class="p">:</span> <span class="s1">'privid'</span><span class="p">,</span>
+         <span class="s1">'author'</span><span class="p">:</span> <span class="p">{</span>
+             <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'userid'</span><span class="p">,</span>
+             <span class="s1">'username'</span><span class="p">:</span> <span class="s1">'user'</span><span class="p">},</span>
+         <span class="s1">'content'</span><span class="p">:</span> <span class="s1">'Hello dscbot'</span><span class="p">}},</span>
 
-    <span class="p">{</span><span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="s1">&#39;MESSAGE_CREATE&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-     <span class="s1">&#39;op&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-     <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="s1">&#39;channel_id&#39;</span><span class="p">:</span> <span class="s1">&#39;chanid&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;guild_id&#39;</span><span class="p">:</span> <span class="s1">&#39;guldid&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="p">{</span>
-             <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;userid&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">},</span>
-         <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">}},</span>
+    <span class="p">{</span><span class="s1">'t'</span><span class="p">:</span> <span class="s1">'MESSAGE_CREATE'</span><span class="p">,</span>
+     <span class="s1">'s'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+     <span class="s1">'op'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s1">'d'</span><span class="p">:</span> <span class="p">{</span>
+         <span class="s1">'channel_id'</span><span class="p">:</span> <span class="s1">'chanid'</span><span class="p">,</span>
+         <span class="s1">'guild_id'</span><span class="p">:</span> <span class="s1">'guldid'</span><span class="p">,</span>
+         <span class="s1">'author'</span><span class="p">:</span> <span class="p">{</span>
+             <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'userid'</span><span class="p">,</span>
+             <span class="s1">'username'</span><span class="p">:</span> <span class="s1">'user'</span><span class="p">},</span>
+         <span class="s1">'content'</span><span class="p">:</span> <span class="s1">'Hello world'</span><span class="p">}},</span>
 
-    <span class="p">{</span><span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="s1">&#39;MESSAGE_CREATE&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-     <span class="s1">&#39;op&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-     <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="s1">&#39;channel_id&#39;</span><span class="p">:</span> <span class="s1">&#39;chanid&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;guild_id&#39;</span><span class="p">:</span> <span class="s1">&#39;guldid&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="p">{</span>
-             <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;dscunq&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;dscbot&#39;</span><span class="p">},</span>
-         <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;Hello user&#39;</span><span class="p">}}]</span>
+    <span class="p">{</span><span class="s1">'t'</span><span class="p">:</span> <span class="s1">'MESSAGE_CREATE'</span><span class="p">,</span>
+     <span class="s1">'s'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+     <span class="s1">'op'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s1">'d'</span><span class="p">:</span> <span class="p">{</span>
+         <span class="s1">'channel_id'</span><span class="p">:</span> <span class="s1">'chanid'</span><span class="p">,</span>
+         <span class="s1">'guild_id'</span><span class="p">:</span> <span class="s1">'guldid'</span><span class="p">,</span>
+         <span class="s1">'author'</span><span class="p">:</span> <span class="p">{</span>
+             <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'dscunq'</span><span class="p">,</span>
+             <span class="s1">'username'</span><span class="p">:</span> <span class="s1">'dscbot'</span><span class="p">},</span>
+         <span class="s1">'content'</span><span class="p">:</span> <span class="s1">'Hello user'</span><span class="p">}}]</span>
 
 
 
 <span class="n">RVENTS</span><span class="p">:</span> <span class="n">LDictStrAny</span> <span class="o">=</span> <span class="p">[</span>
 
-    <span class="p">{</span><span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="s1">&#39;READY&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-     <span class="s1">&#39;op&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-     <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="s1">&#39;heartbeat_interval&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-         <span class="s1">&#39;resume_gateway_url&#39;</span><span class="p">:</span> <span class="p">(</span>
-             <span class="s1">&#39;wss://resume.dsc.gg&#39;</span><span class="p">),</span>
-         <span class="s1">&#39;session_id&#39;</span><span class="p">:</span> <span class="s1">&#39;mocked&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="p">{</span>
-             <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;dscbot&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;dscunq&#39;</span><span class="p">}}},</span>
+    <span class="p">{</span><span class="s1">'t'</span><span class="p">:</span> <span class="s1">'READY'</span><span class="p">,</span>
+     <span class="s1">'s'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="s1">'op'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s1">'d'</span><span class="p">:</span> <span class="p">{</span>
+         <span class="s1">'heartbeat_interval'</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+         <span class="s1">'resume_gateway_url'</span><span class="p">:</span> <span class="p">(</span>
+             <span class="s1">'wss://resume.dsc.gg'</span><span class="p">),</span>
+         <span class="s1">'session_id'</span><span class="p">:</span> <span class="s1">'mocked'</span><span class="p">,</span>
+         <span class="s1">'user'</span><span class="p">:</span> <span class="p">{</span>
+             <span class="s1">'username'</span><span class="p">:</span> <span class="s1">'dscbot'</span><span class="p">,</span>
+             <span class="s1">'id'</span><span class="p">:</span> <span class="s1">'dscunq'</span><span class="p">}}},</span>
 
-    <span class="p">{</span><span class="s1">&#39;op&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">'op'</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span>
 
-    <span class="p">{</span><span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-     <span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-     <span class="s1">&#39;op&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-     <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="s1">&#39;heartbeat_interval&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-         <span class="s1">&#39;_trace&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;[&quot;g....0}]&#39;</span><span class="p">]}},</span>
+    <span class="p">{</span><span class="s1">'t'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+     <span class="s1">'s'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+     <span class="s1">'op'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+     <span class="s1">'d'</span><span class="p">:</span> <span class="p">{</span>
+         <span class="s1">'heartbeat_interval'</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+         <span class="s1">'_trace'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'["g....0}]'</span><span class="p">]}},</span>
 
-    <span class="p">{</span><span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="s1">&#39;RESUMED&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-     <span class="s1">&#39;op&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-     <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="s1">&#39;_trace&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;[&quot;g...3}]}]&#39;</span><span class="p">]}},</span>
+    <span class="p">{</span><span class="s1">'t'</span><span class="p">:</span> <span class="s1">'RESUMED'</span><span class="p">,</span>
+     <span class="s1">'s'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="s1">'op'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+     <span class="s1">'d'</span><span class="p">:</span> <span class="p">{</span>
+         <span class="s1">'_trace'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'["g...3}]}]'</span><span class="p">]}},</span>
 
-    <span class="p">{</span><span class="s1">&#39;op&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}]</span>
+    <span class="p">{</span><span class="s1">'op'</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">:</span> <span class="kc">None</span><span class="p">}]</span>
 
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">DSCClientSocket</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Typing protocol which the developer does not understand.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="nd">@overload</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span>
@@ -423,11 +423,11 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rvents</span><span class="p">:</span> <span class="n">_EVENTS</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_SOCKET</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Construct the instance for use in the downstream tests.</span>
 
 <span class="sd">        :param rvents: Raw events for playback from the server.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="o">...</span>  <span class="c1"># NOCVR</span>
 
 
@@ -439,36 +439,36 @@
     <span class="n">mocker</span><span class="p">:</span> <span class="n">MockerFixture</span><span class="p">,</span>
     <span class="n">respx_mock</span><span class="p">:</span> <span class="n">MockRouter</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DSCClientSocket</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Construct the instance for use in the downstream tests.</span>
 
 <span class="sd">    :param mocker: Object for mocking the Python routines.</span>
 <span class="sd">    :param respx_mock: Object for mocking request operation.</span>
 <span class="sd">    :returns: Newly constructed instance of related class.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">content</span> <span class="o">=</span> <span class="n">dumps</span><span class="p">({</span>
-        <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;mocked&#39;</span><span class="p">})</span>
+        <span class="s1">'url'</span><span class="p">:</span> <span class="s1">'mocked'</span><span class="p">})</span>
 
     <span class="p">(</span><span class="n">respx_mock</span>
      <span class="o">.</span><span class="n">get</span><span class="p">(</span>
-         <span class="s1">&#39;https://discord.com&#39;</span>
-         <span class="s1">&#39;/api/v10/gateway&#39;</span><span class="p">)</span>
+         <span class="s1">'https://discord.com'</span>
+         <span class="s1">'/api/v10/gateway'</span><span class="p">)</span>
      <span class="o">.</span><span class="n">mock</span><span class="p">(</span><span class="n">Response</span><span class="p">(</span>
          <span class="n">status_code</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
          <span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">)))</span>
 
     <span class="p">(</span><span class="n">respx_mock</span>
      <span class="o">.</span><span class="n">post</span><span class="p">(</span>
-         <span class="s1">&#39;https://discord.com&#39;</span>
-         <span class="s1">&#39;/api/v10/channels/&#39;</span>
-         <span class="s1">&#39;privid/messages&#39;</span><span class="p">)</span>
+         <span class="s1">'https://discord.com'</span>
+         <span class="s1">'/api/v10/channels/'</span>
+         <span class="s1">'privid/messages'</span><span class="p">)</span>
      <span class="o">.</span><span class="n">mock</span><span class="p">(</span><span class="n">Response</span><span class="p">(</span><span class="mi">200</span><span class="p">)))</span>
 
 
     <span class="n">socmod</span> <span class="o">=</span> <span class="n">mocker</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span>
-        <span class="p">(</span><span class="s1">&#39;enconnect.discord&#39;</span>
-         <span class="s1">&#39;.client.connect&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">'enconnect.discord'</span>
+         <span class="s1">'.client.connect'</span><span class="p">),</span>
         <span class="n">autospec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 
@@ -477,7 +477,7 @@
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">bytes</span><span class="p">]:</span>
 
         <span class="k">return</span> <span class="p">[</span>
-            <span class="n">dumps</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+            <span class="n">dumps</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">resps</span><span class="p">]</span>
 
 
@@ -496,8 +496,8 @@
             <span class="n">block_sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
 
             <span class="k">yield</span> <span class="p">(</span>
-                <span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;op&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">})</span>
-                <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+                <span class="n">dumps</span><span class="p">({</span><span class="s1">'op'</span><span class="p">:</span> <span class="mi">9</span><span class="p">})</span>
+                <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">))</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_factory</span><span class="p">(</span>

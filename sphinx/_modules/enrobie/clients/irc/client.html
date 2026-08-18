@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.clients.irc.client</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -338,9 +338,9 @@
 <div class="viewcode-block" id="IRCClient">
 <a class="viewcode-back" href="../../../../index.html#enrobie.clients.IRCClient">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">IRCClient</span><span class="p">(</span><span class="n">RobieClient</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Establish and maintain connection with the chat service.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">__client</span><span class="p">:</span> <span class="n">Client</span>
     <span class="n">__channels</span><span class="p">:</span> <span class="n">ClientChannels</span>
@@ -350,9 +350,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">__post__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
 
@@ -374,9 +374,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform advanced validation on the parameters provided.</span>
-<span class="sd">        &quot;&quot;&quot;</span></div>
+<span class="sd">        """</span></div>
 
 
         <span class="c1"># Nothing to do for client</span>
@@ -388,11 +388,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">schema</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">IRCClientParams</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the configuration parameters relevant for class.</span>
 
 <span class="sd">        :returns: Configuration parameters relevant for class.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="n">IRCClientParams</span></div>
 
@@ -402,11 +402,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">params</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRCClientParams</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Pydantic model containing the configuration.</span>
 
 <span class="sd">        :returns: Pydantic model containing the configuration.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">params</span>
 
@@ -420,25 +420,25 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">family</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;irc&#39;</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">'irc'</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
-        <span class="k">return</span> <span class="s1">&#39;irc&#39;</span>
+        <span class="k">return</span> <span class="s1">'irc'</span>
 
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">channels</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ClientChannels</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__channels</span>
 
@@ -447,11 +447,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">publish</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ClientPublish</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__publish</span>
 
@@ -460,11 +460,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">client</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Client</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__client</span>
 
@@ -474,9 +474,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>  <span class="c1"># noqa: CFQ001</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform the operation related to Robie service threads.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">thread</span>
 
@@ -490,7 +490,7 @@
 
         <span class="n">delay</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">delay</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;pending&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">'pending'</span><span class="p">)</span>
 
 
         <span class="k">def</span><span class="w"> </span><span class="nf">_put_mqueue</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -506,7 +506,7 @@
                 <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_e</span><span class="p">(</span>
                     <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
                     <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-                    <span class="n">status</span><span class="o">=</span><span class="s1">&#39;exception&#39;</span><span class="p">,</span>
+                    <span class="n">status</span><span class="o">=</span><span class="s1">'exception'</span><span class="p">,</span>
                     <span class="n">exc_info</span><span class="o">=</span><span class="n">reason</span><span class="p">)</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">put_message</span><span class="p">(</span>
@@ -532,7 +532,7 @@
                 <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_e</span><span class="p">(</span>
                     <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
                     <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-                    <span class="n">status</span><span class="o">=</span><span class="s1">&#39;exception&#39;</span><span class="p">,</span>
+                    <span class="n">status</span><span class="o">=</span><span class="s1">'exception'</span><span class="p">,</span>
                     <span class="n">exc_info</span><span class="o">=</span><span class="n">reason</span><span class="p">)</span>
 
 
@@ -553,20 +553,20 @@
 
                 <span class="n">client</span><span class="o">.</span><span class="n">operate</span><span class="p">()</span>
 
-                <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;pending&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">'pending'</span><span class="p">)</span>
 
             <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;failure&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">'failure'</span><span class="p">)</span>
 
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">reason</span><span class="p">:</span>
 
                 <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_e</span><span class="p">(</span>
                     <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
                     <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-                    <span class="n">status</span><span class="o">=</span><span class="s1">&#39;exception&#39;</span><span class="p">,</span>
+                    <span class="n">status</span><span class="o">=</span><span class="s1">'exception'</span><span class="p">,</span>
                     <span class="n">exc_info</span><span class="o">=</span><span class="n">reason</span><span class="p">)</span>
 
-                <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;failure&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">'failure'</span><span class="p">)</span>
 
             <span class="k">finally</span><span class="p">:</span>
                 <span class="n">pending</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
@@ -579,7 +579,7 @@
                 <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
                     <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
                     <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-                    <span class="n">status</span><span class="o">=</span><span class="s1">&#39;connect&#39;</span><span class="p">)</span>
+                    <span class="n">status</span><span class="o">=</span><span class="s1">'connect'</span><span class="p">)</span>
 
                 <span class="n">pending</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
 
@@ -588,7 +588,7 @@
                 <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_i</span><span class="p">(</span>
                     <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
                     <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-                    <span class="n">status</span><span class="o">=</span><span class="s1">&#39;severed&#39;</span><span class="p">)</span>
+                    <span class="n">status</span><span class="o">=</span><span class="s1">'severed'</span><span class="p">)</span>
 
                 <span class="n">block_sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>
 
@@ -597,8 +597,8 @@
 
 
         <span class="n">name</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span>
-            <span class="s1">&#39;_thread_client&#39;</span><span class="p">)</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">'</span>
+            <span class="s1">'_thread_client'</span><span class="p">)</span>
 
         <span class="n">threads</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">x</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span>
@@ -626,7 +626,7 @@
             <span class="k">if</span> <span class="p">(</span><span class="n">pending</span><span class="o">.</span><span class="n">is_set</span><span class="p">()</span>
                     <span class="ow">and</span> <span class="n">_connected</span><span class="p">()):</span>
 
-                <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">'normal'</span><span class="p">)</span>
 
                 <span class="n">pending</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 
@@ -657,18 +657,18 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">event</span><span class="p">:</span> <span class="n">ClientEvent</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Process the provided message item from the Robie thread.</span>
 
 <span class="sd">        :param event: Raw event received from the network peer.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">command</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">command</span>
         <span class="n">params</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">params</span>
         <span class="n">prefix</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">prefix</span>
 
 
-        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;353&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">'353'</span><span class="p">:</span>
 
             <span class="k">assert</span> <span class="n">params</span>
 
@@ -678,9 +678,9 @@
             <span class="k">assert</span> <span class="n">members</span>
 
             <span class="n">_names</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="n">x</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;~@%&amp;+&#39;</span><span class="p">)</span>
+                <span class="n">x</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">'~@%&amp;+'</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span>
-                <span class="p">(</span><span class="n">members</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+                <span class="p">(</span><span class="n">members</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">':'</span><span class="p">)</span>
                  <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">SPACED</span><span class="p">))]</span>
 
             <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_names</span><span class="p">:</span>
@@ -688,14 +688,14 @@
                  <span class="o">.</span><span class="n">add_member</span><span class="p">(</span><span class="n">chan</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 
 
-        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;JOIN&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">'JOIN'</span><span class="p">:</span>
 
             <span class="k">assert</span> <span class="n">prefix</span>
             <span class="k">assert</span> <span class="n">params</span>
 
-            <span class="n">nick</span> <span class="o">=</span> <span class="n">prefix</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">nick</span> <span class="o">=</span> <span class="n">prefix</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'!'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">chan</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="n">params</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+                <span class="n">params</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">':'</span><span class="p">)</span>
                 <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">SPACED</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
 
             <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">whome</span> <span class="o">==</span> <span class="n">nick</span><span class="p">:</span>
@@ -706,21 +706,21 @@
              <span class="o">.</span><span class="n">add_member</span><span class="p">(</span><span class="n">chan</span><span class="p">,</span> <span class="n">nick</span><span class="p">))</span>
 
 
-        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;PART&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">'PART'</span><span class="p">:</span>
 
             <span class="k">assert</span> <span class="n">prefix</span>
             <span class="k">assert</span> <span class="n">params</span>
 
-            <span class="n">nick</span> <span class="o">=</span> <span class="n">prefix</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">nick</span> <span class="o">=</span> <span class="n">prefix</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'!'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">chan</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="n">params</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+                <span class="n">params</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">':'</span><span class="p">)</span>
                 <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">SPACED</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
 
             <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span>
              <span class="o">.</span><span class="n">del_member</span><span class="p">(</span><span class="n">chan</span><span class="p">,</span> <span class="n">nick</span><span class="p">))</span>
 
 
-        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;KICK&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">'KICK'</span><span class="p">:</span>
 
             <span class="k">assert</span> <span class="n">params</span>
 
@@ -731,13 +731,13 @@
              <span class="o">.</span><span class="n">del_member</span><span class="p">(</span><span class="n">chan</span><span class="p">,</span> <span class="n">nick</span><span class="p">))</span>
 
 
-        <span class="k">if</span> <span class="n">command</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;332&#39;</span><span class="p">,</span> <span class="s1">&#39;TOPIC&#39;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">command</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'332'</span><span class="p">,</span> <span class="s1">'TOPIC'</span><span class="p">]:</span>
 
             <span class="k">assert</span> <span class="n">params</span>
 
             <span class="n">topic</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 
-            <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;332&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">'332'</span><span class="p">:</span>
 
                 <span class="n">chan</span> <span class="o">=</span> <span class="p">(</span>
                     <span class="n">params</span>
@@ -746,9 +746,9 @@
                 <span class="n">topic</span> <span class="o">=</span> <span class="p">(</span>
                     <span class="n">params</span>
                     <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">SPACED</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
-                    <span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">))</span>
+                    <span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">':'</span><span class="p">))</span>
 
-            <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;TOPIC&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">'TOPIC'</span><span class="p">:</span>
 
                 <span class="n">chan</span> <span class="o">=</span> <span class="p">(</span>
                     <span class="n">params</span>
@@ -757,7 +757,7 @@
                 <span class="n">topic</span> <span class="o">=</span> <span class="p">(</span>
                     <span class="n">params</span>
                     <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">SPACED</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-                    <span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">))</span>
+                    <span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">':'</span><span class="p">))</span>
 
             <span class="k">assert</span> <span class="n">topic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 
@@ -765,13 +765,13 @@
              <span class="o">.</span><span class="n">set_topic</span><span class="p">(</span><span class="n">chan</span><span class="p">,</span> <span class="n">topic</span><span class="p">))</span>
 
 
-        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">&#39;NICK&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s1">'NICK'</span><span class="p">:</span>
 
             <span class="k">assert</span> <span class="n">prefix</span>
             <span class="k">assert</span> <span class="n">params</span>
 
-            <span class="n">current</span> <span class="o">=</span> <span class="n">prefix</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="n">update</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">prefix</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'!'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">update</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">':'</span><span class="p">)</span>
 
             <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span>
              <span class="o">.</span><span class="n">rename_member</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">update</span><span class="p">))</span>
@@ -783,7 +783,7 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">event</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ClientEvent</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRCMessage</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the new item containing information for operation.</span>
 
 <span class="sd">        .. note::</span>
@@ -793,7 +793,7 @@
 
 <span class="sd">        :param event: Raw event received from the network peer.</span>
 <span class="sd">        :returns: New item containing information for operation.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">assert</span> <span class="n">event</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 
@@ -805,10 +805,10 @@
 <a class="viewcode-back" href="../../../../index.html#enrobie.clients.IRCClient.put_message">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">put_message</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">mqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieMessage&#39;</span><span class="p">],</span>
+        <span class="n">mqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">'RobieMessage'</span><span class="p">],</span>
         <span class="n">event</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ClientEvent</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Insert the new item containing information for operation.</span>
 
 <span class="sd">        .. note::</span>
@@ -818,7 +818,7 @@
 
 <span class="sd">        :param mqueue: Queue instance where the item is received.</span>
 <span class="sd">        :param event: Raw event received from the network peer.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">mitem</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_message</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
 
@@ -834,7 +834,7 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">event</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRCCommand</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the new item containing information for operation.</span>
 
 <span class="sd">        .. note::</span>
@@ -844,7 +844,7 @@
 
 <span class="sd">        :param event: Raw event to be sent to the network peer.</span>
 <span class="sd">        :returns: New item containing information for operation.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">assert</span> <span class="n">event</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 
@@ -856,10 +856,10 @@
 <a class="viewcode-back" href="../../../../index.html#enrobie.clients.IRCClient.put_command">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">put_command</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">cqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">&#39;RobieCommand&#39;</span><span class="p">],</span>
+        <span class="n">cqueue</span><span class="p">:</span> <span class="n">RobieQueue</span><span class="p">[</span><span class="s1">'RobieCommand'</span><span class="p">],</span>
         <span class="n">event</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Insert the new item containing information for operation.</span>
 
 <span class="sd">        .. note::</span>
@@ -869,7 +869,7 @@
 
 <span class="sd">        :param cqueue: Queue instance where the item is received.</span>
 <span class="sd">        :param event: Raw event to be sent to the network peer.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">citem</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_command</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
 
@@ -883,8 +883,8 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">target</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieCommand&#39;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'RobieCommand'</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Compose the message and transmit using the chat client.</span>
 
 <span class="sd">        .. note::</span>
@@ -894,14 +894,14 @@
 
 <span class="sd">        :param target: Where the composed message will be sent.</span>
 <span class="sd">        :param content: Content that will be source of message.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">assert</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 
         <span class="k">return</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">get_command</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s1">&#39;PRIVMSG </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1">&#39;</span>
-                <span class="sa">f</span><span class="s1">&#39; :</span><span class="si">{</span><span class="n">content</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">))</span></div>
+                <span class="sa">f</span><span class="s1">'PRIVMSG </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1">'</span>
+                <span class="sa">f</span><span class="s1">' :</span><span class="si">{</span><span class="n">content</span><span class="si">}</span><span class="s1">'</span><span class="p">))</span></div>
 
 
 
@@ -909,18 +909,18 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Pass the provided keyword arguments into logger object.</span>
 
 <span class="sd">        :param kwargs: Keyword arguments for populating message.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robie</span>
 
         <span class="k">assert</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">([</span>
-            <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;level&#39;</span><span class="p">),</span>
-            <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;base&#39;</span><span class="p">),</span>
-            <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)])</span>
+            <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'level'</span><span class="p">),</span>
+            <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'base'</span><span class="p">),</span>
+            <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'name'</span><span class="p">)])</span>
 
         <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_d</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
@@ -932,11 +932,11 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">status</span><span class="p">:</span> <span class="n">StatusPluginStates</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Update or insert the status of the Robie child instance.</span>
 
 <span class="sd">        :param status: One of several possible value for status.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">thread</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">thread</span>
         <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
@@ -948,18 +948,18 @@
             <span class="n">thread</span><span class="o">.</span><span class="n">service</span>
             <span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">childs</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="s1">&#39;status&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">'status'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">NCNone</span>
 
-        <span class="n">plugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span>
+        <span class="n">plugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span>
 
         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
             <span class="n">plugin</span><span class="p">,</span> <span class="n">StatusPlugin</span><span class="p">)</span>
 
         <span class="p">(</span><span class="n">plugin</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
             <span class="n">unique</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-            <span class="n">group</span><span class="o">=</span><span class="s1">&#39;Connections&#39;</span><span class="p">,</span>
-            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;IRC&#39;</span><span class="p">,</span>
+            <span class="n">group</span><span class="o">=</span><span class="s1">'Connections'</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s1">'IRC'</span><span class="p">,</span>
             <span class="n">icon</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
             <span class="n">state</span><span class="o">=</span><span class="n">status</span><span class="p">))</span></div>
 

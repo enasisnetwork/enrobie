@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.clients.irc.params</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -318,26 +318,26 @@
 
 <div class="viewcode-block" id="IRCClientParams">
 <a class="viewcode-back" href="../../../../index.html#enrobie.clients.IRCClientParams">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">IRCClientParams</span><span class="p">(</span><span class="n">RobieClientParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">IRCClientParams</span><span class="p">(</span><span class="n">RobieClientParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Process and validate the Robie configuration parameters.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">client</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">ClientParams</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Parameters for the base client&#39;</span><span class="p">)]</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Parameters for the base client'</span><span class="p">)]</span>
 
     <span class="n">delay</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">int</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Period to wait for reconnect&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Period to wait for reconnect'</span><span class="p">,</span>
               <span class="n">ge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">le</span><span class="o">=</span><span class="mi">300</span><span class="p">)]</span>
 
     <span class="n">status</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">StatusPluginIconParams</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">StatusPluginIconParams</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per chat platform&#39;</span><span class="p">)]</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Icon used per chat platform'</span><span class="p">)]</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
@@ -347,17 +347,17 @@
         <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
 
         <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
             <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="s1">&#39;client&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;delay&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;status&#39;</span><span class="p">]</span>
+                <span class="s1">'client'</span><span class="p">,</span>
+                <span class="s1">'delay'</span><span class="p">,</span>
+                <span class="s1">'status'</span><span class="p">]</span>
 
             <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
 

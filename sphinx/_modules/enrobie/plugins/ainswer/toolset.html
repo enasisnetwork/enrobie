@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.ainswer.toolset</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -314,22 +314,22 @@
 <div class="viewcode-block" id="AinswerToolset">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.toolset.AinswerToolset">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">AinswerToolset</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Enumerate the plugins and return those that are related.</span>
 
 <span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">__plugin</span><span class="p">:</span> <span class="s1">&#39;AinswerPlugin&#39;</span>
+    <span class="n">__plugin</span><span class="p">:</span> <span class="s1">'AinswerPlugin'</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;AinswerPlugin&#39;</span><span class="p">,</span>
+        <span class="n">plugin</span><span class="p">:</span> <span class="s1">'AinswerPlugin'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span> <span class="o">=</span> <span class="n">plugin</span>
 
@@ -338,11 +338,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">toolset</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">AinswerTool</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the related tools that were found in the plugins.</span>
 
 <span class="sd">        :returns: Related tools that were found in the plugins.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="kn">from</span><span class="w"> </span><span class="nn">.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">AinswerPlugin</span>
 
@@ -393,13 +393,13 @@
                 <span class="k">continue</span>
 
             <span class="n">related</span> <span class="o">=</span> <span class="nb">hasattr</span><span class="p">(</span>
-                <span class="n">helper</span><span class="p">,</span> <span class="s1">&#39;ainswer&#39;</span><span class="p">)</span>
+                <span class="n">helper</span><span class="p">,</span> <span class="s1">'ainswer'</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">related</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
                 <span class="k">continue</span>
 
             <span class="k">assert</span> <span class="nb">hasattr</span><span class="p">(</span>
-                <span class="n">helper</span><span class="p">,</span> <span class="s1">&#39;ainswer&#39;</span><span class="p">)</span>
+                <span class="n">helper</span><span class="p">,</span> <span class="s1">'ainswer'</span><span class="p">)</span>
 
             <span class="n">toolset</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
                 <span class="n">helper</span><span class="o">.</span><span class="n">ainswer</span><span class="p">())</span>

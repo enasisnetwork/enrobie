@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.utils.child</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -313,15 +313,15 @@
 
 
 <span class="n">_PHASE</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span>
-    <span class="s1">&#39;initial&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;runtime&#39;</span><span class="p">]</span>
+    <span class="s1">'initial'</span><span class="p">,</span>
+    <span class="s1">'runtime'</span><span class="p">]</span>
 
 
 
 <div class="viewcode-block" id="InvalidChild">
 <a class="viewcode-back" href="../../../enrobie.utils.html#enrobie.utils.child.InvalidChild">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">InvalidChild</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Exception for when the child could not be instantiated.</span>
 
 <span class="sd">    .. note::</span>
@@ -330,7 +330,7 @@
 <span class="sd">    :param child: Name or child that is determined invalid.</span>
 <span class="sd">    :param phase: From which phase child was found invalid.</span>
 <span class="sd">    :param about: Additional information for the exception.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">child</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">phase</span><span class="p">:</span> <span class="n">_PHASE</span>
@@ -339,25 +339,25 @@
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">child</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;RobieChild&#39;</span><span class="p">],</span>
+        <span class="n">child</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">'RobieChild'</span><span class="p">],</span>
         <span class="n">phase</span><span class="p">:</span> <span class="n">_PHASE</span><span class="p">,</span>
         <span class="n">about</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">):</span>
             <span class="n">child</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">name</span>
 
         <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s1">&#39;Child (</span><span class="si">{</span><span class="n">child</span><span class="si">}</span><span class="s1">) &#39;</span>
-            <span class="s1">&#39;invalid within &#39;</span>
-            <span class="sa">f</span><span class="s1">&#39;phase (</span><span class="si">{</span><span class="n">phase</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+            <span class="sa">f</span><span class="s1">'Child (</span><span class="si">{</span><span class="n">child</span><span class="si">}</span><span class="s1">) '</span>
+            <span class="s1">'invalid within '</span>
+            <span class="sa">f</span><span class="s1">'phase (</span><span class="si">{</span><span class="n">phase</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">about</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">message</span> <span class="o">+=</span> <span class="p">(</span>
-                <span class="sa">f</span><span class="s1">&#39; (</span><span class="si">{</span><span class="n">about</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+                <span class="sa">f</span><span class="s1">' (</span><span class="si">{</span><span class="n">about</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">child</span> <span class="o">=</span> <span class="n">child</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">about</span> <span class="o">=</span> <span class="n">about</span>

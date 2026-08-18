@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.utils.states</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -320,33 +320,33 @@
 
 <div class="viewcode-block" id="ClientChannel">
 <a class="viewcode-back" href="../../../enrobie.utils.html#enrobie.utils.states.ClientChannel">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">ClientChannel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ClientChannel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Cache the information regarding client status on server.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">unique</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Unique ID of channel on server&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Unique ID of channel on server'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">title</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Friendly human name of channel&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Friendly human name of channel'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">topic</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Current topic for the channel&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Current topic for the channel'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">members</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Current members of the channel&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Current members of the channel'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
 
@@ -356,9 +356,9 @@
         <span class="o">/</span><span class="p">,</span>
         <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span></div>
 
@@ -368,11 +368,11 @@
 <div class="viewcode-block" id="ClientChannels">
 <a class="viewcode-back" href="../../../enrobie.utils.html#enrobie.utils.states.ClientChannels">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">ClientChannels</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Cache the information regarding client status on server.</span>
 
 <span class="sd">    :param client: Client class instance for Chatting Robie.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">__cached</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ClientChannel</span><span class="p">]</span>
 
@@ -380,9 +380,9 @@
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__cached</span> <span class="o">=</span> <span class="p">{}</span>
 
@@ -393,11 +393,11 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">unique</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Create the channel within the internal cache dictionary.</span>
 
 <span class="sd">        :param unique: Unique identifier for channel on server.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">cached</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cached</span>
 
@@ -414,12 +414,12 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">unique</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ClientChannel</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Select the channel within the internal cache dictionary.</span>
 
 <span class="sd">        :param unique: Unique identifier for channel on server.</span>
 <span class="sd">        :returns: Channel within the internal cache dictionary.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">cached</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cached</span>
 
@@ -445,11 +445,11 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">unique</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Delete the channel within the internal cache dictionary.</span>
 
 <span class="sd">        :param unique: Unique identifier for channel on server.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">cached</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cached</span>
 
@@ -464,12 +464,12 @@
         <span class="n">unique</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Update attribute for channel and create when not exists.</span>
 
 <span class="sd">        :param unique: Unique identifier for channel on server.</span>
 <span class="sd">        :param title: Proper huamn friendly name of the channel.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">cached</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cached</span>
 
@@ -491,12 +491,12 @@
         <span class="n">unique</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Update attribute for channel and create when not exists.</span>
 
 <span class="sd">        :param unique: Unique identifier for channel on server.</span>
 <span class="sd">        :param topic: Topic for discussion within the channel.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">cached</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cached</span>
 
@@ -518,12 +518,12 @@
         <span class="n">unique</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">member</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Update attribute for channel and create when not exists.</span>
 
 <span class="sd">        :param unique: Unique identifier for channel on server.</span>
 <span class="sd">        :param member: Remember relevant to the cache operation.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">cached</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cached</span>
 
@@ -550,12 +550,12 @@
         <span class="n">unique</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">member</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Update attribute for channel and create when not exists.</span>
 
 <span class="sd">        :param unique: Unique identifier for channel on server.</span>
 <span class="sd">        :param member: Remember relevant to the cache operation.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">cached</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cached</span>
 
@@ -584,11 +584,11 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">unique</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Update attribute for channel and create when not exists.</span>
 
 <span class="sd">        :param unique: Unique identifier for channel on server.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">cached</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cached</span>
 
@@ -613,12 +613,12 @@
         <span class="n">current</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">update</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Update attribute for channel and create when not exists.</span>
 
 <span class="sd">        :param current: Current member name to be be searched.</span>
 <span class="sd">        :param update: Value to replace current when is found.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">cached</span> <span class="o">=</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">__cached</span>
@@ -644,19 +644,19 @@
 <div class="viewcode-block" id="ClientPublish">
 <a class="viewcode-back" href="../../../enrobie.utils.html#enrobie.utils.states.ClientPublish">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">ClientPublish</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Allow for subscription to client events useful in tests.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">__callbacks</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="s1">&#39;RobieMessage&#39;</span><span class="p">],</span> <span class="kc">None</span><span class="p">]]</span>
+    <span class="n">__callbacks</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="s1">'RobieMessage'</span><span class="p">],</span> <span class="kc">None</span><span class="p">]]</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__callbacks</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -665,13 +665,13 @@
 <a class="viewcode-back" href="../../../enrobie.utils.html#enrobie.utils.states.ClientPublish.subscribe">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">subscribe</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="s1">&#39;RobieMessage&#39;</span><span class="p">],</span> <span class="kc">None</span><span class="p">],</span>
+        <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="s1">'RobieMessage'</span><span class="p">],</span> <span class="kc">None</span><span class="p">],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Store the callback within internal subscriber reference.</span>
 
 <span class="sd">        :param callback: Function that will be called with item.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">callbacks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__callbacks</span>
 
@@ -683,13 +683,13 @@
 <a class="viewcode-back" href="../../../enrobie.utils.html#enrobie.utils.states.ClientPublish.publish">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">publish</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+        <span class="n">mitem</span><span class="p">:</span> <span class="s1">'RobieMessage'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Submit the message from client to subscriber references.</span>
 
 <span class="sd">        :param mitem: Item containing information for operation.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">callbacks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__callbacks</span>
 

@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.ainswer.helpers</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -326,15 +326,15 @@
 <div class="viewcode-block" id="composedsc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.composedsc">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">composedsc</span><span class="p">(</span>  <span class="c1"># noqa: CFQ004</span>
-    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;AinswerPlugin&#39;</span><span class="p">,</span>
-    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+    <span class="n">plugin</span><span class="p">:</span> <span class="s1">'AinswerPlugin'</span><span class="p">,</span>
+    <span class="n">mitem</span><span class="p">:</span> <span class="s1">'RobieMessage'</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Construct and format message for related chat platform.</span>
 
 <span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
 <span class="sd">    :param mitem: Item containing information for operation.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="kn">from</span><span class="w"> </span><span class="nn">...clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">DSCClient</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.discord.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">DSCMessage</span>
@@ -357,7 +357,7 @@
     <span class="k">if</span> <span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_KINDS</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">NCNone</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;chanmsg&#39;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">'chanmsg'</span>
             <span class="ow">and</span> <span class="ow">not</span> <span class="n">hasme</span><span class="p">):</span>
         <span class="k">return</span> <span class="kc">None</span>
 
@@ -367,7 +367,7 @@
     <span class="n">firschar</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">message</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-    <span class="k">if</span> <span class="n">firschar</span> <span class="ow">in</span> <span class="s1">&#39;!%&amp;/.&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">firschar</span> <span class="ow">in</span> <span class="s1">'!%&amp;/.'</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">NCNone</span>
 
 
@@ -376,7 +376,7 @@
 
     <span class="nb">type</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">type</span>
 
-    <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;MESSAGE_UPDATE&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">'MESSAGE_UPDATE'</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">NCNone</span>
 
 
@@ -413,15 +413,15 @@
 <div class="viewcode-block" id="composeirc">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.composeirc">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">composeirc</span><span class="p">(</span>  <span class="c1"># noqa: CFQ004</span>
-    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;AinswerPlugin&#39;</span><span class="p">,</span>
-    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+    <span class="n">plugin</span><span class="p">:</span> <span class="s1">'AinswerPlugin'</span><span class="p">,</span>
+    <span class="n">mitem</span><span class="p">:</span> <span class="s1">'RobieMessage'</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Construct and format message for related chat platform.</span>
 
 <span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
 <span class="sd">    :param mitem: Item containing information for operation.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.irc.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRCClient</span>
 
@@ -443,7 +443,7 @@
     <span class="k">if</span> <span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_KINDS</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">NCNone</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;chanmsg&#39;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">'chanmsg'</span>
             <span class="ow">and</span> <span class="ow">not</span> <span class="n">hasme</span><span class="p">):</span>
         <span class="k">return</span> <span class="kc">None</span>
 
@@ -453,7 +453,7 @@
     <span class="n">firschar</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">message</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-    <span class="k">if</span> <span class="n">firschar</span> <span class="ow">in</span> <span class="s1">&#39;!%&amp;/.&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">firschar</span> <span class="ow">in</span> <span class="s1">'!%&amp;/.'</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">NCNone</span>
 
 
@@ -490,15 +490,15 @@
 <div class="viewcode-block" id="composemtm">
 <a class="viewcode-back" href="../../../../enrobie.plugins.ainswer.html#enrobie.plugins.ainswer.helpers.composemtm">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">composemtm</span><span class="p">(</span>  <span class="c1"># noqa: CFQ004</span>
-    <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;AinswerPlugin&#39;</span><span class="p">,</span>
-    <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+    <span class="n">plugin</span><span class="p">:</span> <span class="s1">'AinswerPlugin'</span><span class="p">,</span>
+    <span class="n">mitem</span><span class="p">:</span> <span class="s1">'RobieMessage'</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Construct and format message for related chat platform.</span>
 
 <span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
 <span class="sd">    :param mitem: Item containing information for operation.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="kn">from</span><span class="w"> </span><span class="nn">...clients</span><span class="w"> </span><span class="kn">import</span> <span class="n">MTMClient</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">...clients.mattermost.message</span><span class="w"> </span><span class="kn">import</span> <span class="n">MTMMessage</span>
@@ -521,7 +521,7 @@
     <span class="k">if</span> <span class="n">kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_KINDS</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">NCNone</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;chanmsg&#39;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">'chanmsg'</span>
             <span class="ow">and</span> <span class="ow">not</span> <span class="n">hasme</span><span class="p">):</span>
         <span class="k">return</span> <span class="kc">None</span>
 
@@ -531,7 +531,7 @@
     <span class="n">firschar</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">message</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-    <span class="k">if</span> <span class="n">firschar</span> <span class="ow">in</span> <span class="s1">&#39;!%&amp;/.&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">firschar</span> <span class="ow">in</span> <span class="s1">'!%&amp;/.'</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">NCNone</span>
 
 
@@ -540,7 +540,7 @@
 
     <span class="nb">type</span> <span class="o">=</span> <span class="n">mitem</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">type</span>
 
-    <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;post_edited&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">'post_edited'</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">NCNone</span>
 
 

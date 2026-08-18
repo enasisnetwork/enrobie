@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.nagios.ainswer</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -318,7 +318,7 @@
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">nagios_current</span><span class="p">(</span>
     <span class="n">context</span><span class="p">:</span> <span class="n">RunContext</span><span class="p">[</span><span class="n">AinswerDepends</span><span class="p">],</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentRecords</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Return the current status for infratstructure in Nagios.</span>
 
 <span class="sd">    .. note::</span>
@@ -326,7 +326,7 @@
 <span class="sd">       Nagios is a network and system monitoring platform.</span>
 
 <span class="sd">    :returns: Current status for infratstructure in Nagios.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="kn">from</span><span class="w"> </span><span class="nn">.plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">NagiosPlugin</span>
 
@@ -372,8 +372,8 @@
 
 
     <span class="n">ainswer</span><span class="o">.</span><span class="n">printer</span><span class="p">({</span>
-        <span class="s1">&#39;Function&#39;</span><span class="p">:</span> <span class="n">funcname</span><span class="p">(),</span>
-        <span class="s1">&#39;Returned&#39;</span><span class="p">:</span> <span class="n">returned</span><span class="p">})</span>
+        <span class="s1">'Function'</span><span class="p">:</span> <span class="n">funcname</span><span class="p">(),</span>
+        <span class="s1">'Returned'</span><span class="p">:</span> <span class="n">returned</span><span class="p">})</span>
 
     <span class="k">return</span> <span class="n">returned</span></div>
 

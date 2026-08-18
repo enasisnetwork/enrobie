@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.ainswer.ainswer</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -317,7 +317,7 @@
 
 
 <span class="n">NOTAPERSON</span> <span class="o">=</span> <span class="ne">Exception</span><span class="p">(</span>
-    <span class="s1">&#39;User is not a Robie person&#39;</span><span class="p">)</span>
+    <span class="s1">'User is not a Robie person'</span><span class="p">)</span>
 
 
 
@@ -327,7 +327,7 @@
     <span class="n">context</span><span class="p">:</span> <span class="n">RunContext</span><span class="p">[</span><span class="n">AinswerDepends</span><span class="p">],</span>
     <span class="n">message</span><span class="p">:</span> <span class="n">AinswerMemoryMessageField</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Insert the memory into the historical person memorables.</span>
 
 <span class="sd">    Do not add memories of previous questions or discussion.</span>
@@ -343,7 +343,7 @@
 <span class="sd">    .. note::</span>
 <span class="sd">       This tool will allow for inserting new memories for</span>
 <span class="sd">       the provided username, also known as a Robie person.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">deps</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">deps</span>
     <span class="n">ainswer</span> <span class="o">=</span> <span class="n">deps</span><span class="o">.</span><span class="n">plugin</span>
@@ -351,7 +351,7 @@
     <span class="n">memory</span> <span class="o">=</span> <span class="n">ainswer</span><span class="o">.</span><span class="n">memory</span>
 
     <span class="n">inputted</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="n">message</span><span class="p">}</span>
+        <span class="s1">'message'</span><span class="p">:</span> <span class="n">message</span><span class="p">}</span>
 
     <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
@@ -372,8 +372,8 @@
 
 
     <span class="n">ainswer</span><span class="o">.</span><span class="n">printer</span><span class="p">({</span>
-        <span class="s1">&#39;Function&#39;</span><span class="p">:</span> <span class="n">funcname</span><span class="p">(),</span>
-        <span class="s1">&#39;Inputted&#39;</span><span class="p">:</span> <span class="n">inputted</span><span class="p">})</span></div>
+        <span class="s1">'Function'</span><span class="p">:</span> <span class="n">funcname</span><span class="p">(),</span>
+        <span class="s1">'Inputted'</span><span class="p">:</span> <span class="n">inputted</span><span class="p">})</span></div>
 
 
 
@@ -383,13 +383,13 @@
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">ainswer_memory_records</span><span class="p">(</span>
     <span class="n">context</span><span class="p">:</span> <span class="n">RunContext</span><span class="p">[</span><span class="n">AinswerDepends</span><span class="p">],</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">AinswerMemoryRecord</span><span class="p">]]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Return the historical records for the person memorables.</span>
 
 <span class="sd">    .. note::</span>
 <span class="sd">       This tool will return historical memorable items for</span>
 <span class="sd">       the provided username, also known as a Robie person.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">deps</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">deps</span>
     <span class="n">ainswer</span> <span class="o">=</span> <span class="n">deps</span><span class="o">.</span><span class="n">plugin</span>
@@ -414,8 +414,8 @@
 
 
     <span class="n">ainswer</span><span class="o">.</span><span class="n">printer</span><span class="p">({</span>
-        <span class="s1">&#39;Function&#39;</span><span class="p">:</span> <span class="n">funcname</span><span class="p">(),</span>
-        <span class="s1">&#39;Returned&#39;</span><span class="p">:</span> <span class="n">returned</span><span class="p">})</span>
+        <span class="s1">'Function'</span><span class="p">:</span> <span class="n">funcname</span><span class="p">(),</span>
+        <span class="s1">'Returned'</span><span class="p">:</span> <span class="n">returned</span><span class="p">})</span>
 
     <span class="k">return</span> <span class="n">returned</span></div>
 
@@ -428,13 +428,13 @@
     <span class="n">context</span><span class="p">:</span> <span class="n">RunContext</span><span class="p">[</span><span class="n">AinswerDepends</span><span class="p">],</span>
     <span class="n">unique</span><span class="p">:</span> <span class="n">AinswerMemoryUniqueField</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Delete the record from the historical person memorables.</span>
 
 <span class="sd">    .. note::</span>
 <span class="sd">       This tool will allow for deleting the memories for</span>
 <span class="sd">       the provided username, also known as a Robie person.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">deps</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">deps</span>
     <span class="n">ainswer</span> <span class="o">=</span> <span class="n">deps</span><span class="o">.</span><span class="n">plugin</span>
@@ -442,7 +442,7 @@
     <span class="n">memory</span> <span class="o">=</span> <span class="n">ainswer</span><span class="o">.</span><span class="n">memory</span>
 
     <span class="n">inputted</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;unique&#39;</span><span class="p">:</span> <span class="n">unique</span><span class="p">}</span>
+        <span class="s1">'unique'</span><span class="p">:</span> <span class="n">unique</span><span class="p">}</span>
 
 
     <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -462,8 +462,8 @@
 
 
     <span class="n">ainswer</span><span class="o">.</span><span class="n">printer</span><span class="p">({</span>
-        <span class="s1">&#39;Function&#39;</span><span class="p">:</span> <span class="n">funcname</span><span class="p">(),</span>
-        <span class="s1">&#39;Inputted&#39;</span><span class="p">:</span> <span class="n">inputted</span><span class="p">})</span></div>
+        <span class="s1">'Function'</span><span class="p">:</span> <span class="n">funcname</span><span class="p">(),</span>
+        <span class="s1">'Inputted'</span><span class="p">:</span> <span class="n">inputted</span><span class="p">})</span></div>
 
 </pre></div>
 

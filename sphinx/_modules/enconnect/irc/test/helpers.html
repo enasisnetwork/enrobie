@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enconnect.irc.test.helpers</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Remote Connect.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -330,140 +330,140 @@
 
 <span class="n">EVENTS</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
 
-    <span class="p">(</span><span class="s1">&#39;:mocked 376 ircbot &#39;</span>
-     <span class="s1">&#39;:End of /MOTD command.&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':mocked 376 ircbot '</span>
+     <span class="s1">':End of /MOTD command.'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:nick!user@host PRIVMSG&#39;</span>
-     <span class="s1">&#39; ircbot :Hello ircbot&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':nick!user@host PRIVMSG'</span>
+     <span class="s1">' ircbot :Hello ircbot'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:nick!user@host PRIVMSG&#39;</span>
-     <span class="s1">&#39; # :Hello world&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':nick!user@host PRIVMSG'</span>
+     <span class="s1">' # :Hello world'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:nick!user@host PRIVMSG&#39;</span>
-     <span class="s1">&#39; #funchat :Hello world&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':nick!user@host PRIVMSG'</span>
+     <span class="s1">' #funchat :Hello world'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:ircbot!user@host&#39;</span>
-     <span class="s1">&#39; NICK :botirc&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':ircbot!user@host'</span>
+     <span class="s1">' NICK :botirc'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:botirc!user@host PRIVMSG&#39;</span>
-     <span class="s1">&#39; # :Hello nick&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':botirc!user@host PRIVMSG'</span>
+     <span class="s1">' # :Hello nick'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;ERROR :Closing Link: botirc&#39;</span>
-     <span class="s1">&#39;[mocked] (Quit: botirc)&#39;</span><span class="p">)]</span>
+    <span class="p">(</span><span class="s1">'ERROR :Closing Link: botirc'</span>
+     <span class="s1">'[mocked] (Quit: botirc)'</span><span class="p">)]</span>
 
 
 
 <span class="n">SVENTS</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
 
-    <span class="p">(</span><span class="s1">&#39;SERVER jupiter.invalid 1&#39;</span>
-     <span class="s1">&#39; :U6100-Fhn6OoErmM-0AD IRC Network&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">'SERVER jupiter.invalid 1'</span>
+     <span class="s1">' :U6100-Fhn6OoErmM-0AD IRC Network'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:0AD SID neptune.invalid&#39;</span>
-     <span class="s1">&#39; 2 0PS :IRC Network&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':0AD SID neptune.invalid'</span>
+     <span class="s1">' 2 0PS :IRC Network'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;@s2s-md/tls_cipher=&#39;</span>
-     <span class="s1">&#39;TLSv1.3-TLS_CHACHA20_POLY1305_SHA256;&#39;</span>
-     <span class="s1">&#39;s2s-md/creationtime=1727476461&#39;</span>
-     <span class="s1">&#39; :0PS UID ircbot 0&#39;</span>
-     <span class="s1">&#39; 1727476461 ircbot&#39;</span>
-     <span class="s1">&#39; localhost 0PS3FGG02&#39;</span>
-     <span class="s1">&#39; 0 +iwxz * irc-5DE79E97&#39;</span>
-     <span class="s1">&#39; fwAAAQ== :ircbot&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">'@s2s-md/tls_cipher='</span>
+     <span class="s1">'TLSv1.3-TLS_CHACHA20_POLY1305_SHA256;'</span>
+     <span class="s1">'s2s-md/creationtime=1727476461'</span>
+     <span class="s1">' :0PS UID ircbot 0'</span>
+     <span class="s1">' 1727476461 ircbot'</span>
+     <span class="s1">' localhost 0PS3FGG02'</span>
+     <span class="s1">' 0 +iwxz * irc-5DE79E97'</span>
+     <span class="s1">' fwAAAQ== :ircbot'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:0AD MD client 0PS3FGG02&#39;</span>
-     <span class="s1">&#39; creationtime :1727476461&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':0AD MD client 0PS3FGG02'</span>
+     <span class="s1">' creationtime :1727476461'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:0AD MD client&#39;</span>
-     <span class="s1">&#39; 0PS3FGG02 tls_cipher &#39;</span>
-     <span class="s1">&#39;:TLSv1.3-TLS_CHACHA20_POLY1305_SHA256&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':0AD MD client'</span>
+     <span class="s1">' 0PS3FGG02 tls_cipher '</span>
+     <span class="s1">':TLSv1.3-TLS_CHACHA20_POLY1305_SHA256'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;@s2s-md/tls_cipher=&#39;</span>
-     <span class="s1">&#39;TLSv1.3-TLS_CHACHA20_POLY1305_SHA256;&#39;</span>
-     <span class="s1">&#39;s2s-md/creationtime=1727476468;&#39;</span>
-     <span class="s1">&#39;s2s-md/operlogin=robert;&#39;</span>
-     <span class="s1">&#39;s2s-md/operclass=netadmin&#39;</span>
-     <span class="s1">&#39; :0AD UID robert 0&#39;</span>
-     <span class="s1">&#39; 1727508036 robert&#39;</span>
-     <span class="s1">&#39; localhost 0AD1QCV03&#39;</span>
-     <span class="s1">&#39; 0 +iowxz * irc-5DE79E97&#39;</span>
-     <span class="s1">&#39; AAAAAAAAAAAAAAAAAAAAAQ== :robert&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">'@s2s-md/tls_cipher='</span>
+     <span class="s1">'TLSv1.3-TLS_CHACHA20_POLY1305_SHA256;'</span>
+     <span class="s1">'s2s-md/creationtime=1727476468;'</span>
+     <span class="s1">'s2s-md/operlogin=robert;'</span>
+     <span class="s1">'s2s-md/operclass=netadmin'</span>
+     <span class="s1">' :0AD UID robert 0'</span>
+     <span class="s1">' 1727508036 robert'</span>
+     <span class="s1">' localhost 0AD1QCV03'</span>
+     <span class="s1">' 0 +iowxz * irc-5DE79E97'</span>
+     <span class="s1">' AAAAAAAAAAAAAAAAAAAAAQ== :robert'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:0AD MD client 0AD1QCV03&#39;</span>
-     <span class="s1">&#39; operclass :netadmin&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':0AD MD client 0AD1QCV03'</span>
+     <span class="s1">' operclass :netadmin'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:0AD MD client 0AD1QCV03&#39;</span>
-     <span class="s1">&#39; operlogin :robert&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':0AD MD client 0AD1QCV03'</span>
+     <span class="s1">' operlogin :robert'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:0AD MD client 0AD1QCV03&#39;</span>
-     <span class="s1">&#39; creationtime :1727476468&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':0AD MD client 0AD1QCV03'</span>
+     <span class="s1">' creationtime :1727476468'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:0AD MD client&#39;</span>
-     <span class="s1">&#39; 0AD1QCV03 tls_cipher &#39;</span>
-     <span class="s1">&#39;:TLSv1.3-TLS_CHACHA20_POLY1305_SHA256&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':0AD MD client'</span>
+     <span class="s1">' 0AD1QCV03 tls_cipher '</span>
+     <span class="s1">':TLSv1.3-TLS_CHACHA20_POLY1305_SHA256'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:42X UID ChatServ 0&#39;</span>
-     <span class="s1">&#39; 1727569796 service&#39;</span>
-     <span class="s1">&#39; services.invalid 42X000009&#39;</span>
-     <span class="s1">&#39; 0 +Sio services.invalid&#39;</span>
-     <span class="s1">&#39; services.invalid * &#39;</span>
-     <span class="s1">&#39;:Invitable LLM chatting&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':42X UID ChatServ 0'</span>
+     <span class="s1">' 1727569796 service'</span>
+     <span class="s1">' services.invalid 42X000009'</span>
+     <span class="s1">' 0 +Sio services.invalid'</span>
+     <span class="s1">' services.invalid * '</span>
+     <span class="s1">':Invitable LLM chatting'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;@msgid=Z48DNGsGfMhR8UwXhAljGz;&#39;</span>
-     <span class="s1">&#39;time=2024-09-29T00:29:56.463Z&#39;</span>
-     <span class="s1">&#39; :0AD SJOIN 1727476468&#39;</span>
-     <span class="s1">&#39; #opers +nt :@0AD1QCV03&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">'@msgid=Z48DNGsGfMhR8UwXhAljGz;'</span>
+     <span class="s1">'time=2024-09-29T00:29:56.463Z'</span>
+     <span class="s1">' :0AD SJOIN 1727476468'</span>
+     <span class="s1">' #opers +nt :@0AD1QCV03'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;NETINFO 11 1727569796 6100&#39;</span>
-     <span class="s1">&#39; SHA256:b94e96b5d7fbba92fc0a36c2&#39;</span>
-     <span class="s1">&#39;667d4d1581a6281ac1440a741d5556f3&#39;</span>
-     <span class="s1">&#39; 0 0 0 :EnasisNET&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">'NETINFO 11 1727569796 6100'</span>
+     <span class="s1">' SHA256:b94e96b5d7fbba92fc0a36c2'</span>
+     <span class="s1">'667d4d1581a6281ac1440a741d5556f3'</span>
+     <span class="s1">' 0 0 0 :EnasisNET'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:0AD1QCV03 SAJOIN&#39;</span>
-     <span class="s1">&#39; 0PS3FGG02 #funchat&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':0AD1QCV03 SAJOIN'</span>
+     <span class="s1">' 0PS3FGG02 #funchat'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;@time=2024-09-29T00:53:42.190Z;&#39;</span>
-     <span class="s1">&#39;msgid=bdVQ13oQfRcdUnxX2hbb4C;&#39;</span>
-     <span class="s1">&#39;unrealircd.org/issued-by=&#39;</span>
-     <span class="s1">&#39;OPER:robert@jupiter.invalid:robert&#39;</span>
-     <span class="s1">&#39; :0PS SJOIN 1727571222&#39;</span>
-     <span class="s1">&#39; #funchat :0PS3FGG02&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">'@time=2024-09-29T00:53:42.190Z;'</span>
+     <span class="s1">'msgid=bdVQ13oQfRcdUnxX2hbb4C;'</span>
+     <span class="s1">'unrealircd.org/issued-by='</span>
+     <span class="s1">'OPER:robert@jupiter.invalid:robert'</span>
+     <span class="s1">' :0PS SJOIN 1727571222'</span>
+     <span class="s1">' #funchat :0PS3FGG02'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;@unrealircd.org/issued-by=&#39;</span>
-     <span class="s1">&#39;OPER:robert@jupiter.invalid:robert;&#39;</span>
-     <span class="s1">&#39;msgid=bdVQ13oQfRcdUnxX2hbb4C&#39;</span>
-     <span class="s1">&#39;-6D9mg3IKCGFgtCeraInDIA;&#39;</span>
-     <span class="s1">&#39;time=2024-09-29T00:53:42.190Z&#39;</span>
-     <span class="s1">&#39; :0PS MODE #funchat&#39;</span>
-     <span class="s1">&#39; +nt  1727571222&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">'@unrealircd.org/issued-by='</span>
+     <span class="s1">'OPER:robert@jupiter.invalid:robert;'</span>
+     <span class="s1">'msgid=bdVQ13oQfRcdUnxX2hbb4C'</span>
+     <span class="s1">'-6D9mg3IKCGFgtCeraInDIA;'</span>
+     <span class="s1">'time=2024-09-29T00:53:42.190Z'</span>
+     <span class="s1">' :0PS MODE #funchat'</span>
+     <span class="s1">' +nt  1727571222'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;@msgid=mjvxur6dNstbXFajGoPjrU;&#39;</span>
-     <span class="s1">&#39;time=2024-09-29T00:53:45.577Z&#39;</span>
-     <span class="s1">&#39; :0AD SJOIN 1727571222&#39;</span>
-     <span class="s1">&#39; #funchat :0AD1QCV03&#39;</span><span class="p">)]</span>
+    <span class="p">(</span><span class="s1">'@msgid=mjvxur6dNstbXFajGoPjrU;'</span>
+     <span class="s1">'time=2024-09-29T00:53:45.577Z'</span>
+     <span class="s1">' :0AD SJOIN 1727571222'</span>
+     <span class="s1">' #funchat :0AD1QCV03'</span><span class="p">)]</span>
 
 
 
 <span class="n">RVENTS</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
 
-    <span class="p">(</span><span class="s1">&#39;:mocked 001 ircbot&#39;</span>
-     <span class="s1">&#39; :Welcome to network&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':mocked 001 ircbot'</span>
+     <span class="s1">' :Welcome to network'</span><span class="p">),</span>
 
-    <span class="p">(</span><span class="s1">&#39;:mocked 376 ircbot &#39;</span>
-     <span class="s1">&#39;:End of /MOTD command.&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':mocked 376 ircbot '</span>
+     <span class="s1">':End of /MOTD command.'</span><span class="p">),</span>
 
-    <span class="s1">&#39;PING :123456789&#39;</span><span class="p">,</span>
+    <span class="s1">'PING :123456789'</span><span class="p">,</span>
 
-    <span class="p">(</span><span class="s1">&#39;:mocked 376 ircbot &#39;</span>
-     <span class="s1">&#39;:End of /MOTD command.&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">':mocked 376 ircbot '</span>
+     <span class="s1">':End of /MOTD command.'</span><span class="p">),</span>
 
-    <span class="s1">&#39;PING :123456789&#39;</span><span class="p">]</span>
+    <span class="s1">'PING :123456789'</span><span class="p">]</span>
 
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">IRCClientSocket</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Typing protocol which the developer does not understand.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="nd">@overload</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span>
@@ -482,11 +482,11 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">rvents</span><span class="p">:</span> <span class="n">_EVENTS</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_SOCKET</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Construct the instance for use in the downstream tests.</span>
 
 <span class="sd">        :param rvents: Raw events for playback from the server.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="o">...</span>  <span class="c1"># NOCVR</span>
 
 
@@ -497,21 +497,21 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">client_ircsock</span><span class="p">(</span>  <span class="c1"># noqa: CFQ004</span>
     <span class="n">mocker</span><span class="p">:</span> <span class="n">MockerFixture</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRCClientSocket</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Construct the instance for use in the downstream tests.</span>
 
 <span class="sd">    :param mocker: Object for mocking the Python routines.</span>
 <span class="sd">    :returns: Newly constructed instance of related class.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">mckctx</span> <span class="o">=</span> <span class="n">mocker</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span>
-        <span class="p">(</span><span class="s1">&#39;enconnect.irc&#39;</span>
-         <span class="s1">&#39;.client.default&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">'enconnect.irc'</span>
+         <span class="s1">'.client.default'</span><span class="p">),</span>
         <span class="n">autospec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="n">mckmod</span> <span class="o">=</span> <span class="n">mocker</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span>
-        <span class="p">(</span><span class="s1">&#39;enconnect.irc&#39;</span>
-         <span class="s1">&#39;.client.socket&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">'enconnect.irc'</span>
+         <span class="s1">'.client.socket'</span><span class="p">),</span>
         <span class="n">autospec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="n">secket</span> <span class="o">=</span> <span class="p">(</span>
@@ -525,10 +525,10 @@
         <span class="n">event</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_TUBLYTES</span><span class="p">:</span>
 
-        <span class="n">event</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span>
+        <span class="n">event</span> <span class="o">+=</span> <span class="s1">'</span><span class="se">\r\n</span><span class="s1">'</span>
 
         <span class="n">split</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="n">x</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+            <span class="n">x</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">event</span><span class="p">]</span>
 
         <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">split</span><span class="p">)</span>
@@ -559,7 +559,7 @@
 
             <span class="n">block_sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
 
-            <span class="k">yield from</span> <span class="p">[</span><span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="p">]</span>
+            <span class="k">yield from</span> <span class="p">[</span><span class="sa">b</span><span class="s1">''</span><span class="p">]</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_factory</span><span class="p">(</span>

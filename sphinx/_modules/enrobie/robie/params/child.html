@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.robie.params.child</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -315,15 +315,15 @@
 
 <div class="viewcode-block" id="RobieChildParams">
 <a class="viewcode-back" href="../../../../enrobie.robie.params.html#enrobie.robie.params.child.RobieChildParams">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">RobieChildParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RobieChildParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Process and validate the Robie configuration parameters.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">enable</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">bool</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Determine whether child enabled&#39;</span><span class="p">)]</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Determine whether child enabled'</span><span class="p">)]</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
@@ -333,14 +333,14 @@
         <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
 
         <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
-            <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;enable&#39;</span><span class="p">]</span>
+            <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'enable'</span><span class="p">]</span>
 
             <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
 

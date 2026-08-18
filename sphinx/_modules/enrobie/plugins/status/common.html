@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.status.common</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -314,10 +314,10 @@
 
 
 <span class="n">StatusPluginStates</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span>
-    <span class="s1">&#39;pending&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;normal&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;failure&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;unknown&#39;</span><span class="p">]</span>
+    <span class="s1">'pending'</span><span class="p">,</span>
+    <span class="s1">'normal'</span><span class="p">,</span>
+    <span class="s1">'failure'</span><span class="p">,</span>
+    <span class="s1">'unknown'</span><span class="p">]</span>
 
 
 
@@ -325,23 +325,23 @@
 <a class="viewcode-back" href="../../../../index.html#enrobie.plugins.StatusPluginItem">[docs]</a>
 <span class="nd">@dataclass</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">StatusPluginItem</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Contain the relevant status information for the entry.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">time</span><span class="p">:</span> <span class="n">Time</span>
     <span class="n">unique</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">group</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">icon</span><span class="p">:</span> <span class="s1">&#39;StatusPluginIconParams&#39;</span>
+    <span class="n">icon</span><span class="p">:</span> <span class="s1">'StatusPluginIconParams'</span>
     <span class="n">state</span><span class="p">:</span> <span class="n">StatusPluginStates</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__lt__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">other</span><span class="p">:</span> <span class="s1">&#39;StatusPluginItem&#39;</span><span class="p">,</span>
+        <span class="n">other</span><span class="p">:</span> <span class="s1">'StatusPluginItem'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Built-in method for comparing this instance with another.</span>
 
 <span class="sd">        .. note::</span>
@@ -349,7 +349,7 @@
 
 <span class="sd">        :param other: Other value being compared with instance.</span>
 <span class="sd">        :returns: Boolean indicating outcome from the operation.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">unique</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">unique</span>
         <span class="n">_unique</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">unique</span>

@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.robie.robie</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -333,13 +333,13 @@
 <div class="viewcode-block" id="Robie">
 <a class="viewcode-back" href="../../../index.html#enrobie.robie.robie.Robie">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Robie</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Interact with chat networks and integrate using plugins.</span>
 
 <span class="sd">    :param config: Primary class instance for configuration.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">__config</span><span class="p">:</span> <span class="s1">&#39;RobieConfig&#39;</span>
+    <span class="n">__config</span><span class="p">:</span> <span class="s1">'RobieConfig'</span>
 
     <span class="n">__logger</span><span class="p">:</span> <span class="n">RobieLogger</span>
     <span class="n">__jinja2</span><span class="p">:</span> <span class="n">RobieJinja2</span>
@@ -349,15 +349,15 @@
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">config</span><span class="p">:</span> <span class="s1">&#39;RobieConfig&#39;</span><span class="p">,</span>
+        <span class="n">config</span><span class="p">:</span> <span class="s1">'RobieConfig'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">config</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_d</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="n">clsname</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;initial&#39;</span><span class="p">)</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'initial'</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__config</span> <span class="o">=</span> <span class="n">config</span>
 
@@ -374,7 +374,7 @@
 
         <span class="n">config</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_d</span><span class="p">(</span>
             <span class="n">base</span><span class="o">=</span><span class="n">clsname</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
-            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;created&#39;</span><span class="p">)</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">'created'</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">register_locate</span><span class="p">()</span>
 
@@ -382,12 +382,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">config</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieConfig&#39;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'RobieConfig'</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Config instance containing the configuration.</span>
 
 <span class="sd">        :returns: Config instance containing the configuration.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__config</span>
 
@@ -396,11 +396,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">logger</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieLogger</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__logger</span>
 
@@ -409,11 +409,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">jinja2</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieJinja2</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__jinja2</span>
 
@@ -422,11 +422,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">childs</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobieChilds</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__childs</span>
 
@@ -434,12 +434,12 @@
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">params</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RobieParams&#39;</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'RobieParams'</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Pydantic model containing the configuration.</span>
 
 <span class="sd">        :returns: Pydantic model containing the configuration.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">params</span>
 
@@ -448,11 +448,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">console</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">console</span>
 
@@ -461,11 +461,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">debug</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">debug</span>
 
@@ -474,11 +474,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">dumped</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DictStrAny</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the facts about the attributes from the instance.</span>
 
 <span class="sd">        :returns: Facts about the attributes from the instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
@@ -499,15 +499,15 @@
 <a class="viewcode-back" href="../../../index.html#enrobie.robie.robie.Robie.printer">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">printer</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">source</span><span class="p">:</span> <span class="s1">&#39;RobiePrint&#39;</span><span class="p">,</span>
+        <span class="n">source</span><span class="p">:</span> <span class="s1">'RobiePrint'</span><span class="p">,</span>
         <span class="n">color</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Print the contents for the object within Robie instance.</span>
 
 <span class="sd">        :param source: Content which will be shown after header.</span>
 <span class="sd">        :param color: Override the color used for box character.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
         <span class="n">printer</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">printer</span>
@@ -539,21 +539,21 @@
             <span class="k">return</span> <span class="n">NCNone</span>
 
 
-        <span class="n">line</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;━&#39;</span>
+        <span class="n">line</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'━'</span>
 
         <span class="n">print_ansi</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&lt;c9</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&gt;┍&#39;</span>
-            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">line</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">63</span><span class="si">}</span><span class="s1">&lt;c0&gt;&#39;</span><span class="p">)</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1">&lt;c9</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&gt;┍'</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">line</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">63</span><span class="si">}</span><span class="s1">&lt;c0&gt;'</span><span class="p">)</span>
 
         <span class="n">dumped</span> <span class="o">=</span> <span class="n">array_ansi</span><span class="p">(</span>
             <span class="n">source</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
         <span class="nb">print</span><span class="p">(</span>  <span class="c1"># noqa: T201</span>
-            <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">dumped</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="si">{</span><span class="n">dumped</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 
         <span class="n">print_ansi</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&lt;c9</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&gt;┕&#39;</span>
-            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">line</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">63</span><span class="si">}</span><span class="s1">&lt;c0&gt;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span></div>
+            <span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1">&lt;c9</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&gt;┕'</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">line</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">63</span><span class="si">}</span><span class="s1">&lt;c0&gt;</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span></div>
 
 
 
@@ -563,16 +563,16 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
-        <span class="n">client</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="s1">&#39;RobieClient&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">plugin</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="s1">&#39;RobiePlugin&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">client</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="s1">'RobieClient'</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">plugin</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="s1">'RobiePlugin'</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Register the plugin with the internal operation routine.</span>
 
 <span class="sd">        :param name: Name of the object within the Robie config.</span>
 <span class="sd">        :param client: Class definition for the instantiation.</span>
 <span class="sd">        :param plugin: Class definition for the instantiation.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">childs</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
             <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
@@ -586,16 +586,16 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">register_locate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Register the plugin with the internal operation routine.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span>
         <span class="n">merge</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">merge</span>
 
 
         <span class="n">clients</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">merge</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;clients&#39;</span><span class="p">)</span>
+            <span class="n">merge</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'clients'</span><span class="p">)</span>
             <span class="ow">or</span> <span class="p">{})</span>
 
         <span class="n">items</span> <span class="o">=</span> <span class="n">clients</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
@@ -604,7 +604,7 @@
 
             <span class="n">locate</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="n">source</span>
-                <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;locate&#39;</span><span class="p">))</span>
+                <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'locate'</span><span class="p">))</span>
 
             <span class="k">if</span> <span class="n">locate</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">continue</span>  <span class="c1"># NOCVR</span>
@@ -622,7 +622,7 @@
 
 
         <span class="n">plugins</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">merge</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;plugins&#39;</span><span class="p">)</span>
+            <span class="n">merge</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'plugins'</span><span class="p">)</span>
             <span class="ow">or</span> <span class="p">{})</span>
 
         <span class="n">items</span> <span class="o">=</span> <span class="n">plugins</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
@@ -631,7 +631,7 @@
 
             <span class="n">locate</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="n">source</span>
-                <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;locate&#39;</span><span class="p">))</span>
+                <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'locate'</span><span class="p">))</span>
 
             <span class="k">if</span> <span class="n">locate</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">continue</span>  <span class="c1"># NOCVR</span>
@@ -655,14 +655,14 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">client</span><span class="p">:</span> <span class="n">RobieClient</span><span class="p">,</span>
         <span class="n">check</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="s1">&#39;RobiePerson&#39;</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="s1">'RobiePerson'</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the heaviest weighted match using provided check.</span>
 
 <span class="sd">        :param client: Client class instance for Chatting Robie.</span>
 <span class="sd">        :param check: Value to be searched within the haystack.</span>
 <span class="sd">        :returns: Heaviest weighted match using provided check.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">childs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">childs</span>
 
@@ -671,7 +671,7 @@
             <span class="o">.</span><span class="n">values</span><span class="p">())</span>
 
 
-        <span class="n">matched</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="s1">&#39;RobiePerson&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">matched</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="s1">'RobiePerson'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 
 
         <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">persons</span><span class="p">:</span>
@@ -706,14 +706,14 @@
         <span class="n">statics</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DictStrAny</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">literal</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>  <span class="c1"># noqa: ANN401</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the provided input using the Jinja2 environment.</span>
 
 <span class="sd">        :param value: Input that will be processed and returned.</span>
 <span class="sd">        :param statics: Additional values available for parsing.</span>
 <span class="sd">        :param literal: Determine if Python objects are evaled.</span>
 <span class="sd">        :returns: Provided input using the Jinja2 environment.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__jinja2</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span>
             <span class="n">value</span><span class="p">,</span> <span class="n">statics</span><span class="p">,</span> <span class="n">literal</span><span class="p">)</span></div>

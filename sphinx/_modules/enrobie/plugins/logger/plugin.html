@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.logger.plugin</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -323,12 +323,12 @@
 <div class="viewcode-block" id="LoggerPlugin">
 <a class="viewcode-back" href="../../../../index.html#enrobie.plugins.LoggerPlugin">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">LoggerPlugin</span><span class="p">(</span><span class="n">RobiePlugin</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Integrate with the Robie routine and perform operations.</span>
 
 <span class="sd">    .. note::</span>
 <span class="sd">       This plugin allows for interacting with an LLM model.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">__started</span><span class="p">:</span> <span class="nb">bool</span>
 
@@ -338,16 +338,16 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">__post__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__started</span> <span class="o">=</span> <span class="kc">False</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__history</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">LoggerHistory</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;pending&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">'pending'</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="LoggerPlugin.validate">
@@ -355,9 +355,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform advanced validation on the parameters provided.</span>
-<span class="sd">        &quot;&quot;&quot;</span></div>
+<span class="sd">        """</span></div>
 
 
         <span class="c1"># Review the parameters</span>
@@ -369,11 +369,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">schema</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">LoggerPluginParams</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the configuration parameters relevant for class.</span>
 
 <span class="sd">        :returns: Configuration parameters relevant for class.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="n">LoggerPluginParams</span></div>
 
@@ -383,11 +383,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">params</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LoggerPluginParams</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the Pydantic model containing the configuration.</span>
 
 <span class="sd">        :returns: Pydantic model containing the configuration.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">params</span>
 
@@ -402,11 +402,11 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">history</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LoggerHistory</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the value for the attribute from class instance.</span>
 
 <span class="sd">        :returns: Value for the attribute from class instance.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__history</span>
 
@@ -416,9 +416,9 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">operate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Perform the operation related to Robie service threads.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">thread</span>
 
@@ -437,10 +437,10 @@
 
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__started</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">__started</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">'normal'</span><span class="p">)</span>
 
 
-        <span class="n">kinds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;privmsg&#39;</span><span class="p">,</span> <span class="s1">&#39;chanmsg&#39;</span><span class="p">]</span>
+        <span class="n">kinds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'privmsg'</span><span class="p">,</span> <span class="s1">'chanmsg'</span><span class="p">]</span>
 
         <span class="k">while</span> <span class="ow">not</span> <span class="n">mqueue</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
 
@@ -464,7 +464,7 @@
 
             <span class="n">history</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">mitem</span><span class="p">)</span>
 
-            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">'normal'</span><span class="p">)</span>
 
 
             <span class="k">if</span> <span class="n">output</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -474,13 +474,13 @@
 
     <span class="k">def</span><span class="w"> </span><span class="nf">__writeout</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">mitem</span><span class="p">:</span> <span class="s1">&#39;RobieMessage&#39;</span><span class="p">,</span>
+        <span class="n">mitem</span><span class="p">:</span> <span class="s1">'RobieMessage'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Write the event out to the designated output file path.</span>
 
 <span class="sd">        :param mitem: Item containing information for operation.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">robie</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robie</span>
         <span class="n">childs</span> <span class="o">=</span> <span class="n">robie</span><span class="o">.</span><span class="n">childs</span>
@@ -512,31 +512,31 @@
         <span class="k">try</span><span class="p">:</span>
 
             <span class="n">append</span> <span class="o">=</span> <span class="p">{</span>
-                <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">mitem</span><span class="o">.</span><span class="n">time</span><span class="p">),</span>
-                <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s1">'time'</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">mitem</span><span class="o">.</span><span class="n">time</span><span class="p">),</span>
+                <span class="s1">'client'</span><span class="p">:</span> <span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="s1">'person'</span><span class="p">:</span> <span class="p">(</span>
                     <span class="n">person</span><span class="o">.</span><span class="n">name</span>
                     <span class="k">if</span> <span class="n">person</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
                     <span class="k">else</span> <span class="kc">None</span><span class="p">),</span>
-                <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="n">author</span><span class="p">,</span>
-                <span class="s1">&#39;anchor&#39;</span><span class="p">:</span> <span class="n">anchor</span><span class="p">,</span>
-                <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="n">message</span><span class="p">}</span>
+                <span class="s1">'author'</span><span class="p">:</span> <span class="n">author</span><span class="p">,</span>
+                <span class="s1">'anchor'</span><span class="p">:</span> <span class="n">anchor</span><span class="p">,</span>
+                <span class="s1">'message'</span><span class="p">:</span> <span class="n">message</span><span class="p">}</span>
 
             <span class="n">append_text</span><span class="p">(</span>
                 <span class="n">output</span><span class="p">,</span>
-                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dumps</span><span class="p">(</span><span class="n">append</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">dumps</span><span class="p">(</span><span class="n">append</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
 
-            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">'normal'</span><span class="p">)</span>
 
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">reason</span><span class="p">:</span>
 
-            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">&#39;failure&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__status</span><span class="p">(</span><span class="s1">'failure'</span><span class="p">)</span>
 
             <span class="n">robie</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">log_e</span><span class="p">(</span>
                 <span class="n">base</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
                 <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-                <span class="n">item</span><span class="o">=</span><span class="s1">&#39;writeout&#39;</span><span class="p">,</span>
-                <span class="n">status</span><span class="o">=</span><span class="s1">&#39;exception&#39;</span><span class="p">,</span>
+                <span class="n">item</span><span class="o">=</span><span class="s1">'writeout'</span><span class="p">,</span>
+                <span class="n">status</span><span class="o">=</span><span class="s1">'exception'</span><span class="p">,</span>
                 <span class="n">exc_info</span><span class="o">=</span><span class="n">reason</span><span class="p">)</span>
 
 
@@ -545,11 +545,11 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">status</span><span class="p">:</span> <span class="n">StatusPluginStates</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Update or insert the status of the Robie child instance.</span>
 
 <span class="sd">        :param status: One of several possible value for status.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">thread</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">thread</span>
         <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
@@ -561,18 +561,18 @@
             <span class="n">thread</span><span class="o">.</span><span class="n">service</span>
             <span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">childs</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="s1">&#39;status&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">'status'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">plugins</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">NCNone</span>
 
-        <span class="n">plugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span>
+        <span class="n">plugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span>
 
         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
             <span class="n">plugin</span><span class="p">,</span> <span class="n">StatusPlugin</span><span class="p">)</span>
 
         <span class="p">(</span><span class="n">plugin</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
             <span class="n">unique</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-            <span class="n">group</span><span class="o">=</span><span class="s1">&#39;Extensions&#39;</span><span class="p">,</span>
-            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Logger&#39;</span><span class="p">,</span>
+            <span class="n">group</span><span class="o">=</span><span class="s1">'Extensions'</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s1">'Logger'</span><span class="p">,</span>
             <span class="n">icon</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
             <span class="n">state</span><span class="o">=</span><span class="n">status</span><span class="p">))</span></div>
 

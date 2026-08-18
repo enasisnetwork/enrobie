@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.nagios.current</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -321,73 +321,73 @@
 
 
 <span class="n">_FIELDS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;last_hard_state&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;downtime&#39;</span><span class="p">:</span> <span class="s1">&#39;scheduled_downtime_depth&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;handled&#39;</span><span class="p">:</span> <span class="s1">&#39;problem_has_been_acknowledged&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;checked&#39;</span><span class="p">:</span> <span class="s1">&#39;last_check&#39;</span><span class="p">}</span>
+    <span class="s1">'status'</span><span class="p">:</span> <span class="s1">'last_hard_state'</span><span class="p">,</span>
+    <span class="s1">'description'</span><span class="p">:</span> <span class="s1">'description'</span><span class="p">,</span>
+    <span class="s1">'downtime'</span><span class="p">:</span> <span class="s1">'scheduled_downtime_depth'</span><span class="p">,</span>
+    <span class="s1">'handled'</span><span class="p">:</span> <span class="s1">'problem_has_been_acknowledged'</span><span class="p">,</span>
+    <span class="s1">'checked'</span><span class="p">:</span> <span class="s1">'last_check'</span><span class="p">}</span>
 
 
 
 <div class="viewcode-block" id="NagiosCurrentObject">
 <a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrentObject">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrentObject</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrentObject</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Information regarding the item within Nagios monitoring.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">name</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Name of the object in Nagios&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Name of the object in Nagios'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">status</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Current status for the object&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Current status for the object'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">latest</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;When the latest event occurred&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'When the latest event occurred'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">downtime</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">bool</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Whether in scheduled downtime&#39;</span><span class="p">)]</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Whether in scheduled downtime'</span><span class="p">)]</span>
 
     <span class="n">handled</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">bool</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Whether or not if was handled&#39;</span><span class="p">)]</span></div>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Whether or not if was handled'</span><span class="p">)]</span></div>
 
 
 
 
 <div class="viewcode-block" id="NagiosCurrentHost">
 <a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrentHost">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrentHost</span><span class="p">(</span><span class="n">NagiosCurrentObject</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrentHost</span><span class="p">(</span><span class="n">NagiosCurrentObject</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Information regarding the item within Nagios monitoring.</span>
-<span class="sd">    &quot;&quot;&quot;</span></div>
+<span class="sd">    """</span></div>
 
 
 
 
 <div class="viewcode-block" id="NagiosCurrentService">
 <a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrentService">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrentService</span><span class="p">(</span><span class="n">NagiosCurrentObject</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrentService</span><span class="p">(</span><span class="n">NagiosCurrentObject</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Information regarding the item within Nagios monitoring.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">host</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Host the service is related to&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Host the service is related to'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span></div>
 
 
@@ -395,53 +395,53 @@
 
 <div class="viewcode-block" id="NagiosCurrentRecords">
 <a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrentRecords">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrentRecords</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrentRecords</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Summarized information regarding the items within Nagios.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">hosts</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentHost</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;System related status values&#39;</span><span class="p">)]</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'System related status values'</span><span class="p">)]</span>
 
     <span class="n">services</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentService</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Service related status values&#39;</span><span class="p">)]</span></div>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Service related status values'</span><span class="p">)]</span></div>
 
 
 
 
 <div class="viewcode-block" id="NagiosCurrentSummary">
 <a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrentSummary">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrentSummary</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrentSummary</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Summarized information regarding the items within Nagios.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">service_normal</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">int</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Object count in normal state&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Object count in normal state'</span><span class="p">,</span>
               <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
 
     <span class="n">service_issues</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">int</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Object count in issue state&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Object count in issue state'</span><span class="p">,</span>
               <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
 
     <span class="n">host_normal</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">int</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Object count in normal state&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Object count in normal state'</span><span class="p">,</span>
               <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
 
     <span class="n">host_issues</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">int</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Object count in issue state&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Object count in issue state'</span><span class="p">,</span>
               <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span></div>
 
 
@@ -450,22 +450,22 @@
 <div class="viewcode-block" id="NagiosCurrent">
 <a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrent">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">NagiosCurrent</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Collect the information using the upstream API endpoint.</span>
 
 <span class="sd">    :param plugin: Plugin class instance for Chatting Robie.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
-    <span class="n">__plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span>
+    <span class="n">__plugin</span><span class="p">:</span> <span class="s1">'NagiosPlugin'</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">plugin</span><span class="p">:</span> <span class="s1">&#39;NagiosPlugin&#39;</span><span class="p">,</span>
+        <span class="n">plugin</span><span class="p">:</span> <span class="s1">'NagiosPlugin'</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span> <span class="o">=</span> <span class="n">plugin</span>
 
@@ -474,14 +474,14 @@
 <a class="viewcode-back" href="../../../../enrobie.plugins.nagios.html#enrobie.plugins.nagios.current.NagiosCurrent.request">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">request</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">item</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">,</span> <span class="s1">&#39;service&#39;</span><span class="p">],</span>
+        <span class="n">item</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">'host'</span><span class="p">,</span> <span class="s1">'service'</span><span class="p">],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the response from upstream API endpoint request.</span>
 
 <span class="sd">        :param item: Determine which items will be enumerated.</span>
 <span class="sd">        :returns: Response from upstream API endpoint request.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__plugin</span>
         <span class="n">params</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">params</span>
@@ -495,10 +495,10 @@
         <span class="n">request</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">request_block</span>
 
         <span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="p">(</span>
-            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;get&#39;</span><span class="p">,</span>
+            <span class="n">method</span><span class="o">=</span><span class="s1">'get'</span><span class="p">,</span>
             <span class="n">location</span><span class="o">=</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">params</span><span class="o">.</span><span class="n">restful</span><span class="si">}</span><span class="s1">&#39;</span>
-                <span class="s1">&#39;/cgi-bin/statusjson.cgi&#39;</span><span class="p">),</span>
+                <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">params</span><span class="o">.</span><span class="n">restful</span><span class="si">}</span><span class="s1">'</span>
+                <span class="s1">'/cgi-bin/statusjson.cgi'</span><span class="p">),</span>
             <span class="n">httpauth</span><span class="o">=</span><span class="p">(</span>
                 <span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">username</span><span class="p">,</span>
                  <span class="n">params</span><span class="o">.</span><span class="n">password</span><span class="p">)</span>
@@ -507,9 +507,9 @@
                 <span class="k">else</span> <span class="kc">None</span><span class="p">),</span>
             <span class="n">timeout</span><span class="o">=</span><span class="n">params</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span>
             <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-                <span class="s1">&#39;query&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s1">list&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;formatoptions&#39;</span><span class="p">:</span> <span class="s1">&#39;enumerate&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;details&#39;</span><span class="p">:</span> <span class="s1">&#39;true&#39;</span><span class="p">})</span>
+                <span class="s1">'query'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s1">list'</span><span class="p">,</span>
+                <span class="s1">'formatoptions'</span><span class="p">:</span> <span class="s1">'enumerate'</span><span class="p">,</span>
+                <span class="s1">'details'</span><span class="p">:</span> <span class="s1">'true'</span><span class="p">})</span>
 
         <span class="p">(</span><span class="n">response</span>
          <span class="o">.</span><span class="n">raise_for_status</span><span class="p">())</span>
@@ -523,42 +523,42 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">hosts</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentHost</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the response from upstream API endpoint request.</span>
 
 <span class="sd">        :returns: Response from upstream API endpoint request.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">returned</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentHost</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="n">model</span> <span class="o">=</span> <span class="n">NagiosCurrentHost</span>
 
 
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">&#39;host&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">'host'</span><span class="p">)</span>
 
 
         <span class="n">items</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-            <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;hostlist&#39;</span><span class="p">]</span>
+            <span class="p">[</span><span class="s1">'data'</span><span class="p">][</span><span class="s1">'hostlist'</span><span class="p">]</span>
             <span class="o">.</span><span class="n">items</span><span class="p">())</span>
 
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
 
             <span class="n">checked</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;checked&#39;</span><span class="p">]]</span>
+                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">'checked'</span><span class="p">]]</span>
 
             <span class="n">latest</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span>
                 <span class="n">checked</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span>
-                <span class="n">tzname</span><span class="o">=</span><span class="s1">&#39;US/Central&#39;</span><span class="p">)</span>
+                <span class="n">tzname</span><span class="o">=</span><span class="s1">'US/Central'</span><span class="p">)</span>
 
             <span class="n">status</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]]</span>
+                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]]</span>
 
             <span class="n">downtime</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;downtime&#39;</span><span class="p">]]</span>
+                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">'downtime'</span><span class="p">]]</span>
 
             <span class="n">handled</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;handled&#39;</span><span class="p">]]</span>
+                <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">'handled'</span><span class="p">]]</span>
 
             <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
                 <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
@@ -577,23 +577,23 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">services</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentService</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the response from upstream API endpoint request.</span>
 
 <span class="sd">        :returns: Response from upstream API endpoint request.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">returned</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">NagiosCurrentService</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="n">model</span> <span class="o">=</span> <span class="n">NagiosCurrentService</span>
 
 
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">&#39;service&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">'service'</span><span class="p">)</span>
 
 
         <span class="n">items</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-            <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;servicelist&#39;</span><span class="p">]</span>
+            <span class="p">[</span><span class="s1">'data'</span><span class="p">][</span><span class="s1">'servicelist'</span><span class="p">]</span>
             <span class="o">.</span><span class="n">items</span><span class="p">())</span>
 
 
@@ -604,23 +604,23 @@
             <span class="k">for</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">_items</span><span class="p">:</span>
 
                 <span class="n">checked</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;checked&#39;</span><span class="p">]]</span>
+                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">'checked'</span><span class="p">]]</span>
 
                 <span class="n">latest</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span>
                     <span class="n">checked</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span>
-                    <span class="n">tzname</span><span class="o">=</span><span class="s1">&#39;US/Central&#39;</span><span class="p">)</span>
+                    <span class="n">tzname</span><span class="o">=</span><span class="s1">'US/Central'</span><span class="p">)</span>
 
                 <span class="n">name</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]]</span>
+                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">'description'</span><span class="p">]]</span>
 
                 <span class="n">status</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]]</span>
+                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]]</span>
 
                 <span class="n">downtime</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;downtime&#39;</span><span class="p">]]</span>
+                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">'downtime'</span><span class="p">]]</span>
 
                 <span class="n">handled</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span>
-                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">&#39;handled&#39;</span><span class="p">]]</span>
+                    <span class="n">_FIELDS</span><span class="p">[</span><span class="s1">'handled'</span><span class="p">]]</span>
 
                 <span class="nb">object</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
                     <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
@@ -640,49 +640,49 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NagiosCurrentSummary</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the response from upstream API endpoint request.</span>
 
 <span class="sd">        :returns: Response from upstream API endpoint request.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
-        <span class="n">normal</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;service&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
-        <span class="n">issues</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;service&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+        <span class="n">normal</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'host'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'service'</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+        <span class="n">issues</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'host'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'service'</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
 
         <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="p">:</span>
 
             <span class="n">target</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="n">normal</span>
-                <span class="k">if</span> <span class="n">host</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;up&#39;</span>
+                <span class="k">if</span> <span class="n">host</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">'up'</span>
                 <span class="k">else</span> <span class="n">issues</span><span class="p">)</span>
 
-            <span class="n">target</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">target</span><span class="p">[</span><span class="s1">'host'</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 
         <span class="k">for</span> <span class="n">srvc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">services</span><span class="p">:</span>
 
             <span class="n">target</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="n">normal</span>
-                <span class="k">if</span> <span class="n">srvc</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;ok&#39;</span>
+                <span class="k">if</span> <span class="n">srvc</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">'ok'</span>
                 <span class="k">else</span> <span class="n">issues</span><span class="p">)</span>
 
-            <span class="n">target</span><span class="p">[</span><span class="s1">&#39;service&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">target</span><span class="p">[</span><span class="s1">'service'</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 
         <span class="k">return</span> <span class="n">NagiosCurrentSummary</span><span class="p">(</span>
-            <span class="n">service_normal</span><span class="o">=</span><span class="n">normal</span><span class="p">[</span><span class="s1">&#39;service&#39;</span><span class="p">],</span>
-            <span class="n">service_issues</span><span class="o">=</span><span class="n">issues</span><span class="p">[</span><span class="s1">&#39;service&#39;</span><span class="p">],</span>
-            <span class="n">host_normal</span><span class="o">=</span><span class="n">normal</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">],</span>
-            <span class="n">host_issues</span><span class="o">=</span><span class="n">issues</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">])</span>
+            <span class="n">service_normal</span><span class="o">=</span><span class="n">normal</span><span class="p">[</span><span class="s1">'service'</span><span class="p">],</span>
+            <span class="n">service_issues</span><span class="o">=</span><span class="n">issues</span><span class="p">[</span><span class="s1">'service'</span><span class="p">],</span>
+            <span class="n">host_normal</span><span class="o">=</span><span class="n">normal</span><span class="p">[</span><span class="s1">'host'</span><span class="p">],</span>
+            <span class="n">host_issues</span><span class="o">=</span><span class="n">issues</span><span class="p">[</span><span class="s1">'host'</span><span class="p">])</span>
 
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">records</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NagiosCurrentRecords</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Return the response from upstream API endpoint request.</span>
 
 <span class="sd">        :returns: Response from upstream API endpoint request.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">return</span> <span class="n">NagiosCurrentRecords</span><span class="p">(</span>
             <span class="n">services</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">services</span><span class="p">,</span>

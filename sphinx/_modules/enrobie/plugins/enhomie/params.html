@@ -293,12 +293,12 @@
                 <article class="bd-article">
                   
   <h1>Source code for enrobie.plugins.enhomie.params</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Functions and routines associated with Enasis Network Chatting Robie.</span>
 
 <span class="sd">This file is part of Enasis Network software eco-system. Distribution</span>
 <span class="sd">is permitted, for more information consult the project license file.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 
@@ -317,27 +317,27 @@
 
 <div class="viewcode-block" id="HomiePluginCommandParams">
 <a class="viewcode-back" href="../../../../enrobie.plugins.enhomie.html#enrobie.plugins.HomiePluginCommandParams">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">HomiePluginCommandParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">HomiePluginCommandParams</span><span class="p">(</span><span class="n">RobieParamsModel</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Process and validate the Robie configuration parameters.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">irc</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
-        <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;!persist&#39;</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Command name for chat platform&#39;</span><span class="p">,</span>
+        <span class="n">Field</span><span class="p">(</span><span class="s1">'!persist'</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Command name for chat platform'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 
     <span class="n">dsc</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
-        <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;!persist&#39;</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Command name for chat platform&#39;</span><span class="p">,</span>
+        <span class="n">Field</span><span class="p">(</span><span class="s1">'!persist'</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Command name for chat platform'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 
     <span class="n">mtm</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
-        <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;!persist&#39;</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Command name for chat platform&#39;</span><span class="p">,</span>
+        <span class="n">Field</span><span class="p">(</span><span class="s1">'!persist'</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Command name for chat platform'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span></div>
 
 
@@ -345,62 +345,62 @@
 
 <div class="viewcode-block" id="HomiePluginParams">
 <a class="viewcode-back" href="../../../../index.html#enrobie.plugins.HomiePluginParams">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">HomiePluginParams</span><span class="p">(</span><span class="n">RobiePluginParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">&#39;forbid&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">HomiePluginParams</span><span class="p">(</span><span class="n">RobiePluginParams</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s1">'forbid'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Process and validate the Robie configuration parameters.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">command</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">HomiePluginCommandParams</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">HomiePluginCommandParams</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Command name per chat platform&#39;</span><span class="p">)]</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Command name per chat platform'</span><span class="p">)]</span>
 
     <span class="n">restful</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">str</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Where to find the RESTful API&#39;</span><span class="p">,</span>
-              <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;http://localhost:8420&#39;</span><span class="p">],</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Where to find the RESTful API'</span><span class="p">,</span>
+              <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s1">'http://localhost:8420'</span><span class="p">],</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">username</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Authenticate with the service&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Authenticate with the service'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">password</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Authenticate with the service&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Authenticate with the service'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">timeout</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">int</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Timeout connecting to server&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Timeout connecting to server'</span><span class="p">,</span>
               <span class="n">ge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">le</span><span class="o">=</span><span class="mi">300</span><span class="p">)]</span>
 
     <span class="n">ssl_verify</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">bool</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Verify the ceritifcate valid&#39;</span><span class="p">)]</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Verify the ceritifcate valid'</span><span class="p">)]</span>
 
     <span class="n">ssl_capem</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Verify the ceritifcate valid&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Verify the ceritifcate valid'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">clients</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;List of clients to enable plugin&#39;</span><span class="p">,</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'List of clients to enable plugin'</span><span class="p">,</span>
               <span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 
     <span class="n">status</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span>
         <span class="n">StatusPluginIconParams</span><span class="p">,</span>
         <span class="n">Field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">StatusPluginIconParams</span><span class="p">,</span>
-              <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Icon used per chat platform&#39;</span><span class="p">)]</span>
+              <span class="n">description</span><span class="o">=</span><span class="s1">'Icon used per chat platform'</span><span class="p">)]</span>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
@@ -410,21 +410,21 @@
         <span class="n">_parse</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize instance for class using provided parameters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
 
         <span class="k">if</span> <span class="n">_parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
             <span class="n">parsable</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="s1">&#39;restful&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;username&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;password&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;timeout&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;ssl_verify&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;ssl_capem&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;status&#39;</span><span class="p">]</span>
+                <span class="s1">'restful'</span><span class="p">,</span>
+                <span class="s1">'username'</span><span class="p">,</span>
+                <span class="s1">'password'</span><span class="p">,</span>
+                <span class="s1">'timeout'</span><span class="p">,</span>
+                <span class="s1">'ssl_verify'</span><span class="p">,</span>
+                <span class="s1">'ssl_capem'</span><span class="p">,</span>
+                <span class="s1">'status'</span><span class="p">]</span>
 
             <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parsable</span><span class="p">:</span>
 
